@@ -21,7 +21,6 @@ entranceFlume = nil
 --Drag a copy of "MainGameController" to this custom property
 local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
 
-
 -------------------------------------------------------------
 -- REQUIRED FUNCTIONS FOR MAINGAMECONTROLLER TO CALL
 -------------------------------------------------------------
