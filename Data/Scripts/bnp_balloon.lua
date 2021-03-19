@@ -1,138 +1,113 @@
-propLevelController = script:GetCustomProperty("levelController"):WaitForObject()
-
-local propEquipment = script:GetCustomProperty("equipment"):WaitForObject()
 local propTrigger = script:GetCustomProperty("trigger"):WaitForObject()
-local propPhysics = script:GetCustomProperty("physics"):WaitForObject()
-local propAbility = script:GetCustomProperty("ability"):WaitForObject()
-local propStretchSFXTemplate = script:GetCustomProperty("stretchSFXTemplate")
-local propSqueakSFXTemplate = script:GetCustomProperty("squeakSFXTemplate")
+propGeometry = script:GetCustomProperty("geometry"):WaitForObject()
+local propShooter = script:GetCustomProperty("shooter"):WaitForObject()
+local propEquipmentTemplate = script:GetCustomProperty("equipmentTemplate")
+local propPhysicsTemplate = script:GetCustomProperty("physicsTemplate")
 local propPluckSFXTemplate = script:GetCustomProperty("pluckSFXTemplate")
-local colorElements = script:GetCustomProperty("colorElements"):WaitForObject():GetChildren()
+local propSqueakSFXTemplate = script:GetCustomProperty("squeakSFXTemplate")
+local propStretchSFXTemplate = script:GetCustomProperty("stretchSFXTemplate")
 
-local propStretchSFX = World.SpawnAsset(propStretchSFXTemplate, { parent = propPhysics })
-local propSqueakSFX = World.SpawnAsset(propSqueakSFXTemplate, { parent = propPhysics })
-local propPluckSFX = World.SpawnAsset(propPluckSFXTemplate, { parent = propPhysics })
-
-local balloonPosition = nil
-local balloonQuat = Quaternion.IDENTITY
-local balloonVelocity = Vector3.ZERO
-local balloonAngularVelocity = Vector3.ZERO
+local randomStream = RandomStream.New()
+propPhysics = World.SpawnAsset(propPhysicsTemplate, { parent = script.parent })
+local propEquipment = nil
+local propShootAbility = nil
+propDunkAbility = nil
 
 lastBoppedBy = nil
 bnpColor = 0
-bnpArmor = 0
 
-function RemoveMe()
-	propTrigger = nil
-	
-	if propEquipment then
-		if propEquipment.owner then
-			propEquipment:Unequip()
-		end
-	end
-end
+propPhysics:SetWorldPosition(script:GetWorldPosition())
+propPhysics:SetWorldRotation(script:GetWorldRotation())
+script.parent = propPhysics
 
-function PlaceInCapsule()
-	propEquipment.parent = propPhysics
-end
-
-function SetColor(color)
-	bnpColor = color
-	for _, element in pairs(colorElements) do
+function SetBNPColor(inBnpColor, color)
+	bnpColor = inBnpColor
+	for _, element in pairs(propGeometry:GetChildren()) do
 		element:SetColor(color)
 	end
 end
 
-function ScoreByHopping(whichPlayer)
-	RemoveMe()
-	propLevelController.context.EndRound(bnpColor == propLevelController.context.bopColor)
+function OnInteracted(whichTrigger, other)
+	if other:IsA("Player") then
+		PickupByPlayer(other)
+	end
 end
 
-function ScoreByPopping(whichPlayer)
-	RemoveMe()
-	propLevelController.context.EndRound(bnpColor == propLevelController.context.popColor)
-end
-
-function ScoreByBopping()
-	RemoveMe()
-	propLevelController.context.EndRound(bnpColor == propLevelController.context.bopColor)
-end
-
-function ConnectEquipmentEvents(equipment)
-	equipment.equippedEvent:Connect(OnEquip_Bop)
-end
-
-function ConnectAbilityEvents(ability)
-	-- hooks on entering each phase
-	ability.castEvent:Connect(OnCast_Bop)
-	ability.executeEvent:Connect(OnExecute_Bop)
-	ability.recoveryEvent:Connect(OnRecovery_Bop)
-end
-
-function OnEquip_Bop(equipment, player)
-	propPhysics.collision = Collision.FORCE_OFF
-	propPhysics.isEnabled = false
+function PickupByPlayer(player)
+	propEquipment = World.SpawnAsset(propEquipmentTemplate, { parent = propPhysics.parent, position = propPhysics.position })
+	propShootAbility = propEquipment:GetCustomProperty("shootAbility"):WaitForObject()
+	propDunkAbility = propEquipment:GetCustomProperty("dunkAbility"):WaitForObject()
+	propGrabAbility = propEquipment:GetCustomProperty("grabAbility"):WaitForObject()
+	
+	propShootAbility.castEvent:Connect(OnCast_Shoot)
+	propShootAbility.executeEvent:Connect(OnExecute_Shoot)
+	
+	script.parent = propEquipment
+	script:SetPosition(Vector3.New(0, 0, 25))
+	script:SetRotation(Rotation.New(0, 0, 0))
+	propPhysics:Destroy()
+	propPhysics = nil
+	
+	propEquipment:Equip(player)
 	propTrigger.collision = Collision.FORCE_OFF
-	propEquipment.collision = Collision.FORCE_OFF
+
+	propGrabAbility:Activate()
+	World.SpawnAsset(propSqueakSFXTemplate, { parent = propPhysics }):Play()
 end
 
--- functions called when entering each phase. Add your code inside 
-function OnCast_Bop(ability)
-	propStretchSFX:Play()
+function ShootByPlayer(player)
+	local	abilityTarget = propShootAbility:GetTargetData()
+	local	direction = abilityTarget:GetAimDirection()
+
+	DropByPlayer(player)
+	
+	propPhysics:SetVelocity(direction * 5000 + player:GetVelocity())
+	propPhysics:SetAngularVelocity(randomStream:GetVector3() * 2000)
 end
 
-function OnExecute_Bop(ability)
-	lastBoppedBy = propEquipment.owner.name
-	propPluckSFX:Play()
-	propSqueakSFX:Play()
+function DropByPlayer(player)
+	lastBoppedBy = player.name
+
+	propPhysics = World.SpawnAsset(propPhysicsTemplate, { parent = player.parent })
+	propPhysics:SetWorldPosition(propGeometry:GetWorldPosition())
+	propPhysics:SetWorldRotation(propGeometry:GetWorldRotation())
+	script.parent = propPhysics
+	script:SetPosition(Vector3.ZERO)
+	script:SetRotation(Rotation.ZERO)
+
 	propEquipment:Unequip()
-
-	local startPos = script:GetWorldPosition()
-	local abilityTarget = ability:GetTargetData()
-	local direction = abilityTarget:GetAimDirection()
-
-    -- Launch it
-	local player = propEquipment.owner
-
-	if player then
-		if not balloonPosition then
-			balloonPosition = player:GetWorldPosition() + Vector3.UP * 300.0
-		end
-	end
-
-	propPhysics.collision = Collision.FORCE_ON
-	propPhysics.isEnabled = true
-	propPhysics:SetWorldPosition(propEquipment:GetWorldPosition())
-	propPhysics:SetWorldRotation(propEquipment:GetRotation())
-	propEquipment.parent = propPhysics
-	propPhysics:SetVelocity(direction * 5000)
+	propEquipment:Destroy()
+	propEquipment = nil
+	propTrigger.collision = Collision.FORCE_ON
 end
 
-function OnRecovery_Bop(ability)
-	if (propTrigger) then
-		propTrigger.collision = Collision.FORCE_ON
-		propEquipment.collision = Collision.FORCE_OFF
-	end
-
-	-- print("OnRecovery " .. ability.name)
+function ConnectShootEvents(ability)
 end
 
-function OnCooldown_Bop(ability)
-	-- print("OnCooldown " .. ability.name)
+function OnCast_Shoot(ability)
+	local	player = propEquipment.owner
+
+	propEquipment:Unequip()
+	propEquipment.socket = "left_arm_prop"
+	
+	print(propGeometry.id)
+	propShooter:SetPosition(Vector3.New(0, 0, -40))
+	propShooter:SetScale(Vector3.New(0.05, 0.05, 1))
+	propGeometry:SetPosition(Vector3.New(-28.469, -5.193, -18.268))
+	propGeometry:SetRotation(Rotation.New(108.203, 49.897, 64.982))
+	propEquipment:Equip(player)
+
+	World.SpawnAsset(propStretchSFXTemplate, { parent = propGeometry }):Play()
 end
 
-function OnInterrupted_Bop(ability)
-	-- print("OnInterrupted " .. ability.name)
+function OnExecute_Shoot(ability)
+	ShootByPlayer(propEquipment.owner)
+	propGeometry:SetPosition(Vector3.New(0, 0, -25))
+	propGeometry:SetRotation(Rotation.ZERO)
+	propShooter:SetPosition(Vector3.ZERO)
+	propShooter:SetScale(Vector3.New(0.1, 0.1, 0.1))
+	World.SpawnAsset(propPluckSFXTemplate, { parent = propGeometry }):Play()
+	World.SpawnAsset(propSqueakSFXTemplate, { parent = propGeometry }):Play()
 end
 
-function OnReady_Bop(ability)
-	-- print("OnReady " .. ability.name)
-end
-
-
--- call to connect events to ability. 
--- this does not give the ability to player, that need to be handled separately depending on how ability is created in game
-ConnectAbilityEvents(propAbility)
-ConnectEquipmentEvents(propEquipment)
-
---------------------------------------------------------------------------------
+propTrigger.interactedEvent:Connect(OnInteracted)

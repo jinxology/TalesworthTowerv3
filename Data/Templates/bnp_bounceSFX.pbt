@@ -1,13 +1,13 @@
 Assets {
-  Id: 9800779973835046085
-  Name: "bnp_balloonStretchSFX"
+  Id: 8601580347708051998
+  Name: "bnp_bounceSFX"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 9066951876732688099
+      RootId: 3858886003239363918
       Objects {
-        Id: 9066951876732688099
-        Name: "bnp_balloonStretchSFX"
+        Id: 3858886003239363918
+        Name: "bnp.bounceSFX"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14954585164054304824
+        ParentId: 4781671109827199097
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -28,7 +28,7 @@ Assets {
         }
         AudioInstance {
           AudioAsset {
-            Id: 5834100326012314738
+            Id: 16916983066312112421
           }
           Volume: 1
           Falloff: -1
@@ -36,17 +36,16 @@ Assets {
           EnableOcclusion: true
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true
-          StopTime: 1
         }
       }
     }
     Assets {
-      Id: 5834100326012314738
-      Name: "Balloon Rubber Squeak Long 01 SFX"
+      Id: 16916983066312112421
+      Name: "Cartoon Bounce Jump Boing 01 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
-        AssetId: "sfx_ballon_rub_rubber_long_01a_Cue_ref"
+        AssetId: "sfx_cartoon_bounce_jump_boing_01a_Cue_ref"
       }
     }
     PrimaryAssetId {

@@ -1,6 +1,6 @@
 Assets {
   Id: 5240314577759874876
-  Name: "bnp.signMaterial"
+  Name: "bnp_signMaterial"
   PlatformAssetType: 13
   SerializationVersion: 78
   CustomMaterialAsset {

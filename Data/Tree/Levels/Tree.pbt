@@ -1,6 +1,133 @@
 Name: "Levels"
 RootId: 13991120868083209491
 Objects {
+  Id: 1232579912354001357
+  Name: "Level.Puckollossal"
+  Transform {
+    Location {
+      Z: 12400
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13991120868083209491
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Level_Puckollossal"
+  }
+}
+Objects {
+  Id: 15756692083103120201
+  Name: "Level.JumpMan"
+  Transform {
+    Location {
+      X: 875
+      Y: 4200
+      Z: 10125
+    }
+    Rotation {
+      Yaw: -125
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13991120868083209491
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Level_JumpMan"
+  }
+}
+Objects {
+  Id: 4040143929711443956
+  Name: "Level.Maze"
+  Transform {
+    Location {
+      X: -125
+      Y: 225
+      Z: 550
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13991120868083209491
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Level_Maze"
+  }
+}
+Objects {
+  Id: 6466700705943890717
+  Name: "Level.BopAndPop"
+  Transform {
+    Location {
+      X: 25
+      Y: -50
+      Z: 1800
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13991120868083209491
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Level_BopAndPop"
+  }
+}
+Objects {
   Id: 5669723044310532949
   Name: "Level.ColorDials"
   Transform {
@@ -38,7 +165,7 @@ Objects {
   Transform {
     Location {
       X: 1600
-      Z: 7625
+      Z: 6900
     }
     Rotation {
     }

@@ -35,7 +35,7 @@ Assets {
           Overrides {
             Name: "cs:LevelControllerBopAndPop"
             ObjectReference {
-              SelfId: 6779073861263243683
+              SelfId: 1900714643325171870
             }
           }
         }
@@ -137,6 +137,8 @@ Assets {
         Name: "Point Light"
         Transform {
           Location {
+            X: 24.9999981
+            Y: 5.7220459e-06
             Z: 50
           }
           Rotation {
@@ -159,7 +161,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Light {
-          Intensity: 50
+          Intensity: 20
           Color {
             R: 1
             G: 1
@@ -190,8 +192,8 @@ Assets {
         Name: "Frame Large Corner - Neon Double 1 Sided Ending"
         Transform {
           Location {
-            X: -12.0007324
-            Y: 49.3933105
+            X: -10
+            Y: 50
             Z: 45
           }
           Rotation {
@@ -243,8 +245,7 @@ Assets {
         Name: "Frame Large Corner - Neon Double"
         Transform {
           Location {
-            X: -12.0004883
-            Y: -0.606689453
+            X: -10
             Z: -5
           }
           Rotation {
@@ -298,8 +299,8 @@ Assets {
         Name: "Frame Large Corner - Neon Double"
         Transform {
           Location {
-            X: -12.0004883
-            Y: -50.6064453
+            X: -10
+            Y: -50
             Z: 45
           }
           Rotation {
@@ -352,8 +353,8 @@ Assets {
         Name: "Frame Large Corner - Neon Double 1 Sided Ending"
         Transform {
           Location {
-            X: -12
-            Y: -50.6066895
+            X: -10
+            Y: -50
             Z: 45
           }
           Rotation {
@@ -405,15 +406,15 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            X: 15
+            X: 60
+            Y: -3.81469727e-06
           }
           Rotation {
-            Pitch: -22.5000019
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1.25
+            X: 1.25
+            Y: 1.25
+            Z: 2.25
           }
         }
         ParentId: 1702665487452193969

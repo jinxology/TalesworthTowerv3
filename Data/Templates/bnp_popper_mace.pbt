@@ -41,14 +41,11 @@ Assets {
         Name: "Fantasy Axe Grip 01"
         Transform {
           Location {
-            X: 8.75148201
-            Y: 1.1920929e-07
+            X: 8.75146484
             Z: -25.8686523
           }
           Rotation {
-            Pitch: -22.4999695
-            Yaw: -3.05175781e-05
-            Roll: 9.86096e-06
+            Pitch: -22.5
           }
           Scale {
             X: 1
@@ -87,19 +84,16 @@ Assets {
         Name: "Fantasy Mace Head 01"
         Transform {
           Location {
-            X: 35.5393677
-            Y: 1.43051147e-06
+            X: 35.5393066
             Z: 38.8029785
           }
           Rotation {
-            Pitch: -22.4999695
-            Yaw: -3.05175781e-05
-            Roll: 9.86096e-06
+            Pitch: -22.5
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 1.5
+            Y: 1.5
+            Z: 1.5
           }
         }
         ParentId: 15109807283486739220
@@ -117,6 +111,12 @@ Assets {
             Name: "ma:Shared_Detail1:id"
             AssetReference {
               Id: 5861223425148352605
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:id"
+            AssetReference {
+              Id: 9757497992016708607
             }
           }
         }
@@ -150,14 +150,11 @@ Assets {
         Name: "Fantasy Mace Guard 01"
         Transform {
           Location {
-            X: 26.7374744
-            Y: 1.43051147e-06
+            X: 26.7374268
             Z: 17.5537109
           }
           Rotation {
-            Pitch: -22.4999695
-            Yaw: -3.05175781e-05
-            Roll: 9.86096e-06
+            Pitch: -22.5
           }
           Scale {
             X: 1
@@ -196,14 +193,11 @@ Assets {
         Name: "Fantasy Pommel 03"
         Transform {
           Location {
-            X: 9.89949417
-            Y: 4.76837158e-07
+            X: 9.89953613
             Z: -23.097168
           }
           Rotation {
-            Pitch: -22.4999695
-            Yaw: -3.05175781e-05
-            Roll: 9.86096e-06
+            Pitch: -22.5
           }
           Scale {
             X: 1.25

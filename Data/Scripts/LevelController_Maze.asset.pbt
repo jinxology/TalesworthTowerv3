@@ -1,6 +1,6 @@
 Assets {
   Id: 13106342710227960401
-  Name: "LevelController.Maze"
+  Name: "LevelController_Maze"
   PlatformAssetType: 3
   TextAsset {
   }

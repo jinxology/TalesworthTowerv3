@@ -201,8 +201,7 @@ Assets {
         Name: "Fantasy Sword Blade 02"
         Transform {
           Location {
-            X: 19.4665
-            Y: 4.76837158e-07
+            X: 19.4665527
             Z: 5
           }
           Rotation {
@@ -210,12 +209,23 @@ Assets {
             Roll: 22.4997787
           }
           Scale {
-            X: 1
+            X: 1.39999986
             Y: 1
             Z: 1
           }
         }
         ParentId: 624057623004248737
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"

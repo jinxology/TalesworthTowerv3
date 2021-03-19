@@ -1,13 +1,13 @@
 Assets {
-  Id: 15798630139548653627
-  Name: "bnp_balloonSqueakSFX"
+  Id: 16924433963742146640
+  Name: "bnp_squeakSFX"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 6772018909634015201
+      RootId: 5663207270622556790
       Objects {
-        Id: 6772018909634015201
-        Name: "bnp_balloonSqueakSFX"
+        Id: 5663207270622556790
+        Name: "bnp.squeakSFX"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14954585164054304824
+        ParentId: 4781671109827199097
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -30,6 +30,7 @@ Assets {
           AudioAsset {
             Id: 13448997455137367267
           }
+          Transient: true
           Volume: 1
           Falloff: -1
           Radius: -1

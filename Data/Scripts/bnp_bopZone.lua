@@ -1,49 +1,72 @@
 local propSuctionSFX = script:GetCustomProperty("suctionSFX"):WaitForObject()
-local trigger = script.parent
+local propTrigger = script:GetCustomProperty("trigger"):WaitForObject()
 local propDisc = script:GetCustomProperty("ModernWeaponDisc01"):WaitForObject()
+local propLevelController = script:GetCustomProperty("levelController"):WaitForObject()
+local propSuctionSFX = script:GetCustomProperty("suctionSFX"):WaitForObject()
 
-propSuctionSFX.stopTime = 0.52
+-- propSuctionSFX.stopTime = 0.52
 
 function OnBeginOverlap(whichTrigger, other)
 	if other:IsA("Player") then
-		for i, v in ipairs(other:GetEquipment()) do
-			if v:IsA("Equipment") and v.name == "bnp_balloonEquipment" then
-				print("Player " .. other.name .. " scored!")
-				local balloon = v:GetCustomProperty("controller"):WaitForObject()
-				balloon.context.RemoveMe()
-				balloon.context.PlaceInCapsule()
+		local player = other
 
-				balloon:MoveTo(propDisc:GetWorldPosition(), propSuctionSFX.stopTime)
+		player:AddImpulse(Vector3.UP * 100000)
+		-- local animatedMesh = player:FindDescendantByType("AnimatedMesh")
+		-- animatedMesh:PlayAnimation("unarmed_throw")
 
+		for i, v in ipairs(player:GetEquipment()) do
+			if v:IsA("Equipment") and v.name == "bnp.balloonEquipment" then
+				local equipment = v
+				local balloon = equipment:FindChildByType("Script")
+				local bnpColor = balloon.context.bnpColor
+				local spawner = balloon.context.spawnedBy
+				
+				balloon.context.propDunkAbility:Activate()
+				-- equipment:GetCustomProperty("Dunk"):WaitForObject():Activate()
+				-- balloon.context.propDunkAbility:Activate()
+
+				vfx = World.SpawnAsset(propLevelController.context.propBurstVFXTemplate)
+				vfx:SetWorldPosition(propDisc:GetWorldPosition())
+				vfx:SetSmartProperty("Color", propLevelController.context.ColorForBNPColor(bnpColor))
+				
+				balloon.context.DropByPlayer(player)
+				balloon.parent.collision = Collision.FORCE_OFF
+				balloon.parent:MoveTo(propDisc:GetWorldPosition(), propSuctionSFX.length)
+				
 				propSuctionSFX:Play()
-				Task.Wait(propSuctionSFX.stopTime)
-				balloon.context.propLevelController.context.PlayPopSound()
-				balloon.context.ScoreByHopping(v.name)
-				balloon:Destroy()
+				Task.Wait(propSuctionSFX.length)
+				vfx:Play()
+				scored = propLevelController.context.PlayerJumpedOnOneLegCarryingBalloon(player.name, bnpColor, spawner, propDisc:GetWorldPosition())
+				balloon.parent:Destroy()
 			end
 		end
-	
-	elseif other:IsA("CoreObject") and other.name == "bnp_balloon" then
-		local balloon = other:GetCustomProperty("controller"):WaitForObject()
-		
-		other.collision = Collision.FORCE_OFF
-		balloon.context.PlaceInCapsule()
-		
-		other:MoveTo(propDisc:GetWorldPosition(), propSuctionSFX.stopTime)
+	elseif other.name == "bnp.balloonPhysics" then
+		local physics = other
+		local balloon = physics:FindChildByType("Script")
+		if balloon ~= nil then
+			local boppedBy = balloon.context.lastBoppedBy
+			local bnpColor = balloon.context.bnpColor
+			local spawner = balloon.context.spawnedBy
 
-		propSuctionSFX:Play()
-		Task.Wait(propSuctionSFX.stopTime)
-		balloon.context.propLevelController.context.PlayPopSound()
-		balloon.context.ScoreByBopping()
-		balloon:Destroy()
+			physics.collision = Collision.FORCE_OFF
+			physics:MoveTo(propDisc:GetWorldPosition(), propSuctionSFX.length)
+
+			propSuctionSFX:Play()
+			Task.Wait(propSuctionSFX.length)
+			vfx = World.SpawnAsset(propLevelController.context.propBurstVFXTemplate)
+			vfx:SetWorldPosition(propDisc:GetWorldPosition())
+			vfx:SetSmartProperty("Color", propLevelController.context.ColorForBNPColor(bnpColor))
+			
+			propLevelController.context.PlayerBoppedBalloon(boppedBy, bnpColor, spawner, propDisc:GetWorldPosition())
+			physics:Destroy()
+		end
 	end
 end
 
 function OnEndOverlap(whichTrigger, other)
 	if other:IsA("Player") then
-		print(whichTrigger.name .. ": End Trigger Overlap with " .. other.name)
 	end
 end
 
-trigger.beginOverlapEvent:Connect(OnBeginOverlap)
-trigger.endOverlapEvent:Connect(OnEndOverlap)
+propTrigger.beginOverlapEvent:Connect(OnBeginOverlap)
+propTrigger.endOverlapEvent:Connect(OnEndOverlap)

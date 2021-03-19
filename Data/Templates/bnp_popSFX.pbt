@@ -1,13 +1,13 @@
 Assets {
-  Id: 3747679271218832399
-  Name: "bnp_balloonPluckSFX"
+  Id: 12520284404930737544
+  Name: "bnp_popSFX"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 7136592444141068874
+      RootId: 16103583640881203657
       Objects {
-        Id: 7136592444141068874
-        Name: "bnp_balloonPluckSFX"
+        Id: 16103583640881203657
+        Name: "bnp.popSFX"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14954585164054304824
+        ParentId: 4781671109827199097
+        UnregisteredParameters {
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -28,9 +30,10 @@ Assets {
         }
         AudioInstance {
           AudioAsset {
-            Id: 2043468115795753872
+            Id: 15085542957381253610
           }
-          Volume: 1.86643946
+          Transient: true
+          Volume: 2.44944048
           Falloff: -1
           Radius: -1
           EnableOcclusion: true
@@ -40,12 +43,12 @@ Assets {
       }
     }
     Assets {
-      Id: 2043468115795753872
-      Name: "Cartoon Pluck Twang String 01 SFX"
+      Id: 15085542957381253610
+      Name: "Balloon Pop Explode Burst 02 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
-        AssetId: "sfx_cartoon_pluck_twang_string_01_Cue_ref"
+        AssetId: "sfx_balloon_pop_explode_burst_02_Cue_ref"
       }
     }
     PrimaryAssetId {

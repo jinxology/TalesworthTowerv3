@@ -15,7 +15,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 2373258652354937627
+        ChildIds: 6724569280577831753
         ChildIds: 13809073812587238788
         ChildIds: 3813593229499958027
         ChildIds: 5287473965524172670
@@ -39,15 +40,68 @@ Assets {
         }
       }
       Objects {
+        Id: 6724569280577831753
+        Name: "Point Light"
+        Transform {
+          Location {
+            Z: 30
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5232831714974278699
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Light {
+          Intensity: 1
+          Color {
+            G: 0.856939
+            B: 1
+            A: 1
+          }
+          VolumetricIntensity: 5
+          TeamSettings {
+          }
+          Light {
+            Temperature: 6500
+            LocalLight {
+              AttenuationRadius: 1000
+              PointLight {
+                SourceRadius: 20
+                SoftSourceRadius: 20
+                FallOffExponent: 8
+                UseFallOffExponent: true
+              }
+            }
+            MaxDrawDistance: 5000
+            MaxDistanceFadeRange: 1000
+          }
+        }
+      }
+      Objects {
         Id: 13809073812587238788
         Name: "Spotlight"
         Transform {
           Location {
-            Y: -25
-            Z: 450
+            Y: -24.9999981
+            Z: 460
           }
           Rotation {
             Pitch: -90
+            Yaw: 35.2644
+            Roll: -35.2644043
           }
           Scale {
             X: 1
@@ -102,8 +156,9 @@ Assets {
         Name: "Fantasy Mace Guard 01"
         Transform {
           Location {
-            X: 0.000122070313
-            Z: 100
+            X: 0.000122070298
+            Y: -7.27595761e-12
+            Z: 110
           }
           Rotation {
           }
@@ -144,7 +199,7 @@ Assets {
         Name: "Fantasy Pommel 03"
         Transform {
           Location {
-            Z: 125
+            Z: 135
           }
           Rotation {
           }
@@ -185,11 +240,14 @@ Assets {
         Name: "Modern Weapon Barrel 01"
         Transform {
           Location {
-            X: 0.000122070313
-            Z: 100
+            X: 0.000122070298
+            Y: -7.27595761e-12
+            Z: 110
           }
           Rotation {
             Pitch: -90
+            Yaw: 35.2644
+            Roll: -35.2644043
           }
           Scale {
             X: 2
@@ -253,8 +311,8 @@ Assets {
         Name: "Fantasy Chest Base 01"
         Transform {
           Location {
-            X: 0.000122070313
-            Z: -10
+            X: 0.000122070298
+            Y: -7.27595761e-12
           }
           Rotation {
           }
@@ -295,11 +353,11 @@ Assets {
         Name: "Fantasy Chest Lid 01"
         Transform {
           Location {
-            Y: -40
-            Z: 35
+            Y: -39.9999962
+            Z: 45
           }
           Rotation {
-            Roll: -89.9999847
+            Roll: -90
           }
           Scale {
             X: 1
@@ -338,7 +396,7 @@ Assets {
         Name: "Sphere - Half Thick"
         Transform {
           Location {
-            Z: 20
+            Z: 30
           }
           Rotation {
           }
@@ -349,7 +407,6 @@ Assets {
           }
         }
         ParentId: 5232831714974278699
-        ChildIds: 6724569280577831753
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -396,60 +453,11 @@ Assets {
         }
       }
       Objects {
-        Id: 6724569280577831753
-        Name: "Point Light"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 2
-            Y: 2
-            Z: 2
-          }
-        }
-        ParentId: 4245650068594392082
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Light {
-          Intensity: 2.09214854
-          Color {
-            G: 0.856939
-            B: 1
-            A: 1
-          }
-          VolumetricIntensity: 5
-          TeamSettings {
-          }
-          Light {
-            Temperature: 6500
-            LocalLight {
-              AttenuationRadius: 1000
-              PointLight {
-                SourceRadius: 20
-                SoftSourceRadius: 20
-                FallOffExponent: 8
-                UseFallOffExponent: true
-              }
-            }
-            MaxDrawDistance: 5000
-            MaxDistanceFadeRange: 1000
-          }
-        }
-      }
-      Objects {
         Id: 2343728015642178861
         Name: "Pipe"
         Transform {
           Location {
+            Z: 10
           }
           Rotation {
           }

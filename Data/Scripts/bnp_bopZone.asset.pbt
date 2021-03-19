@@ -1,6 +1,6 @@
 Assets {
   Id: 18262472954233579002
-  Name: "bnp.bopZone"
+  Name: "bnp_bopZone"
   PlatformAssetType: 3
   TextAsset {
   }

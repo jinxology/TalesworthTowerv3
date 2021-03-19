@@ -17,8 +17,8 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 13981351376373047398
-        ChildIds: 13936740944661959112
         ChildIds: 2561629949460425856
+        ChildIds: 7349832718321831133
         ChildIds: 1363290900795512115
         ChildIds: 13236254207739484376
         ChildIds: 7544747322359289016
@@ -43,17 +43,16 @@ Assets {
         Name: "Fantasy Spear Head 01"
         Transform {
           Location {
-            X: 48.1678505
-            Y: 2.86102295e-06
-            Z: 69.2910156
+            X: 52
+            Z: 79
           }
           Rotation {
             Yaw: -90
             Roll: 22.4998894
           }
           Scale {
-            X: 0.8
-            Y: 1.75
+            X: 1.30000007
+            Y: 3.10000014
             Z: 1.2
           }
         }
@@ -77,7 +76,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_Detail1:id"
             AssetReference {
-              Id: 5861223425148352605
+              Id: 9757497992016708607
             }
           }
           Overrides {
@@ -86,59 +85,11 @@ Assets {
               Id: 5861223425148352605
             }
           }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 5605120965849612947
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          InteractWithTriggers: true
-          StaticMesh {
-            Physics {
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 13936740944661959112
-        Name: "Fantasy Sword Guard 01"
-        Transform {
-          Location {
-            X: 44.3409119
-            Y: 2.86102295e-06
-            Z: 60.0522461
-          }
-          Rotation {
-            Yaw: -90
-            Roll: 22.4998894
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 8350359172534056667
-        UnregisteredParameters {
           Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
+            Name: "ma:Shared_Detail1:color"
             Color {
-              R: 0.359375
-              G: 0.291129
-              B: 0.187908
+              R: 1
+              G: 0.064803
               A: 1
             }
           }
@@ -155,7 +106,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 1920010878601219178
+            Id: 5605120965849612947
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -210,6 +161,50 @@ Assets {
           InteractWithTriggers: true
           StaticMesh {
             Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 7349832718321831133
+        Name: "Fantasy Staff Guard 02"
+        Transform {
+          Location {
+            X: 50
+            Z: 74
+          }
+          Rotation {
+            Pitch: -22.5
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8350359172534056667
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 17800352344476461393
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
             }
           }
         }
@@ -381,21 +376,21 @@ Assets {
       }
     }
     Assets {
-      Id: 1920010878601219178
-      Name: "Fantasy Sword Guard 01"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weap_fan_guard_sword_001"
-      }
-    }
-    Assets {
       Id: 12510064410993333055
       Name: "Fantasy Pommel 04"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_weap_fan_pommel_004"
+      }
+    }
+    Assets {
+      Id: 17800352344476461393
+      Name: "Fantasy Staff Guard 02"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_weap_fan_guard_staff_002"
       }
     }
     Assets {

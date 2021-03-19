@@ -1,5 +1,13 @@
 -- ftp acab xo paegrid
 
+
+-- balloons come out in random order, help to guarantee win conditions are possible
+--		start: generate 3 sets of 4 and randomize them (12 random equally distributed in pipe)
+--		feed a balloon: if only one set of 4 is left in the pipe:
+--			generate another 3x4 pipe
+--			insert first set of 4 ahead of 4 remaining, remaining 8 at end
+
+
 local propMainGameController = script:GetCustomProperty("gameController")
 
 if (propMainGameController) then
@@ -13,17 +21,22 @@ local propSpearTemplate = script:GetCustomProperty("spearTemplate")
 local propSwordTemplate = script:GetCustomProperty("swordTemplate")
 local propBalloonTemplate = script:GetCustomProperty("balloonTemplate")
 local propSignTemplate = script:GetCustomProperty("signTemplate")
+propBurstVFXTemplate = script:GetCustomProperty("burstVFX")
 
 local propStartSign1 = script:GetCustomProperty("startSign1"):WaitForObject()
 local propStartSign2 = script:GetCustomProperty("startSign2"):WaitForObject()
 local propStartSign3 = script:GetCustomProperty("startSign3"):WaitForObject()
 local propIntakeGlow = script:GetCustomProperty("intakeGlow"):WaitForObject()
-propPopSFX = script:GetCustomProperty("bnp_balloonPopSFX"):WaitForObject()
+local propBopZoneTrigger = script:GetCustomProperty("bopZoneTrigger"):WaitForObject()
+propPopSFXTemplate = script:GetCustomProperty("popSFX")
+propBounceSFXTemplate = script:GetCustomProperty("bounceSFX")
 propBoomSFX = script:GetCustomProperty("bnp_balloonBoomSFX"):WaitForObject()
+propFumbleSFX = script:GetCustomProperty("bnp_balloonFumbleSFX"):WaitForObject()
+local propInflateSFX = script:GetCustomProperty("inflateSFX"):WaitForObject()
+local propCountSFX = script:GetCustomProperty("countSFX"):WaitForObject()
 
 -- local propIntakeSparkle = script:GetCustomProperty("intakeSparke"):WaitForObject()
 local propMainTextLabel = script:GetCustomProperty("mainTextLabel"):WaitForObject()
-local propInstructionsTextLabel = script:GetCustomProperty("instructionsTextLabel"):WaitForObject()
 local propWeaponStandContainer = script:GetCustomProperty("weaponStands"):WaitForObject()
 local propSpawnerContainer = script:GetCustomProperty("spawners"):WaitForObject()
 local propSignContainer = script:GetCustomProperty("signContainer"):WaitForObject()
@@ -62,6 +75,9 @@ local BNP_PLATE = 3
 local BNP_ARMOR_FIRST = BNP_LEATHER
 local BNP_WEAPON_LAST = BNP_PLATE
 
+local BNP_POP = 1
+local BNP_BOP = 2
+local BNP_JUMP_ON_ONE_LEG = 3
 
 --	CONSTANTS
 local signLocations = {
@@ -79,13 +95,15 @@ local signRotations = {
 }
 
 --	RULES
-local	numBoppable = 4
-local	allowBopping = true
-local	allowHopping = true
-local	allowPopping = true
-local	coloredWeapons = false
+local	numBoppable = 3
+local	numSpawned = 4
+-- local	allowBopping = true
+-- local	allowPopping = true
+-- local	allowJumpingOnOneLeg = true
+local	coloredWeapons = true
 local	armoredBalloons = false
 local	heliumBalloons = false
+local	levelDuration = 60
 
 --	GAME STATE
 local	bopColors = {}
@@ -93,27 +111,30 @@ local	teamScore = 0
 local	winCondition = 8
 local	teamFailures = 0
 local	lossCondition = 3
+local	balloonsInPipe = {}
 local	balloonOnSpawner = {}
 local	signs = {}
+local	intakeCycleColors = {}
+local	intakeCycleColorIndex = 0
+local	roundDuration = 120
 
-function OnBindingPressed(whichPlayer, binding)
-	--print("player " .. whichPlayer.name .. " pressed binding: " .. binding)
-	-- if (binding == "ability_primary") then 
-	
-	-- elseif (binding == "ability_extra_21" or binding == "ability_extra_30" or binding == "ability_extra_31" or binding == "ability_extra_32") then
-	-- 	print("player" .. whichPlayer.name .. " walking")
-	-- end
-end
+function LevelPowerUp()
+	propStartSign1.isEnabled = true
+	propStartSign2.isEnabled = true
+	propStartSign3.isEnabled = true
+	SpawnWeapons()
+	SpawnSigns()
 
-function OnBindingReleased(whichPlayer, binding)
-	--print("player " .. whichPlayer.name .. " released binding: " .. binding)
-	-- if (binding == "ability_primary") then 
-	
-	-- end
+	script:SetNetworkedCustomProperty("currentScore", teamScore)
+	script:SetNetworkedCustomProperty("strikeCount", teamFailures)
+	script:SetNetworkedCustomProperty("levelActive", true)
+	script:SetNetworkedCustomProperty("timeRemaining", -1)
+
+	propBopZoneTrigger.isEnabled = false
 end
 
 function ColorForBNPColor(bnpColor)
-	local color
+	local color = Color.WHITE
 	if bnpColor == BNP_YELLOW then
 		color = Color.FromStandardHex("#FFFF00FF")
 	elseif bnpColor == BNP_RED then
@@ -122,39 +143,34 @@ function ColorForBNPColor(bnpColor)
 		color =  Color.FromStandardHex("#00FF00FF")
 	elseif bnpColor == BNP_BLUE then
 		color =  Color.FromStandardHex("#0000FFFF")
-	else
-		color = Color.FromStandardHex("FFFFFFFF")
 	end
 
 	return color
 end
 
 function BuildRuleset()
-	allowBopping = true
-	allowHopping = true
-	allowPopping = true
-	coloredWeapons = false
+	-- allowBopping = true
+	-- allowPopping = true
+	-- allowJumpingOnOneLeg = true
+	coloredWeapons = true
 	armoredBalloons = false
 	heliumBalloons = false
 	instructions = ""
 
-	if allowBopping then
-		instructions = instructions .. "• Bop a balloon into the center zone: 1 point\n"
-	end
-	if allowPopping then
-		instructions = instructions .. "• Pop a balloon on a wall mounted weapon: 1 point\n"
-	end
-	instructions = instructions .. "• Pop or bop the wrong balloon: -1 point\n"
-	if allowHopping then
-		instructions = instructions .. "• Carry a balloon into the center zone: 1 point\n• This is absolutely NOT called hopping, don't be ridiculous"
-	end
+	-- if allowBopping then
+		instructions = instructions .. "• Bop a balloon into the center zone to score\n"
+		instructions = instructions .. "• Bop the wrong color balloon at your own peril\n"
+		instructions = instructions .. "• Pop extra balloons on wall mounted weapons\n"
+	-- end
 	if coloredWeapons then
 		instructions = instructions .. "• Weapons only work on balloons of the same color\n"
 	end
 	if armoredBalloons then
 		instructions = instructions .. "• The balloons have... armor?\n"
 	end
-	propInstructionsTextLabel.text = instructions;
+	instructions = instructions .. "• Score " .. winCondition .. " points in " .. levelDuration .. " seconds to win\n"
+	script:SetNetworkedCustomProperty("levelInstructions", instructions)
+	script:SetNetworkedCustomProperty("winCondition", winCondition)
 end
 
 
@@ -193,85 +209,96 @@ function SpawnWeapons()
 			weapon = propSpearTemplate
 		end
 		
-		color = ColorForBNPColor(popper.color)
+		if coloredWeapons then
+			color = ColorForBNPColor(popper.color)
+		else
+			color = Color.WHITE
+		end
 		asset = World.SpawnAsset(weapon, { parent = stand })
 		
 		stand.context.bnpColor = popper.color
 		stand.context.bnpWeapon = popper.weapon
 		stand.context.propLevelController = script
+
 		for _, colorElement in pairs(stand:GetCustomProperty("colorElements"):WaitForObject():GetChildren()) do
 			colorElement:SetColor(color)
 		end
 	end
 end
 
-function PlayPopSound()
-	propPopSFX:Play()
-	Task.Wait(0.15)
-	propBoomSFX:Play()
-end
-
 
 function LevelVictory()
+	for _, player in ipairs(Game:GetPlayers()) do
+		-- LevelPlayerExited(player)
+	end
+
 	propMainGameController.context.LevelEnd(true)
 end
 
 function LevelFailed()
+	for _, player in ipairs(Game:GetPlayers()) do
+		-- LevelPlayerExited(player)
+	end
+
 	propMainGameController.context.LevelEnd(false)
 end
 
 function LevelBegin()
-	propMainTextLabel.text = "READY"
-	Task.Wait(1)
-	propMainTextLabel.text = "STEADY"
-	Task.Wait(.1)
-	propStartSign1.isEnabled = false
-	propStartSign2.isEnabled = false
-	propStartSign3.isEnabled = false
-	Task.Wait(.2)
-	propStartSign1.isEnabled = true
-	propStartSign2.isEnabled = true
-	propStartSign3.isEnabled = true
-	Task.Wait(.4)
-	propStartSign1.isEnabled = false
-	propStartSign2.isEnabled = false
-	propStartSign3.isEnabled = false
-	Task.Wait(.1)
-	propStartSign1.isEnabled = true
-	propStartSign2.isEnabled = true
-	propStartSign3.isEnabled = true
-	Task.Wait(.1)
-	propStartSign1.isEnabled = false
-	propStartSign2.isEnabled = false
-	propStartSign3.isEnabled = false
-	Task.Wait(.1)
-	propMainTextLabel.text = "GO"
-	Task.Wait(1)
-	propMainTextLabel.text = ""
-	BeginFirstRound()
+	Task.Spawn(FlickerStartSign, 1.2)
+	Task.Spawn(ReadySteadyGo)
+	Task.Spawn(BeginFirstRound, 3)
+	propBopZoneTrigger.isEnabled = true
 end
 
-function LevelPowerUp()
-	propStartSign1.isEnabled = true
-	propStartSign2.isEnabled = true
-	propStartSign3.isEnabled = true
-	propInstructionsTextLabel.visibility = Visibility.FORCE_ON
-	SpawnWeapons()
-	SpawnSigns()
+function ReadySteadyGo()
+	propCountSFX.stopTime = 1
+	propCountSFX:Play()
+	propMainTextLabel.text = "READY"
+	Task.Wait(1)
+	propCountSFX:Play()
+	propMainTextLabel.text = "STEADY"
+	Task.Wait(1)
+	propCountSFX:Play()
+	propMainTextLabel.text = "GO"
+	Task.Wait(1)
+	propCountSFX.stopTime = propCountSFX.length
+	propCountSFX:Play()
+	propMainTextLabel.text = ""
+	
+	propTimerTask = Task.Spawn(CountdownRound)
+	propTimerTask.repeatInterval = 1
+	propTimerTask.repeatCount = roundDuration
+end
+
+function CountdownRound()
+	
+	script:SetNetworkedCustomProperty("timeRemaining", -1)
+end
+
+function FlickerStartSign()
+	local timing = { .05, .05, .05, .4, .1, .9, .05, 0.2, .05, .05, .05 }
+	local enabled = false
+
+	for _, duration in pairs(timing) do
+		propStartSign1.isEnabled = enabled
+		propStartSign2.isEnabled = enabled
+		propStartSign3.isEnabled = enabled
+		Task.Wait(duration)
+		enabled = not enabled
+	end
+
+	propStartSign1.isEnabled = false
+	propStartSign2.isEnabled = false
+	propStartSign3.isEnabled = false
 end
 
 function LevelPowerDown()
-	print("power down bop and pop")
+	script:SetNetworkedCustomProperty("levelActive", false)
+
 	--	destroy all networked objects
 	--DestroyWeapons()
 	--DestroySigns()
 	--DestroyBalloons()
-end
-
-function CountDownToBeginRound()
-	--	count down timer
-	propInstructionsTextLabel.visibility = Visibility.FORCE_ON
-	propMainGameController.context.StartTimer(3, BeginRound)
 end
 
 function BeginFirstRound()
@@ -290,14 +317,20 @@ function BeginRound()
 
 	local		boppable = { BNP_RED, BNP_BLUE, BNP_YELLOW, BNP_GREEN }
 
-	for i = 4, numBoppable, -1 do
+	print("allow " .. numBoppable .. " boppable colors")
+	numPoppable = 4 - numBoppable
+	for i = 1, numPoppable, 1 do
 		index = math.random(1, #boppable)
-		bopColors[boppable[i]] = false
-		table.remove(boppable, i)
+		bopColors[boppable[index]] = false
+		table.remove(boppable, index)
 	end
 
-	for _, boppableColor in pairs(bopColors) do
-		print("boppable: ", boppableColor)
+	for bnpColor, isBoppable in pairs(bopColors) do
+		if isBoppable then
+			print("bop: ", ColorForBNPColor(bnpColor))
+		else
+			print("pop: ", ColorForBNPColor(bnpColor))
+		end
 	end
 	-- bopColor = ColorForBNPColor(bopBNPColor)
 	-- popColor = ColorForBNPColor(popBNPColor)
@@ -306,23 +339,82 @@ function BeginRound()
 	SpawnBalloons()
 	ColorSigns()
 	Task.Wait(3)
-	propInstructionsTextLabel.visibility = Visibility.FORCE_OFF
+	-- propInstructionsPanel.visibility = Visibility.FORCE_OFF
 end
 
 function ColorSigns()
 	local	startIndex = math.random(1, #signs)
 	
-	for bopColor, isPop in pairs(bopColors) do
+	intakeCycleColors = {}
+	
+	for bopColor, isBop in pairs(bopColors) do
 		sign = signs[(bopColor + startIndex) % #signs + 1]
+		color = ColorForBNPColor(bopColor)
 		for _, element in pairs(sign:FindChildByName("bnp_colorElements"):GetChildren()) do
-			element:SetColor(ColorForBNPColor(bopColor))
+			element:SetColor(color)
 		end
 
-		if isPop then
-			sign:GetCustomProperty("bElement1"):WaitForObject():Destroy()
-			sign:GetCustomProperty("bElement2"):WaitForObject():Destroy()
+		if isBop then
+			table.insert(intakeCycleColors, color)
 		end
+
+		sign:GetCustomProperty("bElement1"):WaitForObject().isEnabled = isBop
+		sign:GetCustomProperty("bElement2"):WaitForObject().isEnabled = isBop
 	end
+
+	print(#intakeCycleColors .. " boppable")
+	if numBoppable == 1 then
+		propColorIntakeTask.Cancel()
+		propColorIntakeTask = nil
+		intakeCycleColorIndex = 1
+		ColorIntake()
+	else
+		intakeCycleColorIndex = 1
+		propColorIntakeTask = Task.Spawn(ColorIntake)
+		propColorIntakeTask.repeatCount = -1
+		propColorIntakeTask.repeatInterval = 3
+	end
+end
+
+intakeToColor = Color.WHITE
+intakeFromColor = nil
+fadeIntakeColorTask = nil
+fadeIntakeStartTime = 0
+
+function ColorIntake()
+	if numBoppable == 1 then
+		propIntakeGlow:SetColor(intakeCycleColors[intakeCycleColorIndex])
+	else
+		intakeCycleColorIndex = (intakeCycleColorIndex + 1) % (numBoppable) + 1
+		intakeFromColor = intakeToColor
+		intakeToColor = intakeCycleColors[intakeCycleColorIndex]
+		
+		fadeIntakeStartTime = time()
+		fadeIntakeColorTask = Task.Spawn(FadeIntakeColor)
+		fadeIntakeColorTask.repeatCount = 0
+	end
+end
+
+function FadeIntakeColor()
+	local	deltaTime = time() - fadeIntakeStartTime
+	local	progress = 0.5
+	local	fadeDuration = 1
+	local	fromColor = intakeFromColor
+	local	toColor = intakeToColor
+
+	if deltaTime > fadeDuration then
+		fadeIntakeColorTask:Cancel()
+		fadeIntakeColorTask = nil
+	elseif deltaTime > fadeDuration / 2 then
+		progress = (deltaTime - fadeDuration / 2) / fadeDuration
+		fromColor = Color.GetDesaturated(intakeToColor, 1)
+	else
+		progress = deltaTime / fadeDuration
+		toColor = Color.GetDesaturated(intakeFromColor, 1)
+	end
+
+	propIntakeGlow:SetColor(Color.Lerp(fromColor, toColor, progress * 2))
+
 end
 
 function SpawnSigns()
@@ -333,41 +425,174 @@ function SpawnSigns()
 	end
 end
 
-function SpawnBalloons()
-	local	colors = {}
+local balloonPipe = {}
+local emptySpawners = {}
 
+function SpawnBalloons()
+	local	balloonsToAdd = {}
+
+	--	prime balloon pipe, one of each color in random order
 	for color = BNP_COLOR_FIRST, BNP_COLOR_LAST, 1 do
-		table.insert(colors, ColorForBNPColor(color))
+		table.insert(balloonsToAdd, color)
+	end
+
+	balloonPipe = FYShuffle(balloonsToAdd)
+
+	--	two of each color in random order
+	balloonsToAdd = {}
+	for color = BNP_COLOR_FIRST, BNP_COLOR_LAST, 1 do
+		table.insert(balloonsToAdd, color)
+		table.insert(balloonsToAdd, color)
+	end
+
+	balloonsToAdd = FYShuffle(balloonsToAdd)
+	for _, bnpColor in ipairs(balloonsToAdd) do
+		table.insert(balloonPipe, bnpColor)
+	end
+
+	for _, bnpColor in ipairs(balloonPipe) do
+		print(ColorForBNPColor(bnpColor))
 	end
 
 	for _, spawner in pairs(propSpawnerContainer:GetChildren()) do
-		local	index = math.random(1, #colors)
-		local	balloon = World.SpawnAsset(propBalloonTemplate, { parent = spawner,  position = Vector3.New(0, 0, 160) })
-		local	color = colors[index]
-		local	balloonScript = balloon:GetCustomProperty("controller"):WaitForObject()
-		
-		balloonScript.context.SetColor(color)
+		table.insert(emptySpawners, spawner)
+	end
 
-		table.remove(colors, index)
-
-		balloonOnSpawner[spawner.id] = balloon
+	for index = 1, numSpawned, 1 do
+		SpawnNextBalloon()
 	end
 end
 
-function EndRound(scored)
+function FYShuffle( tInput )
+    local tReturn = {}
+    for i = #tInput, 1, -1 do
+        local j = math.random(i)
+        tInput[i], tInput[j] = tInput[j], tInput[i]
+        table.insert(tReturn, tInput[i])
+    end
+    return tReturn
+end
+
+function FillBalloonPipe()
+	if (#balloonPipe < 4) then
+		balloonsToAdd = {}
+		for color = BNP_COLOR_FIRST, BNP_COLOR_LAST, 1 do
+			table.insert(balloonsToAdd, color)
+			table.insert(balloonsToAdd, color)
+			table.insert(balloonsToAdd, color)
+		end
+	
+		balloonsToAdd = FYShuffle(balloonsToAdd)
+		for _, bnpColor in ipairs(balloonsToAdd) do
+			table.insert(balloonPipe, bnpColor)
+		end
+	end
+end
+
+function SpawnNextBalloon()
+	FillBalloonPipe()
+
+	local	spawnerIndex = math.random(#emptySpawners - 4)
+	local	spawner = emptySpawners[spawnerIndex]
+	local	balloon = World.SpawnAsset(propBalloonTemplate, { parent = spawner,  position = Vector3.New(0, 0, 160) })
+	local	bnpColor = balloonPipe[1]
+
+	propInflateSFX:SetWorldPosition(balloon:GetWorldPosition())
+	propInflateSFX:Play()
+	
+	print(balloon.name)
+	balloon.context.SetBNPColor(bnpColor, ColorForBNPColor(bnpColor))
+	balloon.context.spawnedBy = spawner
+
+	table.remove(balloonPipe, 1)
+	table.remove(emptySpawners, spawnerIndex)
+end
+
+local	POP_SCORED = 1
+local	POP_FUMBLED = 2
+local	POP_NOOP = 3
+
+function PlayPopSound(position, scoreKind)
+	pop = World.SpawnAsset(propPopSFXTemplate)
+	pop:SetWorldPosition(position)
+	pop:Play()
+	
+	if scoreKind == POP_SCORED then
+		Task.Wait(0.15)
+		propBoomSFX:Play()
+	elseif scoreKind == POP_FUMBLED then
+		Task.Wait(0.15)
+		propFumbleSFX:Play()
+	end
+end
+
+function PlayerBoppedBalloon(playerName, bnpColor, spawnedBy, popPosition)
+	table.insert(emptySpawners, spawnedBy)
+	scoreKind = POP_FUMBLED
+	
+	if bopColors[bnpColor] == true then
+		scoreKind = POP_SCORED
+	end
+
+	PlayPopSound(popPosition, scoreKind)
+	ScoreRound(playerName, bnpColor, scoreKind == POP_SCORED)
+end
+
+function PlayerPoppedBalloon(playerName, bnpColor, spawnedBy, popPosition)
+	table.insert(emptySpawners, spawnedBy)
+
+	if bopColors[bnpColor] == true then
+		PlayPopSound(popPosition, POP_FUMBLED)
+		ScoreRound(playerName, bnpColor, false)
+	else
+		PlayPopSound(popPosition, POP_NOOP)
+		Task.Spawn(SpawnNextBalloon, 3)
+	end
+end
+
+function PlayerJumpedOnOneLegCarryingBalloon(playerName, bnpColor, spawnedBy, popPosition)
+	table.insert(emptySpawners, spawnedBy)
+	scoreKind = POP_FUMBLED
+	
+	if bopColors[bnpColor] == true then
+		scoreKind = POP_SCORED
+	end
+
+	PlayPopSound(popPosition, scoreKind)
+	ScoreRound(playerName, bnpColor, scoreKind == POP_SCORED)
+end
+
+function ScoreRound(playerName, balloonColor, scored)
+	local		message
+
 	if scored then
 		teamScore = teamScore + 1
+		script:SetNetworkedCustomProperty("currentScore", teamScore)
+		message = playerName .. " scores!"
+		--	make text go pop
 	else
 		teamFailures = teamFailures + 1
+		script:SetNetworkedCustomProperty("strikeCount", teamFailures)
+		message = playerName .. " fumbles!"
+		--	make text go pop
 	end
 
 	print("Round ended, score: " .. teamScore .. ", failures: " .. teamFailures)
 	if (teamScore >= winCondition) then
+		propMainTextLabel.text = message .. "\nTEAM WINS\nFLUME SYSTEM ENGAGED"
+		Task.Wait(3)
+		propMainTextLabel.text = ""
 		LevelVictory()
 	elseif teamFailures >= lossCondition then
+		propMainTextLabel.text = message .. "\nTEAM LOSES\nFLUME SYSTEM ENGAGED"
+		Task.Wait(3)
+		propMainTextLabel.text = ""
 		LevelFailed()
 	else
-		CountDownToBeginRound()
+		Task.Spawn(SpawnNextBalloon, 3)
+		propMainTextLabel.text = message
+		Task.Wait(3)
+		propMainTextLabel.text = ""
 	end
 end
 

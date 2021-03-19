@@ -1,6 +1,6 @@
 Assets {
   Id: 3725358247211801753
-  Name: "bnp.popZone"
+  Name: "bnp_popZone"
   PlatformAssetType: 3
   TextAsset {
   }

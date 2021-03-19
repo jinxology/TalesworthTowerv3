@@ -1,6 +1,6 @@
 Assets {
   Id: 4189016969914121107
-  Name: "bnp.floorMaterial"
+  Name: "bnp_floorMaterial"
   PlatformAssetType: 13
   SerializationVersion: 78
   CustomMaterialAsset {

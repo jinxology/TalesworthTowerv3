@@ -1,13 +1,13 @@
 Assets {
-  Id: 9296655137487548959
+  Id: 1347402261159183206
   Name: "bnp_sign"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 16904010010892493179
+      RootId: 16862730201275127958
       Objects {
-        Id: 16904010010892493179
-        Name: "bnp.sign"
+        Id: 16862730201275127958
+        Name: "bnp_sign"
         Transform {
           Scale {
             X: 1
@@ -15,20 +15,24 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12572846780127715696
-        ChildIds: 16682606527118329704
-        ChildIds: 15911042227201339394
-        ChildIds: 17493960150390433985
-        ChildIds: 5355491400295783390
-        ChildIds: 9269644251471614738
-        ChildIds: 81216189378114216
-        ChildIds: 14482442141841774262
-        ChildIds: 202651330878955278
-        ChildIds: 6191949625388990706
-        ChildIds: 3034686385236350256
-        ChildIds: 14798889860655133338
-        ChildIds: 7679423604394028107
-        ChildIds: 13924970401498255333
+        ParentId: 4781671109827199097
+        ChildIds: 14790156749641555559
+        ChildIds: 13391828432403619851
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:bElement1"
+            ObjectReference {
+              SubObjectId: 15630825724440713423
+            }
+          }
+          Overrides {
+            Name: "cs:bElement2"
+            ObjectReference {
+              SubObjectId: 6380744844313215348
+            }
+          }
+        }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -43,18 +47,62 @@ Assets {
         }
       }
       Objects {
-        Id: 16682606527118329704
+        Id: 14790156749641555559
+        Name: "bnp_colorElements"
+        Transform {
+          Location {
+            X: 50
+            Y: -125
+            Z: 550
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16862730201275127958
+        ChildIds: 16486557112618362418
+        ChildIds: 11576582527083351206
+        ChildIds: 9119936601185543126
+        ChildIds: 15563987720087033521
+        ChildIds: 8378692865501963881
+        ChildIds: 12865712580220281394
+        ChildIds: 8570506127270873830
+        ChildIds: 6256443182348367330
+        ChildIds: 2337136560112650114
+        ChildIds: 17908300615775270000
+        ChildIds: 6380744844313215348
+        ChildIds: 15630825724440713423
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 16486557112618362418
         Name: "Corrugated Sheet Tall"
         Transform {
           Location {
-            X: -203.681641
-            Y: 118.785889
-            Z: 875
+            X: -253.681641
+            Y: 243.785889
+            Z: 325
           }
           Rotation {
             Pitch: -45.0000038
             Yaw: 135
-            Roll: -2.41483622e-06
+            Roll: -2.41483667e-06
           }
           Scale {
             X: 0.5
@@ -62,7 +110,7 @@ Assets {
             Z: 0.900000036
           }
         }
-        ParentId: 16904010010892493179
+        ParentId: 14790156749641555559
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -80,6 +128,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -106,16 +155,15 @@ Assets {
         }
       }
       Objects {
-        Id: 15911042227201339394
+        Id: 11576582527083351206
         Name: "Corrugated Sheet Tall"
         Transform {
           Location {
-            X: 255.919189
-            Y: -340.81665
-            Z: 550
+            X: 205.919189
+            Y: -215.81665
           }
           Rotation {
-            Yaw: -44.9999962
+            Yaw: -44.9999924
           }
           Scale {
             X: 0.5
@@ -123,7 +171,7 @@ Assets {
             Z: 2.3
           }
         }
-        ParentId: 16904010010892493179
+        ParentId: 14790156749641555559
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -141,6 +189,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -167,18 +216,18 @@ Assets {
         }
       }
       Objects {
-        Id: 17493960150390433985
+        Id: 9119936601185543126
         Name: "Corrugated Sheet Tall"
         Transform {
           Location {
-            X: 255.919189
-            Y: -340.81665
-            Z: 875
+            X: 205.919189
+            Y: -215.81665
+            Z: 325
           }
           Rotation {
             Pitch: -45.0000038
             Yaw: 135
-            Roll: -2.41483622e-06
+            Roll: -2.41483667e-06
           }
           Scale {
             X: 0.5
@@ -186,7 +235,7 @@ Assets {
             Z: 0.900000036
           }
         }
-        ParentId: 16904010010892493179
+        ParentId: 14790156749641555559
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -204,6 +253,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -230,456 +280,17 @@ Assets {
         }
       }
       Objects {
-        Id: 5355491400295783390
+        Id: 15563987720087033521
         Name: "Corrugated Sheet Tall"
         Transform {
           Location {
-            X: 255.919189
-            Y: -340.81665
-            Z: 1250
-          }
-          Rotation {
-            Pitch: -44.9999504
-            Yaw: -44.999958
-            Roll: -179.999969
-          }
-          Scale {
-            X: 0.5
-            Y: 1
-            Z: 0.900000036
-          }
-        }
-        ParentId: 16904010010892493179
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 11351458657934598484
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              G: 0.0199999809
-              B: 0.0199999809
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 17280976981586363031
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 9269644251471614738
-        Name: "Corrugated Sheet Tall"
-        Transform {
-          Location {
-            X: -9.23950195
-            Y: -75.6594238
-            Z: 1075
-          }
-          Rotation {
-            Pitch: -44.9999504
-            Yaw: -44.999958
-            Roll: -179.999969
-          }
-          Scale {
-            X: 0.5
-            Y: 1
-            Z: 0.900000036
-          }
-        }
-        ParentId: 16904010010892493179
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 11351458657934598484
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              G: 0.0199999809
-              B: 0.0199999809
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 17280976981586363031
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 81216189378114216
-        Name: "Corrugated Sheet Tall"
-        Transform {
-          Location {
-            X: -9.23950195
-            Y: -75.6594238
+            X: 205.919189
+            Y: -215.81665
             Z: 700
           }
           Rotation {
-            Pitch: -45.0000038
-            Yaw: 135
-            Roll: -2.41483622e-06
-          }
-          Scale {
-            X: 0.5
-            Y: 1
-            Z: 0.900000036
-          }
-        }
-        ParentId: 16904010010892493179
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 11351458657934598484
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              G: 0.0199999809
-              B: 0.0199999809
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 17280976981586363031
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 14482442141841774262
-        Name: "Corrugated Sheet Tall"
-        Transform {
-          Location {
-            X: -44.5927734
-            Y: -40.3059082
-            Z: 700.000244
-          }
-          Rotation {
-            Pitch: 44.9999924
-            Yaw: 135
-            Roll: 2.41483599e-06
-          }
-          Scale {
-            X: 0.5
-            Y: 1
-            Z: 0.900000036
-          }
-        }
-        ParentId: 16904010010892493179
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 11351458657934598484
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              G: 0.0199999809
-              B: 0.0199999809
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 17280976981586363031
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 202651330878955278
-        Name: "Corrugated Sheet Tall"
-        Transform {
-          Location {
-            X: -44.5927734
-            Y: -40.3059082
-            Z: 1075
-          }
-          Rotation {
-            Pitch: 44.999958
+            Pitch: -44.9999466
             Yaw: -44.9999542
-            Roll: -179.999985
-          }
-          Scale {
-            X: 0.5
-            Y: 1
-            Z: 0.900000036
-          }
-        }
-        ParentId: 16904010010892493179
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 11351458657934598484
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              G: 0.0199999809
-              B: 0.0199999809
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 17280976981586363031
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 6191949625388990706
-        Name: "Corrugated Sheet Tall"
-        Transform {
-          Location {
-            X: -203.681641
-            Y: 118.785889
-            Z: 1250
-          }
-          Rotation {
-            Pitch: -44.9999504
-            Yaw: -44.999958
-            Roll: -179.999969
-          }
-          Scale {
-            X: 0.5
-            Y: 1
-            Z: 0.900000036
-          }
-        }
-        ParentId: 16904010010892493179
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 11351458657934598484
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              G: 0.0199999809
-              B: 0.0199999809
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 17280976981586363031
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 3034686385236350256
-        Name: "Corrugated Sheet Tall"
-        Transform {
-          Location {
-            X: -203.680908
-            Y: 118.784912
-            Z: 550
-          }
-          Rotation {
-            Yaw: -44.9999962
-          }
-          Scale {
-            X: 0.5
-            Y: 1
-            Z: 2.3
-          }
-        }
-        ParentId: 16904010010892493179
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 11351458657934598484
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              G: 0.0199999809
-              B: 0.0199999809
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 17280976981586363031
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 14798889860655133338
-        Name: "Corrugated Sheet Tall"
-        Transform {
-          Location {
-            X: 255.919434
-            Y: -340.81665
-            Z: 950
-          }
-          Rotation {
-            Pitch: -44.9999199
-            Yaw: -44.9999847
             Roll: -179.999954
           }
           Scale {
@@ -688,7 +299,7 @@ Assets {
             Z: 0.900000036
           }
         }
-        ParentId: 16904010010892493179
+        ParentId: 14790156749641555559
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -706,6 +317,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -732,17 +344,18 @@ Assets {
         }
       }
       Objects {
-        Id: 7679423604394028107
+        Id: 8378692865501963881
         Name: "Corrugated Sheet Tall"
         Transform {
           Location {
-            X: 255.919434
-            Y: -340.81665
-            Z: 575
+            X: -59.239502
+            Y: 49.3405762
+            Z: 525
           }
           Rotation {
-            Pitch: -44.9999619
-            Yaw: 135
+            Pitch: -44.9999466
+            Yaw: -44.9999542
+            Roll: -179.999954
           }
           Scale {
             X: 0.5
@@ -750,7 +363,7 @@ Assets {
             Z: 0.900000036
           }
         }
-        ParentId: 16904010010892493179
+        ParentId: 14790156749641555559
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -768,6 +381,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -794,7 +408,452 @@ Assets {
         }
       }
       Objects {
-        Id: 13924970401498255333
+        Id: 12865712580220281394
+        Name: "Corrugated Sheet Tall"
+        Transform {
+          Location {
+            X: -59.239502
+            Y: 49.3405762
+            Z: 150
+          }
+          Rotation {
+            Pitch: -45.0000038
+            Yaw: 135
+            Roll: -2.41483667e-06
+          }
+          Scale {
+            X: 0.5
+            Y: 1
+            Z: 0.900000036
+          }
+        }
+        ParentId: 14790156749641555559
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 1
+              G: 0.0199999809
+              B: 0.0199999809
+              A: 1
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 17280976981586363031
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 8570506127270873830
+        Name: "Corrugated Sheet Tall"
+        Transform {
+          Location {
+            X: -94.5927734
+            Y: 84.6940918
+            Z: 150.000244
+          }
+          Rotation {
+            Pitch: 45.0000038
+            Yaw: 135
+            Roll: 3.62225455e-06
+          }
+          Scale {
+            X: 0.5
+            Y: 1
+            Z: 0.900000036
+          }
+        }
+        ParentId: 14790156749641555559
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 1
+              G: 0.0199999809
+              B: 0.0199999809
+              A: 1
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 17280976981586363031
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 6256443182348367330
+        Name: "Corrugated Sheet Tall"
+        Transform {
+          Location {
+            X: -94.5927734
+            Y: 84.6940918
+            Z: 525
+          }
+          Rotation {
+            Pitch: 44.9999466
+            Yaw: -44.9999428
+            Roll: -179.999985
+          }
+          Scale {
+            X: 0.5
+            Y: 1
+            Z: 0.900000036
+          }
+        }
+        ParentId: 14790156749641555559
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 1
+              G: 0.0199999809
+              B: 0.0199999809
+              A: 1
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 17280976981586363031
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 2337136560112650114
+        Name: "Corrugated Sheet Tall"
+        Transform {
+          Location {
+            X: -253.681641
+            Y: 243.785889
+            Z: 700
+          }
+          Rotation {
+            Pitch: -44.9999466
+            Yaw: -44.9999542
+            Roll: -179.999954
+          }
+          Scale {
+            X: 0.5
+            Y: 1
+            Z: 0.900000036
+          }
+        }
+        ParentId: 14790156749641555559
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 1
+              G: 0.0199999809
+              B: 0.0199999809
+              A: 1
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 17280976981586363031
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 17908300615775270000
+        Name: "Corrugated Sheet Tall"
+        Transform {
+          Location {
+            X: -253.680908
+            Y: 243.784912
+          }
+          Rotation {
+            Yaw: -44.9999924
+          }
+          Scale {
+            X: 0.5
+            Y: 1
+            Z: 2.3
+          }
+        }
+        ParentId: 14790156749641555559
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 1
+              G: 0.0199999809
+              B: 0.0199999809
+              A: 1
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 17280976981586363031
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 6380744844313215348
+        Name: "Corrugated Sheet Tall"
+        Transform {
+          Location {
+            X: 205.919434
+            Y: -215.81665
+            Z: 400
+          }
+          Rotation {
+            Pitch: -44.9998741
+            Yaw: -44.9999542
+            Roll: -179.999954
+          }
+          Scale {
+            X: 0.5
+            Y: 1
+            Z: 0.900000036
+          }
+        }
+        ParentId: 14790156749641555559
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 1
+              G: 0.0199999809
+              B: 0.0199999809
+              A: 1
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 17280976981586363031
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 15630825724440713423
+        Name: "Corrugated Sheet Tall"
+        Transform {
+          Location {
+            X: 205.919434
+            Y: -215.81665
+            Z: 25
+          }
+          Rotation {
+            Pitch: -44.999958
+            Yaw: 135
+            Roll: 2.41483463e-06
+          }
+          Scale {
+            X: 0.5
+            Y: 1
+            Z: 0.900000036
+          }
+        }
+        ParentId: 14790156749641555559
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 1
+              G: 0.0199999809
+              B: 0.0199999809
+              A: 1
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 17280976981586363031
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 13391828432403619851
         Name: "Chains"
         Transform {
           Location {
@@ -808,17 +867,18 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16904010010892493179
-        ChildIds: 10629327166229528664
-        ChildIds: 483922448620884414
-        ChildIds: 11246795161699100827
-        ChildIds: 273805943371114807
-        ChildIds: 12455063853598722080
-        ChildIds: 14679016499706607189
-        ChildIds: 4216204206260377488
-        ChildIds: 10146805078057681303
-        ChildIds: 15427937609378682129
-        ChildIds: 2354840141762200581
+        ParentId: 16862730201275127958
+        ChildIds: 16784968499457758565
+        ChildIds: 7450351850820917403
+        ChildIds: 9732909815959662887
+        ChildIds: 12284925016273722986
+        ChildIds: 4188643925570866592
+        ChildIds: 13926748094757961168
+        ChildIds: 10974939691433743203
+        ChildIds: 2952624807595808776
+        ChildIds: 3050262767639114884
+        ChildIds: 13819292380150622655
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -834,7 +894,7 @@ Assets {
         }
       }
       Objects {
-        Id: 10629327166229528664
+        Id: 16784968499457758565
         Name: "Chain Tile 01"
         Transform {
           Location {
@@ -852,9 +912,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13924970401498255333
+        ParentId: 13391828432403619851
         UnregisteredParameters {
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -881,7 +942,7 @@ Assets {
         }
       }
       Objects {
-        Id: 483922448620884414
+        Id: 7450351850820917403
         Name: "Chain Tile 01"
         Transform {
           Location {
@@ -899,9 +960,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13924970401498255333
+        ParentId: 13391828432403619851
         UnregisteredParameters {
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -928,7 +990,7 @@ Assets {
         }
       }
       Objects {
-        Id: 11246795161699100827
+        Id: 9732909815959662887
         Name: "Chain Tile 01"
         Transform {
           Location {
@@ -947,9 +1009,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13924970401498255333
+        ParentId: 13391828432403619851
         UnregisteredParameters {
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -976,7 +1039,7 @@ Assets {
         }
       }
       Objects {
-        Id: 273805943371114807
+        Id: 12284925016273722986
         Name: "Chain Tile 01"
         Transform {
           Location {
@@ -994,9 +1057,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13924970401498255333
+        ParentId: 13391828432403619851
         UnregisteredParameters {
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1023,7 +1087,7 @@ Assets {
         }
       }
       Objects {
-        Id: 12455063853598722080
+        Id: 4188643925570866592
         Name: "Chain Tile 01"
         Transform {
           Location {
@@ -1041,9 +1105,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13924970401498255333
+        ParentId: 13391828432403619851
         UnregisteredParameters {
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1070,7 +1135,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14679016499706607189
+        Id: 13926748094757961168
         Name: "Chain Tile 01"
         Transform {
           Location {
@@ -1088,9 +1153,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13924970401498255333
+        ParentId: 13391828432403619851
         UnregisteredParameters {
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1117,7 +1183,7 @@ Assets {
         }
       }
       Objects {
-        Id: 4216204206260377488
+        Id: 10974939691433743203
         Name: "Stone Block Standard"
         Transform {
           Location {
@@ -1134,7 +1200,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13924970401498255333
+        ParentId: 13391828432403619851
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1161,7 +1228,7 @@ Assets {
         }
       }
       Objects {
-        Id: 10146805078057681303
+        Id: 2952624807595808776
         Name: "Fantasy Pommel 04"
         Transform {
           Location {
@@ -1178,7 +1245,8 @@ Assets {
             Z: 4
           }
         }
-        ParentId: 13924970401498255333
+        ParentId: 13391828432403619851
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1205,7 +1273,7 @@ Assets {
         }
       }
       Objects {
-        Id: 15427937609378682129
+        Id: 3050262767639114884
         Name: "Stone Block Standard"
         Transform {
           Location {
@@ -1222,7 +1290,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13924970401498255333
+        ParentId: 13391828432403619851
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1249,7 +1318,7 @@ Assets {
         }
       }
       Objects {
-        Id: 2354840141762200581
+        Id: 13819292380150622655
         Name: "Fantasy Pommel 04"
         Transform {
           Location {
@@ -1266,7 +1335,8 @@ Assets {
             Z: 4
           }
         }
-        ParentId: 13924970401498255333
+        ParentId: 13391828432403619851
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
