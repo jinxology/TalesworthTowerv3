@@ -1,0 +1,205 @@
+roomSolutions = {0,0,0,0,}  --Array of solutions to each room
+roomDialInitialLocations = {0,0,0,0 }  --Array of Initial starting locations for each dial
+roomCurrentDials = {0,0,0,0} --Array of the current dials each room is set to
+
+startingPlatforms = nil
+startPlatformPosition = Vector3.New(300,0,4075)  --Set to values of Start Platform Group
+startPlatformRotation = Rotation.New(0,0,0)  --Set to values of Start Platform Group
+
+propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
+
+local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
+
+exitFlume = nil
+entranceFlume = nil
+exitFlumeLocation = Vector3.New(-1825,-50,4500)
+exitFlumeRotation = Rotation.New(0,0,0)
+--entranceFlumeLocation = Vector3.New(-1100,-3200,300)
+--entranceFlumeRotation = Rotation.New(0,0,0)
+--entranceFlumeEjectionVelocity = 20
+
+local REDROOM = 1  --assigning each room to a color with one room required to have "Orange"
+local BLUEROOM = 2
+local GREENROOM = 3
+local YELLOWROOM = 4
+
+local REDBIT = 2
+local BLUEBIT = 4
+local GREENBIT = 8
+local YELLOWBIT = 16
+local ORANGEBIT = 32
+
+local REDCOLORHEX = "E80000FF"
+local BLUECOLORHEX = "0063FEFF"
+local GREENCOLORHEX = "009E43FF"
+local YELLOWCOLORHEX = "EDFA00FF"
+local ORANGECOLORHEX = "FF7219FF"
+
+local propRedRoom = script:GetCustomProperty("RedRoom"):WaitForObject()
+local propBlueRoom = script:GetCustomProperty("BlueRoom"):WaitForObject()
+local propGreenRoom = script:GetCustomProperty("GreenRoom"):WaitForObject()
+local propYellowRoom = script:GetCustomProperty("YellowRoom"):WaitForObject()
+
+local propRedWallText = script:GetCustomProperty("RedWallText"):WaitForObject()
+local propBlueWallText = script:GetCustomProperty("BlueWallText"):WaitForObject()
+local propGreenWallText = script:GetCustomProperty("GreenWallText"):WaitForObject()
+local propYellowWallText = script:GetCustomProperty("YellowWallText"):WaitForObject()
+						
+local rotateToPosition = { 	Rotation.New(-90, 0, 90), --Rotating Positions Array 1,2,3,4,5
+							Rotation.New(-45, 0, 90),
+							Rotation.New(0, 0, 90),
+							Rotation.New(45,0, 90),
+							Rotation.New(90, 0, 90) }
+							
+local roomDials = {	propRedRoom:FindDescendantByName("Color Dials Room Dial"),  --Array of the dial objects in each room
+					propBlueRoom:FindDescendantByName("Color Dials Room Dial"),
+					propGreenRoom:FindDescendantByName("Color Dials Room Dial"),
+					propYellowRoom:FindDescendantByName("Color Dials Room Dial")	
+}
+
+--Randomize solutions for each room
+local function PickRandomDialSolutions()
+	--Rules for solutions
+	--1) One rooms solution has to have orange in it so that the players know which color designates the color to be used on the walls
+	--2) No room can have the same color solution
+
+	--Number of solutions per color is kept in a binary number 00000  Starting from the right so 00010 = Blue.
+	--This way we can use bitwise expressions to find out if a certain color has been chosen already
+	solutionBitWise = 0 --No colors chosen
+	
+ 	for roomIndex, value in next, roomSolutions do
+		--If this is the last room and ORANGE is not a solution yet, force it to be ORANGE
+		if roomIndex == #roomSolutions and (solutionBitWise & ORANGEBIT) == 0 then
+			roomSolutions[roomIndex] = ORANGEBIT
+		else --Otherwise select a random color that has not been chosen yet
+			repeat roomSolutions[roomIndex] = (2^math.random(1,5))  --Find a random solution for the walls (we need 1 of 5 numbers (2,4,8,16, or 32) that's why the 2^)
+				until (roomSolutions[roomIndex] & solutionBitWise) == 0 --Make sure this isn't already a solution for the room (If that bit is ON then don't use it again)
+				and (2^roomIndex & roomSolutions[roomIndex]) == 0  --Make sure the solution isn't the current rooms color (no RED-RED solutions)
+		end
+		
+		--Get the color to add to the solutionBitWise
+		addBit = 0
+		if roomSolutions[roomIndex] == REDBIT then
+			addBit = REDBIT
+		elseif roomSolutions[roomIndex] == BLUEBIT then
+			addBit = BLUEBIT
+		elseif roomSolutions[roomIndex] == GREENBIT then
+			addBit = GREENBIT
+		elseif roomSolutions[roomIndex] == YELLOWBIT then
+			addBit = YELLOWBIT
+		elseif roomSolutions[roomIndex] == ORANGEBIT then
+			addBit = ORANGEBIT
+		end
+		
+		--Add the selected BIT to the soltuionBitWise variable so it cannot get selected again
+		solutionBitWise = solutionBitWise + addBit
+	end	
+end
+
+--Randomize start location for each dial
+local function PickRandomInitialDialLocations()
+
+	--Loop through the room
+	for roomIndex, value in next, roomDialInitialLocations do
+		repeat roomDialInitialLocations[roomIndex] = math.random(1,5)  --Set the current rooms initial dial location to a random number between 1->5
+			until 2^roomDialInitialLocations[roomIndex] ~= roomSolutions[roomIndex]  --until the initial position is not the solution
+	end	
+end
+
+--Set the dails to their starting positions and save those positions in the roomCurrentDials Array
+local function InitializeDialLocations()
+
+	for roomIndex, value in next, roomDials do
+		roomDials[roomIndex]:RotateTo(rotateToPosition[roomDialInitialLocations[roomIndex]], 0, true)
+		roomCurrentDials[roomIndex] = roomDialInitialLocations[roomIndex]
+	end
+end	
+
+--Write solutions on walls
+local function SetSolutionsOnWalls()
+	local randomizeBit = 0
+	
+	for roomIndex, value in next, roomSolutions do
+		repeat randomRoom = math.random(1,4) 
+			until (2^randomRoom & randomizeBit) == 0
+			and randomRoom ~= roomIndex		
+
+		if ((randomizeBit == 6 or randomizeBit == 10 or randomizeBit == 12) == true)
+		and roomIndex == GREENROOM then
+			randomRoom = YELLOWROOM
+		end
+		
+		addBit = 0
+		if randomRoom == REDROOM then
+			addBit = REDBIT
+			propRedWallText.text = GetTextForWall(roomSolutions[roomIndex]) --Get actual text to be written on the Wall
+			propRedWallText:SetColor(Color.FromStandardHex(GetHexColorValues(roomIndex)))			
+		elseif randomRoom == BLUEROOM then
+			addBit = BLUEBIT
+			propBlueWallText.text = GetTextForWall(roomSolutions[roomIndex]) 
+			propBlueWallText:SetColor(Color.FromStandardHex(GetHexColorValues(roomIndex)))
+		elseif randomRoom == GREENROOM then
+			addBit = GREENBIT
+			propGreenWallText.text = GetTextForWall(roomSolutions[roomIndex]) 
+			propGreenWallText:SetColor(Color.FromStandardHex(GetHexColorValues(roomIndex)))
+		elseif randomRoom == YELLOWROOM then
+			addBit = YELLOWBIT
+			propYellowWallText.text = GetTextForWall(roomSolutions[roomIndex])
+			propYellowWallText:SetColor(Color.FromStandardHex(GetHexColorValues(roomIndex)))
+		end
+		randomizeBit = randomizeBit + addBit
+	end
+end
+
+function GetTextForWall(solutionIn)
+	if solutionIn == REDBIT then
+		return "RED"
+	elseif solutionIn == BLUEBIT then
+		return "BLUE"
+	elseif solutionIn == GREENBIT then
+		return "GREEN"
+	elseif solutionIn == YELLOWBIT then
+		return "YELLOW"
+	elseif solutionIn == ORANGEBIT then
+		return "ORANGE"
+	end
+end
+
+function GetHexColorValues(colorIn)
+	if colorIn == REDROOM then
+		return "E80000FF"
+	elseif colorIn == BLUEROOM then
+		return "0063FEFF"
+	elseif colorIn == GREENROOM then
+		return "009E43FF"
+	elseif colorIn == YELLOWROOM then
+		return "EDFA00FF"
+	end
+end
+
+function LevelPowerUp() 
+	--Code that acutally executes
+	PickRandomDialSolutions()
+	PickRandomInitialDialLocations()
+	InitializeDialLocations()
+	SetSolutionsOnWalls()
+end
+
+function LevelBegin()
+end
+
+function LevelEnd()
+
+end
+
+function LevelPowerDown() 
+end
+
+function LevelVictory()
+	--Spin Dials and light up room
+	propMainGameController.context.LevelEnd(true)
+end
+
+LevelPowerUp() 
+
+	
