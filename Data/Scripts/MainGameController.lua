@@ -11,7 +11,7 @@ local playerKeyBindingListener = nil
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
-levelList = {"ShapesAndButtons","BopAndPop","ColorDials","Maze","Jumpman","FarmGallery","PoolPlatforms"}
+levelList = {"ShapesAndButtons","BopAndPop","ColorDials","Maze","Jumpman","FarmGallery","BlockAndEscape"}
 requiredNbrPlayersReady = 4
 
  
