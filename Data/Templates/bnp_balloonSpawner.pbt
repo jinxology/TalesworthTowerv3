@@ -1,13 +1,13 @@
 Assets {
-  Id: 18076622906117623660
-  Name: "bnp_balloonSpawner"
+  Id: 14030233194256030913
+  Name: "bnp.balloonSpawner"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 5232831714974278699
+      RootId: 10980480794330802899
       Objects {
-        Id: 5232831714974278699
-        Name: "bnp_balloonSpawner"
+        Id: 10980480794330802899
+        Name: "bnp.balloonSpawner"
         Transform {
           Scale {
             X: 1
@@ -15,16 +15,17 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 2373258652354937627
-        ChildIds: 6724569280577831753
-        ChildIds: 13809073812587238788
-        ChildIds: 3813593229499958027
-        ChildIds: 5287473965524172670
-        ChildIds: 15695888349588742259
-        ChildIds: 13346965592348298809
-        ChildIds: 10339356533128403013
-        ChildIds: 4245650068594392082
-        ChildIds: 2343728015642178861
+        ParentId: 4781671109827199097
+        ChildIds: 4632080263111267721
+        ChildIds: 8250440176306753464
+        ChildIds: 7105946810194059609
+        ChildIds: 15186182161827782553
+        ChildIds: 7433323460674083579
+        ChildIds: 15959598927887552148
+        ChildIds: 2866623624453752168
+        ChildIds: 8572986973244364165
+        ChildIds: 17485454060629004342
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -40,7 +41,7 @@ Assets {
         }
       }
       Objects {
-        Id: 6724569280577831753
+        Id: 4632080263111267721
         Name: "Point Light"
         Transform {
           Location {
@@ -54,7 +55,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5232831714974278699
+        ParentId: 10980480794330802899
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -91,7 +93,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13809073812587238788
+        Id: 8250440176306753464
         Name: "Spotlight"
         Transform {
           Location {
@@ -109,7 +111,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5232831714974278699
+        ParentId: 10980480794330802899
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -122,8 +125,7 @@ Assets {
         Light {
           Intensity: 50
           Color {
-            R: 1
-            G: 1
+            G: 0.856939
             B: 1
             A: 1
           }
@@ -152,7 +154,7 @@ Assets {
         }
       }
       Objects {
-        Id: 3813593229499958027
+        Id: 7105946810194059609
         Name: "Fantasy Mace Guard 01"
         Transform {
           Location {
@@ -168,7 +170,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5232831714974278699
+        ParentId: 10980480794330802899
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -195,7 +198,7 @@ Assets {
         }
       }
       Objects {
-        Id: 5287473965524172670
+        Id: 15186182161827782553
         Name: "Fantasy Pommel 03"
         Transform {
           Location {
@@ -209,7 +212,8 @@ Assets {
             Z: 2
           }
         }
-        ParentId: 5232831714974278699
+        ParentId: 10980480794330802899
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -236,7 +240,7 @@ Assets {
         }
       }
       Objects {
-        Id: 15695888349588742259
+        Id: 7433323460674083579
         Name: "Modern Weapon Barrel 01"
         Transform {
           Location {
@@ -255,7 +259,7 @@ Assets {
             Z: 2
           }
         }
-        ParentId: 5232831714974278699
+        ParentId: 10980480794330802899
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
@@ -281,6 +285,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -307,7 +312,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13346965592348298809
+        Id: 15959598927887552148
         Name: "Fantasy Chest Base 01"
         Transform {
           Location {
@@ -322,7 +327,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5232831714974278699
+        ParentId: 10980480794330802899
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -349,7 +355,7 @@ Assets {
         }
       }
       Objects {
-        Id: 10339356533128403013
+        Id: 2866623624453752168
         Name: "Fantasy Chest Lid 01"
         Transform {
           Location {
@@ -365,7 +371,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5232831714974278699
+        ParentId: 10980480794330802899
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -392,7 +399,7 @@ Assets {
         }
       }
       Objects {
-        Id: 4245650068594392082
+        Id: 8572986973244364165
         Name: "Sphere - Half Thick"
         Transform {
           Location {
@@ -406,7 +413,7 @@ Assets {
             Z: 0.5
           }
         }
-        ParentId: 5232831714974278699
+        ParentId: 10980480794330802899
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -427,6 +434,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -453,7 +461,7 @@ Assets {
         }
       }
       Objects {
-        Id: 2343728015642178861
+        Id: 17485454060629004342
         Name: "Pipe"
         Transform {
           Location {
@@ -467,7 +475,7 @@ Assets {
             Z: 0.2
           }
         }
-        ParentId: 5232831714974278699
+        ParentId: 10980480794330802899
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -488,6 +496,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
