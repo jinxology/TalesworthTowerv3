@@ -1,4 +1,4 @@
---local propBlockAndEscapeController = script:GetCustomProperty("BlockAndEscapeController"):WaitForObject()
+local propMainGameController = script:GetCustomProperty("mainGameController"):WaitForObject()
 local propStartPlatform1 = script:GetCustomProperty("StartPlatform1"):WaitForObject()
 local propStartPlatform2 = script:GetCustomProperty("StartPlatform2"):WaitForObject()
 local propStartPlatform3 = script:GetCustomProperty("StartPlatform3"):WaitForObject()
@@ -37,12 +37,10 @@ function Reset()
 end
 
 function CheckIfPlayersReady()
---    local nbrReady = NbrOfPlayersOnStartPlatforms()
-    local nbrReady = 1
-  
-  	if nbrReady >= 1 then
-       -- propBlockAndEscapeController.context.LevelBegin()
-       print("YOU WIN")
+    local nbrReady = NbrOfPlayersOnStartPlatforms()
+    if nbrReady >= propMainGameController.context.requiredNbrPlayersReady then
+        Deactivate()
+        propMainGameController.context.LevelBegin()  
     end
 end
 

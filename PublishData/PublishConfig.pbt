@@ -8,6 +8,6 @@ Tags: "Multiplayer"
 Tags: "Competitive"
 Tags: "ThirdPerson"
 Tags: "Puzzle"
-ScreenshotPaths: "D:\\Data\\Dev\\CORE\\Maps\\TalesworthTower\\Screenshots\\Screenshot0001.png"
+ScreenshotPaths: "D:\\Data\\Dev\\CORE\\Maps\\TalesworthTowerv3\\Screenshots\\Screenshot0001.png"
 OwnerId: "172f6edc8820487da19f26db2dd11870"
 SerializationVersion: 1
