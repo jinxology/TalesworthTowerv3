@@ -7,7 +7,7 @@ Assets {
       RootId: 16709249232121335793
       Objects {
         Id: 16709249232121335793
-        Name: "Balloon Air Oxygen Inflate 01 SFX"
+        Name: "bnp.inflateSFXTemplate"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1900714643325171870
+        ParentId: 4781671109827199097
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -30,6 +30,7 @@ Assets {
           AudioAsset {
             Id: 5960330593314009773
           }
+          Transient: true
           Pitch: 669.10083
           Volume: 1
           Falloff: -1

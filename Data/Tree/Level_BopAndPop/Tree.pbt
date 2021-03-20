@@ -9502,7 +9502,7 @@ Objects {
     Overrides {
       Name: "cs:popperStand"
       AssetReference {
-        Id: 11310434026321360962
+        Id: 6177579781906903915
       }
     }
     Overrides {

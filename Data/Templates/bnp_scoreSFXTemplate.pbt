@@ -7,7 +7,7 @@ Assets {
       RootId: 6600589676794512872
       Objects {
         Id: 6600589676794512872
-        Name: "Sci-fi Meta Deep Laser Impact 02 SFX"
+        Name: "bnp.scoreSFXTemplate"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1900714643325171870
+        ParentId: 4781671109827199097
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -30,6 +30,7 @@ Assets {
           AudioAsset {
             Id: 2165551468785792842
           }
+          Transient: true
           Volume: 1
           Falloff: -1
           Radius: -1

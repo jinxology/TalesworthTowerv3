@@ -1,13 +1,13 @@
 Assets {
-  Id: 10446660573379890356
-  Name: "bnp_popperStand"
+  Id: 6177579781906903915
+  Name: "bnp.popperStand"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 1702665487452193969
+      RootId: 13424393517184354464
       Objects {
-        Id: 1702665487452193969
-        Name: "bnpPopperStand"
+        Id: 13424393517184354464
+        Name: "bnp.popperStand"
         Transform {
           Scale {
             X: 1
@@ -15,27 +15,14 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
-        ChildIds: 15258499535451025984
-        ChildIds: 8350091382186821509
-        ChildIds: 14647059690422451537
-        ChildIds: 15110295003709297648
-        ChildIds: 8114916683460827213
-        ChildIds: 6204145221877320007
-        ChildIds: 9629668464512272605
-        ChildIds: 2773305594864556409
-        ChildIds: 8842566656357791914
+        ParentId: 9259714475453434299
+        ChildIds: 532350861560063593
+        ChildIds: 17387992935899333216
         UnregisteredParameters {
           Overrides {
             Name: "cs:trigger"
             ObjectReference {
-              SubObjectId: 14647059690422451537
-            }
-          }
-          Overrides {
-            Name: "cs:colorElements"
-            ObjectReference {
-              SubObjectId: 8350091382186821509
+              SubObjectId: 532350861560063593
             }
           }
           Overrides {
@@ -44,7 +31,28 @@ Assets {
               SelfId: 1900714643325171870
             }
           }
+          Overrides {
+            Name: "cs:color"
+            Color {
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "cs:weapon"
+            AssetReference {
+              Id: 841534158063459245
+            }
+          }
+          Overrides {
+            Name: "cs:color:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:weapon:isrep"
+            Bool: true
+          }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -61,24 +69,23 @@ Assets {
         }
       }
       Objects {
-        Id: 15258499535451025984
-        Name: "Torch Holder Metal"
+        Id: 532350861560063593
+        Name: "Trigger"
         Transform {
           Location {
-            X: -5.09741211
-            Y: -0.606445313
+            X: 60
+            Y: -3.81469727e-06
           }
           Rotation {
-            Pitch: 6.83018879e-06
-            Yaw: -89.999939
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 1.25
+            Y: 1.25
+            Z: 2.25
           }
         }
-        ParentId: 1702665487452193969
+        ParentId: 13424393517184354464
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -86,27 +93,21 @@ Assets {
           Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        CoreMesh {
-          MeshAsset {
-            Id: 16219670883593009618
-          }
-          Teams {
+        Trigger {
+          TeamSettings {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:capsule"
           }
         }
       }
       Objects {
-        Id: 8350091382186821509
-        Name: "colorElements"
+        Id: 17387992935899333216
+        Name: "ClientContext"
         Transform {
           Location {
             Z: -50
@@ -119,12 +120,88 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1702665487452193969
-        ChildIds: 12612009644933081826
-        ChildIds: 16673787010083511320
-        ChildIds: 13605020250439013440
-        ChildIds: 8879533067926358097
-        ChildIds: 15593289593157304282
+        ParentId: 13424393517184354464
+        ChildIds: 2620280047674414353
+        ChildIds: 5354092500158125982
+        ChildIds: 1848964158546814000
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        NetworkContext {
+        }
+      }
+      Objects {
+        Id: 2620280047674414353
+        Name: "bnp.popperClient"
+        Transform {
+          Location {
+            Z: 50
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17387992935899333216
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:colorElements"
+            ObjectReference {
+              SubObjectId: 5354092500158125982
+            }
+          }
+          Overrides {
+            Name: "cs:server"
+            ObjectReference {
+              SubObjectId: 13424393517184354464
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 6153135705925530633
+          }
+        }
+      }
+      Objects {
+        Id: 5354092500158125982
+        Name: "colorElements"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17387992935899333216
+        ChildIds: 3134119290510055587
+        ChildIds: 17033784361477167015
+        ChildIds: 16497385075798554528
+        ChildIds: 253459383788007410
+        ChildIds: 891362295108172694
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -136,10 +213,11 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "colorElements"
         }
       }
       Objects {
-        Id: 12612009644933081826
+        Id: 3134119290510055587
         Name: "Point Light"
         Transform {
           Location {
@@ -155,8 +233,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8350091382186821509
-        WantsNetworking: true
+        ParentId: 5354092500158125982
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -194,7 +271,7 @@ Assets {
         }
       }
       Objects {
-        Id: 16673787010083511320
+        Id: 17033784361477167015
         Name: "Frame Large Corner - Neon Double 1 Sided Ending"
         Transform {
           Location {
@@ -211,7 +288,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8350091382186821509
+        ParentId: 5354092500158125982
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font_Neon:id"
@@ -220,7 +297,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -247,7 +323,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13605020250439013440
+        Id: 16497385075798554528
         Name: "Frame Large Corner - Neon Double"
         Transform {
           Location {
@@ -265,7 +341,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8350091382186821509
+        ParentId: 5354092500158125982
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font_Neon:id"
@@ -274,7 +350,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -301,7 +376,7 @@ Assets {
         }
       }
       Objects {
-        Id: 8879533067926358097
+        Id: 253459383788007410
         Name: "Frame Large Corner - Neon Double"
         Transform {
           Location {
@@ -319,7 +394,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8350091382186821509
+        ParentId: 5354092500158125982
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font_Neon:id"
@@ -328,7 +403,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -355,7 +429,7 @@ Assets {
         }
       }
       Objects {
-        Id: 15593289593157304282
+        Id: 891362295108172694
         Name: "Frame Large Corner - Neon Double 1 Sided Ending"
         Transform {
           Location {
@@ -372,7 +446,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8350091382186821509
+        ParentId: 5354092500158125982
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font_Neon:id"
@@ -390,7 +464,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -417,22 +490,29 @@ Assets {
         }
       }
       Objects {
-        Id: 14647059690422451537
-        Name: "Trigger"
+        Id: 1848964158546814000
+        Name: "geo"
         Transform {
           Location {
-            X: 60
-            Y: -3.81469727e-06
+            Y: -25
+            Z: 50
           }
           Rotation {
           }
           Scale {
-            X: 1.25
-            Y: 1.25
-            Z: 2.25
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
-        ParentId: 1702665487452193969
+        ParentId: 17387992935899333216
+        ChildIds: 1707622022453097839
+        ChildIds: 12900546008197139855
+        ChildIds: 17467905715773239641
+        ChildIds: 3348364536937997962
+        ChildIds: 10077893185126252561
+        ChildIds: 9917361508787194735
+        ChildIds: 10185089791217986072
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -442,23 +522,62 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        Trigger {
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:capsule"
+        Folder {
+          Model {
           }
         }
       }
       Objects {
-        Id: 15110295003709297648
+        Id: 1707622022453097839
+        Name: "Torch Holder Metal"
+        Transform {
+          Location {
+            X: -5.09741211
+            Y: 24.3935547
+          }
+          Rotation {
+            Pitch: 6.83018879e-06
+            Yaw: -89.999939
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1848964158546814000
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 16219670883593009618
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 12900546008197139855
         Name: "Frame Small Straight - Neon Double"
         Transform {
           Location {
             X: -1
-            Y: -33
+            Y: -8
             Z: 20
           }
           Rotation {
@@ -469,7 +588,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1702665487452193969
+        ParentId: 1848964158546814000
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font_Neon:id"
@@ -510,12 +629,12 @@ Assets {
         }
       }
       Objects {
-        Id: 8114916683460827213
+        Id: 17467905715773239641
         Name: "Frame Small Straight - Neon Double"
         Transform {
           Location {
             X: -1
-            Y: -27
+            Y: -2
             Z: 20
           }
           Rotation {
@@ -526,7 +645,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1702665487452193969
+        ParentId: 1848964158546814000
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font_Neon:id"
@@ -567,12 +686,12 @@ Assets {
         }
       }
       Objects {
-        Id: 6204145221877320007
+        Id: 3348364536937997962
         Name: "Frame Small Straight - Neon Double"
         Transform {
           Location {
             X: -1
-            Y: -27
+            Y: -2
             Z: 45
           }
           Rotation {
@@ -584,7 +703,7 @@ Assets {
             Z: 0.5
           }
         }
-        ParentId: 1702665487452193969
+        ParentId: 1848964158546814000
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font_Neon:id"
@@ -625,12 +744,12 @@ Assets {
         }
       }
       Objects {
-        Id: 9629668464512272605
+        Id: 10077893185126252561
         Name: "Frame Small Straight - Neon Double"
         Transform {
           Location {
             X: -1
-            Y: -33
+            Y: -8
             Z: 45
           }
           Rotation {
@@ -642,7 +761,7 @@ Assets {
             Z: 0.5
           }
         }
-        ParentId: 1702665487452193969
+        ParentId: 1848964158546814000
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font_Neon:id"
@@ -683,12 +802,12 @@ Assets {
         }
       }
       Objects {
-        Id: 2773305594864556409
+        Id: 9917361508787194735
         Name: "Frame Small Corner - Neon Double"
         Transform {
           Location {
             X: -1
-            Y: -32.999939
+            Y: -7.99993896
             Z: 45
           }
           Rotation {
@@ -699,7 +818,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1702665487452193969
+        ParentId: 1848964158546814000
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font_Neon:id"
@@ -740,12 +859,12 @@ Assets {
         }
       }
       Objects {
-        Id: 8842566656357791914
+        Id: 10185089791217986072
         Name: "Frame Small Corner - Neon Double"
         Transform {
           Location {
             X: -1
-            Y: -27
+            Y: -2
             Z: 45
           }
           Rotation {
@@ -756,7 +875,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1702665487452193969
+        ParentId: 1848964158546814000
         UnregisteredParameters {
           Overrides {
             Name: "ma:Font_Neon:id"
@@ -795,15 +914,6 @@ Assets {
             }
           }
         }
-      }
-    }
-    Assets {
-      Id: 16219670883593009618
-      Name: "Torch Holder Metal"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_torch_holder_001"
       }
     }
     Assets {
@@ -822,6 +932,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_Neon6_Corner_Double"
+      }
+    }
+    Assets {
+      Id: 16219670883593009618
+      Name: "Torch Holder Metal"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_torch_holder_001"
       }
     }
     Assets {
