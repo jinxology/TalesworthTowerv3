@@ -14,13 +14,21 @@ function IncomingUIMessage(coreObject, propertyName)
     
     if (msgData[1] == "00") then --Update timer
         UpdateTimer(tonumber(msgData[2]))
-    elseif (msgData[1] == "01") then --Show/Hide go to exit message
-        ToggleGoToExit(msgData[2])
+    elseif (msgData[1] == "01") then --Show/Hide go to exit message and play sound
+        ToggleGoToExit(msgData[2],msgData[3])
     elseif (msgData[1] == "02") then --Start timer on only client
         StartTimerLocal(tonumber(msgData[2]))
     elseif (msgData[1] == "03") then --Clear timer
         StopTimerLocal()
+    elseif (msgData[1] == "04") then --Show/Hide specific message
+        ToggleBottomMessage(msgData[2],msgData[3])
+    elseif (msgData[1] == "05") then --small UI message
+        ShowSmallUIMessage(msgData[2])
     end
+end
+
+function ShowSmallUIMessage(msg) 
+    UI.PrintToScreen(msg)
 end
 
 function StartTimerLocal(t)
@@ -53,7 +61,17 @@ function UpdateTimer(newVal)
     end
 end
 
-function ToggleGoToExit(showMe)
+function ToggleGoToExit(showMe, msg)
+    ToggleBottomMessage(showMe,msg)
+    if (showMe) then
+
+    else
+
+    end
+end
+
+function ToggleBottomMessage(showMe, msg)
+    propTxtGoToExit.text = msg
     if (showMe == "true") then
         propTxtGoToExit.visibility = Visibility.FORCE_ON
     else

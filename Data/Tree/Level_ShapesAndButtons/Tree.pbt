@@ -2449,8 +2449,9 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:color"
       Color {
-        R: 0.187820792
-        B: 0.327778131
+        R: 0.745404482
+        G: 0.745404482
+        B: 0.745404482
         A: 1
       }
     }
@@ -2771,9 +2772,6 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 602842132203363024
@@ -2794,14 +2792,6 @@ Objects {
           Name: "Rotation"
           Rotator {
             Yaw: 137.332184
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
           }
         }
       }

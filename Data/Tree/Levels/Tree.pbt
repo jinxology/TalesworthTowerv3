@@ -289,6 +289,9 @@ Objects {
   Name: "Lobby"
   Transform {
     Location {
+      X: -542.549561
+      Y: -6476.57666
+      Z: 6.10351563e-05
     }
     Rotation {
     }

@@ -7,7 +7,7 @@ Assets {
       RootId: 602842132203363024
       Objects {
         Id: 602842132203363024
-        Name: "Button Pedestal - Square"
+        Name: "Button Pedestal - Triangle"
         Transform {
           Scale {
             X: 1
@@ -1132,7 +1132,7 @@ Assets {
       }
       Objects {
         Id: 12730641311969233811
-        Name: "Yellow"
+        Name: "Grey"
         Transform {
           Location {
             X: -172.235641
@@ -1197,7 +1197,7 @@ Assets {
         }
         Trigger {
           Interactable: true
-          InteractionLabel: "Press Yellow"
+          InteractionLabel: "Press Grey"
           TeamSettings {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
@@ -1348,9 +1348,9 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              R: 1
-              G: 0.898330927
-              B: 0.191999972
+              R: 0.352000028
+              G: 0.352000028
+              B: 0.352000028
               A: 1
             }
           }

@@ -15,12 +15,20 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 17470512920309096864
+        ParentId: 4781671109827199097
         ChildIds: 14395530373430096796
         ChildIds: 8153796896780114748
         ChildIds: 16247571356429668214
         ChildIds: 10682435563235612266
         ChildIds: 1100635166441391753
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:MgrScript"
+            ObjectReference {
+              SubObjectId: 14395530373430096796
+            }
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
