@@ -17,6 +17,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13485243415661967086
+  Name: "Energy Tube Glow"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "Energy_Tube_Glow"
+  }
+}
+Assets {
   Id: 12905923173550510229
   Name: "Cylinder - Polished"
   PlatformAssetType: 1
@@ -35,30 +44,21 @@ Assets {
   }
 }
 Assets {
-  Id: 9840433631032711988
-  Name: "Reinforced Crate 150cm"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_crate_reinforced_150cm_001"
-  }
-}
-Assets {
-  Id: 7062845870289079377
-  Name: "Ball"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_sphere_001"
-  }
-}
-Assets {
   Id: 3702191406046426907
   Name: "Emissive Glow Transparent"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_basic_emissive_001"
+  }
+}
+Assets {
+  Id: 3250892020078520154
+  Name: "Sphere"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_sphere_002"
   }
 }
 Assets {

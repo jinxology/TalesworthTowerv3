@@ -19,7 +19,7 @@ Objects {
     }
   }
   ParentId: 3535859253216386145
-  ChildIds: 9859345551385821786
+  ChildIds: 16517240093619913613
   ChildIds: 13720500838099646351
   ChildIds: 15520761824702107882
   ChildIds: 8403542383002811805
@@ -349,7 +349,7 @@ Objects {
     Overrides {
       Name: "cs:platformGroupMgr"
       ObjectReference {
-        SelfId: 9859345551385821786
+        SelfId: 841534158063459245
       }
     }
     Overrides {
@@ -704,7 +704,7 @@ Objects {
     Overrides {
       Name: "cs:platformGroupMgr"
       ObjectReference {
-        SelfId: 9859345551385821786
+        SelfId: 841534158063459245
       }
     }
     Overrides {
@@ -1059,7 +1059,7 @@ Objects {
     Overrides {
       Name: "cs:platformGroupMgr"
       ObjectReference {
-        SelfId: 9859345551385821786
+        SelfId: 841534158063459245
       }
     }
     Overrides {
@@ -1414,7 +1414,7 @@ Objects {
     Overrides {
       Name: "cs:platformGroupMgr"
       ObjectReference {
-        SelfId: 9859345551385821786
+        SelfId: 841534158063459245
       }
     }
     Overrides {
@@ -1459,8 +1459,8 @@ Objects {
   }
 }
 Objects {
-  Id: 9859345551385821786
-  Name: "PlatformGroupManagerScript"
+  Id: 16517240093619913613
+  Name: "BlockAndEscape.VictoryPlatformGroup"
   Transform {
     Location {
     }
@@ -1498,12 +1498,6 @@ Objects {
         SelfId: 928355795574037402
       }
     }
-    Overrides {
-      Name: "cs:BlockAndEscapeController"
-      ObjectReference {
-        SelfId: 8870300546602620809
-      }
-    }
   }
   WantsNetworking: true
   Collidable_v2 {
@@ -1517,13 +1511,13 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 15691072928391675231
+      Id: 11477245503489206911
     }
   }
 }
 Objects {
   Id: 5727767727766945175
-  Name: "BlockAndEscape Crates"
+  Name: "BlockAndEscape Balls"
   Transform {
     Location {
       Y: 1300
@@ -1538,13 +1532,17 @@ Objects {
     }
   }
   ParentId: 3535859253216386145
-  ChildIds: 13921067097608261897
-  ChildIds: 1100154837436489866
-  ChildIds: 10508054323873893750
-  ChildIds: 1915798587872409033
-  ChildIds: 13683994991747215220
-  ChildIds: 10839389926778696165
-  ChildIds: 7139958464471193360
+  ChildIds: 5636713135246799357
+  ChildIds: 2099875618948812335
+  ChildIds: 7965379229266797670
+  ChildIds: 11653852059995843056
+  ChildIds: 11619825187602097764
+  ChildIds: 17432869967201149540
+  ChildIds: 2230864129348876099
+  ChildIds: 15991708692250836071
+  ChildIds: 10813156380265646515
+  ChildIds: 13506605382139613730
+  ChildIds: 11409460798442164870
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceon"
   }
@@ -1559,24 +1557,24 @@ Objects {
   }
 }
 Objects {
-  Id: 7139958464471193360
-  Name: "Reinforced Crate 150cm"
+  Id: 11409460798442164870
+  Name: "Physics Sphere"
   Transform {
     Location {
-      X: -3175
-      Y: 500
-      Z: -370.833
+      X: -5080.20703
+      Y: -223.771484
+      Z: -198.706055
     }
     Rotation {
     }
     Scale {
-      X: 5.09999943
-      Y: 5.09999943
-      Z: 5.09999943
+      X: 4
+      Y: 4
+      Z: 4
     }
   }
   ParentId: 5727767727766945175
-  ChildIds: 14683066648968288275
+  ChildIds: 4549865931785193281
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1585,825 +1583,129 @@ Objects {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
   CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
+    Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  CoreMesh {
-    MeshAsset {
-      Id: 9840433631032711988
+  PhysicsObject {
+    PhysicsShape {
+      Value: "mc:ephysicsshape:sphere"
     }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
+    Settings {
+      IsEnabled: true
+      Mass: 100
+      AngularDamping: 3
     }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
+    Radius: 50
+    Length: 200
   }
 }
 Objects {
-  Id: 14683066648968288275
-  Name: "CrateTrigger"
+  Id: 4549865931785193281
+  Name: "ClientContext"
   Transform {
     Location {
-      Z: 70.9302368
     }
     Rotation {
     }
     Scale {
-      X: 1.7
-      Y: 1.7
-      Z: 1.1
+      X: 1
+      Y: 1
+      Z: 1
     }
   }
-  ParentId: 7139958464471193360
-  ChildIds: 13429323376452013821
+  ParentId: 11409460798442164870
+  ChildIds: 5824113967637759943
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 5824113967637759943
+  Name: "PhysicsSphereMesh"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4549865931785193281
   UnregisteredParameters {
     Overrides {
-      Name: "cs:TriggerType"
-      String: "Crate"
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
     }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 13429323376452013821
-  Name: "BlockAndEscape Crate Moving"
-  Transform {
-    Location {
-      X: -282.677826
-      Y: 676.82605
-      Z: 155.062988
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.357834429
-      Y: -0.3379547
-      Z: 0.344581306
-    }
-  }
-  ParentId: 14683066648968288275
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 16991006047604215898
-    }
-  }
-}
-Objects {
-  Id: 10839389926778696165
-  Name: "Reinforced Crate 150cm"
-  Transform {
-    Location {
-      X: -4450
-      Y: -350
-      Z: -370.833
-    }
-    Rotation {
-    }
-    Scale {
-      X: 5.3
-      Y: 5.3
-      Z: 5.3
-    }
-  }
-  ParentId: 5727767727766945175
-  ChildIds: 4460223062261134586
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 9840433631032711988
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 4460223062261134586
-  Name: "CrateTrigger"
-  Transform {
-    Location {
-      Z: 70.9302368
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.7
-      Y: 1.7
-      Z: 1.1
-    }
-  }
-  ParentId: 10839389926778696165
-  ChildIds: 869532445287113088
-  UnregisteredParameters {
     Overrides {
-      Name: "cs:TriggerType"
-      String: "Crate"
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 869532445287113088
-  Name: "BlockAndEscape Crate Moving"
-  Transform {
-    Location {
-      X: -282.677826
-      Y: 676.82605
-      Z: 155.062988
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.357834429
-      Y: -0.3379547
-      Z: 0.344581306
-    }
-  }
-  ParentId: 4460223062261134586
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 16991006047604215898
-    }
-  }
-}
-Objects {
-  Id: 13683994991747215220
-  Name: "Reinforced Crate 150cm"
-  Transform {
-    Location {
-      X: -800
-      Y: 303.935059
-      Z: -370.833
-    }
-    Rotation {
-    }
-    Scale {
-      X: 4.70000029
-      Y: 4.70000029
-      Z: 4.70000029
-    }
-  }
-  ParentId: 5727767727766945175
-  ChildIds: 17435786728141369069
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 9840433631032711988
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 17435786728141369069
-  Name: "CrateTrigger"
-  Transform {
-    Location {
-      Z: 30
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.7
-      Y: 1.7
-      Z: 0.35
-    }
-  }
-  ParentId: 13683994991747215220
-  ChildIds: 8941483905315586124
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:TriggerType"
-      String: "Crate"
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 8941483905315586124
-  Name: "BlockAndEscape Crate Moving"
-  Transform {
-    Location {
-      X: -282.677826
-      Y: 676.82605
-      Z: 155.062988
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.357834429
-      Y: -0.3379547
-      Z: 0.344581306
-    }
-  }
-  ParentId: 17435786728141369069
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 16991006047604215898
-    }
-  }
-}
-Objects {
-  Id: 1915798587872409033
-  Name: "Reinforced Crate 150cm"
-  Transform {
-    Location {
-      X: -2453.8457
-      Y: -507.515381
-      Z: -370.833
-    }
-    Rotation {
-    }
-    Scale {
-      X: 4.39999962
-      Y: 4.39999962
-      Z: 4.39999962
-    }
-  }
-  ParentId: 5727767727766945175
-  ChildIds: 9306969420143564992
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 9840433631032711988
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 9306969420143564992
-  Name: "CrateTrigger"
-  Transform {
-    Location {
-      Z: 70.9302368
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.7
-      Y: 1.7
-      Z: 1.1
-    }
-  }
-  ParentId: 1915798587872409033
-  ChildIds: 11863625650282086089
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:TriggerType"
-      String: "Crate"
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 11863625650282086089
-  Name: "BlockAndEscape Crate Moving"
-  Transform {
-    Location {
-      X: -282.677826
-      Y: 676.82605
-      Z: 155.062988
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.357834429
-      Y: -0.3379547
-      Z: 0.344581306
-    }
-  }
-  ParentId: 9306969420143564992
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 16991006047604215898
-    }
-  }
-}
-Objects {
-  Id: 10508054323873893750
-  Name: "Reinforced Crate 150cm"
-  Transform {
-    Location {
-      X: 1421.98584
-      Y: -700
-      Z: -370.833
-    }
-    Rotation {
-    }
-    Scale {
-      X: 3.99999952
-      Y: 3.99999952
-      Z: 3.99999952
-    }
-  }
-  ParentId: 5727767727766945175
-  ChildIds: 11752910523544822036
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 9840433631032711988
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 11752910523544822036
-  Name: "CrateTrigger"
-  Transform {
-    Location {
-      Z: 30
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.7
-      Y: 1.7
-      Z: 0.4
-    }
-  }
-  ParentId: 10508054323873893750
-  ChildIds: 17069654339771776608
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:TriggerType"
-      String: "Crate"
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 17069654339771776608
-  Name: "BlockAndEscape Crate Moving"
-  Transform {
-    Location {
-      X: -282.677826
-      Y: 676.82605
-      Z: 155.062988
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.357834429
-      Y: -0.3379547
-      Z: 0.344581306
-    }
-  }
-  ParentId: 11752910523544822036
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 16991006047604215898
-    }
-  }
-}
-Objects {
-  Id: 1100154837436489866
-  Name: "Reinforced Crate 150cm"
-  Transform {
-    Location {
-      X: -229.797
-      Y: -635.912659
-      Z: -370.833
-    }
-    Rotation {
-    }
-    Scale {
-      X: 3.40000057
-      Y: 3.40000057
-      Z: 3.40000057
-    }
-  }
-  ParentId: 5727767727766945175
-  ChildIds: 5884378415869346535
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 9840433631032711988
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 5884378415869346535
-  Name: "CrateTrigger"
-  Transform {
-    Location {
-      Z: 30
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.7
-      Y: 1.7
-      Z: 0.4
-    }
-  }
-  ParentId: 1100154837436489866
-  ChildIds: 13659768473321129374
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:TriggerType"
-      String: "Crate"
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 13659768473321129374
-  Name: "BlockAndEscape Crate Moving"
-  Transform {
-    Location {
-      X: -282.677826
-      Y: 676.82605
-      Z: 155.062988
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.357834429
-      Y: -0.3379547
-      Z: 0.344581306
-    }
-  }
-  ParentId: 5884378415869346535
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 16991006047604215898
-    }
-  }
-}
-Objects {
-  Id: 13921067097608261897
-  Name: "Reinforced Crate 150cm"
-  Transform {
-    Location {
-      X: 549.399414
-      Y: 525.254517
-      Z: -370.833
-    }
-    Rotation {
-    }
-    Scale {
-      X: 4.39999962
-      Y: 4.39999962
-      Z: 4.39999962
-    }
-  }
-  ParentId: 5727767727766945175
-  ChildIds: 2119299645862034703
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 9840433631032711988
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 2119299645862034703
-  Name: "CrateTrigger"
-  Transform {
-    Location {
-      Z: 30
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.7
-      Y: 1.7
-      Z: 0.35
-    }
-  }
-  ParentId: 13921067097608261897
-  ChildIds: 5828980350605292878
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:TriggerType"
-      String: "Crate"
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 5828980350605292878
-  Name: "BlockAndEscape Crate Moving"
-  Transform {
-    Location {
-      X: -282.677826
-      Y: 676.82605
-      Z: 155.062988
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.357834429
-      Y: -0.3379547
-      Z: 0.344581306
-    }
-  }
-  ParentId: 2119299645862034703
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:Ball"
+      Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7062845870289079377
+        Id: 13485243415661967086
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.88
+        G: 4.19616697e-07
+        A: 1
       }
     }
   }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3250892020078520154
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 13506605382139613730
+  Name: "Physics Sphere"
+  Transform {
+    Location {
+      X: -2355.86548
+      Y: -698.954834
+      Z: -198.706055
+    }
+    Rotation {
+    }
+    Scale {
+      X: 4
+      Y: 4
+      Z: 4
+    }
+  }
+  ParentId: 5727767727766945175
+  ChildIds: 4173189468104213578
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2414,9 +1716,1263 @@ Objects {
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  Script {
-    ScriptAsset {
-      Id: 16991006047604215898
+  PhysicsObject {
+    PhysicsShape {
+      Value: "mc:ephysicsshape:sphere"
+    }
+    Settings {
+      IsEnabled: true
+      Mass: 100
+      AngularDamping: 3
+    }
+    Radius: 50
+    Length: 200
+  }
+}
+Objects {
+  Id: 4173189468104213578
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13506605382139613730
+  ChildIds: 8116894891297272491
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 8116894891297272491
+  Name: "PhysicsSphereMesh"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4173189468104213578
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13485243415661967086
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.88
+        G: 4.19616697e-07
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3250892020078520154
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 10813156380265646515
+  Name: "Physics Sphere"
+  Transform {
+    Location {
+      X: -3382.00586
+      Y: 355.522217
+      Z: -150
+    }
+    Rotation {
+    }
+    Scale {
+      X: 5
+      Y: 5
+      Z: 5
+    }
+  }
+  ParentId: 5727767727766945175
+  ChildIds: 5171990112084760205
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  PhysicsObject {
+    PhysicsShape {
+      Value: "mc:ephysicsshape:sphere"
+    }
+    Settings {
+      IsEnabled: true
+      Mass: 100
+      AngularDamping: 3
+    }
+    Radius: 50
+    Length: 200
+  }
+}
+Objects {
+  Id: 5171990112084760205
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10813156380265646515
+  ChildIds: 17305110638547431487
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 17305110638547431487
+  Name: "PhysicsSphereMesh"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5171990112084760205
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13485243415661967086
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.89
+        G: 0.8133775
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3250892020078520154
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 15991708692250836071
+  Name: "Physics Sphere"
+  Transform {
+    Location {
+      X: -4142.33301
+      Y: -675
+      Z: -150
+    }
+    Rotation {
+    }
+    Scale {
+      X: 5
+      Y: 5
+      Z: 5
+    }
+  }
+  ParentId: 5727767727766945175
+  ChildIds: 3901972904890436180
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  PhysicsObject {
+    PhysicsShape {
+      Value: "mc:ephysicsshape:sphere"
+    }
+    Settings {
+      IsEnabled: true
+      Mass: 100
+      AngularDamping: 3
+    }
+    Radius: 50
+    Length: 200
+  }
+}
+Objects {
+  Id: 3901972904890436180
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15991708692250836071
+  ChildIds: 10349776146488569940
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 10349776146488569940
+  Name: "PhysicsSphereMesh"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3901972904890436180
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13485243415661967086
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.89
+        G: 0.8133775
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3250892020078520154
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 2230864129348876099
+  Name: "Physics Sphere"
+  Transform {
+    Location {
+      X: -3364.01538
+      Y: -1300
+      Z: -124.858398
+    }
+    Rotation {
+    }
+    Scale {
+      X: 5.5
+      Y: 5.5
+      Z: 5.5
+    }
+  }
+  ParentId: 5727767727766945175
+  ChildIds: 1076099717014688949
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  PhysicsObject {
+    PhysicsShape {
+      Value: "mc:ephysicsshape:sphere"
+    }
+    Settings {
+      IsEnabled: true
+      Mass: 100
+      AngularDamping: 3
+    }
+    Radius: 50
+    Length: 200
+  }
+}
+Objects {
+  Id: 1076099717014688949
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2230864129348876099
+  ChildIds: 5723974014213199250
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 5723974014213199250
+  Name: "PhysicsSphereMesh"
+  Transform {
+    Location {
+      Z: -0.0257457402
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1076099717014688949
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13485243415661967086
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3250892020078520154
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 17432869967201149540
+  Name: "Physics Sphere"
+  Transform {
+    Location {
+      X: -608.173828
+      Y: 187.285522
+      Z: -124.858398
+    }
+    Rotation {
+    }
+    Scale {
+      X: 5.5
+      Y: 5.5
+      Z: 5.5
+    }
+  }
+  ParentId: 5727767727766945175
+  ChildIds: 18427386780590093323
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  PhysicsObject {
+    PhysicsShape {
+      Value: "mc:ephysicsshape:sphere"
+    }
+    Settings {
+      IsEnabled: true
+      Mass: 100
+      AngularDamping: 3
+    }
+    Radius: 50
+    Length: 200
+  }
+}
+Objects {
+  Id: 18427386780590093323
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17432869967201149540
+  ChildIds: 7847602450936607705
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 7847602450936607705
+  Name: "PhysicsSphereMesh"
+  Transform {
+    Location {
+      Z: -0.0257457402
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 18427386780590093323
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13485243415661967086
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3250892020078520154
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 11619825187602097764
+  Name: "Physics Sphere 5.5 Scale"
+  Transform {
+    Location {
+      X: 1827.10742
+      Y: -469.022583
+      Z: -124.858398
+    }
+    Rotation {
+    }
+    Scale {
+      X: 5.5
+      Y: 5.5
+      Z: 5.5
+    }
+  }
+  ParentId: 5727767727766945175
+  ChildIds: 5477888972932871133
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  PhysicsObject {
+    PhysicsShape {
+      Value: "mc:ephysicsshape:sphere"
+    }
+    Settings {
+      IsEnabled: true
+      Mass: 100
+      AngularDamping: 3
+    }
+    Radius: 50
+    Length: 200
+  }
+}
+Objects {
+  Id: 5477888972932871133
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11619825187602097764
+  ChildIds: 14680238687646565099
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 14680238687646565099
+  Name: "PhysicsSphereMesh"
+  Transform {
+    Location {
+      Z: -0.0257457402
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5477888972932871133
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13485243415661967086
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3250892020078520154
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 11653852059995843056
+  Name: "Physics Sphere"
+  Transform {
+    Location {
+      X: -29.2069092
+      Y: 178.174072
+      Z: -198.706055
+    }
+    Rotation {
+    }
+    Scale {
+      X: 4
+      Y: 4
+      Z: 4
+    }
+  }
+  ParentId: 5727767727766945175
+  ChildIds: 14715909618858640469
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  PhysicsObject {
+    PhysicsShape {
+      Value: "mc:ephysicsshape:sphere"
+    }
+    Settings {
+      IsEnabled: true
+      Mass: 100
+      AngularDamping: 3
+    }
+    Radius: 50
+    Length: 200
+  }
+}
+Objects {
+  Id: 14715909618858640469
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11653852059995843056
+  ChildIds: 11619012704494539819
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 11619012704494539819
+  Name: "PhysicsSphereMesh"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14715909618858640469
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13485243415661967086
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.88
+        G: 4.19616697e-07
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3250892020078520154
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 7965379229266797670
+  Name: "Physics Sphere"
+  Transform {
+    Location {
+      X: 1132.03638
+      Y: 268.721924
+      Z: -200
+    }
+    Rotation {
+    }
+    Scale {
+      X: 4
+      Y: 4
+      Z: 4
+    }
+  }
+  ParentId: 5727767727766945175
+  ChildIds: 7415503311406634634
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  PhysicsObject {
+    PhysicsShape {
+      Value: "mc:ephysicsshape:sphere"
+    }
+    Settings {
+      IsEnabled: true
+      Mass: 100
+      AngularDamping: 3
+    }
+    Radius: 50
+    Length: 200
+  }
+}
+Objects {
+  Id: 7415503311406634634
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7965379229266797670
+  ChildIds: 17019430449437630856
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 17019430449437630856
+  Name: "PhysicsSphereMesh"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7415503311406634634
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.88
+        G: 4.19616697e-07
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13485243415661967086
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3250892020078520154
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 2099875618948812335
+  Name: "Physics Sphere"
+  Transform {
+    Location {
+      X: 566.286621
+      Y: 368.511841
+      Z: -150
+    }
+    Rotation {
+    }
+    Scale {
+      X: 5
+      Y: 5
+      Z: 5
+    }
+  }
+  ParentId: 5727767727766945175
+  ChildIds: 17560338575259255914
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  PhysicsObject {
+    PhysicsShape {
+      Value: "mc:ephysicsshape:sphere"
+    }
+    Settings {
+      IsEnabled: true
+      Mass: 100
+      AngularDamping: 3
+    }
+    Radius: 50
+    Length: 200
+  }
+}
+Objects {
+  Id: 17560338575259255914
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2099875618948812335
+  ChildIds: 15221959178626434981
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 15221959178626434981
+  Name: "PhysicsSphereMesh"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17560338575259255914
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13485243415661967086
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.89
+        G: 0.8133775
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3250892020078520154
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 5636713135246799357
+  Name: "Physics Sphere"
+  Transform {
+    Location {
+      X: -1200.0929
+      Y: 309.613281
+      Z: -150
+    }
+    Rotation {
+    }
+    Scale {
+      X: 5
+      Y: 5
+      Z: 5
+    }
+  }
+  ParentId: 5727767727766945175
+  ChildIds: 7462205131887212570
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  PhysicsObject {
+    PhysicsShape {
+      Value: "mc:ephysicsshape:sphere"
+    }
+    Settings {
+      IsEnabled: true
+      Mass: 100
+      AngularDamping: 3
+    }
+    Radius: 50
+    Length: 200
+  }
+}
+Objects {
+  Id: 7462205131887212570
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5636713135246799357
+  ChildIds: 376541786041762107
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 376541786041762107
+  Name: "PhysicsSphereMesh"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7462205131887212570
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13485243415661967086
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.89
+        G: 0.8133775
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3250892020078520154
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
     }
   }
 }
