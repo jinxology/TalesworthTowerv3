@@ -1,57 +1,48 @@
 -- ftp acab xo paegrid
 
-
--- balloons come out in random order, help to guarantee win conditions are possible
---		start: generate 3 sets of 4 and randomize them (12 random equally distributed in pipe)
---		feed a balloon: if only one set of 4 is left in the pipe:
---			generate another 3x4 pipe
---			insert first set of 4 ahead of 4 remaining, remaining 8 at end
-
-
-local propMainGameController = script:GetCustomProperty("gameController")
-
-if (propMainGameController) then
-	propMainGameController = propMainGameController:WaitForObject()
-else
-	print("Bop and Pop couldn't get gameController custom property. Where did it go?")
-end
-
+local propMainGameController = script:GetCustomProperty("gameController"):WaitForObject()
 local propMaceTemplate = script:GetCustomProperty("maceTemplate")
 local propSpearTemplate = script:GetCustomProperty("spearTemplate")
 local propSwordTemplate = script:GetCustomProperty("swordTemplate")
 local propBalloonTemplate = script:GetCustomProperty("balloonTemplate")
 local propSignTemplate = script:GetCustomProperty("signTemplate")
-propBurstVFXTemplate = script:GetCustomProperty("burstVFX")
+local propInstructionsTemplate = script:GetCustomProperty("instructionsTemplate")
+local propInteriorTemplate = script:GetCustomProperty("bnpinterior")
 
 local propStartSign1 = script:GetCustomProperty("startSign1"):WaitForObject()
 local propStartSign2 = script:GetCustomProperty("startSign2"):WaitForObject()
 local propStartSign3 = script:GetCustomProperty("startSign3"):WaitForObject()
 local propIntakeGlow = script:GetCustomProperty("intakeGlow"):WaitForObject()
 local propBopZoneTrigger = script:GetCustomProperty("bopZoneTrigger"):WaitForObject()
+
+propBurstVFXTemplate = script:GetCustomProperty("burstVFX")
 propPopSFXTemplate = script:GetCustomProperty("popSFX")
 propBounceSFXTemplate = script:GetCustomProperty("bounceSFX")
-propBoomSFX = script:GetCustomProperty("bnp_balloonBoomSFX"):WaitForObject()
-propFumbleSFX = script:GetCustomProperty("bnp_balloonFumbleSFX"):WaitForObject()
-local propInflateSFX = script:GetCustomProperty("inflateSFX"):WaitForObject()
-local propCountSFX = script:GetCustomProperty("countSFX"):WaitForObject()
+propScoreSFXTemplate = script:GetCustomProperty("scoreSFXTemplate")
+propFumbleSFXTemplate = script:GetCustomProperty("fumbleSFXTemplate")
+propInflateSFXTemplate = script:GetCustomProperty("inflateSFXTemplate")
+propCountSFXTemplate = script:GetCustomProperty("countSFXTemplate")
 
--- local propIntakeSparkle = script:GetCustomProperty("intakeSparke"):WaitForObject()
 local propMainTextLabel = script:GetCustomProperty("mainTextLabel"):WaitForObject()
 local propWeaponStandContainer = script:GetCustomProperty("weaponStands"):WaitForObject()
 local propSpawnerContainer = script:GetCustomProperty("spawners"):WaitForObject()
 local propSignContainer = script:GetCustomProperty("signContainer"):WaitForObject()
+local propTutorialContainer = script:GetCustomProperty("tutorialContainer"):WaitForObject()
+local propSpawnerTemplate = script:GetCustomProperty("spawnerTemplate")
+local propStandTemplate = script:GetCustomProperty("popperStand")
+local propInstructionsSignTemplate = script:GetCustomProperty("instructionsSignTemplate")
 
 startingPlatforms = nil
 propLevelBeaconFolder = script:GetCustomProperty("beaconFolder"):WaitForObject()
 
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(-1525, -1375, 305)
+exitFlumeLocation = Vector3.New(-1465, -1495, 225)
 exitFlumeRotation = Rotation.New(0, 45, 45)
-entranceFlumeLocation = Vector3.New(1325, 1475, 305)
+entranceFlumeLocation = Vector3.New(1465, 1495, 225)
 entranceFlumeRotation = Rotation.New(0, 45, -135)
 entranceFlumeEjectionVelocity = 8.79
-startPlatformPosition = Vector3.New(-950, -1350, 25)
+startPlatformPosition = Vector3.New(-725, -1350, 0)
 startPlatformRotation = Rotation.New(0, 0, -45)
 
 
@@ -118,20 +109,148 @@ local	intakeCycleColors = {}
 local	intakeCycleColorIndex = 0
 local	roundDuration = 120
 
-function LevelPowerUp()
+
+local	propInterior1 = nil
+local	propInterior2 = nil
+
+--	TUTORIAL
+local propTutorialBalloonSpawnerLocations = {
+	Vector3.New(-225, -1050, 25),
+	Vector3.New(-300, -575, 25),
+	Vector3.New(-575, -300, 25),
+	Vector3.New(-1050, -225, 25)
+}
+local propTutorialBalloonSpawnerRotations = {
+	Rotation.New(0, 0, 90),
+	Rotation.New(0, 0, 112.5),
+	Rotation.New(0, 0, 157.5),
+	Rotation.New(0, 0, 180),
+}
+local propTutorialWeaponStandLocations = {
+	Vector3.New(-135, -800, 150),
+	Vector3.New(-333, -333, 150),
+	Vector3.New(-800, -135, 150),
+}
+local propTutorialWeaponStandRotations = {
+	Rotation.New(0, 0, -180),
+	Rotation.New(0, 0, -135),
+	Rotation.New(0, 0, -90),
+}
+local propTutorialStandWeapons = {
+	BNP_SWORD,
+	BNP_MACE,
+	BNP_SPEAR
+}
+
+local propTutorialSignLocation = Vector3.New(-300, -300, 150)
+local propTutorialSignRotation = Rotation.New(0, 0, 45)
+
+local propBalloonSpawnerLocations = {
+	Vector3.New(-1650, 0, 260),
+	Vector3.New(-1400, 1000, 1105),
+	Vector3.New(540, 2000, 950),
+	Vector3.New(-1650, 0, 680),
+	Vector3.New(1650, 0, 260),
+	Vector3.New(1400, -1000, 1105),
+	Vector3.New(-540, -2000, 950),
+	Vector3.New(1650, 0, 680)
+}
+
+local propBalloonSpawnerRotations = {
+	Rotation.New(0, 0, 90),
+	Rotation.New(0, 0, 90),
+	Rotation.New(0, 0, 90),
+	Rotation.New(0, 0, 90),
+	Rotation.New(0, 0, -90),
+	Rotation.New(0, 0, -90),
+	Rotation.New(0, 0, -90),
+	Rotation.New(0, 0, -90)
+}
+
+function LoadTutorial()
 	propStartSign1.isEnabled = true
 	propStartSign2.isEnabled = true
 	propStartSign3.isEnabled = true
+	
+	for i = 1, 4, 1 do
+		spawner = World.SpawnAsset(propSpawnerTemplate, { position = propTutorialBalloonSpawnerLocations[i], rotation = propTutorialBalloonSpawnerRotations[i], parent = propTutorialContainer})
+	end
+
+	for i = 1, 3, 1 do
+		stand = World.SpawnAsset(propStandTemplate,  { position = propTutorialWeaponStandLocations[i], rotation = propTutorialWeaponStandRotations[i], parent = propTutorialContainer})
+		weapon = TemplateForBNPWeapon(propTutorialStandWeapons[index])
+		
+		asset = World.SpawnAsset(weapon, { parent = stand })
+		
+		stand.context.bnpWeapon = propTutorialStandWeapons[index]
+		stand.context.propLevelController = script
+
+		for _, colorElement in pairs(stand:GetCustomProperty("colorElements"):WaitForObject():GetChildren()) do
+			colorElement:SetColor(Color.WHITE)
+		end
+	end
+
+	World.SpawnAsset(propInstructionsSignTemplate, { parent = propTutorialContainer, position = propTutorialSignLocation, rotation = propTutorialSignRotation })
+end
+
+function UnloadTutorial()
+	for _, object in ipairs(propTutorialContainer:GetChildren()) do
+		object:Destroy()
+	end
+end
+
+local propSpawnedWeapons = {}
+
+function LoadInterior()
+	for index, position in ipairs(propBalloonSpawnerLocations) do
+		World.SpawnAsset(propSpawnerTemplate, { parent = propSpawnerContainer, position = position, rotation = propBalloonSpawnerRotations[index] })
+	end
 	SpawnWeapons()
 	SpawnSigns()
+end
+
+function UnloadInterior()
+	for _, spawner in ipairs(propSpawnerContainer:GetChildren()) do
+		spawner:Destroy()
+	end
+	for _, weapon in ipairs(propSpawnedWeapons) do
+		weapon:Destroy()
+	end
+	for _, sign in ipairs(propSignContainer:GetChildren()) do
+		sign:Destroy()
+	end
+end
+
+function LevelPowerUp()
+	LoadInterior()
+	LoadTutorial()
 
 	script:SetNetworkedCustomProperty("currentScore", teamScore)
 	script:SetNetworkedCustomProperty("strikeCount", teamFailures)
-	script:SetNetworkedCustomProperty("levelActive", true)
+	script:SetNetworkedCustomProperty("levelStatus", 1)
 	script:SetNetworkedCustomProperty("timeRemaining", -1)
 
 	propBopZoneTrigger.isEnabled = false
 end
+
+function LevelPowerDown()
+	UnloadInterior()
+	script:SetNetworkedCustomProperty("levelStatus", 0)
+
+	--	destroy all networked objects
+	--DestroyWeapons()
+	--DestroySigns()
+	--DestroyBalloons()
+end
+
+function LevelBegin()
+	UnloadTutorial()
+	Task.Spawn(FlickerStartSign, 1.2)
+	Task.Spawn(ReadySteadyGo)
+	Task.Spawn(BeginFirstRound, 3)
+	propBopZoneTrigger.isEnabled = true
+end
+
 
 function ColorForBNPColor(bnpColor)
 	local color = Color.WHITE
@@ -146,6 +265,17 @@ function ColorForBNPColor(bnpColor)
 	end
 
 	return color
+end
+
+function TemplateForBNPWeapon(bnpWeapon)
+	if (bnpWeapon == BNP_MACE) then
+		template = propMaceTemplate
+	elseif (bnpWeapon == BNP_SWORD) then
+		template = propSwordTemplate
+	elseif (bnpWeapon == BNP_SPEAR) then
+		template = propSpearTemplate
+	end
+	return template
 end
 
 function BuildRuleset()
@@ -201,13 +331,7 @@ function SpawnWeapons()
 
 		table.remove(poppers, index)
 		
-		if (popper.weapon == BNP_MACE) then
-			weapon = propMaceTemplate
-		elseif (popper.weapon == BNP_SWORD) then
-			weapon = propSwordTemplate
-		elseif (popper.weapon == BNP_SPEAR) then
-			weapon = propSpearTemplate
-		end
+		weapon = TemplateForBNPWeapon(popper.weapon)
 		
 		if coloredWeapons then
 			color = ColorForBNPColor(popper.color)
@@ -243,36 +367,36 @@ function LevelFailed()
 	propMainGameController.context.LevelEnd(false)
 end
 
-function LevelBegin()
-	Task.Spawn(FlickerStartSign, 1.2)
-	Task.Spawn(ReadySteadyGo)
-	Task.Spawn(BeginFirstRound, 3)
-	propBopZoneTrigger.isEnabled = true
-end
-
 function ReadySteadyGo()
-	propCountSFX.stopTime = 1
-	propCountSFX:Play()
+	local	countSFX = World.SpawnAsset(propCountSFXTemplate)
+
+	countSFX.stopTime = 1
+	countSFX:Play()
 	propMainTextLabel.text = "READY"
 	Task.Wait(1)
-	propCountSFX:Play()
+	countSFX:Play()
 	propMainTextLabel.text = "STEADY"
 	Task.Wait(1)
-	propCountSFX:Play()
+	countSFX:Play()
 	propMainTextLabel.text = "GO"
 	Task.Wait(1)
-	propCountSFX.stopTime = propCountSFX.length
-	propCountSFX:Play()
+	countSFX.stopTime = countSFX.length
+	countSFX:Play()
 	propMainTextLabel.text = ""
 	
 	propTimerTask = Task.Spawn(CountdownRound)
 	propTimerTask.repeatInterval = 1
 	propTimerTask.repeatCount = roundDuration
+	timeRemaining = roundDuration
 end
 
 function CountdownRound()
+	script:SetNetworkedCustomProperty("timeRemaining", timeRemaining)
+	timeRemaining = timeRemaining - 1
 	
-	script:SetNetworkedCustomProperty("timeRemaining", -1)
+	if timeRemaining < 0 then
+		LevelFailed()
+	end
 end
 
 function FlickerStartSign()
@@ -292,20 +416,12 @@ function FlickerStartSign()
 	propStartSign3.isEnabled = false
 end
 
-function LevelPowerDown()
-	script:SetNetworkedCustomProperty("levelActive", false)
-
-	--	destroy all networked objects
-	--DestroyWeapons()
-	--DestroySigns()
-	--DestroyBalloons()
-end
-
 function BeginFirstRound()
 	for _, sign in pairs(signs) do
 		sign.visibility = Visibility.FORCE_ON
 	end
 		
+	script:SetNetworkedCustomProperty("levelStatus", 2)
 	BeginRound()
 end
 
@@ -483,7 +599,11 @@ function FillBalloonPipe()
 		end
 	
 		balloonsToAdd = FYShuffle(balloonsToAdd)
-		for _, bnpColor in ipairs(balloonsToAdd) do
+		for index = 1, BNP_COLOR_LAST - BNP_COLOR_FIRST + 1, 1 do
+			table.insert(balloonPipe, index, balloonsToAdd[index])
+		end
+
+		for index = BNP_COLOR_LAST - BNP_COLOR_FIRST + 2, (BNP_COLOR_LAST - BNP_COLOR_FIRST + 1) * 3, 1 do
 			table.insert(balloonPipe, bnpColor)
 		end
 	end
@@ -496,9 +616,8 @@ function SpawnNextBalloon()
 	local	spawner = emptySpawners[spawnerIndex]
 	local	balloon = World.SpawnAsset(propBalloonTemplate, { parent = spawner,  position = Vector3.New(0, 0, 160) })
 	local	bnpColor = balloonPipe[1]
-
-	propInflateSFX:SetWorldPosition(balloon:GetWorldPosition())
-	propInflateSFX:Play()
+	
+	World.SpawnAsset(propInflateSFXTemplate, { parent = balloon.parent, position = balloon.position }):Play()
 	
 	print(balloon.name)
 	balloon.context.SetBNPColor(bnpColor, ColorForBNPColor(bnpColor))
@@ -513,16 +632,20 @@ local	POP_FUMBLED = 2
 local	POP_NOOP = 3
 
 function PlayPopSound(position, scoreKind)
-	pop = World.SpawnAsset(propPopSFXTemplate)
-	pop:SetWorldPosition(position)
-	pop:Play()
+	sfx = World.SpawnAsset(propPopSFXTemplate)
+	sfx:SetWorldPosition(position)
+	sfx:Play()
 	
 	if scoreKind == POP_SCORED then
 		Task.Wait(0.15)
-		propBoomSFX:Play()
+		sfx = World.SpawnAsset(propScoreSFXTemplate)
+		sfx:SetWorldPosition(position)
+		sfx:Play()
 	elseif scoreKind == POP_FUMBLED then
 		Task.Wait(0.15)
-		propFumbleSFX:Play()
+		sfx = World.SpawnAsset(propFumbleSFXTemplate)
+		sfx:SetWorldPosition(position)
+		sfx:Play()
 	end
 end
 

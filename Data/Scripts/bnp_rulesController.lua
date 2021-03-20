@@ -15,13 +15,14 @@ local propNoStrikeColor = script:GetCustomProperty("noStrikeColor")
 local propScoreIndicator = script:GetCustomProperty("scoreIndicator"):WaitForObject()
 local propEntranceTrigger = script:GetCustomProperty("entranceTrigger"):WaitForObject()
 local propLevelMusicTemplate = script:GetCustomProperty("levelMusic")
+local propTimerLabel = script:GetCustomProperty("timerLabel"):WaitForObject()
 
 local propLevelMusic = nil
 
 propLevelControllerBopAndPop.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
     print("property changed " .. propertyName)
-    if propertyName == "levelActive" then
-        BindInstructions(coreObject:GetCustomProperty(propertyName))
+    if propertyName == "levelStatus" then
+        ActivateInstructions(coreObject:GetCustomProperty(propertyName))
         propInstructionsTextLabel.text = coreObject:GetCustomProperty("levelInstructions")
         propWinConditionLabel.text = "/ " .. coreObject:GetCustomProperty("winCondition")
     elseif propertyName == "currentScore" then
@@ -38,18 +39,33 @@ propLevelControllerBopAndPop.networkedPropertyChangedEvent:Connect(function(core
                 propStrikeImages[strike]:SetColor(propNoStrikeColor)
             end
         end
+    elseif propertyName == "timeRemaining" then
+        timeRemaining = coreObject:GetCustomProperty(propertyName)
+        if timeRemaining < 0 then
+            propTimerLabel.text = ""
+        else    
+            secondsRemaining = timeRemaining % 60
+            minutesRemaining = math.tointeger((timeRemaining - secondsRemaining) / 60)
+            if secondsRemaining < 10 then
+                secondsRemaining = "0" .. secondsRemaining
+            end
+            propTimerLabel.text = minutesRemaining .. ":" .. secondsRemaining
+        end
     end
 end)
 
 entranceListener = nil
 
-function BindInstructions(levelActive)
-    if levelActive then
+function ActivateInstructions(levelStatus)
+    if levelStatus == 1 then
         entranceListener = propEntranceTrigger.beginOverlapEvent:Connect(OnPlayerEntered)
         propScoreIndicator.visibility = Visibility.FORCE_ON
+        propRulesPanel.visibility = Visibility.FORCE_ON
+    elseif levelStatus == 2 then
+        propRulesPanel.visibility = Visibility.FORCE_OFF
         Game.GetLocalPlayer().bindingPressedEvent:Connect(OnBindingPressed)
         Game.GetLocalPlayer().bindingReleasedEvent:Connect(OnBindingReleased)
-   else
+    else
         propScoreIndicator.visibility = Visibility.FORCE_OFF
         Game.GetLocalPlayer().bindingPressedEvent:Disconnect(OnBindingPressed)
         Game.GetLocalPlayer().bindingReleasedEvent:Disconnect(OnBindingReleased)
