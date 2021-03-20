@@ -5,9 +5,12 @@ Objects {
   Name: "Level.Puckollossal"
   Transform {
     Location {
-      Z: 12400
+      X: 2330
+      Y: 2830
+      Z: 11225.001
     }
     Rotation {
+      Yaw: 90
     }
     Scale {
       X: 1
@@ -100,9 +103,9 @@ Objects {
   Name: "Level.BopAndPop"
   Transform {
     Location {
-      X: 25
-      Y: -50
-      Z: 1800
+      X: -100
+      Y: -25
+      Z: 1850
     }
     Rotation {
     }

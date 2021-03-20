@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13640596689401745214
+  Name: "Ring - Quarter Thick"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_quarter_torus_003"
+  }
+}
+Assets {
   Id: 12905923173550510229
   Name: "Cylinder - Polished"
   PlatformAssetType: 1
@@ -17,12 +26,12 @@ Assets {
   }
 }
 Assets {
-  Id: 11846745299843396319
-  Name: "Leather Tufted 01"
+  Id: 9348120320040725071
+  Name: "Hay 02"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
-    AssetId: "mi_fabric_tufted_001_uv_ref"
+    AssetId: "mi_fan_hay_002_uv"
   }
 }
 Assets {
@@ -35,11 +44,11 @@ Assets {
   }
 }
 Assets {
-  Id: 3250892020078520154
-  Name: "Sphere"
+  Id: 1276298368217221597
+  Name: "Sci-fi Trim 01 End"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_sphere_002"
+    AssetId: "sm_scifi_trim_001_end"
   }
 }

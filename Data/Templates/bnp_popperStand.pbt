@@ -1,6 +1,6 @@
 Assets {
   Id: 10446660573379890356
-  Name: "bnpPopperStand"
+  Name: "bnp_popperStand"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
@@ -15,10 +15,16 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16312452784327853590
+        ParentId: 4781671109827199097
         ChildIds: 15258499535451025984
         ChildIds: 8350091382186821509
         ChildIds: 14647059690422451537
+        ChildIds: 15110295003709297648
+        ChildIds: 8114916683460827213
+        ChildIds: 6204145221877320007
+        ChildIds: 9629668464512272605
+        ChildIds: 2773305594864556409
+        ChildIds: 8842566656357791914
         UnregisteredParameters {
           Overrides {
             Name: "cs:trigger"
@@ -358,7 +364,7 @@ Assets {
             Z: 45
           }
           Rotation {
-            Yaw: -89.9998
+            Yaw: -89.9998169
           }
           Scale {
             X: -1
@@ -372,6 +378,15 @@ Assets {
             Name: "ma:Font_Neon:id"
             AssetReference {
               Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Font_Neon:color"
+            Color {
+              R: 0.49
+              G: 0.523774743
+              B: 1
+              A: 1
             }
           }
         }
@@ -437,6 +452,350 @@ Assets {
           }
         }
       }
+      Objects {
+        Id: 15110295003709297648
+        Name: "Frame Small Straight - Neon Double"
+        Transform {
+          Location {
+            X: -1
+            Y: -33
+            Z: 20
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1702665487452193969
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font_Neon:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Font_Neon:color"
+            Color {
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6572755578963600544
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 8114916683460827213
+        Name: "Frame Small Straight - Neon Double"
+        Transform {
+          Location {
+            X: -1
+            Y: -27
+            Z: 20
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1702665487452193969
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font_Neon:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Font_Neon:color"
+            Color {
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6572755578963600544
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 6204145221877320007
+        Name: "Frame Small Straight - Neon Double"
+        Transform {
+          Location {
+            X: -1
+            Y: -27
+            Z: 45
+          }
+          Rotation {
+            Pitch: -90
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 0.5
+          }
+        }
+        ParentId: 1702665487452193969
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font_Neon:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Font_Neon:color"
+            Color {
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6572755578963600544
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 9629668464512272605
+        Name: "Frame Small Straight - Neon Double"
+        Transform {
+          Location {
+            X: -1
+            Y: -33
+            Z: 45
+          }
+          Rotation {
+            Pitch: -90
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 0.5
+          }
+        }
+        ParentId: 1702665487452193969
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font_Neon:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Font_Neon:color"
+            Color {
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6572755578963600544
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 2773305594864556409
+        Name: "Frame Small Corner - Neon Double"
+        Transform {
+          Location {
+            X: -1
+            Y: -32.999939
+            Z: 45
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1702665487452193969
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font_Neon:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Font_Neon:color"
+            Color {
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1809035708783833618
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 8842566656357791914
+        Name: "Frame Small Corner - Neon Double"
+        Transform {
+          Location {
+            X: -1
+            Y: -27
+            Z: 45
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1702665487452193969
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Font_Neon:id"
+            AssetReference {
+              Id: 11351458657934598484
+            }
+          }
+          Overrides {
+            Name: "ma:Font_Neon:color"
+            Color {
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1809035708783833618
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
     }
     Assets {
       Id: 16219670883593009618
@@ -463,6 +822,24 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_Neon6_Corner_Double"
+      }
+    }
+    Assets {
+      Id: 6572755578963600544
+      Name: "Frame Small Straight - Neon Double"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_Neon1_Straight_Double"
+      }
+    }
+    Assets {
+      Id: 1809035708783833618
+      Name: "Frame Small Corner - Neon Double"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_Neon1_Corner_Double"
       }
     }
     PrimaryAssetId {
