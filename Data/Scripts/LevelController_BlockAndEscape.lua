@@ -48,7 +48,7 @@ function LevelPowerUp()
 	ball_2_Large5_5 = World.SpawnAsset(PHYSICS_SPHERE_5_5, {position = LARGE_BALL_POS_2, parent = folderBalls})
 	ball_2_Large5_5:SetScale(ball_2_Large5_5:GetWorldScale() * 5.5)
 	
-	ball_3_Small4 = World.SpawnAsset(PHYSICS_SPHERE_4, {position = SMALL_BALL_POS_1, parent = folderBalls})
+	--ball_3_Small4 = World.SpawnAsset(PHYSICS_SPHERE_4, {position = SMALL_BALL_POS_1, parent = folderBalls})
 end
 
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds

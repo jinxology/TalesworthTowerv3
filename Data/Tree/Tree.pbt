@@ -25,7 +25,6 @@ Objects {
   ChildIds: 14713340454944924967
   ChildIds: 1112385650763072475
   ChildIds: 568490692521295426
-  ChildIds: 2745946027965491304
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -38,46 +37,6 @@ Objects {
     Value: "mc:ecollisionsetting:forceon"
   }
   Folder {
-  }
-}
-Objects {
-  Id: 2745946027965491304
-  Name: "FlumePortalPipes"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 3972071331736654868
-      value {
-        Overrides {
-          Name: "Name"
-          String: "FlumePortalPipes"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 4137.5166
-            Y: 2980
-            Z: 9617.4834
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 17754959196814726637
-    }
   }
 }
 Objects {
