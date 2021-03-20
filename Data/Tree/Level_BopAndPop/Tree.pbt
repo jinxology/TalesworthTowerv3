@@ -6877,17 +6877,14 @@ Objects {
           String: "bnp.interior"
         }
         Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
           Name: "Position"
           Vector {
             Z: -50
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
           }
         }
       }
