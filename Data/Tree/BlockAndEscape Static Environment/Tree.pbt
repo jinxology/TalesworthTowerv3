@@ -12,7 +12,7 @@ Objects {
     Rotation {
     }
     Scale {
-      X: 0.400000036
+      X: 0.538131058
       Y: 1
       Z: 0.999999881
     }
@@ -48,16 +48,16 @@ Objects {
   Name: "Fantasy Castle Stairs 01"
   Transform {
     Location {
-      X: -1675
+      X: -1609.48853
       Y: 900
-      Z: 1200
+      Z: 1198.80469
     }
     Rotation {
       Yaw: -179.999954
     }
     Scale {
-      X: 0.400000036
-      Y: 1
+      X: 0.518315434
+      Y: 0.999999881
       Z: 0.999999881
     }
   }
@@ -1492,6 +1492,66 @@ Objects {
   }
 }
 Objects {
+  Id: 9503167383296317492
+  Name: "Fantasy Castle Pillar 01 - 2x Tile Template"
+  Transform {
+    Location {
+      X: -750
+      Y: 1818.53125
+      Z: 8100
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1.77
+      Y: 1.77
+      Z: 1.77
+    }
+  }
+  ParentId: 7175841995601495478
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 5651245337890175187
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Fantasy Castle Pillar 01 - 2x Tile Template"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -4551.10449
+            Y: 1298.80164
+            Z: 1200
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1.77
+            Y: 1.77
+            Z: 1.77
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 11771886334594091784
+    }
+  }
+}
+Objects {
   Id: 12877412636744111255
   Name: "Fantasy Castle Pillar 01 - 2x Tile Template"
   Transform {
@@ -1520,7 +1580,7 @@ Objects {
           Name: "Position"
           Vector {
             X: -2350
-            Y: 2025
+            Y: 1818.53125
             Z: 1200
           }
         }
@@ -1532,9 +1592,69 @@ Objects {
         Overrides {
           Name: "Scale"
           Vector {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 1.77
+            Y: 1.77
+            Z: 1.77
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 11771886334594091784
+    }
+  }
+}
+Objects {
+  Id: 16838483693647752968
+  Name: "Fantasy Castle Pillar 01 - 2x Tile Template"
+  Transform {
+    Location {
+      X: 2075
+      Y: 475
+      Z: 8100
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1.77985704
+      Y: 1.77985704
+      Z: 1.77985704
+    }
+  }
+  ParentId: 7175841995601495478
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 5651245337890175187
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Fantasy Castle Pillar 01 - 2x Tile Template"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -298.105469
+            Y: 2512.10767
+            Z: 1200
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1.77
+            Y: 1.77
+            Z: 1.77
           }
         }
       }
@@ -1579,8 +1699,8 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: 475
-            Y: 475
+            X: 1163.09058
+            Y: 262.798523
             Z: 1200
           }
         }
@@ -1592,9 +1712,9 @@ Objects {
         Overrides {
           Name: "Scale"
           Vector {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 1.77
+            Y: 1.77
+            Z: 1.77
           }
         }
       }

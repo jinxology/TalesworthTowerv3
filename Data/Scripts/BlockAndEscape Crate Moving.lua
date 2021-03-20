@@ -25,21 +25,21 @@ local rayCastResult_Y
 function OnBeginOverlap(whichTrigger, objectInTrigger)
 
 	--Grab the location of the parent Crate
-	crateWorldPosition = crate:GetWorldPosition()	
+--	crateWorldPosition = crate:GetWorldPosition()	
 		
 	--Push the Crate if you can
 	--First calculate the locations of the Crate and the Object that entered the Trigger (Player or another Trigger (Wall or another Crate)
-	objectInTriggerWorldPosition = objectInTrigger:GetWorldPosition()
+	--objectInTriggerWorldPosition = objectInTrigger:GetWorldPosition()
 	
 	--Gets a vector with the distance between the Crate and the Object (objectInTriggerWorldPosition)
-	triggerVector = objectInTriggerWorldPosition - crateWorldPosition	
+	--triggerVector = objectInTriggerWorldPosition - crateWorldPosition	
 	
-	moveToLocation = CalculateMoveContinuous()
+	--moveToLocation = CalculateMoveContinuous()
 
 --	if objectInTrigger and objectInTrigger:IsA("Player") then
 
 	if moveToLocation then
-		crate:MoveContinuous(moveToLocation)
+	--	crate:MoveContinuous(moveToLocation)
 	end 
 
 --	else

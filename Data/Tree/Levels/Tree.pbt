@@ -35,12 +35,12 @@ Objects {
   Name: "Level.JumpMan"
   Transform {
     Location {
-      X: 875
+      X: 2158.2605
       Y: 4200
-      Z: 10125
+      Z: 10958.9463
     }
     Rotation {
-      Yaw: -125
+      Yaw: -136.270554
     }
     Scale {
       X: 1
