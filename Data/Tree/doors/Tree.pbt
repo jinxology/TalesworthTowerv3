@@ -245,6 +245,19 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 7780466802025428955
+      value {
+        Overrides {
+          Name: "TeamsEnableTeamCollision"
+          Bool: false
+        }
+        Overrides {
+          Name: "TeamsEnableEnemyCollision"
+          Bool: false
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 11145010378172115278
       value {
         Overrides {
@@ -254,6 +267,17 @@ Objects {
             G: 1
             B: 0.775822461
             A: 1
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 12971417277269190401
+      value {
+        Overrides {
+          Name: "bp:Creak Type"
+          Enum {
+            Value: "mc:esfx_door_wood_creaks_01:4"
           }
         }
       }
