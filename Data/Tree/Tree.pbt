@@ -2344,12 +2344,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:TxtGoToExit"
-      ObjectReference {
-        SelfId: 8573270706784511485
-      }
-    }
-    Overrides {
       Name: "cs:LevelBeaconFail"
       AssetReference {
         Id: 17777444606176941067
