@@ -1536,8 +1536,6 @@ Objects {
   ChildIds: 2099875618948812335
   ChildIds: 7965379229266797670
   ChildIds: 11653852059995843056
-  ChildIds: 11619825187602097764
-  ChildIds: 17432869967201149540
   ChildIds: 2230864129348876099
   ChildIds: 15991708692250836071
   ChildIds: 10813156380265646515
@@ -2205,260 +2203,12 @@ Objects {
   }
 }
 Objects {
-  Id: 17432869967201149540
-  Name: "Physics Sphere"
-  Transform {
-    Location {
-      X: -608.173828
-      Y: 187.285522
-      Z: -124.858398
-    }
-    Rotation {
-    }
-    Scale {
-      X: 5.5
-      Y: 5.5
-      Z: 5.5
-    }
-  }
-  ParentId: 5727767727766945175
-  ChildIds: 18427386780590093323
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  PhysicsObject {
-    PhysicsShape {
-      Value: "mc:ephysicsshape:sphere"
-    }
-    Settings {
-      IsEnabled: true
-      Mass: 100
-      AngularDamping: 3
-    }
-    Radius: 50
-    Length: 200
-  }
-}
-Objects {
-  Id: 18427386780590093323
-  Name: "ClientContext"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17432869967201149540
-  ChildIds: 7847602450936607705
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  NetworkContext {
-  }
-}
-Objects {
-  Id: 7847602450936607705
-  Name: "PhysicsSphereMesh"
-  Transform {
-    Location {
-      Z: -0.0257457402
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 18427386780590093323
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 13485243415661967086
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 3250892020078520154
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 11619825187602097764
-  Name: "Physics Sphere 5.5 Scale"
-  Transform {
-    Location {
-      X: 1827.10742
-      Y: -469.022583
-      Z: -124.858398
-    }
-    Rotation {
-    }
-    Scale {
-      X: 5.5
-      Y: 5.5
-      Z: 5.5
-    }
-  }
-  ParentId: 5727767727766945175
-  ChildIds: 5477888972932871133
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  PhysicsObject {
-    PhysicsShape {
-      Value: "mc:ephysicsshape:sphere"
-    }
-    Settings {
-      IsEnabled: true
-      Mass: 100
-      AngularDamping: 3
-    }
-    Radius: 50
-    Length: 200
-  }
-}
-Objects {
-  Id: 5477888972932871133
-  Name: "ClientContext"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 11619825187602097764
-  ChildIds: 14680238687646565099
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  NetworkContext {
-  }
-}
-Objects {
-  Id: 14680238687646565099
-  Name: "PhysicsSphereMesh"
-  Transform {
-    Location {
-      Z: -0.0257457402
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 5477888972932871133
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 13485243415661967086
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 3250892020078520154
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
   Id: 11653852059995843056
   Name: "Physics Sphere"
   Transform {
     Location {
-      X: -29.2069092
-      Y: 178.174072
+      X: 1622.31348
+      Y: 772.162109
       Z: -198.706055
     }
     Rotation {
@@ -2588,8 +2338,8 @@ Objects {
   Name: "Physics Sphere"
   Transform {
     Location {
-      X: 1132.03638
-      Y: 268.721924
+      X: 542.256104
+      Y: -818.170654
       Z: -200
     }
     Rotation {
@@ -2719,8 +2469,8 @@ Objects {
   Name: "Physics Sphere"
   Transform {
     Location {
-      X: 566.286621
-      Y: 368.511841
+      X: 874.457031
+      Y: 1108.01855
       Z: -150
     }
     Rotation {
@@ -2851,7 +2601,7 @@ Objects {
   Transform {
     Location {
       X: -1200.0929
-      Y: 309.613281
+      Y: -1094.69507
       Z: -150
     }
     Rotation {
@@ -3029,6 +2779,12 @@ Objects {
         SelfId: 6965558101138960242
       }
     }
+    Overrides {
+      Name: "cs:bae_PhysicsSphere5_5Scale"
+      AssetReference {
+        Id: 9276788853400672118
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -3042,6 +2798,61 @@ Objects {
   Script {
     ScriptAsset {
       Id: 3040471467604319917
+    }
+  }
+}
+Objects {
+  Id: 7036709542027970409
+  Name: "FlumePortalEssentials"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3535859253216386145
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17649526533898173544
+      value {
+        Overrides {
+          Name: "Name"
+          String: "FlumePortalEssentials"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -6375
+            Y: 525
+            Z: 2000
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -1.78509521
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 13204994640971399595
     }
   }
 }
