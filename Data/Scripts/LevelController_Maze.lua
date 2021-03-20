@@ -1,4 +1,4 @@
-
+local propTimerSeconds = script:GetCustomProperty("TimerSeconds")
 ------------------------------------------------------------
 --REQUIRED BY MAIN CONTROLLER
 ------------------------------------------------------------
@@ -30,18 +30,26 @@ local propMainGameController = script:GetCustomProperty("MainGameController"):Wa
 --LevelPowerUp code is called from the previous level to do setup on it before the players arrive
 function LevelPowerUp() 
 --initialize level
---close door
+--close doors
 end
 
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds
 function LevelBegin()
---door open
+print "level begin"
+--all on pads
+--doors open
 --timer start
+propMainGameController.context.StartTimer(propTimerSeconds, TimerEnded)
 end
 
 --LevelEnd code is called when the....
 function LevelEnd()
+--timer reaches 0
 
+function TimerEnded()
+    LevelFailed()
+end
+--all on finish pads
 end
 
 --LevelPowerDown is called from the next level back to this one to clean it up and remove it from memory
