@@ -16,15 +16,8 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 4632080263111267721
-        ChildIds: 8250440176306753464
-        ChildIds: 7105946810194059609
-        ChildIds: 15186182161827782553
-        ChildIds: 7433323460674083579
-        ChildIds: 15959598927887552148
-        ChildIds: 2866623624453752168
-        ChildIds: 8572986973244364165
-        ChildIds: 17485454060629004342
+        ChildIds: 8879305621892185891
+        ChildIds: 4784618561054706893
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -38,6 +31,80 @@ Assets {
         Folder {
           Model {
           }
+        }
+      }
+      Objects {
+        Id: 8879305621892185891
+        Name: "Cube"
+        Transform {
+          Location {
+            Y: -20
+            Z: 67
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1.2
+            Z: 1.3
+          }
+        }
+        ParentId: 10980480794330802899
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 12095835209017042614
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 4784618561054706893
+        Name: "ClientContext"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10980480794330802899
+        ChildIds: 4632080263111267721
+        ChildIds: 8250440176306753464
+        ChildIds: 17113686190164351628
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        NetworkContext {
         }
       }
       Objects {
@@ -55,8 +122,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10980480794330802899
-        WantsNetworking: true
+        ParentId: 4784618561054706893
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -97,13 +163,13 @@ Assets {
         Name: "Spotlight"
         Transform {
           Location {
-            Y: -24.9999981
+            Y: -25
             Z: 460
           }
           Rotation {
             Pitch: -90
-            Yaw: 35.2644
-            Roll: -35.2644043
+            Yaw: -35.2643929
+            Roll: 35.264389
           }
           Scale {
             X: 1
@@ -111,8 +177,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10980480794330802899
-        WantsNetworking: true
+        ParentId: 4784618561054706893
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -154,12 +219,49 @@ Assets {
         }
       }
       Objects {
+        Id: 17113686190164351628
+        Name: "MergedModel"
+        Transform {
+          Location {
+            Y: -6
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 4784618561054706893
+        ChildIds: 7105946810194059609
+        ChildIds: 15186182161827782553
+        ChildIds: 7433323460674083579
+        ChildIds: 15959598927887552148
+        ChildIds: 2866623624453752168
+        ChildIds: 8572986973244364165
+        ChildIds: 17485454060629004342
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          Model {
+          }
+        }
+      }
+      Objects {
         Id: 7105946810194059609
         Name: "Fantasy Mace Guard 01"
         Transform {
           Location {
-            X: 0.000122070298
-            Y: -7.27595761e-12
+            X: 0.000122070313
+            Y: 6
             Z: 110
           }
           Rotation {
@@ -170,8 +272,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10980480794330802899
-        WantsNetworking: true
+        ParentId: 17113686190164351628
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -202,6 +303,7 @@ Assets {
         Name: "Fantasy Pommel 03"
         Transform {
           Location {
+            Y: 6
             Z: 135
           }
           Rotation {
@@ -212,8 +314,7 @@ Assets {
             Z: 2
           }
         }
-        ParentId: 10980480794330802899
-        WantsNetworking: true
+        ParentId: 17113686190164351628
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -244,14 +345,14 @@ Assets {
         Name: "Modern Weapon Barrel 01"
         Transform {
           Location {
-            X: 0.000122070298
-            Y: -7.27595761e-12
+            X: 0.000122070313
+            Y: 6
             Z: 110
           }
           Rotation {
             Pitch: -90
-            Yaw: 35.2644
-            Roll: -35.2644043
+            Yaw: 19.47122
+            Roll: -19.4712219
           }
           Scale {
             X: 2
@@ -259,7 +360,7 @@ Assets {
             Z: 2
           }
         }
-        ParentId: 10980480794330802899
+        ParentId: 17113686190164351628
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
@@ -285,7 +386,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -316,8 +416,8 @@ Assets {
         Name: "Fantasy Chest Base 01"
         Transform {
           Location {
-            X: 0.000122070298
-            Y: -7.27595761e-12
+            X: 0.000122070313
+            Y: 6
           }
           Rotation {
           }
@@ -327,8 +427,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10980480794330802899
-        WantsNetworking: true
+        ParentId: 17113686190164351628
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -359,11 +458,11 @@ Assets {
         Name: "Fantasy Chest Lid 01"
         Transform {
           Location {
-            Y: -39.9999962
+            Y: -34
             Z: 45
           }
           Rotation {
-            Roll: -90
+            Roll: -89.9999847
           }
           Scale {
             X: 1
@@ -371,8 +470,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10980480794330802899
-        WantsNetworking: true
+        ParentId: 17113686190164351628
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -403,6 +501,7 @@ Assets {
         Name: "Sphere - Half Thick"
         Transform {
           Location {
+            Y: 6
             Z: 30
           }
           Rotation {
@@ -413,7 +512,7 @@ Assets {
             Z: 0.5
           }
         }
-        ParentId: 10980480794330802899
+        ParentId: 17113686190164351628
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -434,7 +533,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -465,6 +563,7 @@ Assets {
         Name: "Pipe"
         Transform {
           Location {
+            Y: 6
             Z: 10
           }
           Rotation {
@@ -475,7 +574,7 @@ Assets {
             Z: 0.2
           }
         }
-        ParentId: 10980480794330802899
+        ParentId: 17113686190164351628
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -496,7 +595,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -521,6 +619,15 @@ Assets {
             }
           }
         }
+      }
+    }
+    Assets {
+      Id: 12095835209017042614
+      Name: "Cube"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_cube_002"
       }
     }
     Assets {

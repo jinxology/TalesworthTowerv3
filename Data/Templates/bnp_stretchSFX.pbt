@@ -7,7 +7,7 @@ Assets {
       RootId: 12653609987393044521
       Objects {
         Id: 12653609987393044521
-        Name: "bnp.stretchSFX"
+        Name: "bnp_stretchSFX"
         Transform {
           Scale {
             X: 1
@@ -30,6 +30,7 @@ Assets {
           AudioAsset {
             Id: 5834100326012314738
           }
+          Transient: true
           Volume: 1
           Falloff: -1
           Radius: -1

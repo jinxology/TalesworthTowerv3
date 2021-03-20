@@ -25,17 +25,12 @@ function OnBeginOverlap(whichTrigger, other)
 				-- equipment:GetCustomProperty("Dunk"):WaitForObject():Activate()
 				-- balloon.context.propDunkAbility:Activate()
 
-				vfx = World.SpawnAsset(propLevelController.context.propBurstVFXTemplate)
-				vfx:SetWorldPosition(propDisc:GetWorldPosition())
-				vfx:SetSmartProperty("Color", propLevelController.context.ColorForBNPColor(bnpColor))
-				
 				balloon.context.DropByPlayer(player)
 				balloon.parent.collision = Collision.FORCE_OFF
 				balloon.parent:MoveTo(propDisc:GetWorldPosition(), propSuctionSFX.length)
 				
 				propSuctionSFX:Play()
 				Task.Wait(propSuctionSFX.length)
-				vfx:Play()
 				scored = propLevelController.context.PlayerJumpedOnOneLegCarryingBalloon(player.name, bnpColor, spawner, propDisc:GetWorldPosition())
 				balloon.parent:Destroy()
 			end
@@ -53,9 +48,6 @@ function OnBeginOverlap(whichTrigger, other)
 
 			propSuctionSFX:Play()
 			Task.Wait(propSuctionSFX.length)
-			vfx = World.SpawnAsset(propLevelController.context.propBurstVFXTemplate)
-			vfx:SetWorldPosition(propDisc:GetWorldPosition())
-			vfx:SetSmartProperty("Color", propLevelController.context.ColorForBNPColor(bnpColor))
 			
 			propLevelController.context.PlayerBoppedBalloon(boppedBy, bnpColor, spawner, propDisc:GetWorldPosition())
 			physics:Destroy()

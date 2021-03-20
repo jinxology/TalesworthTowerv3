@@ -42,7 +42,7 @@ exitFlumeRotation = Rotation.New(0, 45, 45)
 entranceFlumeLocation = Vector3.New(1465, 1495, 225)
 entranceFlumeRotation = Rotation.New(0, 45, -135)
 entranceFlumeEjectionVelocity = 8.79
-startPlatformPosition = Vector3.New(-725, -1350, 0)
+startPlatformPosition = Vector3.New(-725, -1350, -25)
 startPlatformRotation = Rotation.New(0, 0, -45)
 
 
@@ -178,16 +178,10 @@ function LoadTutorial()
 
 	for i = 1, 3, 1 do
 		stand = World.SpawnAsset(propStandTemplate,  { position = propTutorialWeaponStandLocations[i], rotation = propTutorialWeaponStandRotations[i], parent = propTutorialContainer})
-		weapon = TemplateForBNPWeapon(propTutorialStandWeapons[index])
 		
-		asset = World.SpawnAsset(weapon, { parent = stand })
-		
-		stand.context.bnpWeapon = propTutorialStandWeapons[index]
+		stand.context.SetBNPWeapon(propTutorialStandWeapons[index], TemplateForBNPWeapon(propTutorialStandWeapons[index]))
+		stand.context.SetBNPColor(0, Color.WHITE)
 		stand.context.propLevelController = script
-
-		for _, colorElement in pairs(stand:GetCustomProperty("colorElements"):WaitForObject():GetChildren()) do
-			colorElement:SetColor(Color.WHITE)
-		end
 	end
 
 	World.SpawnAsset(propInstructionsSignTemplate, { parent = propTutorialContainer, position = propTutorialSignLocation, rotation = propTutorialSignRotation })
@@ -331,22 +325,16 @@ function SpawnWeapons()
 
 		table.remove(poppers, index)
 		
-		weapon = TemplateForBNPWeapon(popper.weapon)
-		
 		if coloredWeapons then
 			color = ColorForBNPColor(popper.color)
 		else
 			color = Color.WHITE
 		end
-		asset = World.SpawnAsset(weapon, { parent = stand })
 		
-		stand.context.bnpColor = popper.color
-		stand.context.bnpWeapon = popper.weapon
 		stand.context.propLevelController = script
-
-		for _, colorElement in pairs(stand:GetCustomProperty("colorElements"):WaitForObject():GetChildren()) do
-			colorElement:SetColor(color)
-		end
+		stand.context.SetBNPColor(popper.color, color)
+		stand.context.SetBNPWeapon(popper.weapon, TemplateForBNPWeapon(popper.weapon))
+		stand.context.propLevelController = script
 	end
 end
 
@@ -433,7 +421,6 @@ function BeginRound()
 
 	local		boppable = { BNP_RED, BNP_BLUE, BNP_YELLOW, BNP_GREEN }
 
-	print("allow " .. numBoppable .. " boppable colors")
 	numPoppable = 4 - numBoppable
 	for i = 1, numPoppable, 1 do
 		index = math.random(1, #boppable)
@@ -441,21 +428,9 @@ function BeginRound()
 		table.remove(boppable, index)
 	end
 
-	for bnpColor, isBoppable in pairs(bopColors) do
-		if isBoppable then
-			print("bop: ", ColorForBNPColor(bnpColor))
-		else
-			print("pop: ", ColorForBNPColor(bnpColor))
-		end
-	end
-	-- bopColor = ColorForBNPColor(bopBNPColor)
-	-- popColor = ColorForBNPColor(popBNPColor)
-
-	-- propIntakeGlow:SetColor(bopColor)
 	SpawnBalloons()
 	ColorSigns()
 	Task.Wait(3)
-	-- propInstructionsPanel.visibility = Visibility.FORCE_OFF
 end
 
 function ColorSigns()
@@ -478,7 +453,6 @@ function ColorSigns()
 		sign:GetCustomProperty("bElement2"):WaitForObject().isEnabled = isBop
 	end
 
-	print(#intakeCycleColors .. " boppable")
 	if numBoppable == 1 then
 		propColorIntakeTask.Cancel()
 		propColorIntakeTask = nil
@@ -566,10 +540,6 @@ function SpawnBalloons()
 		table.insert(balloonPipe, bnpColor)
 	end
 
-	for _, bnpColor in ipairs(balloonPipe) do
-		print(ColorForBNPColor(bnpColor))
-	end
-
 	for _, spawner in pairs(propSpawnerContainer:GetChildren()) do
 		table.insert(emptySpawners, spawner)
 	end
@@ -619,7 +589,6 @@ function SpawnNextBalloon()
 	
 	World.SpawnAsset(propInflateSFXTemplate, { parent = balloon.parent, position = balloon.position }):Play()
 	
-	print(balloon.name)
 	balloon.context.SetBNPColor(bnpColor, ColorForBNPColor(bnpColor))
 	balloon.context.spawnedBy = spawner
 
@@ -649,10 +618,21 @@ function PlayPopSound(position, scoreKind)
 	end
 end
 
+function PlayPopVFX(position, bnpColor)
+	vfx = World.SpawnAsset(propBurstVFXTemplate)
+	vfx:SetWorldPosition(position)
+	vfx:SetSmartProperty("Color", ColorForBNPColor(bnpColor))
+	
+	vfx:Play()
+end
+	
+
+
 function PlayerBoppedBalloon(playerName, bnpColor, spawnedBy, popPosition)
 	table.insert(emptySpawners, spawnedBy)
 	scoreKind = POP_FUMBLED
 	
+	PlayPopVFX(popPosition, bnpColor)
 	if bopColors[bnpColor] == true then
 		scoreKind = POP_SCORED
 	end
@@ -664,6 +644,7 @@ end
 function PlayerPoppedBalloon(playerName, bnpColor, spawnedBy, popPosition)
 	table.insert(emptySpawners, spawnedBy)
 
+	PlayPopVFX(popPosition, bnpColor)
 	if bopColors[bnpColor] == true then
 		PlayPopSound(popPosition, POP_FUMBLED)
 		ScoreRound(playerName, bnpColor, false)
@@ -681,6 +662,7 @@ function PlayerJumpedOnOneLegCarryingBalloon(playerName, bnpColor, spawnedBy, po
 		scoreKind = POP_SCORED
 	end
 
+	PlayPopVFX(popPosition, bnpColor)
 	PlayPopSound(popPosition, scoreKind)
 	ScoreRound(playerName, bnpColor, scoreKind == POP_SCORED)
 end
@@ -700,7 +682,6 @@ function ScoreRound(playerName, balloonColor, scored)
 		--	make text go pop
 	end
 
-	print("Round ended, score: " .. teamScore .. ", failures: " .. teamFailures)
 	if (teamScore >= winCondition) then
 		propMainTextLabel.text = message .. "\nTEAM WINS\nFLUME SYSTEM ENGAGED"
 		Task.Wait(3)
