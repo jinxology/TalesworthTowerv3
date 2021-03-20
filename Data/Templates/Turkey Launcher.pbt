@@ -57,10 +57,10 @@ Assets {
           }
           Weapon {
             ProjectileAssetRef {
-              Id: 15616668266289424525
+              Id: 16043720604494364889
             }
             MuzzleFlashAssetRef {
-              Id: 13717526892950500426
+              Id: 11890777461611711528
             }
             TrailAssetRef {
               Id: 16529519545048550732
@@ -105,9 +105,9 @@ Assets {
             MaxAmmo: 6
             AmmoType: "rounds"
             MultiShot: 1
-            ProjectileSpeed: 2600
+            ProjectileSpeed: 3000
             ProjectileLifeSpan: 2.6
-            ProjectileGravity: 1.2
+            ProjectileGravity: 0.8
             ProjectileLength: 15
             ProjectileRadius: 15
             SpreadMin: 3
@@ -1514,7 +1514,7 @@ Assets {
         }
         Trigger {
           Interactable: true
-          InteractionLabel: "Equip Chicken Cannon"
+          InteractionLabel: "Equip Turkey Cannon"
           TeamSettings {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true

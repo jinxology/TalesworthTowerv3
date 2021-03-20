@@ -7,14 +7,14 @@ local timerStarted = false
 local timeLeft = 0
 local timerEndCallback
 local playerKeyBindingListener = nil
-
+ 
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
-levelList = {"ShapesAndButtons","BopAndPop","ColorDials","Maze","Jumpman","FarmGallery","ShapesAndButtons","PoolPlatforms"}
+levelList = {"ShapesAndButtons","BopAndPop","ColorDials","Maze","Jumpman","FarmGallery","PoolPlatforms"}
 requiredNbrPlayersReady = 4
 
-
+ 
 function OnBindingPressed(player, bindingPressed)
     --print ("pressed " .. bindingPressed)
     local ctrl = GetCurrentLevelController()
@@ -22,10 +22,6 @@ function OnBindingPressed(player, bindingPressed)
     if (bindingPressed == "ability_extra_25") then 
         --Y    
         if not levelRunning then
-            --if (currentLevelIndex ~= 1) then
-              --  SpawnFlumePortals(currentLevelIndex)
-                --SpawnStartingPlatforms(currentLevelIndex)
-            --end
             local levelControllerScript = GetCurrentLevelController()
             levelControllerScript.context.LevelPowerUp() 
             
@@ -58,7 +54,14 @@ end
 
 
 function TeleportAllPlayers(currentLev, newLoc)
+    DestroyLevel(currentLevelIndex)
+    if (nextLevelIndex ~= nil) then
+        DestroyLevel(nextLevelIndex)
+    end
+    levelRunning = false
+
     currentLevelIndex = currentLev
+    nextLevelindex = nil
     local players = Game.GetPlayers()
     
     for _, player in pairs(Game.GetPlayers()) do
@@ -69,6 +72,7 @@ function TeleportAllPlayers(currentLev, newLoc)
     levelControllerScript.context.LevelPowerUp()
     SpawnStartingPlatforms(currentLevelIndex)
     SpawnFlumePortals(currentLevelIndex)
+
 end
     
 
@@ -251,7 +255,6 @@ function SpawnStartingPlatforms(levelIndex)
     controller.context.startingPlatforms = PlaceStartingPlatforms(levelIndex, controller.context.startPlatformPosition, controller.context.startPlatformRotation)
 end
 
-
 function DestroyFlumePortals(levelIndex)
     local controller = GetLevelControllerByLevelIndex(levelIndex)
     controller.context.exitFlume:Destroy()
@@ -260,22 +263,40 @@ function DestroyFlumePortals(levelIndex)
     controller.context.entranceFlume = nil
 end
 
+function DestroyStartingPlatforms(levelIndex)
+    local controller = GetLevelControllerByLevelIndex(levelIndex)    
+    controller.context.startingPlatforms:Destroy()
+end
+
+function DestroyLevel(levelIndex)
+    levelControllerScript = GetLevelControllerByLevelIndex(levelIndex)
+    levelControllerScript.context.LevelPowerDown()
+    DestroyFlumePortals(levelIndex)
+    DestroyStartingPlatforms(levelIndex)
+end
+
+function StartingPlatformsActivated()
+    if (not levelRunning) then
+        if (nextLevelIndex ~= nil) then        
+            --Coming from a different level
+            DestroyLevel(currentLevelIndex)
+            currentLevelIndex = nextLevelIndex
+            nextLevelIndex = nil
+        else   
+            --currentLevelIndex is correct, no need to increment and delete last level
+        end
+
+        LevelBegin()
+    end
+end
+
 function LevelBegin()
     if (not levelRunning) then
         levelRunning = true
-        
-        --For first level, no need to destroy the last level's flumes
-        if (nextLevelIndex ~= nil) then
-            DestroyFlumePortals(levelList[currentLevelIndex])
-            currentLevelIndex = nextLevelIndex
-            nextLevelIndex = nil
-        end
-        
+            
         local levelControllerScript = GetCurrentLevelController()
         levelControllerScript.context.LevelBegin()    
-        
-    end    
-    
+    end
 end
 
 function LevelEnd(success)    
@@ -331,6 +352,64 @@ function LevelEnd(success)
 
 end
 
+local countedAlready = false
+function RecursiveTreeWalker(rootObj)
+    local objCount = 0
+    if (rootObj.isNetworked and not rootObj.isClientOnly) then
+        if (countedAlready == true) then print ("--"..rootObj.name) end
+        objCount = objCount + 1
+    end
+
+    local kids = rootObj:GetChildren()
+    if (#kids > 0) then
+        for _,kid in pairs(kids) do
+            objCount = objCount + RecursiveTreeWalker(kid)
+        end
+    end
+    return objCount
+end
+
+function CountNetworkedObjects()    
+    for i=1,#levelList do
+        local folder = GetLevelFolderByLevelIndex(i)
+        if (folder == nil) then
+            print (levelList[i]..": level folder incorreectly named")
+        else
+            if (countedAlready == true) then print ("========== " .. levelList[i].." ==========") end
+            
+            local objCount = RecursiveTreeWalker(folder)
+
+            print (levelList[i].." total: "..objCount)
+        end
+    end
+    countedAlready = true
+end
+
+function GeneralClientToServerMessageHandler(msgType,data)
+    if (msgType == "countNetworkObjects") then
+        CountNetworkedObjects()
+    end
+end
+
+function Split(pString, pPattern)
+    local Table = {}  -- NOTE: use {n = 0} in Lua-5.0
+    local fpat = "(.-)" .. pPattern
+    local last_end = 1
+    local s, e, cap = pString:find(fpat, 1)
+    while s do
+       if s ~= 1 or cap ~= "" then
+      table.insert(Table,cap)
+       end
+       last_end = e+1
+       s, e, cap = pString:find(fpat, last_end)
+    end
+    if last_end <= #pString then
+       cap = pString:sub(last_end)
+       table.insert(Table, cap)
+    end
+    return Table 
+end
+
 ClearTimer()
 
 function OnPlayerJoined(player)
@@ -340,6 +419,7 @@ Game.playerJoinedEvent:Connect(OnPlayerJoined)
 
 Events.Connect("TeleportAllPlayers", TeleportAllPlayers)
 Events.Connect("SetRequiredStartPlatforms", SetRequiredStartPlatforms)
+Events.Connect("GeneralClientToServerMessage", GeneralClientToServerMessageHandler)
 
 --fire up first level
 Task.Wait(.1)

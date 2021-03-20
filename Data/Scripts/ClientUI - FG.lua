@@ -11,7 +11,7 @@ local propP4HitCount = script:GetCustomProperty("p4HitCount"):WaitForObject()
 
 function HitCountUpdate(coreObject, propertyName)
     local hitCountString = propLevelControllerFarmGallery:GetCustomProperty(propertyName)
-
+    
     if (hitCountString == "complete") then
         propUIContainer.visibility = Visibility.FORCE_OFF
     else
@@ -21,10 +21,11 @@ function HitCountUpdate(coreObject, propertyName)
 
         local hitData = propUtility_ClientSide.context.Split(hitCountString,",")
         propHitCount.text = ""
-
+        --print (hitData[1]..":"..hitData[2]..":"..hitData[3])
         for i=1,#hitData,4 do
-            local playerHits = hitData[i+1]
-            local playerRequiredHits = hitData[i+2]
+            local playerHits = tonumber(hitData[i+1])
+            local playerRequiredHits = tonumber(hitData[i+2])
+
             if (playerHits > playerRequiredHits) then 
                 playerHits = playerRequiredHits
             end

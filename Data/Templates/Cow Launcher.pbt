@@ -105,11 +105,11 @@ Assets {
             MaxAmmo: 6
             AmmoType: "rounds"
             MultiShot: 1
-            ProjectileSpeed: 2600
+            ProjectileSpeed: 2700
             ProjectileLifeSpan: 2.6
-            ProjectileGravity: 1.2
-            ProjectileLength: 15
-            ProjectileRadius: 15
+            ProjectileGravity: 1.9
+            ProjectileLength: 25
+            ProjectileRadius: 24
             SpreadMin: 3
             SpreadMax: 0.5
             DefaultAbility {
@@ -1514,7 +1514,7 @@ Assets {
         }
         Trigger {
           Interactable: true
-          InteractionLabel: "Equip Chicken Cannon"
+          InteractionLabel: "Equip Cow Cannon"
           TeamSettings {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
