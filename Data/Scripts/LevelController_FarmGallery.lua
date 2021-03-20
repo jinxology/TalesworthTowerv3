@@ -28,7 +28,7 @@ startPlatformRotation = Rotation.New(0,0,0)
 --Once completed, broadcast to server completed
 --
 hitsPerPlayer = {0,0,0,0}
-requiredHitsPerPlayer = {2,2,2,2}
+requiredHitsPerPlayer = {10,10,10,10}
 playersAtZone = {"","","",""}
 timerSeconds = 200
 gunChicken = nil
@@ -54,8 +54,9 @@ end
 
 function UpdatePlayerHits(playerNbr, hits) 
     hitsPerPlayer[playerNbr] = hits
-
+    
     local nbrDone = HowManyPlayersFinished()
+    
     if (nbrDone >= propMainGameController.context.requiredNbrPlayersReady) then
         LevelVictory()
     else    
@@ -66,9 +67,9 @@ end
 
 function HowManyPlayersFinished() 
     local done = 0
-    for i,p in pairs(hitsPerPlayer) do
-        --print ("Player " .. i .. " has " .. p .. "/" .. requiredHitsPerPlayer[i])
-        if (p >= requiredHitsPerPlayer[i]) then
+    for i=1,4 do
+        --print ("Player " .. i .. " has " .. hitsPerPlayer[i] .. "/" .. requiredHitsPerPlayer[i])
+        if (hitsPerPlayer[i] >= requiredHitsPerPlayer[i]) then
             done = done + 1
         end
     end

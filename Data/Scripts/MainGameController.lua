@@ -11,10 +11,10 @@ local playerKeyBindingListener = nil
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
-levelList = {"ShapesAndButtons","BopAndPop","ColorDials","Maze","Jumpman","FarmGallery","ShapesAndButtons","PoolPlatforms"}
+levelList = {"ShapesAndButtons","BopAndPop","ColorDials","Maze","Jumpman","FarmGallery","PoolPlatforms"}
 requiredNbrPlayersReady = 4
 
-
+ 
 function OnBindingPressed(player, bindingPressed)
     --print ("pressed " .. bindingPressed)
     local ctrl = GetCurrentLevelController()
@@ -331,6 +331,64 @@ function LevelEnd(success)
 
 end
 
+local countedAlready = false
+function RecursiveTreeWalker(rootObj)
+    local objCount = 0
+    if (rootObj.isNetworked and not rootObj.isClientOnly) then
+        if (countedAlready == true) then print ("--"..rootObj.name) end
+        objCount = objCount + 1
+    end
+
+    local kids = rootObj:GetChildren()
+    if (#kids > 0) then
+        for _,kid in pairs(kids) do
+            objCount = objCount + RecursiveTreeWalker(kid)
+        end
+    end
+    return objCount
+end
+
+function CountNetworkedObjects()    
+    for i=1,#levelList do
+        local folder = GetLevelFolderByLevelIndex(i)
+        if (folder == nil) then
+            print (levelList[i]..": level folder incorreectly named")
+        else
+            if (countedAlready == true) then print ("========== " .. levelList[i].." ==========") end
+            
+            local objCount = RecursiveTreeWalker(folder)
+
+            print (levelList[i].." total: "..objCount)
+        end
+    end
+    countedAlready = true
+end
+
+function GeneralClientToServerMessageHandler(msgType,data)
+    if (msgType == "countNetworkObjects") then
+        CountNetworkedObjects()
+    end
+end
+
+function Split(pString, pPattern)
+    local Table = {}  -- NOTE: use {n = 0} in Lua-5.0
+    local fpat = "(.-)" .. pPattern
+    local last_end = 1
+    local s, e, cap = pString:find(fpat, 1)
+    while s do
+       if s ~= 1 or cap ~= "" then
+      table.insert(Table,cap)
+       end
+       last_end = e+1
+       s, e, cap = pString:find(fpat, last_end)
+    end
+    if last_end <= #pString then
+       cap = pString:sub(last_end)
+       table.insert(Table, cap)
+    end
+    return Table 
+end
+
 ClearTimer()
 
 function OnPlayerJoined(player)
@@ -340,6 +398,7 @@ Game.playerJoinedEvent:Connect(OnPlayerJoined)
 
 Events.Connect("TeleportAllPlayers", TeleportAllPlayers)
 Events.Connect("SetRequiredStartPlatforms", SetRequiredStartPlatforms)
+Events.Connect("GeneralClientToServerMessage", GeneralClientToServerMessageHandler)
 
 --fire up first level
 Task.Wait(.1)

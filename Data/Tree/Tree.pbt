@@ -25,6 +25,9 @@ Objects {
   ChildIds: 14713340454944924967
   ChildIds: 1112385650763072475
   ChildIds: 568490692521295426
+  ChildIds: 15992726197812860856
+  ChildIds: 12780475846404775299
+  ChildIds: 2993698772268735610
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -37,6 +40,144 @@ Objects {
     Value: "mc:ecollisionsetting:forceon"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 2993698772268735610
+  Name: "Turkey Launcher"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4713182044499204968
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Turkey Launcher"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 164.196991
+            Y: 1424.27856
+            Z: 6266.0249
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 7741984780260371759
+    }
+  }
+}
+Objects {
+  Id: 12780475846404775299
+  Name: "Pig Launcher"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 12279985432880702919
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Pig Launcher"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -347.456055
+            Y: 815.39209
+            Z: 6266.0249
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 10626556092590113420
+    }
+  }
+}
+Objects {
+  Id: 15992726197812860856
+  Name: "Cow Launcher"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11720457174945639921
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Cow Launcher"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -135.261475
+            Y: 1008.69189
+            Z: 6266.0249
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 15347054884519765558
+    }
   }
 }
 Objects {
@@ -712,6 +853,12 @@ Objects {
         SelfId: 11444151057506371089
       }
     }
+    Overrides {
+      Name: "cs:btnCountNetworkedObjects"
+      ObjectReference {
+        SelfId: 4681090465772161262
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -762,6 +909,7 @@ Objects {
   ChildIds: 14178046601240009586
   ChildIds: 825035935586083994
   ChildIds: 11444151057506371089
+  ChildIds: 4681090465772161262
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -792,6 +940,97 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:bottomright"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 4681090465772161262
+  Name: "btnCountNetworkedObjects"
+  Transform {
+    Location {
+      X: 6.97067298e-06
+      Y: -0.000345196633
+    }
+    Rotation {
+      Yaw: -3.75660384e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1119104670142202433
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 176
+    Height: 49
+    UIX: 528.079
+    UIY: 61.7139282
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Button {
+      Label: "# Network Objs"
+      FontColor {
+        A: 1
+      }
+      FontSize: 20
+      ButtonColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      HoveredColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      PressedColor {
+        R: 0.705960155
+        G: 1
+        B: 0.399999976
+        A: 1
+      }
+      DisabledColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Brush {
+        Id: 841534158063459245
+      }
+      IsButtonEnabled: true
+      ClickMode {
+        Value: "mc:ebuttonclickmode:default"
+      }
+      Font {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
         }
       }
     }

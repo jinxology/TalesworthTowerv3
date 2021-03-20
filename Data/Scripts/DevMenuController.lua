@@ -11,6 +11,7 @@ local propBtnMaze = script:GetCustomProperty("btnMaze"):WaitForObject()
 local propBtnJumpman = script:GetCustomProperty("btnJumpman"):WaitForObject()
 local propBtnFarmGallery = script:GetCustomProperty("btnFarmGallery"):WaitForObject()
 local propBtnPoolPlatforms = script:GetCustomProperty("btnPoolPlatforms"):WaitForObject()
+local propBtnCountNetworkedObjects = script:GetCustomProperty("btnCountNetworkedObjects"):WaitForObject()
 
 local showingMe = false
 levelList = {"ShapesAndButtons","ColorDials","BopAndPop","Maze","Jumpman","FarmGallery","PoolPlatforms"}
@@ -50,18 +51,22 @@ function OnClickedSetLevel(whichButton)
         newLoc = Vector3.New (-87,-354,3855)
     elseif (whichButton.name == "btnJumpman") then
         currentLevelIndex = 5
-        newLoc = Vector3.New (-341,1145,6119)
+        newLoc = Vector3.New (-1058,1577,9728)
     elseif (whichButton.name == "btnFarmGallery") then
         currentLevelIndex = 6
         newLoc = Vector3.New (137,252,6132)
     elseif (whichButton.name == "btnPoolPlatforms") then
         currentLevelIndex = 7
-        newLoc = Vector3.New (-341,1145,6119)
+        newLoc = Vector3.New (4598,1292,8833)
     end
 
     SetLevelNameText()
     Events.BroadcastToServer("TeleportAllPlayers",currentLevelIndex,newLoc)
     DisableUI()
+end
+
+function CountNetworkObjects()
+    Events.BroadcastToServer("GeneralClientToServerMessage","countNetworkObjects","")
 end
 
 propBtnLevelUp.clickedEvent:Connect(OnClickedLevelUp)
@@ -72,7 +77,7 @@ propBtnMaze.clickedEvent:Connect(OnClickedSetLevel)
 propBtnJumpman.clickedEvent:Connect(OnClickedSetLevel)
 propBtnFarmGallery.clickedEvent:Connect(OnClickedSetLevel)
 propBtnPoolPlatforms.clickedEvent:Connect(OnClickedSetLevel)
-
+propBtnCountNetworkedObjects.clickedEvent:Connect(CountNetworkObjects)
 
 function OnBindingPressed(player, bindingPressed)
     --print ("Dev Menu Controller: pressed " .. bindingPressed)

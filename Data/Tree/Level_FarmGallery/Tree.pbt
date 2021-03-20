@@ -1,6 +1,155 @@
 Name: "Level_FarmGallery"
 RootId: 9559405966006854558
 Objects {
+  Id: 17599611845930976058
+  Name: "Pig"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9559405966006854558
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 3452794344423743534
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Pig"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -775.245728
+            Y: 2600.78516
+            Z: 57.3095703
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -73.6479492
+            Roll: 25.685894
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12589011425217517962
+    }
+  }
+}
+Objects {
+  Id: 12788892647362598349
+  Name: "Grass Tall"
+  Transform {
+    Location {
+      X: -1241.73877
+      Y: 1170.69666
+    }
+    Rotation {
+      Yaw: -85.0682373
+    }
+    Scale {
+      X: 0.51592952
+      Y: 0.51592952
+      Z: 0.51592952
+    }
+  }
+  ParentId: 9559405966006854558
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16093879588982263747
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 6467704777243272822
+  Name: "Fence_upright"
+  Transform {
+    Location {
+      X: -1258.2738
+      Y: 1161.56799
+      Z: 49.6660156
+    }
+    Rotation {
+      Yaw: -85.0682373
+    }
+    Scale {
+      X: 0.15273644
+      Y: 0.15273644
+      Z: 1.32734692
+    }
+  }
+  ParentId: 9559405966006854558
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 4841635215687283907
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 1137112816547272582
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    InteractWithTriggers: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+}
+Objects {
   Id: 18124480574382169860
   Name: "Entrance Flume"
   Transform {
@@ -64,6 +213,166 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Exit Pipes"
+  }
+}
+Objects {
+  Id: 12154296114441917011
+  Name: "Turkey"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9559405966006854558
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 9250142159773058029
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Turkey"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1265.33472
+            Y: 1123.76746
+            Z: 68.4179688
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: -6.45355225
+            Yaw: 80.8916626
+            Roll: 1.92313421
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 12669094196191002097
+      value {
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16043720604494364889
+    }
+  }
+}
+Objects {
+  Id: 7535577089223321546
+  Name: "Grass Tall"
+  Transform {
+    Location {
+      X: -752.606873
+      Y: 2616.42578
+    }
+    Rotation {
+      Yaw: -35.8092041
+    }
+    Scale {
+      X: 0.51592952
+      Y: 0.51592952
+      Z: 0.51592952
+    }
+  }
+  ParentId: 9559405966006854558
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16093879588982263747
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 3591851723861376370
+  Name: "Fence_upright"
+  Transform {
+    Location {
+      X: -756.481689
+      Y: 2597.9397
+      Z: 49.6660156
+    }
+    Rotation {
+      Yaw: -35.8092041
+    }
+    Scale {
+      X: 0.15273644
+      Y: 0.15273644
+      Z: 1.32734692
+    }
+  }
+  ParentId: 9559405966006854558
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 4841635215687283907
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 1137112816547272582
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    InteractWithTriggers: true
+    StaticMesh {
+      Physics {
+      }
+    }
   }
 }
 Objects {
@@ -139,46 +448,12 @@ Objects {
   }
 }
 Objects {
-  Id: 1926800939499407466
-  Name: "Chicken Sign Post"
-  Transform {
-    Location {
-      X: 1100
-      Y: 550
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9559405966006854558
-  ChildIds: 16764120353296635036
-  ChildIds: 245396907045460467
-  ChildIds: 352182527972456168
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    Model {
-    }
-  }
-}
-Objects {
   Id: 352182527972456168
   Name: "Grass Tall"
   Transform {
     Location {
-      X: 574.48291
-      Y: 312.891235
+      X: 1674.48291
+      Y: 862.891235
     }
     Rotation {
     }
@@ -188,7 +463,7 @@ Objects {
       Z: 0.51592952
     }
   }
-  ParentId: 1926800939499407466
+  ParentId: 9559405966006854558
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -219,8 +494,8 @@ Objects {
   Name: "Fence_upright"
   Transform {
     Location {
-      X: 582.155884
-      Y: 295.633301
+      X: 1682.15588
+      Y: 845.633301
       Z: 49.6660156
     }
     Rotation {
@@ -231,7 +506,7 @@ Objects {
       Z: 1.32734692
     }
   }
-  ParentId: 1926800939499407466
+  ParentId: 9559405966006854558
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -274,7 +549,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1926800939499407466
+  ParentId: 9559405966006854558
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -297,8 +572,8 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: 603.756836
-            Y: 289.568359
+            X: 1703.75684
+            Y: 839.568359
             Z: 159.606445
           }
         }
@@ -307,7 +582,7 @@ Objects {
           Rotator {
             Pitch: 12.8569832
             Yaw: 119.124588
-            Roll: 25.7300301
+            Roll: 25.7300053
           }
         }
       }
