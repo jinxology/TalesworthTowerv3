@@ -20,7 +20,6 @@ local propTimerLabel = script:GetCustomProperty("timerLabel"):WaitForObject()
 local propLevelMusic = nil
 
 propLevelControllerBopAndPop.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
-    print("property changed " .. propertyName)
     if propertyName == "levelStatus" then
         ActivateInstructions(coreObject:GetCustomProperty(propertyName))
         propInstructionsTextLabel.text = coreObject:GetCustomProperty("levelInstructions")
@@ -55,6 +54,8 @@ propLevelControllerBopAndPop.networkedPropertyChangedEvent:Connect(function(core
 end)
 
 entranceListener = nil
+showInstructions = nil
+hideInstructions = nil
 
 function ActivateInstructions(levelStatus)
     if levelStatus == 1 then
@@ -63,12 +64,12 @@ function ActivateInstructions(levelStatus)
         propRulesPanel.visibility = Visibility.FORCE_ON
     elseif levelStatus == 2 then
         propRulesPanel.visibility = Visibility.FORCE_OFF
-        Game.GetLocalPlayer().bindingPressedEvent:Connect(OnBindingPressed)
-        Game.GetLocalPlayer().bindingReleasedEvent:Connect(OnBindingReleased)
+        showInstructions = Game.GetLocalPlayer().bindingPressedEvent:Connect(OnBindingPressed)
+        hideInstructions = Game.GetLocalPlayer().bindingReleasedEvent:Connect(OnBindingReleased)
     else
         propScoreIndicator.visibility = Visibility.FORCE_OFF
-        Game.GetLocalPlayer().bindingPressedEvent:Disconnect(OnBindingPressed)
-        Game.GetLocalPlayer().bindingReleasedEvent:Disconnect(OnBindingReleased)
+        showInstructions:Disconnect(OnBindingPressed)
+        hideInstructions:Disconnect(OnBindingReleased)
         propLevelMusic:Stop()
         propLevelMusic:Destroy()
     end

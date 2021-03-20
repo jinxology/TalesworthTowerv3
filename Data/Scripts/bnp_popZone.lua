@@ -1,10 +1,21 @@
 local propTrigger = script:GetCustomProperty("trigger"):WaitForObject()
+-- local propMaceTemplate = script:GetCustomProperty("maceTemplate")
+-- local propSpearTemplate = script:GetCustomProperty("spearTemplate")
+-- local propSwordTemplate = script:GetCustomProperty("swordTemplate")
 
 propLevelController = nil
-propColorElements = script:GetCustomProperty("colorElements"):WaitForObject()
 bnpColor = 0
 bnpWeapon = 0
 
+function SetBNPWeapon(inBNPWeapon, template)
+	bnpWeapon = inBNPWeapon
+	script:SetNetworkedCustomProperty("weapon", template)
+end
+
+function SetBNPColor(inBNPColor, color)
+	bnpColor = inBNPColor
+	script:SetNetworkedCustomProperty("color", color)
+end
 
 function OnAttemptPop(whichTrigger, other)
 	if bnpWeapon ~= 0 then
@@ -19,13 +30,9 @@ function OnAttemptPop(whichTrigger, other)
 						local spawner = balloon.context.spawnedBy
 						local position = balloon.context.propGeometry:GetWorldPosition()
 
-						vfx = World.SpawnAsset(propLevelController.context.propBurstVFXTemplate)
-						vfx:SetWorldPosition(position)
-						vfx:SetSmartProperty("Color", propLevelController.context.ColorForBNPColor(balloonColor))
-						
 						equipment:Unequip()
 						equipment:Destroy()
-						vfx:Play()
+
 						propLevelController.context.PlayerPoppedBalloon(other.name, balloonColor, spawner, position)
 					else
 						local player = other
@@ -57,12 +64,7 @@ function OnAttemptPop(whichTrigger, other)
 				local spawner = balloon.context.spawnedBy
 				local position = physics:GetWorldPosition()
 
-				vfx = World.SpawnAsset(propLevelController.context.propBurstVFXTemplate)
-				vfx:SetWorldPosition(physics:GetWorldPosition())
-				vfx:SetSmartProperty("Color", propLevelController.context.ColorForBNPColor(balloonColor))
-				
 				physics:Destroy()
-				vfx:Play()
 				propLevelController.context.PlayerPoppedBalloon(boppedBy, balloonColor, spawner, position)
 			else
 				print("boing")
