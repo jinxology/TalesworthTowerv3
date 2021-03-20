@@ -40,7 +40,7 @@ function CheckIfPlayersReady()
     local nbrReady = NbrOfPlayersOnStartPlatforms()
     if nbrReady >= propMainGameController.context.requiredNbrPlayersReady then
         Deactivate()
-        propMainGameController.context.LevelBegin()  
+        propMainGameController.context.StartingPlatformsActivated()  
     end
 end
 

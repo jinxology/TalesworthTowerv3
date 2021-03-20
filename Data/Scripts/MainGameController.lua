@@ -7,7 +7,7 @@ local timerStarted = false
 local timeLeft = 0
 local timerEndCallback
 local playerKeyBindingListener = nil
-
+ 
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
@@ -22,10 +22,6 @@ function OnBindingPressed(player, bindingPressed)
     if (bindingPressed == "ability_extra_25") then 
         --Y    
         if not levelRunning then
-            --if (currentLevelIndex ~= 1) then
-              --  SpawnFlumePortals(currentLevelIndex)
-                --SpawnStartingPlatforms(currentLevelIndex)
-            --end
             local levelControllerScript = GetCurrentLevelController()
             levelControllerScript.context.LevelPowerUp() 
             
@@ -58,7 +54,14 @@ end
 
 
 function TeleportAllPlayers(currentLev, newLoc)
+    DestroyLevel(currentLevelIndex)
+    if (nextLevelIndex ~= nil) then
+        DestroyLevel(nextLevelIndex)
+    end
+    levelRunning = false
+
     currentLevelIndex = currentLev
+    nextLevelindex = nil
     local players = Game.GetPlayers()
     
     for _, player in pairs(Game.GetPlayers()) do
@@ -69,6 +72,7 @@ function TeleportAllPlayers(currentLev, newLoc)
     levelControllerScript.context.LevelPowerUp()
     SpawnStartingPlatforms(currentLevelIndex)
     SpawnFlumePortals(currentLevelIndex)
+
 end
     
 
@@ -251,7 +255,6 @@ function SpawnStartingPlatforms(levelIndex)
     controller.context.startingPlatforms = PlaceStartingPlatforms(levelIndex, controller.context.startPlatformPosition, controller.context.startPlatformRotation)
 end
 
-
 function DestroyFlumePortals(levelIndex)
     local controller = GetLevelControllerByLevelIndex(levelIndex)
     controller.context.exitFlume:Destroy()
@@ -260,22 +263,40 @@ function DestroyFlumePortals(levelIndex)
     controller.context.entranceFlume = nil
 end
 
+function DestroyStartingPlatforms(levelIndex)
+    local controller = GetLevelControllerByLevelIndex(levelIndex)    
+    controller.context.startingPlatforms:Destroy()
+end
+
+function DestroyLevel(levelIndex)
+    levelControllerScript = GetLevelControllerByLevelIndex(levelIndex)
+    levelControllerScript.context.LevelPowerDown()
+    DestroyFlumePortals(levelIndex)
+    DestroyStartingPlatforms(levelIndex)
+end
+
+function StartingPlatformsActivated()
+    if (not levelRunning) then
+        if (nextLevelIndex ~= nil) then        
+            --Coming from a different level
+            DestroyLevel(currentLevelIndex)
+            currentLevelIndex = nextLevelIndex
+            nextLevelIndex = nil
+        else   
+            --currentLevelIndex is correct, no need to increment and delete last level
+        end
+
+        LevelBegin()
+    end
+end
+
 function LevelBegin()
     if (not levelRunning) then
         levelRunning = true
-        
-        --For first level, no need to destroy the last level's flumes
-        if (nextLevelIndex ~= nil) then
-            DestroyFlumePortals(levelList[currentLevelIndex])
-            currentLevelIndex = nextLevelIndex
-            nextLevelIndex = nil
-        end
-        
+            
         local levelControllerScript = GetCurrentLevelController()
         levelControllerScript.context.LevelBegin()    
-        
-    end    
-    
+    end
 end
 
 function LevelEnd(success)    
