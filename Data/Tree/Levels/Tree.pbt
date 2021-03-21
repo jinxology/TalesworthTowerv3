@@ -39,11 +39,10 @@ Objects {
   Transform {
     Location {
       X: 2400
-      Y: 4800
+      Y: 1975
       Z: 12800
     }
     Rotation {
-      Yaw: 90
     }
     Scale {
       X: 1

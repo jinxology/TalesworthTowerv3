@@ -62,6 +62,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13181413363666234531
+  Name: "Dirt 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "dirt_001"
+  }
+}
+Assets {
   Id: 12905923173550510229
   Name: "Cylinder - Polished"
   PlatformAssetType: 1
@@ -212,15 +221,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weap_fan_grip_sword_001"
-  }
-}
-Assets {
-  Id: 3086929587923392091
-  Name: "Terrain - Grass Cliffs"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_terrain_cliff-grass-001_wa"
   }
 }
 Assets {
