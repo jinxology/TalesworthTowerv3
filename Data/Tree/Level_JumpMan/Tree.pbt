@@ -5418,6 +5418,14 @@ Objects {
     }
   }
   ParentId: 9132562513265036101
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:MainGameController"
+      ObjectReference {
+        SelfId: 6965558101138960242
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
