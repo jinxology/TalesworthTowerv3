@@ -3,10 +3,12 @@ local propPhysics = script:GetCustomProperty("physics"):WaitForObject()
 function Tick()
     --  translate all momentum into the xy plane.
     local   velocity = propPhysics:GetVelocity()
-    local   xyzMagnitude = velocity.size
+    local   magnitude = velocity.size
 
-    velocity.z = 0
-
-    propPhysics:SetVelocity(velocity:GetNormalized() * xyzMagnitude)
+    if magnitude > 0.1 then
+        print(magnitude)
+        velocity.z = 0
+        propPhysics:SetVelocity(velocity:GetNormalized() * magnitude)
+    end
     propPhysics:SetWorldRotation(Rotation.ZERO)
 end
