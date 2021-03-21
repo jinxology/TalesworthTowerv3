@@ -12,11 +12,11 @@ local propMainGameController = script:GetCustomProperty("MainGameController"):Wa
 
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(-1825,-50,4500)
+exitFlumeLocation = Vector3.New(-2775,-550,1650)
 exitFlumeRotation = Rotation.New(0,0,0)
---entranceFlumeLocation = Vector3.New(-1100,-3200,300)
---entranceFlumeRotation = Rotation.New(0,0,0)
---entranceFlumeEjectionVelocity = 20
+entranceFlumeLocation = Vector3.New(825,-550,2550)
+entranceFlumeRotation = Rotation.New(0,-22.5,180)
+entranceFlumeEjectionVelocity = 10
 
 local REDROOM = 1  --assigning each room to a color with one room required to have "Orange"
 local BLUEROOM = 2
@@ -199,7 +199,5 @@ function LevelVictory()
 	--Spin Dials and light up room
 	propMainGameController.context.LevelEnd(true)
 end
-
-LevelPowerUp() 
 
 	

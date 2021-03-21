@@ -1,6 +1,64 @@
 Name: "BlockAndEscape Static Environment"
 RootId: 7175841995601495478
 Objects {
+  Id: 15257045087728906828
+  Name: "Whitebox Floor 01 4m x 4m"
+  Transform {
+    Location {
+      X: -5475
+      Y: -352.624512
+      Z: 1175
+    }
+    Rotation {
+      Yaw: -179.999969
+    }
+    Scale {
+      X: 2.4
+      Y: 7.00000143
+      Z: 1
+    }
+  }
+  ParentId: 7175841995601495478
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_Floor:id"
+      AssetReference {
+        Id: 12374906251468057054
+      }
+    }
+    Overrides {
+      Name: "ma:Building_Ceiling:id"
+      AssetReference {
+        Id: 12374906251468057054
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 2847518331929232958
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 15364645337870371565
   Name: "Whitebox Floor 01 4m x 4m"
   Transform {
@@ -414,7 +472,7 @@ Objects {
   Transform {
     Location {
       X: -5475
-      Y: 1575
+      Y: 1577.64502
       Z: 1925
     }
     Rotation {
@@ -965,6 +1023,12 @@ Objects {
       Name: "ma:Building_Ceiling:smart"
       Bool: true
     }
+    Overrides {
+      Name: "ma:Building_Ceiling:id"
+      AssetReference {
+        Id: 12374906251468057054
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1012,6 +1076,12 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "ma:Building_Floor:id"
+      AssetReference {
+        Id: 12374906251468057054
+      }
+    }
+    Overrides {
+      Name: "ma:Building_Ceiling:id"
       AssetReference {
         Id: 12374906251468057054
       }
@@ -1106,7 +1176,7 @@ Objects {
       Yaw: 180
     }
     Scale {
-      X: 19.5999985
+      X: 19.4
       Y: 8.3
       Z: 1
     }
@@ -1115,6 +1185,12 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "ma:Building_Floor:id"
+      AssetReference {
+        Id: 12374906251468057054
+      }
+    }
+    Overrides {
+      Name: "ma:Building_Ceiling:id"
       AssetReference {
         Id: 12374906251468057054
       }

@@ -24,6 +24,7 @@ propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObj
 ------------------------------------------------------------
 --LEVEL SPECIFIC DECLARATIONS
 ------------------------------------------------------------
+local SECONDS_TO_COMPLETE_LEVELS = 240
 local PHYSICS_SPHERE = script:GetCustomProperty("bae_PhysicsSphere5_5Scale")
 local LARGE_BALL_POS_1 = Vector3.New(1827.107, -469.023,-124.858)
 local LARGE_BALL_POS_2 = Vector3.New(68.466, 187.286,-124.858)
@@ -54,20 +55,21 @@ function LevelPowerUp()
 	ball_1_Large5_5 = World.SpawnAsset(PHYSICS_SPHERE, {position = ballVectors.blueBall_1, parent = folderBalls})
 	ball_1_Large5_5:SetScale(ball_1_Large5_5:GetWorldScale() * 5.5)
 
---	ball_1_Large5_5 = World.SpawnAsset(PHYSICS_SPHERE_5_5, {position = LARGE_BALL_POS_1, parent = folderBalls})
---	ball_1_Large5_5:SetScale(ball_1_Large5_5:GetWorldScale() * 5.5)
+	ball_2_Large5_5 = World.SpawnAsset(PHYSICS_SPHERE, {position = ballVectors.blueBall_2, parent = folderBalls})
+	ball_2_Large5_5:SetScale(ball_2_LarWge5_5:GetWorldScale() * 5.5)
 	
 	
 --	ball_2_Large5_5 = World.SpawnAsset(PHYSICS_SPHERE_5_5, {position = LARGE_BALL_POS_2, parent = folderBalls})
 --	ball_2_Large5_5:SetScale(ball_2_Large5_5:GetWorldScale() * 5.5)
 	
-	print(ballVectors.blueBall_1)
+--	print(ballVectors.blueBall_1)
 	
 	--ball_3_Small4 = World.SpawnAsset(PHYSICS_SPHERE_4, {position = SMALL_BALL_POS_1, parent = folderBalls})
 end
 
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds
 function LevelBegin()
+	propMainGameController.context.StartTimer(SECONDS_TO_COMPLETE_LEVELS, LevelFailed())
 end
 
 --LevelEnd code is called when the....
