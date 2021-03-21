@@ -1,535 +1,29 @@
 Name: "GreenPlatforms-jmp"
-RootId: 1024373842261011204
+RootId: 2181799923005855375
 Objects {
-  Id: 1087447031800667204
-  Name: "Sci-fi Base Floor 03 4m"
+  Id: 5374103981825421982
+  Name: "Urban Floor Grate Fire Escape - 1m x 4m"
   Transform {
     Location {
-      X: -700
-      Y: 850
-      Z: 200
+      X: 74.9995117
+      Y: -3275.00049
+      Z: 225
     }
     Rotation {
+      Yaw: 90
     }
     Scale {
       X: 1
-      Y: 1
-      Z: 1
+      Y: 3.7
+      Z: 0.1
     }
   }
-  ParentId: 1024373842261011204
-  ChildIds: 17546833465065363554
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 17112041820881791716
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 17546833465065363554
-  Name: "greenMove1"
-  Transform {
-    Location {
-      X: -2650
-      Y: -5000
-      Z: -700
-    }
-    Rotation {
-    }
-    Scale {
-      X: 2
-      Y: 2
-      Z: 2
-    }
-  }
-  ParentId: 1087447031800667204
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:ScifiBaseFloor034m"
-      ObjectReference {
-        SelfId: 1087447031800667204
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 4261413218981896524
-    }
-  }
-}
-Objects {
-  Id: 1424962412676984197
-  Name: "Sci-fi Base Railing 01"
-  Transform {
-    Location {
-      X: -1900
-      Y: 500
-      Z: 870
-    }
-    Rotation {
-    }
-    Scale {
-      X: 2
-      Y: 2
-      Z: 2
-    }
-  }
-  ParentId: 1024373842261011204
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_Detail1:color"
-      Color {
-        R: 0.92
-        G: 0.976158917
-        B: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.015364226
-        G: 0.0800000429
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 4875540245588405637
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 8108057191908461132
-  Name: "Sci-fi Base Railing 01"
-  Transform {
-    Location {
-      X: -1900
-      Y: 800
-      Z: 870
-    }
-    Rotation {
-    }
-    Scale {
-      X: 2
-      Y: 2
-      Z: 2
-    }
-  }
-  ParentId: 1024373842261011204
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_Detail1:color"
-      Color {
-        R: 0.92
-        G: 0.976158917
-        B: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.015364226
-        G: 0.0800000429
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 4875540245588405637
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 241415127700185321
-  Name: "Sci-fi Base Railing 01"
-  Transform {
-    Location {
-      X: -2800
-      Y: 3700
-      Z: 1250
-    }
-    Rotation {
-      Yaw: -89.9999924
-    }
-    Scale {
-      X: 2
-      Y: 2
-      Z: 2
-    }
-  }
-  ParentId: 1024373842261011204
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_Detail1:color"
-      Color {
-        R: 0.92
-        G: 0.976158917
-        B: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.015364226
-        G: 0.0800000429
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 4875540245588405637
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 13130037065684176717
-  Name: "Sci-fi Base Railing 01"
-  Transform {
-    Location {
-      X: 1600
-      Y: -750
-      Z: -18
-    }
-    Rotation {
-      Yaw: -39.9999847
-    }
-    Scale {
-      X: 2
-      Y: 2
-      Z: 2
-    }
-  }
-  ParentId: 1024373842261011204
+  ParentId: 2181799923005855375
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:color"
       Color {
-        R: 0.03973509
-        G: 0.120000005
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_Detail1:color"
-      Color {
-        R: 0.975033104
-        G: 0.87
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 4875540245588405637
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 15906372748474153398
-  Name: "Sci-fi Base Railing 01"
-  Transform {
-    Location {
-      X: 1400
-      Y: -1050
-    }
-    Rotation {
-      Yaw: -39.9999847
-    }
-    Scale {
-      X: 2
-      Y: 2
-      Z: 2
-    }
-  }
-  ParentId: 1024373842261011204
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.03973509
-        G: 0.120000005
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_Detail1:color"
-      Color {
-        R: 0.975033104
-        G: 0.87
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 4875540245588405637
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 13723801779193803221
-  Name: "Long Banner Manticore"
-  Transform {
-    Location {
-      X: -3150
-      Y: 3250
-      Z: 1200
-    }
-    Rotation {
-      Yaw: -179.999985
-    }
-    Scale {
-      X: 2
-      Y: 2
-      Z: 2
-    }
-  }
-  ParentId: 1024373842261011204
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Prop_Cloth:color"
-      Color {
-        R: 0.0704635531
-        G: 0.279999971
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 4186792105691613080
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 12971747699572009931
-  Name: "Long Banner Manticore"
-  Transform {
-    Location {
-      X: -2750
-      Y: 3650
-      Z: 1200
-    }
-    Rotation {
-      Yaw: -89.9999924
-    }
-    Scale {
-      X: 2
-      Y: 2
-      Z: 2
-    }
-  }
-  ParentId: 1024373842261011204
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Prop_Cloth:color"
-      Color {
-        R: 0.0704635531
-        G: 0.279999971
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 4186792105691613080
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 7241961072302671675
-  Name: "Sci-fi Base Girder 8m 03"
-  Transform {
-    Location {
-      X: -3700
-      Y: 4200
-      Z: 1200
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.2
-      Y: 1.2
-      Z: 1.2
-    }
-  }
-  ParentId: 1024373842261011204
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_Trim2:color"
-      Color {
-        R: 0.00463575311
+        R: 0.0352317765
         G: 0.139999986
         A: 1
       }
@@ -546,7 +40,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 11642748949632175552
+      Id: 4520218589598697984
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -561,87 +55,24 @@ Objects {
   }
 }
 Objects {
-  Id: 7316059425432719371
+  Id: 12560070574613430206
   Name: "Sci-fi Base Railing 01"
   Transform {
     Location {
-      X: 550
-      Y: 800
-      Z: 50
+      X: 1850.00122
+      Y: -2425.00098
+      Z: 60
     }
     Rotation {
-      Yaw: -179.999954
+      Yaw: 90
     }
     Scale {
-      X: 2
-      Y: 2
-      Z: 2
+      X: 1
+      Y: 1
+      Z: 1
     }
   }
-  ParentId: 1024373842261011204
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.015364226
-        G: 0.0800000429
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_Detail1:color"
-      Color {
-        R: 0.98
-        G: 0.994834423
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 4875540245588405637
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 11986587503346196666
-  Name: "Sci-fi Base Railing 01"
-  Transform {
-    Location {
-      X: -2900
-      Y: 1950
-      Z: 1000
-    }
-    Rotation {
-      Yaw: -89.9999924
-    }
-    Scale {
-      X: 2
-      Y: 2
-      Z: 2
-    }
-  }
-  ParentId: 1024373842261011204
+  ParentId: 2181799923005855375
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_Detail1:color"
@@ -687,24 +118,321 @@ Objects {
   }
 }
 Objects {
-  Id: 16857923099314485365
+  Id: 7200831028075094210
   Name: "Sci-fi Base Railing 01"
   Transform {
     Location {
-      X: -3200
-      Y: 1150
-      Z: 1000
+      X: 1700.00098
+      Y: -2425.00098
+      Z: 60
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: 90
     }
     Scale {
-      X: 2
-      Y: 2
-      Z: 2
+      X: 1
+      Y: 1
+      Z: 1
     }
   }
-  ParentId: 1024373842261011204
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_Detail1:color"
+      Color {
+        R: 0.92
+        G: 0.976158917
+        B: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.015364226
+        G: 0.0800000429
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 4875540245588405637
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 2179306264152261177
+  Name: "Sci-fi Base Railing 01"
+  Transform {
+    Location {
+      X: 250.000732
+      Y: -2875.00098
+      Z: 250
+    }
+    Rotation {
+      Yaw: -3.4150944e-06
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_Detail1:color"
+      Color {
+        R: 0.92
+        G: 0.976158917
+        B: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.015364226
+        G: 0.0800000429
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 4875540245588405637
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 17295248907056380683
+  Name: "Long Banner Manticore"
+  Transform {
+    Location {
+      X: 475.000977
+      Y: -3050.00073
+      Z: 225
+    }
+    Rotation {
+      Yaw: -89.9999847
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Prop_Cloth:color"
+      Color {
+        R: 0.0704635531
+        G: 0.279999971
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 4186792105691613080
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 8051425151708860745
+  Name: "Long Banner Manticore"
+  Transform {
+    Location {
+      X: 275.000732
+      Y: -2850.00049
+      Z: 225
+    }
+    Rotation {
+      Yaw: -3.4150944e-06
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Prop_Cloth:color"
+      Color {
+        R: 0.0704635531
+        G: 0.279999971
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 4186792105691613080
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 4763269396613194093
+  Name: "Sci-fi Base Railing 01"
+  Transform {
+    Location {
+      X: 1125.00073
+      Y: -2925.00122
+      Z: 125
+    }
+    Rotation {
+      Yaw: -3.4150944e-06
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_Detail1:color"
+      Color {
+        R: 0.92
+        G: 0.976158917
+        B: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.015364226
+        G: 0.0800000429
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 4875540245588405637
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 8717394265498952918
+  Name: "Sci-fi Base Railing 01"
+  Transform {
+    Location {
+      X: 1525.00049
+      Y: -3075.00098
+      Z: 125
+    }
+    Rotation {
+      Yaw: -3.4150944e-06
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2181799923005855375
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_Detail1:color"
@@ -759,24 +487,24 @@ Objects {
   }
 }
 Objects {
-  Id: 9621319277553146228
+  Id: 8862096677762015299
   Name: "Sci-fi Base Railing 01"
   Transform {
     Location {
-      X: -3200
-      Y: 1950
-      Z: 1000
+      X: 1125.00098
+      Y: -3075.00122
+      Z: 125
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -3.4150944e-06
     }
     Scale {
-      X: 2
-      Y: 2
-      Z: 2
+      X: 1
+      Y: 1
+      Z: 1
     }
   }
-  ParentId: 1024373842261011204
+  ParentId: 2181799923005855375
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_Detail1:color"
@@ -822,23 +550,34 @@ Objects {
   }
 }
 Objects {
-  Id: 13642762041927584953
+  Id: 17611790575176999942
   Name: "Sci-fi Base Floor 03 4m"
   Transform {
     Location {
-      X: -2300
-      Y: 850
-      Z: 800
+      X: 1675.00122
+      Y: -2625.00098
+      Z: 25
     }
     Rotation {
+      Yaw: 90
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
     }
   }
-  ParentId: 1024373842261011204
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_Floor:color"
+      Color {
+        R: 0.0106622595
+        G: 0.0700000525
+        A: 1
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -865,23 +604,34 @@ Objects {
   }
 }
 Objects {
-  Id: 8239567778492038885
+  Id: 15894482189453965952
   Name: "Sci-fi Base Floor 03 4m"
   Transform {
     Location {
-      X: -1900
-      Y: 850
-      Z: 800
+      X: 1675.00073
+      Y: -2425.00098
+      Z: 25
     }
     Rotation {
+      Yaw: 90
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
     }
   }
-  ParentId: 1024373842261011204
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_Floor:color"
+      Color {
+        R: 0.0106622595
+        G: 0.0700000525
+        A: 1
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -908,24 +658,34 @@ Objects {
   }
 }
 Objects {
-  Id: 2582171161892569771
+  Id: 3348430044441264604
   Name: "Sci-fi Base Floor 03 4m"
   Transform {
     Location {
-      X: -2850
-      Y: 2350
-      Z: 950
+      X: 925.000488
+      Y: -2900.00098
+      Z: 100
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -3.4150944e-06
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
     }
   }
-  ParentId: 1024373842261011204
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_Floor:color"
+      Color {
+        R: 0.00437084492
+        G: 0.0599999428
+        A: 1
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -952,24 +712,34 @@ Objects {
   }
 }
 Objects {
-  Id: 10300302046108428198
+  Id: 156286887240128238
   Name: "Sci-fi Base Floor 03 4m"
   Transform {
     Location {
-      X: -2850
-      Y: 1950
-      Z: 950
+      X: 1125.00098
+      Y: -2900.00098
+      Z: 100
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -3.4150944e-06
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
     }
   }
-  ParentId: 1024373842261011204
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_Floor:color"
+      Color {
+        R: 0.00437084492
+        G: 0.0599999428
+        A: 1
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -996,24 +766,34 @@ Objects {
   }
 }
 Objects {
-  Id: 10088204742338655094
+  Id: 7207026030667745418
   Name: "Sci-fi Base Floor 03 4m"
   Transform {
     Location {
-      X: -2850
-      Y: 1549.99805
-      Z: 950
+      X: 1325.00146
+      Y: -2900.00146
+      Z: 100
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -3.4150944e-06
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
     }
   }
-  ParentId: 1024373842261011204
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_Floor:color"
+      Color {
+        R: 0.00437084492
+        G: 0.0599999428
+        A: 1
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1040,24 +820,34 @@ Objects {
   }
 }
 Objects {
-  Id: 10223672647578925084
+  Id: 14657931930417073506
   Name: "Sci-fi Base Floor 03 4m"
   Transform {
     Location {
-      X: -2850
-      Y: 1150
-      Z: 950
+      X: 1525.00049
+      Y: -2900.00098
+      Z: 100
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -3.4150944e-06
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
     }
   }
-  ParentId: 1024373842261011204
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_Floor:color"
+      Color {
+        R: 0.00437084492
+        G: 0.0599999428
+        A: 1
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1084,24 +874,34 @@ Objects {
   }
 }
 Objects {
-  Id: 15325522329012428778
+  Id: 354466835705873311
   Name: "Sci-fi Base Stairs 01"
   Transform {
     Location {
-      X: -700
-      Y: 850
-      Z: 200
+      X: 1675.00098
+      Y: -1825.00098
+      Z: -275
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -3.4150944e-06
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
     }
   }
-  ParentId: 1024373842261011204
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.0331125818
+        G: 0.100000024
+        A: 1
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1128,22 +928,145 @@ Objects {
   }
 }
 Objects {
-  Id: 2403358408468860224
+  Id: 913556890325302676
+  Name: "Sci-fi Base Girder 8m 03"
+  Transform {
+    Location {
+      X: 0.0009765625
+      Y: -3325.00098
+      Z: 225
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 0.6
+      Y: 0.6
+      Z: 0.6
+    }
+  }
+  ParentId: 2181799923005855375
+  ChildIds: 11486930097412551083
+  ChildIds: 8260301350050937647
+  ChildIds: 6015257847822766480
+  ChildIds: 9533183302745435433
+  ChildIds: 18213758201991602779
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_Trim2:color"
+      Color {
+        R: 0.00463575311
+        G: 0.139999986
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 11642748949632175552
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 18213758201991602779
+  Name: "Sci-fi Base Railing 01"
+  Transform {
+    Location {
+      X: 3832.82861
+      Y: -2769.50098
+      Z: -916.666626
+    }
+    Rotation {
+      Yaw: -179.999954
+    }
+    Scale {
+      X: 1.66666663
+      Y: 1.66666663
+      Z: 1.66666663
+    }
+  }
+  ParentId: 913556890325302676
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.015364226
+        G: 0.0800000429
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_Detail1:color"
+      Color {
+        R: 0.98
+        G: 0.994834423
+        B: 1
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 4875540245588405637
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 9533183302745435433
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 200
-      Y: 800
+      X: 3541.16
+      Y: -2769.5022
+      Z: -958.333313
     }
     Rotation {
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 0.833333313
+      Y: 0.833333313
+      Z: 0.833333313
     }
   }
-  ParentId: 1024373842261011204
+  ParentId: 913556890325302676
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:color"
@@ -1188,16 +1111,251 @@ Objects {
   }
 }
 Objects {
-  Id: 9133394330604747523
-  Name: "Fantasy Candle Lit - Holder 02 (Prop)"
+  Id: 6015257847822766480
+  Name: "Sci-fi Base Floor Trim 01 - 4m"
   Transform {
     Location {
-      X: -2999.99707
-      Y: 3900
-      Z: 1600
+      X: 4333.33398
+      Y: -4250.00049
+      Z: -1083.33325
     }
     Rotation {
-      Yaw: -3.75660311e-05
+      Yaw: -39.9999733
+    }
+    Scale {
+      X: 2.16666675
+      Y: 2.16666675
+      Z: 2.16666675
+    }
+  }
+  ParentId: 913556890325302676
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.0139072621
+        G: 0.0599999428
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 26162391173665441
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 8260301350050937647
+  Name: "Sci-fi Base Railing 01"
+  Transform {
+    Location {
+      X: 4416.66797
+      Y: -4125.00049
+      Z: -1015
+    }
+    Rotation {
+      Yaw: -39.9999733
+    }
+    Scale {
+      X: 1.66666663
+      Y: 1.66666663
+      Z: 1.66666663
+    }
+  }
+  ParentId: 913556890325302676
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.03973509
+        G: 0.120000005
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_Detail1:color"
+      Color {
+        R: 0.975033104
+        G: 0.87
+        B: 1
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 4875540245588405637
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 11486930097412551083
+  Name: "Sci-fi Base Railing 01"
+  Transform {
+    Location {
+      X: 4250.00098
+      Y: -4375
+      Z: -1000
+    }
+    Rotation {
+      Yaw: -39.9999733
+    }
+    Scale {
+      X: 1.66666663
+      Y: 1.66666663
+      Z: 1.66666663
+    }
+  }
+  ParentId: 913556890325302676
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.03973509
+        G: 0.120000005
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_Detail1:color"
+      Color {
+        R: 0.975033104
+        G: 0.87
+        B: 1
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 4875540245588405637
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 13684837385261200745
+  Name: "Sci-fi Base Floor 03 4m"
+  Transform {
+    Location {
+      X: 1679.39795
+      Y: -1820.82178
+      Z: -275
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
+    }
+  }
+  ParentId: 2181799923005855375
+  ChildIds: 17064943016219259334
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_Floor:color"
+      Color {
+        G: 0.120000005
+        B: 0.0150993355
+        A: 1
+      }
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17112041820881791716
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 17064943016219259334
+  Name: "greenMove1"
+  Transform {
+    Location {
+      X: -2650
+      Y: -5000
+      Z: -700
+    }
+    Rotation {
     }
     Scale {
       X: 2
@@ -1205,10 +1363,59 @@ Objects {
       Z: 2
     }
   }
-  ParentId: 1024373842261011204
-  ChildIds: 8399872834240096611
-  ChildIds: 16276628606761486782
-  ChildIds: 6277530063143203581
+  ParentId: 13684837385261200745
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ScifiBaseFloor034m"
+      ObjectReference {
+        SelfId: 13684837385261200745
+      }
+    }
+    Overrides {
+      Name: "cs:FlameGreen"
+      ObjectReference {
+        SelfId: 3336956588970473080
+      }
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 4261413218981896524
+    }
+  }
+}
+Objects {
+  Id: 6656259244034748189
+  Name: "Fantasy Candle Lit - Holder 02 (Prop)"
+  Transform {
+    Location {
+      X: 150.000977
+      Y: -2974.99927
+      Z: 425
+    }
+    Rotation {
+      Yaw: 89.9999542
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2181799923005855375
+  ChildIds: 6998410576958261345
+  ChildIds: 3336956588970473080
+  ChildIds: 187661689682858208
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1231,7 +1438,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6277530063143203581
+  Id: 187661689682858208
   Name: "Floor Candle Holder 02"
   Transform {
     Location {
@@ -1247,7 +1454,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 9133394330604747523
+  ParentId: 6656259244034748189
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:color"
@@ -1306,7 +1513,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16276628606761486782
+  Id: 3336956588970473080
   Name: "FlameGreen"
   Transform {
     Location {
@@ -1322,10 +1529,10 @@ Objects {
       Z: 3
     }
   }
-  ParentId: 9133394330604747523
-  ChildIds: 17626833343017110652
-  ChildIds: 4233442914972902340
-  ChildIds: 6641363009427155749
+  ParentId: 6656259244034748189
+  ChildIds: 1053241173469803115
+  ChildIds: 4512922542380036250
+  ChildIds: 14928989913209188359
   UnregisteredParameters {
     Overrides {
       Name: "ma:Flame_A:color"
@@ -1378,7 +1585,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6641363009427155749
+  Id: 14928989913209188359
   Name: "GreenBreath"
   Transform {
     Location {
@@ -1395,7 +1602,7 @@ Objects {
       Z: 0.333333343
     }
   }
-  ParentId: 16276628606761486782
+  ParentId: 3336956588970473080
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1419,7 +1626,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4233442914972902340
+  Id: 4512922542380036250
   Name: "GreenCanisterAppear"
   Transform {
     Location {
@@ -1435,7 +1642,7 @@ Objects {
       Z: 0.333333343
     }
   }
-  ParentId: 16276628606761486782
+  ParentId: 3336956588970473080
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1459,7 +1666,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17626833343017110652
+  Id: 1053241173469803115
   Name: "flameGreenTrigger"
   Transform {
     Location {
@@ -1472,8 +1679,8 @@ Objects {
       Z: 0.333333343
     }
   }
-  ParentId: 16276628606761486782
-  ChildIds: 14675252269104439039
+  ParentId: 3336956588970473080
+  ChildIds: 2165219699498369963
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceon"
@@ -1497,7 +1704,7 @@ Objects {
   }
 }
 Objects {
-  Id: 14675252269104439039
+  Id: 2165219699498369963
   Name: "GreenFlame"
   Transform {
     Location {
@@ -1513,30 +1720,30 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17626833343017110652
+  ParentId: 1053241173469803115
   UnregisteredParameters {
     Overrides {
       Name: "cs:FlameGreen"
       ObjectReference {
-        SelfId: 16276628606761486782
+        SelfId: 3336956588970473080
       }
     }
     Overrides {
       Name: "cs:ScifiBaseCapsule01BaseGreen"
       ObjectReference {
-        SelfId: 12050949765504308051
+        SelfId: 962834116428533862
       }
     }
     Overrides {
       Name: "cs:GreenBreath"
       ObjectReference {
-        SelfId: 6641363009427155749
+        SelfId: 14928989913209188359
       }
     }
     Overrides {
       Name: "cs:GreenCanisterAppear"
       ObjectReference {
-        SelfId: 4233442914972902340
+        SelfId: 4512922542380036250
       }
     }
   }
@@ -1557,7 +1764,7 @@ Objects {
   }
 }
 Objects {
-  Id: 8399872834240096611
+  Id: 6998410576958261345
   Name: "ClientContext"
   Transform {
     Location {
@@ -1573,8 +1780,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 9133394330604747523
-  ChildIds: 17471667718531982827
+  ParentId: 6656259244034748189
+  ChildIds: 14145582643169174462
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1595,7 +1802,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17471667718531982827
+  Id: 14145582643169174462
   Name: "Point Light"
   Transform {
     Location {
@@ -1611,7 +1818,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8399872834240096611
+  ParentId: 6998410576958261345
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1652,49 +1859,5 @@ Objects {
     SubobjectId: 5875783212787176612
     InstanceId: 1297525825995880485
     TemplateId: 8080692546549158181
-  }
-}
-Objects {
-  Id: 8899829737302112710
-  Name: "Sci-fi Base Floor Trim 01 - 4m"
-  Transform {
-    Location {
-      X: 1500
-      Y: -900
-      Z: -100
-    }
-    Rotation {
-      Yaw: -39.9999847
-    }
-    Scale {
-      X: 2.60000014
-      Y: 2.60000014
-      Z: 2.60000014
-    }
-  }
-  ParentId: 1024373842261011204
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 26162391173665441
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
   }
 }

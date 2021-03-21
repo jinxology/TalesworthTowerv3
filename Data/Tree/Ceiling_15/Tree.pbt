@@ -1,7 +1,7 @@
 Name: "Ceiling_15"
-RootId: 14060860831622903261
+RootId: 12928566963858405207
 Objects {
-  Id: 15972615088428810546
+  Id: 8663041827882987727
   Name: "Sci-fi Base Roof 01 - 8m"
   Transform {
     Location {
@@ -16,7 +16,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14060860831622903261
+  ParentId: 12928566963858405207
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -43,7 +43,7 @@ Objects {
   }
 }
 Objects {
-  Id: 18280747207911240011
+  Id: 2355040038018275840
   Name: "Sci-fi Base Roof 01 - 8m"
   Transform {
     Location {
@@ -57,7 +57,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14060860831622903261
+  ParentId: 12928566963858405207
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -84,7 +84,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4006732347839634233
+  Id: 7201319242967362817
   Name: "Sci-fi Base Roof 01 - 8m"
   Transform {
     Location {
@@ -98,7 +98,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14060860831622903261
+  ParentId: 12928566963858405207
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -125,7 +125,7 @@ Objects {
   }
 }
 Objects {
-  Id: 1259829156992490038
+  Id: 5539781306036745082
   Name: "Sci-fi Base Roof 01 - 8m"
   Transform {
     Location {
@@ -140,7 +140,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14060860831622903261
+  ParentId: 12928566963858405207
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

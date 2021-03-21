@@ -9,6 +9,7 @@ local function redRotateLever()
 	propRedLeverPull:Play()
 	local timeElapsed, timeRequested = Task.Wait(1)
 	propRedBeam:Play()
+	propRedBaseTrigger.interactionLabel = 'Red Mission Accomplished!'
 end
 
 propRedBaseTrigger.interactedEvent:Connect(redRotateLever)

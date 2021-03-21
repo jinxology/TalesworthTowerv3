@@ -9,6 +9,7 @@ local function blueRotateLever()
 	propBlueLeverPull:Play()
 	local timeElapsed, timeRequested = Task.Wait(1)
 	propBlueBeam:Play()
+	propBlueBaseTrigger.interactionLabel = 'Blue Mission Accomplished!'
 end
 
 propBlueBaseTrigger.interactedEvent:Connect(blueRotateLever)

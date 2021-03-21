@@ -7,9 +7,10 @@ local propRedCanisterAppear = script:GetCustomProperty("RedCanisterAppear"):Wait
 function OnflameRedTriggerInteraction()
 	propRedBreath:Play()
 	propFlameRed.visibility = Visibility.FORCE_OFF
-	local timeElapsed, timeRequested = Task.Wait(5)
+	local timeElapsed, timeRequested = Task.Wait(2)
 	propRedCanisterAppear:Play()
 	propScifiBaseCapsule01BaseRed.visibility = Visibility.FORCE_ON
+	flameRedtrigger.interactionLabel = 'Red Base Step Enabled!'
 end
 
 flameRedtrigger.interactedEvent:Connect(OnflameRedTriggerInteraction)
