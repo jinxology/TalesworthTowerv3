@@ -51,7 +51,7 @@ function OnClickedSetLevel(whichButton)
         newLoc = Vector3.New (-87,-354,3855)
     elseif (whichButton.name == "btnJumpman") then
         currentLevelIndex = 5
-        newLoc = Vector3.New (-1058,1577,9728)
+        newLoc = Vector3.New (-172,1969,10591)
     elseif (whichButton.name == "btnFarmGallery") then
         currentLevelIndex = 6
         newLoc = Vector3.New (137,252,6132)

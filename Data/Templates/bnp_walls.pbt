@@ -1,12 +1,12 @@
 Assets {
-  Id: 4473552262498789702
+  Id: 3494992579393967072
   Name: "bnp.walls"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 11480625192855001529
+      RootId: 15187484510300632375
       Objects {
-        Id: 11480625192855001529
+        Id: 15187484510300632375
         Name: "bnp.walls"
         Transform {
           Scale {
@@ -16,74 +16,74 @@ Assets {
           }
         }
         ParentId: 6466700705943890717
-        ChildIds: 4764631953693859474
-        ChildIds: 1142548822417619225
-        ChildIds: 12601473582236837242
-        ChildIds: 12771387810107069056
-        ChildIds: 10518820589865482236
-        ChildIds: 13438776212176014649
-        ChildIds: 4769748011036638310
-        ChildIds: 9208105937674932420
-        ChildIds: 13198976051199528892
-        ChildIds: 1485341504986741873
-        ChildIds: 1173759039649173451
-        ChildIds: 14646400885173201673
-        ChildIds: 10913840806451536843
-        ChildIds: 4611697164686030750
-        ChildIds: 12686379903979564030
-        ChildIds: 1576251940741253027
-        ChildIds: 13115966863197634663
-        ChildIds: 5866285705098291569
-        ChildIds: 8844084807531989911
-        ChildIds: 16955402681943604129
-        ChildIds: 2064498958454102450
-        ChildIds: 17773477706253911151
-        ChildIds: 2836178172185236391
-        ChildIds: 11348486318693623283
-        ChildIds: 18283353573801645808
-        ChildIds: 6514508755475133151
-        ChildIds: 6672896338563196534
-        ChildIds: 17738574240564848257
-        ChildIds: 10394582702692184293
-        ChildIds: 7538898834834532374
-        ChildIds: 16377515498970695986
-        ChildIds: 17117068739123257127
-        ChildIds: 4466394879677579380
-        ChildIds: 9561620462124740194
-        ChildIds: 2040981948570406668
-        ChildIds: 1070074060431380764
-        ChildIds: 6378747276002605698
-        ChildIds: 16856512352747639211
-        ChildIds: 16914288458733525326
-        ChildIds: 6174940811183906729
-        ChildIds: 2965757223291868164
-        ChildIds: 11489527378472889814
-        ChildIds: 3360064776402974994
-        ChildIds: 12827343760532488316
-        ChildIds: 6142470519298949590
-        ChildIds: 8877143462705816052
-        ChildIds: 14384725907731539931
-        ChildIds: 15093939782810395232
-        ChildIds: 15153404427057648336
-        ChildIds: 7392318652777255046
-        ChildIds: 16011678277362469292
-        ChildIds: 3207244658105270136
-        ChildIds: 11359928906172146484
-        ChildIds: 7531788099125814293
-        ChildIds: 3543346460174881107
-        ChildIds: 1074040247704278961
-        ChildIds: 6570226333804357070
-        ChildIds: 13275756077418107502
-        ChildIds: 6734771527159335395
-        ChildIds: 13123018241327332561
-        ChildIds: 4384116816614245526
-        ChildIds: 14348495085230792504
-        ChildIds: 5230508944275166275
-        ChildIds: 9301263455464601889
-        ChildIds: 10371679542347314081
-        ChildIds: 17038882118464144607
-        ChildIds: 9638008887634478678
-        ChildIds: 15341326474757991851
+        ChildIds: 13355087213357205257
+        ChildIds: 2147997899130397401
+        ChildIds: 4771948496328106249
+        ChildIds: 3906544857448550949
+        ChildIds: 5778181777668389309
+        ChildIds: 2927763088105826030
+        ChildIds: 15749705215524495317
+        ChildIds: 2455159066501650429
+        ChildIds: 4966751716449111704
+        ChildIds: 399413143935119832
+        ChildIds: 12160466436088019995
+        ChildIds: 6875866300398282263
+        ChildIds: 2878905244716664210
+        ChildIds: 3225754422328983303
+        ChildIds: 3864329305445676628
+        ChildIds: 11500830537121712542
+        ChildIds: 11329262665668400912
+        ChildIds: 280563633710597782
+        ChildIds: 7116137069932771117
+        ChildIds: 12048479535182577086
+        ChildIds: 12613492070792209382
+        ChildIds: 2949789181957768280
+        ChildIds: 8644614348465589092
+        ChildIds: 17610878266004346028
+        ChildIds: 377211682087642923
+        ChildIds: 5366331506426385697
+        ChildIds: 7591670094063376407
+        ChildIds: 15652161105677387661
+        ChildIds: 9355273213649443844
+        ChildIds: 4922701145749367234
+        ChildIds: 2278692945877090046
+        ChildIds: 6207059081163551309
+        ChildIds: 6689128067127370115
+        ChildIds: 8384971177636257456
+        ChildIds: 13959358688369067526
+        ChildIds: 2302517300047835360
+        ChildIds: 15267628071031097886
+        ChildIds: 16153585351543768573
+        ChildIds: 6321299612501775658
+        ChildIds: 240023293829785398
+        ChildIds: 45043882499067426
+        ChildIds: 14652510354457760245
+        ChildIds: 15032349722174704429
+        ChildIds: 9280236598990940805
+        ChildIds: 12202095718849053218
+        ChildIds: 12008286394713616576
+        ChildIds: 344975929075006411
+        ChildIds: 13125090549888872943
+        ChildIds: 9914356616237713840
+        ChildIds: 4233678211322430037
+        ChildIds: 14407546146625689420
+        ChildIds: 5940514711840684866
+        ChildIds: 17776397131261115630
+        ChildIds: 8363466743175804805
+        ChildIds: 11121193262444546964
+        ChildIds: 2802346201431428644
+        ChildIds: 9547607260314796811
+        ChildIds: 3012845487730469424
+        ChildIds: 5700594381823863790
+        ChildIds: 5386559402257655649
+        ChildIds: 8772905135123073766
+        ChildIds: 7730781730858857314
+        ChildIds: 8201317217675045590
+        ChildIds: 14562529759781749717
+        ChildIds: 14513478570086705623
+        ChildIds: 4725976922859646304
+        ChildIds: 642110024561764206
+        ChildIds: 2903152235613985104
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -94,18 +94,60 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Folder {
-          Model {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 13355087213357205257
+        Name: "Castle Part - Window 02"
+        Transform {
+          Location {
+            X: -2399.99268
+            Y: -611.999634
+            Z: 0.000244140625
+          }
+          Rotation {
+            Yaw: -89.9999542
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15187484510300632375
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 5039051833507134363
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
           }
         }
       }
       Objects {
-        Id: 4764631953693859474
+        Id: 2147997899130397401
         Name: "Fantasy Castle Wall 02 - Curved"
         Transform {
           Location {
-            X: -2799.99829
-            Y: 2400.00195
-            Z: 50
+            X: -2799.99683
+            Y: 2400
           }
           Rotation {
             Yaw: 89.9999161
@@ -116,7 +158,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -142,13 +184,13 @@ Assets {
         }
       }
       Objects {
-        Id: 1142548822417619225
+        Id: 4771948496328106249
         Name: "Fantasy Castle Wall 02 - Curved"
         Transform {
           Location {
-            X: -2799.99829
-            Y: 2400.00195
-            Z: 650
+            X: -2799.99683
+            Y: 2400
+            Z: 600
           }
           Rotation {
             Yaw: 89.9999924
@@ -159,7 +201,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -185,13 +227,13 @@ Assets {
         }
       }
       Objects {
-        Id: 12601473582236837242
+        Id: 3906544857448550949
         Name: "Fantasy Castle Wall 02 - Curved Window 01"
         Transform {
           Location {
-            X: -2799.99829
-            Y: 2400.00195
-            Z: 1250
+            X: -2799.99683
+            Y: 2400
+            Z: 1200
           }
           Rotation {
             Yaw: 89.9999924
@@ -202,7 +244,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -228,16 +270,16 @@ Assets {
         }
       }
       Objects {
-        Id: 12771387810107069056
+        Id: 5778181777668389309
         Name: "Fantasy Castle Wall 02 - Curved Window 01"
         Transform {
           Location {
-            X: -2399.99805
-            Y: 2800.00171
-            Z: 1250
+            X: -2399.99658
+            Y: 2799.99976
+            Z: 1200
           }
           Rotation {
-            Yaw: -2.04905627e-05
+            Yaw: -3.2568876e-12
           }
           Scale {
             X: 1
@@ -245,7 +287,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -271,13 +313,13 @@ Assets {
         }
       }
       Objects {
-        Id: 10518820589865482236
+        Id: 2927763088105826030
         Name: "Fantasy Castle Wall 02 - Curved Window 01"
         Transform {
           Location {
-            X: -2399.99854
-            Y: 2000.00171
-            Z: 1250
+            X: -2399.99707
+            Y: 2000.00024
+            Z: 1200
           }
           Rotation {
             Yaw: 179.999939
@@ -288,7 +330,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -314,13 +356,13 @@ Assets {
         }
       }
       Objects {
-        Id: 13438776212176014649
+        Id: 15749705215524495317
         Name: "Fantasy Castle Wall 02 - Curved Doorway"
         Transform {
           Location {
-            X: -1999.99829
-            Y: 2400.00146
-            Z: 1250
+            X: -1999.99756
+            Y: 2399.99951
+            Z: 1200
           }
           Rotation {
             Yaw: -90.0000458
@@ -331,7 +373,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -357,13 +399,13 @@ Assets {
         }
       }
       Objects {
-        Id: 4769748011036638310
+        Id: 2455159066501650429
         Name: "Fantasy Castle Wall 02 - Curved"
         Transform {
           Location {
-            X: -2399.99854
-            Y: 2000.00171
-            Z: 650
+            X: -2399.99707
+            Y: 2000.00024
+            Z: 600
           }
           Rotation {
             Yaw: 179.999939
@@ -374,7 +416,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -400,13 +442,13 @@ Assets {
         }
       }
       Objects {
-        Id: 9208105937674932420
+        Id: 4966751716449111704
         Name: "Fantasy Castle Wall 02 - Curved"
         Transform {
           Location {
-            X: -1999.99829
-            Y: 2400.00146
-            Z: 650
+            X: -1999.99756
+            Y: 2399.99951
+            Z: 600
           }
           Rotation {
             Yaw: -90.0000458
@@ -417,7 +459,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -443,16 +485,16 @@ Assets {
         }
       }
       Objects {
-        Id: 13198976051199528892
+        Id: 399413143935119832
         Name: "Fantasy Castle Wall 02 - Curved"
         Transform {
           Location {
-            X: -2399.99805
-            Y: 2800.00171
-            Z: 650
+            X: -2399.99658
+            Y: 2799.99976
+            Z: 600
           }
           Rotation {
-            Yaw: -2.04905627e-05
+            Yaw: -3.2568876e-12
           }
           Scale {
             X: 1
@@ -460,7 +502,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -486,13 +528,12 @@ Assets {
         }
       }
       Objects {
-        Id: 1485341504986741873
+        Id: 12160466436088019995
         Name: "Fantasy Castle Wall 02 - Curved"
         Transform {
           Location {
-            X: -2399.99854
-            Y: 2000.00171
-            Z: 50
+            X: -2399.99707
+            Y: 2000.00024
           }
           Rotation {
             Yaw: 179.999939
@@ -503,7 +544,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -529,13 +570,12 @@ Assets {
         }
       }
       Objects {
-        Id: 1173759039649173451
+        Id: 6875866300398282263
         Name: "Fantasy Castle Wall 01 - Curved Doorway"
         Transform {
           Location {
-            X: -1999.99829
-            Y: 2400.00146
-            Z: 50
+            X: -1999.99756
+            Y: 2399.99951
           }
           Rotation {
             Yaw: -90.0000458
@@ -546,7 +586,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -572,16 +612,15 @@ Assets {
         }
       }
       Objects {
-        Id: 14646400885173201673
+        Id: 2878905244716664210
         Name: "Fantasy Castle Wall 02 - Curved"
         Transform {
           Location {
-            X: -2399.99805
-            Y: 2800.00171
-            Z: 50
+            X: -2399.99658
+            Y: 2799.99976
           }
           Rotation {
-            Yaw: -2.04905627e-05
+            Yaw: -3.2568876e-12
           }
           Scale {
             X: 1
@@ -589,7 +628,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -615,16 +654,15 @@ Assets {
         }
       }
       Objects {
-        Id: 10913840806451536843
+        Id: 3225754422328983303
         Name: "Fantasy Castle Stairs Spiral 01 - Small 150cm"
         Transform {
           Location {
-            X: -2399.99829
-            Y: 2400.00171
-            Z: 50
+            X: -2399.99683
+            Y: 2399.99976
           }
           Rotation {
-            Yaw: 180
+            Yaw: -179.999985
           }
           Scale {
             X: 1
@@ -632,7 +670,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -658,185 +696,13 @@ Assets {
         }
       }
       Objects {
-        Id: 4611697164686030750
+        Id: 3864329305445676628
         Name: "Fantasy Castle Stairs Spiral 01 - Small 150cm"
         Transform {
           Location {
-            X: -2399.99829
-            Y: 2400.00171
-            Z: 200
-          }
-          Rotation {
-            Yaw: -90.0000534
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 11480625192855001529
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 14823766674395707712
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          InteractWithTriggers: true
-          StaticMesh {
-            Physics {
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 12686379903979564030
-        Name: "Fantasy Castle Stairs Spiral 01 - Small 150cm"
-        Transform {
-          Location {
-            X: -2399.99829
-            Y: 2400.00171
-            Z: 500
-          }
-          Rotation {
-            Yaw: 90.0000153
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 11480625192855001529
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 14823766674395707712
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          InteractWithTriggers: true
-          StaticMesh {
-            Physics {
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 1576251940741253027
-        Name: "Fantasy Castle Stairs Spiral 01 - Small 150cm"
-        Transform {
-          Location {
-            X: -2399.99829
-            Y: 2400.00171
-            Z: 350
-          }
-          Rotation {
-            Yaw: 3.41509294e-05
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 11480625192855001529
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 14823766674395707712
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          InteractWithTriggers: true
-          StaticMesh {
-            Physics {
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 13115966863197634663
-        Name: "Fantasy Castle Stairs Spiral 01 - Small 150cm"
-        Transform {
-          Location {
-            X: -2399.99829
-            Y: 2400.00171
-            Z: 650
-          }
-          Rotation {
-            Yaw: 180
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 11480625192855001529
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 14823766674395707712
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          InteractWithTriggers: true
-          StaticMesh {
-            Physics {
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 5866285705098291569
-        Name: "Fantasy Castle Stairs Spiral 01 - Small 150cm"
-        Transform {
-          Location {
-            X: -2399.99829
-            Y: 2400.00171
-            Z: 800
+            X: -2399.99683
+            Y: 2399.99976
+            Z: 150
           }
           Rotation {
             Yaw: -90.0000534
@@ -847,7 +713,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -873,16 +739,16 @@ Assets {
         }
       }
       Objects {
-        Id: 8844084807531989911
+        Id: 11500830537121712542
         Name: "Fantasy Castle Stairs Spiral 01 - Small 150cm"
         Transform {
           Location {
-            X: -2399.99829
-            Y: 2400.00171
-            Z: 1100
+            X: -2399.99683
+            Y: 2399.99976
+            Z: 450
           }
           Rotation {
-            Yaw: 90.0000153
+            Yaw: 90.0000076
           }
           Scale {
             X: 1
@@ -890,7 +756,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -916,16 +782,16 @@ Assets {
         }
       }
       Objects {
-        Id: 16955402681943604129
+        Id: 11329262665668400912
         Name: "Fantasy Castle Stairs Spiral 01 - Small 150cm"
         Transform {
           Location {
-            X: -2399.99829
-            Y: 2400.00171
-            Z: 950
+            X: -2399.99683
+            Y: 2399.99976
+            Z: 300
           }
           Rotation {
-            Yaw: 3.41509294e-05
+            Yaw: 3.41509331e-05
           }
           Scale {
             X: 1
@@ -933,7 +799,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -959,16 +825,188 @@ Assets {
         }
       }
       Objects {
-        Id: 2064498958454102450
+        Id: 280563633710597782
+        Name: "Fantasy Castle Stairs Spiral 01 - Small 150cm"
+        Transform {
+          Location {
+            X: -2399.99683
+            Y: 2399.99976
+            Z: 600
+          }
+          Rotation {
+            Yaw: -179.999985
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15187484510300632375
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 14823766674395707712
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 7116137069932771117
+        Name: "Fantasy Castle Stairs Spiral 01 - Small 150cm"
+        Transform {
+          Location {
+            X: -2399.99683
+            Y: 2399.99976
+            Z: 750
+          }
+          Rotation {
+            Yaw: -90.0000534
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15187484510300632375
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 14823766674395707712
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 12048479535182577086
+        Name: "Fantasy Castle Stairs Spiral 01 - Small 150cm"
+        Transform {
+          Location {
+            X: -2399.99683
+            Y: 2399.99976
+            Z: 1050
+          }
+          Rotation {
+            Yaw: 90.0000076
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15187484510300632375
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 14823766674395707712
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 12613492070792209382
+        Name: "Fantasy Castle Stairs Spiral 01 - Small 150cm"
+        Transform {
+          Location {
+            X: -2399.99683
+            Y: 2399.99976
+            Z: 900
+          }
+          Rotation {
+            Yaw: 3.41509331e-05
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15187484510300632375
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 14823766674395707712
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          InteractWithTriggers: true
+          StaticMesh {
+            Physics {
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 2949789181957768280
         Name: "Spiral Stairs 6m"
         Transform {
           Location {
-            X: -2399.99829
-            Y: 2400.00171
-            Z: 1250
+            X: -2399.99683
+            Y: 2399.99976
+            Z: 1200
           }
           Rotation {
-            Yaw: 180
+            Yaw: -179.999985
           }
           Scale {
             X: 1
@@ -976,7 +1014,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -991,16 +1029,16 @@ Assets {
         }
       }
       Objects {
-        Id: 17773477706253911151
+        Id: 8644614348465589092
         Name: "Spiral Stairs 6m"
         Transform {
           Location {
-            X: -2399.99829
-            Y: 2400.00171
-            Z: 1850
+            X: -2399.99683
+            Y: 2399.99976
+            Z: 1800
           }
           Rotation {
-            Yaw: 180
+            Yaw: -179.999985
           }
           Scale {
             X: 1
@@ -1008,7 +1046,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1023,13 +1061,13 @@ Assets {
         }
       }
       Objects {
-        Id: 2836178172185236391
+        Id: 17610878266004346028
         Name: "Fantasy Castle Bannister 01 - Straight"
         Transform {
           Location {
-            X: -2359.99829
-            Y: 2405.00171
-            Z: 1300
+            X: -2359.99683
+            Y: 2404.99976
+            Z: 1250
           }
           Rotation {
             Yaw: 89.9999542
@@ -1040,7 +1078,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1067,13 +1105,13 @@ Assets {
         }
       }
       Objects {
-        Id: 11348486318693623283
+        Id: 377211682087642923
         Name: "Fantasy Castle Wall 01"
         Transform {
           Location {
-            X: -1199.99976
-            Y: -2400.00073
-            Z: 50.0002441
+            X: -1199.99939
+            Y: -2399.99878
+            Z: 0.000244140625
           }
           Rotation {
             Yaw: -179.999954
@@ -1084,7 +1122,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1111,13 +1149,12 @@ Assets {
         }
       }
       Objects {
-        Id: 18283353573801645808
+        Id: 5366331506426385697
         Name: "Fantasy Castle Wall 01 - Curved"
         Transform {
           Location {
-            X: -2400
-            Y: -399.999603
-            Z: 50
+            X: -2399.99878
+            Y: -399.999329
           }
           Rotation {
             Yaw: -179.999954
@@ -1128,7 +1165,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1155,16 +1192,15 @@ Assets {
         }
       }
       Objects {
-        Id: 6514508755475133151
+        Id: 7591670094063376407
         Name: "Fantasy Castle Wall 01 - Curved"
         Transform {
           Location {
-            X: -2799.99756
-            Y: -0.00128173828
-            Z: 50
+            X: -2799.99609
+            Y: -0.00130844256
           }
           Rotation {
-            Yaw: 90.0000687
+            Yaw: 90.0000763
           }
           Scale {
             X: 1
@@ -1172,7 +1208,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1199,13 +1235,13 @@ Assets {
         }
       }
       Objects {
-        Id: 6672896338563196534
+        Id: 15652161105677387661
         Name: "Fantasy Castle Wall 02 - Curved"
         Transform {
           Location {
-            X: -2400
-            Y: -399.999603
-            Z: 650
+            X: -2399.99878
+            Y: -399.999329
+            Z: 600
           }
           Rotation {
             Yaw: -179.999954
@@ -1216,7 +1252,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1243,16 +1279,16 @@ Assets {
         }
       }
       Objects {
-        Id: 17738574240564848257
+        Id: 9355273213649443844
         Name: "Fantasy Castle Wall 02 - Curved"
         Transform {
           Location {
-            X: -2799.99756
-            Y: -0.00128173828
-            Z: 650
+            X: -2799.99609
+            Y: -0.00130844256
+            Z: 600
           }
           Rotation {
-            Yaw: 90.0000458
+            Yaw: 90.0000305
           }
           Scale {
             X: 1
@@ -1260,7 +1296,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1287,13 +1323,13 @@ Assets {
         }
       }
       Objects {
-        Id: 10394582702692184293
+        Id: 4922701145749367234
         Name: "Fantasy Castle Wall 02 - Curved Window 01"
         Transform {
           Location {
-            X: -2400
-            Y: -399.999603
-            Z: 1250
+            X: -2399.99878
+            Y: -399.999329
+            Z: 1200
           }
           Rotation {
             Yaw: -179.999954
@@ -1304,7 +1340,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1331,16 +1367,16 @@ Assets {
         }
       }
       Objects {
-        Id: 7538898834834532374
+        Id: 2278692945877090046
         Name: "Fantasy Castle Wall 02 - Curved Window 01"
         Transform {
           Location {
-            X: -2799.99756
-            Y: -0.00128173828
-            Z: 1250
+            X: -2799.99609
+            Y: -0.00130844256
+            Z: 1200
           }
           Rotation {
-            Yaw: 90.0000687
+            Yaw: 90.0000763
           }
           Scale {
             X: 1
@@ -1348,7 +1384,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1375,13 +1411,12 @@ Assets {
         }
       }
       Objects {
-        Id: 16377515498970695986
+        Id: 6207059081163551309
         Name: "Fantasy Castle Wall Foundation 01 - Curved"
         Transform {
           Location {
-            X: -2225
-            Y: -2449.99927
-            Z: 50
+            X: -2224.99878
+            Y: -2449.99731
           }
           Rotation {
             Yaw: -179.999954
@@ -1392,7 +1427,7 @@ Assets {
             Z: 0.5625
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         UnregisteredParameters {
           Overrides {
             Name: "ma:Building_WallInner:id"
@@ -1427,13 +1462,13 @@ Assets {
         }
       }
       Objects {
-        Id: 17117068739123257127
+        Id: 6689128067127370115
         Name: "Fantasy Castle Accessory Tower 01 - 12m"
         Transform {
           Location {
-            X: -2225
-            Y: -2225
-            Z: 1050
+            X: -2224.99878
+            Y: -2224.99805
+            Z: 1000
           }
           Rotation {
             Yaw: 135.000046
@@ -1444,7 +1479,7 @@ Assets {
             Z: 1.05
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1471,16 +1506,15 @@ Assets {
         }
       }
       Objects {
-        Id: 4466394879677579380
+        Id: 8384971177636257456
         Name: "Fantasy Castle Wall Foundation 01 - Curved"
         Transform {
           Location {
-            X: -2450
-            Y: -2225
-            Z: 50
+            X: -2449.99878
+            Y: -2224.99805
           }
           Rotation {
-            Yaw: 90.0000687
+            Yaw: 90.0000763
           }
           Scale {
             X: 0.5625
@@ -1488,7 +1522,7 @@ Assets {
             Z: 0.5625
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1515,16 +1549,15 @@ Assets {
         }
       }
       Objects {
-        Id: 9561620462124740194
+        Id: 13959358688369067526
         Name: "Fantasy Castle Wall Foundation 01 - Curved"
         Transform {
           Location {
-            X: -2000.00049
-            Y: -2224.99927
-            Z: 50
+            X: -1999.99976
+            Y: -2224.99731
           }
           Rotation {
-            Yaw: -90.000061
+            Yaw: -90.0000534
           }
           Scale {
             X: 0.5625
@@ -1532,7 +1565,7 @@ Assets {
             Z: 0.5625
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1559,16 +1592,15 @@ Assets {
         }
       }
       Objects {
-        Id: 2040981948570406668
+        Id: 2302517300047835360
         Name: "Fantasy Castle Wall Foundation 01 - Curved"
         Transform {
           Location {
-            X: -2225
-            Y: -2000
-            Z: 50
+            X: -2224.99878
+            Y: -1999.99902
           }
           Rotation {
-            Yaw: 7.51320476e-05
+            Yaw: 6.14716846e-05
           }
           Scale {
             X: 0.5625
@@ -1576,7 +1608,7 @@ Assets {
             Z: 0.5625
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1603,13 +1635,13 @@ Assets {
         }
       }
       Objects {
-        Id: 1070074060431380764
+        Id: 15267628071031097886
         Name: "Fantasy Castle Wall 01"
         Transform {
           Location {
-            X: -400.011322
-            Y: -2399.99365
-            Z: 50.0002441
+            X: -400.011597
+            Y: -2399.9917
+            Z: 0.000244140625
           }
           Rotation {
             Yaw: -179.999954
@@ -1620,7 +1652,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1647,16 +1679,16 @@ Assets {
         }
       }
       Objects {
-        Id: 6378747276002605698
+        Id: 16153585351543768573
         Name: "Fantasy Castle Wall 01 Half"
         Transform {
           Location {
-            X: -2399.99878
-            Y: -1199.99927
-            Z: 50.0002441
+            X: -2399.99756
+            Y: -1199.99829
+            Z: 0.000244140625
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -1664,7 +1696,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1691,16 +1723,16 @@ Assets {
         }
       }
       Objects {
-        Id: 16856512352747639211
+        Id: 6321299612501775658
         Name: "Fantasy Castle Wall 01 Half - Window 02"
         Transform {
           Location {
-            X: -2399.99878
-            Y: -799.999573
-            Z: 50.0002441
+            X: -2399.99756
+            Y: -799.999084
+            Z: 0.000244140625
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -1708,7 +1740,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1735,16 +1767,16 @@ Assets {
         }
       }
       Objects {
-        Id: 16914288458733525326
+        Id: 240023293829785398
         Name: "Fantasy Castle Wall 01"
         Transform {
           Location {
-            X: -2399.99902
-            Y: -1999.99988
-            Z: 50.0002441
+            X: -2399.99756
+            Y: -1999.9989
+            Z: 0.000244140625
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -1752,7 +1784,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1779,16 +1811,16 @@ Assets {
         }
       }
       Objects {
-        Id: 6174940811183906729
+        Id: 45043882499067426
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: -2399.99927
-            Y: -1200.00073
-            Z: 650.000244
+            X: -2399.99805
+            Y: -1199.99976
+            Z: 600.000244
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -1796,7 +1828,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1823,16 +1855,16 @@ Assets {
         }
       }
       Objects {
-        Id: 2965757223291868164
+        Id: 14652510354457760245
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: -2399.99902
-            Y: -1999.99988
-            Z: 650.000244
+            X: -2399.99756
+            Y: -1999.9989
+            Z: 600.000244
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -1840,7 +1872,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1867,16 +1899,16 @@ Assets {
         }
       }
       Objects {
-        Id: 11489527378472889814
+        Id: 15032349722174704429
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: -2399.99902
-            Y: -1999.99988
-            Z: 1250.00024
+            X: -2399.99756
+            Y: -1999.9989
+            Z: 1200.00024
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -1884,7 +1916,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1911,16 +1943,16 @@ Assets {
         }
       }
       Objects {
-        Id: 3360064776402974994
+        Id: 9280236598990940805
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: -2399.99927
-            Y: -1200.00073
-            Z: 1250.00024
+            X: -2399.99805
+            Y: -1199.99976
+            Z: 1200.00024
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -1928,7 +1960,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1955,16 +1987,16 @@ Assets {
         }
       }
       Objects {
-        Id: 12827343760532488316
+        Id: 12202095718849053218
         Name: "Castle Part - Window 01"
         Transform {
           Location {
-            X: -2400.00049
-            Y: 799.997375
-            Z: 50.0002441
+            X: -2399.99902
+            Y: 799.996887
+            Z: 0.000244140625
           }
           Rotation {
-            Yaw: 89.9999466
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -1972,7 +2004,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1998,16 +2030,16 @@ Assets {
         }
       }
       Objects {
-        Id: 6142470519298949590
+        Id: 12008286394713616576
         Name: "Fantasy Castle Wall 01 - Window 01"
         Transform {
           Location {
-            X: -2400.00098
-            Y: 399.997528
-            Z: 50.0002441
+            X: -2399.99976
+            Y: 399.997192
+            Z: 0.000244140625
           }
           Rotation {
-            Yaw: 89.9999466
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -2015,7 +2047,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2041,16 +2073,16 @@ Assets {
         }
       }
       Objects {
-        Id: 8877143462705816052
+        Id: 344975929075006411
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: -2400.00049
-            Y: 399.997528
-            Z: 650.000244
+            X: -2399.99927
+            Y: 399.997192
+            Z: 600.000244
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -2058,7 +2090,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2085,16 +2117,16 @@ Assets {
         }
       }
       Objects {
-        Id: 14384725907731539931
+        Id: 13125090549888872943
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: -2399.99854
-            Y: 399.993622
-            Z: 1250
+            X: -2399.99731
+            Y: 399.993286
+            Z: 1200
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -2102,7 +2134,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2129,16 +2161,16 @@ Assets {
         }
       }
       Objects {
-        Id: 15093939782810395232
+        Id: 9914356616237713840
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: -2399.99683
-            Y: 1199.99817
-            Z: 1250
+            X: -2399.99561
+            Y: 1199.99719
+            Z: 1200
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -2146,7 +2178,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2173,16 +2205,16 @@ Assets {
         }
       }
       Objects {
-        Id: 15153404427057648336
+        Id: 4233678211322430037
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: -2399.9978
-            Y: 1199.99744
-            Z: 650.000244
+            X: -2399.99658
+            Y: 1199.99646
+            Z: 600.000244
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -2190,7 +2222,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2217,16 +2249,16 @@ Assets {
         }
       }
       Objects {
-        Id: 7392318652777255046
+        Id: 14407546146625689420
         Name: "Fantasy Castle Wall 01"
         Transform {
           Location {
-            X: -2399.99878
-            Y: 1199.99744
-            Z: 50.0002441
+            X: -2399.99756
+            Y: 1199.99646
+            Z: 0.000244140625
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 1
@@ -2234,7 +2266,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2261,13 +2293,13 @@ Assets {
         }
       }
       Objects {
-        Id: 16011678277362469292
+        Id: 5940514711840684866
         Name: "Fantasy Castle Wall 02 - Curved"
         Transform {
           Location {
-            X: -1999.9989
-            Y: -2399.99976
-            Z: 1250.00024
+            X: -1999.99817
+            Y: -2399.9978
+            Z: 1200.00024
           }
           Rotation {
             Yaw: -179.999954
@@ -2278,7 +2310,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2305,13 +2337,13 @@ Assets {
         }
       }
       Objects {
-        Id: 3207244658105270136
+        Id: 17776397131261115630
         Name: "Fantasy Castle Wall 02 - Curved"
         Transform {
           Location {
-            X: -1999.9989
-            Y: -2399.99976
-            Z: 650.000244
+            X: -1999.99817
+            Y: -2399.9978
+            Z: 600.000244
           }
           Rotation {
             Yaw: -179.999954
@@ -2322,7 +2354,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2349,13 +2381,13 @@ Assets {
         }
       }
       Objects {
-        Id: 11359928906172146484
+        Id: 8363466743175804805
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: -1199.99976
-            Y: -2399.99976
-            Z: 650.000244
+            X: -1199.99939
+            Y: -2399.9978
+            Z: 600.000244
           }
           Rotation {
             Yaw: -179.999954
@@ -2366,7 +2398,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2393,13 +2425,13 @@ Assets {
         }
       }
       Objects {
-        Id: 7531788099125814293
+        Id: 11121193262444546964
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: -400.000336
-            Y: -2399.99951
-            Z: 650.000244
+            X: -400.00061
+            Y: -2399.99756
+            Z: 600.000244
           }
           Rotation {
             Yaw: -179.999954
@@ -2410,7 +2442,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2437,13 +2469,13 @@ Assets {
         }
       }
       Objects {
-        Id: 3543346460174881107
+        Id: 2802346201431428644
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: -400.000336
-            Y: -2399.99951
-            Z: 1250.00024
+            X: -400.00061
+            Y: -2399.99756
+            Z: 1200.00024
           }
           Rotation {
             Yaw: -179.999954
@@ -2454,7 +2486,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2481,13 +2513,13 @@ Assets {
         }
       }
       Objects {
-        Id: 1074040247704278961
+        Id: 9547607260314796811
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: -1199.99976
-            Y: -2399.99976
-            Z: 1250.00024
+            X: -1199.99939
+            Y: -2399.9978
+            Z: 1200.00024
           }
           Rotation {
             Yaw: -179.999954
@@ -2498,7 +2530,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2525,13 +2557,13 @@ Assets {
         }
       }
       Objects {
-        Id: 6570226333804357070
+        Id: 3012845487730469424
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: 1999.99768
-            Y: -2399.99829
-            Z: 1250.00024
+            X: 1999.99658
+            Y: -2399.99634
+            Z: 1200.00024
           }
           Rotation {
             Yaw: -179.999954
@@ -2542,7 +2574,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2569,13 +2601,13 @@ Assets {
         }
       }
       Objects {
-        Id: 13275756077418107502
+        Id: 5700594381823863790
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: 1199.99817
-            Y: -2399.99878
-            Z: 1250.00024
+            X: 1199.99683
+            Y: -2399.99683
+            Z: 1200.00024
           }
           Rotation {
             Yaw: -179.999954
@@ -2586,7 +2618,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2613,13 +2645,13 @@ Assets {
         }
       }
       Objects {
-        Id: 6734771527159335395
+        Id: 5386559402257655649
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: 1999.99768
-            Y: -2399.99829
-            Z: 650.000244
+            X: 1999.99658
+            Y: -2399.99634
+            Z: 600.000244
           }
           Rotation {
             Yaw: -179.999954
@@ -2630,7 +2662,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2657,13 +2689,13 @@ Assets {
         }
       }
       Objects {
-        Id: 13123018241327332561
+        Id: 8772905135123073766
         Name: "Fantasy Castle Wall 03"
         Transform {
           Location {
-            X: 1199.99817
-            Y: -2399.99878
-            Z: 650.000244
+            X: 1199.99683
+            Y: -2399.99683
+            Z: 600.000244
           }
           Rotation {
             Yaw: -179.999954
@@ -2674,7 +2706,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2701,13 +2733,13 @@ Assets {
         }
       }
       Objects {
-        Id: 4384116816614245526
+        Id: 7730781730858857314
         Name: "Fantasy Castle Wall 04 - Window 01 Top"
         Transform {
           Location {
-            X: 399.998688
-            Y: -2399.99854
-            Z: 1250.00024
+            X: 399.997681
+            Y: -2399.99658
+            Z: 1200.00024
           }
           Rotation {
             Yaw: -179.999954
@@ -2718,7 +2750,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2745,13 +2777,13 @@ Assets {
         }
       }
       Objects {
-        Id: 14348495085230792504
+        Id: 8201317217675045590
         Name: "Fantasy Castle Wall 04 - Window 01 Base"
         Transform {
           Location {
-            X: 399.998688
-            Y: -2399.99854
-            Z: 50.0002441
+            X: 399.997681
+            Y: -2399.99658
+            Z: 0.000244140625
           }
           Rotation {
             Yaw: -179.999954
@@ -2762,7 +2794,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2789,13 +2821,13 @@ Assets {
         }
       }
       Objects {
-        Id: 5230508944275166275
+        Id: 14562529759781749717
         Name: "Fantasy Castle Wall 04 - Window 01 Mid"
         Transform {
           Location {
-            X: 399.998688
-            Y: -2399.99854
-            Z: 650.000244
+            X: 399.997681
+            Y: -2399.99658
+            Z: 600.000244
           }
           Rotation {
             Yaw: -179.999954
@@ -2806,7 +2838,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2833,13 +2865,13 @@ Assets {
         }
       }
       Objects {
-        Id: 9301263455464601889
+        Id: 14513478570086705623
         Name: "Fantasy Castle Wall 01 - Curved"
         Transform {
           Location {
-            X: -1999.9989
-            Y: -2399.99976
-            Z: 50.0002441
+            X: -1999.99817
+            Y: -2399.9978
+            Z: 0.000244140625
           }
           Rotation {
             Yaw: -179.999954
@@ -2850,7 +2882,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2877,13 +2909,13 @@ Assets {
         }
       }
       Objects {
-        Id: 10371679542347314081
+        Id: 4725976922859646304
         Name: "Fantasy Castle Wall 01"
         Transform {
           Location {
-            X: 1999.99768
-            Y: -2399.99829
-            Z: 50.0002441
+            X: 1999.99658
+            Y: -2399.99634
+            Z: 0.000244140625
           }
           Rotation {
             Yaw: -179.999954
@@ -2894,7 +2926,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2921,13 +2953,13 @@ Assets {
         }
       }
       Objects {
-        Id: 17038882118464144607
+        Id: 642110024561764206
         Name: "Castle Part - Window 01"
         Transform {
           Location {
-            X: 799.998352
-            Y: -2399.99902
-            Z: 50.0002441
+            X: 799.997314
+            Y: -2399.99707
+            Z: 0.000244140625
           }
           Rotation {
             Yaw: -179.999954
@@ -2938,7 +2970,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2964,13 +2996,13 @@ Assets {
         }
       }
       Objects {
-        Id: 9638008887634478678
+        Id: 2903152235613985104
         Name: "Fantasy Castle Wall 01 - Window 01"
         Transform {
           Location {
-            X: 1199.99817
-            Y: -2399.99878
-            Z: 50.0002441
+            X: 1199.99683
+            Y: -2399.99683
+            Z: 0.000244140625
           }
           Rotation {
             Yaw: -179.999954
@@ -2981,7 +3013,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11480625192855001529
+        ParentId: 15187484510300632375
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3006,49 +3038,14 @@ Assets {
           }
         }
       }
-      Objects {
-        Id: 15341326474757991851
-        Name: "Castle Part - Window 02"
-        Transform {
-          Location {
-            X: -2399.9939
-            Y: -612
-            Z: 50.0002441
-          }
-          Rotation {
-            Yaw: -89.9999695
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 11480625192855001529
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 5039051833507134363
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
+    }
+    Assets {
+      Id: 5039051833507134363
+      Name: "Castle Part - Window 02"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_ts_fan_cas_part_window_002_ref"
       }
     }
     Assets {
@@ -3211,15 +3208,6 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_ts_fan_cas_wall_004_win_01_mid"
-      }
-    }
-    Assets {
-      Id: 5039051833507134363
-      Name: "Castle Part - Window 02"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_ts_fan_cas_part_window_002_ref"
       }
     }
     PrimaryAssetId {

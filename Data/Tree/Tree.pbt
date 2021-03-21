@@ -44,7 +44,7 @@ Objects {
   Name: "Lake"
   Transform {
     Location {
-      Z: -2363.35156
+      Z: -1550
     }
     Rotation {
     }
@@ -1296,7 +1296,7 @@ Objects {
       }
     }
     Button {
-      Label: "Colored Dials"
+      Label: "Color Dials"
       FontColor {
         A: 1
       }

@@ -70,8 +70,11 @@ function ActivateInstructions(levelStatus)
         propScoreIndicator.visibility = Visibility.FORCE_OFF
         showInstructions:Disconnect(OnBindingPressed)
         hideInstructions:Disconnect(OnBindingReleased)
-        propLevelMusic:Stop()
-        propLevelMusic:Destroy()
+        if propLevelMusic then
+            propLevelMusic:Stop()
+            propLevelMusic:Destroy()
+            propLevelMusic = nil
+        end
     end
 end
 
