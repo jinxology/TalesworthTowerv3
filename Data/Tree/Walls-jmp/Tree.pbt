@@ -259,8 +259,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 2925
-      Y: -2150
+      X: 2925.01074
+      Y: -2149.98364
       Z: -75
     }
     Rotation {
@@ -272,6 +272,8 @@ Objects {
     }
   }
   ParentId: 15063451024916155919
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1640,7 +1642,6 @@ Objects {
   ChildIds: 13853614905958704843
   ChildIds: 9525626235744734633
   ChildIds: 2858674548857040858
-  ChildIds: 13200324040712240863
   ChildIds: 3186237919541247870
   ChildIds: 6596648062310061329
   ChildIds: 557090405663233722
@@ -1749,49 +1750,6 @@ Objects {
   Transform {
     Location {
       X: 1325
-      Y: -2150
-      Z: -75
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 3160370475134612642
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 17964725037567714412
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 13200324040712240863
-  Name: "Sci-fi Base Wall 02"
-  Transform {
-    Location {
-      X: 2125
       Y: -2150
       Z: -75
     }
