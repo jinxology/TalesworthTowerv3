@@ -7,12 +7,8 @@ Assets {
       RootId: 7006015966787435532
       Objects {
         Id: 7006015966787435532
-        Name: "Group"
+        Name: "pck.ringGeometry"
         Transform {
-          Location {
-          }
-          Rotation {
-          }
           Scale {
             X: 1
             Y: 1
@@ -60,6 +56,10 @@ Assets {
               B: 1
               A: 1
             }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
           }
         }
         Collidable_v2 {

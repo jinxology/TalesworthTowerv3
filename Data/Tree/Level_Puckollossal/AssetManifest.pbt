@@ -1,4 +1,13 @@
 Assets {
+  Id: 18073675066811160211
+  Name: "Wedge Convex - Large"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_wedge_curved_convex_lg_001_ref"
+  }
+}
+Assets {
   Id: 17317999939743247709
   Name: "Grass Basic"
   PlatformAssetType: 2
@@ -44,6 +53,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13668225859767539073
+  Name: "Tech Panel 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_sf_gen_tech-panel_001"
+  }
+}
+Assets {
   Id: 12905923173550510229
   Name: "Cylinder - Polished"
   PlatformAssetType: 1
@@ -62,12 +80,30 @@ Assets {
   }
 }
 Assets {
+  Id: 12758036443323469769
+  Name: "Urban Fence Pole - Extender End"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_mil_fence_pole_03_end_001"
+  }
+}
+Assets {
   Id: 12510064410993333055
   Name: "Fantasy Pommel 04"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weap_fan_pommel_004"
+  }
+}
+Assets {
+  Id: 11412815132174189312
+  Name: "Sphere - Half Quarter"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_quarter_hemisphere_001"
   }
 }
 Assets {
@@ -107,12 +143,30 @@ Assets {
   }
 }
 Assets {
+  Id: 7283825798727192743
+  Name: "Metal Iron Rusted 02"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_metal_iron_003"
+  }
+}
+Assets {
   Id: 7033270109974381006
   Name: "Pipe"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_pipe_001"
+  }
+}
+Assets {
+  Id: 5711247199587316769
+  Name: "Urban Fence Pole - Extender Connecting"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_mil_fence_pole_03_connect_001"
   }
 }
 Assets {
@@ -161,6 +215,15 @@ Assets {
   }
 }
 Assets {
+  Id: 3086929587923392091
+  Name: "Terrain - Grass Cliffs"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_terrain_cliff-grass-001_wa"
+  }
+}
+Assets {
   Id: 2817890560817570586
   Name: "Modern Weapon Barrel 01"
   PlatformAssetType: 1
@@ -176,15 +239,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_bullet_001"
-  }
-}
-Assets {
-  Id: 2157086117714223853
-  Name: "Wedge - Convex"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_wedge_curved_convex_001"
   }
 }
 Assets {
@@ -215,11 +269,38 @@ Assets {
   }
 }
 Assets {
+  Id: 1137112816547272582
+  Name: "Cylinder"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cylinder_002"
+  }
+}
+Assets {
+  Id: 385964793633407868
+  Name: "Ring - Quarter Thin"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_quarter_torus_001"
+  }
+}
+Assets {
   Id: 273448105943087596
   Name: "Fantasy Mace Guard 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weap_fan_guard_mace_001"
+  }
+}
+Assets {
+  Id: 226129477132629273
+  Name: "Pipe - Quarter Thin - Large"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_quarter-pipe_lg_thin_001_ref"
   }
 }
