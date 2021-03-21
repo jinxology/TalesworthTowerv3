@@ -10,10 +10,10 @@ startPlatformRotation = Rotation.New(0,0,90)
 --To be finalized when Flumes objects and code are completed
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(0,0,0)
-exitFlumeRotation = Rotation.New(0,0,0)
-entranceFlumeLocation = Vector3.New(0,0,0)
-entranceFlumeRotation = Rotation.New(0,0,0)
+exitFlumeLocation = Vector3.New(6204.868,159.1,-425)
+exitFlumeRotation = Rotation.New(0,0,180)
+entranceFlumeLocation = Vector3.New(6363.962,-530.329,775)
+entranceFlumeRotation = Rotation.New(0,0,180)
 entranceFlumeEjectionVelocity = 20
 ------------------------------------------------------------
 
@@ -31,11 +31,6 @@ end
 
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds
 function LevelBegin()
-end
-
---LevelEnd code is called when the....
-function LevelEnd()
-
 end
 
 --LevelPowerDown is called from the next level back to this one to clean it up and remove it from memory
