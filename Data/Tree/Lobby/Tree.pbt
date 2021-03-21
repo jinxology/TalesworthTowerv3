@@ -1,6 +1,64 @@
 Name: "Lobby"
 RootId: 11126704810718473895
 Objects {
+  Id: 18443946145634726093
+  Name: "Modern Stairs Steps 01 - 8m 01"
+  Transform {
+    Location {
+      X: 2716.46313
+      Y: -254.747559
+      Z: -615.397339
+    }
+    Rotation {
+      Yaw: -137.912186
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11126704810718473895
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 1818946279760406827
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_Detail1:id"
+      AssetReference {
+        Id: 12374906251468057054
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 7745273024190730456
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 17586211069039732680
   Name: "Cube"
   Transform {
