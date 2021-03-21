@@ -206,6 +206,15 @@ Assets {
   }
 }
 Assets {
+  Id: 5447713611569730727
+  Name: "Additive Soft Edge"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "fxma_additive_edgefade"
+  }
+}
+Assets {
   Id: 4808790141039972737
   Name: "Fantasy Gauntlet Hand 01"
   PlatformAssetType: 1

@@ -264,44 +264,6 @@ Objects {
   }
 }
 Objects {
-  Id: 782789108180982935
-  Name: "Trigger"
-  Transform {
-    Location {
-      X: 7199.98926
-      Y: 2000
-      Z: 200
-    }
-    Rotation {
-      Yaw: -90
-    }
-    Scale {
-      X: 50
-      Y: 1
-      Z: 17.4
-    }
-  }
-  ParentId: 1232579912354001357
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
   Id: 13156047079514199593
   Name: "Urban Fence Pole - Extender End"
   Transform {
@@ -2500,56 +2462,16 @@ Objects {
   }
 }
 Objects {
-  Id: 15334249075449200244
-  Name: "Group"
-  Transform {
-    Location {
-      X: -5199.94629
-      Y: 3399.99268
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1232579912354001357
-  ChildIds: 14504000887230660005
-  ChildIds: 2755059639961022209
-  ChildIds: 1363062643488805033
-  ChildIds: 16208480724353859977
-  ChildIds: 3845465124517929136
-  ChildIds: 12524979457644943307
-  ChildIds: 5375813760132954191
-  ChildIds: 4754858311514232511
-  ChildIds: 12323361099579017424
-  ChildIds: 15108219212480853924
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-}
-Objects {
   Id: 15108219212480853924
-  Name: "Group"
+  Name: "pck.goal"
   Transform {
     Location {
-      X: 12099.9424
-      Y: -1399.99219
+      X: 6899.99609
+      Y: 2000.00049
       Z: 25
     }
     Rotation {
-      Yaw: -89.9999771
+      Yaw: -89.9999619
     }
     Scale {
       X: 1.25
@@ -2557,7 +2479,7 @@ Objects {
       Z: 1.25
     }
   }
-  ParentId: 15334249075449200244
+  ParentId: 1232579912354001357
   ChildIds: 3862518923614175773
   ChildIds: 12250451485053358029
   ChildIds: 10899370203562074464
@@ -2573,6 +2495,7 @@ Objects {
   ChildIds: 6711598135527944496
   ChildIds: 340567468344725267
   ChildIds: 12674452320951290830
+  ChildIds: 782789108180982935
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2584,6 +2507,44 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 782789108180982935
+  Name: "pck.goalTrigger"
+  Transform {
+    Location {
+      X: 0.000561523426
+      Y: 239.994537
+      Z: 140
+    }
+    Rotation {
+      Yaw: -4.78113216e-05
+    }
+    Scale {
+      X: 40
+      Y: 0.8
+      Z: 13.92
+    }
+  }
+  ParentId: 15108219212480853924
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
   }
 }
 Objects {
@@ -3432,6 +3393,107 @@ Objects {
   }
 }
 Objects {
+  Id: 15334249075449200244
+  Name: "pck.floor"
+  Transform {
+    Location {
+      X: -5199.94629
+      Y: 3399.99268
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1232579912354001357
+  ChildIds: 14504000887230660005
+  ChildIds: 2755059639961022209
+  ChildIds: 1363062643488805033
+  ChildIds: 16208480724353859977
+  ChildIds: 3845465124517929136
+  ChildIds: 12524979457644943307
+  ChildIds: 5375813760132954191
+  ChildIds: 4754858311514232511
+  ChildIds: 12323361099579017424
+  ChildIds: 17490082046165625867
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 17490082046165625867
+  Name: "pck.floor"
+  Transform {
+    Location {
+      X: 12099.9463
+      Y: 1125.00732
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1.49999988
+      Y: 6.29999685
+      Z: 1
+    }
+  }
+  ParentId: 15334249075449200244
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_Floor:id"
+      AssetReference {
+        Id: 5447713611569730727
+      }
+    }
+    Overrides {
+      Name: "ma:Building_Floor:smart"
+      Bool: true
+    }
+    Overrides {
+      Name: "ma:Building_Ceiling:id"
+      AssetReference {
+        Id: 16457879760224337482
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 8560170209438767653
+    }
+    Teams {
+      TeamInt: 1
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 12323361099579017424
   Name: "pck.floor"
   Transform {
@@ -3953,7 +4015,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Equipment {
-    SocketName: "right_prop"
+    SocketName: "head"
     PickupTrigger {
       SelfId: 15778000029287988786
     }
@@ -4678,6 +4740,14 @@ Objects {
     }
   }
   ParentId: 1232579912354001357
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:scoreTrigger"
+      ObjectReference {
+        SelfId: 782789108180982935
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

@@ -1,4 +1,5 @@
 local propPhysics = script:GetCustomProperty("physics"):WaitForObject()
+local propFloorLevel = propPhysics:GetPosition().z
 
 function Tick()
     --  translate all momentum into the xy plane.
@@ -6,9 +7,25 @@ function Tick()
     local   magnitude = velocity.size
 
     if magnitude > 0.1 then
-        print(magnitude)
-        velocity.z = 0
+        velocity.z = math.min(0, velocity.z)
         propPhysics:SetVelocity(velocity:GetNormalized() * magnitude)
+    else
+        velocity.z = math.min(0, velocity.z)
     end
-    propPhysics:SetWorldRotation(Rotation.ZERO)
+
+    --  find floor
+    local   position = propPhysics:GetPosition()
+    if position.z < propFloorLevel then
+        propFloorLevel = position.z
+    end
+    position.z = propFloorLevel
+    propPhysics:SetPosition(position)
+
+    --  prevent tumbling
+    local   topUpAlways = propPhysics:GetWorldRotation()
+
+    topUpAlways.x = 0
+    topUpAlways.y = 0
+
+    propPhysics:SetWorldRotation(topUpAlways)
 end
