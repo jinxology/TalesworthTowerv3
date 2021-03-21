@@ -1,6 +1,57 @@
 Name: "BlockAndEscape Static Environment"
 RootId: 7175841995601495478
 Objects {
+  Id: 15364645337870371565
+  Name: "Whitebox Floor 01 4m x 4m"
+  Transform {
+    Location {
+      X: -5425
+      Y: 2150
+      Z: 1913.0791
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.2
+      Y: -2.10000062
+      Z: 0.4
+    }
+  }
+  ParentId: 7175841995601495478
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_Floor:id"
+      AssetReference {
+        Id: 12374906251468057054
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 2847518331929232958
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 15910758333459099943
   Name: "Fantasy Castle Stairs 01"
   Transform {
@@ -953,7 +1004,7 @@ Objects {
     }
     Scale {
       X: 2.8
-      Y: -8.29999924
+      Y: -6.9
       Z: 1
     }
   }
