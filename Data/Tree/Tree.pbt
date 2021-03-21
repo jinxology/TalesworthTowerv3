@@ -3714,6 +3714,18 @@ Objects {
         SelfId: 15691876057323174744
       }
     }
+    Overrides {
+      Name: "cs:LevelFailSound"
+      AssetReference {
+        Id: 17682678845342809470
+      }
+    }
+    Overrides {
+      Name: "cs:LevelVictorySound"
+      AssetReference {
+        Id: 9149253996179549894
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

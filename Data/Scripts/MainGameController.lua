@@ -328,7 +328,7 @@ function LevelEnd(success)
     SetNextLevelIndex(success)
 
     if (not success and currentLevelIndex == 1) then
-        script:SetNetworkedCustomProperty("UIMessage","04,true,FAILED - RE-ACTIVATE PLATFORMS")
+        script:SetNetworkedCustomProperty("UIMessage","01,true,FAILED - RE-ACTIVATE PLATFORMS,false")
 
         ResetStartingPlatforms()
     else
@@ -354,7 +354,7 @@ function LevelEnd(success)
         levelControllerScript.context.LevelPowerUp()
         
         --Show go to exit
-        script:SetNetworkedCustomProperty("UIMessage","01,true,PROCEED TO EXIT TUBE")
+        script:SetNetworkedCustomProperty("UIMessage","01,true,PROCEED TO EXIT TUBE,"..tostring(success))
 
         if levelControllerScript.context.entranceFlume then
             --Spawn the starting platforms
@@ -374,7 +374,7 @@ function LevelEnd(success)
     Task.Wait(lightsDimTime)
 
     --Show go to exit
-    script:SetNetworkedCustomProperty("UIMessage","01,false, ")
+    script:SetNetworkedCustomProperty("UIMessage","01,false,,")
 
     if (not success) then
         MakeWorldLight()
