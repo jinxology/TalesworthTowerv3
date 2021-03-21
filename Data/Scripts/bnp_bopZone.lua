@@ -10,14 +10,16 @@ function OnBeginOverlap(whichTrigger, other)
 	if other:IsA("Player") then
 		local player = other
 
-		player:AddImpulse(Vector3.UP * 100000)
+		if propLevelController.context.levelActive then
+			player:AddImpulse(Vector3.UP * 100000)
+		end
 		-- local animatedMesh = player:FindDescendantByType("AnimatedMesh")
 		-- animatedMesh:PlayAnimation("unarmed_throw")
 
 		for i, v in ipairs(player:GetEquipment()) do
-			if v:IsA("Equipment") and v.name == "bnp.balloonEquipment" then
+			if v:IsA("Equipment") and v.name == "bnp_balloonEquipment" then
 				local equipment = v
-				local balloon = equipment:FindChildByType("Script")
+				local balloon = equipment:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController
 				local bnpColor = balloon.context.bnpColor
 				local spawner = balloon.context.spawnedBy
 				
@@ -26,18 +28,20 @@ function OnBeginOverlap(whichTrigger, other)
 				-- balloon.context.propDunkAbility:Activate()
 
 				balloon.context.DropByPlayer(player)
-				balloon.parent.collision = Collision.FORCE_OFF
-				balloon.parent:MoveTo(propDisc:GetWorldPosition(), propSuctionSFX.length)
+				balloon.context.propPhysics.collision = Collision.FORCE_OFF
+				balloon.context.propPhysics:MoveTo(propDisc:GetWorldPosition(), propSuctionSFX.length)
 				
 				propSuctionSFX:Play()
 				Task.Wait(propSuctionSFX.length)
 				scored = propLevelController.context.PlayerJumpedOnOneLegCarryingBalloon(player.name, bnpColor, spawner, propDisc:GetWorldPosition())
-				balloon.parent:Destroy()
+				balloon:Destroy()
 			end
 		end
-	elseif other.name == "bnp.balloonPhysics" then
+	elseif other.name == "bnp_balloonPhysics" then
 		local physics = other
-		local balloon = physics:FindChildByType("Script")
+		local balloon = physics:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController
+		
+		print("collide " .. physics.id .. " " .. balloon.id)
 		if balloon ~= nil then
 			local boppedBy = balloon.context.lastBoppedBy
 			local bnpColor = balloon.context.bnpColor
@@ -50,7 +54,7 @@ function OnBeginOverlap(whichTrigger, other)
 			Task.Wait(propSuctionSFX.length)
 			
 			propLevelController.context.PlayerBoppedBalloon(boppedBy, bnpColor, spawner, propDisc:GetWorldPosition())
-			physics:Destroy()
+			balloon:Destroy()
 		end
 	end
 end
