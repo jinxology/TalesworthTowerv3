@@ -60,8 +60,6 @@ hideInstructions = nil
 function ActivateInstructions(levelStatus)
     if levelStatus == 1 then
         entranceListener = propEntranceTrigger.beginOverlapEvent:Connect(OnPlayerEntered)
-        propScoreIndicator.visibility = Visibility.FORCE_ON
-        propRulesPanel.visibility = Visibility.FORCE_ON
     elseif levelStatus == 2 then
         propRulesPanel.visibility = Visibility.FORCE_OFF
         showInstructions = Game.GetLocalPlayer().bindingPressedEvent:Connect(OnBindingPressed)
@@ -91,8 +89,9 @@ function OnBindingReleased(player, bindingReleased)
 end
 
 function OnPlayerEntered(trigger, player)
-    print("Oberlap ".. player.id)
     if player:IsA("Player") and player == Game:GetLocalPlayer() then
+        propScoreIndicator.visibility = Visibility.FORCE_ON
+        propRulesPanel.visibility = Visibility.FORCE_ON
         propLevelMusic = World.SpawnAsset(propLevelMusicTemplate)
         propLevelMusic:Play()
         entranceListener:Disconnect(OnPlayerEntered)

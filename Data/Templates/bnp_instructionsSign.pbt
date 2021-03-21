@@ -35,9 +35,6 @@ Assets {
         ChildIds: 10162133783916368439
         ChildIds: 257627258225691836
         ChildIds: 846964690551161263
-        ChildIds: 6183578781021686480
-        ChildIds: 12918847402614432236
-        ChildIds: 11035213715761410615
         ChildIds: 10908679221420547997
         ChildIds: 9944889189624238387
         ChildIds: 16518298886188285430
@@ -341,9 +338,9 @@ Assets {
             Yaw: 180
           }
           Scale {
-            X: 1.4
-            Y: 1.4
-            Z: 1.4
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 1060207628596471089
@@ -360,7 +357,7 @@ Assets {
         Text {
           Text: "GRAB A BALLOON"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 14335849019668212431
           }
           Color {
             R: 0.0149999857
@@ -435,15 +432,15 @@ Assets {
           Location {
             X: -24
             Y: 51.4882202
-            Z: 385
+            Z: 380
           }
           Rotation {
             Yaw: 180
           }
           Scale {
-            X: 2
-            Y: 2
-            Z: 2
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 1060207628596471089
@@ -460,7 +457,7 @@ Assets {
         Text {
           Text: "+"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 7442631548796593267
           }
           Color {
             R: 1
@@ -485,15 +482,15 @@ Assets {
           Location {
             X: -24
             Y: 67.0445557
-            Z: 382
+            Z: 380
           }
           Rotation {
             Yaw: 180
           }
           Scale {
-            X: 1.5
-            Y: 1.5
-            Z: 1.5
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 1060207628596471089
@@ -510,7 +507,7 @@ Assets {
         Text {
           Text: "1"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 7442631548796593267
           }
           Color {
             R: 1
@@ -585,15 +582,15 @@ Assets {
           Location {
             X: -24
             Y: 51.4882202
-            Z: 347
+            Z: 342
           }
           Rotation {
             Yaw: 180
           }
           Scale {
-            X: 2
-            Y: 2
-            Z: 2
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 1060207628596471089
@@ -610,7 +607,7 @@ Assets {
         Text {
           Text: "+"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 7442631548796593267
           }
           Color {
             R: 1
@@ -634,7 +631,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 72.7014313
+            Y: 74
             Z: 333
           }
           Rotation {
@@ -962,15 +959,15 @@ Assets {
           Location {
             X: -24
             Y: 51.4882202
-            Z: 310
+            Z: 306
           }
           Rotation {
             Yaw: 180
           }
           Scale {
-            X: 2
-            Y: 2
-            Z: 2
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 1060207628596471089
@@ -987,7 +984,7 @@ Assets {
         Text {
           Text: "-"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 7442631548796593267
           }
           Color {
             R: 1
@@ -1012,15 +1009,15 @@ Assets {
           Location {
             X: -24
             Y: 67.0445557
-            Z: 307
+            Z: 305
           }
           Rotation {
             Yaw: 180
           }
           Scale {
-            X: 1.5
-            Y: 1.5
-            Z: 1.5
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 1060207628596471089
@@ -1037,7 +1034,7 @@ Assets {
         Text {
           Text: "1"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 7442631548796593267
           }
           Color {
             R: 1
@@ -1062,15 +1059,15 @@ Assets {
           Location {
             X: -24
             Y: 51.4882202
-            Z: 273
+            Z: 267
           }
           Rotation {
             Yaw: 180
           }
           Scale {
-            X: 2
-            Y: 2
-            Z: 2
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 1060207628596471089
@@ -1087,7 +1084,7 @@ Assets {
         Text {
           Text: "-"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 7442631548796593267
           }
           Color {
             R: 1
@@ -1112,15 +1109,15 @@ Assets {
           Location {
             X: -24
             Y: 67.0445557
-            Z: 270
+            Z: 268
           }
           Rotation {
             Yaw: 180
           }
           Scale {
-            X: 1.5
-            Y: 1.5
-            Z: 1.5
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 1060207628596471089
@@ -1137,7 +1134,7 @@ Assets {
         Text {
           Text: "1"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 7442631548796593267
           }
           Color {
             R: 1
@@ -1206,113 +1203,13 @@ Assets {
         }
       }
       Objects {
-        Id: 6183578781021686480
+        Id: 10908679221420547997
         Name: "World Text"
         Transform {
           Location {
             X: -24
-            Y: 51.4882202
-            Z: 273
-          }
-          Rotation {
-            Yaw: 180
-          }
-          Scale {
-            X: 2
-            Y: 2
-            Z: 2
-          }
-        }
-        ParentId: 1060207628596471089
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Text {
-          Text: "-"
-          FontAsset {
-            Id: 14915146488722599156
-          }
-          Color {
-            R: 1
-            G: 1
-            B: 1
-            A: 1
-          }
-          HorizontalSize: 1
-          VerticalSize: 1
-          HorizontalAlignment {
-            Value: "mc:ecoretexthorizontalalign:left"
-          }
-          VerticalAlignment {
-            Value: "mc:ecoretextverticalalign:center"
-          }
-        }
-      }
-      Objects {
-        Id: 12918847402614432236
-        Name: "World Text"
-        Transform {
-          Location {
-            X: -24
-            Y: 67.0445557
-            Z: 270
-          }
-          Rotation {
-            Yaw: 180
-          }
-          Scale {
-            X: 1.5
-            Y: 1.5
-            Z: 1.5
-          }
-        }
-        ParentId: 1060207628596471089
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Text {
-          Text: "1"
-          FontAsset {
-            Id: 14915146488722599156
-          }
-          Color {
-            R: 1
-            G: 1
-            B: 1
-            A: 1
-          }
-          HorizontalSize: 1
-          VerticalSize: 1
-          HorizontalAlignment {
-            Value: "mc:ecoretexthorizontalalign:left"
-          }
-          VerticalAlignment {
-            Value: "mc:ecoretextverticalalign:center"
-          }
-        }
-      }
-      Objects {
-        Id: 11035213715761410615
-        Name: "World Text"
-        Transform {
-          Location {
-            X: -24
-            Y: 43.0029297
-            Z: 268
+            Y: -0.837677
+            Z: 233
           }
           Rotation {
             Yaw: 180
@@ -1335,59 +1232,9 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Text {
-          Text: "POP A BOP COLOR:"
-          FontAsset {
-            Id: 14915146488722599156
-          }
-          Color {
-            R: 1
-            G: 1
-            B: 1
-            A: 1
-          }
-          HorizontalSize: 1
-          VerticalSize: 1
-          HorizontalAlignment {
-            Value: "mc:ecoretexthorizontalalign:right"
-          }
-          VerticalAlignment {
-            Value: "mc:ecoretextverticalalign:center"
-          }
-        }
-      }
-      Objects {
-        Id: 10908679221420547997
-        Name: "World Text"
-        Transform {
-          Location {
-            X: -24
-            Y: -0.837677
-            Z: 233
-          }
-          Rotation {
-            Yaw: 180
-          }
-          Scale {
-            X: 1.4
-            Y: 1.4
-            Z: 1.4
-          }
-        }
-        ParentId: 1060207628596471089
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Text {
           Text: "BEAT THE TIMER"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 14335849019668212431
           }
           Color {
             R: 0.0149999857
@@ -1418,9 +1265,9 @@ Assets {
             Yaw: 180
           }
           Scale {
-            X: 0.5
-            Y: 0.7
-            Z: 0.5
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 1060207628596471089
@@ -1437,7 +1284,7 @@ Assets {
         Text {
           Text: "there is nothing to fear"
           FontAsset {
-            Id: 14335849019668212431
+            Id: 2335683715832012711
           }
           Color {
             R: 1
@@ -1468,9 +1315,9 @@ Assets {
             Yaw: 180
           }
           Scale {
-            X: 1.4
-            Y: 1.4
-            Z: 1.4
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 1060207628596471089
@@ -1487,7 +1334,7 @@ Assets {
         Text {
           Text: "OBEY ALL RULES"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 14335849019668212431
           }
           Color {
             R: 0.0149999857
@@ -1635,12 +1482,30 @@ Assets {
       }
     }
     Assets {
+      Id: 14335849019668212431
+      Name: "Play Bold"
+      PlatformAssetType: 28
+      PrimaryAsset {
+        AssetType: "FontAssetRef"
+        AssetId: "PlayBold_ref"
+      }
+    }
+    Assets {
       Id: 14915146488722599156
       Name: "Anton"
       PlatformAssetType: 28
       PrimaryAsset {
         AssetType: "FontAssetRef"
         AssetId: "AntonRegular_ref"
+      }
+    }
+    Assets {
+      Id: 7442631548796593267
+      Name: "Roboto Slab Black"
+      PlatformAssetType: 28
+      PrimaryAsset {
+        AssetType: "FontAssetRef"
+        AssetId: "RobotoSlabBlack_ref"
       }
     }
     Assets {
@@ -1680,12 +1545,12 @@ Assets {
       }
     }
     Assets {
-      Id: 14335849019668212431
-      Name: "Play Bold"
+      Id: 2335683715832012711
+      Name: "Cabin Bold"
       PlatformAssetType: 28
       PrimaryAsset {
         AssetType: "FontAssetRef"
-        AssetId: "PlayBold_ref"
+        AssetId: "CabinBold_ref"
       }
     }
     Assets {

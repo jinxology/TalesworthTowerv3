@@ -25,6 +25,7 @@ Objects {
   ChildIds: 14713340454944924967
   ChildIds: 1112385650763072475
   ChildIds: 568490692521295426
+  ChildIds: 4829448666795452338
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -37,6 +38,1415 @@ Objects {
     Value: "mc:ecollisionsetting:forceon"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 4829448666795452338
+  Name: "bnp.instructionsSign"
+  Transform {
+    Location {
+      X: 56
+      Y: 552
+      Z: 1863
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  ChildIds: 5786414603277959212
+  ChildIds: 7855117925365100141
+  ChildIds: 5856237637691819894
+  ChildIds: 13966045519068855823
+  ChildIds: 13815840394732496590
+  ChildIds: 10823636077275105206
+  ChildIds: 10470055228004494333
+  ChildIds: 3982207051596794890
+  ChildIds: 7438115221512968830
+  ChildIds: 6684060860030190690
+  ChildIds: 11278063376913708335
+  ChildIds: 1516670544728671654
+  ChildIds: 13005598909315248924
+  WantsNetworking: true
+  Folder {
+    IsGroup: true
+  }
+  InstanceHistory {
+    SelfId: 4829448666795452338
+    SubobjectId: 1060207628596471089
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+    WasRoot: true
+  }
+}
+Objects {
+  Id: 13005598909315248924
+  Name: "Stone Block Small"
+  Transform {
+    Location {
+      X: -219.203094
+      Y: -487.903687
+    }
+    Rotation {
+      Pitch: 90
+      Yaw: 36.8698845
+      Roll: 81.8698578
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4829448666795452338
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 7538326655654489063
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 13005598909315248924
+    SubobjectId: 18000346253451604383
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 1516670544728671654
+  Name: "Stone Block Small"
+  Transform {
+    Location {
+      X: -219.20311
+      Y: 487.903625
+    }
+    Rotation {
+      Pitch: 90
+      Yaw: 14.0362635
+      Roll: -30.9637146
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4829448666795452338
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 7538326655654489063
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 1516670544728671654
+    SubobjectId: 6394956517642897189
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 11278063376913708335
+  Name: "Group"
+  Transform {
+    Location {
+      X: -24
+      Y: -1
+      Z: 194
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4829448666795452338
+  ChildIds: 12146192323957423989
+  ChildIds: 15767191585890082078
+  ChildIds: 956642554474903712
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 956642554474903712
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: 0.162353516
+      Z: 224
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11278063376913708335
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "GRAB A BALLOON"
+    FontAsset {
+      Id: 14335849019668212431
+    }
+    Color {
+      R: 0.0149999857
+      G: 0.911936939
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 956642554474903712
+    SubobjectId: 4680811853621426723
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 15767191585890082078
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: 0.162353516
+      Z: 39
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11278063376913708335
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "BEAT THE TIMER"
+    FontAsset {
+      Id: 14335849019668212431
+    }
+    Color {
+      R: 0.0149999857
+      G: 0.911936939
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 15767191585890082078
+    SubobjectId: 10908679221420547997
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 12146192323957423989
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: 0.162353516
+      Z: -0.259521484
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11278063376913708335
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "OBEY ALL RULES"
+    FontAsset {
+      Id: 14335849019668212431
+    }
+    Color {
+      R: 0.0149999857
+      G: 0.911936939
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 12146192323957423989
+    SubobjectId: 16518298886188285430
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 6684060860030190690
+  Name: "World Balloon"
+  Transform {
+    Location {
+      X: -24
+      Y: 74
+      Z: 333
+    }
+    Rotation {
+      Yaw: -45
+    }
+    Scale {
+      X: 0.35
+      Y: 0.35
+      Z: 0.35
+    }
+  }
+  ParentId: 4829448666795452338
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "World Balloon"
+  }
+  InstanceHistory {
+    SelfId: 6684060860030190690
+    SubobjectId: 1256984994224817889
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 7438115221512968830
+  Name: "Group"
+  Transform {
+    Location {
+      X: -24
+      Y: -1
+      Z: 155
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4829448666795452338
+  ChildIds: 14389107213267997616
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 14389107213267997616
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: 0.162353516
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7438115221512968830
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "there is nothing to fear"
+    FontAsset {
+      Id: 2335683715832012711
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 14389107213267997616
+    SubobjectId: 9944889189624238387
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 3982207051596794890
+  Name: "Roboto"
+  Transform {
+    Location {
+      X: -24
+      Y: 59
+      Z: 380
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4829448666795452338
+  ChildIds: 1446762245441787377
+  ChildIds: 1675481374232657362
+  ChildIds: 17757701829159778113
+  ChildIds: 17713112809449605986
+  ChildIds: 13885756625721069748
+  ChildIds: 5629638490849627711
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 5629638490849627711
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: 8.04455566
+      Z: -112
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3982207051596794890
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "1"
+    FontAsset {
+      Id: 7442631548796593267
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:left"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 5629638490849627711
+    SubobjectId: 257627258225691836
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 13885756625721069748
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: -7.51178
+      Z: -113
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3982207051596794890
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "-"
+    FontAsset {
+      Id: 7442631548796593267
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:left"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 13885756625721069748
+    SubobjectId: 10162133783916368439
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 17713112809449605986
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: 8.04455566
+      Z: -75
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3982207051596794890
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "1"
+    FontAsset {
+      Id: 7442631548796593267
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:left"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 17713112809449605986
+    SubobjectId: 13286364926065969633
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 17757701829159778113
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: -7.51178
+      Z: -74
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3982207051596794890
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "-"
+    FontAsset {
+      Id: 7442631548796593267
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:left"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 17757701829159778113
+    SubobjectId: 13529727506112460226
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 1675481374232657362
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: 8.04455566
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3982207051596794890
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "1"
+    FontAsset {
+      Id: 7442631548796593267
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:left"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 1675481374232657362
+    SubobjectId: 6553786047465979729
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 1446762245441787377
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: -7.51178
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3982207051596794890
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "+"
+    FontAsset {
+      Id: 7442631548796593267
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:left"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 1446762245441787377
+    SubobjectId: 6458397546979284850
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 10470055228004494333
+  Name: "Anton"
+  Transform {
+    Location {
+      X: -24
+      Y: 43
+      Z: 381
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4829448666795452338
+  ChildIds: 9450481973076040058
+  ChildIds: 39291969729808881
+  ChildIds: 10602022566598095387
+  ChildIds: 5076186967887872812
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 5076186967887872812
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: 0.0029296875
+      Z: -113
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10470055228004494333
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "POP A BOP COLOR:"
+    FontAsset {
+      Id: 14915146488722599156
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:right"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 5076186967887872812
+    SubobjectId: 846964690551161263
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 10602022566598095387
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: 0.0029296875
+      Z: -75
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10470055228004494333
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "BOP A POP COLOR:"
+    FontAsset {
+      Id: 14915146488722599156
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:right"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 10602022566598095387
+    SubobjectId: 16038105090425647256
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 39291969729808881
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: 0.0029296875
+      Z: -38
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10470055228004494333
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "POP IT ON A WEAPON:"
+    FontAsset {
+      Id: 14915146488722599156
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:right"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 39291969729808881
+    SubobjectId: 5564389855580916594
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 9450481973076040058
+  Name: "World Text"
+  Transform {
+    Location {
+      Y: 0.0029296875
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10470055228004494333
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "BOP IT INTO THE LIGHT:"
+    FontAsset {
+      Id: 14915146488722599156
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:right"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+  InstanceHistory {
+    SelfId: 9450481973076040058
+    SubobjectId: 14886054323688266745
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 10823636077275105206
+  Name: "Sign Bracket - Round"
+  Transform {
+    Location {
+      X: -15
+      Z: 192
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 2
+      Y: 2
+      Z: 2
+    }
+  }
+  ParentId: 4829448666795452338
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16890205056291965690
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 10823636077275105206
+    SubobjectId: 15818470841070421301
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 13815840394732496590
+  Name: "Sign Bracket - Round"
+  Transform {
+    Location {
+      X: -15
+      Z: 382
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 2
+      Y: 2
+      Z: 2
+    }
+  }
+  ParentId: 4829448666795452338
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16890205056291965690
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 13815840394732496590
+    SubobjectId: 17440331818094077005
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 13966045519068855823
+  Name: "Urban Fence Pole - Gate End"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Yaw: -44.9999924
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4829448666795452338
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3844709690263076331
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 13966045519068855823
+    SubobjectId: 10115758379419679884
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 5856237637691819894
+  Name: "Small Crate Lid"
+  Transform {
+    Location {
+      X: -15
+      Z: 362
+    }
+    Rotation {
+      Pitch: 90
+    }
+    Scale {
+      X: 2
+      Y: 2
+      Z: 2
+    }
+  }
+  ParentId: 4829448666795452338
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.485
+        G: 0.274619251
+        A: 1
+      }
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 6529830097793006262
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 5856237637691819894
+    SubobjectId: 2087051033989711349
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 7855117925365100141
+  Name: "Small Crate Lid"
+  Transform {
+    Location {
+      X: -15
+      Z: 212
+    }
+    Rotation {
+      Pitch: 90
+    }
+    Scale {
+      X: 2
+      Y: 2
+      Z: 2
+    }
+  }
+  ParentId: 4829448666795452338
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.485
+        G: 0.274619251
+        A: 1
+      }
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 6529830097793006262
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 7855117925365100141
+    SubobjectId: 2355880561706659054
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
+  }
+}
+Objects {
+  Id: 5786414603277959212
+  Name: "Stone Block Long Broken"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Pitch: -90
+    }
+    Scale {
+      X: 2
+      Y: 2
+      Z: 2
+    }
+  }
+  ParentId: 4829448666795452338
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 7339636469614455254
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 5786414603277959212
+    SubobjectId: 2161237084624470703
+    InstanceId: 573437659271346369
+    TemplateId: 39854911254929845
   }
 }
 Objects {

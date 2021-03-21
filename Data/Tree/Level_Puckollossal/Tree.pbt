@@ -5,11 +5,12 @@ Objects {
   Name: "Physics Sphere"
   Transform {
     Location {
-      Y: 2349.98389
-      Z: 274.999023
+      X: -0.000732421875
+      Y: 2349.97607
+      Z: 575
     }
     Rotation {
-      Yaw: -6.10351563e-05
+      Yaw: -2.39056644e-05
     }
     Scale {
       X: 1
@@ -76,9 +77,6 @@ Objects {
   Name: "Group"
   Transform {
     Location {
-      X: -175.000229
-      Y: 0.0159301758
-      Z: 50
     }
     Rotation {
       Yaw: 5.46415031e-05
@@ -94,6 +92,15 @@ Objects {
   ChildIds: 8776872350942916626
   ChildIds: 7634308971313058474
   ChildIds: 10630450487852230888
+  ChildIds: 2006859254104074235
+  ChildIds: 17922080007371636348
+  ChildIds: 10312483993617377651
+  ChildIds: 8466568340667796154
+  ChildIds: 12273035040638865159
+  ChildIds: 12781473066803817009
+  ChildIds: 12932234585052973288
+  ChildIds: 4385269218003585411
+  ChildIds: 15935741670092966929
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -108,16 +115,424 @@ Objects {
   }
 }
 Objects {
+  Id: 15935741670092966929
+  Name: "Ring - Quarter Thick"
+  Transform {
+    Location {
+      X: -9.98403931
+      Y: -324.969421
+      Z: -175
+    }
+    Rotation {
+      Pitch: 2.04905664e-05
+      Yaw: -90.0000687
+      Roll: 89.9998627
+    }
+    Scale {
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
+    }
+  }
+  ParentId: 10403879953934599735
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 13640596689401745214
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 4385269218003585411
+  Name: "Ring - Quarter Thick"
+  Transform {
+    Location {
+      X: -9.98403931
+      Y: -324.969421
+      Z: -175
+    }
+    Rotation {
+      Pitch: -90
+      Yaw: -8.93015099
+      Roll: 8.93011761
+    }
+    Scale {
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
+    }
+  }
+  ParentId: 10403879953934599735
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 13640596689401745214
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 12932234585052973288
+  Name: "Sci-fi Trim 01 End"
+  Transform {
+    Location {
+      X: -9.98423767
+      Y: -224.973404
+      Z: -175
+    }
+    Rotation {
+      Yaw: 6.14716846e-05
+      Roll: -179.999954
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10403879953934599735
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 1276298368217221597
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 12781473066803817009
+  Name: "Ring - Quarter Thick"
+  Transform {
+    Location {
+      X: 324.996063
+      Y: 0.0411071777
+      Z: -175
+    }
+    Rotation {
+      Pitch: 1.36603776e-05
+      Yaw: -8.69341e-05
+      Roll: 89.9998474
+    }
+    Scale {
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
+    }
+  }
+  ParentId: 10403879953934599735
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 13640596689401745214
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 12273035040638865159
+  Name: "Ring - Quarter Thick"
+  Transform {
+    Location {
+      X: 324.996063
+      Y: 0.0411071777
+      Z: -175
+    }
+    Rotation {
+      Pitch: -90
+      Roll: 89.9999619
+    }
+    Scale {
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
+    }
+  }
+  ParentId: 10403879953934599735
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 13640596689401745214
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 8466568340667796154
+  Name: "Sci-fi Trim 01 End"
+  Transform {
+    Location {
+      X: 224.999969
+      Y: 0.0409851074
+      Z: -175
+    }
+    Rotation {
+      Yaw: 90.0000229
+      Roll: -179.999954
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10403879953934599735
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 1276298368217221597
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 10312483993617377651
+  Name: "Ring - Quarter Thick"
+  Transform {
+    Location {
+      X: -0.0149841309
+      Y: 335.020477
+      Z: -175
+    }
+    Rotation {
+      Pitch: 1.36603776e-05
+      Yaw: 89.9998779
+      Roll: 89.9998627
+    }
+    Scale {
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
+    }
+  }
+  ParentId: 10403879953934599735
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 13640596689401745214
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 17922080007371636348
+  Name: "Ring - Quarter Thick"
+  Transform {
+    Location {
+      X: -0.0149841309
+      Y: 335.020477
+      Z: -175
+    }
+    Rotation {
+      Pitch: -90
+      Yaw: 4.49235392
+      Roll: 175.507599
+    }
+    Scale {
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
+    }
+  }
+  ParentId: 10403879953934599735
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 13640596689401745214
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 2006859254104074235
+  Name: "Sci-fi Trim 01 End"
+  Transform {
+    Location {
+      X: -0.0147857666
+      Y: 235.024384
+      Z: -175
+    }
+    Rotation {
+      Yaw: -179.999939
+      Roll: -179.999954
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10403879953934599735
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 1276298368217221597
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 10630450487852230888
   Name: "Cylinder - Polished"
   Transform {
     Location {
-      X: 175.000229
-      Y: -0.0161132813
-      Z: 74.9990234
+      Z: -174.998047
     }
     Rotation {
-      Yaw: -5.46415031e-05
+      Yaw: -6.10351563e-05
     }
     Scale {
       X: 6
@@ -177,9 +592,9 @@ Objects {
   Name: "Ring - Quarter Thick"
   Transform {
     Location {
-      X: -130.000717
-      Y: 4.984375
-      Z: 49.9980469
+      X: -329.995514
+      Y: 4.98431396
+      Z: -175
     }
     Rotation {
       Pitch: 6.83018879e-06
@@ -223,14 +638,14 @@ Objects {
   Name: "Ring - Quarter Thick"
   Transform {
     Location {
-      X: -130.000717
-      Y: 4.984375
-      Z: 49.9980469
+      X: -329.995514
+      Y: 4.98431396
+      Z: -175
     }
     Rotation {
       Pitch: -90
-      Yaw: -2.86240554
-      Roll: -87.1376648
+      Yaw: -90
+      Roll: -6.10351563e-05
     }
     Scale {
       X: 0.5
@@ -269,12 +684,12 @@ Objects {
   Name: "Sci-fi Trim 01 End"
   Transform {
     Location {
-      X: -30.0007286
-      Y: 4.98437309
-      Z: 49.9980469
+      X: -229.999451
+      Y: 4.984375
+      Z: -175
     }
     Rotation {
-      Yaw: -90.0000076
+      Yaw: -90
       Roll: -179.999954
     }
     Scale {
@@ -351,56 +766,6 @@ Objects {
     Teams {
       TeamInt: 1
       IsTeamCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 2255555213258497483
-  Name: "pck.floor"
-  Transform {
-    Location {
-      X: -5425
-      Y: 5850
-    }
-    Rotation {
-    }
-    Scale {
-      X: 12
-      Y: 8
-      Z: 1
-    }
-  }
-  ParentId: 1232579912354001357
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Building_Floor:id"
-      AssetReference {
-        Id: 17317999939743247709
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 8560170209438767653
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
     }
     StaticMesh {
       Physics {
