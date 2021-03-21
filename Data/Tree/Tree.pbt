@@ -1296,7 +1296,7 @@ Objects {
       }
     }
     Button {
-      Label: "Colored Dials"
+      Label: "Color Dials"
       FontColor {
         A: 1
       }
