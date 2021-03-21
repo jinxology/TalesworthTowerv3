@@ -1,24 +1,28 @@
 local propScifiBaseFloor034m = script:GetCustomProperty("ScifiBaseFloor034m"):WaitForObject()
-local leftTransitionTime = 3
-local rightTransitionTime = 6
+local leftTransitionTime = 2
+local rightTransitionTime = 2
 local timeElapsed, timeRequested = Task.Wait(1)
-local startPosition = Vector3.New(-700,850,200)
-local leftPosition = Vector3.New(-700,1850,200)
-local rightPosition = Vector3.New(-700,-200,200)
+local startPosition = Vector3.New(1679.387,-1820.808,-275)
+local leftPosition = Vector3.New(1679.394,-1820.817,50)
+local rightPosition = Vector3.New(1679.387,-1820.808,-275)
+local propFlameGreen = script:GetCustomProperty("FlameGreen"):WaitForObject()
 
 propScifiBaseFloor034m:MoveTo(leftPosition, leftTransitionTime, true)
-local timeElapsed, timeRequested = Task.Wait(3)
+local timeElapsed, timeRequested = Task.Wait(2)
 
-local function MoveFloor()
+local function MoveGreenPlatform1()
 	propScifiBaseFloor034m:MoveTo(rightPosition, rightTransitionTime, true)
-	local timeElapsed, timeRequested = Task.Wait(6)
+	local timeElapsed, timeRequested = Task.Wait(2)
 	propScifiBaseFloor034m:MoveTo(leftPosition, leftTransitionTime, true)
-	local timeElapsed, timeRequested = Task.Wait(3)
-	MoveFloor()
+	local timeElapsed, timeRequested = Task.Wait(2)
+		
+		if propFlameGreen.visibility == Visibility.FORCE_ON then
+			propGreenMove1Task = Task.Spawn(MoveGreenPlatform1)
+		else
+			propGreenMove1Task:Cancel()
+			propScifiBaseFloor034m:MoveTo(startPosition, leftTransitionTime, true)		
+		end
 end
 
-MoveFloor()
-
-	
-
+MoveGreenPlatform1()
 

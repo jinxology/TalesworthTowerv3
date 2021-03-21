@@ -87,7 +87,7 @@ local signRotations = {
 
 --	RULES
 local	numBoppable = 3
-local	numSpawned = 4
+local	numSpawned = 8
 -- local	allowBopping = true
 -- local	allowPopping = true
 -- local	allowJumpingOnOneLeg = true
@@ -95,6 +95,8 @@ local	coloredWeapons = true
 local	armoredBalloons = false
 local	heliumBalloons = false
 local	levelDuration = 60
+
+local	tutorialActive = false
 
 --	GAME STATE
 local	bopColors = {}
@@ -109,9 +111,14 @@ local	intakeCycleColors = {}
 local	intakeCycleColorIndex = 0
 local	roundDuration = 120
 
+local balloonPipe = {}
+local emptySpawners = {}
 
-local	propInterior1 = nil
-local	propInterior2 = nil
+intakeToColor = Color.WHITE
+intakeFromColor = nil
+fadeIntakeColorTask = nil
+fadeIntakeStartTime = 0
+
 
 --	TUTORIAL
 local propTutorialBalloonSpawnerLocations = {
@@ -146,14 +153,14 @@ local propTutorialSignLocation = Vector3.New(-300, -300, 150)
 local propTutorialSignRotation = Rotation.New(0, 0, 45)
 
 local propBalloonSpawnerLocations = {
-	Vector3.New(-1650, 0, 260),
+	Vector3.New(-1650, 0, 250),
 	Vector3.New(-1400, 1000, 1105),
 	Vector3.New(540, 2000, 950),
-	Vector3.New(-1650, 0, 680),
-	Vector3.New(1650, 0, 260),
+	Vector3.New(-1650, 0, 675),
+	Vector3.New(1650, 0, 250),
 	Vector3.New(1400, -1000, 1105),
 	Vector3.New(-540, -2000, 950),
-	Vector3.New(1650, 0, 680)
+	Vector3.New(1650, 0, 675)
 }
 
 local propBalloonSpawnerRotations = {
@@ -171,26 +178,73 @@ function LoadTutorial()
 	propStartSign1.isEnabled = true
 	propStartSign2.isEnabled = true
 	propStartSign3.isEnabled = true
-	
+	tutorialActive = true
+
 	for i = 1, 4, 1 do
 		spawner = World.SpawnAsset(propSpawnerTemplate, { position = propTutorialBalloonSpawnerLocations[i], rotation = propTutorialBalloonSpawnerRotations[i], parent = propTutorialContainer})
+		table.insert(emptySpawners, spawner)
 	end
 
 	for i = 1, 3, 1 do
 		stand = World.SpawnAsset(propStandTemplate,  { position = propTutorialWeaponStandLocations[i], rotation = propTutorialWeaponStandRotations[i], parent = propTutorialContainer})
 		
-		stand.context.SetBNPWeapon(propTutorialStandWeapons[index], TemplateForBNPWeapon(propTutorialStandWeapons[index]))
-		stand.context.SetBNPColor(0, Color.WHITE)
+		stand.context.SetBNPWeapon(propTutorialStandWeapons[i], TemplateForBNPWeapon(propTutorialStandWeapons[i]))
+		stand.context.SetBNPColor(i, ColorForBNPColor(i))
 		stand.context.propLevelController = script
 	end
 
 	World.SpawnAsset(propInstructionsSignTemplate, { parent = propTutorialContainer, position = propTutorialSignLocation, rotation = propTutorialSignRotation })
+	for bnpColor = BNP_COLOR_FIRST, BNP_COLOR_LAST, 1 do
+		table.insert(balloonPipe, bnpColor)
+		table.insert(balloonPipe, bnpColor)
+		table.insert(balloonPipe, bnpColor)
+	end
+
+	bopColors[BNP_YELLOW] = true
+	bopColors[BNP_RED] = false
+	bopColors[BNP_GREEN] = false
+	bopColors[BNP_BLUE] = false
+	intakeCycleColors = { ColorForBNPColor(BNP_YELLOW) }
+	intakeCycleColorIndex = 1
+	ColorIntake()
+	
+	FYShuffle(balloonPipe)
+	
+	SpawnNextBalloon()
+	SpawnNextBalloon()
+	SpawnNextBalloon()
+	SpawnNextBalloon()
 end
 
 function UnloadTutorial()
 	for _, object in ipairs(propTutorialContainer:GetChildren()) do
+		print("unloading tutorial object " .. object.id)
+
+		-- if object.name == "bnp_balloon" then
+		-- 	local	liveBalloon = object.context.propPhysics or object.context.propEquipment
+			
+		-- 	print("balloon " .. object.id .. " has live balloon " .. liveBalloon.id)
+		-- 	if liveBalloon ~= nil and liveBalloon:IsValid() then
+		-- 		print("destroying it")
+		-- 		liveBalloon:Destroy()
+		-- 	end
+		-- end
 		object:Destroy()
 	end
+
+	intakeCycleColors = {}
+	intakeCycleColorIndex = 0
+	numBoppable = 3
+	emptySpawners = {}
+	balloonPipe = {}
+	tutorialActive = false
+
+	intakeToColor = Color.WHITE
+	intakeFromColor = nil
+	fadeIntakeColorTask = nil
+	fadeIntakeStartTime = 0
+	
+	propIntakeGlow:SetColor(Color.WHITE)
 end
 
 local propSpawnedWeapons = {}
@@ -224,7 +278,7 @@ function LevelPowerUp()
 	script:SetNetworkedCustomProperty("levelStatus", 1)
 	script:SetNetworkedCustomProperty("timeRemaining", -1)
 
-	propBopZoneTrigger.isEnabled = false
+	-- propBopZoneTrigger.isEnabled = false
 end
 
 function LevelPowerDown()
@@ -232,9 +286,9 @@ function LevelPowerDown()
 	script:SetNetworkedCustomProperty("levelStatus", 0)
 
 	--	destroy all networked objects
-	--DestroyWeapons()
-	--DestroySigns()
-	--DestroyBalloons()
+	DestroyWeapons()
+	DestroySigns()
+	DestroyBalloons()
 end
 
 function LevelBegin()
@@ -242,7 +296,7 @@ function LevelBegin()
 	Task.Spawn(FlickerStartSign, 1.2)
 	Task.Spawn(ReadySteadyGo)
 	Task.Spawn(BeginFirstRound, 3)
-	propBopZoneTrigger.isEnabled = true
+	-- propBopZoneTrigger.isEnabled = true
 end
 
 
@@ -453,7 +507,7 @@ function ColorSigns()
 		sign:GetCustomProperty("bElement2"):WaitForObject().isEnabled = isBop
 	end
 
-	if numBoppable == 1 then
+	if numBoppable == 1 or tutorialActive then
 		propColorIntakeTask.Cancel()
 		propColorIntakeTask = nil
 		intakeCycleColorIndex = 1
@@ -466,13 +520,8 @@ function ColorSigns()
 	end
 end
 
-intakeToColor = Color.WHITE
-intakeFromColor = nil
-fadeIntakeColorTask = nil
-fadeIntakeStartTime = 0
-
 function ColorIntake()
-	if numBoppable == 1 then
+	if numBoppable == 1 or tutorialActive  then
 		propIntakeGlow:SetColor(intakeCycleColors[intakeCycleColorIndex])
 	else
 		intakeCycleColorIndex = (intakeCycleColorIndex + 1) % (numBoppable) + 1
@@ -514,9 +563,6 @@ function SpawnSigns()
 		sign.visibility = Visibility.FORCE_OFF
 	end
 end
-
-local balloonPipe = {}
-local emptySpawners = {}
 
 function SpawnBalloons()
 	local	balloonsToAdd = {}
@@ -582,7 +628,7 @@ end
 function SpawnNextBalloon()
 	FillBalloonPipe()
 
-	local	spawnerIndex = math.random(#emptySpawners - 4)
+	local	spawnerIndex = math.random(math.min(#emptySpawners, 4))
 	local	spawner = emptySpawners[spawnerIndex]
 	local	balloon = World.SpawnAsset(propBalloonTemplate, { parent = spawner,  position = Vector3.New(0, 0, 160) })
 	local	bnpColor = balloonPipe[1]
@@ -591,6 +637,11 @@ function SpawnNextBalloon()
 	
 	balloon.context.SetBNPColor(bnpColor, ColorForBNPColor(bnpColor))
 	balloon.context.spawnedBy = spawner
+
+	if tutorialActive then
+		print("spawning balloon in tutorial")
+		balloon.parent = propTutorialContainer
+	end
 
 	table.remove(balloonPipe, 1)
 	table.remove(emptySpawners, spawnerIndex)
@@ -670,18 +721,28 @@ end
 function ScoreRound(playerName, balloonColor, scored)
 	local		message
 
-	if scored then
-		teamScore = teamScore + 1
-		script:SetNetworkedCustomProperty("currentScore", teamScore)
-		message = playerName .. " scores!"
-		--	make text go pop
+	if tutorialActive then
+		if scored then
+			teamScore = teamScore + 1
+			script:SetNetworkedCustomProperty("currentScore", teamScore)
+			message = "Yeah, like that, " .. playerName .. "!"
+		else
+			teamFailures = teamFailures + 1
+			script:SetNetworkedCustomProperty("strikeCount", teamFailures)
+			message = "Not like that, " .. playerName .. "!"
+		end
 	else
-		teamFailures = teamFailures + 1
-		script:SetNetworkedCustomProperty("strikeCount", teamFailures)
-		message = playerName .. " fumbles!"
-		--	make text go pop
+		if scored then
+			teamScore = teamScore + 1
+			script:SetNetworkedCustomProperty("currentScore", teamScore)
+			message = playerName .. " scores!"
+		else
+			teamFailures = teamFailures + 1
+			script:SetNetworkedCustomProperty("strikeCount", teamFailures)
+			message = playerName .. " fumbles!"
+		end
 	end
-
+		
 	if (teamScore >= winCondition) then
 		propMainTextLabel.text = message .. "\nTEAM WINS\nFLUME SYSTEM ENGAGED"
 		Task.Wait(3)

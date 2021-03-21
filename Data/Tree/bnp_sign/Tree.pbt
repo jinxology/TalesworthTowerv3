@@ -1,17 +1,61 @@
 Name: "bnp_sign"
 RootId: 18393403345350274493
 Objects {
+  Id: 11824435277706619856
+  Name: "ClientContext"
+  Transform {
+    Location {
+      X: 47
+      Y: -132
+      Z: 550
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 18393403345350274493
+  ChildIds: 9224533399234386940
+  ChildIds: 17828470161881792721
+  ChildIds: 12130177902549342220
+  ChildIds: 4787184317239091632
+  ChildIds: 4943067056127381968
+  ChildIds: 10622044958037571626
+  ChildIds: 2404735288456731006
+  ChildIds: 9923916813409198062
+  ChildIds: 14777189206990088087
+  ChildIds: 7556399636500546514
+  ChildIds: 10073641574556072404
+  ChildIds: 11357143994606817124
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
   Id: 11357143994606817124
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: 255.919434
-      Y: -340.81665
-      Z: 575
+      X: 208.919357
+      Y: -208.816864
+      Z: 24.9997978
     }
     Rotation {
-      Pitch: -44.9999619
+      Pitch: -44.9999466
       Yaw: 135
+      Roll: -4.82966925e-06
     }
     Scale {
       X: 0.5
@@ -19,7 +63,7 @@ Objects {
       Z: 0.900000036
     }
   }
-  ParentId: 18393403345350274493
+  ParentId: 11824435277706619856
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -37,7 +81,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -72,13 +115,13 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: 255.919434
-      Y: -340.81665
-      Z: 950
+      X: 208.919357
+      Y: -208.816803
+      Z: 399.999847
     }
     Rotation {
-      Pitch: -44.9999199
-      Yaw: -44.9999847
+      Pitch: -44.9998894
+      Yaw: -44.9999542
       Roll: -179.999954
     }
     Scale {
@@ -87,7 +130,7 @@ Objects {
       Z: 0.900000036
     }
   }
-  ParentId: 18393403345350274493
+  ParentId: 11824435277706619856
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -105,7 +148,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -140,12 +182,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -203.680908
-      Y: 118.784912
-      Z: 550
+      X: -250.681015
+      Y: 250.78479
+      Z: -0.000200907394
     }
     Rotation {
-      Yaw: -44.9999962
+      Pitch: -6.83018879e-06
+      Yaw: -44.9999847
+      Roll: -4.07550624e-06
     }
     Scale {
       X: 0.5
@@ -153,7 +197,7 @@ Objects {
       Z: 2.3
     }
   }
-  ParentId: 18393403345350274493
+  ParentId: 11824435277706619856
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -171,7 +215,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -206,14 +249,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -203.681641
-      Y: 118.785889
-      Z: 1250
+      X: -250.681686
+      Y: 250.785828
+      Z: 699.999756
     }
     Rotation {
-      Pitch: -44.9999504
-      Yaw: -44.999958
-      Roll: -179.999969
+      Pitch: -44.999939
+      Yaw: -44.9999428
+      Roll: -179.999954
     }
     Scale {
       X: 0.5
@@ -221,7 +264,7 @@ Objects {
       Z: 0.900000036
     }
   }
-  ParentId: 18393403345350274493
+  ParentId: 11824435277706619856
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -239,7 +282,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -274,13 +316,13 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -44.5927734
-      Y: -40.3059082
-      Z: 1075
+      X: -91.5928
+      Y: 91.6939926
+      Z: 524.999939
     }
     Rotation {
-      Pitch: 44.999958
-      Yaw: -44.9999542
+      Pitch: 44.9999428
+      Yaw: -44.999939
       Roll: -179.999985
     }
     Scale {
@@ -289,7 +331,7 @@ Objects {
       Z: 0.900000036
     }
   }
-  ParentId: 18393403345350274493
+  ParentId: 11824435277706619856
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -307,7 +349,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -342,14 +383,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -44.5927734
-      Y: -40.3059082
-      Z: 700.000244
+      X: -91.5927734
+      Y: 91.6940918
+      Z: 150.000168
     }
     Rotation {
-      Pitch: 44.9999924
+      Pitch: 44.9999771
       Yaw: 135
-      Roll: 2.41483599e-06
+      Roll: 3.62225364e-06
     }
     Scale {
       X: 0.5
@@ -357,7 +398,7 @@ Objects {
       Z: 0.900000036
     }
   }
-  ParentId: 18393403345350274493
+  ParentId: 11824435277706619856
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -375,7 +416,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -410,14 +450,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -9.23950195
-      Y: -75.6594238
-      Z: 700
+      X: -56.239563
+      Y: 56.340416
+      Z: 149.999802
     }
     Rotation {
-      Pitch: -45.0000038
+      Pitch: -44.9999809
       Yaw: 135
-      Roll: -2.41483622e-06
+      Roll: -1.20741811e-06
     }
     Scale {
       X: 0.5
@@ -425,7 +465,7 @@ Objects {
       Z: 0.900000036
     }
   }
-  ParentId: 18393403345350274493
+  ParentId: 11824435277706619856
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -443,7 +483,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -478,14 +517,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -9.23950195
-      Y: -75.6594238
-      Z: 1075
+      X: -56.239563
+      Y: 56.340477
+      Z: 524.999878
     }
     Rotation {
-      Pitch: -44.9999504
-      Yaw: -44.999958
-      Roll: -179.999969
+      Pitch: -44.999939
+      Yaw: -44.9999428
+      Roll: -179.999954
     }
     Scale {
       X: 0.5
@@ -493,7 +532,7 @@ Objects {
       Z: 0.900000036
     }
   }
-  ParentId: 18393403345350274493
+  ParentId: 11824435277706619856
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -511,7 +550,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -546,14 +584,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: 255.919189
-      Y: -340.81665
-      Z: 1250
+      X: 208.919113
+      Y: -208.816803
+      Z: 699.999756
     }
     Rotation {
-      Pitch: -44.9999504
-      Yaw: -44.999958
-      Roll: -179.999969
+      Pitch: -44.999939
+      Yaw: -44.9999428
+      Roll: -179.999954
     }
     Scale {
       X: 0.5
@@ -561,7 +599,7 @@ Objects {
       Z: 0.900000036
     }
   }
-  ParentId: 18393403345350274493
+  ParentId: 11824435277706619856
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -579,7 +617,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -614,14 +651,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: 255.919189
-      Y: -340.81665
-      Z: 875
+      X: 208.919174
+      Y: -208.81662
+      Z: 324.999939
     }
     Rotation {
-      Pitch: -45.0000038
+      Pitch: -44.9999809
       Yaw: 135
-      Roll: -2.41483622e-06
+      Roll: -1.20741811e-06
     }
     Scale {
       X: 0.5
@@ -629,7 +666,7 @@ Objects {
       Z: 0.900000036
     }
   }
-  ParentId: 18393403345350274493
+  ParentId: 11824435277706619856
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -647,7 +684,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -682,12 +718,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: 255.919189
-      Y: -340.81665
-      Z: 550
+      X: 208.919067
+      Y: -208.816833
+      Z: -0.000207265228
     }
     Rotation {
-      Yaw: -44.9999962
+      Pitch: -6.83018879e-06
+      Yaw: -44.9999847
+      Roll: -4.07550624e-06
     }
     Scale {
       X: 0.5
@@ -695,7 +733,7 @@ Objects {
       Z: 2.3
     }
   }
-  ParentId: 18393403345350274493
+  ParentId: 11824435277706619856
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -713,7 +751,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -748,14 +785,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -203.681641
-      Y: 118.785889
-      Z: 875
+      X: -250.681686
+      Y: 250.785767
+      Z: 324.999756
     }
     Rotation {
-      Pitch: -45.0000038
+      Pitch: -44.9999809
       Yaw: 135
-      Roll: -2.41483622e-06
+      Roll: -1.20741811e-06
     }
     Scale {
       X: 0.5
@@ -763,7 +800,7 @@ Objects {
       Z: 0.900000036
     }
   }
-  ParentId: 18393403345350274493
+  ParentId: 11824435277706619856
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -781,7 +818,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

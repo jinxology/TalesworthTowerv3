@@ -127,6 +127,37 @@ Objects {
     }
   }
   ParentId: 15504030429973110399
+  ChildIds: 9792749202243429492
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 9792749202243429492
+  Name: "ClientContext"
+  Transform {
+    Location {
+      Y: 8
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3819289168434531660
   ChildIds: 3885764625961168526
   ChildIds: 7089347051109202737
   ChildIds: 1257834856326509543
@@ -146,8 +177,7 @@ Objects {
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  Folder {
-    IsGroup: true
+  NetworkContext {
   }
 }
 Objects {
@@ -155,22 +185,22 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -0.00147247314
-      Y: 124.99939
-      Z: 174.999756
+      X: -0.00157674158
+      Y: 116.99939
+      Z: 174.999603
     }
     Rotation {
-      Pitch: 29.9999847
-      Yaw: 35.2645111
-      Roll: 144.735565
+      Pitch: 29.999979
+      Yaw: 35.2645035
+      Roll: 144.735535
     }
     Scale {
       X: 0.25
       Y: 1
-      Z: 0.4
+      Z: 0.400000036
     }
   }
-  ParentId: 3819289168434531660
+  ParentId: 9792749202243429492
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:color"
@@ -188,7 +218,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -217,22 +246,22 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -0.00144958496
-      Y: 199.999512
-      Z: 100
+      X: -0.00153096521
+      Y: 191.999557
+      Z: 99.9999237
     }
     Rotation {
-      Pitch: -29.9999924
+      Pitch: -29.9999847
       Yaw: 35.2644501
-      Roll: -144.735596
+      Roll: -144.73558
     }
     Scale {
       X: 0.25
       Y: 1
-      Z: 0.4
+      Z: 0.400000036
     }
   }
-  ParentId: 3819289168434531660
+  ParentId: 9792749202243429492
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:color"
@@ -250,7 +279,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -279,11 +307,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -0.00141906738
-      Y: 124.99926
+      X: -0.00141652429
+      Y: 116.999207
+      Z: -0.000111897789
     }
     Rotation {
+      Pitch: -6.83018879e-06
       Yaw: 135
+      Roll: -1.08748031e-06
     }
     Scale {
       X: 0.5
@@ -291,7 +322,7 @@ Objects {
       Z: 0.6
     }
   }
-  ParentId: 3819289168434531660
+  ParentId: 9792749202243429492
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -309,7 +340,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -338,22 +368,22 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -0.00128936768
-      Y: -100.000488
-      Z: 50
+      X: -0.00136057544
+      Y: -108.000504
+      Z: 49.9998245
     }
     Rotation {
-      Pitch: 44.9999695
-      Yaw: -179.999985
-      Roll: 89.9999695
+      Pitch: 44.9999504
+      Yaw: -179.999969
+      Roll: 89.9999466
     }
     Scale {
       X: 0.25
       Y: 1
-      Z: 0.4
+      Z: 0.400000036
     }
   }
-  ParentId: 3819289168434531660
+  ParentId: 9792749202243429492
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:color"
@@ -371,7 +401,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -400,13 +429,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -0.00122070313
-      Y: -225.000595
+      X: -0.0012512207
+      Y: -233.000595
+      Z: -9.40958707e-05
     }
     Rotation {
-      Pitch: -15.699851
-      Yaw: 137.265778
-      Roll: -16.3249683
+      Pitch: -15.6998444
+      Yaw: 137.265747
+      Roll: -16.3249779
     }
     Scale {
       X: 0.25
@@ -414,7 +444,7 @@ Objects {
       Z: 0.6
     }
   }
-  ParentId: 3819289168434531660
+  ParentId: 9792749202243429492
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:color"
@@ -432,7 +462,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -461,13 +490,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -0.00128936768
-      Y: -100.000786
+      X: -0.00144449878
+      Y: -108.000763
+      Z: -0.000286102295
     }
     Rotation {
-      Pitch: 15.6998444
-      Yaw: 137.265793
-      Roll: 16.3250408
+      Pitch: 15.6998377
+      Yaw: 137.265762
+      Roll: 16.3250523
     }
     Scale {
       X: 0.25
@@ -475,7 +505,7 @@ Objects {
       Z: 0.6
     }
   }
-  ParentId: 3819289168434531660
+  ParentId: 9792749202243429492
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:color"
@@ -493,7 +523,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -522,22 +551,22 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -0.00136947632
-      Y: 49.9993248
-      Z: 50
+      X: -0.00142161059
+      Y: 41.9993286
+      Z: 49.9999619
     }
     Rotation {
-      Pitch: 29.9999924
+      Pitch: 29.999979
       Yaw: 144.735641
       Roll: 35.2644577
     }
     Scale {
       X: 0.25
       Y: 1
-      Z: 0.4
+      Z: 0.400000036
     }
   }
-  ParentId: 3819289168434531660
+  ParentId: 9792749202243429492
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:color"
@@ -555,7 +584,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -584,11 +612,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -9.53674316e-05
-      Y: -50.0004883
+      X: -0.000199635833
+      Y: -58.0004959
+      Z: -0.00023651123
     }
     Rotation {
+      Pitch: -6.83018879e-06
       Yaw: 135
+      Roll: -1.08748031e-06
     }
     Scale {
       X: 0.35
@@ -596,7 +627,7 @@ Objects {
       Z: 0.6
     }
   }
-  ParentId: 3819289168434531660
+  ParentId: 9792749202243429492
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -614,7 +645,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -643,11 +673,14 @@ Objects {
   Name: "Corrugated Sheet Tall"
   Transform {
     Location {
-      X: -0.00136947632
-      Y: 49.9994507
+      X: -0.00140825915
+      Y: 41.9994278
+      Z: -0.000141143799
     }
     Rotation {
+      Pitch: -6.83018879e-06
       Yaw: 135
+      Roll: -1.08748031e-06
     }
     Scale {
       X: 0.5
@@ -655,7 +688,7 @@ Objects {
       Z: 0.6
     }
   }
-  ParentId: 3819289168434531660
+  ParentId: 9792749202243429492
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -673,7 +706,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -3779,7 +3811,7 @@ Objects {
   Name: "Pipe - Thin"
   Transform {
     Location {
-      Z: 400
+      Z: 475
     }
     Rotation {
     }
@@ -6808,8 +6840,8 @@ Objects {
   }
 }
 Objects {
-  Id: 12771877879261096102
-  Name: "bnp.interior"
+  Id: 1901554934563721041
+  Name: "bnp.interior-2"
   Transform {
     Scale {
       X: 1
@@ -6826,11 +6858,11 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 6960846604308352620
+      key: 11686587074494281489
       value {
         Overrides {
           Name: "Name"
-          String: "bnp.interior"
+          String: "bnp.interior-2"
         }
         Overrides {
           Name: "Position"
@@ -6847,13 +6879,13 @@ Objects {
       }
     }
     TemplateAsset {
-      Id: 9413225764656208822
+      Id: 16230070999844449550
     }
   }
 }
 Objects {
-  Id: 3297129498643534689
-  Name: "bnp.interior"
+  Id: 14558878964570306228
+  Name: "bnp.interior-1"
   Transform {
     Scale {
       X: 1
@@ -6870,11 +6902,11 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 6960846604308352620
+      key: 11686587074494281489
       value {
         Overrides {
           Name: "Name"
-          String: "bnp.interior"
+          String: "bnp.interior-1"
         }
         Overrides {
           Name: "Position"
@@ -6890,12 +6922,12 @@ Objects {
       }
     }
     TemplateAsset {
-      Id: 9413225764656208822
+      Id: 16230070999844449550
     }
   }
 }
 Objects {
-  Id: 9596239880983481821
+  Id: 4598052079701841535
   Name: "bnp.walls"
   Transform {
     Scale {
@@ -6913,11 +6945,72 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 11480625192855001529
+      key: 15187484510300632375
       value {
         Overrides {
           Name: "Name"
-          String: "bnp.walls.2"
+          String: "bnp.walls-2"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -179.999954
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 3494992579393967072
+    }
+  }
+}
+Objects {
+  Id: 3454909283953511520
+  Name: "bnp.walls"
+  Transform {
+    Location {
+      X: -100
+      Y: -25
+      Z: 1850
+    }
+    Rotation {
+      Yaw: -179.999954
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6466700705943890717
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 15187484510300632375
+      value {
+        Overrides {
+          Name: "Name"
+          String: "bnp.walls-1"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
         }
         Overrides {
           Name: "Scale"
@@ -6927,60 +7020,10 @@ Objects {
             Z: 1
           }
         }
-        Overrides {
-          Name: "Position"
-          Vector {
-            Z: -50
-          }
-        }
       }
     }
     TemplateAsset {
-      Id: 4473552262498789702
-    }
-  }
-}
-Objects {
-  Id: 13820605109863361180
-  Name: "bnp.walls"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 6466700705943890717
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 11480625192855001529
-      value {
-        Overrides {
-          Name: "Name"
-          String: "bnp.walls.1"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            Z: -50
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -179.999969
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4473552262498789702
+      Id: 3494992579393967072
     }
   }
 }
@@ -7407,8 +7450,8 @@ Objects {
   }
 }
 Objects {
-  Id: 2723677185221317022
-  Name: "bnp.pillars"
+  Id: 1228588860769108467
+  Name: "Fantasy Castle Pillar 01 - Tall 3x Tile Template"
   Transform {
     Location {
       Z: -25
@@ -7423,36 +7466,6 @@ Objects {
     }
   }
   ParentId: 6466700705943890717
-  ChildIds: 1228588860769108467
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    Model {
-    }
-  }
-}
-Objects {
-  Id: 1228588860769108467
-  Name: "Fantasy Castle Pillar 01 - Tall 3x Tile Template"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2723677185221317022
   ChildIds: 14421750311191817394
   ChildIds: 7355226475889118256
   ChildIds: 46536510353808780
@@ -8166,6 +8179,24 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 1029239319804352334
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1799.99561
+            Z: 250
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -3.05175781e-05
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 2166597982309704751
       value {
         Overrides {
@@ -8180,6 +8211,18 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 4843474633416910466
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1799.99561
+            Z: 250
           }
         }
       }
@@ -8919,8 +8962,8 @@ Objects {
       Yaw: -134.999985
     }
     Scale {
-      X: 2
-      Y: 2
+      X: 3.2
+      Y: 3.2
       Z: 18
     }
   }

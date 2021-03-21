@@ -7,9 +7,10 @@ local propYellowCanisterAppear = script:GetCustomProperty("YellowCanisterAppear"
 function OnflameYellowTriggerInteraction()
 	propYellowBreath:Play()
  	propFlameYellow.visibility = Visibility.FORCE_OFF
- 	local timeElapsed, timeRequested = Task.Wait(5)
+ 	local timeElapsed, timeRequested = Task.Wait(2)
 	propYellowCanisterAppear:Play()
  	propScifiBaseCapsule01BaseYellow.visibility = Visibility.FORCE_ON
+ 	flameYellowtrigger.interactionLabel = 'Yellow Base Step Enabled!'
 end
 
 flameYellowtrigger.interactedEvent:Connect(OnflameYellowTriggerInteraction)

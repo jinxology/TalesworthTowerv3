@@ -21,19 +21,18 @@ function OnAttemptPop(whichTrigger, other)
 	if bnpWeapon ~= 0 then
 		if other:IsA("Player") then
 			for i, v in ipairs(other:GetEquipment()) do
-				if v:IsA("Equipment") and v.name == "bnp.balloonEquipment" then
+				if v:IsA("Equipment") and v.name == "bnp_balloonEquipment" then
 					local equipment = v
-					local balloon = equipment:FindChildByType("Script")
+					local balloon = equipment:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController
 					local balloonColor = balloon.context.bnpColor
 					
+					print("balloon color is " .. balloonColor .. ", stand color is " .. bnpColor)
 					if bnpColor ~= 0 and bnpColor == balloonColor then
 						local spawner = balloon.context.spawnedBy
-						local position = balloon.context.propGeometry:GetWorldPosition()
-
-						equipment:Unequip()
-						equipment:Destroy()
+						local position = equipment:GetWorldPosition()
 
 						propLevelController.context.PlayerPoppedBalloon(other.name, balloonColor, spawner, position)
+						balloon:Destroy()
 					else
 						local player = other
 						local boing = World.SpawnAsset(propLevelController.context.propBounceSFXTemplate)
@@ -50,22 +49,23 @@ function OnAttemptPop(whichTrigger, other)
 				end
 			end
 		
-		elseif other:IsA("CoreObject") and other.name == "bnp.balloonPhysics" then
+		elseif other:IsA("CoreObject") and other.name == "bnp_balloonPhysics" then
 			local physics = other
 			print("physics: " .. physics.id)
 			for _, child in pairs(physics:GetChildren()) do
 				print("  - " .. child.id .. " - " .. child.type)
 			end
-			local balloon = physics:FindChildByType("Script")
+			local balloon = physics:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController
 			local boppedBy = balloon.context.lastBoppedBy
 			local balloonColor = balloon.context.bnpColor
 			
+			print("balloon color is " .. balloonColor .. ", stand color is " .. bnpColor)
 			if bnpColor ~= 0 and bnpColor == balloonColor then
 				local spawner = balloon.context.spawnedBy
 				local position = physics:GetWorldPosition()
 
-				physics:Destroy()
 				propLevelController.context.PlayerPoppedBalloon(boppedBy, balloonColor, spawner, position)
+				balloon:Destroy()
 			else
 				print("boing")
 			end
