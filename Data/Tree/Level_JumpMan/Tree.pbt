@@ -5401,7 +5401,7 @@ Objects {
 }
 Objects {
   Id: 11695994497352565841
-  Name: "Level.JumpMan"
+  Name: "LevelController.JumpMan"
   Transform {
     Location {
       X: 3694.63428
@@ -5418,6 +5418,14 @@ Objects {
     }
   }
   ParentId: 9132562513265036101
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:MainGameController"
+      ObjectReference {
+        SelfId: 6965558101138960242
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
