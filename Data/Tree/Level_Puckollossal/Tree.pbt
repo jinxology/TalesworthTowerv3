@@ -3472,6 +3472,7 @@ Objects {
     Teams {
       TeamInt: 1
       IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
     }
     StaticMesh {
       Physics {
@@ -3522,6 +3523,7 @@ Objects {
     Teams {
       TeamInt: 1
       IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
     }
     StaticMesh {
       Physics {
@@ -3556,14 +3558,14 @@ Objects {
       }
     }
     Overrides {
-      Name: "ma:Building_Ceiling:id"
-      AssetReference {
-        Id: 3086929587923392091
-      }
-    }
-    Overrides {
       Name: "ma:Building_Floor:smart"
       Bool: true
+    }
+    Overrides {
+      Name: "ma:Building_Ceiling:id"
+      AssetReference {
+        Id: 13181413363666234531
+      }
     }
   }
   Collidable_v2 {
@@ -3582,6 +3584,7 @@ Objects {
     Teams {
       TeamInt: 1
       IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
     }
     StaticMesh {
       Physics {
@@ -3632,6 +3635,7 @@ Objects {
     Teams {
       TeamInt: 1
       IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
     }
     StaticMesh {
       Physics {
@@ -3909,6 +3913,7 @@ Objects {
     Teams {
       TeamInt: 1
       IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
     }
     StaticMesh {
       Physics {
