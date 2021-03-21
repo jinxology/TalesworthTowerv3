@@ -1,12 +1,12 @@
 Name: "Walls-jmp"
-RootId: 2281426362836299386
+RootId: 10782931365881065521
 Objects {
-  Id: 15107502678162819067
+  Id: 630841997932933501
   Name: "Sci-fi Base Wall 02 - Doorway 01"
   Transform {
     Location {
-      X: -250
-      Y: -2150
+      X: -279.464142
+      Y: -2153.60547
       Z: -75
     }
     Rotation {
@@ -17,7 +17,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
+  ParentId: 10782931365881065521
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -44,7 +44,7 @@ Objects {
   }
 }
 Objects {
-  Id: 15158543840636768912
+  Id: 15063451024916155919
   Name: "Walls1-jmp"
   Transform {
     Location {
@@ -59,16 +59,16 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
-  ChildIds: 4929852919280780510
-  ChildIds: 4609241088829758477
-  ChildIds: 15391371911521283091
-  ChildIds: 15387972841481940353
-  ChildIds: 4135604728602277503
-  ChildIds: 12166733343846461201
-  ChildIds: 5015722012311210846
-  ChildIds: 2960156931410957034
-  ChildIds: 9368622470356105057
+  ParentId: 10782931365881065521
+  ChildIds: 775343499509980636
+  ChildIds: 12972174862118805538
+  ChildIds: 13493150785428828745
+  ChildIds: 7660006935832232071
+  ChildIds: 15101793119674591224
+  ChildIds: 14944929503325074921
+  ChildIds: 858039000879683658
+  ChildIds: 11407050845786560732
+  ChildIds: 8926217588027866348
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -83,12 +83,12 @@ Objects {
   }
 }
 Objects {
-  Id: 9368622470356105057
+  Id: 8926217588027866348
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: -250
-      Y: -2150
+      X: -279.464447
+      Y: -2143.25049
       Z: -75
     }
     Rotation {
@@ -99,7 +99,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15158543840636768912
+  ParentId: 15063451024916155919
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -126,7 +126,7 @@ Objects {
   }
 }
 Objects {
-  Id: 2960156931410957034
+  Id: 11407050845786560732
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -142,7 +142,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15158543840636768912
+  ParentId: 15063451024916155919
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -169,7 +169,7 @@ Objects {
   }
 }
 Objects {
-  Id: 5015722012311210846
+  Id: 858039000879683658
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -185,7 +185,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15158543840636768912
+  ParentId: 15063451024916155919
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -212,7 +212,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12166733343846461201
+  Id: 14944929503325074921
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -228,7 +228,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15158543840636768912
+  ParentId: 15063451024916155919
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -255,7 +255,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4135604728602277503
+  Id: 15101793119674591224
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -271,7 +271,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15158543840636768912
+  ParentId: 15063451024916155919
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -298,7 +298,7 @@ Objects {
   }
 }
 Objects {
-  Id: 15387972841481940353
+  Id: 7660006935832232071
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -314,7 +314,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15158543840636768912
+  ParentId: 15063451024916155919
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -341,7 +341,7 @@ Objects {
   }
 }
 Objects {
-  Id: 15391371911521283091
+  Id: 13493150785428828745
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -357,7 +357,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15158543840636768912
+  ParentId: 15063451024916155919
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -384,7 +384,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4609241088829758477
+  Id: 12972174862118805538
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -400,7 +400,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15158543840636768912
+  ParentId: 15063451024916155919
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -427,7 +427,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4929852919280780510
+  Id: 775343499509980636
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -443,7 +443,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15158543840636768912
+  ParentId: 15063451024916155919
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -470,7 +470,7 @@ Objects {
   }
 }
 Objects {
-  Id: 8443193334011694767
+  Id: 16232310756148549202
   Name: "Walls1-jmp"
   Transform {
     Location {
@@ -487,15 +487,15 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
-  ChildIds: 15295957960878393101
-  ChildIds: 6116050864487413851
-  ChildIds: 3603464384392290239
-  ChildIds: 10905154695230676113
-  ChildIds: 10198817108444713730
-  ChildIds: 4794611270209865630
-  ChildIds: 7964131783654734619
-  ChildIds: 11117217461480851848
+  ParentId: 10782931365881065521
+  ChildIds: 209148234819728655
+  ChildIds: 3970510763800548671
+  ChildIds: 2268816621358379001
+  ChildIds: 2568495030827935428
+  ChildIds: 12091658874619528339
+  ChildIds: 4942971824433917328
+  ChildIds: 15740012767622058140
+  ChildIds: 3042441828383856141
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -510,7 +510,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11117217461480851848
+  Id: 3042441828383856141
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -526,7 +526,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8443193334011694767
+  ParentId: 16232310756148549202
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -553,7 +553,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7964131783654734619
+  Id: 15740012767622058140
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -569,7 +569,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8443193334011694767
+  ParentId: 16232310756148549202
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -596,7 +596,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4794611270209865630
+  Id: 4942971824433917328
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -612,7 +612,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8443193334011694767
+  ParentId: 16232310756148549202
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -639,7 +639,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10198817108444713730
+  Id: 12091658874619528339
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -655,7 +655,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8443193334011694767
+  ParentId: 16232310756148549202
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -682,7 +682,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10905154695230676113
+  Id: 2568495030827935428
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -698,7 +698,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8443193334011694767
+  ParentId: 16232310756148549202
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -725,7 +725,7 @@ Objects {
   }
 }
 Objects {
-  Id: 3603464384392290239
+  Id: 2268816621358379001
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -741,7 +741,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8443193334011694767
+  ParentId: 16232310756148549202
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -768,7 +768,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6116050864487413851
+  Id: 3970510763800548671
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -784,7 +784,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8443193334011694767
+  ParentId: 16232310756148549202
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -811,7 +811,7 @@ Objects {
   }
 }
 Objects {
-  Id: 15295957960878393101
+  Id: 209148234819728655
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -827,7 +827,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8443193334011694767
+  ParentId: 16232310756148549202
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -854,7 +854,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10812439483205162461
+  Id: 3830347244524089128
   Name: "Walls1-jmp"
   Transform {
     Location {
@@ -867,15 +867,14 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
-  ChildIds: 7330281377345072562
-  ChildIds: 8949537960249258919
-  ChildIds: 14055904928539985465
-  ChildIds: 17786334572025065335
-  ChildIds: 16034818613351226360
-  ChildIds: 4748901112932262384
-  ChildIds: 3020700041939805725
-  ChildIds: 9669747673917018242
+  ParentId: 10782931365881065521
+  ChildIds: 14423590987290846425
+  ChildIds: 17417780999121940400
+  ChildIds: 17117449492821245865
+  ChildIds: 11024236647134876845
+  ChildIds: 14338297087827251839
+  ChildIds: 7534392495622110556
+  ChildIds: 13417418063110047258
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -890,7 +889,7 @@ Objects {
   }
 }
 Objects {
-  Id: 9669747673917018242
+  Id: 13417418063110047258
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -906,7 +905,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10812439483205162461
+  ParentId: 3830347244524089128
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -933,7 +932,7 @@ Objects {
   }
 }
 Objects {
-  Id: 3020700041939805725
+  Id: 7534392495622110556
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -949,7 +948,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10812439483205162461
+  ParentId: 3830347244524089128
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -976,7 +975,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4748901112932262384
+  Id: 14338297087827251839
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -992,7 +991,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10812439483205162461
+  ParentId: 3830347244524089128
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1019,50 +1018,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16034818613351226360
-  Name: "Sci-fi Base Wall 02"
-  Transform {
-    Location {
-      X: 2925
-      Y: -2150
-      Z: -75
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10812439483205162461
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 17964725037567714412
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 17786334572025065335
+  Id: 11024236647134876845
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1078,7 +1034,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10812439483205162461
+  ParentId: 3830347244524089128
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1105,7 +1061,7 @@ Objects {
   }
 }
 Objects {
-  Id: 14055904928539985465
+  Id: 17117449492821245865
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1121,7 +1077,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10812439483205162461
+  ParentId: 3830347244524089128
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1148,7 +1104,7 @@ Objects {
   }
 }
 Objects {
-  Id: 8949537960249258919
+  Id: 17417780999121940400
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1164,7 +1120,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10812439483205162461
+  ParentId: 3830347244524089128
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1191,7 +1147,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7330281377345072562
+  Id: 14423590987290846425
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1207,7 +1163,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10812439483205162461
+  ParentId: 3830347244524089128
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1234,7 +1190,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4432224210865757641
+  Id: 3103366158568993955
   Name: "Walls1-jmp"
   Transform {
     Location {
@@ -1251,16 +1207,16 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
-  ChildIds: 7235642721522228388
-  ChildIds: 12710974237875226277
-  ChildIds: 7341975715533038423
-  ChildIds: 14551692185103883136
-  ChildIds: 2916202424357029282
-  ChildIds: 16087488326071286925
-  ChildIds: 567249669052149181
-  ChildIds: 17946557460297235519
-  ChildIds: 13944862802863370772
+  ParentId: 10782931365881065521
+  ChildIds: 14290250652079250920
+  ChildIds: 1463500832814389656
+  ChildIds: 9445830521902128071
+  ChildIds: 18130087413008090470
+  ChildIds: 17531566359634295342
+  ChildIds: 12797787790121895960
+  ChildIds: 2965857767852881313
+  ChildIds: 5423543443749387796
+  ChildIds: 9349631266844424201
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1275,7 +1231,7 @@ Objects {
   }
 }
 Objects {
-  Id: 13944862802863370772
+  Id: 9349631266844424201
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1292,7 +1248,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4432224210865757641
+  ParentId: 3103366158568993955
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1319,7 +1275,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17946557460297235519
+  Id: 5423543443749387796
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1335,7 +1291,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4432224210865757641
+  ParentId: 3103366158568993955
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1362,7 +1318,7 @@ Objects {
   }
 }
 Objects {
-  Id: 567249669052149181
+  Id: 2965857767852881313
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1378,7 +1334,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4432224210865757641
+  ParentId: 3103366158568993955
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1405,7 +1361,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16087488326071286925
+  Id: 12797787790121895960
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1421,7 +1377,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4432224210865757641
+  ParentId: 3103366158568993955
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1448,7 +1404,7 @@ Objects {
   }
 }
 Objects {
-  Id: 2916202424357029282
+  Id: 17531566359634295342
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1464,7 +1420,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4432224210865757641
+  ParentId: 3103366158568993955
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1491,7 +1447,7 @@ Objects {
   }
 }
 Objects {
-  Id: 14551692185103883136
+  Id: 18130087413008090470
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1507,7 +1463,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4432224210865757641
+  ParentId: 3103366158568993955
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1534,7 +1490,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7341975715533038423
+  Id: 9445830521902128071
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1550,7 +1506,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4432224210865757641
+  ParentId: 3103366158568993955
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1577,7 +1533,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12710974237875226277
+  Id: 1463500832814389656
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1593,7 +1549,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4432224210865757641
+  ParentId: 3103366158568993955
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1620,7 +1576,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7235642721522228388
+  Id: 14290250652079250920
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1636,7 +1592,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4432224210865757641
+  ParentId: 3103366158568993955
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1663,7 +1619,7 @@ Objects {
   }
 }
 Objects {
-  Id: 343981508824225376
+  Id: 3160370475134612642
   Name: "Walls1-jmp"
   Transform {
     Location {
@@ -1678,16 +1634,16 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
-  ChildIds: 9992622377556357185
-  ChildIds: 15786835673058038082
-  ChildIds: 17171896412105173381
-  ChildIds: 5332420360108048528
-  ChildIds: 5518049334602402071
-  ChildIds: 11174627332200160299
-  ChildIds: 11014549347419422361
-  ChildIds: 16673684550765948997
-  ChildIds: 837197345308603880
+  ParentId: 10782931365881065521
+  ChildIds: 13927907886031443614
+  ChildIds: 4324420853229639408
+  ChildIds: 13853614905958704843
+  ChildIds: 9525626235744734633
+  ChildIds: 2858674548857040858
+  ChildIds: 13200324040712240863
+  ChildIds: 3186237919541247870
+  ChildIds: 6596648062310061329
+  ChildIds: 557090405663233722
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1702,7 +1658,7 @@ Objects {
   }
 }
 Objects {
-  Id: 837197345308603880
+  Id: 557090405663233722
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1718,7 +1674,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 343981508824225376
+  ParentId: 3160370475134612642
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1745,7 +1701,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16673684550765948997
+  Id: 6596648062310061329
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1761,7 +1717,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 343981508824225376
+  ParentId: 3160370475134612642
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1788,7 +1744,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11014549347419422361
+  Id: 3186237919541247870
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1804,7 +1760,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 343981508824225376
+  ParentId: 3160370475134612642
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1831,7 +1787,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11174627332200160299
+  Id: 13200324040712240863
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1847,7 +1803,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 343981508824225376
+  ParentId: 3160370475134612642
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1874,7 +1830,7 @@ Objects {
   }
 }
 Objects {
-  Id: 5518049334602402071
+  Id: 2858674548857040858
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1890,7 +1846,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 343981508824225376
+  ParentId: 3160370475134612642
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1917,7 +1873,7 @@ Objects {
   }
 }
 Objects {
-  Id: 5332420360108048528
+  Id: 9525626235744734633
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1933,7 +1889,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 343981508824225376
+  ParentId: 3160370475134612642
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1960,7 +1916,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17171896412105173381
+  Id: 13853614905958704843
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -1976,7 +1932,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 343981508824225376
+  ParentId: 3160370475134612642
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2003,7 +1959,7 @@ Objects {
   }
 }
 Objects {
-  Id: 15786835673058038082
+  Id: 4324420853229639408
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2019,7 +1975,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 343981508824225376
+  ParentId: 3160370475134612642
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2046,7 +2002,7 @@ Objects {
   }
 }
 Objects {
-  Id: 9992622377556357185
+  Id: 13927907886031443614
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2062,7 +2018,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 343981508824225376
+  ParentId: 3160370475134612642
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2089,7 +2045,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10870346410283785907
+  Id: 18363954108188262500
   Name: "Walls1-jmp"
   Transform {
     Location {
@@ -2106,15 +2062,15 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
-  ChildIds: 5721699160511202664
-  ChildIds: 3696808117711006393
-  ChildIds: 11359360781743845466
-  ChildIds: 14407835525166788823
-  ChildIds: 15122782844922202318
-  ChildIds: 3584020867433768068
-  ChildIds: 437693609719577344
-  ChildIds: 17806556927166027546
+  ParentId: 10782931365881065521
+  ChildIds: 6409347156132524905
+  ChildIds: 9564951134281055239
+  ChildIds: 10593024556724721032
+  ChildIds: 9873182440833683953
+  ChildIds: 570390489167477952
+  ChildIds: 7555914500615817623
+  ChildIds: 17409336662183413262
+  ChildIds: 16340010278194532356
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2129,7 +2085,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17806556927166027546
+  Id: 16340010278194532356
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2145,7 +2101,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10870346410283785907
+  ParentId: 18363954108188262500
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2172,7 +2128,7 @@ Objects {
   }
 }
 Objects {
-  Id: 437693609719577344
+  Id: 17409336662183413262
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2188,7 +2144,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10870346410283785907
+  ParentId: 18363954108188262500
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2215,7 +2171,7 @@ Objects {
   }
 }
 Objects {
-  Id: 3584020867433768068
+  Id: 7555914500615817623
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2231,7 +2187,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10870346410283785907
+  ParentId: 18363954108188262500
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2258,7 +2214,7 @@ Objects {
   }
 }
 Objects {
-  Id: 15122782844922202318
+  Id: 570390489167477952
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2274,7 +2230,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10870346410283785907
+  ParentId: 18363954108188262500
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2301,7 +2257,7 @@ Objects {
   }
 }
 Objects {
-  Id: 14407835525166788823
+  Id: 9873182440833683953
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2317,7 +2273,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10870346410283785907
+  ParentId: 18363954108188262500
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2344,7 +2300,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11359360781743845466
+  Id: 10593024556724721032
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2360,7 +2316,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10870346410283785907
+  ParentId: 18363954108188262500
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2387,7 +2343,7 @@ Objects {
   }
 }
 Objects {
-  Id: 3696808117711006393
+  Id: 9564951134281055239
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2403,7 +2359,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10870346410283785907
+  ParentId: 18363954108188262500
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2430,7 +2386,7 @@ Objects {
   }
 }
 Objects {
-  Id: 5721699160511202664
+  Id: 6409347156132524905
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2446,7 +2402,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10870346410283785907
+  ParentId: 18363954108188262500
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2473,7 +2429,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10445156632526087604
+  Id: 8767476872214308715
   Name: "Walls1-jmp"
   Transform {
     Location {
@@ -2490,15 +2446,15 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
-  ChildIds: 18273538009188742639
-  ChildIds: 17887200885156199082
-  ChildIds: 837498424660241738
-  ChildIds: 10616533563750837199
-  ChildIds: 9674788445799272248
-  ChildIds: 10043820155939162420
-  ChildIds: 7441318203180532709
-  ChildIds: 3112487225836021175
+  ParentId: 10782931365881065521
+  ChildIds: 13915311462785214240
+  ChildIds: 14935843812738905285
+  ChildIds: 16132230334323243235
+  ChildIds: 2675832568042725347
+  ChildIds: 15704904535209558191
+  ChildIds: 5518090855869608784
+  ChildIds: 2962440544145260739
+  ChildIds: 4825602027346892755
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2513,7 +2469,7 @@ Objects {
   }
 }
 Objects {
-  Id: 3112487225836021175
+  Id: 4825602027346892755
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2529,7 +2485,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10445156632526087604
+  ParentId: 8767476872214308715
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -2558,7 +2514,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7441318203180532709
+  Id: 2962440544145260739
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2574,7 +2530,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10445156632526087604
+  ParentId: 8767476872214308715
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2601,7 +2557,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10043820155939162420
+  Id: 5518090855869608784
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2617,7 +2573,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10445156632526087604
+  ParentId: 8767476872214308715
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2644,7 +2600,7 @@ Objects {
   }
 }
 Objects {
-  Id: 9674788445799272248
+  Id: 15704904535209558191
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2660,7 +2616,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10445156632526087604
+  ParentId: 8767476872214308715
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2687,7 +2643,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10616533563750837199
+  Id: 2675832568042725347
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2703,7 +2659,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10445156632526087604
+  ParentId: 8767476872214308715
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2730,7 +2686,7 @@ Objects {
   }
 }
 Objects {
-  Id: 837498424660241738
+  Id: 16132230334323243235
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2746,7 +2702,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10445156632526087604
+  ParentId: 8767476872214308715
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2773,7 +2729,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17887200885156199082
+  Id: 14935843812738905285
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2789,7 +2745,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10445156632526087604
+  ParentId: 8767476872214308715
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2816,7 +2772,7 @@ Objects {
   }
 }
 Objects {
-  Id: 18273538009188742639
+  Id: 13915311462785214240
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2832,7 +2788,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 10445156632526087604
+  ParentId: 8767476872214308715
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2859,7 +2815,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11730782331980119517
+  Id: 6434711258453139908
   Name: "Walls1-jmp"
   Transform {
     Location {
@@ -2876,15 +2832,15 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
-  ChildIds: 16276647885237925114
-  ChildIds: 10690804747637707753
-  ChildIds: 15740742979962967747
-  ChildIds: 11272436828375915341
-  ChildIds: 16828942442456014563
-  ChildIds: 4179867233611819958
-  ChildIds: 4400760656338701677
-  ChildIds: 6126149284167442829
+  ParentId: 10782931365881065521
+  ChildIds: 7587730682416660835
+  ChildIds: 15461943682428903547
+  ChildIds: 13246749606043582503
+  ChildIds: 5727224681326127614
+  ChildIds: 7153590457124186987
+  ChildIds: 3690959157920524760
+  ChildIds: 216222956924933874
+  ChildIds: 3352426394839399503
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2899,7 +2855,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6126149284167442829
+  Id: 3352426394839399503
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2915,7 +2871,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11730782331980119517
+  ParentId: 6434711258453139908
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2942,7 +2898,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4400760656338701677
+  Id: 216222956924933874
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -2958,7 +2914,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11730782331980119517
+  ParentId: 6434711258453139908
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2985,7 +2941,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4179867233611819958
+  Id: 3690959157920524760
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3001,7 +2957,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11730782331980119517
+  ParentId: 6434711258453139908
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3028,7 +2984,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16828942442456014563
+  Id: 7153590457124186987
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3044,7 +3000,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11730782331980119517
+  ParentId: 6434711258453139908
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3071,7 +3027,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11272436828375915341
+  Id: 5727224681326127614
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3087,7 +3043,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11730782331980119517
+  ParentId: 6434711258453139908
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3114,7 +3070,7 @@ Objects {
   }
 }
 Objects {
-  Id: 15740742979962967747
+  Id: 13246749606043582503
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3130,7 +3086,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11730782331980119517
+  ParentId: 6434711258453139908
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3157,7 +3113,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10690804747637707753
+  Id: 15461943682428903547
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3173,7 +3129,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11730782331980119517
+  ParentId: 6434711258453139908
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3200,7 +3156,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16276647885237925114
+  Id: 7587730682416660835
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3216,7 +3172,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11730782331980119517
+  ParentId: 6434711258453139908
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3243,7 +3199,7 @@ Objects {
   }
 }
 Objects {
-  Id: 1505004511317294933
+  Id: 13529036797309657141
   Name: "Walls1-jmp"
   Transform {
     Location {
@@ -3260,16 +3216,16 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
-  ChildIds: 1790091659209651106
-  ChildIds: 5286341310597433298
-  ChildIds: 3128919145346229612
-  ChildIds: 3576158519402644885
-  ChildIds: 5504735709235472407
-  ChildIds: 11848458921273093005
-  ChildIds: 12780484413000611551
-  ChildIds: 16145388997044535550
-  ChildIds: 6321961014693525662
+  ParentId: 10782931365881065521
+  ChildIds: 9461253374091031966
+  ChildIds: 7991013095998451328
+  ChildIds: 15937950944292349023
+  ChildIds: 373594140331537406
+  ChildIds: 5422226415248150919
+  ChildIds: 15570151068116852244
+  ChildIds: 5282080468394181439
+  ChildIds: 10529484750134208500
+  ChildIds: 14328433232275375738
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3284,7 +3240,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6321961014693525662
+  Id: 14328433232275375738
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3301,7 +3257,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1505004511317294933
+  ParentId: 13529036797309657141
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3328,7 +3284,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16145388997044535550
+  Id: 10529484750134208500
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3344,7 +3300,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1505004511317294933
+  ParentId: 13529036797309657141
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3371,7 +3327,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12780484413000611551
+  Id: 5282080468394181439
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3387,7 +3343,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1505004511317294933
+  ParentId: 13529036797309657141
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3414,7 +3370,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11848458921273093005
+  Id: 15570151068116852244
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3430,7 +3386,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1505004511317294933
+  ParentId: 13529036797309657141
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3457,7 +3413,7 @@ Objects {
   }
 }
 Objects {
-  Id: 5504735709235472407
+  Id: 5422226415248150919
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3474,7 +3430,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1505004511317294933
+  ParentId: 13529036797309657141
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3501,7 +3457,7 @@ Objects {
   }
 }
 Objects {
-  Id: 3576158519402644885
+  Id: 373594140331537406
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3517,7 +3473,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1505004511317294933
+  ParentId: 13529036797309657141
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3544,7 +3500,7 @@ Objects {
   }
 }
 Objects {
-  Id: 3128919145346229612
+  Id: 15937950944292349023
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3560,7 +3516,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1505004511317294933
+  ParentId: 13529036797309657141
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3587,7 +3543,7 @@ Objects {
   }
 }
 Objects {
-  Id: 5286341310597433298
+  Id: 7991013095998451328
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3603,7 +3559,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1505004511317294933
+  ParentId: 13529036797309657141
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3630,7 +3586,7 @@ Objects {
   }
 }
 Objects {
-  Id: 1790091659209651106
+  Id: 9461253374091031966
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3646,7 +3602,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1505004511317294933
+  ParentId: 13529036797309657141
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3673,7 +3629,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12050283497943308641
+  Id: 5187531775790974468
   Name: "Walls1-jmp"
   Transform {
     Location {
@@ -3690,16 +3646,16 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
-  ChildIds: 11341954284422923825
-  ChildIds: 206349044281483102
-  ChildIds: 13710237022620656584
-  ChildIds: 13544584612263529104
-  ChildIds: 15267643493624739849
-  ChildIds: 4213001911801884632
-  ChildIds: 17129998096788479215
-  ChildIds: 16616420679329171166
-  ChildIds: 7026602428972975034
+  ParentId: 10782931365881065521
+  ChildIds: 14487142043508191021
+  ChildIds: 11567985733761430029
+  ChildIds: 3179945037072486553
+  ChildIds: 10103393007683696762
+  ChildIds: 4657849050648328811
+  ChildIds: 17533403173703470385
+  ChildIds: 3906621639390622178
+  ChildIds: 5258147744284810776
+  ChildIds: 9832510511635812757
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3714,7 +3670,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7026602428972975034
+  Id: 9832510511635812757
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3731,7 +3687,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12050283497943308641
+  ParentId: 5187531775790974468
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3758,7 +3714,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16616420679329171166
+  Id: 5258147744284810776
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3774,7 +3730,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12050283497943308641
+  ParentId: 5187531775790974468
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3801,7 +3757,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17129998096788479215
+  Id: 3906621639390622178
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3817,7 +3773,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12050283497943308641
+  ParentId: 5187531775790974468
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3844,16 +3800,15 @@ Objects {
   }
 }
 Objects {
-  Id: 4213001911801884632
+  Id: 17533403173703470385
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 2160.91187
-      Y: -2222.64624
-      Z: -75.0000305
+      X: 2117.06494
+      Y: -2142.67847
+      Z: -75
     }
     Rotation {
-      Yaw: 5
     }
     Scale {
       X: 1
@@ -3861,7 +3816,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12050283497943308641
+  ParentId: 5187531775790974468
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3888,16 +3843,15 @@ Objects {
   }
 }
 Objects {
-  Id: 15267643493624739849
+  Id: 4657849050648328811
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 2957.86743
-      Y: -2152.92188
-      Z: -75.0000305
+      X: 2916.99341
+      Y: -2142.64063
+      Z: -75
     }
     Rotation {
-      Yaw: 5
     }
     Scale {
       X: 1
@@ -3905,7 +3859,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12050283497943308641
+  ParentId: 5187531775790974468
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3932,7 +3886,7 @@ Objects {
   }
 }
 Objects {
-  Id: 13544584612263529104
+  Id: 10103393007683696762
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3948,7 +3902,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12050283497943308641
+  ParentId: 5187531775790974468
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3975,7 +3929,7 @@ Objects {
   }
 }
 Objects {
-  Id: 13710237022620656584
+  Id: 3179945037072486553
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -3991,7 +3945,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12050283497943308641
+  ParentId: 5187531775790974468
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4018,7 +3972,7 @@ Objects {
   }
 }
 Objects {
-  Id: 206349044281483102
+  Id: 11567985733761430029
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4034,7 +3988,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12050283497943308641
+  ParentId: 5187531775790974468
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4061,7 +4015,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11341954284422923825
+  Id: 14487142043508191021
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4077,7 +4031,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 12050283497943308641
+  ParentId: 5187531775790974468
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4104,7 +4058,7 @@ Objects {
   }
 }
 Objects {
-  Id: 5477581140106762786
+  Id: 1836210070208004293
   Name: "Walls1-jmp"
   Transform {
     Location {
@@ -4121,15 +4075,15 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
-  ChildIds: 10701356938860711218
-  ChildIds: 10527340578152563552
-  ChildIds: 6646077265200607533
-  ChildIds: 17610556799113907986
-  ChildIds: 14478173469753410036
-  ChildIds: 15254869786207571270
-  ChildIds: 11485293419000925263
-  ChildIds: 18393423233807861398
+  ParentId: 10782931365881065521
+  ChildIds: 4083992434516276984
+  ChildIds: 14654525495393035648
+  ChildIds: 1442826289661162836
+  ChildIds: 7126209115890351168
+  ChildIds: 3311649835644921252
+  ChildIds: 11632841540411042302
+  ChildIds: 743079838447125085
+  ChildIds: 13489520845429079005
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4144,7 +4098,7 @@ Objects {
   }
 }
 Objects {
-  Id: 18393423233807861398
+  Id: 13489520845429079005
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4160,7 +4114,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5477581140106762786
+  ParentId: 1836210070208004293
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4187,7 +4141,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11485293419000925263
+  Id: 743079838447125085
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4203,7 +4157,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5477581140106762786
+  ParentId: 1836210070208004293
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4230,7 +4184,7 @@ Objects {
   }
 }
 Objects {
-  Id: 15254869786207571270
+  Id: 11632841540411042302
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4246,7 +4200,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5477581140106762786
+  ParentId: 1836210070208004293
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4273,7 +4227,7 @@ Objects {
   }
 }
 Objects {
-  Id: 14478173469753410036
+  Id: 3311649835644921252
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4289,7 +4243,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5477581140106762786
+  ParentId: 1836210070208004293
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4316,7 +4270,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17610556799113907986
+  Id: 7126209115890351168
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4332,7 +4286,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5477581140106762786
+  ParentId: 1836210070208004293
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4359,7 +4313,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6646077265200607533
+  Id: 1442826289661162836
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4375,7 +4329,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5477581140106762786
+  ParentId: 1836210070208004293
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4402,7 +4356,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10527340578152563552
+  Id: 14654525495393035648
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4418,7 +4372,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5477581140106762786
+  ParentId: 1836210070208004293
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4445,7 +4399,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10701356938860711218
+  Id: 4083992434516276984
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4461,7 +4415,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5477581140106762786
+  ParentId: 1836210070208004293
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4488,7 +4442,7 @@ Objects {
   }
 }
 Objects {
-  Id: 14038131705690714344
+  Id: 13107223069222843812
   Name: "Walls-jmp"
   Transform {
     Location {
@@ -4505,15 +4459,15 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2281426362836299386
-  ChildIds: 11575908353863544370
-  ChildIds: 10180037007522431754
-  ChildIds: 8833327602043482026
-  ChildIds: 2162939585331941268
-  ChildIds: 4099486004519428456
-  ChildIds: 3436993118597313181
-  ChildIds: 11927110858571213137
-  ChildIds: 12636946836385873019
+  ParentId: 10782931365881065521
+  ChildIds: 10595471015027918782
+  ChildIds: 9174627834727678686
+  ChildIds: 9526129311908127031
+  ChildIds: 3648626168418235108
+  ChildIds: 10671216495627639167
+  ChildIds: 14452701189356941771
+  ChildIds: 11338039367506405395
+  ChildIds: 3103610550614028378
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4528,7 +4482,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12636946836385873019
+  Id: 3103610550614028378
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4544,7 +4498,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14038131705690714344
+  ParentId: 13107223069222843812
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4571,7 +4525,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11927110858571213137
+  Id: 11338039367506405395
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4587,7 +4541,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14038131705690714344
+  ParentId: 13107223069222843812
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4614,7 +4568,7 @@ Objects {
   }
 }
 Objects {
-  Id: 3436993118597313181
+  Id: 14452701189356941771
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4630,7 +4584,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14038131705690714344
+  ParentId: 13107223069222843812
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4657,7 +4611,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4099486004519428456
+  Id: 10671216495627639167
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4673,7 +4627,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14038131705690714344
+  ParentId: 13107223069222843812
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4700,7 +4654,7 @@ Objects {
   }
 }
 Objects {
-  Id: 2162939585331941268
+  Id: 3648626168418235108
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4716,7 +4670,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14038131705690714344
+  ParentId: 13107223069222843812
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4743,7 +4697,7 @@ Objects {
   }
 }
 Objects {
-  Id: 8833327602043482026
+  Id: 9526129311908127031
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4759,7 +4713,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14038131705690714344
+  ParentId: 13107223069222843812
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4786,7 +4740,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10180037007522431754
+  Id: 9174627834727678686
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4802,7 +4756,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14038131705690714344
+  ParentId: 13107223069222843812
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4829,7 +4783,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11575908353863544370
+  Id: 10595471015027918782
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
@@ -4845,7 +4799,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14038131705690714344
+  ParentId: 13107223069222843812
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

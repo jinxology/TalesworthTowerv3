@@ -1,7 +1,47 @@
 Name: "Ceiling-jmp"
-RootId: 7573444690699658436
+RootId: 1458223876217681772
 Objects {
-  Id: 8731776572488408540
+  Id: 1624445119164816737
+  Name: "Sci-fi Base Roof 01 - 8m"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1458223876217681772
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3770687677054390381
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 10179127915338913732
   Name: "Ceiling"
   Transform {
     Location {
@@ -15,7 +55,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -31,7 +71,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6079007551692265819
+  Id: 2434543149430521430
   Name: "Ceiling"
   Transform {
     Location {
@@ -45,7 +85,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -61,7 +101,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11013911108221876268
+  Id: 5255670024334404596
   Name: "Ceiling"
   Transform {
     Location {
@@ -76,7 +116,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -92,7 +132,7 @@ Objects {
   }
 }
 Objects {
-  Id: 348843817514731861
+  Id: 9963990174061932150
   Name: "Ceiling"
   Transform {
     Location {
@@ -107,7 +147,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -123,7 +163,7 @@ Objects {
   }
 }
 Objects {
-  Id: 8949567532296947605
+  Id: 15254151878479336594
   Name: "Ceiling"
   Transform {
     Location {
@@ -138,7 +178,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -154,7 +194,7 @@ Objects {
   }
 }
 Objects {
-  Id: 10552605737765653381
+  Id: 9635594718581796460
   Name: "Ceiling"
   Transform {
     Location {
@@ -169,7 +209,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -185,7 +225,7 @@ Objects {
   }
 }
 Objects {
-  Id: 16434880839032921756
+  Id: 13941362567628082065
   Name: "Ceiling"
   Transform {
     Location {
@@ -200,7 +240,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -216,7 +256,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4066131583217678301
+  Id: 15005158633375844419
   Name: "Ceiling"
   Transform {
     Location {
@@ -231,7 +271,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -247,7 +287,7 @@ Objects {
   }
 }
 Objects {
-  Id: 2347395674147352449
+  Id: 13799788190149249720
   Name: "Ceiling"
   Transform {
     Location {
@@ -262,7 +302,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -278,7 +318,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12084951908823418417
+  Id: 5969656762812594869
   Name: "Ceiling"
   Transform {
     Location {
@@ -293,7 +333,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -309,7 +349,7 @@ Objects {
   }
 }
 Objects {
-  Id: 5049681483189890624
+  Id: 10820881038830949315
   Name: "Ceiling"
   Transform {
     Location {
@@ -324,7 +364,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -340,7 +380,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7239616528988230640
+  Id: 15853614511796174261
   Name: "Ceiling"
   Transform {
     Location {
@@ -355,7 +395,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -371,7 +411,7 @@ Objects {
   }
 }
 Objects {
-  Id: 18287186576572463301
+  Id: 6761020915980514681
   Name: "Ceiling"
   Transform {
     Location {
@@ -386,7 +426,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -402,7 +442,7 @@ Objects {
   }
 }
 Objects {
-  Id: 11563935797201038963
+  Id: 9233183077657521407
   Name: "Ceiling"
   Transform {
     Location {
@@ -417,7 +457,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -433,7 +473,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6931697404265015810
+  Id: 13628676814328728128
   Name: "Ceiling"
   Transform {
     Location {
@@ -447,7 +487,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -463,7 +503,7 @@ Objects {
   }
 }
 Objects {
-  Id: 14060860831622903261
+  Id: 12928566963858405207
   Name: "Ceiling"
   Transform {
     Location {
@@ -477,7 +517,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -493,7 +533,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4367743578426874383
+  Id: 9985283897483562019
   Name: "Ceiling"
   Transform {
     Location {
@@ -507,7 +547,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -523,7 +563,7 @@ Objects {
   }
 }
 Objects {
-  Id: 46323232256957447
+  Id: 6126532367178631111
   Name: "Ceiling"
   Transform {
     Location {
@@ -536,7 +576,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -552,7 +592,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17956838772580075461
+  Id: 7768117946672265255
   Name: "Ceiling"
   Transform {
     Location {
@@ -565,7 +605,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 7573444690699658436
+  ParentId: 1458223876217681772
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

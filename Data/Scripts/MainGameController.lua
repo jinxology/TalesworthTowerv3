@@ -11,7 +11,7 @@ local playerKeyBindingListener = nil
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
-levelList = {"ShapesAndButtons","BopAndPop","ColorDials","Maze","Jumpman","FarmGallery","PoolPlatforms"}
+levelList = {"ShapesAndButtons","BopAndPop","ColorDials","Maze","Jumpman","FarmGallery","BlockAndEscape"}
 requiredNbrPlayersReady = 4
 
  
@@ -22,8 +22,8 @@ function OnBindingPressed(player, bindingPressed)
     if (bindingPressed == "ability_extra_25") then 
         --Y    
         if not levelRunning then
-            local levelControllerScript = GetCurrentLevelController()
-            levelControllerScript.context.LevelPowerUp() 
+            --local levelControllerScript = GetCurrentLevelController()
+            --levelControllerScript.context.LevelPowerUp() 
             
             LevelBegin()
         end
@@ -59,6 +59,7 @@ function TeleportAllPlayers(currentLev, newLoc)
         DestroyLevel(nextLevelIndex)
     end
     levelRunning = false
+    ClearTimer()
 
     currentLevelIndex = currentLev
     nextLevelindex = nil
@@ -180,6 +181,16 @@ function PlaceStartingPlatforms(levelIndex, in_position, in_rotation)
     return platforms
 end
 
+function DeactivateStartingPlatforms()
+    local controller = GetLevelControllerByLevelIndex(currentLevelIndex)    
+    controller.context.startingPlatforms:GetCustomProperty("MgrScript"):WaitForObject().context.Deactivate()
+end
+
+function ResetStartingPlatforms()
+    local controller = GetLevelControllerByLevelIndex(currentLevelIndex)    
+    controller.context.startingPlatforms:GetCustomProperty("MgrScript"):WaitForObject().context.Reset()
+end
+
 function GetCurrentLevelFolder()
     return World.FindObjectByName("Level."..levelList[currentLevelIndex])    
 end
@@ -209,23 +220,29 @@ function GetLevelControllerByLevelIndex(levelIndex)
 end
 
 function SetNextLevelIndex(success) 
-    if (success) then
-        nextLevelIndex = currentLevelIndex + 1
-    else    
-        if (currentLevelIndex == 6) then
-            nextLevelIndex = currentLevelIndex - 5
-        else
-            nextLevelIndex = currentLevelIndex - 1
-        end
-    end    
-    if nextLevelIndex < 1 then
-        nextLevelIndex =  1
-    elseif nextLevelIndex > #levelList then
-        print ("Max level reached")
-        nextLevelIndex =  #levelList
-    end
+    if (not success and currentLevelIndex == 1) then
+        --on first level fail, just lets them retry
+        return
+    else
+        if (success) then
+            nextLevelIndex = currentLevelIndex + 1
+        else    
+            if (currentLevelIndex == 6) then
+                nextLevelIndex = currentLevelIndex - 5
+            else
+                nextLevelIndex = currentLevelIndex - 1
+            end
+        end  
 
-    VerifyLevelSetup(nextLevelIndex)
+        if nextLevelIndex < 1 then
+            nextLevelIndex =  1
+        elseif nextLevelIndex > #levelList then
+            print ("Max level reached")
+            nextLevelIndex =  #levelList
+        end
+
+        VerifyLevelSetup(nextLevelIndex)
+    end
 end
 
 function VerifyLevelSetup(levelIndex)
@@ -293,6 +310,13 @@ end
 function LevelBegin()
     if (not levelRunning) then
         levelRunning = true
+
+        --Reset these if the players quickly restart level 1
+        script:SetNetworkedCustomProperty("UIMessage","04,false, ")
+        MakeWorldLight()
+
+        --If started some way other than starting platforms, deactivate them
+        DeactivateStartingPlatforms()
             
         local levelControllerScript = GetCurrentLevelController()
         levelControllerScript.context.LevelBegin()    
@@ -303,35 +327,41 @@ function LevelEnd(success)
     levelRunning = false 
     SetNextLevelIndex(success)
 
-    --Turn on exit flume of current level
-    local levelControllerScript = GetCurrentLevelController()
-    if levelControllerScript.context.exitFlume then
-        local exitFlume = levelControllerScript.context.exitFlume:FindChildByName("Flume Tube Manager")
-        exitFlume.context.ExitActive(success)
-        
-        --Setup entrance flume on next level
-        if (nextLevelIndex ~= currentLevelIndex) then
-            SpawnFlumePortals(nextLevelIndex)
-        end
+    if (not success and currentLevelIndex == 1) then
+        script:SetNetworkedCustomProperty("UIMessage","04,true,FAILED - RE-ACTIVATE PLATFORMS")
+
+        ResetStartingPlatforms()
     else
-        print("Couldn't get exitFlume from level " .. levelControllerScript.name)
-    end
-    
-    levelControllerScript = GetNextLevelController()
-    if levelControllerScript.context.entranceFlume then
-        local entranceFlume = levelControllerScript.context.entranceFlume:FindChildByName("Flume Tube Manager")
-        entranceFlume.context.EntranceActive(levelControllerScript.context.entranceFlumeEjectionVelocity)
-    end
-    levelControllerScript.context.LevelPowerUp()
-    
-    --Show go to exit
-    script:SetNetworkedCustomProperty("UIMessage","01,true")
-    
-    if levelControllerScript.context.entranceFlume then
-        --Spawn the starting platforms
-        if (nextLevelIndex ~= currentLevelIndex) then
-            SpawnStartingPlatforms(nextLevelIndex)
-        end    
+        --Turn on exit flume of current level
+        local levelControllerScript = GetCurrentLevelController()
+        if levelControllerScript.context.exitFlume then
+            local exitFlume = levelControllerScript.context.exitFlume:FindChildByName("Flume Tube Manager")
+            exitFlume.context.ExitActive(success)
+            
+            --Setup entrance flume on next level
+            if (nextLevelIndex ~= currentLevelIndex) then
+                SpawnFlumePortals(nextLevelIndex)
+            end
+        else
+            print("Couldn't get exitFlume from level " .. levelControllerScript.name)
+        end
+        
+        levelControllerScript = GetNextLevelController()
+        if levelControllerScript.context.entranceFlume then
+            local entranceFlume = levelControllerScript.context.entranceFlume:FindChildByName("Flume Tube Manager")
+            entranceFlume.context.EntranceActive(levelControllerScript.context.entranceFlumeEjectionVelocity)
+        end
+        levelControllerScript.context.LevelPowerUp()
+        
+        --Show go to exit
+        script:SetNetworkedCustomProperty("UIMessage","01,true,PROCEED TO EXIT TUBE")
+
+        if levelControllerScript.context.entranceFlume then
+            --Spawn the starting platforms
+            if (nextLevelIndex ~= currentLevelIndex) then
+                SpawnStartingPlatforms(nextLevelIndex)
+            end    
+        end
     end
 
     local lightsDimTime = 5
@@ -344,7 +374,7 @@ function LevelEnd(success)
     Task.Wait(lightsDimTime)
 
     --Show go to exit
-    script:SetNetworkedCustomProperty("UIMessage","01,false")
+    script:SetNetworkedCustomProperty("UIMessage","01,false, ")
 
     if (not success) then
         MakeWorldLight()
@@ -367,6 +397,10 @@ function RecursiveTreeWalker(rootObj)
         end
     end
     return objCount
+end
+
+function SendGeneralMessageToClients(msg)
+    script:SetNetworkedCustomProperty("UIMessage",msg)
 end
 
 function CountNetworkedObjects()    

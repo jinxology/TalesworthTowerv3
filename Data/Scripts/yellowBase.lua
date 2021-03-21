@@ -9,6 +9,7 @@ local function yellowRotateLever()
 	propYellowLeverPull:Play()
 	local timeElapsed, timeRequested = Task.Wait(1)
 	propYellowBeam:Play()
+	propYellowBaseTrigger.interactionLabel = 'Yellow Mission Accomplished!'
 end
 
 propYellowBaseTrigger.interactedEvent:Connect(yellowRotateLever)

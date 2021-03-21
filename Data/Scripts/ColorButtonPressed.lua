@@ -7,8 +7,7 @@ local propTrigger = script:GetCustomProperty("trigger"):WaitForObject()
 function OnInteracted(whichTrigger, other)
 	if other:IsA("Player") then
 		local sfx = World.SpawnAsset("7D474AD04EFA744D:ButtonSoundFX", {parent=propButton})  		
-		Events.BroadcastToServer("ColorButtonPressed", propShape, propColor)
+		Events.BroadcastToServer("ColorButtonPressed", propShape, propColor, other.name)	
 	end
 end
-
 propTrigger.interactedEvent:Connect(OnInteracted)

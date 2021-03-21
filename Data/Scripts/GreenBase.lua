@@ -10,6 +10,7 @@ local function greenRotateLever()
 	propGreenLeverPull:Play()
 	local timeElapsed, timeRequested = Task.Wait(1)
 	propGreenBeam:Play()
+	propGreenBaseTrigger.interactionLabel = 'Green Mission Accomplished!'
 end
 
 propGreenBaseTrigger.interactedEvent:Connect(greenRotateLever)

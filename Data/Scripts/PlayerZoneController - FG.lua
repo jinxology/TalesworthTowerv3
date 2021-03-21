@@ -91,19 +91,24 @@ function SetTarget()
         pt2 = propRow3Point2
     end
 
+    speed = math.random(100,550)
     if (propRow1Point1.x == propRow1Point2.x) then
         myPos.y = math.random(pt1.y, pt2.y)
         myPos.x = pt1.x
-        mySpeed.y = targetData[(targetIndex-1)*3+2]
+        --mySpeed.y = targetData[(targetIndex-1)*3+2]
+        mySpeed.y = speed
     else
         myPos.x = math.random(pt1.x, pt2.x)
         myPos.y = pt1.y
-        mySpeed.x = targetData[(targetIndex-1)*3+2]
+        --mySpeed.x = targetData[(targetIndex-1)*3+2]
+        mySpeed.x = speed
     end
     myPos.z = -1164
+    --height = tonumber(targetData[(targetIndex-1)*3+3])
+    height = math.random(-500,-100)
     currentTarget:SetPosition(myPos)
     local targetScript = currentTarget:GetCustomProperty("BullseyeMover"):WaitForObject()    
-    targetScript.context.SetDataAndStartAction(mySpeed, pt1.y, pt2.y,tonumber(targetData[(targetIndex-1)*3+3]))
+    targetScript.context.SetDataAndStartAction(mySpeed, pt1.y, pt2.y,height)
 end
 
 function BeginTargetPractice(in_playerInThisZone)

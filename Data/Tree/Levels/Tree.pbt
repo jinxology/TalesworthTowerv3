@@ -1,13 +1,46 @@
 Name: "Levels"
 RootId: 13991120868083209491
 Objects {
+  Id: 9132562513265036101
+  Name: "Level.JumpMan"
+  Transform {
+    Location {
+      X: 1225
+      Y: 4000
+      Z: 11275
+    }
+    Rotation {
+      Yaw: -135
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13991120868083209491
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Level_JumpMan"
+  }
+}
+Objects {
   Id: 1232579912354001357
   Name: "Level.Puckollossal"
   Transform {
     Location {
       X: 2330
       Y: 2830
-      Z: 12125
+      Z: 12850
     }
     Rotation {
       Yaw: 90
@@ -31,39 +64,6 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Level_Puckollossal"
-  }
-}
-Objects {
-  Id: 15756692083103120201
-  Name: "Level.JumpMan"
-  Transform {
-    Location {
-      X: 2158.2605
-      Y: 4200
-      Z: 10958.9463
-    }
-    Rotation {
-      Yaw: -136.270554
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13991120868083209491
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Level_JumpMan"
   }
 }
 Objects {
@@ -289,6 +289,9 @@ Objects {
   Name: "Lobby"
   Transform {
     Location {
+      X: -542.549561
+      Y: -6476.57666
+      Z: 6.10351563e-05
     }
     Rotation {
     }
