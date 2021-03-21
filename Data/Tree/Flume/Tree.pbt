@@ -30,9 +30,10 @@ Objects {
     AudioAsset {
       Id: 8002337567237634747
     }
-    Volume: 1.30734479
-    Falloff: -1
-    Radius: 1124.9281
+    AutoPlay: true
+    Volume: 0.984679461
+    Falloff: 2100
+    Radius: 2179.57642
     EnableOcclusion: true
     IsSpatializationEnabled: true
     IsAttenuationEnabled: true
@@ -1380,7 +1381,7 @@ Objects {
   Name: "Teleport In"
   Transform {
     Location {
-      X: -631.527
+      X: -644.306152
     }
     Rotation {
     }
@@ -1413,6 +1414,72 @@ Objects {
         Mass: 100
         LinearDamping: 0.01
       }
+    }
+  }
+}
+Objects {
+  Id: 7212484202102289056
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: -699.999512
+    }
+    Rotation {
+    }
+    Scale {
+      X: 11.3530912
+      Y: 11.3530912
+      Z: 11.3530912
+    }
+  }
+  ParentId: 4159855513164329778
+  ChildIds: 3927091474525225093
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
+  Id: 3927091474525225093
+  Name: "RagdollPlayer"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.285327762
+      Y: 0.285327762
+      Z: 0.285327762
+    }
+  }
+  ParentId: 7212484202102289056
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 16741261518964209400
     }
   }
 }

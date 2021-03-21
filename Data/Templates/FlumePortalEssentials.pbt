@@ -233,7 +233,7 @@ Assets {
               R: 1
               G: 1
               B: 1
-              A: 0.104
+              A: 0.365
             }
           }
           Overrides {
@@ -242,7 +242,7 @@ Assets {
               R: 1
               G: 0.86
               B: 0.86
-              A: 0.081
+              A: 0.363
             }
           }
           Overrides {
@@ -282,6 +282,7 @@ Assets {
         Name: "Nature Wind Steady 01 SFX"
         Transform {
           Location {
+            X: 200
             Z: 0.00048828125
           }
           Rotation {
@@ -307,9 +308,9 @@ Assets {
           AudioAsset {
             Id: 8002337567237634747
           }
-          Volume: 1.30734479
-          Falloff: -1
-          Radius: 1124.9281
+          Volume: 0.984679461
+          Falloff: 1500
+          Radius: 1119.51978
           EnableOcclusion: true
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true

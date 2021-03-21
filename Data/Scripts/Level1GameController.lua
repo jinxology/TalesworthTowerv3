@@ -62,12 +62,12 @@ function SpawnShape()
     end 
     
     --Color
-    --Yellow=1, Red=2, Purple=3, Green=4
+    --Grey=1, Red=2, Purple=3, Green=4
     --
     myColor = math.random(4)    
     if myColor == 1 then
-        --Yellow
-        myShapeObj:SetColor(Color.FromStandardHex("#FFF686FF"))
+        --Grey
+        myShapeObj:SetColor(Color.FromStandardHex("#E0E0E0FF"))
     elseif myColor == 2 then
         --Red
         myShapeObj:SetColor(Color.FromStandardHex("#FF5959FF"))
@@ -100,9 +100,28 @@ function HideShapes()
     propShapeHexagon.visibility = Visibility.FORCE_OFF
 end
 
-function OnColorButtonPressed(whichShape, whichColor) 
+function GetShapeName(in_id)
+    if (in_id == 1) then return "Square" 
+    elseif (in_id == 2) then return "Triangle"
+    elseif (in_id == 3) then return "Circle"
+    elseif (in_id == 4) then return "Hexagon"
+    end
+end
+
+function GetColorName(in_id)
+    if (in_id == 1) then return "Grey" 
+    elseif (in_id == 2) then return "Red"
+    elseif (in_id == 3) then return "Purple"
+    elseif (in_id == 4) then return "Green"
+    end
+end
+
+function OnColorButtonPressed(whichShape, whichColor, whoDidIt) 
     print ("pressed " .. whichShape .. " : " .. whichColor)
     print ("Current Shape: " .. whichShape .. ", Current Color: " .. whichColor)
+
+    propMainGameController.context.SendGeneralMessageToClients("05,"..whoDidIt.." pressed a "..GetColorName(whichColor).." button near "..GetShapeName(whichShape))
+
     if (propMainGameController.context.levelRunning) then
         if (whichShape == myShape and whichColor == myColor) then
             successes = successes + 1
