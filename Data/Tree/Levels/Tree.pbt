@@ -38,9 +38,9 @@ Objects {
   Name: "Level.Puckollossal"
   Transform {
     Location {
-      X: 2330
-      Y: 2830
-      Z: 12850
+      X: 2400
+      Y: 4800
+      Z: 12800
     }
     Rotation {
       Yaw: 90

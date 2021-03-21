@@ -100,7 +100,7 @@ Assets {
           }
           Scale {
             X: 2
-            Y: 2
+            Y: 3
             Z: 2
           }
         }
@@ -154,7 +154,7 @@ Assets {
           }
           Scale {
             X: 2
-            Y: 2
+            Y: 3
             Z: 2
           }
         }
@@ -357,7 +357,7 @@ Assets {
         Text {
           Text: "GRAB A BALLOON"
           FontAsset {
-            Id: 14335849019668212431
+            Id: 11346866542551009952
           }
           Color {
             R: 0.0149999857
@@ -381,7 +381,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 43.0029297
+            Y: 104
             Z: 381
           }
           Rotation {
@@ -407,7 +407,7 @@ Assets {
         Text {
           Text: "BOP IT INTO THE LIGHT:"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 11346866542551009952
           }
           Color {
             R: 1
@@ -431,7 +431,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 51.4882202
+            Y: 112.485291
             Z: 380
           }
           Rotation {
@@ -457,7 +457,7 @@ Assets {
         Text {
           Text: "+"
           FontAsset {
-            Id: 7442631548796593267
+            Id: 11346866542551009952
           }
           Color {
             R: 1
@@ -481,7 +481,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 67.0445557
+            Y: 128.041626
             Z: 380
           }
           Rotation {
@@ -507,7 +507,7 @@ Assets {
         Text {
           Text: "1"
           FontAsset {
-            Id: 7442631548796593267
+            Id: 11346866542551009952
           }
           Color {
             R: 1
@@ -531,7 +531,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 43.0029297
+            Y: 104
             Z: 343
           }
           Rotation {
@@ -557,7 +557,7 @@ Assets {
         Text {
           Text: "POP IT ON A WEAPON:"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 11346866542551009952
           }
           Color {
             R: 1
@@ -581,7 +581,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 51.4882202
+            Y: 112.485291
             Z: 342
           }
           Rotation {
@@ -607,7 +607,7 @@ Assets {
         Text {
           Text: "+"
           FontAsset {
-            Id: 7442631548796593267
+            Id: 11346866542551009952
           }
           Color {
             R: 1
@@ -631,7 +631,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 74
+            Y: 134.99707
             Z: 333
           }
           Rotation {
@@ -908,7 +908,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 43.0029297
+            Y: 104
             Z: 306
           }
           Rotation {
@@ -934,7 +934,7 @@ Assets {
         Text {
           Text: "BOP A POP COLOR:"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 11346866542551009952
           }
           Color {
             R: 1
@@ -958,7 +958,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 51.4882202
+            Y: 112.485291
             Z: 306
           }
           Rotation {
@@ -984,7 +984,7 @@ Assets {
         Text {
           Text: "-"
           FontAsset {
-            Id: 7442631548796593267
+            Id: 11346866542551009952
           }
           Color {
             R: 1
@@ -1008,7 +1008,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 67.0445557
+            Y: 128.041626
             Z: 305
           }
           Rotation {
@@ -1034,7 +1034,7 @@ Assets {
         Text {
           Text: "1"
           FontAsset {
-            Id: 7442631548796593267
+            Id: 11346866542551009952
           }
           Color {
             R: 1
@@ -1058,7 +1058,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 51.4882202
+            Y: 112.485291
             Z: 267
           }
           Rotation {
@@ -1084,7 +1084,7 @@ Assets {
         Text {
           Text: "-"
           FontAsset {
-            Id: 7442631548796593267
+            Id: 11346866542551009952
           }
           Color {
             R: 1
@@ -1108,7 +1108,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 67.0445557
+            Y: 128.041626
             Z: 268
           }
           Rotation {
@@ -1134,7 +1134,7 @@ Assets {
         Text {
           Text: "1"
           FontAsset {
-            Id: 7442631548796593267
+            Id: 11346866542551009952
           }
           Color {
             R: 1
@@ -1158,7 +1158,7 @@ Assets {
         Transform {
           Location {
             X: -24
-            Y: 43.0029297
+            Y: 104
             Z: 268
           }
           Rotation {
@@ -1184,7 +1184,7 @@ Assets {
         Text {
           Text: "POP A BOP COLOR:"
           FontAsset {
-            Id: 14915146488722599156
+            Id: 11346866542551009952
           }
           Color {
             R: 1
@@ -1234,7 +1234,7 @@ Assets {
         Text {
           Text: "BEAT THE TIMER"
           FontAsset {
-            Id: 14335849019668212431
+            Id: 11346866542551009952
           }
           Color {
             R: 0.0149999857
@@ -1284,7 +1284,7 @@ Assets {
         Text {
           Text: "there is nothing to fear"
           FontAsset {
-            Id: 2335683715832012711
+            Id: 11346866542551009952
           }
           Color {
             R: 1
@@ -1334,7 +1334,7 @@ Assets {
         Text {
           Text: "OBEY ALL RULES"
           FontAsset {
-            Id: 14335849019668212431
+            Id: 11346866542551009952
           }
           Color {
             R: 0.0149999857
@@ -1482,30 +1482,12 @@ Assets {
       }
     }
     Assets {
-      Id: 14335849019668212431
-      Name: "Play Bold"
+      Id: 11346866542551009952
+      Name: "Roboto Black"
       PlatformAssetType: 28
       PrimaryAsset {
         AssetType: "FontAssetRef"
-        AssetId: "PlayBold_ref"
-      }
-    }
-    Assets {
-      Id: 14915146488722599156
-      Name: "Anton"
-      PlatformAssetType: 28
-      PrimaryAsset {
-        AssetType: "FontAssetRef"
-        AssetId: "AntonRegular_ref"
-      }
-    }
-    Assets {
-      Id: 7442631548796593267
-      Name: "Roboto Slab Black"
-      PlatformAssetType: 28
-      PrimaryAsset {
-        AssetType: "FontAssetRef"
-        AssetId: "RobotoSlabBlack_ref"
+        AssetId: "RobotoBlack_ref"
       }
     }
     Assets {
@@ -1542,15 +1524,6 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_cone_truncated_hollow_001"
-      }
-    }
-    Assets {
-      Id: 2335683715832012711
-      Name: "Cabin Bold"
-      PlatformAssetType: 28
-      PrimaryAsset {
-        AssetType: "FontAssetRef"
-        AssetId: "CabinBold_ref"
       }
     }
     Assets {
