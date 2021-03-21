@@ -14,7 +14,7 @@ local propBtnPoolPlatforms = script:GetCustomProperty("btnPoolPlatforms"):WaitFo
 local propBtnCountNetworkedObjects = script:GetCustomProperty("btnCountNetworkedObjects"):WaitForObject()
 
 local showingMe = false
-levelList = {"ShapesAndButtons","ColorDials","BopAndPop","Maze","Jumpman","FarmGallery","PoolPlatforms"}
+levelList = {"ShapesAndButtons","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Maze"}
 currentLevelIndex = 1
 requiredNbrPlayersReady = 4
 
@@ -44,19 +44,19 @@ function OnClickedSetLevel(whichButton)
         currentLevelIndex = 2
         newLoc = Vector3.New (-938,-990,1916)
     elseif (whichButton.name == "btnColoredDials") then
-        currentLevelIndex = 3
+        currentLevelIndex = 5
         newLoc = Vector3.New (-87,-354,4594)
     elseif (whichButton.name == "btnMaze") then
-        currentLevelIndex = 4
+        currentLevelIndex = 7
         newLoc = Vector3.New (-87,-354,3855)
     elseif (whichButton.name == "btnJumpman") then
-        currentLevelIndex = 5
+        currentLevelIndex = 3
         newLoc = Vector3.New (-172,1969,10591)
     elseif (whichButton.name == "btnFarmGallery") then
-        currentLevelIndex = 6
+        currentLevelIndex = 4
         newLoc = Vector3.New (137,252,6132)
     elseif (whichButton.name == "btnPoolPlatforms") then
-        currentLevelIndex = 7
+        currentLevelIndex = 6
         newLoc = Vector3.New (4598,1292,8833)
     end
 
