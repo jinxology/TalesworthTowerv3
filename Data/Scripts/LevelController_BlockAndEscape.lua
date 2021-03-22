@@ -96,5 +96,3 @@ end
 --ResetLevel is called when the level needs to get reset to its original state
 function ResetLevel() 
 end	
-
---LevelPowerUp()
