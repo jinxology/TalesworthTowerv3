@@ -83,9 +83,15 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:CreatureCowMooLong01SFX"
+            Name: "cs:longMooSFX"
             ObjectReference {
               SubObjectId: 10036626272614406052
+            }
+          }
+          Overrides {
+            Name: "cs:shortMooSFX"
+            ObjectReference {
+              SubObjectId: 2654900809422222141
             }
           }
         }
@@ -2826,9 +2832,6 @@ Assets {
         Name: "Creature Cow Moo Short 01 SFX"
         Transform {
           Location {
-            X: -1375
-            Y: 3475
-            Z: 1300
           }
           Rotation {
           }
@@ -2853,6 +2856,7 @@ Assets {
           AudioAsset {
             Id: 1629201855242590202
           }
+          Pitch: -800
           Volume: 1
           Falloff: -1
           Radius: -1
@@ -2866,9 +2870,6 @@ Assets {
         Name: "Creature Giant Monster Epic Heavy Footstep 02 SFX"
         Transform {
           Location {
-            X: -1375
-            Y: 3475
-            Z: 1300
           }
           Rotation {
           }
@@ -2893,7 +2894,7 @@ Assets {
           AudioAsset {
             Id: 5520628391328548482
           }
-          Volume: 3.99818754
+          Volume: 1
           Falloff: -1
           Radius: 5000
           EnableOcclusion: true
@@ -2906,9 +2907,6 @@ Assets {
         Name: "Creature Cow Moo Long 01 SFX"
         Transform {
           Location {
-            X: -1375
-            Y: 3475
-            Z: 1300
           }
           Rotation {
           }
@@ -2933,10 +2931,10 @@ Assets {
           AudioAsset {
             Id: 7412387329302415405
           }
-          Pitch: -970.82666
-          Volume: 2.03966904
+          Pitch: -800
+          Volume: 3
           Falloff: -1
-          Radius: -1
+          Radius: 5000
           EnableOcclusion: true
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true

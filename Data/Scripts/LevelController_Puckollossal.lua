@@ -6,10 +6,10 @@ local propCurrentPuck = nil
 
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(-1465, -1495, 225)
-exitFlumeRotation = Rotation.New(0, 45, 45)
-entranceFlumeLocation = Vector3.New(1465, 1495, 225)
-entranceFlumeRotation = Rotation.New(0, 45, -135)
+exitFlumeLocation = Vector3.New(-3225, 2000, 1525)
+exitFlumeRotation = Rotation.New(0, -90, 0)
+entranceFlumeLocation = Vector3.New(-10000, 2000, 1500)
+entranceFlumeRotation = Rotation.New(0, 0, 0)
 entranceFlumeEjectionVelocity = 8.79
 startPlatformPosition = Vector3.New(-725, -1350, -25)
 startPlatformRotation = Rotation.New(0, 0, -45)
@@ -31,6 +31,7 @@ function ScoreTriggerDidOverlap(trigger, other)
             propCurrentPuck = other
             other:GetCustomProperty("controller"):WaitForObject().context.SetStabilized(false)
             propScoreSFX:Play()
+            print("score sfx")
         end
     end
 end
