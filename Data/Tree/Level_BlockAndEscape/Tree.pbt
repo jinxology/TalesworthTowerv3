@@ -48,7 +48,7 @@ Objects {
     }
   }
   ParentId: 3535859253216386145
-  ChildIds: 16517240093619913613
+  ChildIds: 4470755701701128078
   ChildIds: 13720500838099646351
   ChildIds: 15520761824702107882
   ChildIds: 8403542383002811805
@@ -84,7 +84,7 @@ Objects {
     }
   }
   ParentId: 13040985775079830940
-  ChildIds: 7462667321770069337
+  ChildIds: 16759498759646476764
   ChildIds: 17443057099197931882
   ChildIds: 16604020875119091447
   ChildIds: 1173814658073753257
@@ -357,13 +357,9 @@ Objects {
   }
 }
 Objects {
-  Id: 7462667321770069337
-  Name: "PlatformScript"
+  Id: 16759498759646476764
+  Name: "VictoryPlatform"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -371,42 +367,6 @@ Objects {
     }
   }
   ParentId: 928355795574037402
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:platformNbr"
-      Int: 4
-    }
-    Overrides {
-      Name: "cs:platformGroupMgr"
-      ObjectReference {
-        SelfId: 841534158063459245
-      }
-    }
-    Overrides {
-      Name: "cs:beam"
-      ObjectReference {
-        SelfId: 1173814658073753257
-      }
-    }
-    Overrides {
-      Name: "cs:trigger"
-      ObjectReference {
-        SelfId: 17443057099197931882
-      }
-    }
-    Overrides {
-      Name: "cs:beamOffSound"
-      ObjectReference {
-        SelfId: 16604020875119091447
-      }
-    }
-    Overrides {
-      Name: "cs:outerRing"
-      ObjectReference {
-        SelfId: 1314819552174716297
-      }
-    }
-  }
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -414,12 +374,54 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 9622651202504805954
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11666421519802447928
+      value {
+        Overrides {
+          Name: "Name"
+          String: "VictoryPlatform"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "cs:platformNbr"
+          Int: 4
+        }
+        Overrides {
+          Name: "cs:PlatformTrigger"
+          ObjectReference {
+            SelfId: 17443057099197931882
+          }
+        }
+        Overrides {
+          Name: "cs:beam"
+          ObjectReference {
+            SelfId: 1173814658073753257
+          }
+        }
+        Overrides {
+          Name: "cs:outerRing"
+          ObjectReference {
+            SelfId: 1314819552174716297
+          }
+        }
+        Overrides {
+          Name: "cs:beamOffSound"
+          ObjectReference {
+            SelfId: 16604020875119091447
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9762441339736559059
     }
   }
 }
@@ -439,7 +441,7 @@ Objects {
     }
   }
   ParentId: 13040985775079830940
-  ChildIds: 7378760762043332323
+  ChildIds: 11013337679482506431
   ChildIds: 12386753743584245628
   ChildIds: 14083106950017448173
   ChildIds: 17576516088993657308
@@ -712,13 +714,9 @@ Objects {
   }
 }
 Objects {
-  Id: 7378760762043332323
-  Name: "PlatformScript"
+  Id: 11013337679482506431
+  Name: "VictoryPlatform"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -726,42 +724,6 @@ Objects {
     }
   }
   ParentId: 8403542383002811805
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:platformNbr"
-      Int: 3
-    }
-    Overrides {
-      Name: "cs:platformGroupMgr"
-      ObjectReference {
-        SelfId: 841534158063459245
-      }
-    }
-    Overrides {
-      Name: "cs:beam"
-      ObjectReference {
-        SelfId: 17576516088993657308
-      }
-    }
-    Overrides {
-      Name: "cs:trigger"
-      ObjectReference {
-        SelfId: 12386753743584245628
-      }
-    }
-    Overrides {
-      Name: "cs:beamOffSound"
-      ObjectReference {
-        SelfId: 14083106950017448173
-      }
-    }
-    Overrides {
-      Name: "cs:outerRing"
-      ObjectReference {
-        SelfId: 9232381356386986082
-      }
-    }
-  }
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -769,12 +731,61 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 9622651202504805954
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11666421519802447928
+      value {
+        Overrides {
+          Name: "Name"
+          String: "VictoryPlatform"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -6.1035149e-05
+            Y: 3.63797881e-12
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "cs:platformNbr"
+          Int: 3
+        }
+        Overrides {
+          Name: "cs:PlatformTrigger"
+          ObjectReference {
+            SelfId: 12386753743584245628
+          }
+        }
+        Overrides {
+          Name: "cs:beam"
+          ObjectReference {
+            SelfId: 17576516088993657308
+          }
+        }
+        Overrides {
+          Name: "cs:beamOffSound"
+          ObjectReference {
+            SelfId: 14083106950017448173
+          }
+        }
+        Overrides {
+          Name: "cs:outerRing"
+          ObjectReference {
+            SelfId: 9232381356386986082
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9762441339736559059
     }
   }
 }
@@ -794,7 +805,7 @@ Objects {
     }
   }
   ParentId: 13040985775079830940
-  ChildIds: 18119854464927159297
+  ChildIds: 13875724082077222517
   ChildIds: 2757656229361156422
   ChildIds: 9758786610454629548
   ChildIds: 846183734454452335
@@ -1067,13 +1078,9 @@ Objects {
   }
 }
 Objects {
-  Id: 18119854464927159297
-  Name: "PlatformScript"
+  Id: 13875724082077222517
+  Name: "VictoryPlatform"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -1081,42 +1088,6 @@ Objects {
     }
   }
   ParentId: 15520761824702107882
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:platformNbr"
-      Int: 2
-    }
-    Overrides {
-      Name: "cs:platformGroupMgr"
-      ObjectReference {
-        SelfId: 841534158063459245
-      }
-    }
-    Overrides {
-      Name: "cs:beam"
-      ObjectReference {
-        SelfId: 846183734454452335
-      }
-    }
-    Overrides {
-      Name: "cs:trigger"
-      ObjectReference {
-        SelfId: 2757656229361156422
-      }
-    }
-    Overrides {
-      Name: "cs:beamOffSound"
-      ObjectReference {
-        SelfId: 9758786610454629548
-      }
-    }
-    Overrides {
-      Name: "cs:outerRing"
-      ObjectReference {
-        SelfId: 4170541432979185483
-      }
-    }
-  }
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1124,12 +1095,67 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 9622651202504805954
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11666421519802447928
+      value {
+        Overrides {
+          Name: "Name"
+          String: "VictoryPlatform"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -0.000122070298
+            Y: 7.27595761e-12
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "cs:platformNbr"
+          Int: 2
+        }
+        Overrides {
+          Name: "cs:PlatformTrigger"
+          ObjectReference {
+            SelfId: 2757656229361156422
+          }
+        }
+        Overrides {
+          Name: "cs:platformGroupMgr"
+          ObjectReference {
+            SelfId: 4470755701701128078
+          }
+        }
+        Overrides {
+          Name: "cs:beam"
+          ObjectReference {
+            SelfId: 846183734454452335
+          }
+        }
+        Overrides {
+          Name: "cs:outerRing"
+          ObjectReference {
+            SelfId: 4170541432979185483
+          }
+        }
+        Overrides {
+          Name: "cs:beamOffSound"
+          ObjectReference {
+            SelfId: 9758786610454629548
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9762441339736559059
     }
   }
 }
@@ -1149,7 +1175,7 @@ Objects {
     }
   }
   ParentId: 13040985775079830940
-  ChildIds: 1721043655750226499
+  ChildIds: 2088241973987607637
   ChildIds: 4563201376255627698
   ChildIds: 12166896242192310978
   ChildIds: 18298853565320756639
@@ -1422,13 +1448,9 @@ Objects {
   }
 }
 Objects {
-  Id: 1721043655750226499
-  Name: "PlatformScript"
+  Id: 2088241973987607637
+  Name: "VictoryPlatform"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -1436,42 +1458,6 @@ Objects {
     }
   }
   ParentId: 13720500838099646351
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:platformNbr"
-      Int: 1
-    }
-    Overrides {
-      Name: "cs:platformGroupMgr"
-      ObjectReference {
-        SelfId: 841534158063459245
-      }
-    }
-    Overrides {
-      Name: "cs:beam"
-      ObjectReference {
-        SelfId: 18298853565320756639
-      }
-    }
-    Overrides {
-      Name: "cs:trigger"
-      ObjectReference {
-        SelfId: 4563201376255627698
-      }
-    }
-    Overrides {
-      Name: "cs:beamOffSound"
-      ObjectReference {
-        SelfId: 12166896242192310978
-      }
-    }
-    Overrides {
-      Name: "cs:outerRing"
-      ObjectReference {
-        SelfId: 2120715240679663639
-      }
-    }
-  }
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1479,18 +1465,37 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 9622651202504805954
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11666421519802447928
+      value {
+        Overrides {
+          Name: "Name"
+          String: "VictoryPlatform"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -0.000366210879
+            Y: 2.91038305e-11
+          }
+        }
+        Overrides {
+          Name: "cs:platformGroupMgr"
+          ObjectReference {
+            SelfId: 4470755701701128078
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9762441339736559059
     }
   }
 }
 Objects {
-  Id: 16517240093619913613
-  Name: "BlockAndEscape.VictoryPlatformGroup"
+  Id: 4470755701701128078
+  Name: "VictoryPlatformGroupScript"
   Transform {
     Location {
     }
@@ -1529,15 +1534,9 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:LevelControllerBlockAndEscape"
+      Name: "cs:LevelController"
       ObjectReference {
         SelfId: 8870300546602620809
-      }
-    }
-    Overrides {
-      Name: "cs:MainGameController"
-      ObjectReference {
-        SelfId: 6965558101138960242
       }
     }
   }
@@ -1553,7 +1552,68 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 11477245503489206911
+      Id: 12882338686631424764
+    }
+  }
+}
+Objects {
+  Id: 3800188033950683261
+  Name: "ForceField"
+  Transform {
+    Location {
+      X: 2275
+      Y: 1350
+      Z: 2075
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.4
+      Y: 32.8
+      Z: 7.20000029
+    }
+  }
+  ParentId: 3535859253216386145
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 10463331453705133025
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.269999981
+        G: 0.91298
+        B: 1
+        A: 1
+      }
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
     }
   }
 }

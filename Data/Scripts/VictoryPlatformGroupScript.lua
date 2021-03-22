@@ -1,5 +1,4 @@
-local propLevelControllerBlockAndEscape = script:GetCustomProperty("LevelControllerBlockAndEscape"):WaitForObject()
-local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
+local propLevelController = script:GetCustomProperty("LevelController"):WaitForObject()
 local propStartPlatform1 = script:GetCustomProperty("StartPlatform1"):WaitForObject()
 local propStartPlatform2 = script:GetCustomProperty("StartPlatform2"):WaitForObject()
 local propStartPlatform3 = script:GetCustomProperty("StartPlatform3"):WaitForObject()
@@ -40,9 +39,10 @@ end
 function CheckIfPlayersReady()
     local nbrReady = NbrOfPlayersOnStartPlatforms()
   
-  	if nbrReady >= 1 then  --Update to 4 when readysa
-       propLevelControllerBlockAndEscape.context.LevelVictory()
-       
+	local playerList = Game.GetPlayers()
+	
+  	if nbrReady >= #playerList then 
+       propLevelController.context.LevelVictory()
     end
 end
 
