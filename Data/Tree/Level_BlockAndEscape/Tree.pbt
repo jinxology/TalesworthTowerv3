@@ -1528,6 +1528,18 @@ Objects {
         SelfId: 928355795574037402
       }
     }
+    Overrides {
+      Name: "cs:LevelControllerBlockAndEscape"
+      ObjectReference {
+        SelfId: 8870300546602620809
+      }
+    }
+    Overrides {
+      Name: "cs:MainGameController"
+      ObjectReference {
+        SelfId: 6965558101138960242
+      }
+    }
   }
   WantsNetworking: true
   Collidable_v2 {

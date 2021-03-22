@@ -46,7 +46,7 @@ Assets {
           Settings {
             IsEnabled: true
             OverrideMass: true
-            Mass: 600
+            Mass: 1200
             AngularDamping: 3
           }
           Radius: 50

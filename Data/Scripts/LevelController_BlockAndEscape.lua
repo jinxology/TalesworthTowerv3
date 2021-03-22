@@ -41,7 +41,7 @@ local ballsStartingConfig = {
 	{color = Color.BLUE, 	position = Vector3.New(-3550,-1100, -125), scale = LARGE_BALL_SCALE},
 	{color = Color.YELLOW, 	position = Vector3.New(-3050, 1050, -150), scale = MEDIUM_BALL_SCALE},
 	{color = Color.RED, 	position = Vector3.New(-5080, -224, -200), scale = SMALL_BALL_SCALE},
-	{color = Color.RED, 	position = Vector3.New(-2275, -1125, -200), scale = SMALL_BALL_SCALE}	
+	{color = Color.RED, 	position = Vector3.New(-2275,-1125, -200), scale = SMALL_BALL_SCALE}	
 }
 
 local folderRoot = script.parent --Will get the top level folder "Level.BlockAndEscape"			
@@ -66,7 +66,7 @@ end
 
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds
 function LevelBegin()
-	propMainGameController.context.StartTimer(SECONDS_TO_COMPLETE_LEVELS, LevelFailed())
+	propMainGameController.context.StartTimer(SECONDS_TO_COMPLETE_LEVELS, LevelFailed)
 end
 
 --LevelEnd code is called when the....
@@ -76,6 +76,9 @@ end
 
 --LevelPowerDown is called from the next level back to this one to clean it up and remove it from memory
 function LevelPowerDown() 
+	for ballIndex, ball in ballArray do
+		ballArray[ballIndex]:Destroy()
+	end
 end
 
 --LevelVictory is called when the Win Condition of the game is met
