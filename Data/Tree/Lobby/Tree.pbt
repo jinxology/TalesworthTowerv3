@@ -452,8 +452,8 @@ Objects {
   Name: "Pipe Ring"
   Transform {
     Location {
-      X: 160.134766
-      Y: 691.027344
+      X: 194.143799
+      Y: 718.90918
       Z: 2322.28
     }
     Rotation {
