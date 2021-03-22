@@ -1,13 +1,13 @@
 Assets {
   Id: 9276788853400672118
-  Name: "bae_Physics Sphere 5_5 Scale"
+  Name: "bae_Ball"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 4615058727204951439
       Objects {
         Id: 4615058727204951439
-        Name: "Physics Sphere 5.5 Scale"
+        Name: "bae_Ball"
         Transform {
           Scale {
             X: 5.5
@@ -17,6 +17,18 @@ Assets {
         }
         ParentId: 5727767727766945175
         ChildIds: 8532988851465859103
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Color"
+            Color {
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "cs:Color:isrep"
+            Bool: true
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -33,7 +45,8 @@ Assets {
           }
           Settings {
             IsEnabled: true
-            Mass: 100
+            OverrideMass: true
+            Mass: 600
             AngularDamping: 3
           }
           Radius: 50
@@ -55,6 +68,7 @@ Assets {
           }
         }
         ParentId: 4615058727204951439
+        ChildIds: 2691045041134347205
         ChildIds: 6617518156367628737
         WantsNetworking: true
         Collidable_v2 {
@@ -67,6 +81,53 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         NetworkContext {
+        }
+      }
+      Objects {
+        Id: 2691045041134347205
+        Name: "bae.BallClient"
+        Transform {
+          Location {
+            X: -218.198715
+            Y: 37.3281708
+            Z: 259.090912
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.181818187
+            Y: 0.181818187
+            Z: 0.181818187
+          }
+        }
+        ParentId: 8532988851465859103
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PhysicsSphereMesh"
+            ObjectReference {
+              SubObjectId: 6617518156367628737
+            }
+          }
+          Overrides {
+            Name: "cs:bae_PhysicsSphere5_5Scale"
+            ObjectReference {
+              SubObjectId: 4615058727204951439
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 1878852075388190940
+          }
         }
       }
       Objects {
