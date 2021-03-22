@@ -67,6 +67,9 @@ end
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds
 function LevelBegin()
 	propMainGameController.context.StartTimer(SECONDS_TO_COMPLETE_LEVELS, LevelFailed)
+	local forceField = folderRoot:FindDescendantByName("ForceField")
+	forceField.visibility = Visibility.FORCE_OFF
+	forceField.collision = Collision.FORCE_OFF
 end
 
 --LevelEnd code is called when the....
