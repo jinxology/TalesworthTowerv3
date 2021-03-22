@@ -71,6 +71,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12827530473249900764
+  Name: "Emissive Glow Opaque"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "fxma_opaque_emissive"
+  }
+}
+Assets {
   Id: 12758036443323469769
   Name: "Urban Fence Pole - Extender End"
   PlatformAssetType: 1
@@ -98,12 +107,30 @@ Assets {
   }
 }
 Assets {
+  Id: 11150102244442488264
+  Name: "Terrain - Snow"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_terrain_rock-snow_001_wa"
+  }
+}
+Assets {
   Id: 10806280224339831972
   Name: "Whitebox Wall 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_gen_whitebox_wall_001"
+  }
+}
+Assets {
+  Id: 10433178193673967512
+  Name: "Trim - Curve 90\302\260 - 16m Radius"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_trimitives_001_curve90_16m_ref"
   }
 }
 Assets {
@@ -197,6 +224,15 @@ Assets {
   }
 }
 Assets {
+  Id: 3439404920670878710
+  Name: "Country & Western Music Score Set 01"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "abp_CountryWesternMusic_ref"
+  }
+}
+Assets {
   Id: 2817890560817570586
   Name: "Modern Weapon Barrel 01"
   PlatformAssetType: 1
@@ -212,15 +248,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weap_fan_guard_sword_001"
-  }
-}
-Assets {
-  Id: 1523214900353875295
-  Name: "Snow 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_snow_001_uv"
   }
 }
 Assets {
