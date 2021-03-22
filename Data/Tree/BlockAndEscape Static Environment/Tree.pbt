@@ -63,7 +63,7 @@ Objects {
   Name: "Whitebox Floor 01 4m x 4m"
   Transform {
     Location {
-      X: -5425
+      X: -5437.13867
       Y: 2150
       Z: 1913.0791
     }
@@ -1168,7 +1168,7 @@ Objects {
   Name: "Whitebox Floor 01 4m x 4m"
   Transform {
     Location {
-      X: 2250
+      X: 3375
       Y: -352.624512
       Z: 1175
     }
@@ -1176,7 +1176,7 @@ Objects {
       Yaw: 180
     }
     Scale {
-      X: 19.4
+      X: 22.4000034
       Y: 8.3
       Z: 1
     }

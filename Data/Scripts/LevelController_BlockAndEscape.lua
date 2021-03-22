@@ -14,8 +14,8 @@ startPlatformRotation = Rotation.New(0,0,-90)
 --To be finalized when Flumes objects and code are completed
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(-6000,2150,2300)
-exitFlumeRotation = Rotation.New(0,0,-91.785)
+exitFlumeLocation = Vector3.New(-6000,2125,2175)
+exitFlumeRotation = Rotation.New(0,0,-90)
 entranceFlumeLocation = Vector3.New(2600,-50,2625)
 entranceFlumeRotation = Rotation.New(0,-22.5,90)
 entranceFlumeEjectionVelocity = 15

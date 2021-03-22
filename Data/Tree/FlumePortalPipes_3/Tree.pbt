@@ -5,9 +5,9 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: -1254.47546
+      X: -1254.47131
       Y: 17.6939697
-      Z: -895.830078
+      Z: -1020.83008
     }
     Rotation {
     }
