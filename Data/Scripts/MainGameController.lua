@@ -30,9 +30,11 @@ function OnBindingPressed(player, bindingPressed)
     elseif (bindingPressed == "ability_extra_26") then
         --U
         ctrl.context.LevelVictory()
+        --LevelEnd(true)
     elseif (bindingPressed == "ability_extra_27") then
         --I
         ctrl.context.LevelFailed()
+        --LevelEnd(false)
     elseif (bindingPressed == "ability_extra_35") then
         --h
         currentLevelIndex = 2
@@ -118,8 +120,6 @@ end
 
 function ClearTimer()
     timerStarted = false
-    script:SetNetworkedCustomProperty("UIMessage","03,-1") --end on clients
-    --UpdateTimerText(-1)
 end
 
 -- function UpdateTimerText(newVal) 
@@ -326,10 +326,8 @@ end
 function LevelEnd(success)    
     levelRunning = false 
     SetNextLevelIndex(success)
-
+    
     if (not success and currentLevelIndex == 1) then
-        script:SetNetworkedCustomProperty("UIMessage","01,true,FAILED - RE-ACTIVATE PLATFORMS,false")
-
         ResetStartingPlatforms()
     else
         --Turn on exit flume of current level
@@ -353,8 +351,6 @@ function LevelEnd(success)
         end
         levelControllerScript.context.LevelPowerUp()
         
-        --Show go to exit
-        script:SetNetworkedCustomProperty("UIMessage","01,true,PROCEED TO EXIT TUBE,"..tostring(success))
 
         if levelControllerScript.context.entranceFlume then
             --Spawn the starting platforms
@@ -364,8 +360,18 @@ function LevelEnd(success)
         end
     end
 
-    local lightsDimTime = 5
+    --Talk to client
+    if (not success and currentLevelIndex == 1) then
+        --Clear timer and do reactive platforms
+        script:SetNetworkedCustomProperty("UIMessage","01,true,FAILED - RE-ACTIVATE PLATFORMS,false")
+    else 
+        --clear timer and say go to exit
+        script:SetNetworkedCustomProperty("UIMessage","01,true,PROCEED TO EXIT TUBE,"..tostring(success))
+    end
+    
     ClearTimer()
+
+    local lightsDimTime = 5
     if (not success) then
         MakeWorldDark()
     end
