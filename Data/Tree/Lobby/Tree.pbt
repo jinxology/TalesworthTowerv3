@@ -232,6 +232,10 @@ Objects {
   ChildIds: 11221296564099726894
   ChildIds: 890020345767231402
   ChildIds: 3557510368330428944
+  ChildIds: 2671392253425672434
+  ChildIds: 17004240488807627417
+  ChildIds: 7721716569135751245
+  ChildIds: 5424702505842762710
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -243,6 +247,204 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 5424702505842762710
+  Name: "Tornado VFX"
+  Transform {
+    Location {
+      X: 241.140381
+      Y: 493.243164
+      Z: 1955.07446
+    }
+    Rotation {
+      Pitch: 29.5220699
+      Yaw: -65.6396179
+      Roll: -3.61044312
+    }
+    Scale {
+      X: 1.97691321
+      Y: 1.97691321
+      Z: 1.97691321
+    }
+  }
+  ParentId: 6843243586446375208
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Color A"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 0.365
+      }
+    }
+    Overrides {
+      Name: "bp:Color B"
+      Color {
+        R: 1
+        G: 0.86
+        B: 0.86
+        A: 0.363
+      }
+    }
+    Overrides {
+      Name: "bp:Color C"
+      Color {
+        R: 0.099
+        G: 0.0701840147
+        B: 0.0340559967
+        A: 0.086
+      }
+    }
+    Overrides {
+      Name: "bp:Emissive Boost"
+      Float: 0
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 2342107764869404199
+    }
+    TeamSettings {
+    }
+  }
+}
+Objects {
+  Id: 7721716569135751245
+  Name: "FlumeWHOOSH"
+  Transform {
+    Location {
+      X: 70.5969238
+      Y: 1196.57861
+      Z: 2923.47217
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6843243586446375208
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:destinationForWhoosh"
+      ObjectReference {
+        SelfId: 2671392253425672434
+      }
+    }
+    Overrides {
+      Name: "cs:myTrigger"
+      ObjectReference {
+        SelfId: 17004240488807627417
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 3268196718473870542
+    }
+  }
+}
+Objects {
+  Id: 17004240488807627417
+  Name: "Trigger - Sucker"
+  Transform {
+    Location {
+      X: -518.998291
+      Y: 1872.14063
+      Z: 2952.45654
+    }
+    Rotation {
+    }
+    Scale {
+      X: 31.5115337
+      Y: 23.5909843
+      Z: 8.52800369
+    }
+  }
+  ParentId: 6843243586446375208
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
+  Id: 2671392253425672434
+  Name: "whooshVectorTarget"
+  Transform {
+    Location {
+      X: 244.4646
+      Y: 548.048828
+      Z: 2272.80127
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6843243586446375208
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3250892020078520154
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
   }
 }
 Objects {

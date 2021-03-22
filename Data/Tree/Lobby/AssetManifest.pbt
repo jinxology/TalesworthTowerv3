@@ -107,6 +107,24 @@ Assets {
   }
 }
 Assets {
+  Id: 3250892020078520154
+  Name: "Sphere"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_sphere_002"
+  }
+}
+Assets {
+  Id: 2342107764869404199
+  Name: "Tornado VFX"
+  PlatformAssetType: 6
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "fxbp_tornado"
+  }
+}
+Assets {
   Id: 1854457264003910494
   Name: "Teko Bold"
   PlatformAssetType: 28
