@@ -10,13 +10,14 @@ local timerStarted = false
 local timeLeft = 0
 
 function IncomingUIMessage(coreObject, propertyName)
+    print ("got here")    
     local msg = propMainGameController:GetCustomProperty(propertyName)
-    --print ("UIMESSAGE: "..msg)
+    print ("UIMESSAGE: "..msg)
     msgData = propUtility_ClientSide.context.Split(msg,",")
     
     if (msgData[1] == "00") then --Update timer
         UpdateTimer(tonumber(msgData[2]))
-    elseif (msgData[1] == "01") then --Show/Hide go to exit message and play sound
+    elseif (msgData[1] == "01") then --Show/Hide go to exit message and play sound and clear timer
         ToggleGoToExit(msgData[2],msgData[3],msgData[4])
     elseif (msgData[1] == "02") then --Start timer on only client
         StartTimerLocal(tonumber(msgData[2]))
@@ -81,15 +82,16 @@ function toboolean(value)
     end
 end
 
-function ToggleGoToExit(in_showMe, msg, in_success)
-    local showMe = toboolean(in_showMe)
-    local success = toboolean(in_success)
+function ToggleGoToExit(showMe, msg, success)
+    --local showMe = toboolean(in_showMe)
+    --local success = toboolean(in_success)
     
+    UpdateTimer(-1)
     ToggleBottomMessage(showMe,msg)
     
-    if (showMe) then
+    if (showMe == "true") then
         myPosition = Game.GetLocalPlayer():GetWorldPosition()        
-        if (success) then            
+        if (success == "true") then            
             World.SpawnAsset(propLevelVictorySound,{position=myPosition})
         else
             World.SpawnAsset(propLevelFailSound,{position=myPosition})

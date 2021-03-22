@@ -2,6 +2,8 @@ local propPhysics = script:GetCustomProperty("physics"):WaitForObject()
 local propFallHardSFX = script:GetCustomProperty("fallHardSFX"):WaitForObject()
 local propFloorLevel = propPhysics:GetPosition().z
 local propStabilizeTask = nil
+local propLongMooSFX = script:GetCustomProperty("longMooSFX"):WaitForObject()
+local propShortMooSFX = script:GetCustomProperty("shortMooSFX"):WaitForObject()
 
 --  PUBLIC
 propCanTip = false
@@ -14,7 +16,9 @@ function SetStabilized(stabilized)
     else
         propCanTip = true
         propCanBounce = true
-    end
+        propLongMooSFX:Play()
+        print("long moo")
+   end
 end
 
 local propFallingSpeed = 0
@@ -31,7 +35,7 @@ function Tick()
             --  bounce
             propFallHardSFX.volume = propFallingSpeed / -200
             propFallHardSFX:Play()
-            
+
             propFallingSpeed = 0
 
             if velocity.z == 0 then

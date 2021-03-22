@@ -1,13 +1,4 @@
 Assets {
-  Id: 18213690653136887655
-  Name: "Reverb Zone"
-  PlatformAssetType: 6
-  PrimaryAsset {
-    AssetType: "BlueprintAssetRef"
-    AssetId: "sfxbp_reverb_zone"
-  }
-}
-Assets {
   Id: 18073675066811160211
   Name: "Wedge Convex - Large"
   PlatformAssetType: 1
@@ -26,21 +17,12 @@ Assets {
   }
 }
 Assets {
-  Id: 16752997548390058292
-  Name: "Metal Old Beaten Gold 02"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_metal_gold_002"
-  }
-}
-Assets {
-  Id: 16621814471056366444
-  Name: "Ellipsoid - Truncated Wedge"
+  Id: 15340034010401438429
+  Name: "Pipe - 90-Degree Short Thin"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ellipsoid_truncated_wedge_001"
+    AssetId: "sm_pipe_curve90_004"
   }
 }
 Assets {
@@ -89,24 +71,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12905923173550510229
-  Name: "Cylinder - Polished"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cylinder_hq_test_001"
-  }
-}
-Assets {
-  Id: 12868138083867151982
-  Name: "Street Light Pole Clamp 01"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_urb_st_post_lights_post_clamp_001"
-  }
-}
-Assets {
   Id: 12758036443323469769
   Name: "Urban Fence Pole - Extender End"
   PlatformAssetType: 1
@@ -134,30 +98,21 @@ Assets {
   }
 }
 Assets {
-  Id: 9348120320040725071
-  Name: "Hay 02"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_fan_hay_002_uv"
-  }
-}
-Assets {
-  Id: 9321552232794385994
-  Name: "Pipe - 45-Degree Long Thick"
+  Id: 10806280224339831972
+  Name: "Whitebox Wall 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_pipe_curve45_006"
+    AssetId: "sm_ts_gen_whitebox_wall_001"
   }
 }
 Assets {
-  Id: 8923793940830097638
-  Name: "Concrete Basic 01"
+  Id: 10184847056121543272
+  Name: "Basic Material"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
-    AssetId: "mi_gen_concrete_001"
+    AssetId: "mi_basic_pbr_material_001"
   }
 }
 Assets {
@@ -170,30 +125,12 @@ Assets {
   }
 }
 Assets {
-  Id: 7412387329302415405
-  Name: "Creature Cow Moo Long 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_creature_cow_moo_long_01a_Cue_ref"
-  }
-}
-Assets {
   Id: 7283825798727192743
   Name: "Metal Iron Rusted 02"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_metal_iron_003"
-  }
-}
-Assets {
-  Id: 7033270109974381006
-  Name: "Pipe"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_pipe_001"
   }
 }
 Assets {
@@ -215,12 +152,12 @@ Assets {
   }
 }
 Assets {
-  Id: 5660774408795298116
-  Name: "Fantasy Sack Laying"
+  Id: 5668201541289739547
+  Name: "Pipe - Thin"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fantasy_sack_003_ref"
+    AssetId: "sm_pipe_003"
   }
 }
 Assets {
@@ -230,15 +167,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weapons_grenade_handle_001"
-  }
-}
-Assets {
-  Id: 5520628391328548482
-  Name: "Creature Giant Monster Epic Heavy Footstep 02 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_monster_giant_creature_epic_heavy_footstep_02_Cue_ref"
   }
 }
 Assets {
@@ -278,15 +206,6 @@ Assets {
   }
 }
 Assets {
-  Id: 2264041107168619230
-  Name: "Cone - Bullet"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_bullet_001"
-  }
-}
-Assets {
   Id: 1920010878601219178
   Name: "Fantasy Sword Guard 01"
   PlatformAssetType: 1
@@ -296,39 +215,12 @@ Assets {
   }
 }
 Assets {
-  Id: 1860525514493543587
-  Name: "Fantasy Sack Tied"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prop_fantasy_sack_002_ref"
-  }
-}
-Assets {
-  Id: 1629201855242590202
-  Name: "Creature Cow Moo Short 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_creature_cow_moo_short_01a_Cue_ref"
-  }
-}
-Assets {
   Id: 1523214900353875295
   Name: "Snow 01"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_snow_001_uv"
-  }
-}
-Assets {
-  Id: 1342935755952129588
-  Name: "Office Carpet Basic 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_urb_office_carpet_004_uv_ref"
   }
 }
 Assets {
