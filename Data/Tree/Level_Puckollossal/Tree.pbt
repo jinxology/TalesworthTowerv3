@@ -1576,7 +1576,6 @@ Objects {
     TeamSettings {
     }
     AudioBP {
-      AutoPlay: true
       Volume: 1
       Falloff: 3600
       Radius: 2000
