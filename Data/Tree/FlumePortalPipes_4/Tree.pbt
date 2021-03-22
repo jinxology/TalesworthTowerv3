@@ -5,8 +5,9 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: -1110.44849
-      Z: -391.419739
+      X: -1110.44824
+      Y: -18.9330139
+      Z: -372.48645
     }
     Rotation {
     }
@@ -55,17 +56,19 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: -669.535
-      Y: -1.78813862e-05
-      Z: 49.9997559
+      X: -669.535156
+      Y: -10.3553772
+      Z: 60.3552246
     }
     Rotation {
       Pitch: -90
+      Yaw: -155.089813
+      Roll: 155.089813
     }
     Scale {
       X: 4.5
       Y: 4.5
-      Z: 6.39999771
+      Z: 4.70000029
     }
   }
   ParentId: 9188131373235374191

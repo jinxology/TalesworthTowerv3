@@ -11,9 +11,9 @@ Objects {
     Rotation {
     }
     Scale {
-      X: 0.5
-      Y: 0.5
-      Z: 0.5
+      X: 0.520408034
+      Y: 0.520408034
+      Z: 0.520408034
     }
   }
   ParentId: 4159855513164329778
@@ -31,9 +31,9 @@ Objects {
       Id: 8002337567237634747
     }
     AutoPlay: true
-    Volume: 0.984679461
-    Falloff: 2100
-    Radius: 2179.57642
+    Volume: 0.623069286
+    Falloff: 603.709839
+    Radius: 1294.27942
     EnableOcclusion: true
     IsSpatializationEnabled: true
     IsAttenuationEnabled: true

@@ -89,6 +89,15 @@ Assets {
   }
 }
 Assets {
+  Id: 3503051390155897964
+  Name: "Tech Panel 02"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_sf_gen_tech-panel_002_uv"
+  }
+}
+Assets {
   Id: 2738227165559007696
   Name: "Cylinder - Bottom-Aligned"
   PlatformAssetType: 1

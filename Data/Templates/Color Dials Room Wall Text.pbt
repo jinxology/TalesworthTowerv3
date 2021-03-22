@@ -7,19 +7,19 @@ Assets {
       RootId: 9351830048649735537
       Objects {
         Id: 9351830048649735537
-        Name: "Room Wall Text"
+        Name: "Color Dials Red Room Wall Text"
         Transform {
           Scale {
-            X: 17.2500172
-            Y: 17.2500172
-            Z: 17.2500172
+            X: 14
+            Y: 14
+            Z: 14
           }
         }
         ParentId: 11759269028155008640
         UnregisteredParameters {
           Overrides {
             Name: "cs:Room"
-            Int: 0
+            Int: 1
           }
         }
         WantsNetworking: true

@@ -364,7 +364,7 @@ Objects {
     }
   }
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -712,6 +712,27 @@ Objects {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
+    ParameterOverrideMap {
+      key: 152486677045204913
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -353.125244
+            Y: -52.6550293
+            Z: 239.708496
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 0.44584462
+            Y: 2.79155302
+            Z: 4.62975645
+          }
+        }
+      }
+    }
     ParameterOverrideMap {
       key: 4408990691452504405
       value {
