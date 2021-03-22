@@ -8,7 +8,7 @@ propMainGameController = script:GetCustomProperty("MainGameController"):WaitForO
 --Place StartPlatformGroup(networked) template and record the Position and Rotation values here
 --After adding the inital values, delete the StartingPlatormGroup template out of the project
 startingPlatforms = nil
-startPlatformPosition = Vector3.New(2750,1075,1725)
+startPlatformPosition = Vector3.New(2750,1075,1700)
 startPlatformRotation = Rotation.New(0,0,-90)  
 
 --To be finalized when Flumes objects and code are completed
@@ -25,46 +25,43 @@ propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObj
 --LEVEL SPECIFIC DECLARATIONS
 ------------------------------------------------------------
 local SECONDS_TO_COMPLETE_LEVELS = 240
-local PHYSICS_SPHERE = script:GetCustomProperty("bae_PhysicsSphere5_5Scale")
-local LARGE_BALL_POS_1 = Vector3.New(1827.107, -469.023,-124.858)
-local LARGE_BALL_POS_2 = Vector3.New(68.466, 187.286,-124.858)
+local LARGE_BALL_SCALE = 5.5
+local MEDIUM_BALL_SCALE = 5
+local SMALL_BALL_SCALE = 4
 
-local SMALL_BALL_POS_1 = Vector3.New(1622.313, 772.162,-198.706)
-
-local ballVectors = {
-					blueBall_1 = 	Vector3.New( 1827, -469, -125),
-					blueBall_2 = 	Vector3.New(   68,  187, -125),
-					yellowBall_1 = 	Vector3.New(  875, 1108, -150),
-					yellowBall_2 = 	Vector3.New(-1200,-1095, -150),
-					redBall_1 = 	Vector3.New(-1622,  772, -200),
-					redBall_2 = 	Vector3.New(  542, -818, -200)
+local ballsStartingConfig = {
+	{color = Color.BLUE, 	position = Vector3.New( 1827, -469, -125), scale = LARGE_BALL_SCALE},
+	{color = Color.BLUE, 	position = Vector3.New(   68,  187, -125), scale = LARGE_BALL_SCALE},
+	{color = Color.YELLOW, 	position = Vector3.New(  875, 1108, -150), scale = MEDIUM_BALL_SCALE},
+	{color = Color.YELLOW, 	position = Vector3.New(-1200,-1095, -150), scale = MEDIUM_BALL_SCALE},
+	{color = Color.RED, 	position = Vector3.New(-1622,  772, -200), scale = SMALL_BALL_SCALE},
+	{color = Color.RED, 	position = Vector3.New(  542, -818, -200), scale = SMALL_BALL_SCALE}, 
+	--Begin Second Room
+	{color = Color.BLUE, 	position = Vector3.New(-4075,  700, -125), scale = LARGE_BALL_SCALE},
+	{color = Color.BLUE, 	position = Vector3.New(-3550,-1100, -125), scale = LARGE_BALL_SCALE},
+	{color = Color.YELLOW, 	position = Vector3.New(-3050, 1050, -150), scale = MEDIUM_BALL_SCALE},
+	{color = Color.RED, 	position = Vector3.New(-5080, -224, -200), scale = SMALL_BALL_SCALE},
+	{color = Color.RED, 	position = Vector3.New(-2275, -1125, -200), scale = SMALL_BALL_SCALE}	
 }
-
 
 local folderRoot = script.parent --Will get the top level folder "Level.BlockAndEscape"			
 local folderBalls = folderRoot:FindDescendantByName("BlockAndEscape Balls")
 
-local ball_1_Large5_5
-local ball_2_Large5_5
+local ballArray = {}
+local propBae_ball = script:GetCustomProperty("bae_ball")
 
 -------------------------------------------------------------
 -- REQUIRED FUNCTIONS FOR MAINGAMECONTROLLER TO CALL
 -------------------------------------------------------------
 --LevelPowerUp code is called from the previous level to do setup on it before the players arrive
 function LevelPowerUp() 
-	ball_1_Large5_5 = World.SpawnAsset(PHYSICS_SPHERE, {position = ballVectors.blueBall_1, parent = folderBalls})
-	ball_1_Large5_5:SetScale(ball_1_Large5_5:GetWorldScale() * 5.5)
-
-	ball_2_Large5_5 = World.SpawnAsset(PHYSICS_SPHERE, {position = ballVectors.blueBall_2, parent = folderBalls})
-	ball_2_Large5_5:SetScale(ball_2_LarWge5_5:GetWorldScale() * 5.5)
 	
-	
---	ball_2_Large5_5 = World.SpawnAsset(PHYSICS_SPHERE_5_5, {position = LARGE_BALL_POS_2, parent = folderBalls})
---	ball_2_Large5_5:SetScale(ball_2_Large5_5:GetWorldScale() * 5.5)
-	
---	print(ballVectors.blueBall_1)
-	
-	--ball_3_Small4 = World.SpawnAsset(PHYSICS_SPHERE_4, {position = SMALL_BALL_POS_1, parent = folderBalls})
+	for _, ball in ipairs(ballsStartingConfig) do
+		newBall = World.SpawnAsset(propBae_ball, {position = ball.position, parent = folderBalls})
+		newBall:SetScale(newBall:GetWorldScale() * ball.scale)
+		newBall:SetNetworkedCustomProperty("Color", ball.color)
+		table.insert(ballArray, newBall)
+	end	
 end
 
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds
@@ -95,7 +92,6 @@ end
 
 --ResetLevel is called when the level needs to get reset to its original state
 function ResetLevel() 
-end
+end	
 
 --LevelPowerUp()
-	
