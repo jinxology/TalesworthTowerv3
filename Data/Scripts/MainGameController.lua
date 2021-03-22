@@ -422,7 +422,15 @@ end
 function GeneralClientToServerMessageHandler(msgType,data)
     if (msgType == "countNetworkObjects") then
         CountNetworkedObjects()
+    elseif (msgType == "resetTower") then
+            ResetTower()
+    else
+        print ("General message undefined: " ..msgType)
     end
+end
+
+function ResetTower()
+    print ("reset tower")
 end
 
 function Split(pString, pPattern)

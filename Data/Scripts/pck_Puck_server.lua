@@ -13,6 +13,7 @@ function SetStabilized(stabilized)
         propCanTip = false
     else
         propCanTip = true
+        propCanBounce = true
     end
 end
 
@@ -20,18 +21,22 @@ local propFallingSpeed = 0
 
 function Tick()
     local   velocity = propPhysics:GetVelocity()
-
+    
     if propCanBounce then
         if velocity.z < propFallingSpeed then
             propFallingSpeed = velocity.z
         end
 
-        if propFallingSpeed < 0 and velocity.z > 0 then
+        if propFallingSpeed < 0 and velocity.z >= 0 then
             --  bounce
             propFallHardSFX.volume = propFallingSpeed / -200
             propFallHardSFX:Play()
             
             propFallingSpeed = 0
+
+            if velocity.z == 0 then
+                propCanBounce = false
+            end
         end
     else
         --  translate all momentum into the xy plane.
@@ -63,11 +68,3 @@ function Tick()
         propPhysics:SetWorldRotation(topUpAlways)
     end
 end
-
-Task.Spawn(function()
-    SetStabilized(true)
-end, 3)
-
-
-
-

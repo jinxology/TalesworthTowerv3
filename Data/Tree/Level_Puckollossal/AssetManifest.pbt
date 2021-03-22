@@ -1,4 +1,13 @@
 Assets {
+  Id: 18213690653136887655
+  Name: "Reverb Zone"
+  PlatformAssetType: 6
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "sfxbp_reverb_zone"
+  }
+}
+Assets {
   Id: 18073675066811160211
   Name: "Wedge Convex - Large"
   PlatformAssetType: 1
@@ -161,6 +170,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7412387329302415405
+  Name: "Creature Cow Moo Long 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_creature_cow_moo_long_01a_Cue_ref"
+  }
+}
+Assets {
   Id: 7283825798727192743
   Name: "Metal Iron Rusted 02"
   PlatformAssetType: 2
@@ -284,6 +302,24 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prop_fantasy_sack_002_ref"
+  }
+}
+Assets {
+  Id: 1629201855242590202
+  Name: "Creature Cow Moo Short 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_creature_cow_moo_short_01a_Cue_ref"
+  }
+}
+Assets {
+  Id: 1523214900353875295
+  Name: "Snow 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_snow_001_uv"
   }
 }
 Assets {
