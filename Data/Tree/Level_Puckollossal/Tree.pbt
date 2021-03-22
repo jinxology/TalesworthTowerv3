@@ -356,12 +356,11 @@ Objects {
   Name: "pck.puck"
   Transform {
     Location {
-      X: -0.00122070313
+      X: 2725
       Y: 2349.9624
-      Z: 525
+      Z: 1050
     }
     Rotation {
-      Yaw: -6.14717064e-05
     }
     Scale {
       X: 1
@@ -371,7 +370,17 @@ Objects {
   }
   ParentId: 1232579912354001357
   ChildIds: 13582391695772064053
+  ChildIds: 16404359061905031644
   ChildIds: 5745686726844128068
+  ChildIds: 12577169020173688085
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:controller"
+      ObjectReference {
+        SelfId: 13582391695772064053
+      }
+    }
+  }
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -396,6 +405,43 @@ Objects {
   }
 }
 Objects {
+  Id: 12577169020173688085
+  Name: "Creature Giant Monster Epic Heavy Footstep 02 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4108079705444310731
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 5520628391328548482
+    }
+    Volume: 3.99818754
+    Falloff: -1
+    Radius: 5000
+    EnableOcclusion: true
+    IsSpatializationEnabled: true
+    IsAttenuationEnabled: true
+  }
+}
+Objects {
   Id: 5745686726844128068
   Name: "ClientContext"
   Transform {
@@ -411,7 +457,6 @@ Objects {
     }
   }
   ParentId: 4108079705444310731
-  ChildIds: 5462871871661923937
   ChildIds: 10403879953934599735
   WantsNetworking: true
   Collidable_v2 {
@@ -431,6 +476,7 @@ Objects {
   Name: "pck.Puck.geometry"
   Transform {
     Location {
+      Z: -400
     }
     Rotation {
       Yaw: 5.46415031e-05
@@ -468,9 +514,9 @@ Objects {
   Name: "Group"
   Transform {
     Location {
-      X: 399.999695
-      Y: -400
-      Z: 90
+      X: 399.999634
+      Y: -399.999878
+      Z: 500
     }
     Rotation {
       Pitch: -67.4998779
@@ -1013,9 +1059,9 @@ Objects {
   Name: "Group"
   Transform {
     Location {
-      X: -378.325073
-      Y: 378.325409
-      Z: 90
+      X: -400.000122
+      Y: 400
+      Z: 500
     }
     Rotation {
       Pitch: -67.5
@@ -1589,9 +1635,9 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: 0.000137329102
+            X: 0.000381469668
             Y: 400
-            Z: -175
+            Z: 235
           }
         }
         Overrides {
@@ -1651,8 +1697,9 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: 399.999939
-            Z: -175
+            X: 400
+            Y: 0.000106811582
+            Z: 235
           }
         }
         Overrides {
@@ -1712,9 +1759,9 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: -0.000350952148
+            X: -0.000381469668
             Y: -400
-            Z: -175
+            Z: 235
           }
         }
         Overrides {
@@ -1743,9 +1790,9 @@ Objects {
   Name: "pck.spots"
   Transform {
     Location {
-      X: -25
-      Y: -5
-      Z: -245
+      X: -25.0000038
+      Y: -4.99997616
+      Z: 165
     }
     Rotation {
     }
@@ -2127,9 +2174,9 @@ Objects {
   Name: "Fantasy Sack Laying"
   Transform {
     Location {
-      X: -199.379974
-      Y: 215.239853
-      Z: 20.4208984
+      X: -199.380173
+      Y: 215.239929
+      Z: 47.5126953
     }
     Rotation {
       Pitch: 53.8331337
@@ -2291,14 +2338,15 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: -389.999481
-            Z: -175
+            X: -389.999512
+            Y: -0.00011634879
+            Z: 235
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: -2.39056553e-05
+            Yaw: -3.05175781e-05
           }
         }
       }
@@ -2313,7 +2361,7 @@ Objects {
   Name: "Cylinder - Polished"
   Transform {
     Location {
-      Z: -200
+      Z: 210
     }
     Rotation {
       Yaw: -6.10351563e-05
@@ -2379,15 +2427,12 @@ Objects {
   }
 }
 Objects {
-  Id: 5462871871661923937
-  Name: "pck.Puck.client"
+  Id: 16404359061905031644
+  Name: "Trigger"
   Transform {
     Location {
-      X: 1.16415322e-10
-      Y: -0.00146484352
     }
     Rotation {
-      Yaw: -1.70754702e-05
     }
     Scale {
       X: 1
@@ -2395,15 +2440,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 5745686726844128068
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:pckPuckgeometry"
-      ObjectReference {
-        SelfId: 10403879953934599735
-      }
-    }
-  }
+  ParentId: 4108079705444310731
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2413,9 +2451,13 @@ Objects {
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  Script {
-    ScriptAsset {
-      Id: 5750374496011908740
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
     }
   }
 }
@@ -2442,6 +2484,12 @@ Objects {
       Name: "cs:physics"
       ObjectReference {
         SelfId: 4108079705444310731
+      }
+    }
+    Overrides {
+      Name: "cs:fallHardSFX"
+      ObjectReference {
+        SelfId: 12577169020173688085
       }
     }
   }
@@ -2471,7 +2519,7 @@ Objects {
       Z: 25
     }
     Rotation {
-      Yaw: -89.9999619
+      Yaw: -89.9999695
     }
     Scale {
       X: 1.25
@@ -2495,6 +2543,74 @@ Objects {
   ChildIds: 6711598135527944496
   ChildIds: 340567468344725267
   ChildIds: 12674452320951290830
+  ChildIds: 1092324997156649710
+  ChildIds: 16546041352775194801
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 16546041352775194801
+  Name: "Sci-fi Bass Drop Warp Growl 01 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Yaw: -1.02452832e-05
+    }
+    Scale {
+      X: 0.8
+      Y: 0.8
+      Z: 0.8
+    }
+  }
+  ParentId: 15108219212480853924
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 15112213264769934074
+    }
+    Volume: 3.26374316
+    Falloff: -1
+    Radius: -1
+  }
+}
+Objects {
+  Id: 1092324997156649710
+  Name: "Group"
+  Transform {
+    Location {
+      X: 1.6763807e-09
+      Y: 0.00312499981
+    }
+    Rotation {
+      Roll: 67.5000076
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15108219212480853924
   ChildIds: 782789108180982935
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2514,20 +2630,19 @@ Objects {
   Name: "pck.goalTrigger"
   Transform {
     Location {
-      X: 0.000561523426
-      Y: 239.994537
-      Z: 140
+      X: 20.0004101
+      Y: 39.9999924
+      Z: 500
     }
     Rotation {
-      Yaw: -4.78113216e-05
     }
     Scale {
       X: 40
       Y: 0.8
-      Z: 13.92
+      Z: 10
     }
   }
-  ParentId: 15108219212480853924
+  ParentId: 1092324997156649710
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3419,6 +3534,7 @@ Objects {
   ChildIds: 4754858311514232511
   ChildIds: 12323361099579017424
   ChildIds: 17490082046165625867
+  ChildIds: 6870566082400289757
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3430,6 +3546,67 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 6870566082400289757
+  Name: "pck.floor"
+  Transform {
+    Location {
+      X: 800
+      Y: 1600
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.1
+      Y: 8
+      Z: 1
+    }
+  }
+  ParentId: 15334249075449200244
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_Floor:id"
+      AssetReference {
+        Id: 17317999939743247709
+      }
+    }
+    Overrides {
+      Name: "ma:Building_Floor:smart"
+      Bool: true
+    }
+    Overrides {
+      Name: "ma:Building_Ceiling:id"
+      AssetReference {
+        Id: 13181413363666234531
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 8560170209438767653
+    }
+    Teams {
+      TeamInt: 1
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
   }
 }
 Objects {
@@ -3468,7 +3645,7 @@ Objects {
     }
   }
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -4745,6 +4922,12 @@ Objects {
       Name: "cs:scoreTrigger"
       ObjectReference {
         SelfId: 782789108180982935
+      }
+    }
+    Overrides {
+      Name: "cs:scoreSFX"
+      ObjectReference {
+        SelfId: 16546041352775194801
       }
     }
   }

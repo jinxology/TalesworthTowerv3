@@ -44,6 +44,15 @@ Assets {
   }
 }
 Assets {
+  Id: 15112213264769934074
+  Name: "Sci-fi Bass Drop Warp Growl 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_scifi_bass_drop_warp_growl_01_Cue_ref"
+  }
+}
+Assets {
   Id: 14469100115591925468
   Name: "Urban Vehicle Accessory - Door Handle"
   PlatformAssetType: 1
@@ -203,6 +212,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weapons_grenade_handle_001"
+  }
+}
+Assets {
+  Id: 5520628391328548482
+  Name: "Creature Giant Monster Epic Heavy Footstep 02 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_monster_giant_creature_epic_heavy_footstep_02_Cue_ref"
   }
 }
 Assets {
