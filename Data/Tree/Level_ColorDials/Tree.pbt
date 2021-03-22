@@ -2590,7 +2590,7 @@ Objects {
           Name: "Position"
           Vector {
             X: -2800
-            Y: -1100
+            Y: -1175
             Z: 1850
           }
         }
@@ -2602,9 +2602,9 @@ Objects {
         Overrides {
           Name: "Scale"
           Vector {
-            X: 17.2500172
-            Y: 17.2500172
-            Z: 17.2500172
+            X: 11
+            Y: 11
+            Z: 11
           }
         }
         Overrides {
@@ -2658,9 +2658,9 @@ Objects {
         Overrides {
           Name: "Scale"
           Vector {
-            X: 17.2500172
-            Y: 17.2500172
-            Z: 17.2500172
+            X: 11
+            Y: 11
+            Z: 11
           }
         }
         Overrides {
@@ -2714,9 +2714,9 @@ Objects {
         Overrides {
           Name: "Scale"
           Vector {
-            X: 17.2500172
-            Y: 17.2500172
-            Z: 17.2500172
+            X: 11
+            Y: 11
+            Z: 11
           }
         }
         Overrides {
@@ -2762,8 +2762,17 @@ Objects {
           }
         }
         Overrides {
-          Name: "cs:Room"
-          Int: 1
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 11
+            Y: 11
+            Z: 11
+          }
         }
       }
     }
