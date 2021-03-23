@@ -283,12 +283,9 @@ end
 
 function LevelPowerDown()
 	UnloadInterior()
+	propTimerTask:Cancel()
+	propTimerTask = nil
 	script:SetNetworkedCustomProperty("levelStatus", 0)
-
-	--	destroy all networked objects
-	DestroyWeapons()
-	DestroySigns()
-	DestroyBalloons()
 end
 
 function LevelBegin()

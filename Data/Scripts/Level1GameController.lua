@@ -117,8 +117,8 @@ function GetColorName(in_id)
 end
 
 function OnColorButtonPressed(whichShape, whichColor, whoDidIt) 
-    print ("pressed " .. whichShape .. " : " .. whichColor)
-    print ("Current Shape: " .. whichShape .. ", Current Color: " .. whichColor)
+    --print ("pressed " .. whichShape .. " : " .. whichColor)
+    --print ("Current Shape: " .. whichShape .. ", Current Color: " .. whichColor)
 
     propMainGameController.context.SendGeneralMessageToClients("05,"..whoDidIt.." pressed a "..GetColorName(whichColor).." button near "..GetShapeName(whichShape))
 
@@ -173,8 +173,10 @@ end
 
 function LevelPowerDown()
     --Unwire events
-    pressedColoredButtonListener:Disconnect()
-    pressedColoredButtonListener = nil
+    if (pressedColoredButtonListener ~= nil) then
+        pressedColoredButtonListener:Disconnect()
+        pressedColoredButtonListener = nil
+    end
 
 end
 

@@ -5,12 +5,13 @@ local propMainGameController = script:GetCustomProperty("MainGameController"):Wa
 local propUtility_ClientSide = script:GetCustomProperty("Utility_ClientSide"):WaitForObject()
 local propLevelFailSound = script:GetCustomProperty("LevelFailSound")
 local propLevelVictorySound = script:GetCustomProperty("LevelVictorySound")
+local propResetTowerEjectSFX = script:GetCustomProperty("ResetTowerEjectSFX")
 
 local timerStarted = false
 local timeLeft = 0
 
 function IncomingUIMessage(coreObject, propertyName)
-    print ("got here")    
+    
     local msg = propMainGameController:GetCustomProperty(propertyName)
     print ("UIMESSAGE: "..msg)
     msgData = propUtility_ClientSide.context.Split(msg,",")
@@ -27,6 +28,13 @@ function IncomingUIMessage(coreObject, propertyName)
         ToggleBottomMessage(msgData[2],msgData[3])
     elseif (msgData[1] == "05") then --small UI message
         ShowSmallUIMessage(msgData[2])
+    elseif (msgData[1] == "06") then --shot from tower reset
+        myPosition = Game.GetLocalPlayer():GetWorldPosition()
+        World.SpawnAsset(propResetTowerEjectSFX,{position=myPosition})
+        ToggleBottomMessage(false,"")
+    elseif (msgData[1] == "07") then --resetting tower
+        World.SpawnAsset(propLevelFailSound,{position=myPosition})
+        ToggleBottomMessage("true","TOWER RESET IMMINENT")
     end
 end
 
