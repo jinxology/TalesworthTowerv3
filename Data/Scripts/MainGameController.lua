@@ -447,7 +447,7 @@ function ResetTower()
     script:SetNetworkedCustomProperty("UIMessage","07, ")
     Task.Wait(3)
     MakeWorldLight()
-    script:SetNetworkedCustomProperty("UIMessage","04,false, ")
+
     --loop through all levels and destroy them
     for i=1,#levelList do
         DestroyLevel(currentLevelIndex)

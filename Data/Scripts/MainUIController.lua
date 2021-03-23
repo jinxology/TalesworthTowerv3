@@ -31,6 +31,7 @@ function IncomingUIMessage(coreObject, propertyName)
     elseif (msgData[1] == "06") then --shot from tower reset
         myPosition = Game.GetLocalPlayer():GetWorldPosition()
         World.SpawnAsset(propResetTowerEjectSFX,{position=myPosition})
+        ToggleBottomMessage(false,"")
     elseif (msgData[1] == "07") then --resetting tower
         World.SpawnAsset(propLevelFailSound,{position=myPosition})
         ToggleBottomMessage("true","TOWER RESET IMMINENT")
