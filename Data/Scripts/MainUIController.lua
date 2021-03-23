@@ -3,19 +3,22 @@ local propRoomTimer = script:GetCustomProperty("RoomTimer"):WaitForObject()
 local propTxtGoToExit = script:GetCustomProperty("TxtGoToExit"):WaitForObject()
 local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
 local propUtility_ClientSide = script:GetCustomProperty("Utility_ClientSide"):WaitForObject()
+local propLevelFailSound = script:GetCustomProperty("LevelFailSound")
+local propLevelVictorySound = script:GetCustomProperty("LevelVictorySound")
 
 local timerStarted = false
 local timeLeft = 0
 
 function IncomingUIMessage(coreObject, propertyName)
+    print ("got here")    
     local msg = propMainGameController:GetCustomProperty(propertyName)
-    --print ("UIMESSAGE: "..msg)
+    print ("UIMESSAGE: "..msg)
     msgData = propUtility_ClientSide.context.Split(msg,",")
     
     if (msgData[1] == "00") then --Update timer
         UpdateTimer(tonumber(msgData[2]))
-    elseif (msgData[1] == "01") then --Show/Hide go to exit message and play sound
-        ToggleGoToExit(msgData[2],msgData[3])
+    elseif (msgData[1] == "01") then --Show/Hide go to exit message and play sound and clear timer
+        ToggleGoToExit(msgData[2],msgData[3],msgData[4])
     elseif (msgData[1] == "02") then --Start timer on only client
         StartTimerLocal(tonumber(msgData[2]))
     elseif (msgData[1] == "03") then --Clear timer
@@ -61,12 +64,38 @@ function UpdateTimer(newVal)
     end
 end
 
-function ToggleGoToExit(showMe, msg)
+function toboolean(value)
+	if type(value) == "string" then
+		if value == "true" then
+			return true
+		else
+			return false
+		end
+	elseif type(value) == "number" then
+		if value == 1 then
+			return true
+		elseif value == 0 then
+			return false
+		else
+			return nil
+        end
+    end
+end
+
+function ToggleGoToExit(showMe, msg, success)
+    --local showMe = toboolean(in_showMe)
+    --local success = toboolean(in_success)
+    
+    UpdateTimer(-1)
     ToggleBottomMessage(showMe,msg)
-    if (showMe) then
-
-    else
-
+    
+    if (showMe == "true") then
+        myPosition = Game.GetLocalPlayer():GetWorldPosition()        
+        if (success == "true") then            
+            World.SpawnAsset(propLevelVictorySound,{position=myPosition})
+        else
+            World.SpawnAsset(propLevelFailSound,{position=myPosition})
+        end
     end
 end
 

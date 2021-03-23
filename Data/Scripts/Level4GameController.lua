@@ -1,22 +1,21 @@
+propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
+propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
+
 roomSolutions = {0,0,0,0,}  --Array of solutions to each room
 roomDialInitialLocations = {0,0,0,0 }  --Array of Initial starting locations for each dial
 roomCurrentDials = {0,0,0,0} --Array of the current dials each room is set to
 
 startingPlatforms = nil
-startPlatformPosition = Vector3.New(300,0,4075)  --Set to values of Start Platform Group
+startPlatformPosition = Vector3.New(-450,-550,1475)  --Set to values of Start Platform Group
 startPlatformRotation = Rotation.New(0,0,0)  --Set to values of Start Platform Group
-
-propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
-
-local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
 
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(-1825,-50,4500)
+exitFlumeLocation = Vector3.New(-2825,-550,1675)
 exitFlumeRotation = Rotation.New(0,0,0)
---entranceFlumeLocation = Vector3.New(-1100,-3200,300)
---entranceFlumeRotation = Rotation.New(0,0,0)
---entranceFlumeEjectionVelocity = 20
+entranceFlumeLocation = Vector3.New(900,-550,2525)
+entranceFlumeRotation = Rotation.New(0,-22.5,180)
+entranceFlumeEjectionVelocity = 10
 
 local REDROOM = 1  --assigning each room to a color with one room required to have "Orange"
 local BLUEROOM = 2
@@ -28,6 +27,8 @@ local BLUEBIT = 4
 local GREENBIT = 8
 local YELLOWBIT = 16
 local ORANGEBIT = 32
+
+local SECONDS_TO_COMPLETE_LEVELS = 300
 
 local REDCOLORHEX = "E80000FF"
 local BLUECOLORHEX = "0063FEFF"
@@ -186,6 +187,7 @@ function LevelPowerUp()
 end
 
 function LevelBegin()
+	propMainGameController.context.StartTimer(SECONDS_TO_COMPLETE_LEVELS, LevelFailed)
 end
 
 function LevelEnd()
@@ -199,7 +201,5 @@ function LevelVictory()
 	--Spin Dials and light up room
 	propMainGameController.context.LevelEnd(true)
 end
-
-LevelPowerUp() 
 
 	

@@ -1,839 +1,13 @@
 Name: "Color Dials Beacons"
 RootId: 833513093181602089
 Objects {
-  Id: 16869937090489209695
+  Id: 15745433141140063830
   Name: "LevelBeacon"
   Transform {
     Location {
-      X: -2050
-      Y: -1450
-      Z: 5275
-    }
-    Rotation {
-      Yaw: -179.999985
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 575
-            Y: -2475
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -90
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 5720882683025593244
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: -2050.00024
-      Y: -975.001
-      Z: 5275
-    }
-    Rotation {
-      Yaw: -179.999985
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 100.000977
-            Y: -2475
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -90
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 6417475908969705566
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: -2050.00049
-      Y: -499.999756
-      Z: 5275
-    }
-    Rotation {
-      Yaw: -179.999985
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -375
-            Y: -2475
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -90
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 16092942153032515455
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: -2050
-      Y: -25.0002441
-      Z: 5275
-    }
-    Rotation {
-      Yaw: -179.999985
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -849.999512
-            Y: -2474.99951
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -90
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 14449206746154344400
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: -2049.99976
-      Y: 449.999756
-      Z: 5275
-    }
-    Rotation {
-      Yaw: -179.999985
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -1325
-            Y: -2474.99902
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -90
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 13188856625014554564
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: -2050.00024
-      Y: 925.001
-      Z: 5275
-    }
-    Rotation {
-      Yaw: -179.999985
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -1800.00073
-            Y: -2474.99951
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -90
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 2881846421942192536
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: -2050.00049
-      Y: 1399.99902
-      Z: 5275
-    }
-    Rotation {
-      Yaw: -179.999985
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -2274.99902
-            Y: -2475
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -90
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 3068769870306708973
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: -1525
-      Y: 1925.00024
-      Z: 5275
-    }
-    Rotation {
-      Yaw: 89.9999924
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -2800
-            Y: -1974.99902
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 180
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 5869609697218853501
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: -1050
-      Y: 1925.00024
-      Z: 5275
-    }
-    Rotation {
-      Yaw: 89.9999924
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -2800.00024
-            Y: -1500
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 180
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 15727212553540150459
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: -575
-      Y: 1925.00024
-      Z: 5275
-    }
-    Rotation {
-      Yaw: 89.9999924
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -2800.00049
-            Y: -1024.99878
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 180
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 5501050611398337689
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: -100.000244
-      Y: 1925
-      Z: 5275
-    }
-    Rotation {
-      Yaw: 89.9999924
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -2800
-            Y: -549.999268
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 180
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 5507049438237730000
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: 375.000244
-      Y: 1925.00012
-      Z: 5275
-    }
-    Rotation {
-      Yaw: 89.9999924
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -2799.99976
-            Y: -74.9992676
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 180
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 15031800167354378838
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: 850
-      Y: 1924.99988
-      Z: 5275
-    }
-    Rotation {
-      Yaw: 89.9999924
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -2800.00024
-            Y: 400.001953
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 180
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 6948940288579086900
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: 1325
-      Y: 1925
-      Z: 5275
-    }
-    Rotation {
-      Yaw: 89.9999924
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -2800.00049
-            Y: 875
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 180
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 8118655408913310516
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: 1825
-      Y: 1425
-      Z: 5275
+      X: 1800
+      Y: -1500
+      Z: 5583.87207
     }
     Rotation {
     }
@@ -844,8 +18,11 @@ Objects {
     }
   }
   ParentId: 833513093181602089
-  CameraCollidable {
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -853,14 +30,14 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "ColorDialsLevelBeacon"
+          String: "LevelBeacon"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: -2275
-            Y: 1375.00024
-            Z: 2700
+            X: 650
+            Y: 1350
+            Z: 2608.87207
           }
         }
         Overrides {
@@ -885,13 +62,13 @@ Objects {
   }
 }
 Objects {
-  Id: 17522859336034309401
+  Id: 9640672320899891303
   Name: "LevelBeacon"
   Transform {
     Location {
-      X: 1825
-      Y: 950
-      Z: 5275
+      X: 1800.00122
+      Y: 1499.99951
+      Z: 5583.87207
     }
     Rotation {
     }
@@ -902,8 +79,11 @@ Objects {
     }
   }
   ParentId: 833513093181602089
-  CameraCollidable {
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -911,14 +91,14 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "ColorDialsLevelBeacon"
+          String: "LevelBeacon"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: -1800
-            Y: 1375.00024
-            Z: 2700
+            X: -2349.99902
+            Y: 1350.00171
+            Z: 2608.87207
           }
         }
         Overrides {
@@ -943,13 +123,13 @@ Objects {
   }
 }
 Objects {
-  Id: 15123921833260194027
+  Id: 3646205064850431229
   Name: "LevelBeacon"
   Transform {
     Location {
-      X: 1825
-      Y: 475
-      Z: 5275
+      X: 1800.00024
+      Y: -500
+      Z: 5583.87207
     }
     Rotation {
     }
@@ -960,8 +140,11 @@ Objects {
     }
   }
   ParentId: 833513093181602089
-  CameraCollidable {
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -969,14 +152,14 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "ColorDialsLevelBeacon"
+          String: "LevelBeacon"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: -1325
-            Y: 1375.00024
-            Z: 2700
+            X: -350.000244
+            Y: 1350.00049
+            Z: 2608.87207
           }
         }
         Overrides {
@@ -1001,12 +184,13 @@ Objects {
   }
 }
 Objects {
-  Id: 13156022840096339967
+  Id: 6786345297655855635
   Name: "LevelBeacon"
   Transform {
     Location {
-      X: 1825
-      Z: 5275
+      X: 1800.00073
+      Y: 500.000488
+      Z: 5583.87207
     }
     Rotation {
     }
@@ -1017,8 +201,11 @@ Objects {
     }
   }
   ParentId: 833513093181602089
-  CameraCollidable {
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -1026,14 +213,14 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "ColorDialsLevelBeacon"
+          String: "LevelBeacon"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: -850.000244
-            Y: 1375
-            Z: 2700
+            X: -1350.00049
+            Y: 1350.00073
+            Z: 2608.87207
           }
         }
         Overrides {
@@ -1058,15 +245,16 @@ Objects {
   }
 }
 Objects {
-  Id: 13547153966624312614
+  Id: 10744273700552679876
   Name: "LevelBeacon"
   Transform {
     Location {
-      X: 1825
-      Y: -475
-      Z: 5275
+      X: -1600
+      Y: -1900
+      Z: 5583.87207
     }
     Rotation {
+      Yaw: -89.9999924
     }
     Scale {
       X: 1
@@ -1075,8 +263,11 @@ Objects {
     }
   }
   ParentId: 833513093181602089
-  CameraCollidable {
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -1084,188 +275,14 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "ColorDialsLevelBeacon"
+          String: "LevelBeacon"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: -374.999756
-            Y: 1375.00012
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 90
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 1592450636328122195
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: 1825
-      Y: -950
-      Z: 5275
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 100
-            Y: 1374.99988
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 90
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 16404689009665462165
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: 1825
-      Y: -1425
-      Z: 5275
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 575
-            Y: 1375
-            Z: 2700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 90
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 4136461131608212019
-    }
-  }
-}
-Objects {
-  Id: 600073157362051453
-  Name: "LevelBeacon"
-  Transform {
-    Location {
-      X: 1825
-      Y: -525
-      Z: 5275
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 833513093181602089
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 435981588591393957
-      value {
-        Overrides {
-          Name: "Name"
-          String: "ColorDialsLevelBeacon"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 1075
-            Y: 875
-            Z: 2700
+            X: 1050
+            Y: -2050
+            Z: 2608.87207
           }
         }
         Overrides {
@@ -1289,15 +306,16 @@ Objects {
   }
 }
 Objects {
-  Id: 16344398873514827036
+  Id: 5561990472496066415
   Name: "LevelBeacon"
   Transform {
     Location {
-      X: 1825
-      Y: -975
-      Z: 5275
+      X: 1399.99951
+      Y: -1900.00049
+      Z: 5583.87207
     }
     Rotation {
+      Yaw: -89.9999924
     }
     Scale {
       X: 1
@@ -1306,8 +324,11 @@ Objects {
     }
   }
   ParentId: 833513093181602089
-  CameraCollidable {
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -1315,14 +336,14 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "ColorDialsLevelBeacon"
+          String: "LevelBeacon"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: 1075
-            Y: 400
-            Z: 2700
+            X: 1050.00122
+            Y: 949.999512
+            Z: 2608.87207
           }
         }
         Overrides {
@@ -1346,15 +367,16 @@ Objects {
   }
 }
 Objects {
-  Id: 2648791788080974632
+  Id: 5750616552396975173
   Name: "LevelBeacon"
   Transform {
     Location {
-      X: 1825
-      Y: -1425
-      Z: 5275
+      X: -600
+      Y: -1900
+      Z: 5583.87207
     }
     Rotation {
+      Yaw: -89.9999924
     }
     Scale {
       X: 1
@@ -1363,8 +385,11 @@ Objects {
     }
   }
   ParentId: 833513093181602089
-  CameraCollidable {
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -1372,14 +397,14 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "ColorDialsLevelBeacon"
+          String: "LevelBeacon"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: 1075
-            Y: -75
-            Z: 2700
+            X: 1050.00024
+            Y: -1050
+            Z: 2608.87207
           }
         }
         Overrides {
@@ -1403,15 +428,16 @@ Objects {
   }
 }
 Objects {
-  Id: 7755274591588686922
+  Id: 9403010262573424746
   Name: "LevelBeacon"
   Transform {
     Location {
-      X: 1825
-      Y: 525
-      Z: 5275
+      X: 400.000488
+      Y: -1900.00024
+      Z: 5583.87207
     }
     Rotation {
+      Yaw: -89.9999924
     }
     Scale {
       X: 1
@@ -1420,8 +446,11 @@ Objects {
     }
   }
   ParentId: 833513093181602089
-  CameraCollidable {
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -1429,14 +458,14 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "ColorDialsLevelBeacon"
+          String: "LevelBeacon"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: 1075
-            Y: -550
-            Z: 2700
+            X: 1050.00073
+            Y: -49.9995117
+            Z: 2608.87207
           }
         }
         Overrides {
@@ -1460,15 +489,16 @@ Objects {
   }
 }
 Objects {
-  Id: 131585337102218500
+  Id: 5554970943798383142
   Name: "LevelBeacon"
   Transform {
     Location {
-      X: 1825
-      Y: -1425
-      Z: 5275
+      X: -2100
+      Y: 1500
+      Z: 5583.87207
     }
     Rotation {
+      Yaw: -179.999954
     }
     Scale {
       X: 1
@@ -1477,8 +507,11 @@ Objects {
     }
   }
   ParentId: 833513093181602089
-  CameraCollidable {
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -1486,19 +519,20 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "ColorDialsLevelBeacon"
+          String: "LevelBeacon"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: 1075
-            Y: -1025
-            Z: 2700
+            X: -2350
+            Y: -2450
+            Z: 2608.87207
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
+            Yaw: -90
           }
         }
         Overrides {
@@ -1517,15 +551,16 @@ Objects {
   }
 }
 Objects {
-  Id: 4560590253578527596
+  Id: 4599998923445873285
   Name: "LevelBeacon"
   Transform {
     Location {
-      X: 1825
-      Y: -1575
-      Z: 5275
+      X: -2100
+      Y: -1500
+      Z: 5583.87207
     }
     Rotation {
+      Yaw: -179.999954
     }
     Scale {
       X: 1
@@ -1534,8 +569,11 @@ Objects {
     }
   }
   ParentId: 833513093181602089
-  CameraCollidable {
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -1543,19 +581,20 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "ColorDialsLevelBeacon"
+          String: "LevelBeacon"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: 1075
-            Y: -1500
-            Z: 2700
+            X: 649.999512
+            Y: -2450.00049
+            Z: 2608.87207
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
+            Yaw: -90
           }
         }
         Overrides {
@@ -1574,15 +613,16 @@ Objects {
   }
 }
 Objects {
-  Id: 10523190823559173459
+  Id: 2244651500264323465
   Name: "LevelBeacon"
   Transform {
     Location {
-      X: 1825
-      Y: -975
-      Z: 5275
+      X: -2100
+      Y: 500
+      Z: 5583.87207
     }
     Rotation {
+      Yaw: -179.999969
     }
     Scale {
       X: 1
@@ -1591,8 +631,11 @@ Objects {
     }
   }
   ParentId: 833513093181602089
-  CameraCollidable {
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -1600,19 +643,322 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "ColorDialsLevelBeacon"
+          String: "LevelBeacon"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: 1075
-            Y: -1975
-            Z: 2700
+            X: -1350
+            Y: -2450
+            Z: 2608.87207
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
+            Yaw: -90
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4136461131608212019
+    }
+  }
+}
+Objects {
+  Id: 1308403557894995190
+  Name: "LevelBeacon"
+  Transform {
+    Location {
+      X: -2100
+      Y: -500
+      Z: 5583.87207
+    }
+    Rotation {
+      Yaw: -179.999969
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 833513093181602089
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 435981588591393957
+      value {
+        Overrides {
+          Name: "Name"
+          String: "LevelBeacon"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -349.999512
+            Y: -2450.00024
+            Z: 2608.87207
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -90
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4136461131608212019
+    }
+  }
+}
+Objects {
+  Id: 438661723261972294
+  Name: "LevelBeacon"
+  Transform {
+    Location {
+      X: -2100
+      Y: 500
+      Z: 5583.87207
+    }
+    Rotation {
+      Yaw: -179.999969
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 833513093181602089
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 435981588591393957
+      value {
+        Overrides {
+          Name: "Name"
+          String: "LevelBeacon"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2850
+            Y: 950
+            Z: 2608.87207
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -179.999954
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4136461131608212019
+    }
+  }
+}
+Objects {
+  Id: 12939396438229715275
+  Name: "LevelBeacon"
+  Transform {
+    Location {
+      X: -2100
+      Y: -500
+      Z: 5583.87207
+    }
+    Rotation {
+      Yaw: -179.999969
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 833513093181602089
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 435981588591393957
+      value {
+        Overrides {
+          Name: "Name"
+          String: "LevelBeacon"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2850
+            Y: -2050
+            Z: 2608.87207
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -179.999954
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4136461131608212019
+    }
+  }
+}
+Objects {
+  Id: 263978151273887169
+  Name: "LevelBeacon"
+  Transform {
+    Location {
+      X: -2066.8418
+      Y: 1376.50928
+      Z: 5583.87207
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 833513093181602089
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 435981588591393957
+      value {
+        Overrides {
+          Name: "Name"
+          String: "LevelBeacon"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2850
+            Y: -50
+            Z: 2608.87207
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -179.999985
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4136461131608212019
+    }
+  }
+}
+Objects {
+  Id: 9183880454558922686
+  Name: "LevelBeacon"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 833513093181602089
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 435981588591393957
+      value {
+        Overrides {
+          Name: "Name"
+          String: "LevelBeacon"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2850
+            Y: -1050
+            Z: 2608.87207
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -179.999985
           }
         }
         Overrides {

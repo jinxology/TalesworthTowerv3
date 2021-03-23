@@ -1,35 +1,6 @@
 Name: "Level_ColorDials"
 RootId: 5669723044310532949
 Objects {
-  Id: 553323043187713214
-  Name: "Color Dials Flumes"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 5669723044310532949
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Color Dials Flumes"
-  }
-}
-Objects {
   Id: 2360683655266602092
   Name: "Color Dials Lighting"
   Transform {
@@ -303,12 +274,13 @@ Objects {
   Name: "Fantasy Castle Wall Foundation 01"
   Transform {
     Location {
-      X: 1949.98547
-      Y: 1950
-      Z: 500
+      X: 1949.69092
+      Y: 975
+      Z: 1874.92334
     }
     Rotation {
-      Yaw: -90
+      Yaw: 89.9999924
+      Roll: 180
     }
     Scale {
       X: 1.25
@@ -356,16 +328,17 @@ Objects {
   Name: "Fantasy Castle Wall Foundation 01"
   Transform {
     Location {
-      X: 1949.98547
-      Y: 1000
-      Z: 500
+      X: 1949.96436
+      Y: 250
+      Z: 1874.85107
     }
     Rotation {
-      Yaw: -90
+      Yaw: 89.9999924
+      Roll: 180
     }
     Scale {
-      X: 1.25
-      Y: 0.25
+      X: 1
+      Y: 0.2
       Z: 0.5
     }
   }
@@ -409,15 +382,17 @@ Objects {
   Name: "Fantasy Castle Wall Foundation 01"
   Transform {
     Location {
-      X: 1949.98547
-      Z: 500
+      X: 1949.76318
+      Y: -1000
+      Z: 1874.96143
     }
     Rotation {
-      Yaw: -90
+      Yaw: 89.9999924
+      Roll: 180
     }
     Scale {
-      X: 1.25
-      Y: 0.25
+      X: 1
+      Y: 0.2
       Z: 0.5
     }
   }
@@ -462,12 +437,13 @@ Objects {
   Name: "Fantasy Castle Wall Foundation 01"
   Transform {
     Location {
-      X: 1949.98547
-      Y: -1000
-      Z: 500
+      X: 1949.82178
+      Y: -2000
+      Z: 1874.93652
     }
     Rotation {
-      Yaw: -90
+      Yaw: 89.9999924
+      Roll: 180
     }
     Scale {
       X: 1.25
@@ -790,16 +766,16 @@ Objects {
   Name: "Fantasy Castle Wall Foundation 01"
   Transform {
     Location {
-      X: -1999.98145
+      X: -1999.97949
       Y: -1000
-      Z: 500
+      Z: 499.999268
     }
     Rotation {
       Yaw: 89.9999771
     }
     Scale {
-      X: 1.25
-      Y: 0.25
+      X: 1
+      Y: 0.2
       Z: 0.5
     }
   }
@@ -848,16 +824,16 @@ Objects {
   Name: "Fantasy Castle Wall Foundation 01"
   Transform {
     Location {
-      X: -1999.98926
-      Y: -0.000244140625
-      Z: 500
+      X: -1999.99695
+      Y: 225
+      Z: 499.975342
     }
     Rotation {
       Yaw: 89.9999771
     }
     Scale {
-      X: 1.25
-      Y: 0.25
+      X: 1
+      Y: 0.2
       Z: 0.5
     }
   }
@@ -1291,14 +1267,14 @@ Objects {
   Transform {
     Location {
       X: 2000
-      Y: 1000
+      Y: 1040.21045
     }
     Rotation {
       Yaw: -90
     }
     Scale {
-      X: 1.25
-      Y: 0.25
+      X: 1.30000007
+      Y: 0.3
       Z: 1
     }
   }
@@ -1357,8 +1333,8 @@ Objects {
       Yaw: -90
     }
     Scale {
-      X: 1.25
-      Y: 0.25
+      X: 1.30000007
+      Y: 0.3
       Z: 1
     }
   }
@@ -1636,10 +1612,12 @@ Objects {
   Transform {
     Location {
       X: -1950
-      Y: -2000
+      Y: -1000
+      Z: 1325
     }
     Rotation {
-      Yaw: 89.9999924
+      Pitch: 180
+      Yaw: 90
     }
     Scale {
       X: 1.25
@@ -1750,10 +1728,11 @@ Objects {
   Transform {
     Location {
       X: -1950
-      Y: -1000
+      Z: 1325
     }
     Rotation {
-      Yaw: 89.9999924
+      Pitch: 180
+      Yaw: 90
     }
     Scale {
       X: 1.25
@@ -1807,9 +1786,12 @@ Objects {
   Transform {
     Location {
       X: -1950
+      Y: 1000
+      Z: 1325
     }
     Rotation {
-      Yaw: 89.9999924
+      Pitch: 180
+      Yaw: 90
     }
     Scale {
       X: 1.25
@@ -1862,10 +1844,12 @@ Objects {
   Transform {
     Location {
       X: -1950
-      Y: 1000.00024
+      Y: 1950
+      Z: 1325
     }
     Rotation {
-      Yaw: 89.9999924
+      Pitch: 180
+      Yaw: 90
     }
     Scale {
       X: 1.25
@@ -2049,6 +2033,35 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "Color Dials Floor"
+  }
+}
+Objects {
+  Id: 553323043187713214
+  Name: "Color Dials Flumes"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5669723044310532949
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Color Dials Flumes"
   }
 }
 Objects {
@@ -2551,34 +2564,6 @@ Objects {
   }
 }
 Objects {
-  Id: 17967554057141466020
-  Name: "ServerScripts"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 5669723044310532949
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  NetworkContext {
-    Type: Server
-  }
-}
-Objects {
   Id: 7624215931323442849
   Name: "Room Wall Text"
   Transform {
@@ -2605,7 +2590,7 @@ Objects {
           Name: "Position"
           Vector {
             X: -2800
-            Y: -1100
+            Y: -1175
             Z: 1850
           }
         }
@@ -2617,9 +2602,9 @@ Objects {
         Overrides {
           Name: "Scale"
           Vector {
-            X: 17.2500172
-            Y: 17.2500172
-            Z: 17.2500172
+            X: 11
+            Y: 11
+            Z: 11
           }
         }
         Overrides {
@@ -2673,9 +2658,9 @@ Objects {
         Overrides {
           Name: "Scale"
           Vector {
-            X: 17.2500172
-            Y: 17.2500172
-            Z: 17.2500172
+            X: 11
+            Y: 11
+            Z: 11
           }
         }
         Overrides {
@@ -2729,9 +2714,9 @@ Objects {
         Overrides {
           Name: "Scale"
           Vector {
-            X: 17.2500172
-            Y: 17.2500172
-            Z: 17.2500172
+            X: 11
+            Y: 11
+            Z: 11
           }
         }
         Overrides {
@@ -2772,13 +2757,22 @@ Objects {
           Name: "Position"
           Vector {
             X: -2800
-            Y: 750
+            Y: 825
             Z: 1850
           }
         }
         Overrides {
-          Name: "cs:Room"
-          Int: 1
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 11
+            Y: 11
+            Z: 11
+          }
         }
       }
     }

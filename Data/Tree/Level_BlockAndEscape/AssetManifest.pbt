@@ -26,15 +26,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13485243415661967086
-  Name: "Energy Tube Glow"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "Energy_Tube_Glow"
-  }
-}
-Assets {
   Id: 12905923173550510229
   Name: "Cylinder - Polished"
   PlatformAssetType: 1
@@ -62,12 +53,30 @@ Assets {
   }
 }
 Assets {
+  Id: 12095835209017042614
+  Name: "Cube"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_002"
+  }
+}
+Assets {
   Id: 10806280224339831972
   Name: "Whitebox Wall 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_gen_whitebox_wall_001"
+  }
+}
+Assets {
+  Id: 10463331453705133025
+  Name: "Force Field"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "fxmi_forceField"
   }
 }
 Assets {
@@ -98,12 +107,12 @@ Assets {
   }
 }
 Assets {
-  Id: 3250892020078520154
-  Name: "Sphere"
-  PlatformAssetType: 1
+  Id: 3503051390155897964
+  Name: "Tech Panel 02"
+  PlatformAssetType: 2
   PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_sphere_002"
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_sf_gen_tech-panel_002_uv"
   }
 }
 Assets {

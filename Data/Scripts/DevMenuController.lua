@@ -12,9 +12,11 @@ local propBtnJumpman = script:GetCustomProperty("btnJumpman"):WaitForObject()
 local propBtnFarmGallery = script:GetCustomProperty("btnFarmGallery"):WaitForObject()
 local propBtnPoolPlatforms = script:GetCustomProperty("btnPoolPlatforms"):WaitForObject()
 local propBtnCountNetworkedObjects = script:GetCustomProperty("btnCountNetworkedObjects"):WaitForObject()
+local propBtnPuckollossal = script:GetCustomProperty("btnPuckollossal"):WaitForObject()
+local propBtnResetTower = script:GetCustomProperty("btnResetTower"):WaitForObject()
 
 local showingMe = false
-levelList = {"ShapesAndButtons","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Maze"}
+levelList = {"ShapesAndButtons","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Puckollossal","Maze"}
 currentLevelIndex = 1
 requiredNbrPlayersReady = 4
 
@@ -47,7 +49,7 @@ function OnClickedSetLevel(whichButton)
         currentLevelIndex = 5
         newLoc = Vector3.New (-87,-354,4594)
     elseif (whichButton.name == "btnMaze") then
-        currentLevelIndex = 7
+        currentLevelIndex = 8
         newLoc = Vector3.New (-87,-354,3855)
     elseif (whichButton.name == "btnJumpman") then
         currentLevelIndex = 3
@@ -58,6 +60,9 @@ function OnClickedSetLevel(whichButton)
     elseif (whichButton.name == "btnPoolPlatforms") then
         currentLevelIndex = 6
         newLoc = Vector3.New (4598,1292,8833)
+    elseif (whichButton.name == "btnPuckollossal") then
+        currentLevelIndex = 7
+        newLoc = Vector3.New (4181,4780,13157)
     end
 
     SetLevelNameText()
@@ -69,6 +74,11 @@ function CountNetworkObjects()
     Events.BroadcastToServer("GeneralClientToServerMessage","countNetworkObjects","")
 end
 
+function OnClickedResetTower()
+    Events.BroadcastToServer("GeneralClientToServerMessage","resetTower","")
+end
+
+propBtnCountNetworkedObjects.clickedEvent:Connect(CountNetworkObjects)
 propBtnLevelUp.clickedEvent:Connect(OnClickedLevelUp)
 propBtnLevelDown.clickedEvent:Connect(OnClickedLevelDown)
 propBtnBopnBop.clickedEvent:Connect(OnClickedSetLevel)
@@ -77,7 +87,8 @@ propBtnMaze.clickedEvent:Connect(OnClickedSetLevel)
 propBtnJumpman.clickedEvent:Connect(OnClickedSetLevel)
 propBtnFarmGallery.clickedEvent:Connect(OnClickedSetLevel)
 propBtnPoolPlatforms.clickedEvent:Connect(OnClickedSetLevel)
-propBtnCountNetworkedObjects.clickedEvent:Connect(CountNetworkObjects)
+propBtnPuckollossal.clickedEvent:Connect(OnClickedSetLevel)
+propBtnResetTower.clickedEvent:Connect(OnClickedResetTower)
 
 function OnBindingPressed(player, bindingPressed)
     --print ("Dev Menu Controller: pressed " .. bindingPressed)

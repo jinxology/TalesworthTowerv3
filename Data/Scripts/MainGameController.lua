@@ -11,7 +11,7 @@ local playerKeyBindingListener = nil
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
-levelList = {"ShapesAndButtons","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Maze"}
+levelList = {"ShapesAndButtons","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Puckollossal","Maze"}
 requiredNbrPlayersReady = 4
 
  
@@ -30,9 +30,11 @@ function OnBindingPressed(player, bindingPressed)
     elseif (bindingPressed == "ability_extra_26") then
         --U
         ctrl.context.LevelVictory()
+        --LevelEnd(true)
     elseif (bindingPressed == "ability_extra_27") then
         --I
         ctrl.context.LevelFailed()
+        --LevelEnd(false)
     elseif (bindingPressed == "ability_extra_35") then
         --h
         currentLevelIndex = 2
@@ -118,8 +120,6 @@ end
 
 function ClearTimer()
     timerStarted = false
-    script:SetNetworkedCustomProperty("UIMessage","03,-1") --end on clients
-    --UpdateTimerText(-1)
 end
 
 -- function UpdateTimerText(newVal) 
@@ -326,10 +326,8 @@ end
 function LevelEnd(success)    
     levelRunning = false 
     SetNextLevelIndex(success)
-
+    
     if (not success and currentLevelIndex == 1) then
-        script:SetNetworkedCustomProperty("UIMessage","04,true,FAILED - RE-ACTIVATE PLATFORMS")
-
         ResetStartingPlatforms()
     else
         --Turn on exit flume of current level
@@ -353,8 +351,6 @@ function LevelEnd(success)
         end
         levelControllerScript.context.LevelPowerUp()
         
-        --Show go to exit
-        script:SetNetworkedCustomProperty("UIMessage","01,true,PROCEED TO EXIT TUBE")
 
         if levelControllerScript.context.entranceFlume then
             --Spawn the starting platforms
@@ -364,8 +360,18 @@ function LevelEnd(success)
         end
     end
 
-    local lightsDimTime = 5
+    --Talk to client
+    if (not success and currentLevelIndex == 1) then
+        --Clear timer and do reactive platforms
+        script:SetNetworkedCustomProperty("UIMessage","01,true,FAILED - RE-ACTIVATE PLATFORMS,false")
+    else 
+        --clear timer and say go to exit
+        script:SetNetworkedCustomProperty("UIMessage","01,true,PROCEED TO EXIT TUBE,"..tostring(success))
+    end
+    
     ClearTimer()
+
+    local lightsDimTime = 5
     if (not success) then
         MakeWorldDark()
     end
@@ -374,7 +380,7 @@ function LevelEnd(success)
     Task.Wait(lightsDimTime)
 
     --Show go to exit
-    script:SetNetworkedCustomProperty("UIMessage","01,false, ")
+    script:SetNetworkedCustomProperty("UIMessage","01,false,,")
 
     if (not success) then
         MakeWorldLight()
@@ -422,7 +428,15 @@ end
 function GeneralClientToServerMessageHandler(msgType,data)
     if (msgType == "countNetworkObjects") then
         CountNetworkedObjects()
+    elseif (msgType == "resetTower") then
+            ResetTower()
+    else
+        print ("General message undefined: " ..msgType)
     end
+end
+
+function ResetTower()
+    print ("reset tower")
 end
 
 function Split(pString, pPattern)
