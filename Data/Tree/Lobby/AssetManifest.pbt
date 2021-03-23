@@ -80,6 +80,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7182671547704985859
+  Name: "Plane Circle - One Sided"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_plane_circle_001"
+  }
+}
+Assets {
   Id: 7033270109974381006
   Name: "Pipe"
   PlatformAssetType: 1
