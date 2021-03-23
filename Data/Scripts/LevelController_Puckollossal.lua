@@ -16,6 +16,12 @@ entranceFlumeEjectionVelocity = 8.79
 startPlatformPosition = Vector3.New(-2400, -1425, 25)
 startPlatformRotation = Rotation.New(0, 0, 90)
 
+local spawnConfigurations = {
+    {
+        { scale = 1, position = Vector3.New(3600, 0, 1800) }
+    }
+}
+
 function LevelPowerUp()
     propCurrentPuck = World.SpawnAsset(propPuckTemplate)
 end 

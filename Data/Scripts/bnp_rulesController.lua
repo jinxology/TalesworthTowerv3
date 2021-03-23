@@ -65,6 +65,7 @@ function ActivateInstructions(levelStatus)
 		showInstructions = Game.GetLocalPlayer().bindingPressedEvent:Connect(OnBindingPressed)
 		hideInstructions = Game.GetLocalPlayer().bindingReleasedEvent:Connect(OnBindingReleased)
 	else
+		propRulesPanel.visibility = Visibility.FORCE_OFF
 		propScoreIndicator.visibility = Visibility.FORCE_OFF
 		if showInstructions ~= nil then
 			showInstructions:Disconnect(OnBindingPressed)
