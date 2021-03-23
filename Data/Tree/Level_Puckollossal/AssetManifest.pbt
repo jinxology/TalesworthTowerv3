@@ -44,6 +44,15 @@ Assets {
   }
 }
 Assets {
+  Id: 15311694679467806527
+  Name: "Barbed Wire 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_mil_barbed_wire_001_uv_ref"
+  }
+}
+Assets {
   Id: 15112213264769934074
   Name: "Sci-fi Bass Drop Warp Growl 01 SFX"
   PlatformAssetType: 7
@@ -170,12 +179,30 @@ Assets {
   }
 }
 Assets {
+  Id: 8757068560497122517
+  Name: "Plane 4m - One Sided"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_plane_4m_001"
+  }
+}
+Assets {
   Id: 8560170209438767653
   Name: "Whitebox Floor 01 8m x 8m"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_gen_whitebox_floor_001_8x8"
+  }
+}
+Assets {
+  Id: 7283825798727192743
+  Name: "Metal Iron Rusted 02"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_metal_iron_003"
   }
 }
 Assets {
@@ -224,12 +251,30 @@ Assets {
   }
 }
 Assets {
+  Id: 5413886523775614888
+  Name: "Helix - 1.0"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_helix_005"
+  }
+}
+Assets {
   Id: 4808790141039972737
   Name: "Fantasy Gauntlet Hand 01"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weap_fan_gauntlet_hand_001"
+  }
+}
+Assets {
+  Id: 4050437425243511619
+  Name: "Wood Raw"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_wood_raw_001_uv"
   }
 }
 Assets {

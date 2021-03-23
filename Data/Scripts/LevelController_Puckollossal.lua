@@ -51,7 +51,7 @@ end
 function ScoreTriggerDidOverlap(trigger, other)
     if other:IsA("Player") then
         other:AddImpulse(Vector3.New(-1000000, 0, 100000))
-    elseif other.name == "pck.puck" then
+    elseif other.name == "pck.puckTemplate" then
         if propCurrentPuck ~= other then
             propCurrentPuck = other
             other:GetCustomProperty("controller"):WaitForObject().context.SetStabilized(false)
@@ -63,7 +63,7 @@ end
 function FailTriggerDidOverlap(trigger, other)
     if other:IsA("Player") then
         other:AddImpulse(Vector3.New(-1000000, 0, 10000))
-    elseif other.name == "pck.puck" then
+    elseif other.name == "pck.puckTemplate" then
         if propCurrentPuck ~= other then
             propCurrentPuck = other
             other:GetCustomProperty("controller"):WaitForObject().context.SetStabilized(false)

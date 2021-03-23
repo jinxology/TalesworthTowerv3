@@ -64,7 +64,7 @@ Assets {
           Location {
           }
           Rotation {
-            Yaw: 4.09811255e-05
+            Yaw: -45
           }
           Scale {
             X: 1
@@ -183,11 +183,12 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            X: -425
+            X: -300.520508
+            Y: 300.520508
             Z: -265
           }
           Rotation {
-            Yaw: 180
+            Yaw: 135
           }
           Scale {
             X: 0.1
@@ -221,10 +222,12 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            X: 435
+            X: 307.591553
+            Y: -307.591309
             Z: -265
           }
           Rotation {
+            Yaw: -45
           }
           Scale {
             X: 0.1
@@ -258,12 +261,12 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            X: 0.00048828125
-            Y: -434.999512
+            X: -307.59082
+            Y: -307.591309
             Z: -265
           }
           Rotation {
-            Yaw: -90
+            Yaw: -135
           }
           Scale {
             X: 0.1
@@ -297,11 +300,12 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            Y: 435
+            X: 307.591309
+            Y: 307.591309
             Z: -265
           }
           Rotation {
-            Yaw: 90
+            Yaw: 45
           }
           Scale {
             X: 0.1
@@ -338,6 +342,7 @@ Assets {
             Z: -100
           }
           Rotation {
+            Yaw: -45
           }
           Scale {
             X: 1
@@ -3027,6 +3032,7 @@ Assets {
           Location {
           }
           Rotation {
+            Yaw: -45
           }
           Scale {
             X: 1
@@ -3065,6 +3071,7 @@ Assets {
           Location {
           }
           Rotation {
+            Yaw: -45
           }
           Scale {
             X: 1
@@ -3102,6 +3109,7 @@ Assets {
           Location {
           }
           Rotation {
+            Yaw: -45
           }
           Scale {
             X: 1
@@ -3140,6 +3148,7 @@ Assets {
           Location {
           }
           Rotation {
+            Yaw: -45
           }
           Scale {
             X: 1

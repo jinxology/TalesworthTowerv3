@@ -48,6 +48,8 @@ function CheckAim(targetedPuck)
 	return { puck = targetedPuck, anchor = facingAnchor}
 end
 
+local	propCastTime = 0
+
 function OnCast_Tether(ability)
 	propCast2SFX:Play()
 	
@@ -61,16 +63,14 @@ function OnCast_Tether(ability)
 		propTargetedPuck = ring.puck
 
 		local		distance = (propEquipment:GetWorldPosition() - propTargetedPuck.context.propAnchors[propTargetedAnchor]:GetWorldPosition()).size
-		local		castTime = distance / 1600.0
+		
+		propCastTime = distance / 1600.0
 
-		print(castTime)
+		print(propCastTime)
 		propCast1SFX:Play()
 		propReelSFX.fadeInTime = propCast1SFX.length - propCast1SFX.startTime
-		propReelSFX.stopTime = castTime
+		propReelSFX.stopTime = propCastTime
 		propReelSFX:Play()
-		castTime = prop
-
-		Task.Spawn(TetherLanded, castTime)
 	else
 		ability:Interrupt()
 	end
@@ -82,6 +82,7 @@ function TetherLanded()
 end
 
 function OnExecute_Tether(ability)
+	Task.Spawn(TetherLanded, propCastTime)
 	print("execute")
 	propAimTask = Task.Spawn(function()
 		CheckAim(propTargetedPuck)
@@ -94,6 +95,7 @@ function OnExecute_Tether(ability)
 end
 
 function OnRecovery_Tether(ability)
+
 	propAimTask:Cancel()
 	propAimTask = nil
 end
