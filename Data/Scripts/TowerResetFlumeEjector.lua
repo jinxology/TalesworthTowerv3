@@ -1,6 +1,6 @@
 local propVelocityMultiplier = script:GetCustomProperty("VelocityMultiplier")
 local propTriggerTowerResetShooter = script:GetCustomProperty("TriggerTowerResetShooter"):WaitForObject()
-local propTowerResetVectorTarget = script:GetCustomProperty("towerResetVectorTarget"):WaitForObject()
+local propTowerResetVectorTarget = script:GetCustomProperty("TowerResetVectorTarget"):WaitForObject()
 local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
 
 

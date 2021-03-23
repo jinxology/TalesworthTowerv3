@@ -460,7 +460,7 @@ function ResetTower()
     nextLevelindex = nil    
 
     for _, player in pairs(Game.GetPlayers()) do
-        player:SetWorldPosition(Vector3.New(367,-1044,8808))
+        player:SetWorldPosition(Vector3.New(125,-850,8450))
     end   
 
 end
