@@ -15,6 +15,8 @@ exitFlumeRotation = Rotation.New(0,0,180)
 entranceFlumeLocation = Vector3.New(6363.962,-530.329,775)
 entranceFlumeRotation = Rotation.New(0,0,180)
 entranceFlumeEjectionVelocity = 20
+
+propMainGameController.context.SendGeneralMessageToClients("05,"..whoDidIt.." pressed a "..GetColorName(whichColor).." button near "..GetShapeName(whichShape))
 ------------------------------------------------------------
 
 --Add a Custom Property to the LevelController script called "MainGameController"
@@ -71,8 +73,7 @@ local propGreenBreath = script:GetCustomProperty("GreenBreath"):WaitForObject()
  		propFlameGreenTrigger.interactionLabel = 'Green Base Step Enabled!'
 	end
 propFlameGreenTrigger.interactedEvent:Connect(OnflameGreenTriggerInteraction)
-
-
+W 
 --Blue Flame
 local propFlameBlue = script:GetCustomProperty("FlameBlue"):WaitForObject()
 local propFlameBlueTrigger = script:GetCustomProperty("flameBlueTrigger"):WaitForObject()
