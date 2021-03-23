@@ -731,7 +731,7 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: -856.362854
+            X: -856.363098
             Y: 3154.52612
           }
         }
@@ -800,7 +800,7 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: 883.55957
+            X: 883.559387
             Y: 3162.98267
           }
         }
@@ -12554,7 +12554,7 @@ Objects {
   Name: "Rock 03"
   Transform {
     Location {
-      X: 472.929688
+      X: 472.929504
       Y: 4750.80957
       Z: -572.024902
     }
@@ -13324,8 +13324,8 @@ Objects {
   Name: "Roof - FG"
   Transform {
     Location {
-      X: 8.54406738
-      Y: 244.363892
+      X: 8.54388428
+      Y: 244.36377
       Z: 1666.20166
     }
     Rotation {
@@ -13374,7 +13374,7 @@ Objects {
   Name: "Floor - FG"
   Transform {
     Location {
-      X: 8.54406738
+      X: 8.54388428
       Y: 2971.4082
       Z: -214.666016
     }

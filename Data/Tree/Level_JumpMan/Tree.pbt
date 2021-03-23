@@ -1,18 +1,97 @@
 Name: "Level_JumpMan"
 RootId: 9132562513265036101
 Objects {
+  Id: 7587633514078415992
+  Name: "Reverb Zone"
+  Transform {
+    Location {
+      X: 5214.95117
+      Y: -17.6489258
+      Z: -375
+    }
+    Rotation {
+      Yaw: 135
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9132562513265036101
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 1017832589167727899
+    }
+    TeamSettings {
+    }
+  }
+}
+Objects {
+  Id: 11449835060749216090
+  Name: "AmbientJumpmanScore"
+  Transform {
+    Location {
+      X: 3217.33545
+      Y: 0.00122070313
+      Z: -125
+    }
+    Rotation {
+      Yaw: 135
+    }
+    Scale {
+      X: 0.400000215
+      Y: 0.399999768
+      Z: 0.0999999121
+    }
+  }
+  ParentId: 9132562513265036101
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 11190345326845936628
+    }
+    TeamSettings {
+    }
+    AudioBP {
+      Repeat: true
+      Volume: 0.161900789
+      Falloff: 3600
+      Radius: 400
+    }
+  }
+}
+Objects {
   Id: 5488969737579989806
   Name: "FlumePortalPipes"
   Transform {
     Location {
-      X: 6947.3252
-      Y: -618.718262
-      Z: -325
+      X: 7035.72266
+      Y: -2969.85303
+      Z: -1475
     }
     Rotation {
       Pitch: -90
-      Yaw: -144.589554
-      Roll: 143.329147
+      Yaw: -170.247559
+      Roll: 168.987137
     }
     Scale {
       X: 1
@@ -40,13 +119,12 @@ Objects {
   Name: "FlumePortalWallFrame"
   Transform {
     Location {
-      X: 6346.26953
-      Y: -618.720215
-      Z: 975.001953
+      X: 6381.65088
+      Y: -2952.17627
+      Z: -200
     }
     Rotation {
-      Pitch: -1.36603776e-05
-      Yaw: -89.9999847
+      Yaw: -90
       Roll: 180
     }
     Scale {
@@ -109,7 +187,7 @@ Objects {
     Overrides {
       Name: "ma:Building_WallInner:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 15984031613198292986
       }
     }
     Overrides {
@@ -178,7 +256,7 @@ Objects {
     Overrides {
       Name: "ma:Building_WallInner:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 119634730838561693
       }
     }
     Overrides {
@@ -255,7 +333,7 @@ Objects {
     Overrides {
       Name: "ma:Building_WallInner:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 119634730838561693
       }
     }
     Overrides {
@@ -332,7 +410,7 @@ Objects {
     Overrides {
       Name: "ma:Building_WallInner:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 15984031613198292986
       }
     }
     Overrides {
@@ -397,7 +475,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 13485243415661967086
       }
     }
     Overrides {
@@ -455,7 +533,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 13485243415661967086
       }
     }
     Overrides {
@@ -513,7 +591,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 13485243415661967086
       }
     }
     Overrides {
@@ -571,7 +649,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 13485243415661967086
       }
     }
     Overrides {
@@ -628,7 +706,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 119634730838561693
       }
     }
     Overrides {
@@ -685,7 +763,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 119634730838561693
       }
     }
     Overrides {
@@ -742,7 +820,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 119634730838561693
       }
     }
     Overrides {
@@ -798,7 +876,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 119634730838561693
       }
     }
     Overrides {
@@ -937,7 +1015,7 @@ Objects {
     Overrides {
       Name: "ma:Building_WallInner:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 15984031613198292986
       }
     }
     Overrides {
@@ -1006,7 +1084,7 @@ Objects {
     Overrides {
       Name: "ma:Building_WallInner:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 119634730838561693
       }
     }
     Overrides {
@@ -1083,7 +1161,7 @@ Objects {
     Overrides {
       Name: "ma:Building_WallInner:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 119634730838561693
       }
     }
     Overrides {
@@ -1160,7 +1238,7 @@ Objects {
     Overrides {
       Name: "ma:Building_WallInner:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 15984031613198292986
       }
     }
     Overrides {
@@ -1225,7 +1303,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 13485243415661967086
       }
     }
     Overrides {
@@ -1283,7 +1361,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 13485243415661967086
       }
     }
     Overrides {
@@ -1341,7 +1419,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 13485243415661967086
       }
     }
     Overrides {
@@ -1399,7 +1477,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 13485243415661967086
       }
     }
     Overrides {
@@ -1456,7 +1534,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 119634730838561693
       }
     }
     Overrides {
@@ -1513,7 +1591,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 119634730838561693
       }
     }
     Overrides {
@@ -1570,7 +1648,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 119634730838561693
       }
     }
     Overrides {
@@ -1626,7 +1704,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 7493504363085332229
+        Id: 119634730838561693
       }
     }
     Overrides {
@@ -1660,35 +1738,6 @@ Objects {
   }
 }
 Objects {
-  Id: 12789478544213492695
-  Name: "BluePlatforms-jmp"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9132562513265036101
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "BluePlatforms-jmp"
-  }
-}
-Objects {
   Id: 4658871071306977049
   Name: "RedPlatforms-jmp"
   Transform {
@@ -1715,6 +1764,38 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "RedPlatforms-jmp"
+  }
+}
+Objects {
+  Id: 12789478544213492695
+  Name: "BluePlatforms-jmp"
+  Transform {
+    Location {
+      X: -0.000172633532
+      Y: 0.000172633503
+    }
+    Rotation {
+      Yaw: -1.0245285e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9132562513265036101
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "BluePlatforms-jmp"
   }
 }
 Objects {
@@ -1869,257 +1950,6 @@ Objects {
   CoreMesh {
     MeshAsset {
       Id: 18119898128928963492
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 6637018156288012712
-  Name: "TallPillar-jmp"
-  Transform {
-    Location {
-      X: 1150
-      Y: 24.9997559
-      Z: -700
-    }
-    Rotation {
-      Yaw: 89.9999847
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9132562513265036101
-  ChildIds: 5344698512514350889
-  ChildIds: 13239019500227554617
-  ChildIds: 10816886891141257327
-  ChildIds: 962834116428533862
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-}
-Objects {
-  Id: 962834116428533862
-  Name: "Sci-fi Base Capsule 01 Base Green"
-  Transform {
-    Location {
-      X: -25
-      Y: -1150
-      Z: 25
-    }
-    Rotation {
-    }
-    Scale {
-      X: -0.7
-      Y: 0.6
-      Z: 0.7
-    }
-  }
-  ParentId: 6637018156288012712
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        G: 0.24000001
-        B: 0.0015894128
-        A: 1
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12381939234011723748
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 10816886891141257327
-  Name: "Sci-fi Base Capsule 01 Base Yellow"
-  Transform {
-    Location {
-      X: -25
-      Y: -750
-      Z: 25
-    }
-    Rotation {
-    }
-    Scale {
-      X: -0.7
-      Y: 0.6
-      Z: 1.1
-    }
-  }
-  ParentId: 6637018156288012712
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.72
-        G: 0.600794733
-        A: 1
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12381939234011723748
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 13239019500227554617
-  Name: "Sci-fi Base Capsule 01 Base Red"
-  Transform {
-    Location {
-      X: -25
-      Y: -375
-      Z: 25
-    }
-    Rotation {
-    }
-    Scale {
-      X: -0.7
-      Y: 0.6
-      Z: 1.49999976
-    }
-  }
-  ParentId: 6637018156288012712
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.799999952
-        G: 0.0158940312
-        A: 1
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12381939234011723748
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 5344698512514350889
-  Name: "Sci-fi Base Capsule 01 Base Blue"
-  Transform {
-    Location {
-      X: -25
-      Y: 25
-    }
-    Rotation {
-    }
-    Scale {
-      X: -0.7
-      Y: 0.6
-      Z: 1.89999974
-    }
-  }
-  ParentId: 6637018156288012712
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.041523274
-        B: 0.570000052
-        A: 1
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12381939234011723748
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -3694,8 +3524,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 2750
-      Y: 2675
+      X: 2750.00049
+      Y: 2675.00073
       Z: -75
     }
     Rotation {
@@ -3737,7 +3567,7 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1950
+      X: 1950.00012
       Y: 2675
       Z: -75
     }
@@ -3824,7 +3654,7 @@ Objects {
   Transform {
     Location {
       X: 2750
-      Y: 3450
+      Y: 3450.00073
       Z: -75
     }
     Rotation {
@@ -3867,7 +3697,7 @@ Objects {
   Transform {
     Location {
       X: 2750
-      Y: 4250
+      Y: 4250.00098
       Z: -75
     }
     Rotation {
@@ -3909,7 +3739,7 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1950
+      X: 1950.00049
       Y: 4250
       Z: -75
     }
@@ -5401,12 +5231,12 @@ Objects {
 }
 Objects {
   Id: 11695994497352565841
-  Name: "Level.JumpMan"
+  Name: "LevelController.JumpMan"
   Transform {
     Location {
-      X: 3694.63428
-      Y: 1962.22217
-      Z: -11275
+      X: 3694.64844
+      Y: 1962.22803
+      Z: -11150
     }
     Rotation {
       Yaw: 135
@@ -5423,6 +5253,132 @@ Objects {
       Name: "cs:MainGameController"
       ObjectReference {
         SelfId: 6965558101138960242
+      }
+    }
+    Overrides {
+      Name: "cs:GreenCapsule"
+      AssetReference {
+        Id: 10472903789979705492
+      }
+    }
+    Overrides {
+      Name: "cs:BlueCapsule"
+      AssetReference {
+        Id: 14114133663481397920
+      }
+    }
+    Overrides {
+      Name: "cs:YellowCapsule"
+      AssetReference {
+        Id: 2894248342577377328
+      }
+    }
+    Overrides {
+      Name: "cs:RedCapsule"
+      AssetReference {
+        Id: 9460988145622299136
+      }
+    }
+    Overrides {
+      Name: "cs:FlameGreen"
+      ObjectReference {
+        SelfId: 3336956588970473080
+      }
+    }
+    Overrides {
+      Name: "cs:flameGreenTrigger"
+      ObjectReference {
+        SelfId: 1053241173469803115
+      }
+    }
+    Overrides {
+      Name: "cs:GreenCanisterAppear"
+      ObjectReference {
+        SelfId: 4512922542380036250
+      }
+    }
+    Overrides {
+      Name: "cs:GreenBreath"
+      ObjectReference {
+        SelfId: 14928989913209188359
+      }
+    }
+    Overrides {
+      Name: "cs:AmbientJumpmanScore"
+      ObjectReference {
+        SelfId: 11449835060749216090
+      }
+    }
+    Overrides {
+      Name: "cs:FlameBlue"
+      ObjectReference {
+        SelfId: 68179953906578805
+      }
+    }
+    Overrides {
+      Name: "cs:flameBlueTrigger"
+      ObjectReference {
+        SelfId: 8923750658510996524
+      }
+    }
+    Overrides {
+      Name: "cs:BlueBreath"
+      ObjectReference {
+        SelfId: 14634859672426499512
+      }
+    }
+    Overrides {
+      Name: "cs:BlueCanisterAppear"
+      ObjectReference {
+        SelfId: 17058413418764017126
+      }
+    }
+    Overrides {
+      Name: "cs:FlameRed"
+      ObjectReference {
+        SelfId: 1157179011478865946
+      }
+    }
+    Overrides {
+      Name: "cs:flameRedTrigger"
+      ObjectReference {
+        SelfId: 11552662806965724039
+      }
+    }
+    Overrides {
+      Name: "cs:RedBreath"
+      ObjectReference {
+        SelfId: 9809685742098046639
+      }
+    }
+    Overrides {
+      Name: "cs:RedCanisterAppear"
+      ObjectReference {
+        SelfId: 7781215598585827952
+      }
+    }
+    Overrides {
+      Name: "cs:FlameYellow"
+      ObjectReference {
+        SelfId: 8188827612800850643
+      }
+    }
+    Overrides {
+      Name: "cs:flameYellowTrigger"
+      ObjectReference {
+        SelfId: 16677650451049277518
+      }
+    }
+    Overrides {
+      Name: "cs:YellowBreath"
+      ObjectReference {
+        SelfId: 9152697209134174006
+      }
+    }
+    Overrides {
+      Name: "cs:YellowCanisterAppear"
+      ObjectReference {
+        SelfId: 10474278980338511602
       }
     }
   }

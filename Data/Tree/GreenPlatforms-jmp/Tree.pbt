@@ -1680,7 +1680,6 @@ Objects {
     }
   }
   ParentId: 3336956588970473080
-  ChildIds: 2165219699498369963
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceon"
@@ -1700,66 +1699,6 @@ Objects {
     }
     TriggerShape_v2 {
       Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 2165219699498369963
-  Name: "GreenFlame"
-  Transform {
-    Location {
-      X: -63.5104065
-      Y: -3935.22876
-      Z: -1056.67944
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1053241173469803115
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:FlameGreen"
-      ObjectReference {
-        SelfId: 3336956588970473080
-      }
-    }
-    Overrides {
-      Name: "cs:ScifiBaseCapsule01BaseGreen"
-      ObjectReference {
-        SelfId: 962834116428533862
-      }
-    }
-    Overrides {
-      Name: "cs:GreenBreath"
-      ObjectReference {
-        SelfId: 14928989913209188359
-      }
-    }
-    Overrides {
-      Name: "cs:GreenCanisterAppear"
-      ObjectReference {
-        SelfId: 4512922542380036250
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 76324732659138253
     }
   }
 }

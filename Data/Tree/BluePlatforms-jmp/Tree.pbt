@@ -1500,9 +1500,9 @@ Objects {
   Name: "Sci-fi Base Floor Trim 01 - 4m"
   Transform {
     Location {
-      X: 3939.10107
-      Y: -565.565674
-      Z: -475
+      X: 3939.10278
+      Y: -565.565918
+      Z: -450
     }
     Rotation {
       Yaw: 140
@@ -1554,9 +1554,9 @@ Objects {
   Name: "Sci-fi Base Railing 01"
   Transform {
     Location {
-      X: 3871.41504
-      Y: -618.721924
-      Z: -425
+      X: 3871.41748
+      Y: -618.722656
+      Z: -400
     }
     Rotation {
       Pitch: 0.435233295
@@ -1618,9 +1618,9 @@ Objects {
   Name: "Sci-fi Base Railing 01"
   Transform {
     Location {
-      X: 4009.46
+      X: 4009.46191
       Y: -509.221191
-      Z: -425
+      Z: -400
     }
     Rotation {
       Pitch: 0.435233295
@@ -2170,7 +2170,6 @@ Objects {
     }
   }
   ParentId: 68179953906578805
-  ChildIds: 359702267574902518
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2190,66 +2189,6 @@ Objects {
     }
     TriggerShape_v2 {
       Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 359702267574902518
-  Name: "BlueFlame"
-  Transform {
-    Location {
-      X: -63.5104065
-      Y: 1839.77124
-      Z: -1056.67944
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 8923750658510996524
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:FlameBlue"
-      ObjectReference {
-        SelfId: 68179953906578805
-      }
-    }
-    Overrides {
-      Name: "cs:ScifiBaseCapsule01BaseBlue"
-      ObjectReference {
-        SelfId: 5344698512514350889
-      }
-    }
-    Overrides {
-      Name: "cs:BlueBreath"
-      ObjectReference {
-        SelfId: 14634859672426499512
-      }
-    }
-    Overrides {
-      Name: "cs:BlueCanisterAppear"
-      ObjectReference {
-        SelfId: 17058413418764017126
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 18044150293586509368
     }
   }
 }

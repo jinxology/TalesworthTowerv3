@@ -1098,7 +1098,7 @@ Objects {
   Name: "Whitebox Floor 01 4m x 4m"
   Transform {
     Location {
-      X: 2250
+      X: 2249.99976
       Y: -352.624512
       Z: 1175
     }
