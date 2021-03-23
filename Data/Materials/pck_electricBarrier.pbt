@@ -1,6 +1,6 @@
 Assets {
   Id: 8006735836396154061
-  Name: "Custom Electric Surface"
+  Name: "pck.electricBarrier"
   PlatformAssetType: 13
   SerializationVersion: 78
   CustomMaterialAsset {

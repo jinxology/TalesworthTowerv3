@@ -1,6 +1,6 @@
 Assets {
   Id: 17767529267016895003
-  Name: "Custom Electric Surface - Copy"
+  Name: "pck.electricFence"
   PlatformAssetType: 13
   SerializationVersion: 78
   CustomMaterialAsset {
@@ -8,7 +8,7 @@ Assets {
     ParameterOverrides {
       Overrides {
         Name: "texture scale"
-        Float: 4.41879129
+        Float: 9.6199913
       }
       Overrides {
         Name: "enablefullfresnel"
@@ -16,7 +16,7 @@ Assets {
       }
       Overrides {
         Name: "emissiveboost"
-        Float: 7.89940643
+        Float: 26.237812
       }
       Overrides {
         Name: "shape 1"
@@ -24,15 +24,15 @@ Assets {
       }
       Overrides {
         Name: "arc speed"
-        Float: 0.462184101
+        Float: 0.387971878
       }
       Overrides {
         Name: "offsetamount"
-        Float: 6.05528641
+        Float: 7.25197077
       }
       Overrides {
         Name: "bolt distortion scale"
-        Float: 0
+        Float: 1.61968124
       }
       Overrides {
         Name: "arc inner color"
