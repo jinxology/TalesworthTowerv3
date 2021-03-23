@@ -13,7 +13,7 @@ currentLevelIndex = 1
 nextLevelIndex = nil
 levelList = {"ShapesAndButtons","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Puckollossal","Maze"}
 requiredNbrPlayersReady = 4
-
+resetingTower = false
  
 function OnBindingPressed(player, bindingPressed)
     --print ("pressed " .. bindingPressed)
@@ -21,7 +21,7 @@ function OnBindingPressed(player, bindingPressed)
 
     if (bindingPressed == "ability_extra_25") then 
         --Y    
-        if not levelRunning then
+        if not levelRunning and not resetingTower then
             --local levelControllerScript = GetCurrentLevelController()
             --levelControllerScript.context.LevelPowerUp() 
             
@@ -108,7 +108,7 @@ end
 function Tick(deltaTime)
     Task.Wait(1) --slow it down to only run once a second
     
-    if (timerStarted) then        
+    if (timerStarted and not resetingTower) then        
         timeLeft = timeLeft - 1
         --UpdateTimerText(timeLeft)
         if (timeLeft == 0) then
@@ -274,26 +274,32 @@ end
 
 function DestroyFlumePortals(levelIndex)
     local controller = GetLevelControllerByLevelIndex(levelIndex)
-    controller.context.exitFlume:Destroy()
-    controller.context.exitFlume = nil
-    controller.context.entranceFlume:Destroy()
-    controller.context.entranceFlume = nil
+    if (Object.IsValid(controller.context.exitFlume)) then
+        controller.context.exitFlume:Destroy()
+        controller.context.exitFlume = nil
+    end
+    if (Object.IsValid(controller.context.entranceFlume)) then
+        controller.context.entranceFlume:Destroy()
+        controller.context.entranceFlume = nil
+    end
 end
 
 function DestroyStartingPlatforms(levelIndex)
     local controller = GetLevelControllerByLevelIndex(levelIndex)    
-    controller.context.startingPlatforms:Destroy()
+    if (Object.IsValid(controller.context.startingPlatforms)) then
+        controller.context.startingPlatforms:Destroy()
+    end
 end
 
 function DestroyLevel(levelIndex)
     levelControllerScript = GetLevelControllerByLevelIndex(levelIndex)
-    levelControllerScript.context.LevelPowerDown()
+    levelControllerScript.context.LevelPowerDown()    
     DestroyFlumePortals(levelIndex)
     DestroyStartingPlatforms(levelIndex)
 end
 
 function StartingPlatformsActivated()
-    if (not levelRunning) then
+    if (not levelRunning and not resetingTower) then
         if (nextLevelIndex ~= nil) then        
             --Coming from a different level
             DestroyLevel(currentLevelIndex)
@@ -436,7 +442,27 @@ function GeneralClientToServerMessageHandler(msgType,data)
 end
 
 function ResetTower()
-    print ("reset tower")
+    MakeWorldDark()
+    SpawnLevelBeacons(false, 3)
+    script:SetNetworkedCustomProperty("UIMessage","07, ")
+    Task.Wait(3)
+    MakeWorldLight()
+    script:SetNetworkedCustomProperty("UIMessage","04,false, ")
+    --loop through all levels and destroy them
+    for i=1,#levelList do
+        DestroyLevel(currentLevelIndex)
+    end
+
+    levelRunning = false
+    ClearTimer()
+
+    currentLevelIndex = 1
+    nextLevelindex = nil    
+
+    for _, player in pairs(Game.GetPlayers()) do
+        player:SetWorldPosition(Vector3.New(125,-850,8450))
+    end   
+
 end
 
 function Split(pString, pPattern)

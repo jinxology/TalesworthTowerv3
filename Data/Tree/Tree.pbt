@@ -2512,6 +2512,12 @@ Objects {
         Id: 9149253996179549894
       }
     }
+    Overrides {
+      Name: "cs:ResetTowerEjectSFX"
+      AssetReference {
+        Id: 8709810933941914775
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

@@ -283,6 +283,8 @@ end
 
 function LevelPowerDown()
 	UnloadInterior()
+	propTimerTask:Cancel()
+	propTimerTask = nil
 	script:SetNetworkedCustomProperty("levelStatus", 0)
 end
 
