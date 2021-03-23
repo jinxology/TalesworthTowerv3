@@ -1535,7 +1535,6 @@ Objects {
     }
   }
   ParentId: 8188827612800850643
-  ChildIds: 14908241116151635234
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1555,66 +1554,6 @@ Objects {
     }
     TriggerShape_v2 {
       Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 14908241116151635234
-  Name: "YellowFlame"
-  Transform {
-    Location {
-      X: -6525.51025
-      Y: -3976.22876
-      Z: -1243.67944
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 16677650451049277518
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:FlameYellow"
-      ObjectReference {
-        SelfId: 8188827612800850643
-      }
-    }
-    Overrides {
-      Name: "cs:ScifiBaseCapsule01BaseYellow"
-      ObjectReference {
-        SelfId: 10816886891141257327
-      }
-    }
-    Overrides {
-      Name: "cs:YellowBreath"
-      ObjectReference {
-        SelfId: 9152697209134174006
-      }
-    }
-    Overrides {
-      Name: "cs:YellowCanisterAppear"
-      ObjectReference {
-        SelfId: 10474278980338511602
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 653216226668002069
     }
   }
 }

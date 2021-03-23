@@ -173,8 +173,10 @@ end
 
 function LevelPowerDown()
     --Unwire events
-    pressedColoredButtonListener:Disconnect()
-    pressedColoredButtonListener = nil
+    if (pressedColoredButtonListener ~= nil) then
+        pressedColoredButtonListener:Disconnect()
+        pressedColoredButtonListener = nil
+    end
 
 end
 

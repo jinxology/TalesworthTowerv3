@@ -8,12 +8,30 @@ Assets {
   }
 }
 Assets {
-  Id: 12381939234011723748
-  Name: "Sci-fi Base Capsule 01 Base"
-  PlatformAssetType: 1
+  Id: 15984031613198292986
+  Name: "Electric Surface"
+  PlatformAssetType: 2
   PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_scf_base_acc_cap_bot_001_ref"
+    AssetType: "MaterialAssetRef"
+    AssetId: "fxma_electrical_surface"
+  }
+}
+Assets {
+  Id: 13485243415661967086
+  Name: "Energy Tube Glow"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "Energy_Tube_Glow"
+  }
+}
+Assets {
+  Id: 11190345326845936628
+  Name: "\"Tranquil Abstract Anomaly\" Music Construction Kit (Sections) 01"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "abp_tranquil_abstract_anomaly_sections_kit_ref"
   }
 }
 Assets {
@@ -59,5 +77,23 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_scf_base_floor_001_X_ref"
+  }
+}
+Assets {
+  Id: 1017832589167727899
+  Name: "Reverb Zone"
+  PlatformAssetType: 6
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "sfxbp_reverb_zone"
+  }
+}
+Assets {
+  Id: 119634730838561693
+  Name: "Amethyst"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "fxmi_amethyst"
   }
 }
