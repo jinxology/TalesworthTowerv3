@@ -18,7 +18,7 @@ exitFlumeLocation = Vector3.New(-6000,2125,2175)
 exitFlumeRotation = Rotation.New(0,0,-90)
 entranceFlumeLocation = Vector3.New(2600,-50,2625)
 entranceFlumeRotation = Rotation.New(0,-22.5,90)
-entranceFlumeEjectionVelocity = 15
+entranceFlumeEjectionVelocity = 5
 
 propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
 ------------------------------------------------------------
@@ -79,7 +79,7 @@ end
 
 --LevelPowerDown is called from the next level back to this one to clean it up and remove it from memory
 function LevelPowerDown() 
-	for ballIndex, ball in ballArray do
+	for ballIndex, ball in ipairs(ballArray) do
 		ballArray[ballIndex]:Destroy()
 	end
 end
