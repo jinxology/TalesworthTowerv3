@@ -116,67 +116,6 @@ Objects {
   }
 }
 Objects {
-  Id: 11205495738973093915
-  Name: "pck.puckTemplate"
-  Transform {
-    Location {
-      X: 280
-      Y: 4030
-      Z: 13570
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1232579912354001357
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 3040303582551256267
-      value {
-        Overrides {
-          Name: "Name"
-          String: "pck.puckTemplate"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 3600
-            Z: 2200
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -45
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 8089009252862839010
-    }
-  }
-}
-Objects {
   Id: 3162221981555955782
   Name: "pck.goal"
   Transform {
@@ -4215,8 +4154,8 @@ Objects {
   Name: "pck.mugshotEquipment"
   Transform {
     Location {
-      X: 3200
-      Y: -2025
+      X: 4725
+      Y: 600
       Z: 220
     }
     Rotation {
@@ -4405,6 +4344,8 @@ Objects {
   Name: "Cartoon Twang Spring Bounce Jump 03 SFX"
   Transform {
     Location {
+      X: 1275
+      Y: 2150
     }
     Rotation {
     }
@@ -4551,7 +4492,7 @@ Objects {
       }
     }
     ExecutePhaseSettings {
-      Duration: 0.1
+      Duration: 10
       CanMove: true
       CanJump: true
       CanRotate: true

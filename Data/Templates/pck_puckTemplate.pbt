@@ -7,7 +7,7 @@ Assets {
       RootId: 3040303582551256267
       Objects {
         Id: 3040303582551256267
-        Name: "pck.puck"
+        Name: "pck.puckTemplate"
         Transform {
           Scale {
             X: 1
@@ -187,10 +187,10 @@ Assets {
             Z: -265
           }
           Rotation {
-            Yaw: 2.4123925e-05
+            Yaw: 180
           }
           Scale {
-            X: 0.5
+            X: 0.1
             Y: 0.5
             Z: 0.5
           }
@@ -212,7 +212,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
+            Value: "mc:etriggershape:box"
           }
         }
       }
@@ -222,14 +222,12 @@ Assets {
         Transform {
           Location {
             X: 435
-            Y: -6.10351563e-05
             Z: -265
           }
           Rotation {
-            Yaw: 90.0000534
           }
           Scale {
-            X: 0.5
+            X: 0.1
             Y: 0.5
             Z: 0.5
           }
@@ -251,7 +249,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
+            Value: "mc:etriggershape:box"
           }
         }
       }
@@ -265,10 +263,10 @@ Assets {
             Z: -265
           }
           Rotation {
-            Yaw: -179.999924
+            Yaw: -90
           }
           Scale {
-            X: 0.5
+            X: 0.1
             Y: 0.5
             Z: 0.5
           }
@@ -290,7 +288,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
+            Value: "mc:etriggershape:box"
           }
         }
       }
@@ -303,10 +301,10 @@ Assets {
             Z: -265
           }
           Rotation {
-            Yaw: -89.999939
+            Yaw: 90
           }
           Scale {
-            X: 0.5
+            X: 0.1
             Y: 0.5
             Z: 0.5
           }
@@ -328,7 +326,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
+            Value: "mc:etriggershape:box"
           }
         }
       }

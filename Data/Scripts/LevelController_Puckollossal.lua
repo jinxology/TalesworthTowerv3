@@ -4,7 +4,7 @@ local propFailTrigger = script:GetCustomProperty("failTrigger"):WaitForObject()
 local propFailSFX = script:GetCustomProperty("failSFX"):WaitForObject()
 local propPuckTemplate = script:GetCustomProperty("puckTemplate")
 
-local propCurrentPuck = nil
+local propLivePucks = {}
 
 exitFlume = nil
 entranceFlume = nil
@@ -16,18 +16,36 @@ entranceFlumeEjectionVelocity = 8.79
 startPlatformPosition = Vector3.New(-2400, -1425, 25)
 startPlatformRotation = Rotation.New(0, 0, 90)
 
-local spawnConfigurations = {
+local propSpawnConfigurationIndex = 1
+local propSpawnConfigurations = {
     {
-        { scale = 1, position = Vector3.New(3600, 0, 1800) }
-    }
+        Vector3.New(3600, 0, 1800)
+    },
+    {
+        Vector3.New(0, 2400, 1800),
+        Vector3.New(0, -2400, 1800)
+    },
 }
 
 function LevelPowerUp()
-    propCurrentPuck = World.SpawnAsset(propPuckTemplate)
-end 
+    print("powering up")
+    local   spawnConfiguration = propSpawnConfigurations[propSpawnConfigurationIndex]
+    
+    for _, position in ipairs(spawnConfiguration) do
+        table.insert(propLivePucks, World.SpawnAsset(propPuckTemplate, { position = position, parent = script.parent }))
+    end
+end
 
 function LevelPowerDown()
-    propCurrentPuck:Destroy()
+    print("powering down")
+    for _, puck in ipairs(propLivePucks) do
+        puck:Destroy()
+    end
+
+    propSpawnConfigurationIndex = propSpawnConfigurationIndex + 1
+    if (propSpawnConfigurationIndex > #propSpawnConfigurations) then
+        propSpawnConfigurations = 1
+    end
 end
 
 function ScoreTriggerDidOverlap(trigger, other)
