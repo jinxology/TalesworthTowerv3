@@ -15,11 +15,17 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1232579912354001357
+        ParentId: 12515342141069640868
         ChildIds: 9129683525484421359
-        ChildIds: 337870569824298381
+        ChildIds: 9300072462062102593
+        ChildIds: 15728253918366483480
+        ChildIds: 18035997459952568296
+        ChildIds: 16163190610561029155
         ChildIds: 13361225289690824571
-        ChildIds: 15087423602362585968
+        ChildIds: 2654900809422222141
+        ChildIds: 14010103477530155103
+        ChildIds: 10036626272614406052
+        ChildIds: 15229912522508939515
         UnregisteredParameters {
           Overrides {
             Name: "cs:controller"
@@ -56,8 +62,6 @@ Assets {
         Name: "pck.Puck"
         Transform {
           Location {
-            X: 2.09547579e-09
-            Y: -0.00195312477
           }
           Rotation {
             Yaw: 4.09811255e-05
@@ -94,6 +98,69 @@ Assets {
               SubObjectId: 2654900809422222141
             }
           }
+          Overrides {
+            Name: "cs:runningSFX"
+            ObjectReference {
+              SubObjectId: 15229912522508939515
+            }
+          }
+          Overrides {
+            Name: "cs:canTip"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:floorLevel"
+            Float: 0
+          }
+          Overrides {
+            Name: "cs:tetherToPoint"
+            Vector {
+            }
+          }
+          Overrides {
+            Name: "cs:tension"
+            Float: 0
+          }
+          Overrides {
+            Name: "cs:anchor1"
+            ObjectReference {
+              SubObjectId: 9300072462062102593
+            }
+          }
+          Overrides {
+            Name: "cs:anchor2"
+            ObjectReference {
+              SubObjectId: 15728253918366483480
+            }
+          }
+          Overrides {
+            Name: "cs:anchor3"
+            ObjectReference {
+              SubObjectId: 18035997459952568296
+            }
+          }
+          Overrides {
+            Name: "cs:anchor4"
+            ObjectReference {
+              SubObjectId: 16163190610561029155
+            }
+          }
+          Overrides {
+            Name: "cs:canTip:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:floorLevel:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:tetherToPoint:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:tension:isrep"
+            Bool: true
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -112,17 +179,20 @@ Assets {
         }
       }
       Objects {
-        Id: 337870569824298381
+        Id: 9300072462062102593
         Name: "Trigger"
         Transform {
           Location {
+            X: -425
+            Z: -265
           }
           Rotation {
+            Yaw: 2.4123925e-05
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
           }
         }
         ParentId: 3040303582551256267
@@ -142,7 +212,123 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
+            Value: "mc:etriggershape:sphere"
+          }
+        }
+      }
+      Objects {
+        Id: 15728253918366483480
+        Name: "Trigger"
+        Transform {
+          Location {
+            X: 435
+            Y: -6.10351563e-05
+            Z: -265
+          }
+          Rotation {
+            Yaw: 90.0000534
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 3040303582551256267
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:sphere"
+          }
+        }
+      }
+      Objects {
+        Id: 18035997459952568296
+        Name: "Trigger"
+        Transform {
+          Location {
+            X: 0.00048828125
+            Y: -434.999512
+            Z: -265
+          }
+          Rotation {
+            Yaw: -179.999924
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 3040303582551256267
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:sphere"
+          }
+        }
+      }
+      Objects {
+        Id: 16163190610561029155
+        Name: "Trigger"
+        Transform {
+          Location {
+            Y: 435
+            Z: -265
+          }
+          Rotation {
+            Yaw: -89.999939
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 3040303582551256267
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:sphere"
           }
         }
       }
@@ -163,6 +349,7 @@ Assets {
         }
         ParentId: 3040303582551256267
         ChildIds: 9153616377476526950
+        ChildIds: 1654339899892608224
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -194,8 +381,8 @@ Assets {
         }
         ParentId: 13361225289690824571
         ChildIds: 9596451020906879998
-        ChildIds: 10087028961263233520
         ChildIds: 13115255846834986777
+        ChildIds: 10087028961263233520
         ChildIds: 13844241533026248553
         ChildIds: 7358528990125639884
         ChildIds: 8634895287104402232
@@ -271,229 +458,6 @@ Assets {
         CoreMesh {
           MeshAsset {
             Id: 12905923173550510229
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 10087028961263233520
-        Name: "pck.ringGeometry"
-        Transform {
-          Location {
-            X: -389.999512
-            Y: -0.00011634879
-            Z: 235
-          }
-          Rotation {
-            Yaw: -3.05175781e-05
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 9153616377476526950
-        ChildIds: 17281198357303058171
-        ChildIds: 7403317526359687303
-        ChildIds: 1666129318104810211
-        Folder {
-          IsGroup: true
-        }
-      }
-      Objects {
-        Id: 17281198357303058171
-        Name: "Sci-fi Trim 01 End"
-        Transform {
-          Location {
-            X: 64.9971313
-            Y: -0.0155944824
-          }
-          Rotation {
-            Yaw: -89.9999847
-            Roll: -179.999954
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 10087028961263233520
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 8923793940830097638
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              G: 1
-              B: 1
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 1276298368217221597
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 7403317526359687303
-        Name: "Ring - Quarter Thick"
-        Transform {
-          Location {
-            X: -34.9989624
-            Y: -0.0156860352
-          }
-          Rotation {
-            Pitch: -90
-            Yaw: 20.5560398
-            Roll: -110.556076
-          }
-          Scale {
-            X: 0.5
-            Y: 0.5
-            Z: 0.5
-          }
-        }
-        ParentId: 10087028961263233520
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 16752997548390058292
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              G: 1
-              B: 1
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 13640596689401745214
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 1666129318104810211
-        Name: "Ring - Quarter Thick"
-        Transform {
-          Location {
-            X: -34.9989624
-            Y: -0.0156860352
-          }
-          Rotation {
-            Pitch: 6.83018879e-06
-            Yaw: 179.999893
-            Roll: 89.9999313
-          }
-          Scale {
-            X: 0.5
-            Y: 0.5
-            Z: 0.5
-          }
-        }
-        ParentId: 10087028961263233520
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 16752997548390058292
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:smart"
-            Bool: false
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 1
-              G: 1
-              B: 1
-              A: 1
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 13640596689401745214
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1019,6 +983,229 @@ Assets {
         CoreMesh {
           MeshAsset {
             Id: 1860525514493543587
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 10087028961263233520
+        Name: "pck.ringGeometry"
+        Transform {
+          Location {
+            X: -389.999512
+            Y: -0.00011634879
+            Z: 235
+          }
+          Rotation {
+            Yaw: -3.05175781e-05
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 9153616377476526950
+        ChildIds: 17281198357303058171
+        ChildIds: 7403317526359687303
+        ChildIds: 1666129318104810211
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 17281198357303058171
+        Name: "Sci-fi Trim 01 End"
+        Transform {
+          Location {
+            X: 64.9971313
+            Y: -0.0155944824
+          }
+          Rotation {
+            Yaw: -89.9999847
+            Roll: -179.999954
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10087028961263233520
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 8923793940830097638
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1276298368217221597
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 7403317526359687303
+        Name: "Ring - Quarter Thick"
+        Transform {
+          Location {
+            X: -34.9989624
+            Y: -0.0156860352
+          }
+          Rotation {
+            Pitch: -90
+            Yaw: 20.5560398
+            Roll: -110.556076
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 10087028961263233520
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 16752997548390058292
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 13640596689401745214
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 1666129318104810211
+        Name: "Ring - Quarter Thick"
+        Transform {
+          Location {
+            X: -34.9989624
+            Y: -0.0156860352
+          }
+          Rotation {
+            Pitch: 6.83018879e-06
+            Yaw: 179.999893
+            Roll: 89.9999313
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 10087028961263233520
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 16752997548390058292
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 13640596689401745214
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2792,8 +2979,8 @@ Assets {
         }
       }
       Objects {
-        Id: 15087423602362585968
-        Name: "Reverb Zone"
+        Id: 1654339899892608224
+        Name: "pck.Puck.client"
         Transform {
           Location {
           }
@@ -2805,11 +2992,21 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3040303582551256267
-        ChildIds: 2654900809422222141
-        ChildIds: 14010103477530155103
-        ChildIds: 10036626272614406052
-        WantsNetworking: true
+        ParentId: 13361225289690824571
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:pckPuckgeometry"
+            ObjectReference {
+              SubObjectId: 9153616377476526950
+            }
+          }
+          Overrides {
+            Name: "cs:pckPuck"
+            ObjectReference {
+              SubObjectId: 9129683525484421359
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2819,11 +3016,9 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        Blueprint {
-          BlueprintAsset {
-            Id: 18213690653136887655
-          }
-          TeamSettings {
+        Script {
+          ScriptAsset {
+            Id: 5750374496011908740
           }
         }
       }
@@ -2841,7 +3036,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15087423602362585968
+        ParentId: 3040303582551256267
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2879,7 +3074,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15087423602362585968
+        ParentId: 3040303582551256267
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2896,7 +3091,7 @@ Assets {
           }
           Volume: 1
           Falloff: -1
-          Radius: 5000
+          Radius: 2000
           EnableOcclusion: true
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true
@@ -2916,7 +3111,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15087423602362585968
+        ParentId: 3040303582551256267
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2934,10 +3129,60 @@ Assets {
           Pitch: -800
           Volume: 3
           Falloff: -1
-          Radius: 5000
+          Radius: 2000
           EnableOcclusion: true
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true
+        }
+      }
+      Objects {
+        Id: 15229912522508939515
+        Name: "Nature Earthquake Rumble Shake Set 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3040303582551256267
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Type"
+            Enum {
+              Value: "mc:esfx_nature_earthquake:12"
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 13446622655374832063
+          }
+          TeamSettings {
+          }
+          AudioBP {
+            Repeat: true
+            Volume: 1.00348735
+            Falloff: 2000
+            Radius: 2000
+            EnableOcclusion: true
+            IsSpatializationEnabled: true
+            IsAttenuationEnabled: true
+          }
         }
       }
     }
@@ -2957,6 +3202,33 @@ Assets {
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "mi_fan_hay_002_uv"
+      }
+    }
+    Assets {
+      Id: 1860525514493543587
+      Name: "Fantasy Sack Tied"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prop_fantasy_sack_002_ref"
+      }
+    }
+    Assets {
+      Id: 1342935755952129588
+      Name: "Office Carpet Basic 01"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_urb_office_carpet_004_uv_ref"
+      }
+    }
+    Assets {
+      Id: 5660774408795298116
+      Name: "Fantasy Sack Laying"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prop_fantasy_sack_003_ref"
       }
     }
     Assets {
@@ -2993,33 +3265,6 @@ Assets {
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "mi_metal_gold_002"
-      }
-    }
-    Assets {
-      Id: 1860525514493543587
-      Name: "Fantasy Sack Tied"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_prop_fantasy_sack_002_ref"
-      }
-    }
-    Assets {
-      Id: 1342935755952129588
-      Name: "Office Carpet Basic 01"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_urb_office_carpet_004_uv_ref"
-      }
-    }
-    Assets {
-      Id: 5660774408795298116
-      Name: "Fantasy Sack Laying"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_prop_fantasy_sack_003_ref"
       }
     }
     Assets {
@@ -3068,15 +3313,6 @@ Assets {
       }
     }
     Assets {
-      Id: 18213690653136887655
-      Name: "Reverb Zone"
-      PlatformAssetType: 6
-      PrimaryAsset {
-        AssetType: "BlueprintAssetRef"
-        AssetId: "sfxbp_reverb_zone"
-      }
-    }
-    Assets {
       Id: 1629201855242590202
       Name: "Creature Cow Moo Short 01 SFX"
       PlatformAssetType: 7
@@ -3101,6 +3337,15 @@ Assets {
       PrimaryAsset {
         AssetType: "AudioAssetRef"
         AssetId: "sfx_creature_cow_moo_long_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 13446622655374832063
+      Name: "Nature Earthquake Rumble Shake Set 01 SFX"
+      PlatformAssetType: 10
+      PrimaryAsset {
+        AssetType: "AudioBlueprintAssetRef"
+        AssetId: "sfxabp_nature_earthquake_loops_ref"
       }
     }
     PrimaryAssetId {

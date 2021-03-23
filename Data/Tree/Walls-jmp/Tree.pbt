@@ -1,49 +1,6 @@
 Name: "Walls-jmp"
 RootId: 10782931365881065521
 Objects {
-  Id: 630841997932933501
-  Name: "Sci-fi Base Wall 02 - Doorway 01"
-  Transform {
-    Location {
-      X: -279.464142
-      Y: -2153.60547
-      Z: -75
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10782931365881065521
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 17411449495217333473
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
   Id: 15063451024916155919
   Name: "Walls1-jmp"
   Transform {
@@ -1645,6 +1602,7 @@ Objects {
   ChildIds: 3186237919541247870
   ChildIds: 6596648062310061329
   ChildIds: 557090405663233722
+  ChildIds: 472431318378031305
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1656,6 +1614,49 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 472431318378031305
+  Name: "Sci-fi Base Wall 02"
+  Transform {
+    Location {
+      X: 2124.70117
+      Y: -2143.25244
+      Z: -75
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3160370475134612642
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17964725037567714412
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
   }
 }
 Objects {

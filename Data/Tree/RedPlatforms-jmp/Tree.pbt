@@ -1994,7 +1994,6 @@ Objects {
     }
   }
   ParentId: 1157179011478865946
-  ChildIds: 1670406812363355937
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2014,66 +2013,6 @@ Objects {
     }
     TriggerShape_v2 {
       Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 1670406812363355937
-  Name: "RedFlame"
-  Transform {
-    Location {
-      X: -6413.51025
-      Y: 1839.77124
-      Z: -1056.67944
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 11552662806965724039
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:FlameRed"
-      ObjectReference {
-        SelfId: 1157179011478865946
-      }
-    }
-    Overrides {
-      Name: "cs:ScifiBaseCapsule01BaseRed"
-      ObjectReference {
-        SelfId: 13239019500227554617
-      }
-    }
-    Overrides {
-      Name: "cs:RedBreath"
-      ObjectReference {
-        SelfId: 9809685742098046639
-      }
-    }
-    Overrides {
-      Name: "cs:RedCanisterAppear"
-      ObjectReference {
-        SelfId: 7781215598585827952
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14561940025728905777
     }
   }
 }
