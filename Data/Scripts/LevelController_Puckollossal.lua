@@ -10,10 +10,10 @@ exitFlume = nil
 entranceFlume = nil
 exitFlumeLocation = Vector3.New(-20, -20, 1535)
 exitFlumeRotation = Rotation.New(0, -90, 0)
-entranceFlumeLocation = Vector3.New(-6785, 5, 1505)
+entranceFlumeLocation = Vector3.New(-5135, 5, 1505)
 entranceFlumeRotation = Rotation.New(0, 0, 0)
-entranceFlumeEjectionVelocity = 8.79
-startPlatformPosition = Vector3.New(1810, -405, 25)
+entranceFlumeEjectionVelocity = 7.55
+startPlatformPosition = Vector3.New(1750, 460, -25)
 startPlatformRotation = Rotation.New(0, 0, 90)
 
 local propSpawnConfigurationIndex = 1
@@ -32,12 +32,30 @@ local propPuckOffset = Vector3.New(0, 0, 501)
 local propSpawnerPortholeOpenTime = .75
 local propSpawnerInTime = 1.00
 local propPuckSpawnerTemplate = script:GetCustomProperty("puckSpawner")
+local propWallsTemplate = script:GetCustomProperty("wallsTemplate")
+local propTutorialCurtainTemplate = script:GetCustomProperty("tutorialCurtain")
+local propTutorialCurtain
+local propWalls
 
 function LevelPowerUp()
-    --  make all players look at (closest) spawner
+    propWalls = World.SpawnAsset(propWallsTemplate, { parent = script.parent })
+    propWalls.visibility = Visibility.FORCE_ON
+    propTutorialCurtain = World.SpawnAsset(propTutorialCurtainTemplate, { parent = script.parent })
+    script:SetNetworkedCustomProperty("levelState", 1)
+end
+
+function LevelBegin()
     local   spawnConfiguration = propSpawnConfigurations[propSpawnConfigurationIndex]
     
+    script:SetNetworkedCustomProperty("levelState", 2)
+    propWalls.visibility = Visibility.FORCE_OFF
+    propTutorialCurtain:Destroy()
+    propTutorialCurtain = nil
     SpawnPucks(spawnConfiguration)
+end
+
+function LevelEnd()
+    script:SetNetworkedCustomProperty("levelState", 3)
 end
 
 function SpawnPucks(spawnConfiguration)
@@ -49,6 +67,7 @@ function SpawnPucks(spawnConfiguration)
         local spawnerOutSFX = spawner:GetCustomProperty("spawnerOutSFX"):WaitForObject()
         local portholeOpenScale = portholeGeometry:GetScale()
 
+        --  make all players look at (closest) spawner
         portholeGeometry:SetScale(Vector3.ZERO)
         
         spawnerInSFX:Play()
@@ -57,10 +76,10 @@ function SpawnPucks(spawnConfiguration)
 
         spawnerGeometry:MoveTo(propSpawnerZTravel, propSpawnerInTime, true)
         spawnerGeometry:RotateTo(propSpawnerZRotation, propSpawnerInTime, true)
-        Task.Wait(propSpawnerInTime)
+        Task.Wait(propSpawnerInTime + .25)
 
-        local puck = World.SpawnAsset(propPuckTemplate, { position = position + propPuckOffset, parent = script.parent })
-
+        local puck = World.SpawnAsset(propPuckTemplate, { position = position + propSpawnerZTravel + propPuckOffset, parent = script.parent })
+        
         table.insert(propLivePucks, puck)
         Task.Wait(5)
         spawnerOutSFX:Play()
@@ -83,6 +102,9 @@ function LevelPowerDown()
     if (propSpawnConfigurationIndex > #propSpawnConfigurations) then
         propSpawnConfigurations = 1
     end
+
+    propWalls:Destroy()
+    propWalls = nil
 end
 
 function ScoreTriggerDidOverlap(trigger, other)
