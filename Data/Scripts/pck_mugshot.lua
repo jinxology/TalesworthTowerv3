@@ -15,70 +15,78 @@ local propTetheredToTarget = false
 
 local FACING_AWAY = 0.2
 
-function CheckAim()
-	local	targetData = propTetherAbility:GetTargetData()
-	local	hitObject = targetData.hitObject
-	
-	if hitObject ~= nil and hitObject.name == "pck.puck" then
-		local		targetedPuck = hitObject:GetCustomProperty("controller"):WaitForObject()
-		local		facingAnchor = 0
-		local		closestFacing = -1
-		local		mugshotPosition = propEquipment:GetWorldPosition()
+function CheckAim(targetedPuck)
+	local		facingAnchor = 0
+	local		closestFacing = -1
+	local		mugshotPosition = propEquipment:GetWorldPosition()
 
-		-- print("mugshot at " .. tostring(mugshotPosition))
-		-- print("targeting " .. targetedPuck.type)
+	-- print("mugshot at " .. tostring(mugshotPosition))
+	-- print("targeting " .. targetedPuck.type)
 
-		for index, anchor in pairs(targetedPuck.context.propAnchors) do
-			local	anchorPosition = anchor:GetWorldPosition()
-			local	mugshotToAnchor = anchorPosition - mugshotPosition
-			local	mugshotDirection = mugshotToAnchor:GetNormalized()
-			local	anchorDirection = anchor:GetWorldTransform():GetForwardVector()
-			local	dot = anchorDirection .. mugshotDirection
-			
-			--highest dot product is closest
-			--dot products under a threshold are ineligible
+	for index, anchor in pairs(targetedPuck.context.propAnchors) do
+		local	anchorPosition = anchor:GetWorldPosition()
+		local	mugshotToAnchor = anchorPosition - mugshotPosition
+		local	mugshotDirection = mugshotToAnchor:GetNormalized()
+		local	anchorDirection = anchor:GetWorldTransform():GetForwardVector()
+		local	dot = anchorDirection .. mugshotDirection
+		
+		--highest dot product is closest
+		--dot products under a threshold are ineligible
 
-			if dot > FACING_AWAY then
-				CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.RED, thickness = 3 })
-			else
-				CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.GREEN, thickness = 3 })
-				if dot > closestFacing then
-					closestFacing = dot
-					facingAnchor = index
-				end
+		if dot > FACING_AWAY then
+			CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.RED, thickness = 3 })
+		else
+			CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.GREEN, thickness = 3 })
+			if dot > closestFacing then
+				closestFacing = dot
+				facingAnchor = index
 			end
-			-- print("from mugshot to anchor: " .. index .. " " .. anchor.id .. " " .. tostring(mugshotDirection) .. ", anchor facing " .. tostring(anchorDirection) .. " (" .. dot .. ")")
 		end
-
-		return { puck = targetedPuck, anchor = facingAnchor}
+		-- print("from mugshot to anchor: " .. index .. " " .. anchor.id .. " " .. tostring(mugshotDirection) .. ", anchor facing " .. tostring(anchorDirection) .. " (" .. dot .. ")")
 	end
 
-	return nil
+	return { puck = targetedPuck, anchor = facingAnchor}
 end
+
+local	propCastTime = 0
 
 function OnCast_Tether(ability)
 	propCast2SFX:Play()
 	
-	local	ring = CheckAim()
+	local	targetData = propTetherAbility:GetTargetData()
+	local	hitObject = targetData.hitObject
 	
-	if ring ~= nil and ring.puck ~= nil then
+	if hitObject ~= nil and hitObject.name == "pck.puckTemplate" then
+		ring = CheckAim(hitObject:GetCustomProperty("controller"):WaitForObject())
+
 		propTargetedAnchor = ring.anchor
 		propTargetedPuck = ring.puck
 
 		local		distance = (propEquipment:GetWorldPosition() - propTargetedPuck.context.propAnchors[propTargetedAnchor]:GetWorldPosition()).size
-		local		castTime = distance / 1000.0
+		
+		propCastTime = distance / 1600.0
 
-		print(castTime)
+		print(propCastTime)
 		propCast1SFX:Play()
 		propReelSFX.fadeInTime = propCast1SFX.length - propCast1SFX.startTime
-		propReelSFX.stopTime = castTime
+		propReelSFX.stopTime = propCastTime
 		propReelSFX:Play()
-		castTime = prop
+	else
+		ability:Interrupt()
 	end
 end
 
+function TetherLanded()
+	print("advance now")
+	propTetherAbility:AdvancePhase()
+end
+
 function OnExecute_Tether(ability)
-	propAimTask = Task.Spawn(CheckAim)
+	Task.Spawn(TetherLanded, propCastTime)
+	print("execute")
+	propAimTask = Task.Spawn(function()
+		CheckAim(propTargetedPuck)
+	end)
 	propAimTask.repeatCount = -1
 	if propTargetedPuck.context.TetherMugshot(propEquipment, propTargetedAnchor) then
 		propTetheredToTarget = true
@@ -88,6 +96,8 @@ end
 
 function OnRecovery_Tether(ability)
 
+	propAimTask:Cancel()
+	propAimTask = nil
 end
 
 function OnCooldown_Tether(ability)
@@ -96,6 +106,8 @@ end
 function OnInterrupted_Tether(ability)
 	propTargetedPuck = nil
 	propTargetedAnchor = 0
+	propAimTask:Cancel()
+	propAimTask = nil
 end
 
 function OnReady_Tether(ability)

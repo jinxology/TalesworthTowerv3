@@ -71,15 +71,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10463331453705133025
-  Name: "Force Field"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "fxmi_forceField"
-  }
-}
-Assets {
   Id: 8770848245513668855
   Name: "Wedge Concave - Large"
   PlatformAssetType: 1

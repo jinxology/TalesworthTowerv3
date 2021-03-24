@@ -7,7 +7,7 @@ Assets {
       RootId: 3040303582551256267
       Objects {
         Id: 3040303582551256267
-        Name: "pck.puck"
+        Name: "pck.puckTemplate"
         Transform {
           Scale {
             X: 1
@@ -64,7 +64,7 @@ Assets {
           Location {
           }
           Rotation {
-            Yaw: 4.09811255e-05
+            Yaw: -45
           }
           Scale {
             X: 1
@@ -183,14 +183,15 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            X: -425
+            X: -300.520508
+            Y: 300.520508
             Z: -265
           }
           Rotation {
-            Yaw: 2.4123925e-05
+            Yaw: 135
           }
           Scale {
-            X: 0.5
+            X: 0.1
             Y: 0.5
             Z: 0.5
           }
@@ -212,7 +213,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
+            Value: "mc:etriggershape:box"
           }
         }
       }
@@ -221,15 +222,15 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            X: 435
-            Y: -6.10351563e-05
+            X: 307.591553
+            Y: -307.591309
             Z: -265
           }
           Rotation {
-            Yaw: 90.0000534
+            Yaw: -45
           }
           Scale {
-            X: 0.5
+            X: 0.1
             Y: 0.5
             Z: 0.5
           }
@@ -251,7 +252,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
+            Value: "mc:etriggershape:box"
           }
         }
       }
@@ -260,15 +261,15 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            X: 0.00048828125
-            Y: -434.999512
+            X: -307.59082
+            Y: -307.591309
             Z: -265
           }
           Rotation {
-            Yaw: -179.999924
+            Yaw: -135
           }
           Scale {
-            X: 0.5
+            X: 0.1
             Y: 0.5
             Z: 0.5
           }
@@ -290,7 +291,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
+            Value: "mc:etriggershape:box"
           }
         }
       }
@@ -299,14 +300,15 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            Y: 435
+            X: 307.591309
+            Y: 307.591309
             Z: -265
           }
           Rotation {
-            Yaw: -89.999939
+            Yaw: 45
           }
           Scale {
-            X: 0.5
+            X: 0.1
             Y: 0.5
             Z: 0.5
           }
@@ -328,7 +330,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
+            Value: "mc:etriggershape:box"
           }
         }
       }
@@ -340,6 +342,7 @@ Assets {
             Z: -100
           }
           Rotation {
+            Yaw: -45
           }
           Scale {
             X: 1
@@ -3029,6 +3032,7 @@ Assets {
           Location {
           }
           Rotation {
+            Yaw: -45
           }
           Scale {
             X: 1
@@ -3067,6 +3071,7 @@ Assets {
           Location {
           }
           Rotation {
+            Yaw: -45
           }
           Scale {
             X: 1
@@ -3104,6 +3109,7 @@ Assets {
           Location {
           }
           Rotation {
+            Yaw: -45
           }
           Scale {
             X: 1
@@ -3142,6 +3148,7 @@ Assets {
           Location {
           }
           Rotation {
+            Yaw: -45
           }
           Scale {
             X: 1

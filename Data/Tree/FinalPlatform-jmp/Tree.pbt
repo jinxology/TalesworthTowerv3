@@ -1,6 +1,228 @@
 Name: "FinalPlatform-jmp"
 RootId: 8398213227437023729
 Objects {
+  Id: 18069631951471162947
+  Name: "Sign Font 1 Bulbs: 4"
+  Transform {
+    Location {
+      X: 289.914551
+      Y: -1138.44409
+      Z: 375
+    }
+    Rotation {
+      Pitch: 0.917335331
+      Yaw: -94.686142
+      Roll: 7.33618689
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8398213227437023729
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Font_Bulbs:color"
+      Color {
+        R: 0.00430462835
+        G: 0.13
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17716134425119033575
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 3035764589046249501
+  Name: "Sign Font 1 Bulbs: 3"
+  Transform {
+    Location {
+      X: 282.842773
+      Y: -353.553467
+      Z: 375
+    }
+    Rotation {
+      Pitch: 3.53329086
+      Yaw: -89.8907776
+      Roll: 3.54002881
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8398213227437023729
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Font_Bulbs:color"
+      Color {
+        G: 0.0208609365
+        B: 0.450000048
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9487242652614288163
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 5185474683827638770
+  Name: "Sign Font 1 Bulbs: 2"
+  Transform {
+    Location {
+      X: 289.913971
+      Y: 452.548553
+      Z: 375
+    }
+    Rotation {
+      Yaw: -90.0000153
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8398213227437023729
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Font_Bulbs:color"
+      Color {
+        R: 0.450000048
+        G: 0.0268212073
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17661471769190433815
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 4944598292221640637
+  Name: "Sign Font 1 Bulbs: 1"
+  Transform {
+    Location {
+      X: 282.843262
+      Y: 1202.08423
+      Z: 375
+    }
+    Rotation {
+      Pitch: -0.627716064
+      Yaw: -84.8201294
+      Roll: 7.0387907
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8398213227437023729
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Font_Bulbs:color"
+      Color {
+        R: 0.840000033
+        G: 0.767682195
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3887845107502590770
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 6778888813862859340
   Name: "Sci-fi Base Railing 01"
   Transform {
@@ -439,8 +661,9 @@ Objects {
   Name: "Sci-fi Terminal Base Yellow"
   Transform {
     Location {
-      X: 201.711548
-      Y: 1162.02661
+      X: 201.712036
+      Y: 1162.02771
+      Z: 25
     }
     Rotation {
       Pitch: 0.870459735
@@ -456,7 +679,6 @@ Objects {
   ParentId: 8398213227437023729
   ChildIds: 6558443972384531303
   ChildIds: 8348988820628757870
-  ChildIds: 3677171161212734070
   ChildIds: 7232838433418334898
   ChildIds: 10982257888781357
   UnregisteredParameters {
@@ -622,69 +844,6 @@ Objects {
   }
 }
 Objects {
-  Id: 3677171161212734070
-  Name: "yellowBase"
-  Transform {
-    Location {
-      X: 1102.26416
-      Y: 864.852905
-      Z: -90.5416
-    }
-    Rotation {
-      Pitch: 1.29590535
-      Yaw: 175.131409
-      Roll: 4.90718842
-    }
-    Scale {
-      X: 0.238095164
-      Y: 0.238095164
-      Z: 0.238095164
-    }
-  }
-  ParentId: 5703032420010120704
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:yellowBaseTrigger"
-      ObjectReference {
-        SelfId: 6558443972384531303
-      }
-    }
-    Overrides {
-      Name: "cs:yellowLever"
-      ObjectReference {
-        SelfId: 8348988820628757870
-      }
-    }
-    Overrides {
-      Name: "cs:yellowLeverPull"
-      ObjectReference {
-        SelfId: 7232838433418334898
-      }
-    }
-    Overrides {
-      Name: "cs:yellowBeam"
-      ObjectReference {
-        SelfId: 10982257888781357
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 17068844615804090772
-    }
-  }
-}
-Objects {
   Id: 8348988820628757870
   Name: "yellowLever"
   Transform {
@@ -786,13 +945,13 @@ Objects {
   Name: "Sci-fi Terminal Base Red"
   Transform {
     Location {
-      X: 200.000137
-      Y: 400.000061
+      X: 194.454468
+      Y: 406.586334
       Z: 25
     }
     Rotation {
       Pitch: 0.870459735
-      Yaw: -90.0378799
+      Yaw: -90.0378723
       Roll: 5.0000062
     }
     Scale {
@@ -804,7 +963,6 @@ Objects {
   ParentId: 8398213227437023729
   ChildIds: 15319385519744865671
   ChildIds: 8260424568808607406
-  ChildIds: 10480753820282805473
   ChildIds: 9126538932224519518
   ChildIds: 16852413474830748652
   UnregisteredParameters {
@@ -964,69 +1122,6 @@ Objects {
   }
 }
 Objects {
-  Id: 10480753820282805473
-  Name: "redLever"
-  Transform {
-    Location {
-      X: 842.163513
-      Y: 957.988037
-      Z: -84.4021835
-    }
-    Rotation {
-      Pitch: 0.863841295
-      Yaw: -179.886414
-      Roll: 5.00114679
-    }
-    Scale {
-      X: 0.238095164
-      Y: 0.238095164
-      Z: 0.238095164
-    }
-  }
-  ParentId: 1398466915999719789
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:redBaseTrigger"
-      ObjectReference {
-        SelfId: 15319385519744865671
-      }
-    }
-    Overrides {
-      Name: "cs:redLever"
-      ObjectReference {
-        SelfId: 8260424568808607406
-      }
-    }
-    Overrides {
-      Name: "cs:redLeverPull"
-      ObjectReference {
-        SelfId: 9126538932224519518
-      }
-    }
-    Overrides {
-      Name: "cs:redBeam"
-      ObjectReference {
-        SelfId: 16852413474830748652
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14326964948490444121
-    }
-  }
-}
-Objects {
   Id: 8260424568808607406
   Name: "redLever"
   Transform {
@@ -1128,8 +1223,9 @@ Objects {
   Name: "Sci-fi Terminal Base Blue"
   Transform {
     Location {
-      X: 200
-      Y: -400.000092
+      X: 200.000305
+      Y: -400.000305
+      Z: 25
     }
     Rotation {
       Pitch: 0.870459735
@@ -1145,7 +1241,6 @@ Objects {
   ParentId: 8398213227437023729
   ChildIds: 10910709794840007749
   ChildIds: 6860712732248338230
-  ChildIds: 14744345580729423951
   ChildIds: 6584624330137334236
   ChildIds: 8054863456920481186
   UnregisteredParameters {
@@ -1269,69 +1364,6 @@ Objects {
   }
 }
 Objects {
-  Id: 14744345580729423951
-  Name: "blueBase"
-  Transform {
-    Location {
-      X: 651.799805
-      Y: 957.091736
-      Z: -75.6014481
-    }
-    Rotation {
-      Pitch: 0.863841295
-      Yaw: -179.886414
-      Roll: 5.00114679
-    }
-    Scale {
-      X: 0.238095164
-      Y: 0.238095164
-      Z: 0.238095164
-    }
-  }
-  ParentId: 1105361876568913490
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:blueLever"
-      ObjectReference {
-        SelfId: 6860712732248338230
-      }
-    }
-    Overrides {
-      Name: "cs:blueBaseTrigger"
-      ObjectReference {
-        SelfId: 10910709794840007749
-      }
-    }
-    Overrides {
-      Name: "cs:blueLeverPull"
-      ObjectReference {
-        SelfId: 6584624330137334236
-      }
-    }
-    Overrides {
-      Name: "cs:blueBeam"
-      ObjectReference {
-        SelfId: 8054863456920481186
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 6390047424369913692
-    }
-  }
-}
-Objects {
   Id: 6860712732248338230
   Name: "blueLever"
   Transform {
@@ -1451,7 +1483,6 @@ Objects {
   ParentId: 8398213227437023729
   ChildIds: 2496361737963425051
   ChildIds: 14946306445708431708
-  ChildIds: 15653111072468401393
   ChildIds: 5108007411010076011
   ChildIds: 12168086492485386782
   UnregisteredParameters {
@@ -1606,69 +1637,6 @@ Objects {
     EnableOcclusion: true
     IsSpatializationEnabled: true
     IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 15653111072468401393
-  Name: "GreenBase"
-  Transform {
-    Location {
-      X: 461.254974
-      Y: 957.232788
-      Z: -78.6588
-    }
-    Rotation {
-      Pitch: 0.863841295
-      Yaw: -179.886398
-      Roll: 5.00114584
-    }
-    Scale {
-      X: 0.238095164
-      Y: 0.238095164
-      Z: 0.238095164
-    }
-  }
-  ParentId: 8520317214513602108
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:greenBaseTrigger"
-      ObjectReference {
-        SelfId: 2496361737963425051
-      }
-    }
-    Overrides {
-      Name: "cs:greenLever"
-      ObjectReference {
-        SelfId: 14946306445708431708
-      }
-    }
-    Overrides {
-      Name: "cs:greenLeverPull"
-      ObjectReference {
-        SelfId: 5108007411010076011
-      }
-    }
-    Overrides {
-      Name: "cs:greenBeam"
-      ObjectReference {
-        SelfId: 12168086492485386782
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 1847903101843757402
-    }
   }
 }
 Objects {
