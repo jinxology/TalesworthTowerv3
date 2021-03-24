@@ -33,7 +33,7 @@ local propStandTemplate = script:GetCustomProperty("popperStand")
 local propInstructionsSignTemplate = script:GetCustomProperty("instructionsSignTemplate")
 
 startingPlatforms = nil
-propLevelBeaconFolder = script:GetCustomProperty("beaconFolder"):WaitForObject()
+propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
 
 exitFlume = nil
 entranceFlume = nil
