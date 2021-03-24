@@ -395,13 +395,6 @@ Objects {
     IsFilePartition: true
     FilePartitionName: "Sky"
   }
-  InstanceHistory {
-    SelfId: 17232582341582998440
-    SubobjectId: 13503567310865354052
-    InstanceId: 17585860469535547578
-    TemplateId: 8605224817967858575
-    WasRoot: true
-  }
 }
 Objects {
   Id: 973398386560361952
@@ -2363,7 +2356,7 @@ Objects {
   }
   Control {
     Width: 1012
-    Height: 196
+    Height: 198
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -2376,7 +2369,7 @@ Objects {
         B: 0.99
         A: 1
       }
-      Size: 100
+      Size: 80
       Justification {
         Value: "mc:etextjustify:center"
       }

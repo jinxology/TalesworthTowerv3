@@ -34,7 +34,7 @@ function IncomingUIMessage(coreObject, propertyName)
         ToggleBottomMessage(false,"")
     elseif (msgData[1] == "07") then --resetting tower
         World.SpawnAsset(propLevelFailSound,{position=myPosition})
-        ToggleBottomMessage("true","TOWER RESET IMMINENT")
+        ToggleBottomMessage("true","TOWER EJECTION IMMINENT")
     end
 end
 
