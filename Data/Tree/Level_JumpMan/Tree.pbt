@@ -87,17 +87,17 @@ Objects {
   Name: "Reverb Zone"
   Transform {
     Location {
-      X: 5214.95117
-      Y: -17.6489258
+      X: 5904.35059
+      Y: -35.3554688
       Z: -375
     }
     Rotation {
-      Yaw: 135
+      Yaw: 90
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 19.3000011
+      Y: 6.4
+      Z: 8.3
     }
   }
   ParentId: 9132562513265036101
