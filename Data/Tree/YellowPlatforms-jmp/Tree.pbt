@@ -5,12 +5,12 @@ Objects {
   Name: "Sci-fi Base Railing 01"
   Transform {
     Location {
-      X: 850.001465
-      Y: -4250.00195
+      X: 774.441895
+      Y: -4360.48438
       Z: -850
     }
     Rotation {
-      Yaw: -89.9999771
+      Yaw: -60
     }
     Scale {
       X: 2
@@ -68,12 +68,12 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 800.000488
-      Y: -4600.00195
+      X: 906.143066
+      Y: -4688.604
       Z: -900
     }
     Rotation {
-      Yaw: 90.0000076
+      Yaw: 120
     }
     Scale {
       X: 1

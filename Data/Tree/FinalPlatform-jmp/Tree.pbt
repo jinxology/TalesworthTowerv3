@@ -1,6 +1,228 @@
 Name: "FinalPlatform-jmp"
 RootId: 8398213227437023729
 Objects {
+  Id: 18069631951471162947
+  Name: "Sign Font 1 Bulbs: 4"
+  Transform {
+    Location {
+      X: 289.914551
+      Y: -1138.44409
+      Z: 375
+    }
+    Rotation {
+      Pitch: 0.917335331
+      Yaw: -94.686142
+      Roll: 7.33618689
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8398213227437023729
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Font_Bulbs:color"
+      Color {
+        R: 0.00430462835
+        G: 0.13
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17716134425119033575
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 3035764589046249501
+  Name: "Sign Font 1 Bulbs: 3"
+  Transform {
+    Location {
+      X: 282.842773
+      Y: -353.553467
+      Z: 375
+    }
+    Rotation {
+      Pitch: 3.53329086
+      Yaw: -89.8907776
+      Roll: 3.54002881
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8398213227437023729
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Font_Bulbs:color"
+      Color {
+        G: 0.0208609365
+        B: 0.450000048
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9487242652614288163
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 5185474683827638770
+  Name: "Sign Font 1 Bulbs: 2"
+  Transform {
+    Location {
+      X: 289.913971
+      Y: 452.548553
+      Z: 375
+    }
+    Rotation {
+      Yaw: -90.0000153
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8398213227437023729
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Font_Bulbs:color"
+      Color {
+        R: 0.450000048
+        G: 0.0268212073
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17661471769190433815
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 4944598292221640637
+  Name: "Sign Font 1 Bulbs: 1"
+  Transform {
+    Location {
+      X: 282.843262
+      Y: 1202.08423
+      Z: 375
+    }
+    Rotation {
+      Pitch: -0.627716064
+      Yaw: -84.8201294
+      Roll: 7.0387907
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8398213227437023729
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Font_Bulbs:color"
+      Color {
+        R: 0.840000033
+        G: 0.767682195
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3887845107502590770
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 6778888813862859340
   Name: "Sci-fi Base Railing 01"
   Transform {
@@ -439,8 +661,9 @@ Objects {
   Name: "Sci-fi Terminal Base Yellow"
   Transform {
     Location {
-      X: 201.711548
-      Y: 1162.02661
+      X: 201.712036
+      Y: 1162.02771
+      Z: 25
     }
     Rotation {
       Pitch: 0.870459735
@@ -722,13 +945,13 @@ Objects {
   Name: "Sci-fi Terminal Base Red"
   Transform {
     Location {
-      X: 200.000137
-      Y: 400.000061
+      X: 194.454468
+      Y: 406.586334
       Z: 25
     }
     Rotation {
       Pitch: 0.870459735
-      Yaw: -90.0378799
+      Yaw: -90.0378723
       Roll: 5.0000062
     }
     Scale {
@@ -1000,8 +1223,9 @@ Objects {
   Name: "Sci-fi Terminal Base Blue"
   Transform {
     Location {
-      X: 200
-      Y: -400.000092
+      X: 200.000305
+      Y: -400.000305
+      Z: 25
     }
     Rotation {
       Pitch: 0.870459735
