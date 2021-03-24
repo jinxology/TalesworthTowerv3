@@ -91,8 +91,9 @@ Objects {
   Name: "Fantasy Castle Wall 03"
   Transform {
     Location {
+      X: 325
       Y: 2200
-      Z: 3225.0625
+      Z: 3220
     }
     Rotation {
     }
@@ -133,7 +134,7 @@ Objects {
   Name: "Fantasy Castle Wall 03"
   Transform {
     Location {
-      X: -799.999268
+      X: -1075
       Y: 2200
       Z: 3225.0625
     }
