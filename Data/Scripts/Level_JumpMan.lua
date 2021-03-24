@@ -62,16 +62,10 @@ GreenBaseSuccess = false
 function checkJumpmanSuccess()
 	if GreenBaseSuccess == true and YellowBaseSuccess == true and  RedBaseSuccess == true and BlueBaseSuccess == true then
 		JumpManSuccess = true
-		print("JumpManBasesSuccess")
-	else
-		print("JumpManBasesFailed") 
-	end
-
+	end	
 	if JumpManSuccess == true then
+		propAmbientJumpmanScore:Stop()
 		LevelVictory()
-		print("JumpManSuccess")
-	else
-		print("JumpManFailed")
 	end
 end
 
@@ -226,7 +220,7 @@ propGreenBaseTrigger.interactedEvent:Connect(greenRotateLever)
 
 --LevelPowerDown is called from the next level back to this one to clean it up and remove it from memory
 function LevelPowerDown()
-propAmbientJumpmanScore:Stop()
+
 end
 
 --LevelVictory is called when the Win Condition of the game is met
@@ -244,4 +238,3 @@ end
 --ResetLevel is called when the level needs to get reset to its original state
 function ResetLevel() 
 end
-	
