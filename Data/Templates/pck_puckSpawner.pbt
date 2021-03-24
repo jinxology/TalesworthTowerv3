@@ -15,7 +15,123 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1232579912354001357
+        ParentId: 4781671109827199097
+        ChildIds: 15849514794406429805
+        ChildIds: 11010226650907567488
+        ChildIds: 12030357500768472538
+        ChildIds: 14619364220257982024
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:spawnerGeometry"
+            ObjectReference {
+              SubObjectId: 11010226650907567488
+            }
+          }
+          Overrides {
+            Name: "cs:spawnerPorthole"
+            ObjectReference {
+              SubObjectId: 15849514794406429805
+            }
+          }
+          Overrides {
+            Name: "cs:spawnerInSFX"
+            ObjectReference {
+              SubObjectId: 12030357500768472538
+            }
+          }
+          Overrides {
+            Name: "cs:spawnerOutSFX"
+            ObjectReference {
+              SubObjectId: 14619364220257982024
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 15849514794406429805
+        Name: "porthole"
+        Transform {
+          Location {
+            Z: -41
+          }
+          Rotation {
+            Roll: -179.999969
+          }
+          Scale {
+            X: 15
+            Y: 15
+            Z: 1
+          }
+        }
+        ParentId: 10448727192305754445
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 10184847056121543272
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              A: 1
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 7182671547704985859
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 11010226650907567488
+        Name: "geometry"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10448727192305754445
         ChildIds: 3875535371086009788
         ChildIds: 4811771639810637328
         ChildIds: 12317850837893150879
@@ -27,8 +143,9 @@ Assets {
         ChildIds: 938294516143731094
         ChildIds: 15763459510338034067
         ChildIds: 7325190925626011799
+        WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
+          Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -45,12 +162,11 @@ Assets {
         Name: "Forcefield"
         Transform {
           Location {
-            Y: -50
             Z: 25
           }
           Rotation {
-            Yaw: 180
-            Roll: 180
+            Yaw: -179.999985
+            Roll: -179.999985
           }
           Scale {
             X: 10
@@ -58,7 +174,7 @@ Assets {
             Z: 9
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 11010226650907567488
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -107,12 +223,12 @@ Assets {
         Name: "Plane 1m - One Sided"
         Transform {
           Location {
-            Y: 540
+            Y: 590
             Z: 25
           }
           Rotation {
-            Yaw: -179.999985
-            Roll: -179.999985
+            Yaw: -179.999969
+            Roll: -179.999969
           }
           Scale {
             X: 1
@@ -120,7 +236,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 11010226650907567488
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -138,6 +254,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -168,7 +285,7 @@ Assets {
         Name: "Plane 1m - One Sided"
         Transform {
           Location {
-            Y: -640
+            Y: -590
             Z: 25
           }
           Rotation {
@@ -181,7 +298,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 11010226650907567488
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -199,6 +316,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -230,10 +348,9 @@ Assets {
         Transform {
           Location {
             X: 50
-            Y: -50
           }
           Rotation {
-            Yaw: 89.9999619
+            Yaw: 89.9999542
           }
           Scale {
             X: 10
@@ -241,7 +358,7 @@ Assets {
             Z: 3
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 11010226650907567488
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -262,6 +379,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -293,10 +411,9 @@ Assets {
         Transform {
           Location {
             X: -50
-            Y: -50
           }
           Rotation {
-            Yaw: 89.9998856
+            Yaw: 89.9998474
           }
           Scale {
             X: 10
@@ -304,7 +421,7 @@ Assets {
             Z: 3
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 11010226650907567488
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -325,6 +442,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -355,7 +473,7 @@ Assets {
         Name: "Pipe - Half Thick"
         Transform {
           Location {
-            Y: -675
+            Y: -625
           }
           Rotation {
           }
@@ -365,7 +483,7 @@ Assets {
             Z: 3
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 11010226650907567488
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -386,6 +504,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -416,7 +535,7 @@ Assets {
         Name: "Pipe - Half Thick"
         Transform {
           Location {
-            Y: 575
+            Y: 625
           }
           Rotation {
           }
@@ -426,7 +545,7 @@ Assets {
             Z: 3
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 11010226650907567488
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -447,6 +566,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -478,7 +598,7 @@ Assets {
         Transform {
           Location {
             X: -75
-            Y: 500
+            Y: 550
             Z: 150
           }
           Rotation {
@@ -489,7 +609,7 @@ Assets {
             Z: 3
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 11010226650907567488
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -510,6 +630,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -541,7 +662,7 @@ Assets {
         Transform {
           Location {
             X: 75
-            Y: 500
+            Y: 550
             Z: 150
           }
           Rotation {
@@ -552,7 +673,7 @@ Assets {
             Z: 3
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 11010226650907567488
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -573,6 +694,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -604,7 +726,7 @@ Assets {
         Transform {
           Location {
             X: -75
-            Y: -600
+            Y: -550
             Z: 150
           }
           Rotation {
@@ -615,7 +737,7 @@ Assets {
             Z: 3
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 11010226650907567488
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -636,6 +758,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -667,7 +790,7 @@ Assets {
         Transform {
           Location {
             X: 75
-            Y: -600
+            Y: -550
             Z: 150
           }
           Rotation {
@@ -678,7 +801,7 @@ Assets {
             Z: 3
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 11010226650907567488
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -699,6 +822,7 @@ Assets {
             }
           }
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -724,6 +848,81 @@ Assets {
           }
         }
       }
+      Objects {
+        Id: 12030357500768472538
+        Name: "Sci-fi Mech Robotic Transformation Sequence 06 SFX"
+        Transform {
+          Location {
+            Z: -1050
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10448727192305754445
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 4222393470736794844
+          }
+          Volume: 1.00167775
+          Falloff: 7500
+          Radius: 3000
+          EnableOcclusion: true
+          IsAttenuationEnabled: true
+          StopTime: 1.75
+        }
+      }
+      Objects {
+        Id: 14619364220257982024
+        Name: "Sci-fi Door Hatch Airlock Open Close 05"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10448727192305754445
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 6682302167085184006
+          }
+          Volume: 1
+          Falloff: -1
+          Radius: -1
+          EnableOcclusion: true
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+      }
     }
     Assets {
       Id: 7182671547704985859
@@ -732,6 +931,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_plane_circle_001"
+      }
+    }
+    Assets {
+      Id: 10184847056121543272
+      Name: "Basic Material"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_basic_pbr_material_001"
       }
     }
     Assets {
@@ -786,6 +994,24 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_cube_002"
+      }
+    }
+    Assets {
+      Id: 4222393470736794844
+      Name: "Sci-fi Mech Robotic Transformation Sequence 06 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_scifi_mech_robotic_transformation_sequence_06_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 6682302167085184006
+      Name: "Sci-fi Door Hatch Airlock Open Close 05"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_scifi_door_hatch_airlock_open_close_05_Cue_ref"
       }
     }
     PrimaryAssetId {

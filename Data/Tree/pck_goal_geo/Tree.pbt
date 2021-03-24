@@ -248,8 +248,8 @@ Objects {
   Name: "Plane Triangle - One Sided Right"
   Transform {
     Location {
-      X: -0.000584125
-      Y: -2449.99707
+      X: 25
+      Y: -2450
     }
     Rotation {
       Yaw: -17.1000061
@@ -535,109 +535,6 @@ Objects {
   CoreMesh {
     MeshAsset {
       Id: 226129477132629273
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 10176743323551692624
-  Name: "Sphere - Half Quarter"
-  Transform {
-    Location {
-      X: 25
-      Y: -2400
-      Z: 1187.5
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.41
-      Y: 1.41
-      Z: 1.41
-    }
-  }
-  ParentId: 16232941346420187614
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 7283825798727192743
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 11412815132174189312
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 9484413987873706698
-  Name: "Cylinder - Polished"
-  Transform {
-    Location {
-      X: 25
-      Y: -2399.98828
-      Z: -12.5
-    }
-    Rotation {
-      Yaw: -89.999939
-    }
-    Scale {
-      X: 1.41
-      Y: 1.41
-      Z: 24
-    }
-  }
-  ParentId: 16232941346420187614
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 7283825798727192743
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 1137112816547272582
     }
     Teams {
       IsTeamCollisionEnabled: true

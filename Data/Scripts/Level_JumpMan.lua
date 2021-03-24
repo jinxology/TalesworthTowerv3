@@ -16,6 +16,7 @@ entranceFlumeLocation = Vector3.New(6363.962,-530.329,775)
 entranceFlumeRotation = Rotation.New(0,0,180)
 entranceFlumeEjectionVelocity = 20
 
+-- propMainGameController.context.SendGeneralMessageToClients("05,"..whoDidIt.." pressed a "..GetColorName(whichColor).." button near "..GetShapeName(whichShape))
 ------------------------------------------------------------
 
 --Add a Custom Property to the LevelController script called "MainGameController"

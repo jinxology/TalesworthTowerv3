@@ -15,7 +15,7 @@ exitFlumeLocation = Vector3.New(-2825,-550,1675)
 exitFlumeRotation = Rotation.New(0,0,0)
 entranceFlumeLocation = Vector3.New(900,-550,2525)
 entranceFlumeRotation = Rotation.New(0,-22.5,180)
-entranceFlumeEjectionVelocity = 10
+entranceFlumeEjectionVelocity = 5
 
 local REDROOM = 1  --assigning each room to a color with one room required to have "Orange"
 local BLUEROOM = 2
