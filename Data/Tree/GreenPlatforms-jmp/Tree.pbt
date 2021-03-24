@@ -1,6 +1,118 @@
 Name: "GreenPlatforms-jmp"
 RootId: 2181799923005855375
 Objects {
+  Id: 8972347855272988069
+  Name: "Sci-fi Base Floor 03 4m"
+  Transform {
+    Location {
+      X: 1396.54053
+      Y: 88.3846436
+      Z: -450
+    }
+    Rotation {
+      Pitch: -7.00650024
+      Yaw: 4.30452824
+      Roll: 0.683554471
+    }
+    Scale {
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
+    }
+  }
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_Floor:color"
+      Color {
+        G: 0.120000005
+        B: 0.0150993355
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17112041820881791716
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 13631952052198275164
+  Name: "Sci-fi Base Stairs 01"
+  Transform {
+    Location {
+      X: 1392.11523
+      Y: 92.4434814
+      Z: -399.546875
+    }
+    Rotation {
+      Pitch: 0.67860657
+      Yaw: -85.611908
+      Roll: 7.00729084
+    }
+    Scale {
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
+    }
+  }
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.0331125818
+        G: 0.100000024
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3837819661749083272
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 5374103981825421982
   Name: "Urban Floor Grate Fire Escape - 1m x 4m"
   Transform {

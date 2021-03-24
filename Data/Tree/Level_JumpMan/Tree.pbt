@@ -1,6 +1,88 @@
 Name: "Level_JumpMan"
 RootId: 9132562513265036101
 Objects {
+  Id: 6833047475156071797
+  Name: "SwirlSuccess"
+  Transform {
+    Location {
+      X: 795.495239
+      Y: -300.520386
+      Z: 50
+    }
+    Rotation {
+      Yaw: 135
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9132562513265036101
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 17314135178437891372
+    }
+    Volume: 1
+    Falloff: -1
+    Radius: -1
+    EnableOcclusion: true
+    IsSpatializationEnabled: true
+    IsAttenuationEnabled: true
+  }
+}
+Objects {
+  Id: 10761276145236582620
+  Name: "BaseDisengage"
+  Transform {
+    Location {
+      X: 1343.50317
+      Y: -282.842651
+      Z: 125
+    }
+    Rotation {
+      Yaw: 135
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9132562513265036101
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 12187164554423389607
+    }
+    Volume: 1
+    Falloff: -1
+    Radius: -1
+    EnableOcclusion: true
+    IsSpatializationEnabled: true
+    IsAttenuationEnabled: true
+  }
+}
+Objects {
   Id: 7587633514078415992
   Name: "Reverb Zone"
   Transform {
@@ -5379,6 +5461,108 @@ Objects {
       Name: "cs:YellowCanisterAppear"
       ObjectReference {
         SelfId: 10474278980338511602
+      }
+    }
+    Overrides {
+      Name: "cs:blueBeam"
+      ObjectReference {
+        SelfId: 8054863456920481186
+      }
+    }
+    Overrides {
+      Name: "cs:blueLever"
+      ObjectReference {
+        SelfId: 6860712732248338230
+      }
+    }
+    Overrides {
+      Name: "cs:blueBaseTrigger"
+      ObjectReference {
+        SelfId: 10910709794840007749
+      }
+    }
+    Overrides {
+      Name: "cs:SwirlSuccess"
+      ObjectReference {
+        SelfId: 6833047475156071797
+      }
+    }
+    Overrides {
+      Name: "cs:BaseDisengage"
+      ObjectReference {
+        SelfId: 10761276145236582620
+      }
+    }
+    Overrides {
+      Name: "cs:redBaseTrigger"
+      ObjectReference {
+        SelfId: 15319385519744865671
+      }
+    }
+    Overrides {
+      Name: "cs:redLever"
+      ObjectReference {
+        SelfId: 8260424568808607406
+      }
+    }
+    Overrides {
+      Name: "cs:redLeverPull"
+      ObjectReference {
+        SelfId: 9126538932224519518
+      }
+    }
+    Overrides {
+      Name: "cs:redBeam"
+      ObjectReference {
+        SelfId: 16852413474830748652
+      }
+    }
+    Overrides {
+      Name: "cs:yellowBaseTrigger"
+      ObjectReference {
+        SelfId: 6558443972384531303
+      }
+    }
+    Overrides {
+      Name: "cs:yellowLever"
+      ObjectReference {
+        SelfId: 8348988820628757870
+      }
+    }
+    Overrides {
+      Name: "cs:yellowLeverPull"
+      ObjectReference {
+        SelfId: 7232838433418334898
+      }
+    }
+    Overrides {
+      Name: "cs:yellowBeam"
+      ObjectReference {
+        SelfId: 10982257888781357
+      }
+    }
+    Overrides {
+      Name: "cs:greenBaseTrigger"
+      ObjectReference {
+        SelfId: 2496361737963425051
+      }
+    }
+    Overrides {
+      Name: "cs:greenLever"
+      ObjectReference {
+        SelfId: 14946306445708431708
+      }
+    }
+    Overrides {
+      Name: "cs:greenLeverPull"
+      ObjectReference {
+        SelfId: 5108007411010076011
+      }
+    }
+    Overrides {
+      Name: "cs:greenBeam"
+      ObjectReference {
+        SelfId: 12168086492485386782
       }
     }
   }
