@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17314135178437891372
+  Name: "Cinematic Synth Growl Impact 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_designer_cinematic_synth_growl_impact_01_Cue_ref"
+  }
+}
+Assets {
   Id: 15984031613198292986
   Name: "Electric Surface"
   PlatformAssetType: 2
@@ -23,6 +32,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "Energy_Tube_Glow"
+  }
+}
+Assets {
+  Id: 12187164554423389607
+  Name: "Designer Sub Bass Drop 02 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_designer_sub_bass_drop_02_Cue_ref"
   }
 }
 Assets {
