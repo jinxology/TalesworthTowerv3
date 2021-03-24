@@ -26,6 +26,15 @@ Assets {
   }
 }
 Assets {
+  Id: 15232552443457263526
+  Name: "Sci-fi Barrier Energy Shield Large Impact Shutdown 04 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_scifi_barrier_energy_shield_large_impact_shutdown_04a_Cue_ref"
+  }
+}
+Assets {
   Id: 13485243415661967086
   Name: "Energy Tube Glow"
   PlatformAssetType: 2

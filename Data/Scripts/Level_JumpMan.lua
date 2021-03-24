@@ -76,6 +76,7 @@ local timeElapsed, timeRequested = Task.Wait(2)
 propMainGameController.context.SendGeneralMessageToClients("05,Overlord: Your time is limited. Extinguish your flames.")
 
 --Extinguish Flames
+local propBaseRise = script:GetCustomProperty("BaseRise"):WaitForObject()
 --Green Flame
 local propFlameGreen = script:GetCustomProperty("FlameGreen"):WaitForObject()
 local propFlameGreenTrigger = script:GetCustomProperty("flameGreenTrigger"):WaitForObject()
@@ -86,7 +87,7 @@ local propGreenBreath = script:GetCustomProperty("GreenBreath"):WaitForObject()
 		propGreenBreath:Play()
 		propFlameGreen.visibility = Visibility.FORCE_OFF
  		local timeElapsed, timeRequested = Task.Wait(2)
- 		propGreenCanisterAppear:Play()
+ 		propBaseRise:Play()
  		propGreenCapsule:MoveTo(Vector3.New(2298.097,0,-675), 2, true)
  		propFlameGreenTrigger.interactionLabel = 'Green Base Step Enabled!'
 	end
@@ -102,7 +103,7 @@ local propBlueCanisterAppear = script:GetCustomProperty("BlueCanisterAppear"):Wa
 		propBlueBreath:Play()
 		propFlameBlue.visibility = Visibility.FORCE_OFF
 		local timeElapsed, timeRequested = Task.Wait(2)
-		propBlueCanisterAppear:Play()
+		propBaseRise:Play()
 		propBlueCapsule:MoveTo(Vector3.New(1131.371,0,-675), 2, true)
 		propFlameBlueTrigger.interactionLabel = 'Blue Base Step Enabled!'
 	end 
@@ -119,7 +120,7 @@ local propRedCanisterAppear = script:GetCustomProperty("RedCanisterAppear"):Wait
 		propRedBreath:Play()
 		propFlameRed.visibility = Visibility.FORCE_OFF
 		local timeElapsed, timeRequested = Task.Wait(2)
-		propRedCanisterAppear:Play()
+		propBaseRise:Play()
 		propRedCapsule:MoveTo(Vector3.New(1502.602,-17.678,-675), 2, true)
 		propFlameRedTrigger.interactionLabel = 'Red Base Step Enabled!'
 	end
@@ -136,7 +137,7 @@ local propYellowCanisterAppear = script:GetCustomProperty("YellowCanisterAppear"
 		propYellowBreath:Play()
  		propFlameYellow.visibility = Visibility.FORCE_OFF
  		local timeElapsed, timeRequested = Task.Wait(2)
-		propYellowCanisterAppear:Play()
+		propBaseRise:Play()
 		propYellowCapsule:MoveTo(Vector3.New(1909.188,0,-675), 2, true)
  		propFlameYellowTrigger.interactionLabel = 'Yellow Base Step Enabled!'
 	end

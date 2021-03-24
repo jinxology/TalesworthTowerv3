@@ -1,6 +1,42 @@
 Name: "Level_JumpMan"
 RootId: 9132562513265036101
 Objects {
+  Id: 5429094307745568096
+  Name: "BaseRise"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9132562513265036101
+  UnregisteredParameters {
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 15232552443457263526
+    }
+    Volume: 1.86145258
+    Falloff: -1
+    Radius: -1
+  }
+}
+Objects {
   Id: 6833047475156071797
   Name: "SwirlSuccess"
   Transform {
@@ -101,6 +137,14 @@ Objects {
     }
   }
   ParentId: 9132562513265036101
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:AmbientJumpmanScore"
+      ObjectReference {
+        SelfId: 11449835060749216090
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -5563,6 +5607,12 @@ Objects {
       Name: "cs:greenBeam"
       ObjectReference {
         SelfId: 12168086492485386782
+      }
+    }
+    Overrides {
+      Name: "cs:BaseRise"
+      ObjectReference {
+        SelfId: 5429094307745568096
       }
     }
   }
