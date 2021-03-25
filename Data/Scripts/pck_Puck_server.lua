@@ -4,14 +4,36 @@ local propStabilizeTask = nil
 local propLongMooSFX = script:GetCustomProperty("longMooSFX"):WaitForObject()
 local propShortMooSFX = script:GetCustomProperty("shortMooSFX"):WaitForObject()
 local propRunningSFX = script:GetCustomProperty("runningSFX"):WaitForObject()
+local propLookOutTrigger = script:GetCustomProperty("lookOutTrigger"):WaitForObject()
+-- local propStableContainer = script:GetCustomProperty("stableContainer"):WaitForObject()
 
---	TODO: put these in a container
-propAnchors = {
-	script:GetCustomProperty("anchor1"):WaitForObject(),
-	script:GetCustomProperty("anchor2"):WaitForObject(),
-	script:GetCustomProperty("anchor3"):WaitForObject(),
-	script:GetCustomProperty("anchor4"):WaitForObject(),
+propAnchorPositions = {
+	Vector3.New(-275, -275, -275), -- 45
+	Vector3.New(-275, 275, -275), -- -45
+	Vector3.New(275, 275, -275), -- -135
+	Vector3.New(275, -275, -275) -- 135
 }
+
+--	Bump players out of the way
+propLookOutTrigger.beginOverlapEvent:Connect(function(trigger, other)
+	if other:IsA("Player") then
+		--	untether player if they are tethered
+		local triggerCenter = trigger:GetWorldPosition()
+		local playerCenter = other:GetWorldPosition()
+		local direction = playerCenter - triggerCenter
+
+		direction = direction * math.abs(direction.z)
+		local magnitude = direction.size
+		
+		direction.z = 0
+		direction = direction:GetNormalized() * (magnitude)
+		other:SetWorldRotation(Rotation.New(direction, Vector3.UP))
+		other:AddImpulse(direction)
+		if other.serverUserData.pckLookoutAbility:GetCurrentPhase() == AbilityPhase.READY then
+			other.serverUserData.pckLookoutAbility:Activate()
+		end
+	end
+end)
 
 --	floor level is actually the level the physics *center* will be at when the puck is on the floor
 propVerticalSpeed = -1 -- start falling
@@ -24,17 +46,46 @@ script:SetNetworkedCustomProperty("canTip", false)
 local BOUNCE_VOLUME_PER_VELOCITY_UNIT = 1.0 / 512.0
 local NORMALIZABLE_MAGNITUDE = 0.1
 
-function SetStabilized(stabilized)
-	print("stabilized = " .. tostring(stabilized))
-	propKeepStable = stabilized
-	if stabilized then
-		script:SetNetworkedCustomProperty("canTip", false)
+function FindFloor()
+	local puckRadius = 0
+
+	pointAboveFloor = propPhysics:GetWorldPosition()
+	nextPointDown = pointAboveFloor - Vector3.UP * 1000
+	hitFloor = nil
+
+	--  find bottom of puck
+	hitBottomOfPuck = World.Raycast(pointAboveFloor - Vector3.UP * 600, pointAboveFloor, { ignorePlayers = true })
+	
+	if hitBottomOfPuck == nil then
+		print("THE BOTTOMLESS PUCK! Using default value. Ask Dave what went wrong and watch him gibber.")
+		puckRadius = 500
 	else
-		script:SetNetworkedCustomProperty("canTip", true)
-		propLongMooSFX:Play()
-		if propRunningSFX.isPlaying == true then
-			propRunningSFX:Stop()
-		end
+		puckRadius = math.abs(hitBottomOfPuck:GetImpactPosition().z - pointAboveFloor.z)
+	end
+
+	pointAboveFloor = pointAboveFloor - Vector3.UP * puckRadius
+
+	-- put this outer repeat loop back in if the puck isn't finding the exact right floor.
+	-- ideally, it will hit any floor and stop, but we might need to find the specific pck.floor
+	-- repeat
+		repeat
+			nextPointDown = pointAboveFloor - Vector3.UP * 1000
+			hitFloor = World.Raycast(pointAboveFloor, nextPointDown, { ignorePlayers = true })
+			pointAboveFloor = nextPointDown
+		until hitFloor ~= nil
+		-- pointAboveFloor = hitFloor:GetImpactPosition() - Vector3.UP 
+	-- until hitFloor.other.name == "pck.floor"
+
+	propRadius = puckRadius
+	propFloorLevel = hitFloor:GetImpactPosition().z + puckRadius
+end
+
+function Destabilize()
+	propKeepStable = false
+	script:SetNetworkedCustomProperty("canTip", true)
+	propLongMooSFX:Play()
+	if propRunningSFX.isPlaying == true then
+		propRunningSFX:Stop()
 	end
 end
 
@@ -48,16 +99,15 @@ function Stabilize()
 	local   velocity = propPhysics:GetVelocity()
 	local   magnitude = velocity.size
 	
-	print("stabilizing " .. script.id .. ": z = " .. position.z .. ", prior vspeed = " .. propVerticalSpeed .. ", velocity = ", tostring(velocity))
+	-- print("stabilizing " .. script.id .. ": z = " .. position.z .. ", prior vspeed = " .. propVerticalSpeed .. ", velocity = ", tostring(velocity))
 	
 	-- if propKeepStable then
 	-- 	--  prevent tumbling
-	-- 	local   topUpAlways = propPhysics:GetWorldRotation()
+	-- 	local   topUpAlways = propStableContainer:GetWorldRotation()
 
 	-- 	topUpAlways.x = 0
 	-- 	topUpAlways.y = 0
-
-	-- 	propPhysics:SetWorldRotation(topUpAlways)
+	-- 	propStableContainer:SetWorldRotation(topUpAlways)
 	-- end
 
 	if propVerticalSpeed < 0 then
@@ -66,21 +116,23 @@ function Stabilize()
 			if propFoundApex then
 				propFallHardSFX.volume = (velocity.z - propVerticalSpeed) * BOUNCE_VOLUME_PER_VELOCITY_UNIT
 				propFallHardSFX:Play()
-				print("nadir = " .. propPhysics:GetWorldPosition().z - propFloorLevel)
 				propFoundApex = false
+				propVerticalSpeed = velocity.z
 			else
 				--	done falling, stop playing bouncing noise and pin geometry
 				propVerticalSpeed = 0
 				script:SetNetworkedCustomProperty("radius", propRadius)
 				script:SetNetworkedCustomProperty("floorLevel", propFloorLevel)
+				propLookOutTrigger:Destroy()
+				propLookOutTrigger = nil
 			end
+		else
+			propVerticalSpeed = velocity.z
 		end
-		propVerticalSpeed = velocity.z
 	elseif propVerticalSpeed > 0 then
 		--	we were rising, check apex
 		if velocity.z < 0 then
 			apexLevel = propPhysics:GetWorldPosition().z - propFloorLevel
-			print("apex = " .. apexLevel)
 			propFoundApex = true
 		end
 		propVerticalSpeed = velocity.z
@@ -103,16 +155,12 @@ function Stabilize()
 			--  play running sound
 			-- print("STABILIZED: " .. script.id .. ": z = " .. position.z .. ", floor = " .. propFloorLevel .. ", speed = " .. magnitude .. ", velocity = ", tostring(velocity))
 			if magnitude > 20 then
-				propRunningSFX.volume = (magnitude - 20.0) / 100.0
-				-- print(tostring(velocity))
-				print("play running sound at " .. tostring(propRunningSFX.volume))
+				propRunningSFX.volume = (magnitude - 20.0) / 200.0
 				if propRunningSFX.isPlaying == false then
-					print("starting to play")
 					propRunningSFX:Play()
 				end
 			else
 				if propRunningSFX.isPlaying == true then
-					-- print("fading out")
 					propRunningSFX:Stop()
 				end
 			end
@@ -123,6 +171,7 @@ end
 propTetheredMugshots = {}
 
 function TetherMugshot(mugshot, index)
+	local	didTether = true
 	for index = 1, 4, 1 do
 		if propTetheredMugshots[index] == nil then
 			propTetheredMugshots[index] = mugshot
@@ -130,6 +179,7 @@ function TetherMugshot(mugshot, index)
 	end
 
 	script:SetNetworkedCustomProperty("tetherToPoint", propPhysics:GetWorldPosition())
+	return didTether
 end
 
 function UntetherMugshot(mugshot)
@@ -150,3 +200,6 @@ function HandleTension()
 		end
 	end
 end
+
+--	On instantiation, find your floor. You'll need to do this if you move the puck somewhere as well.
+FindFloor()

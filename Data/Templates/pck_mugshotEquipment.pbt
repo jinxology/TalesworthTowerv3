@@ -21,6 +21,8 @@ Assets {
         ChildIds: 9169255255245069283
         ChildIds: 9514343388950691764
         ChildIds: 6095569065247696458
+        ChildIds: 14861458570756854188
+        ChildIds: 4055843621976047510
         ChildIds: 13847976873302710750
         ChildIds: 17315019106475987237
         ChildIds: 5893848390096514398
@@ -76,6 +78,18 @@ Assets {
             Name: "cs:untetherAbility"
             ObjectReference {
               SubObjectId: 6095569065247696458
+            }
+          }
+          Overrides {
+            Name: "cs:reelAbility"
+            ObjectReference {
+              SubObjectId: 14861458570756854188
+            }
+          }
+          Overrides {
+            Name: "cs:unreelAbility"
+            ObjectReference {
+              SubObjectId: 4055843621976047510
             }
           }
           Overrides {
@@ -159,7 +173,8 @@ Assets {
         Name: "ClientContext"
         Transform {
           Location {
-            X: 55
+            X: 65
+            Z: -5
           }
           Rotation {
           }
@@ -228,6 +243,8 @@ Assets {
         Name: "geometry"
         Transform {
           Location {
+            X: -32.7330933
+            Z: 3.42285156
           }
           Rotation {
           }
@@ -238,8 +255,6 @@ Assets {
           }
         }
         ParentId: 8282285858322498775
-        ChildIds: 633252325170055983
-        ChildIds: 10811690048661920033
         ChildIds: 14447195453197103600
         ChildIds: 6318775851616436255
         ChildIds: 13105115123571185527
@@ -248,8 +263,9 @@ Assets {
         ChildIds: 1252167332931131001
         ChildIds: 14832720852379640314
         ChildIds: 7143351133928754615
-        ChildIds: 15411484029382265366
-        ChildIds: 6346348801731605324
+        ChildIds: 6513054797721995452
+        ChildIds: 7286093296775329802
+        ChildIds: 1119479215754244346
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -264,116 +280,41 @@ Assets {
         }
       }
       Objects {
-        Id: 633252325170055983
-        Name: "Fantasy Gauntlet Hand 01"
-        Transform {
-          Location {
-            X: -6
-            Y: 1
-            Z: 21
-          }
-          Rotation {
-            Pitch: -4.78113216e-05
-            Yaw: 89.9999313
-            Roll: -105.000038
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 3652229039018446778
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 4808790141039972737
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 10811690048661920033
-        Name: "Fantasy Pommel 04"
-        Transform {
-          Location {
-            X: -82
-            Z: 10
-          }
-          Rotation {
-            Pitch: -90
-            Yaw: 174.948837
-            Roll: 5.05114746
-          }
-          Scale {
-            X: 2
-            Y: 2
-            Z: 2
-          }
-        }
-        ParentId: 3652229039018446778
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 12510064410993333055
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
         Id: 14447195453197103600
         Name: "Fantasy Crossbow Foregrip 01"
         Transform {
           Location {
-            X: -22
+            X: -47.5606689
             Z: 15
           }
           Rotation {
             Pitch: 6.83018879e-06
             Yaw: -179.999969
-            Roll: -1.23760119e-05
           }
           Scale {
-            X: 1
+            X: 0.5
             Y: 1
             Z: 1
           }
         }
         ParentId: 3652229039018446778
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_Trim:color"
+            Color {
+              R: 0.518240035
+              G: 0.66311866
+              B: 0.79
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:id"
+            AssetReference {
+              Id: 6777447344140592468
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -419,6 +360,23 @@ Assets {
           }
         }
         ParentId: 3652229039018446778
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.518240035
+              G: 0.66311866
+              B: 0.79
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 6777447344140592468
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -464,6 +422,23 @@ Assets {
           }
         }
         ParentId: 3652229039018446778
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.518240035
+              G: 0.66311866
+              B: 0.79
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 6777447344140592468
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -629,18 +604,17 @@ Assets {
         Name: "Fantasy Shield Strap 01"
         Transform {
           Location {
-            X: -12
-            Z: 7
+            X: -26.2617798
+            Z: 12.7568359
           }
           Rotation {
-            Pitch: -3.4150944e-05
-            Yaw: -89.9998932
-            Roll: 89.9998932
+            Pitch: 12.7910519
+            Roll: 90
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1.1
+            X: 0.850988746
+            Y: 1.34933496
+            Z: 0.774433494
           }
         }
         ParentId: 3652229039018446778
@@ -674,13 +648,12 @@ Assets {
         Name: "Modern Weapon - Grenade Handle 01"
         Transform {
           Location {
-            X: -41
-            Z: -2
+            X: -43.6482544
+            Z: 0.879882813
           }
           Rotation {
-            Pitch: -6.14717e-05
-            Yaw: 89.9998932
-            Roll: -179.999954
+            Yaw: 90
+            Roll: 102.071297
           }
           Scale {
             X: 1
@@ -715,23 +688,23 @@ Assets {
         }
       }
       Objects {
-        Id: 15411484029382265366
-        Name: "Urban Vehicle Accessory - Door Handle"
+        Id: 6513054797721995452
+        Name: "Fantasy Pommel 04"
         Transform {
           Location {
-            X: -22
-            Y: -7
-            Z: 14
+            X: -27.5606689
+            Y: 26.6601563
+            Z: 1.88183594
           }
           Rotation {
-            Pitch: 1.36603776e-05
-            Yaw: 2.41484236e-06
-            Roll: -89.9999084
+            Pitch: -45
+            Yaw: -90
+            Roll: 180
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 2
+            Y: 2
+            Z: 2
           }
         }
         ParentId: 3652229039018446778
@@ -746,7 +719,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 14469100115591925468
+            Id: 12510064410993333055
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -761,23 +734,23 @@ Assets {
         }
       }
       Objects {
-        Id: 6346348801731605324
-        Name: "Urban Vehicle Accessory - Door Handle"
+        Id: 7286093296775329802
+        Name: "Fantasy Pommel 04"
         Transform {
           Location {
-            X: -22
-            Y: 8
-            Z: 14
+            X: -27.5606689
+            Y: -26.66
+            Z: 1.88183594
           }
           Rotation {
-            Pitch: 6.83018879e-06
-            Yaw: 179.999954
-            Roll: -89.9998703
+            Pitch: -44.9999695
+            Yaw: 89.999939
+            Roll: 179.999954
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 2
+            Y: -2
+            Z: 2
           }
         }
         ParentId: 3652229039018446778
@@ -792,7 +765,83 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 14469100115591925468
+            Id: 12510064410993333055
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 1119479215754244346
+        Name: "Barrier Light"
+        Transform {
+          Location {
+            X: -67.5606689
+            Z: 21.5771484
+          }
+          Rotation {
+            Yaw: -89.9999847
+            Roll: 89.9999847
+          }
+          Scale {
+            X: 1.5
+            Y: 1.5
+            Z: 1.5
+          }
+        }
+        ParentId: 3652229039018446778
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_Detail1:id"
+            AssetReference {
+              Id: 6777447344140592468
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Detail1:color"
+            Color {
+              R: 0.518240035
+              G: 0.66311866
+              B: 0.79
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 841534158063459245
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.09375
+              G: 0.09375
+              B: 0.09375
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6977157647512673335
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -987,9 +1036,167 @@ Assets {
               Value: "mc:eabilitysetfacing:none"
             }
           }
-          Animation: "2hand_rifle_shoot"
+          Animation: "unarmed_use"
           KeyBinding_v2 {
             Value: "mc:egameaction:secondaryaction"
+          }
+        }
+      }
+      Objects {
+        Id: 14861458570756854188
+        Name: "Reel"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 1.36603776e-05
+            Yaw: -1.70754925e-06
+            Roll: -2.39056571e-05
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 12451032973807524472
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Ability {
+          IsEnabled: true
+          CastPhaseSettings {
+            Duration: 0.1
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          ExecutePhaseSettings {
+            Duration: 10
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          RecoveryPhaseSettings {
+            Duration: 0.5
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          CooldownPhaseSettings {
+            Duration: 0.2
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          Animation: "unarmed_use"
+          KeyBinding_v2 {
+            Value: "mc:egameaction:extraaction_01"
+          }
+        }
+      }
+      Objects {
+        Id: 4055843621976047510
+        Name: "Unreel"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 1.36603776e-05
+            Yaw: -1.70754925e-06
+            Roll: -2.39056571e-05
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 12451032973807524472
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Ability {
+          CastPhaseSettings {
+            Duration: 0.15
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          ExecutePhaseSettings {
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          RecoveryPhaseSettings {
+            Duration: 0.1
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          CooldownPhaseSettings {
+            Duration: 3
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          Animation: "unarmed_use"
+          KeyBinding_v2 {
+            Value: "mc:egameaction:extraaction_02"
           }
         }
       }
@@ -1170,30 +1377,21 @@ Assets {
       }
     }
     Assets {
-      Id: 4808790141039972737
-      Name: "Fantasy Gauntlet Hand 01"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weap_fan_gauntlet_hand_001"
-      }
-    }
-    Assets {
-      Id: 12510064410993333055
-      Name: "Fantasy Pommel 04"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weap_fan_pommel_004"
-      }
-    }
-    Assets {
       Id: 15312805567995783140
       Name: "Fantasy Crossbow Foregrip 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_weap_fan_foregrip_cross_001"
+      }
+    }
+    Assets {
+      Id: 6777447344140592468
+      Name: "Metal Steel Brushed"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_stainless-steel_001_uv"
       }
     }
     Assets {
@@ -1251,12 +1449,21 @@ Assets {
       }
     }
     Assets {
-      Id: 14469100115591925468
-      Name: "Urban Vehicle Accessory - Door Handle"
+      Id: 12510064410993333055
+      Name: "Fantasy Pommel 04"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_veh_urb_car_kit_door_handle_001_ref"
+        AssetId: "sm_weap_fan_pommel_004"
+      }
+    }
+    Assets {
+      Id: 6977157647512673335
+      Name: "Barrier Light"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prop_urb_barrier_light_001"
       }
     }
     Assets {

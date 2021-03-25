@@ -19,10 +19,10 @@ propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyNa
 end)
 
 propStabilizeTask = Task.Spawn(function()
-    local   topUpAlways = propGeometry:GetWorldRotation()
+    -- local   topUpAlways = propGeometry:GetWorldRotation()
 
-    topUpAlways.x = 0
-    topUpAlways.y = 0
+    -- topUpAlways.x = 0
+    -- topUpAlways.y = 0
 
     -- if propFloorLevel ~= nil and propRadius ~= nil then
     --     local   onFloorAlways = propGeometry:GetWorldPosition()
@@ -32,6 +32,7 @@ propStabilizeTask = Task.Spawn(function()
     --     -- propGeometry:SetWorldPosition(onFloorAlways)
     -- end
 
-    propGeometry:SetWorldRotation(topUpAlways)
+    -- propGeometry:SetWorldRotation(topUpAlways)
+    propGeometry:SetWorldRotation(Rotation.ZERO)
 end)
 propStabilizeTask.repeatCount = -1

@@ -1,7 +1,7 @@
 local propTetherAbility = script:GetCustomProperty("tetherAbility"):WaitForObject()
 local propUntetherAbility = script:GetCustomProperty("untetherAbility"):WaitForObject()
--- local propReelAbility = script:GetCustomProperty("reelAbility"):WaitForObject()
--- local propUnreelAbility = script:GetCustomProperty("unreelAbility"):WaitForObject()
+local propReelAbility = script:GetCustomProperty("reelAbility"):WaitForObject()
+local propUnreelAbility = script:GetCustomProperty("unreelAbility"):WaitForObject()
 local propLevelController = script:GetCustomProperty("levelController"):WaitForObject()
 local propTwangSFX = script:GetCustomProperty("twangSFX"):WaitForObject()
 local propCast1SFX = script:GetCustomProperty("cast1SFX"):WaitForObject()
@@ -13,21 +13,24 @@ local propTargetedPuck = nil
 local propTargetedAnchor = 0	-- 1..4
 local propTetheredToTarget = false
 
+slackAmount = 0
+
 local FACING_AWAY = 0.2
 
 function CheckAim(targetedPuck)
-	local		facingAnchor = 0
+	local		anchorLocations = targetedPuck.context.propAnchorPositions
+	local		facingAnchors = {}
 	local		closestFacing = -1
 	local		mugshotPosition = propEquipment:GetWorldPosition()
-
+	local		puckPosition = targetedPuck:GetWorldPosition()
+	
 	-- print("mugshot at " .. tostring(mugshotPosition))
 	-- print("targeting " .. targetedPuck.type)
 
-	for index, anchor in pairs(targetedPuck.context.propAnchors) do
-		local	anchorPosition = anchor:GetWorldPosition()
+	for index, anchorDirection in pairs(anchorLocations) do
+		local	anchorPosition = puckPosition + anchorDirection
 		local	mugshotToAnchor = anchorPosition - mugshotPosition
 		local	mugshotDirection = mugshotToAnchor:GetNormalized()
-		local	anchorDirection = anchor:GetWorldTransform():GetForwardVector()
 		local	dot = anchorDirection .. mugshotDirection
 		
 		--highest dot product is closest
@@ -37,18 +40,22 @@ function CheckAim(targetedPuck)
 			CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.RED, thickness = 3 })
 		else
 			CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.GREEN, thickness = 3 })
+
 			if dot > closestFacing then
+				table.insert(facingAnchors, index, 1)
 				closestFacing = dot
-				facingAnchor = index
+			else
+				table.insert(facingAnchors, index)
 			end
 		end
 		-- print("from mugshot to anchor: " .. index .. " " .. anchor.id .. " " .. tostring(mugshotDirection) .. ", anchor facing " .. tostring(anchorDirection) .. " (" .. dot .. ")")
 	end
 
-	return { puck = targetedPuck, anchor = facingAnchor}
+	return { puck = targetedPuck, anchors = facingAnchors}
 end
 
 local	propCastTime = 0
+local	TETHER_TRAVEL_SPEED = 3200
 
 function OnCast_Tether(ability)
 	propCast2SFX:Play()
@@ -59,14 +66,17 @@ function OnCast_Tether(ability)
 	if hitObject ~= nil and hitObject.name == "pck.puckTemplate" then
 		ring = CheckAim(hitObject:GetCustomProperty("controller"):WaitForObject())
 
-		propTargetedAnchor = ring.anchor
+		--	first ring might be occupied, check here
+		--	assuming not for now
+		propTargetedAnchor = ring.anchors[1]
 		propTargetedPuck = ring.puck
 
-		local		distance = (propEquipment:GetWorldPosition() - propTargetedPuck.context.propAnchors[propTargetedAnchor]:GetWorldPosition()).size
+		local		ringPosition = propTargetedPuck:GetWorldPosition() + propTargetedPuck.context.propAnchorPositions[propTargetedAnchor]
+		local		distance = (propEquipment:GetWorldPosition() - ringPosition).size
 		
-		propCastTime = distance / 1600.0
+		propCastTime = distance / TETHER_TRAVEL_SPEED
 
-		print(propCastTime)
+		print("casting for " .. propCastTime .. " seconds")
 		propCast1SFX:Play()
 		propReelSFX.fadeInTime = propCast1SFX.length - propCast1SFX.startTime
 		propReelSFX.stopTime = propCastTime
@@ -106,8 +116,10 @@ end
 function OnInterrupted_Tether(ability)
 	propTargetedPuck = nil
 	propTargetedAnchor = 0
-	propAimTask:Cancel()
-	propAimTask = nil
+	if propAimTask ~= nil then
+		propAimTask:Cancel()
+		propAimTask = nil
+	end
 end
 
 function OnReady_Tether(ability)
@@ -143,8 +155,7 @@ function OnCast_Reel(ability)
 end
 
 function OnExecute_Reel(ability)
-	print("OnExecute " .. ability.name)
-	local targetData = ability:GetTargetData()
+	print("decrease slack")
 end
 
 function OnRecovery_Reel(ability)
@@ -160,12 +171,10 @@ function OnReady_Reel(ability)
 end
 
 function OnCast_Unreel(ability)
-	print("OnCast " .. ability.name)
 end
 
 function OnExecute_Unreel(ability)
-	print("OnExecute " .. ability.name)
-	local targetData = ability:GetTargetData()
+	print("increase slack")
 end
 
 function OnRecovery_Unreel(ability)
