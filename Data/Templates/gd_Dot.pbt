@@ -15,7 +15,7 @@ Assets {
             Z: 0.2
           }
         }
-        ParentId: 848490241089693872
+        ParentId: 13310647076426687416
         ChildIds: 9211415220961163803
         ChildIds: 4020682657411298305
         UnregisteredParameters {
@@ -53,6 +53,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          InteractWithTriggers: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -131,7 +132,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
+            Value: "mc:etriggershape:box"
           }
         }
       }

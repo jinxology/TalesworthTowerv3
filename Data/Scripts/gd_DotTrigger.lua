@@ -5,20 +5,12 @@ local levelFolder = script.parent.parent  --Gets the Level Folder
 
 local dotTrigger = dotObject:FindDescendantByName("DotTrigger")
 
-function OnDotInteraction(whichTrigger, other)
-	print("In Dot Intercation")
-	print(other, ":", whichTrigger)
-	
-	if other and other:IsA("Player") then
-		print("In Dot Intercation")
-		propLevelController.context.ConsumeDot(dotObject)
-        dotObject:Destroy()
-    end
 
-    propLevelController.context.CheckDotsLeft()
+local function OnDotInteraction(whichTrigger, other)
+ print("in trigger")
+	
 end
 
-
-dotTrigger.beginOverlapEvent:Connect(OnDotInteraction)
-
+dotTrigger.interactedEvent:Connect(OnDotInteraction)
+print(dotTrigger)
 

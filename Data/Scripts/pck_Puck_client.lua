@@ -1,7 +1,6 @@
 local propServer = script:GetCustomProperty("pckPuck"):WaitForObject()
 local propGeometry = script:GetCustomProperty("pckPuckgeometry"):WaitForObject()
-local propFloorLevel = nil
-
+local propFloorLevel = propServer:GetCustomProperty("floorLevel") or 0
 
 propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
     if propertyName == "canTip" then
@@ -11,27 +10,18 @@ propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyNa
         end
     elseif propertyName == "floorLevel" then
         propFloorLevel = coreObject:GetCustomProperty(propertyName)
-        print("got new floor level " .. propFloorLevel)
-    elseif propertyName == "radius" then
-        propRadius = coreObject:GetCustomProperty(propertyName)
-        print("got new radius " .. propRadius)
     end
 end)
 
 propStabilizeTask = Task.Spawn(function()
     local   topUpAlways = propGeometry:GetWorldRotation()
+    local   onFloorAlways = propGeometry:GetWorldPosition()
 
     topUpAlways.x = 0
     topUpAlways.y = 0
-
-    -- if propFloorLevel ~= nil and propRadius ~= nil then
-    --     local   onFloorAlways = propGeometry:GetWorldPosition()
-
-    --     print("setting geometry world floor z to " .. propFloorLevel)
-    --     onFloorAlways.z = propFloorLevel - propRadius
-    --     -- propGeometry:SetWorldPosition(onFloorAlways)
-    -- end
+    onFloorAlways.z = propFloorLevel
 
     propGeometry:SetWorldRotation(topUpAlways)
+    -- propGeometry:SetWorldPosition(onFloorAlways)
 end)
 propStabilizeTask.repeatCount = -1

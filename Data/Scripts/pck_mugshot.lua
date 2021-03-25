@@ -111,7 +111,7 @@ function OnInterrupted_Tether(ability)
 end
 
 function OnReady_Tether(ability)
-	-- print("start watching")
+	print("start watching")
 end
 
 
