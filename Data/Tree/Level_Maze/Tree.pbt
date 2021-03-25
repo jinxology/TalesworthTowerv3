@@ -1557,14 +1557,14 @@ Objects {
     Location {
       X: 25
       Y: 2125
-      Z: 3380
+      Z: 3347.66479
     }
     Rotation {
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 1.17881691
+      Y: 1.17881691
+      Z: 1.17881691
     }
   }
   ParentId: 4040143929711443956
@@ -1648,7 +1648,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 10806280224339831972
+      Id: 8983708969469221779
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -1717,7 +1717,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 10806280224339831972
+      Id: 8983708969469221779
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -1786,7 +1786,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 10806280224339831972
+      Id: 8983708969469221779
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -1855,7 +1855,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 10806280224339831972
+      Id: 8983708969469221779
     }
     Teams {
       IsTeamCollisionEnabled: true

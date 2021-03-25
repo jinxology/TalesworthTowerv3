@@ -44,12 +44,12 @@ Assets {
   }
 }
 Assets {
-  Id: 10806280224339831972
-  Name: "Whitebox Wall 01"
+  Id: 8983708969469221779
+  Name: "Fantasy Castle Wall 03"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_gen_whitebox_wall_001"
+    AssetId: "sm_ts_fan_cas_wall_003"
   }
 }
 Assets {
