@@ -1,6 +1,37 @@
 Name: "Levels"
 RootId: 13991120868083209491
 Objects {
+  Id: 1647900999251311847
+  Name: "Level.LazyLava"
+  Transform {
+    Location {
+      X: -764.058472
+      Z: 17148.459
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13991120868083209491
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Level_LazyLava"
+  }
+}
+Objects {
   Id: 9132562513265036101
   Name: "Level.JumpMan"
   Transform {

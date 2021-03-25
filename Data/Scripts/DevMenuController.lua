@@ -63,6 +63,9 @@ function OnClickedSetLevel(whichButton)
     elseif (whichButton.name == "btnPuckollossal") then
         currentLevelIndex = 7
         newLoc = Vector3.New (4181,4780,13157)
+    elseif (whichButton.name == "btnGobbleDots") then
+        currentLevelIndex = 7
+        newLoc = Vector3.New (2500,4375,15600)
     end
 
     SetLevelNameText()

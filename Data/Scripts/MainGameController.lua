@@ -442,6 +442,7 @@ function GeneralClientToServerMessageHandler(msgType,data)
 end
 
 function ResetTower()
+    resetingTower = true
     MakeWorldDark()
     SpawnLevelBeacons(false, 3)
     script:SetNetworkedCustomProperty("UIMessage","07, ")
@@ -462,6 +463,7 @@ function ResetTower()
     for _, player in pairs(Game.GetPlayers()) do
         player:SetWorldPosition(Vector3.New(125,-850,8450))
     end   
+    resetingTower = false
 
 end
 

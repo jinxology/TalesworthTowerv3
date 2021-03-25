@@ -1,3 +1,9 @@
+--Add a Custom Property to the LevelController script called "MainGameController"
+--Drag a copy of "MainGameController" to this custom property
+local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
+
+
+
 local propTimerSeconds = script:GetCustomProperty("TimerSeconds")
 ------------------------------------------------------------
 --REQUIRED BY MAIN CONTROLLER
@@ -6,22 +12,18 @@ local propTimerSeconds = script:GetCustomProperty("TimerSeconds")
 --After adding the inital values, delete the StartingPlatormGroup template out of the project
 startingPlatforms = nil
 -- values from startPlatformGroup
-startPlatformPosition = Vector3.New(0,0,0)
+startPlatformPosition = Vector3.New(434.224,1828.891,3190)
 startPlatformRotation = Rotation.New(0,0,0)  
 
 --To be finalized when Flumes objects and code are completed
 exitFlume = nil
 entranceFlume = nil
---exitFlumeLocation = Vector3.New(0,0,0)
---exitFlumeRotation = Rotation.New(0,0,0)
---entranceFlumeLocation = Vector3.New(0,0,0)
---entranceFlumeRotation = Rotation.New(0,0,0)
---entranceFlumeEjectionVelocity = 20
+exitFlumeLocation = Vector3.New(-140,2420,3770 )
+exitFlumeRotation = Rotation.New(0,0,0)
+entranceFlumeLocation = Vector3.New(25,2165,3500)
+entranceFlumeRotation = Rotation.New(0,0,-90)
+entranceFlumeEjectionVelocity = 5
 ------------------------------------------------------------
-
---Add a Custom Property to the LevelController script called "MainGameController"
---Drag a copy of "MainGameController" to this custom property
-local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
 
 
 -------------------------------------------------------------
