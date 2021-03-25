@@ -3527,3 +3527,54 @@ Objects {
     }
   }
 }
+Objects {
+  Id: 13104041795786233721
+  Name: "Cube"
+  Transform {
+    Location {
+      X: 2175
+      Y: 2700
+      Z: 2775
+    }
+    Rotation {
+    }
+    Scale {
+      X: 55.0000076
+      Y: 59.1000061
+      Z: 1
+    }
+  }
+  ParentId: 13310647076426687416
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 16024444055021791904
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
