@@ -23,6 +23,7 @@ Objects {
   ChildIds: 17232582341582998440
   ChildIds: 7367735074338159388
   ChildIds: 14713340454944924967
+  ChildIds: 13200635763259802459
   ChildIds: 1112385650763072475
   ChildIds: 568490692521295426
   UnregisteredParameters {
@@ -105,6 +106,49 @@ Objects {
     VoxelSize: 700
     OctreeDepth: 5
     GeneratorID: "DEPRECATED"
+  }
+}
+Objects {
+  Id: 13200635763259802459
+  Name: "Ball"
+  Transform {
+    Location {
+      X: -8650
+      Y: 6500
+      Z: 17550
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.99999994
+      Y: 0.99999994
+      Z: 0.99999994
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 7062845870289079377
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
   }
 }
 Objects {
