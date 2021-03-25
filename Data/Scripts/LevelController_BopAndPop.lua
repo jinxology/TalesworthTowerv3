@@ -33,7 +33,7 @@ local propStandTemplate = script:GetCustomProperty("popperStand")
 local propInstructionsSignTemplate = script:GetCustomProperty("instructionsSignTemplate")
 
 startingPlatforms = nil
-propLevelBeaconFolder = script:GetCustomProperty("beaconFolder"):WaitForObject()
+propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
 
 exitFlume = nil
 entranceFlume = nil
@@ -283,8 +283,10 @@ end
 
 function LevelPowerDown()
 	UnloadInterior()
-	propTimerTask:Cancel()
-	propTimerTask = nil
+	if propTimerTask ~= nil then
+		propTimerTask:Cancel()
+		propTimerTask = nil
+	end
 	script:SetNetworkedCustomProperty("levelStatus", 0)
 end
 

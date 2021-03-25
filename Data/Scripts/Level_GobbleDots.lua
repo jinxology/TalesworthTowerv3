@@ -8,17 +8,17 @@ local propMainGameController = script:GetCustomProperty("MainGameController"):Wa
 --Place StartPlatformGroup(networked) template and record the Position and Rotation values here
 --After adding the inital values, delete the StartingPlatormGroup template out of the project
 startingPlatforms = nil
-startPlatformPosition = Vector3.New(0,0,0)
-startPlatformRotation = Rotation.New(0,0,0)  
+startPlatformPosition = Vector3.New(2600,2675,50)
+startPlatformRotation = Rotation.New(0,0,-90)  
 
 --To be finalized when Flumes objects and code are completed
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(0,0,0)
-exitFlumeRotation = Rotation.New(0,0,0)
-entranceFlumeLocation = Vector3.New(0,0,0)
-entranceFlumeRotation = Rotation.New(0,0,0)
-entranceFlumeEjectionVelocity = 0
+exitFlumeLocation = Vector3.New(3150,5900,250)
+exitFlumeRotation = Rotation.New(0,0,-90)
+entranceFlumeLocation = Vector3.New(3175,277.226,684.028)
+entranceFlumeRotation = Rotation.New(0,-13.852,0)
+entranceFlumeEjectionVelocity = 5
 
 ------------------------------------------------------------
 --LEVEL SPECIFIC DECLARATIONS
@@ -28,6 +28,7 @@ local BALL_Z_COORDINATE = 175
 local propGdDot = script:GetCustomProperty("gdDot")
 
 local levelFolder = script.parent  --Gets the Level Folder
+local dotsFolder = levelFolder:FindDescendantByName("gd.Dots")
 
 local dotsVectorList = {
 		Vector3.New( 4100, 1600, BALL_Z_COORDINATE),
@@ -36,7 +37,7 @@ local dotsVectorList = {
 		Vector3.New( 2175, 1600, BALL_Z_COORDINATE)
 }
 
-local dotArray = {}
+dotArray = {}
 
 -------------------------------------------------------------
 -- REQUIRED FUNCTIONS FOR MAINGAMECONTROLLER TO CALL
@@ -45,7 +46,7 @@ local dotArray = {}
 function LevelPowerUp() 
 
 	for dotIndex, dot in next, dotsVectorList do
-		newDot = World.SpawnAsset(propGdDot, {position = dotsVectorList[dotIndex], parent = levelFolder})
+		newDot = World.SpawnAsset(propGdDot, {position = dotsVectorList[dotIndex], parent = dotsFolder})
 		table.insert(dotArray, newDot)
 	end	
 end
@@ -78,5 +79,26 @@ end
 --ResetLevel is called when the level needs to get reset to its original state
 function ResetLevel() 
 end
+
+-------------------------------------------------------------
+-- FUNCTIONS SPECIFIC TO GOBBLE DOTS
+-------------------------------------------------------------
+function CheckDotsLeft()
+	print("Dots Left:", #dotArray)
 	
+	if #dotArray == 0 then
+		LevelVictory()
+	end
+end
+
+function ConsumeDot(dotIn)
+
+	for dotIndex, dot in next, dotArray do
+		if(dotArray[dotIndex] == dotIn) then
+			print("Removing Dot")
+			table.remove(dotArray, dotIndex)
+		end
+	end
+end
+
 LevelPowerUp()
