@@ -4,11 +4,13 @@ local propScoreSFX = script:GetCustomProperty("scoreSFX"):WaitForObject()
 local propFailTrigger = script:GetCustomProperty("failTrigger"):WaitForObject()
 local propFailSFX = script:GetCustomProperty("failSFX"):WaitForObject()
 local propPuckTemplate = script:GetCustomProperty("puckTemplate")
+local propMugshotTemplate = script:GetCustomProperty("mugshotTemplate")
 local propMusic = script:GetCustomProperty("music"):WaitForObject()
 local propLookoutAbility = script:GetCustomProperty("lookoutAbility")
 local Ease3D = require(script:GetCustomProperty("Ease3D"))
 
 local propLivePucks = {}
+local propLiveMugshots = {}
 
 propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
 
@@ -51,6 +53,12 @@ function LevelPowerUp()
     propTutorialCurtain = World.SpawnAsset(propTutorialCurtainTemplate, { parent = script.parent })
     script:SetNetworkedCustomProperty("levelState", 1)
     propMainGameController.context.MakeWorldDark()
+    
+    table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, 125, 50), rotation = Rotation.New(-135, 90, 0), parent = script.parent }))
+    table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, -125, 50), rotation = Rotation.New(135, 90, 0), parent = script.parent }))
+    table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, -375, 50), rotation = Rotation.New(135, 90, 0), parent = script.parent }))
+    table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, 375, 50), rotation = Rotation.New(-135, 90, 0), parent = script.parent }))
+    
 end
 
 function LevelPlayerEntered(player)
@@ -176,6 +184,11 @@ function LevelPowerDown()
         puck:Destroy()
     end
 
+    for _, mugshot in ipairs(propLiveMugshots) do
+        mugshot:Unequip()
+        mugshot:Destroy()
+    end
+
     propSpawnConfigurationIndex = propSpawnConfigurationIndex + 1
     if (propSpawnConfigurationIndex > #propSpawnConfigurations) then
         propSpawnConfigurations = 1
@@ -212,5 +225,5 @@ end
 propScoreTrigger.beginOverlapEvent:Connect(ScoreTriggerDidOverlap)
 propFailTrigger.beginOverlapEvent:Connect(FailTriggerDidOverlap)
 
--- LevelPowerUp()
--- Task.Spawn(LevelBegin, 2)
+LevelPowerUp()
+Task.Spawn(LevelBegin, 2)

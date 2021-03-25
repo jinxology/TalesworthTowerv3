@@ -170,16 +170,15 @@ end
 
 propTetheredMugshots = {}
 
-function TetherMugshot(mugshot, index)
-	local	didTether = true
-	for index = 1, 4, 1 do
-		if propTetheredMugshots[index] == nil then
-			propTetheredMugshots[index] = mugshot
-		end
-	end
+function TetherMugshotToEligibleAnchor(mugshot, eligibleAnchors)
+	-- do more here
+	-- local		anchorOffset = propAnchorPositions[eligibleAnchors[1]]
+	-- local		controller = mugshot:GetCustomProperty("controller"):WaitForObject()
+	
+	-- controller:SetNetworkedCustomProperty("tetheredPuck", propPhysics:GetReference())
+	-- controller:SetNetworkedCustomProperty("tetherOffset", anchorOffset)
 
-	script:SetNetworkedCustomProperty("tetherToPoint", propPhysics:GetWorldPosition())
-	return didTether
+	return true
 end
 
 function UntetherMugshot(mugshot)
@@ -191,14 +190,14 @@ function UntetherMugshot(mugshot)
 end
 
 function HandleTension()
-	for _, mugshot in ipairs(propTetheredMugshots) do
-		if mugshot ~= nil then
-			controller = mugshot:GetCustomProperty("controller"):WaitForObject()
+	-- for _, mugshot in ipairs(propTetheredMugshots) do
+	-- 	if mugshot ~= nil then
+	-- 		controller = mugshot:GetCustomProperty("controller"):WaitForObject()
 
-			controller:SetNetworkedCustomProperty("tetherLocation", propPhysics:GetWorldPosition())
-			controller:SetNetworkedCustomProperty("tension", 1)
-		end
-	end
+	-- 		controller:SetNetworkedCustomProperty("tetherOffset", propPhysics:GetWorldPosition())
+	-- 		controller:SetNetworkedCustomProperty("tension", 1)
+	-- 	end
+	-- end
 end
 
 --	On instantiation, find your floor. You'll need to do this if you move the puck somewhere as well.
