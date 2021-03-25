@@ -1,6 +1,35 @@
 Name: "Level_GobbleDots"
 RootId: 13310647076426687416
 Objects {
+  Id: 6399107750957319770
+  Name: "Flumes"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13310647076426687416
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Flumes"
+  }
+}
+Objects {
   Id: 5857129843129618845
   Name: "gd.Walls and Floor"
   Transform {
@@ -3396,12 +3425,6 @@ Objects {
   }
   ParentId: 5857129843129618845
   UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 8526070409587555310
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

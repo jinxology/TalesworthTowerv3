@@ -1,3 +1,4 @@
+local propMainGameController = script:GetCustomProperty("gameController"):WaitForObject()
 local propScoreTrigger = script:GetCustomProperty("scoreTrigger"):WaitForObject()
 local propScoreSFX = script:GetCustomProperty("scoreSFX"):WaitForObject()
 local propFailTrigger = script:GetCustomProperty("failTrigger"):WaitForObject()
@@ -5,6 +6,8 @@ local propFailSFX = script:GetCustomProperty("failSFX"):WaitForObject()
 local propPuckTemplate = script:GetCustomProperty("puckTemplate")
 
 local propLivePucks = {}
+
+propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
 
 exitFlume = nil
 entranceFlume = nil
@@ -58,6 +61,22 @@ function LevelEnd()
     script:SetNetworkedCustomProperty("levelState", 3)
 end
 
+function LevelVictory()
+	for _, player in ipairs(Game:GetPlayers()) do
+		-- LevelPlayerExited(player)
+	end
+
+	propMainGameController.context.LevelEnd(true)
+end
+
+function LevelFailed()
+	for _, player in ipairs(Game:GetPlayers()) do
+		-- LevelPlayerExited(player)
+	end
+
+	propMainGameController.context.LevelEnd(false)
+end
+
 function SpawnPucks(spawnConfiguration)
     for _, position in ipairs(spawnConfiguration) do
         local spawner = World.SpawnAsset(propPuckSpawnerTemplate, { position = position, parent = script.parent })
@@ -78,8 +97,39 @@ function SpawnPucks(spawnConfiguration)
         spawnerGeometry:RotateTo(propSpawnerZRotation, propSpawnerInTime, true)
         Task.Wait(propSpawnerInTime + .25)
 
-        local puck = World.SpawnAsset(propPuckTemplate, { position = position + propSpawnerZTravel + propPuckOffset, parent = script.parent })
+        local puckRadius = 0
+        local puckStartPosition = position + propSpawnerZTravel + propPuckOffset
+        local puck = World.SpawnAsset(propPuckTemplate, { position = puckStartPosition, parent = script.parent })
+
+        pointAboveFloor = puck:GetWorldPosition()
+        nextPointDown = pointAboveFloor - Vector3.UP * 1000
+        hitFloor = nil
+
+        --  find bottom of puck
+        hitBottomOfPuck = World.Raycast(pointAboveFloor - Vector3.UP * 600, pointAboveFloor, { ignorePlayers = true })
         
+        if hitBottomOfPuck == nil then
+            print("THE BOTTOMLESS PUCK")
+        else
+            puckRadius = math.abs(hitBottomOfPuck:GetImpactPosition().z - pointAboveFloor.z)
+        end
+
+        pointAboveFloor = pointAboveFloor - Vector3.UP * puckRadius
+
+        repeat
+            repeat
+                nextPointDown = pointAboveFloor - Vector3.UP * 1000
+                hitFloor = World.Raycast(pointAboveFloor, nextPointDown, { ignorePlayers = true })
+                pointAboveFloor = nextPointDown
+            until hitFloor ~= nil
+            print("hit " .. hitFloor.other.id .. " at " .. tostring(hitFloor:GetImpactPosition()))
+            pointAboveFloor = hitFloor:GetImpactPosition() - Vector3.UP 
+        until hitFloor.other.name == "pck.floor"
+
+        puckController = puck:GetCustomProperty("controller"):WaitForObject()
+        puckController.context.propRadius = puckRadius
+        puckController.context.propFloorLevel = hitFloor:GetImpactPosition().z + puckRadius
+
         table.insert(propLivePucks, puck)
         Task.Wait(5)
         spawnerOutSFX:Play()

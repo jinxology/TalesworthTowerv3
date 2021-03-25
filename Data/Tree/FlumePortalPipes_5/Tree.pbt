@@ -1,12 +1,13 @@
-Name: "FlumePortalPipes_2"
-RootId: 6192968193482616809
+Name: "FlumePortalPipes_5"
+RootId: 9188131373235374191
 Objects {
-  Id: 15563225903134932353
+  Id: 508102877249056786
   Name: "Pipe"
   Transform {
     Location {
-      X: -1110.44849
-      Z: -390
+      X: -1110.44824
+      Y: -18.9330139
+      Z: -372.48645
     }
     Rotation {
     }
@@ -16,7 +17,7 @@ Objects {
       Z: 4.45676661
     }
   }
-  ParentId: 6192968193482616809
+  ParentId: 9188131373235374191
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -51,23 +52,26 @@ Objects {
   }
 }
 Objects {
-  Id: 1281274219452215313
+  Id: 153558097489955145
   Name: "Pipe"
   Transform {
     Location {
       X: -669.535156
-      Z: 51.4196777
+      Y: -10.3553772
+      Z: 60.3552246
     }
     Rotation {
       Pitch: -90
+      Yaw: -155.089813
+      Roll: 155.089813
     }
     Scale {
-      X: 4.54961681
-      Y: 4.54961681
-      Z: 4.45676661
+      X: 4.5
+      Y: 4.5
+      Z: 4.70000029
     }
   }
-  ParentId: 6192968193482616809
+  ParentId: 9188131373235374191
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
