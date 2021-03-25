@@ -58,12 +58,6 @@ Objects {
       Id: 8905125853479455570
     }
   }
-  InstanceHistory {
-    SelfId: 4168204041821197839
-    SubobjectId: 7897149662779674851
-    InstanceId: 17585860469535547578
-    TemplateId: 8605224817967858575
-  }
 }
 Objects {
   Id: 8685573234042068311
@@ -95,12 +89,6 @@ Objects {
     }
     TeamSettings {
     }
-  }
-  InstanceHistory {
-    SelfId: 8685573234042068311
-    SubobjectId: 3227245213902330811
-    InstanceId: 17585860469535547578
-    TemplateId: 8605224817967858575
   }
 }
 Objects {
@@ -201,12 +189,6 @@ Objects {
       Id: 8968224820687168785
     }
   }
-  InstanceHistory {
-    SelfId: 2483886419630832476
-    SubobjectId: 8518744732427271600
-    InstanceId: 17585860469535547578
-    TemplateId: 8605224817967858575
-  }
 }
 Objects {
   Id: 13874318095823442624
@@ -260,6 +242,10 @@ Objects {
         A: 1
       }
     }
+    Overrides {
+      Name: "bp:Intensity"
+      Float: 1
+    }
   }
   WantsNetworking: true
   Collidable_v2 {
@@ -275,12 +261,6 @@ Objects {
     BlueprintAsset {
       Id: 60625160722517446
     }
-  }
-  InstanceHistory {
-    SelfId: 13874318095823442624
-    SubobjectId: 10721762802723787820
-    InstanceId: 17585860469535547578
-    TemplateId: 8605224817967858575
   }
 }
 Objects {
@@ -364,12 +344,6 @@ Objects {
       Id: 15770247924503271224
     }
   }
-  InstanceHistory {
-    SelfId: 10480262600771129688
-    SubobjectId: 14209278985477281716
-    InstanceId: 17585860469535547578
-    TemplateId: 8605224817967858575
-  }
 }
 Objects {
   Id: 3532067107744835850
@@ -415,12 +389,6 @@ Objects {
       Physics {
       }
     }
-  }
-  InstanceHistory {
-    SelfId: 3532067107744835850
-    SubobjectId: 7297041859521900518
-    InstanceId: 17585860469535547578
-    TemplateId: 8605224817967858575
   }
 }
 Objects {
@@ -558,12 +526,6 @@ Objects {
       Id: 10988486045141043269
     }
   }
-  InstanceHistory {
-    SelfId: 2448670621839826644
-    SubobjectId: 8483458221221025848
-    InstanceId: 17585860469535547578
-    TemplateId: 8605224817967858575
-  }
 }
 Objects {
   Id: 9503868133137318791
@@ -611,12 +573,6 @@ Objects {
     BlueprintAsset {
       Id: 1353607577508895962
     }
-  }
-  InstanceHistory {
-    SelfId: 9503868133137318791
-    SubobjectId: 15538726086765675883
-    InstanceId: 17585860469535547578
-    TemplateId: 8605224817967858575
   }
 }
 Objects {
@@ -669,12 +625,6 @@ Objects {
     BlueprintAsset {
       Id: 16122861514950347918
     }
-  }
-  InstanceHistory {
-    SelfId: 12230672183472683490
-    SubobjectId: 18301559293690674958
-    InstanceId: 17585860469535547578
-    TemplateId: 8605224817967858575
   }
 }
 Objects {
@@ -776,11 +726,5 @@ Objects {
     BlueprintAsset {
       Id: 10735508760752857422
     }
-  }
-  InstanceHistory {
-    SelfId: 9850728655071867604
-    SubobjectId: 15921615838975390776
-    InstanceId: 17585860469535547578
-    TemplateId: 8605224817967858575
   }
 }

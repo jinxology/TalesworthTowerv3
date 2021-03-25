@@ -11,7 +11,7 @@ local playerKeyBindingListener = nil
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
-levelList = {"ShapesAndButtons","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Maze","Puckollossal"}
+levelList = {"ShapesAndButtons","Puckollossal","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Maze"}
 requiredNbrPlayersReady = 4
 resetingTower = false
  
@@ -442,6 +442,7 @@ function GeneralClientToServerMessageHandler(msgType,data)
 end
 
 function ResetTower()
+    resetingTower = true
     MakeWorldDark()
     SpawnLevelBeacons(false, 3)
     script:SetNetworkedCustomProperty("UIMessage","07, ")
@@ -462,6 +463,7 @@ function ResetTower()
     for _, player in pairs(Game.GetPlayers()) do
         player:SetWorldPosition(Vector3.New(125,-850,8450))
     end   
+    resetingTower = false
 
 end
 

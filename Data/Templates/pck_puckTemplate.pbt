@@ -15,12 +15,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 1232579912354001357
         ChildIds: 9129683525484421359
-        ChildIds: 9300072462062102593
-        ChildIds: 15728253918366483480
-        ChildIds: 18035997459952568296
-        ChildIds: 16163190610561029155
+        ChildIds: 1036716290487904769
         ChildIds: 13361225289690824571
         ChildIds: 2654900809422222141
         ChildIds: 14010103477530155103
@@ -50,7 +47,6 @@ Assets {
           }
           Settings {
             IsEnabled: true
-            OverrideMass: true
             Mass: 10000
           }
           Radius: 500
@@ -126,27 +122,9 @@ Assets {
             Float: 0
           }
           Overrides {
-            Name: "cs:anchor1"
+            Name: "cs:lookOutTrigger"
             ObjectReference {
-              SubObjectId: 9300072462062102593
-            }
-          }
-          Overrides {
-            Name: "cs:anchor2"
-            ObjectReference {
-              SubObjectId: 15728253918366483480
-            }
-          }
-          Overrides {
-            Name: "cs:anchor3"
-            ObjectReference {
-              SubObjectId: 18035997459952568296
-            }
-          }
-          Overrides {
-            Name: "cs:anchor4"
-            ObjectReference {
-              SubObjectId: 16163190610561029155
+              SubObjectId: 1036716290487904769
             }
           }
           Overrides {
@@ -187,27 +165,24 @@ Assets {
         }
       }
       Objects {
-        Id: 9300072462062102593
+        Id: 1036716290487904769
         Name: "Trigger"
         Transform {
           Location {
-            X: -300.520508
-            Y: 300.520508
-            Z: -265
+            Z: -600
           }
           Rotation {
-            Yaw: 135
           }
           Scale {
-            X: 0.1
-            Y: 0.5
-            Z: 0.5
+            X: 15
+            Y: 15
+            Z: 15
           }
         }
         ParentId: 3040303582551256267
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceon"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -221,124 +196,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
-          }
-        }
-      }
-      Objects {
-        Id: 15728253918366483480
-        Name: "Trigger"
-        Transform {
-          Location {
-            X: 307.591553
-            Y: -307.591309
-            Z: -265
-          }
-          Rotation {
-            Yaw: -45
-          }
-          Scale {
-            X: 0.1
-            Y: 0.5
-            Z: 0.5
-          }
-        }
-        ParentId: 3040303582551256267
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
-          }
-        }
-      }
-      Objects {
-        Id: 18035997459952568296
-        Name: "Trigger"
-        Transform {
-          Location {
-            X: -307.59082
-            Y: -307.591309
-            Z: -265
-          }
-          Rotation {
-            Yaw: -135
-          }
-          Scale {
-            X: 0.1
-            Y: 0.5
-            Z: 0.5
-          }
-        }
-        ParentId: 3040303582551256267
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
-          }
-        }
-      }
-      Objects {
-        Id: 16163190610561029155
-        Name: "Trigger"
-        Transform {
-          Location {
-            X: 307.591309
-            Y: 307.591309
-            Z: -265
-          }
-          Rotation {
-            Yaw: 45
-          }
-          Scale {
-            X: 0.1
-            Y: 0.5
-            Z: 0.5
-          }
-        }
-        ParentId: 3040303582551256267
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
+            Value: "mc:etriggershape:sphere"
           }
         }
       }
@@ -349,7 +207,6 @@ Assets {
           Location {
           }
           Rotation {
-            Yaw: -45
           }
           Scale {
             X: 1
@@ -360,7 +217,6 @@ Assets {
         ParentId: 3040303582551256267
         ChildIds: 9153616377476526950
         ChildIds: 1654339899892608224
-        ChildIds: 12074724075601937731
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -381,7 +237,7 @@ Assets {
           Location {
           }
           Rotation {
-            Yaw: 5.46415031e-05
+            Yaw: 5.46415104e-05
           }
           Scale {
             X: 1
@@ -419,7 +275,7 @@ Assets {
             Z: -290
           }
           Rotation {
-            Yaw: -6.10351563e-05
+            Yaw: -45.0000648
           }
           Scale {
             X: 8
@@ -486,11 +342,12 @@ Assets {
         Name: "pck.spots"
         Transform {
           Location {
-            X: -25.0000973
-            Y: -5.00013161
+            X: -21.2133656
+            Y: 14.1421108
             Z: -335
           }
           Rotation {
+            Yaw: -44.9999962
           }
           Scale {
             X: 1
@@ -1011,12 +868,12 @@ Assets {
         Name: "pck.ringGeometry"
         Transform {
           Location {
-            X: -389.99939
-            Y: 5.34057617e-05
+            X: -275.771179
+            Y: 275.77124
             Z: -265
           }
           Rotation {
-            Yaw: -3.05175781e-05
+            Yaw: -45.0000305
           }
           Scale {
             X: 1
@@ -1234,12 +1091,12 @@ Assets {
         Name: "pck.ringGeometry"
         Transform {
           Location {
-            X: -0.000411987305
-            Y: -400.000061
+            X: -282.843048
+            Y: -282.842438
             Z: -265
           }
           Rotation {
-            Yaw: 90
+            Yaw: 44.9999771
           }
           Scale {
             X: 1
@@ -1457,12 +1314,12 @@ Assets {
         Name: "pck.ringGeometry"
         Transform {
           Location {
-            X: 400.000092
-            Y: 0.000289917
+            X: 282.843
+            Y: -282.84259
             Z: -265
           }
           Rotation {
-            Yaw: 180
+            Yaw: 135
           }
           Scale {
             X: 1
@@ -1680,12 +1537,12 @@ Assets {
         Name: "pck.ringGeometry"
         Transform {
           Location {
-            X: 0.000411987305
-            Y: 400.000061
+            X: 282.843048
+            Y: 282.842438
             Z: -265
           }
           Rotation {
-            Yaw: -90
+            Yaw: -134.999985
           }
           Scale {
             X: 1
@@ -1903,13 +1760,13 @@ Assets {
         Name: "Group"
         Transform {
           Location {
-            X: -400
-            Y: 400.000122
+            X: 8.17160471e-05
+            Y: 565.685547
           }
           Rotation {
             Pitch: -67.5
-            Yaw: -45
-            Roll: 89.9976196
+            Yaw: -89.9999924
+            Roll: 89.9976044
           }
           Scale {
             X: 0.8
@@ -2447,13 +2304,13 @@ Assets {
         Name: "Group"
         Transform {
           Location {
-            X: 399.999664
-            Y: -399.999756
+            X: -3.59391561e-05
+            Y: -565.685
           }
           Rotation {
-            Pitch: -67.4998779
-            Yaw: 135
-            Roll: 89.997467
+            Pitch: -67.499855
+            Yaw: 90.0000153
+            Roll: 89.9974594
           }
           Scale {
             X: 0.8
@@ -3032,46 +2889,6 @@ Assets {
         }
       }
       Objects {
-        Id: 12074724075601937731
-        Name: "Sphere"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 10
-            Y: 10
-            Z: 10
-          }
-        }
-        ParentId: 13361225289690824571
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 3250892020078520154
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
         Id: 2654900809422222141
         Name: "Creature Cow Moo Short 01 SFX"
         Transform {
@@ -3363,15 +3180,6 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_pipe_001"
-      }
-    }
-    Assets {
-      Id: 3250892020078520154
-      Name: "Sphere"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_sphere_002"
       }
     }
     Assets {

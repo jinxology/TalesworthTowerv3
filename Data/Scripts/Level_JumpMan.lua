@@ -92,7 +92,6 @@ local propGreenBreath = script:GetCustomProperty("GreenBreath"):WaitForObject()
  		propFlameGreenTrigger.interactionLabel = 'Green Base Step Enabled!'
 	end
 propFlameGreenTrigger.interactedEvent:Connect(OnflameGreenTriggerInteraction)
-
 --Blue Flame
 local propFlameBlue = script:GetCustomProperty("FlameBlue"):WaitForObject()
 local propFlameBlueTrigger = script:GetCustomProperty("flameBlueTrigger"):WaitForObject()

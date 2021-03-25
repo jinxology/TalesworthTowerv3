@@ -6,8 +6,8 @@ Objects {
   Transform {
     Location {
       X: -1461.48145
-      Y: 1921.33325
-      Z: -606.208
+      Y: 1921.33301
+      Z: -621.742188
     }
     Rotation {
       Pitch: -6
@@ -1435,8 +1435,8 @@ Objects {
   Transform {
     Location {
       X: -1461.44434
-      Y: -1946.1134
-      Z: -606.208
+      Y: -1946.11328
+      Z: -621.742188
     }
     Rotation {
       Pitch: 6

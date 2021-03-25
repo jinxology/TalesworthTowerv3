@@ -260,6 +260,15 @@ Assets {
   }
 }
 Assets {
+  Id: 3980297737540719284
+  Name: "Sci-fi Mech Robotic Servo Powerup Movement 03 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_scifi_mech_robotic_servo_powerup_movement_03_Cue_ref"
+  }
+}
+Assets {
   Id: 3439404920670878710
   Name: "Country & Western Music Score Set 01"
   PlatformAssetType: 10
@@ -302,6 +311,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_urb_dtn_mst_trim_002_ref"
+  }
+}
+Assets {
+  Id: 1102174013881666300
+  Name: "Magic Dark Powerup 02 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_magic_dark_buff_powerup_02_Cue_ref"
   }
 }
 Assets {

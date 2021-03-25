@@ -20,6 +20,7 @@ Assets {
         ChildIds: 11010226650907567488
         ChildIds: 12030357500768472538
         ChildIds: 14619364220257982024
+        ChildIds: 15016307638657912054
         UnregisteredParameters {
           Overrides {
             Name: "cs:spawnerGeometry"
@@ -920,6 +921,65 @@ Assets {
           EnableOcclusion: true
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true
+        }
+      }
+      Objects {
+        Id: 15016307638657912054
+        Name: "Spotlight"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: -90
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10448727192305754445
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Light {
+          Intensity: 50
+          Color {
+            R: 1
+            G: 1
+            B: 1
+            A: 1
+          }
+          CastShadows: true
+          VolumetricIntensity: 5
+          TeamSettings {
+          }
+          Light {
+            Temperature: 6500
+            LocalLight {
+              AttenuationRadius: 4813.22852
+              SpotLight {
+                SourceRadius: 5
+                SoftSourceRadius: 5
+                FallOffExponent: 8
+                UseFallOffExponent: true
+                InnerConeAngle: 20.5354118
+                OuterConeAngle: 26.8404236
+                Profile {
+                  Value: "mc:espotlightprofile:basicspotlight"
+                }
+              }
+            }
+            MaxDrawDistance: 5000
+            MaxDistanceFadeRange: 1000
+          }
         }
       }
     }

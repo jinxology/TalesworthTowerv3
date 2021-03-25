@@ -1,3 +1,9 @@
+--Add a Custom Property to the LevelController script called "MainGameController"
+--Drag a copy of "MainGameController" to this custom property
+local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
+
+
+
 local propTimerSeconds = script:GetCustomProperty("TimerSeconds")
 ------------------------------------------------------------
 --REQUIRED BY MAIN CONTROLLER
@@ -12,16 +18,12 @@ startPlatformRotation = Rotation.New(0,0,0)
 --To be finalized when Flumes objects and code are completed
 exitFlume = nil
 entranceFlume = nil
---exitFlumeLocation = Vector3.New(-140,2420,3770 )
---exitFlumeRotation = Rotation.New(0,0,0)
---entranceFlumeLocation = Vector3.New(-799.34,-2600,3225)
---entranceFlumeRotation = Rotation.New(0,0,0)
---entranceFlumeEjectionVelocity = 20
+exitFlumeLocation = Vector3.New(-140,2420,3770 )
+exitFlumeRotation = Rotation.New(0,0,0)
+entranceFlumeLocation = Vector3.New(25,2165,3500)
+entranceFlumeRotation = Rotation.New(0,0,-90)
+entranceFlumeEjectionVelocity = 5
 ------------------------------------------------------------
-
---Add a Custom Property to the LevelController script called "MainGameController"
---Drag a copy of "MainGameController" to this custom property
-local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
 
 
 -------------------------------------------------------------

@@ -1541,9 +1541,9 @@ Objects {
   Name: "Main Street Awning 02"
   Transform {
     Location {
-      X: 11.0524292
-      Y: 70.2070313
-      Z: 351.093964
+      X: 11.0522461
+      Y: 70.2067871
+      Z: 426.066132
     }
     Rotation {
       Yaw: 89.9999924
@@ -1585,9 +1585,9 @@ Objects {
   Name: "Main Street Awning 02"
   Transform {
     Location {
-      X: 11.0524292
-      Y: 70.2070313
-      Z: 351.093964
+      X: 11.0522842
+      Y: 70.2068558
+      Z: 426.066132
     }
     Rotation {
       Yaw: -90
@@ -1629,16 +1629,16 @@ Objects {
   Name: "Craftsman Part - Stair Balust"
   Transform {
     Location {
-      X: 11.7443237
-      Y: -141.499023
-      Z: 299.999939
+      X: 11.7441807
+      Y: -141.499161
+      Z: 374.972107
     }
     Rotation {
     }
     Scale {
       X: 1
       Y: 1
-      Z: 3.5
+      Z: 4.44544125
     }
   }
   ParentId: 16457494848404983089
@@ -1672,16 +1672,16 @@ Objects {
   Name: "Craftsman Part - Stair Balust"
   Transform {
     Location {
-      X: 12.6677856
-      Y: 282.436523
-      Z: 307.374664
+      X: 12.6676292
+      Y: 282.43634
+      Z: 365.014679
     }
     Rotation {
     }
     Scale {
       X: 1
       Y: 1
-      Z: 3.30712676
+      Z: 4.65513659
     }
   }
   ParentId: 16457494848404983089
