@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12515342141069640868
+        ParentId: 4781671109827199097
         ChildIds: 9129683525484421359
         ChildIds: 9300072462062102593
         ChildIds: 15728253918366483480
@@ -122,6 +122,10 @@ Assets {
             Float: 0
           }
           Overrides {
+            Name: "cs:radius"
+            Float: 0
+          }
+          Overrides {
             Name: "cs:anchor1"
             ObjectReference {
               SubObjectId: 9300072462062102593
@@ -159,6 +163,10 @@ Assets {
           }
           Overrides {
             Name: "cs:tension:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:radius:isrep"
             Bool: true
           }
         }
@@ -339,7 +347,6 @@ Assets {
         Name: "ClientContext"
         Transform {
           Location {
-            Z: -100
           }
           Rotation {
             Yaw: -45
@@ -353,6 +360,7 @@ Assets {
         ParentId: 3040303582551256267
         ChildIds: 9153616377476526950
         ChildIds: 1654339899892608224
+        ChildIds: 12074724075601937731
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -371,7 +379,6 @@ Assets {
         Name: "pck.Puck.geometry"
         Transform {
           Location {
-            Z: -400
           }
           Rotation {
             Yaw: 5.46415031e-05
@@ -409,7 +416,7 @@ Assets {
         Name: "Cylinder - Polished"
         Transform {
           Location {
-            Z: 210
+            Z: -290
           }
           Rotation {
             Yaw: -6.10351563e-05
@@ -479,9 +486,9 @@ Assets {
         Name: "pck.spots"
         Transform {
           Location {
-            X: -25.0000038
-            Y: -4.99997616
-            Z: 165
+            X: -25.0000973
+            Y: -5.00013161
+            Z: -335
           }
           Rotation {
           }
@@ -1004,9 +1011,9 @@ Assets {
         Name: "pck.ringGeometry"
         Transform {
           Location {
-            X: -389.999512
-            Y: -0.00011634879
-            Z: 235
+            X: -389.99939
+            Y: 5.34057617e-05
+            Z: -265
           }
           Rotation {
             Yaw: -3.05175781e-05
@@ -1227,9 +1234,9 @@ Assets {
         Name: "pck.ringGeometry"
         Transform {
           Location {
-            X: -0.000381469668
-            Y: -400
-            Z: 235
+            X: -0.000411987305
+            Y: -400.000061
+            Z: -265
           }
           Rotation {
             Yaw: 90
@@ -1450,9 +1457,9 @@ Assets {
         Name: "pck.ringGeometry"
         Transform {
           Location {
-            X: 400
-            Y: 0.000106811582
-            Z: 235
+            X: 400.000092
+            Y: 0.000289917
+            Z: -265
           }
           Rotation {
             Yaw: 180
@@ -1673,9 +1680,9 @@ Assets {
         Name: "pck.ringGeometry"
         Transform {
           Location {
-            X: 0.000381469668
-            Y: 400
-            Z: 235
+            X: 0.000411987305
+            Y: 400.000061
+            Z: -265
           }
           Rotation {
             Yaw: -90
@@ -1896,9 +1903,8 @@ Assets {
         Name: "Group"
         Transform {
           Location {
-            X: -400.000122
-            Y: 400
-            Z: 500
+            X: -400
+            Y: 400.000122
           }
           Rotation {
             Pitch: -67.5
@@ -2441,9 +2447,8 @@ Assets {
         Name: "Group"
         Transform {
           Location {
-            X: 399.999634
-            Y: -399.999878
-            Z: 500
+            X: 399.999664
+            Y: -399.999756
           }
           Rotation {
             Pitch: -67.4998779
@@ -2986,6 +2991,7 @@ Assets {
         Name: "pck.Puck.client"
         Transform {
           Location {
+            Z: -100
           }
           Rotation {
           }
@@ -3022,6 +3028,46 @@ Assets {
         Script {
           ScriptAsset {
             Id: 5750374496011908740
+          }
+        }
+      }
+      Objects {
+        Id: 12074724075601937731
+        Name: "Sphere"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 10
+            Y: 10
+            Z: 10
+          }
+        }
+        ParentId: 13361225289690824571
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 3250892020078520154
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
           }
         }
       }
@@ -3317,6 +3363,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_pipe_001"
+      }
+    }
+    Assets {
+      Id: 3250892020078520154
+      Name: "Sphere"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_sphere_002"
       }
     }
     Assets {

@@ -17,15 +17,6 @@ Assets {
   }
 }
 Assets {
-  Id: 8526070409587555310
-  Name: "Animated Glowing Hex"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "fxma_hex_animated"
-  }
-}
-Assets {
   Id: 7211079400400238887
   Name: "Grid Glow Topographical"
   PlatformAssetType: 2

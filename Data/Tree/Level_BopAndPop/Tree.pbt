@@ -9444,7 +9444,7 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:beaconFolder"
+      Name: "cs:levelBeaconFolder"
       ObjectReference {
         SelfId: 14771165545854154519
       }
