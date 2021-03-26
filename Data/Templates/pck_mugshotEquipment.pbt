@@ -271,6 +271,18 @@ Assets {
               SubObjectId: 1252167332931131001
             }
           }
+          Overrides {
+            Name: "cs:turretRotateY"
+            ObjectReference {
+              SubObjectId: 6513163486087200886
+            }
+          }
+          Overrides {
+            Name: "cs:turretRotateZ"
+            ObjectReference {
+              SubObjectId: 1882084978741898004
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -304,14 +316,11 @@ Assets {
           }
         }
         ParentId: 8282285858322498775
-        ChildIds: 14447195453197103600
-        ChildIds: 17542475088066571908
-        ChildIds: 1252167332931131001
         ChildIds: 14832720852379640314
         ChildIds: 7143351133928754615
         ChildIds: 6513054797721995452
         ChildIds: 7286093296775329802
-        ChildIds: 1119479215754244346
+        ChildIds: 1882084978741898004
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -323,415 +332,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-      }
-      Objects {
-        Id: 14447195453197103600
-        Name: "Fantasy Crossbow Foregrip 01"
-        Transform {
-          Location {
-            X: -47.5606689
-            Z: 15
-          }
-          Rotation {
-            Pitch: 6.83018879e-06
-            Yaw: -179.999954
-            Roll: 7.25777767e-08
-          }
-          Scale {
-            X: 0.5
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 3652229039018446778
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_Trim:color"
-            Color {
-              R: 0.518240035
-              G: 0.66311866
-              B: 0.79
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_Trim:id"
-            AssetReference {
-              Id: 6777447344140592468
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 15312805567995783140
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 17542475088066571908
-        Name: "grapple"
-        Transform {
-          Location {
-            X: 21.9052734
-            Z: 25.1660156
-          }
-          Rotation {
-            Pitch: -8.7170105
-            Yaw: 180
-            Roll: 90
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 3652229039018446778
-        ChildIds: 6318775851616436255
-        ChildIds: 13105115123571185527
-        ChildIds: 11502802023227318829
-        ChildIds: 3005310611497150124
-        ChildIds: 11677570998727255273
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsFilePartition: true
-        }
-      }
-      Objects {
-        Id: 6318775851616436255
-        Name: "Fantasy Sword Guard 01"
-        Transform {
-          Location {
-            X: -46.095
-            Y: -0.00141978264
-            Z: 1.33514404e-05
-          }
-          Rotation {
-            Pitch: -45.0001717
-            Yaw: -90.0002365
-            Roll: 90.0000763
-          }
-          Scale {
-            X: 1.49999988
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17542475088066571908
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 0.518240035
-              G: 0.66311866
-              B: 0.79
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 6777447344140592468
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 1920010878601219178
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 13105115123571185527
-        Name: "Fantasy Sword Guard 01"
-        Transform {
-          Location {
-            X: -46.0882111
-            Y: -0.00147223473
-            Z: 1.43051147e-05
-          }
-          Rotation {
-            Pitch: 45.0001221
-            Yaw: -90.0001144
-            Roll: 89.9999771
-          }
-          Scale {
-            X: 1.50000012
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17542475088066571908
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 0.518240035
-              G: 0.66311866
-              B: 0.79
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 6777447344140592468
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 1920010878601219178
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 11502802023227318829
-        Name: "Fantasy Mace Guard 01"
-        Transform {
-          Location {
-            X: -31.0950089
-            Y: -0.0012960434
-            Z: 9.53674316e-06
-          }
-          Rotation {
-            Pitch: 90
-            Yaw: 159.042389
-            Roll: 159.042358
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17542475088066571908
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 273448105943087596
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 3005310611497150124
-        Name: "Fantasy Sword Grip 01"
-        Transform {
-          Location {
-            X: 3.9049964
-            Y: -0.00101086497
-            Z: -1.25169754e-06
-          }
-          Rotation {
-            Pitch: 90
-            Yaw: 159.042389
-            Roll: 159.042358
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17542475088066571908
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 3682206342183528038
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 11677570998727255273
-        Name: "Fantasy Staff Grip 01"
-        Transform {
-          Location {
-            X: 4.17204571
-            Y: 0.4233796
-            Z: -1.31130219e-06
-          }
-          Rotation {
-            Pitch: 90
-            Yaw: -9.56235695
-            Roll: 170.436234
-          }
-          Scale {
-            X: 1.75
-            Y: 1.75
-            Z: 0.75
-          }
-        }
-        ParentId: 17542475088066571908
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 6722267691116138132
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 1252167332931131001
-        Name: "Modern Weapon Barrel 01"
-        Transform {
-          Location {
-            X: 21.9052734
-            Z: 25.1660156
-          }
-          Rotation {
-            Pitch: -8.7170105
-            Yaw: 180
-            Roll: 90
-          }
-          Scale {
-            X: 1.2
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 3652229039018446778
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 2817890560817570586
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
         }
       }
       Objects {
@@ -915,16 +515,50 @@ Assets {
         }
       }
       Objects {
+        Id: 1882084978741898004
+        Name: "turret.rotateZ"
+        Transform {
+          Location {
+            X: -27.2669067
+            Z: 20.4375
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3652229039018446778
+        ChildIds: 1119479215754244346
+        ChildIds: 6513163486087200886
+        ChildIds: 14447195453197103600
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
         Id: 1119479215754244346
         Name: "Barrier Light"
         Transform {
           Location {
-            X: -67.5606689
-            Z: 21.5771484
+            X: -40.2937622
+            Z: 1.13964844
           }
           Rotation {
-            Yaw: -89.9999847
-            Roll: 89.9999847
+            Pitch: -6.83018879e-06
+            Yaw: -89.9999542
+            Roll: 89.9999542
           }
           Scale {
             X: 1.5
@@ -932,7 +566,7 @@ Assets {
             Z: 1.5
           }
         }
-        ParentId: 3652229039018446778
+        ParentId: 1882084978741898004
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_Detail1:id"
@@ -977,6 +611,439 @@ Assets {
         CoreMesh {
           MeshAsset {
             Id: 6977157647512673335
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 6513163486087200886
+        Name: "turret.rotateY"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1882084978741898004
+        ChildIds: 17542475088066571908
+        ChildIds: 1252167332931131001
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 17542475088066571908
+        Name: "grapple"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 6513163486087200886
+        ChildIds: 6318775851616436255
+        ChildIds: 13105115123571185527
+        ChildIds: 11502802023227318829
+        ChildIds: 3005310611497150124
+        ChildIds: 11677570998727255273
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 6318775851616436255
+        Name: "Fantasy Sword Guard 01"
+        Transform {
+          Location {
+            X: 95.4161301
+            Y: 1.97887421e-05
+            Z: -2.76525879
+          }
+          Rotation {
+            Pitch: 44.9997559
+            Yaw: 90
+            Roll: 90
+          }
+          Scale {
+            X: 1.49999988
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17542475088066571908
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.518240035
+              G: 0.66311866
+              B: 0.79
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 6777447344140592468
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1920010878601219178
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 13105115123571185527
+        Name: "Fantasy Sword Guard 01"
+        Transform {
+          Location {
+            X: 95.4093552
+            Y: 1.88350677e-05
+            Z: -2.76519775
+          }
+          Rotation {
+            Pitch: 44.9999
+            Yaw: -90
+            Roll: -90
+          }
+          Scale {
+            X: 1.50000012
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17542475088066571908
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.518240035
+              G: 0.66311866
+              B: 0.79
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 6777447344140592468
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1920010878601219178
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 11502802023227318829
+        Name: "Fantasy Mace Guard 01"
+        Transform {
+          Location {
+            X: 80.4161606
+            Y: 1.21593475e-05
+            Z: -2.76721191
+          }
+          Rotation {
+            Pitch: 4.78113216e-05
+            Yaw: -90
+            Roll: 90
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17542475088066571908
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 273448105943087596
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 3005310611497150124
+        Name: "Fantasy Sword Grip 01"
+        Transform {
+          Location {
+            X: 45.4161568
+            Y: -1.51991844e-06
+            Z: -2.77178955
+          }
+          Rotation {
+            Pitch: 4.78113216e-05
+            Yaw: -90
+            Roll: 90
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17542475088066571908
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 3682206342183528038
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 11677570998727255273
+        Name: "Fantasy Staff Grip 01"
+        Transform {
+          Location {
+            X: 45.1491623
+            Y: -2.02655792e-06
+            Z: -3.19621277
+          }
+          Rotation {
+            Pitch: 4.78113216e-05
+            Yaw: -90
+            Roll: -90
+          }
+          Scale {
+            X: 1.75
+            Y: 1.75
+            Z: 0.75
+          }
+        }
+        ParentId: 17542475088066571908
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6722267691116138132
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 1252167332931131001
+        Name: "Modern Weapon Barrel 01"
+        Transform {
+          Location {
+            X: 49.3211555
+            Z: -2.77232361
+          }
+          Rotation {
+            Yaw: -180
+            Roll: 89.9999466
+          }
+          Scale {
+            X: 1.2
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 6513163486087200886
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 2817890560817570586
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 14447195453197103600
+        Name: "Fantasy Crossbow Foregrip 01"
+        Transform {
+          Location {
+            X: -20.2937622
+            Z: -5.4375
+          }
+          Rotation {
+            Pitch: 6.83018879e-06
+            Yaw: -179.999954
+            Roll: 7.25777e-08
+          }
+          Scale {
+            X: 0.5
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1882084978741898004
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_Trim:color"
+            Color {
+              R: 0.518240035
+              G: 0.66311866
+              B: 0.79
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:id"
+            AssetReference {
+              Id: 6777447344140592468
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15312805567995783140
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1516,12 +1583,39 @@ Assets {
       }
     }
     Assets {
-      Id: 15312805567995783140
-      Name: "Fantasy Crossbow Foregrip 01"
+      Id: 5672864354152187880
+      Name: "Fantasy Shield Strap 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weap_fan_foregrip_cross_001"
+        AssetId: "sm_weap_fan_shield_strap_001"
+      }
+    }
+    Assets {
+      Id: 5544820850613172301
+      Name: "Modern Weapon - Grenade Handle 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_weapons_grenade_handle_001"
+      }
+    }
+    Assets {
+      Id: 12510064410993333055
+      Name: "Fantasy Pommel 04"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_weap_fan_pommel_004"
+      }
+    }
+    Assets {
+      Id: 6977157647512673335
+      Name: "Barrier Light"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prop_urb_barrier_light_001"
       }
     }
     Assets {
@@ -1579,39 +1673,12 @@ Assets {
       }
     }
     Assets {
-      Id: 5672864354152187880
-      Name: "Fantasy Shield Strap 01"
+      Id: 15312805567995783140
+      Name: "Fantasy Crossbow Foregrip 01"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weap_fan_shield_strap_001"
-      }
-    }
-    Assets {
-      Id: 5544820850613172301
-      Name: "Modern Weapon - Grenade Handle 01"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weapons_grenade_handle_001"
-      }
-    }
-    Assets {
-      Id: 12510064410993333055
-      Name: "Fantasy Pommel 04"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_weap_fan_pommel_004"
-      }
-    }
-    Assets {
-      Id: 6977157647512673335
-      Name: "Barrier Light"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_prop_urb_barrier_light_001"
+        AssetId: "sm_weap_fan_foregrip_cross_001"
       }
     }
     Assets {
