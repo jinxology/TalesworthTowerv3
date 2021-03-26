@@ -16,11 +16,14 @@ local propBtnPuckollossal = script:GetCustomProperty("btnPuckollossal"):WaitForO
 local propBtnResetTower = script:GetCustomProperty("btnResetTower"):WaitForObject()
 local propBtnGobbleDots = script:GetCustomProperty("btnGobbleDots"):WaitForObject()
 local propBtnLazyLava = script:GetCustomProperty("btnLazyLava"):WaitForObject()
+local propBtnFlumeMe = script:GetCustomProperty("btnFlumeMe"):WaitForObject()
+local propTxtFlumeMe = script:GetCustomProperty("txtFlumeMe"):WaitForObject()
 
 local showingMe = false
 levelList = {"ShapesAndButtons","Puckollossal","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Maze","LazyLava","GobbleDots"}
 currentLevelIndex = 1
 requiredNbrPlayersReady = 4
+local flumeMeIn = false
 
 function SetLevelNameText(whichButton)
     propTxtCurrentLevel.text = levelList[currentLevelIndex]
@@ -100,6 +103,11 @@ function OnClickedResetTower()
     Events.BroadcastToServer("GeneralClientToServerMessage","resetTower","")
 end
 
+function OnClickedFlumeMe()
+    flumeMeIn = not flumeMeIn
+    propTxtFlumeMe.text = flumeMeIn and "yes" or "no"
+end
+
 propBtnCountNetworkedObjects.clickedEvent:Connect(CountNetworkObjects)
 propBtnLevelUp.clickedEvent:Connect(OnClickedLevelUp)
 propBtnLevelDown.clickedEvent:Connect(OnClickedLevelDown)
@@ -113,6 +121,9 @@ propBtnPuckollossal.clickedEvent:Connect(OnClickedSetLevel)
 propBtnGobbleDots.clickedEvent:Connect(OnClickedSetLevel)
 propBtnLazyLava.clickedEvent:Connect(OnClickedSetLevel)
 propBtnResetTower.clickedEvent:Connect(OnClickedResetTower)
+propBtnFlumeMe.clickedEvent:Connect(OnClickedFlumeMe)
+
+
 
 function OnBindingPressed(player, bindingPressed)
     --print ("Dev Menu Controller: pressed " .. bindingPressed)
