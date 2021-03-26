@@ -161,6 +161,15 @@ Assets {
   }
 }
 Assets {
+  Id: 8923793940830097638
+  Name: "Concrete Basic 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_gen_concrete_001"
+  }
+}
+Assets {
   Id: 8757068560497122517
   Name: "Plane 4m - One Sided"
   PlatformAssetType: 1

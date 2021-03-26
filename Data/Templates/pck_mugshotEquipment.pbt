@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1232579912354001357
+        ParentId: 4781671109827199097
         ChildIds: 16499993128992971694
         ChildIds: 8282285858322498775
         ChildIds: 9169255255245069283
@@ -222,6 +222,7 @@ Assets {
           }
         }
         ParentId: 12451032973807524472
+        ChildIds: 1138182496495464978
         ChildIds: 9855560980577758280
         ChildIds: 3652229039018446778
         WantsNetworking: true
@@ -235,6 +236,60 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         NetworkContext {
+        }
+      }
+      Objects {
+        Id: 1138182496495464978
+        Name: "Point Light"
+        Transform {
+          Location {
+            X: -65
+            Z: 62.3232422
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8282285858322498775
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Light {
+          Intensity: 50
+          Color {
+            R: 1
+            G: 1
+            B: 1
+            A: 1
+          }
+          CastShadows: true
+          VolumetricIntensity: 5
+          TeamSettings {
+          }
+          Light {
+            Temperature: 6500
+            LocalLight {
+              AttenuationRadius: 1000
+              PointLight {
+                SourceRadius: 20
+                SoftSourceRadius: 20
+                FallOffExponent: 8
+                UseFallOffExponent: true
+              }
+            }
+            MaxDrawDistance: 5000
+            MaxDistanceFadeRange: 1000
+          }
         }
       }
       Objects {
@@ -370,6 +425,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -414,6 +470,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -460,6 +517,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -506,6 +564,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -534,6 +593,7 @@ Assets {
         ChildIds: 1119479215754244346
         ChildIds: 6513163486087200886
         ChildIds: 14447195453197103600
+        ChildIds: 368255692165298173
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -616,6 +676,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -631,6 +692,7 @@ Assets {
           Location {
           }
           Rotation {
+            Pitch: 15.313632
           }
           Scale {
             X: 1
@@ -960,7 +1022,7 @@ Assets {
             Z: -2.77232361
           }
           Rotation {
-            Yaw: -180
+            Yaw: 180
             Roll: 89.9999466
           }
           Scale {
@@ -1000,7 +1062,7 @@ Assets {
         Name: "Fantasy Crossbow Foregrip 01"
         Transform {
           Location {
-            X: -20.2937622
+            X: -7.67089844
             Z: -5.4375
           }
           Rotation {
@@ -1009,8 +1071,8 @@ Assets {
             Roll: 7.25777e-08
           }
           Scale {
-            X: 0.5
-            Y: 1
+            X: 0.749589801
+            Y: 0.999999821
             Z: 1
           }
         }
@@ -1044,6 +1106,51 @@ Assets {
         CoreMesh {
           MeshAsset {
             Id: 15312805567995783140
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 368255692165298173
+        Name: "Cylinder"
+        Transform {
+          Location {
+            X: 2.49023438
+            Z: -2.22949219
+          }
+          Rotation {
+            Pitch: 90
+            Yaw: -3.05175781e-05
+            Roll: -3.05175781e-05
+          }
+          Scale {
+            X: 0.0499941483
+            Y: 0.0874609202
+            Z: 0.340507
+          }
+        }
+        ParentId: 1882084978741898004
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1137112816547272582
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1679,6 +1786,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_weap_fan_foregrip_cross_001"
+      }
+    }
+    Assets {
+      Id: 1137112816547272582
+      Name: "Cylinder"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_cylinder_002"
       }
     }
     Assets {

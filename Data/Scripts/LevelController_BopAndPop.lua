@@ -13,6 +13,7 @@ local propStartSign1 = script:GetCustomProperty("startSign1"):WaitForObject()
 local propStartSign2 = script:GetCustomProperty("startSign2"):WaitForObject()
 local propStartSign3 = script:GetCustomProperty("startSign3"):WaitForObject()
 local propIntakeGlow = script:GetCustomProperty("intakeGlow"):WaitForObject()
+local propIntakeLight = script:GetCustomProperty("intakeLight"):WaitForObject()
 local propBopZoneTrigger = script:GetCustomProperty("bopZoneTrigger"):WaitForObject()
 
 propBurstVFXTemplate = script:GetCustomProperty("burstVFX")
@@ -245,6 +246,7 @@ function UnloadTutorial()
 	fadeIntakeStartTime = 0
 	
 	propIntakeGlow:SetColor(Color.WHITE)
+	propIntakeLight:SetColor(Color.WHITE)
 end
 
 local propSpawnedWeapons = {}
@@ -522,6 +524,7 @@ end
 function ColorIntake()
 	if numBoppable == 1 or tutorialActive  then
 		propIntakeGlow:SetColor(intakeCycleColors[intakeCycleColorIndex])
+		propIntakeLight:SetColor(intakeCycleColors[intakeCycleColorIndex])
 	else
 		intakeCycleColorIndex = (intakeCycleColorIndex + 1) % (numBoppable) + 1
 		intakeFromColor = intakeToColor
@@ -552,7 +555,7 @@ function FadeIntakeColor()
 	end
 
 	propIntakeGlow:SetColor(Color.Lerp(fromColor, toColor, progress * 2))
-
+	propIntakeLight:SetColor(Color.Lerp(fromColor, toColor, progress * 2))
 end
 
 function SpawnSigns()

@@ -1548,7 +1548,7 @@ Objects {
   ChildIds: 930778993356100130
   ChildIds: 1165206239691775150
   ChildIds: 2329610297248220321
-  ChildIds: 12563080553929098904
+  ChildIds: 4525636193201632143
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -1562,7 +1562,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12563080553929098904
+  Id: 4525636193201632143
   Name: "lights"
   Transform {
     Location {
@@ -1580,7 +1580,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceon"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2026,7 +2026,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
   }
@@ -2078,7 +2078,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
   }
@@ -2130,7 +2130,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
   }
@@ -2182,7 +2182,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
   }
@@ -2234,7 +2234,7 @@ Objects {
     Overrides {
       Name: "ma:Building_Floor:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
     Overrides {
@@ -2244,7 +2244,7 @@ Objects {
     Overrides {
       Name: "ma:Building_Ceiling:id"
       AssetReference {
-        Id: 11150102244442488264
+        Id: 10184847056121543272
       }
     }
     Overrides {
@@ -2323,7 +2323,7 @@ Objects {
     Overrides {
       Name: "ma:Building_Floor:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
     Overrides {
@@ -2333,7 +2333,7 @@ Objects {
     Overrides {
       Name: "ma:Building_Ceiling:id"
       AssetReference {
-        Id: 11150102244442488264
+        Id: 10184847056121543272
       }
     }
     Overrides {
@@ -2411,7 +2411,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
   }
@@ -2463,7 +2463,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
   }
@@ -2515,7 +2515,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
   }
@@ -2567,7 +2567,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
   }
@@ -2618,7 +2618,7 @@ Objects {
     Overrides {
       Name: "ma:Building_Floor:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
     Overrides {
@@ -2628,7 +2628,7 @@ Objects {
     Overrides {
       Name: "ma:Building_Ceiling:id"
       AssetReference {
-        Id: 11150102244442488264
+        Id: 10184847056121543272
       }
     }
     Overrides {
@@ -2707,7 +2707,7 @@ Objects {
     Overrides {
       Name: "ma:Building_Floor:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
     Overrides {
@@ -2717,7 +2717,7 @@ Objects {
     Overrides {
       Name: "ma:Building_Ceiling:id"
       AssetReference {
-        Id: 11150102244442488264
+        Id: 10184847056121543272
       }
     }
     Overrides {
@@ -2796,7 +2796,7 @@ Objects {
     Overrides {
       Name: "ma:Building_Floor:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
     Overrides {
@@ -2806,7 +2806,7 @@ Objects {
     Overrides {
       Name: "ma:Building_Ceiling:id"
       AssetReference {
-        Id: 11150102244442488264
+        Id: 10184847056121543272
       }
     }
     Overrides {
@@ -3375,7 +3375,7 @@ Objects {
     Overrides {
       Name: "ma:Building_Floor:id"
       AssetReference {
-        Id: 12827530473249900764
+        Id: 8923793940830097638
       }
     }
     Overrides {
@@ -3385,7 +3385,7 @@ Objects {
     Overrides {
       Name: "ma:Building_Ceiling:id"
       AssetReference {
-        Id: 11150102244442488264
+        Id: 10184847056121543272
       }
     }
     Overrides {

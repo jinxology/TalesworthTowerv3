@@ -106,7 +106,13 @@ function LevelBegin()
     propTutorialCurtain:Destroy()
     propTutorialCurtain = nil
 
-
+    --  get rid of starting platform
+    for _, child in ipairs(script.parent:GetChildren()) do
+        if child.name == "StartPlatformGroup" then
+            Ease3D.EasePosition(child, child:GetPosition() - Vector3.UP * 26, 2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.IN)
+        end
+    end
+    
     -- only one in starting configuration
     for _, position in ipairs(spawnConfiguration) do
         local spawner = World.SpawnAsset(propPuckSpawnerTemplate, { position = position, parent = script.parent })

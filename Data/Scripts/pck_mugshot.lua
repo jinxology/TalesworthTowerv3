@@ -48,15 +48,15 @@ function CheckAim(targetedPuck)
 		-- print("from mugshot to anchor: " .. index .. " " .. anchor.id .. " " .. tostring(mugshotDirection) .. ", anchor facing " .. tostring(anchorDirection) .. " (" .. dot .. ")")
 	end
 
-	-- for index, anchorIndex in ipairs(facingAnchors) do
-	-- 	local	anchorPosition = puckPosition + anchorLocations[anchorIndex]
+	for index, anchorIndex in ipairs(facingAnchors) do
+		local	anchorPosition = puckPosition + anchorLocations[anchorIndex]
 
-	-- 	if index == 1 then
-	-- 		CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.GREEN, thickness = 3, duration = 0.2 })
-	-- 	else
-	-- 		CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.BLUE, thickness = 3, duration = 0.2 })
-	-- 	end
-	-- end
+		if index == 1 then
+			CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.GREEN, thickness = 3, duration = 0.5 })
+		else
+			CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.BLUE, thickness = 3, duration = 0.5 })
+		end
+	end
 
 	return { puck = targetedPuck, anchors = facingAnchors}
 end
