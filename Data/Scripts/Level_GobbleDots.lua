@@ -25,7 +25,7 @@ entranceFlumeEjectionVelocity = 5
 ------------------------------------------------------------
 local propLevelState = script:GetCustomProperty("LevelState")
 
-local DOT_COUNT = 100
+local DOT_COUNT = 26
 
 local levelFolder = script.parent  --Gets the Level Folder
 
@@ -37,17 +37,17 @@ dotsDeleted = {}  --The Array of deleted dots the server is holding (an array of
 -------------------------------------------------------------
 --LevelPowerUp code is called from the previous level to do setup on it before the players arrive
 function LevelPowerUp() 
-
-	print("Setting Network Custom Property")
-	--script:SetNetworkedCustomProperty("LevelState", "1")
-	
-	print("After Call")
 	InitializeDotArray()
+	--print("Setting Network Custom Property")
+	script:SetNetworkedCustomProperty("LevelState", 1)
+	 
+	--print("After Call")
+
 	
 	--dotArray = {}
-	print(dotsArray)
+	--print(dotsArray)
 	
-	print("dotArray[1]:", dotsArray[1])
+	--print("dotArray[1]:", dotsArray[1])
 
 	
 --	for dotIndex, dot in next, dotsVectorList do
@@ -99,18 +99,28 @@ end
 function CheckDotsLeft()	
 	--If the number of initial dots on the level is equal to the dots that have been deleted,
 	--then the dots have all been cleared and the Victory condition has been reached
+	--print("Dots Array: ", #dotsArray, " Dots Deleted: ", #dotsDeleted)
 	if #dotsArray == #dotsDeleted then
 		LevelVictory()
 	end
 end
 
-function ConsumeDot(dotIn)
-	for dotIndex, dot in next, dotArray do
-		if(dotArray[dotIndex] == dotIn) then
-		--	print("Removing Dot")
-			table.remove(dotArray, dotIndex)
-		end
-	end
+--function ConsumeDot(dotIn)
+--	for dotIndex, dot in next, dotArray do
+--		if(dotArray[dotIndex] == dotIn) then
+--		--	print("Removing Dot")
+--			table.remove(dotArray, dotIndex)
+--		end
+--	end
+--end
+
+function OnDotDeleted(dotIndex)
+	--print("Removing Dot:", dotIndex)
+	dotsArray[dotIndex] = nil
+	table.insert(dotsDeleted, dotIndex)
+	CheckDotsLeft()
 end
 
--- LevelPowerUp()
+Events.Connect("DotDeleted", OnDotDeleted)
+
+--LevelPowerUp()

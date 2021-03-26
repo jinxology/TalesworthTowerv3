@@ -10,9 +10,9 @@ Assets {
         Name: "gd.Dot_Client"
         Transform {
           Scale {
-            X: 0.25
-            Y: 0.25
-            Z: 0.25
+            X: 0.1
+            Y: 0.1
+            Z: 0.1
           }
         }
         ParentId: 11343656879275901557

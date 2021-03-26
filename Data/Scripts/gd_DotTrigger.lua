@@ -2,23 +2,21 @@ local propLevelController = script:GetCustomProperty("LevelController"):WaitForO
 
 local dotObject = script.parent --Gets the current dot
 local levelFolder = script.parent.parent  --Gets the gd.Dots_Client Context Folder
+local dotCount = 1
 
 local dotTrigger = dotObject:FindDescendantByName("DotTrigger_Client")
 
 function OnDotInteraction(whichTrigger, other)
 	--print("In Dot Intercation")
-	print(other, ":", whichTrigger)
+	--print(other, ":", whichTrigger)
 	
 	if other and other:IsA("Player") then
 		--print("In Dot Intercation")
-		propLevelController.context.ConsumeDot(dotObject)
-        Events.BroadcastToServer()
+        Events.BroadcastToServer("DotDeleted", dotCount)      
+        dotCount = dotCount + 1
         dotObject:Destroy()
     end
-
-    propLevelController.context.CheckDotsLeft()
 end
-
 
 dotTrigger.beginOverlapEvent:Connect(OnDotInteraction)
 
