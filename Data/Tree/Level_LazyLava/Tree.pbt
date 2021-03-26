@@ -1,31 +1,20 @@
 Name: "Level_LazyLava"
 RootId: 1647900999251311847
 Objects {
-  Id: 13331615390139649722
-  Name: "Fantasy Castle Pillar 01 Mid"
+  Id: 11720696999151347734
+  Name: "Lights - LL"
   Transform {
     Location {
-      X: 3348.63965
-      Y: -447.829224
-      Z: 83.1894531
     }
     Rotation {
     }
     Scale {
-      X: 0.999999821
-      Y: 0.999999821
-      Z: 0.493403673
+      X: 1
+      Y: 1
+      Z: 1
     }
   }
   ParentId: 1647900999251311847
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 29435928370182579
-      }
-    }
-  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -35,20 +24,8 @@ Objects {
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  CoreMesh {
-    MeshAsset {
-      Id: 7822473577673662489
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
+  Folder {
+    IsGroup: true
   }
 }
 Objects {
@@ -5024,6 +5001,61 @@ Objects {
       Physics {
         Mass: 100
         LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 3126752469506549322
+  Name: "Roof - LL"
+  Transform {
+    Location {
+      X: -2261.66309
+      Y: 2015.87549
+      Z: 1270.6582
+    }
+    Rotation {
+    }
+    Scale {
+      X: 151.524124
+      Y: 129.457062
+      Z: 0.797348
+    }
+  }
+  ParentId: 1647900999251311847
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 29435928370182579
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: true
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    DisableCastShadows: true
+    InteractWithTriggers: true
+    StaticMesh {
+      Physics {
       }
     }
   }
