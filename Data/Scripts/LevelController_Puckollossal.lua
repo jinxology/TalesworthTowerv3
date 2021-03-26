@@ -224,6 +224,3 @@ end
 
 propScoreTrigger.beginOverlapEvent:Connect(ScoreTriggerDidOverlap)
 propFailTrigger.beginOverlapEvent:Connect(FailTriggerDidOverlap)
-
-LevelPowerUp()
-Task.Spawn(LevelBegin, 2)

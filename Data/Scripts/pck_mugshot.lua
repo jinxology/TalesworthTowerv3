@@ -275,14 +275,11 @@ function ConnectAbilityEvents_Unreel(ability)
 	ability.readyEvent:Connect(OnReady_Unreel)
 end
 
-print(tostring(script) .. " " .. script.name)
 local	RETICLE_TEMPLATE = script:GetCustomProperty("reticleTemplate")
 local	reticleInstance = nil
 
-print(tostring(RETICLE_TEMPLATE))
 function OnEquipped(equipment, player)
     if RETICLE_TEMPLATE and reticleInstance == nil then
-		print ("ok")
 		reticleInstance = World.SpawnAsset(RETICLE_TEMPLATE)
     end
 end

@@ -116,15 +116,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12643049430161325686
-  Name: "Paper Burst VFX"
-  PlatformAssetType: 8
-  PrimaryAsset {
-    AssetType: "VfxBlueprintAssetRef"
-    AssetId: "fxbp_paper_burst"
-  }
-}
-Assets {
   Id: 12187164554423389607
   Name: "Designer Sub Bass Drop 02 SFX"
   PlatformAssetType: 7
