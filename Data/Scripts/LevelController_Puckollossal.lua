@@ -200,7 +200,7 @@ end
 
 function ScoreTriggerDidOverlap(trigger, other)
     if other:IsA("Player") then
-        other:AddImpulse(Vector3.New(-1000000, 0, 100000))
+        other:AddImpulse(Vector3.New(1000000, 0, 10000))
     elseif other.name == "pck.puckTemplate" then
         if propCurrentPuck ~= other then
             propCurrentPuck = other
@@ -225,5 +225,5 @@ end
 propScoreTrigger.beginOverlapEvent:Connect(ScoreTriggerDidOverlap)
 propFailTrigger.beginOverlapEvent:Connect(FailTriggerDidOverlap)
 
--- LevelPowerUp()
--- Task.Spawn(LevelBegin, 2)
+LevelPowerUp()
+Task.Spawn(LevelBegin, 2)
