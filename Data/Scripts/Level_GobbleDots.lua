@@ -113,4 +113,4 @@ function ConsumeDot(dotIn)
 	end
 end
 
-LevelPowerUp()
+-- LevelPowerUp()
