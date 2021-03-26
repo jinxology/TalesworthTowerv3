@@ -1,6 +1,137 @@
 Name: "Walls - LL"
 RootId: 14830100473066368708
 Objects {
+  Id: 360218732715983699
+  Name: "Fantasy Castle Bannister 01 - Straight"
+  Transform {
+    Location {
+      X: 1662.54053
+      Y: 200.665131
+      Z: 226.521408
+    }
+    Rotation {
+      Yaw: -179.999954
+    }
+    Scale {
+      X: 0.501662731
+      Y: 0.501662731
+      Z: 0.501662731
+    }
+  }
+  ParentId: 14830100473066368708
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16956732760613111471
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 4897532826436316801
+  Name: "Fantasy Castle Bannister 01 - Straight"
+  Transform {
+    Location {
+      X: 1461.87524
+      Y: -200.665131
+      Z: 226.521408
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.50166291
+      Y: 0.50166291
+      Z: 0.50166291
+    }
+  }
+  ParentId: 14830100473066368708
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16956732760613111471
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 11450470487300510386
+  Name: "Fantasy Castle Bannister 01 - Straight"
+  Transform {
+    Location {
+      X: 2239.45117
+      Y: -4.21012301e-05
+      Z: 226.521408
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 0.501662791
+      Y: 0.501662791
+      Z: 0.501662791
+    }
+  }
+  ParentId: 14830100473066368708
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16956732760613111471
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 12956916391848679193
   Name: "2ndLEvel - LL"
   Transform {
@@ -6439,7 +6570,7 @@ Objects {
   Name: "Fantasy Castle Bannister 01 - Straight"
   Transform {
     Location {
-      X: 1662.54053
+      X: 1461.875
       Y: 200.665131
       Z: 226.521408
     }
@@ -6483,7 +6614,8 @@ Objects {
   Name: "Fantasy Castle Bannister 01 - Straight"
   Transform {
     Location {
-      X: 1662.54053
+      X: 1461.875
+      Y: 9.18572332e-05
       Z: 226.521408
     }
     Rotation {

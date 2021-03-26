@@ -1,28 +1,31 @@
-Name: "Platforms - LL"
-RootId: 11184597895692412300
+Name: "entrance flume - LL"
+RootId: 12538252026495896770
 Objects {
-  Id: 9733581751861278574
-  Name: "Spawn3platform"
+  Id: 11581640530368947610
+  Name: "Cube - Chamfered Large Polished"
   Transform {
     Location {
-      X: -3956.07056
-      Y: 3260.80884
-      Z: 76.0225143
+      X: -1154.52148
+      Y: -8.94030762
+      Z: -373.869629
     }
     Rotation {
+      Pitch: 6.83018879e-06
+      Yaw: 89.9999924
+      Roll: -22.7142849
     }
     Scale {
-      X: 3.89999986
-      Y: 3.60000014
-      Z: 0.399999976
+      X: 6.36412334
+      Y: 6.6142168
+      Z: 2.25963235
     }
   }
-  ParentId: 11184597895692412300
+  ParentId: 12538252026495896770
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 29435928370182579
+        Id: 13668225859767539073
       }
     }
   }
@@ -37,7 +40,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 10789546840193366307
+      Id: 16965777294932964901
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -52,28 +55,27 @@ Objects {
   }
 }
 Objects {
-  Id: 251923308992882077
-  Name: "Spawn2platform"
+  Id: 15460639662691169471
+  Name: "Pipe"
   Transform {
     Location {
-      X: -1548.10205
-      Y: 3611.97168
-      Z: 76.0225143
+      X: -1110.44849
+      Z: -391.419739
     }
     Rotation {
     }
     Scale {
-      X: 3.9
-      Y: 3.60000014
-      Z: 0.4
+      X: 4.54961681
+      Y: 4.54961681
+      Z: 4.45676661
     }
   }
-  ParentId: 11184597895692412300
+  ParentId: 12538252026495896770
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 29435928370182579
+        Id: 13668225859767539073
       }
     }
   }
@@ -84,11 +86,11 @@ Objects {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
   CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceon"
   }
   CoreMesh {
     MeshAsset {
-      Id: 10789546840193366307
+      Id: 15340034010401438429
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -103,28 +105,36 @@ Objects {
   }
 }
 Objects {
-  Id: 13750140158017462883
-  Name: "Cube - Bottom-Aligned"
+  Id: 15250192478704963044
+  Name: "Pipe"
   Transform {
     Location {
-      X: 1760.51563
-      Y: -8.88676929
-      Z: 186.492233
+      X: -669.535156
+      Z: 50
     }
     Rotation {
+      Pitch: -90
     }
     Scale {
-      X: 9.70022869
-      Y: 4.54093027
-      Z: 0.400000185
+      X: 4.54961681
+      Y: 4.54961681
+      Z: 4.45676661
     }
   }
-  ParentId: 11184597895692412300
+  ParentId: 12538252026495896770
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 29435928370182579
+        Id: 13668225859767539073
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        G: 0.863157392
+        B: 1
+        A: 1
       }
     }
   }
@@ -135,62 +145,11 @@ Objects {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
   CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceon"
   }
   CoreMesh {
     MeshAsset {
-      Id: 10789546840193366307
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 5876259573243269182
-  Name: "Cube - Bottom-Aligned"
-  Transform {
-    Location {
-      X: 2465.18701
-      Y: -225.748215
-      Z: 186.492233
-    }
-    Rotation {
-    }
-    Scale {
-      X: 4.60000134
-      Y: 8.79999924
-      Z: 0.400000185
-    }
-  }
-  ParentId: 11184597895692412300
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 29435928370182579
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 10789546840193366307
+      Id: 5668201541289739547
     }
     Teams {
       IsTeamCollisionEnabled: true

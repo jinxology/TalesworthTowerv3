@@ -9,7 +9,7 @@ local Xoffset = 4314
 local Yoffset = -1550
 local Zoffset = 175
 
-local startLoc = Vector3.New(Xoffset,Yoffset,Zoffset)
+local startLoc = Vector3.New(Xoffset,Yoffset+distBetweenSquares*3,Zoffset)
 
 local waypoints = {
 Vector2.New(0,5),
@@ -106,8 +106,12 @@ function SpeedUp()
     speed = speed + 200
 end
 
+function StartPosition()
+    raft:SetPosition(startLoc)
+end
 
 function StartRaft()
-    raft:SetPosition(startLoc)
     MoveToNextDestination()
 end
+
+raft:SetPosition(startLoc)

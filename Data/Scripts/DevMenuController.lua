@@ -14,9 +14,11 @@ local propBtnPoolPlatforms = script:GetCustomProperty("btnPoolPlatforms"):WaitFo
 local propBtnCountNetworkedObjects = script:GetCustomProperty("btnCountNetworkedObjects"):WaitForObject()
 local propBtnPuckollossal = script:GetCustomProperty("btnPuckollossal"):WaitForObject()
 local propBtnResetTower = script:GetCustomProperty("btnResetTower"):WaitForObject()
+local propBtnGobbleDots = script:GetCustomProperty("btnGobbleDots"):WaitForObject()
+local propBtnLazyLava = script:GetCustomProperty("btnLazyLava"):WaitForObject()
 
 local showingMe = false
-levelList = {"ShapesAndButtons","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Puckollossal","Maze"}
+levelList = {"ShapesAndButtons","Puckollossal","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Maze","LazyLava","GobbleDots"}
 currentLevelIndex = 1
 requiredNbrPlayersReady = 4
 
@@ -40,33 +42,50 @@ function OnClickedLevelDown(whichButton)
     SetLevelNameText()
 end
 
+function LookupLevelIndex(levelName)
+    for i=1,#levelList do
+        if (levelList[i] == levelName) then
+            return i
+        end
+    end
+    print ("level "..levelName.." not found")
+    return 1
+end
+
 function OnClickedSetLevel(whichButton)
     local newLoc 
+    local levelName
+    
     if (whichButton.name == "btnBopnPop") then
-        currentLevelIndex = 2
+        levelName = "BopAndPop"
         newLoc = Vector3.New (-938,-990,1916)
     elseif (whichButton.name == "btnColoredDials") then
-        currentLevelIndex = 5
+        levelName = "ColorDials"
         newLoc = Vector3.New (-87,-354,4594)
     elseif (whichButton.name == "btnMaze") then
-        currentLevelIndex = 8
+        levelName = "Maze"
         newLoc = Vector3.New (-87,-354,3855)
     elseif (whichButton.name == "btnJumpman") then
-        currentLevelIndex = 3
+        levelName = "JumpMan"
         newLoc = Vector3.New (-172,1969,10650)
     elseif (whichButton.name == "btnFarmGallery") then
-        currentLevelIndex = 4
+        levelName = "FarmGallery"
         newLoc = Vector3.New (137,252,6132)
     elseif (whichButton.name == "btnPoolPlatforms") then
-        currentLevelIndex = 6
+        levelName = "BlockAndEscape"
         newLoc = Vector3.New (4598,1292,8833)
     elseif (whichButton.name == "btnPuckollossal") then
-        currentLevelIndex = 7
+        levelName = "Puckollossal"
         newLoc = Vector3.New (4181,4780,13157)
     elseif (whichButton.name == "btnGobbleDots") then
-        currentLevelIndex = 7
-        newLoc = Vector3.New (2500,4375,15600)
+        levelName = "GobbleDots"
+        newLoc = Vector3.New (3004,3204,15560)
+    elseif (whichButton.name == "btnLazyLava") then
+        levelName = "LazyLava"
+        newLoc = Vector3.New (4182,-169,17660)
     end
+
+    currentLevelIndex = LookupLevelIndex(levelName)
 
     SetLevelNameText()
     Events.BroadcastToServer("TeleportAllPlayers",currentLevelIndex,newLoc)
@@ -91,6 +110,8 @@ propBtnJumpman.clickedEvent:Connect(OnClickedSetLevel)
 propBtnFarmGallery.clickedEvent:Connect(OnClickedSetLevel)
 propBtnPoolPlatforms.clickedEvent:Connect(OnClickedSetLevel)
 propBtnPuckollossal.clickedEvent:Connect(OnClickedSetLevel)
+propBtnGobbleDots.clickedEvent:Connect(OnClickedSetLevel)
+propBtnLazyLava.clickedEvent:Connect(OnClickedSetLevel)
 propBtnResetTower.clickedEvent:Connect(OnClickedResetTower)
 
 function OnBindingPressed(player, bindingPressed)

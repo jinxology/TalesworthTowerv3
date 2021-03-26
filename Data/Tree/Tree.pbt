@@ -23,7 +23,6 @@ Objects {
   ChildIds: 17232582341582998440
   ChildIds: 7367735074338159388
   ChildIds: 14713340454944924967
-  ChildIds: 13200635763259802459
   ChildIds: 1112385650763072475
   ChildIds: 568490692521295426
   UnregisteredParameters {
@@ -106,49 +105,6 @@ Objects {
     VoxelSize: 700
     OctreeDepth: 5
     GeneratorID: "DEPRECATED"
-  }
-}
-Objects {
-  Id: 13200635763259802459
-  Name: "Ball"
-  Transform {
-    Location {
-      X: -8650
-      Y: 6500
-      Z: 17550
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.99999994
-      Y: 0.99999994
-      Z: 0.99999994
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 7062845870289079377
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
   }
 }
 Objects {
@@ -766,6 +722,18 @@ Objects {
         SelfId: 4844164286953071180
       }
     }
+    Overrides {
+      Name: "cs:btnGobbleDots"
+      ObjectReference {
+        SelfId: 1695264799586191767
+      }
+    }
+    Overrides {
+      Name: "cs:btnLazyLava"
+      ObjectReference {
+        SelfId: 2307637717771936492
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -819,6 +787,8 @@ Objects {
   ChildIds: 4681090465772161262
   ChildIds: 6360766834277013482
   ChildIds: 4844164286953071180
+  ChildIds: 1695264799586191767
+  ChildIds: 2307637717771936492
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -849,6 +819,188 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:bottomright"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 2307637717771936492
+  Name: "btnLazyLava"
+  Transform {
+    Location {
+      X: 6.97067298e-06
+      Y: -0.000345196633
+    }
+    Rotation {
+      Yaw: -3.75660384e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1119104670142202433
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 176
+    Height: 49
+    UIX: 401.124512
+    UIY: 196.644043
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Button {
+      Label: "Lazy Lava"
+      FontColor {
+        A: 1
+      }
+      FontSize: 20
+      ButtonColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      HoveredColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      PressedColor {
+        R: 0.705960155
+        G: 1
+        B: 0.399999976
+        A: 1
+      }
+      DisabledColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Brush {
+        Id: 841534158063459245
+      }
+      IsButtonEnabled: true
+      ClickMode {
+        Value: "mc:ebuttonclickmode:default"
+      }
+      Font {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 1695264799586191767
+  Name: "btnGobbleDots"
+  Transform {
+    Location {
+      X: 6.97067298e-06
+      Y: -0.000345196633
+    }
+    Rotation {
+      Yaw: -3.75660384e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1119104670142202433
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 176
+    Height: 49
+    UIX: 214.261475
+    UIY: 388.884644
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Button {
+      Label: "Gobble Dots"
+      FontColor {
+        A: 1
+      }
+      FontSize: 20
+      ButtonColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      HoveredColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      PressedColor {
+        R: 0.705960155
+        G: 1
+        B: 0.399999976
+        A: 1
+      }
+      DisabledColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Brush {
+        Id: 841534158063459245
+      }
+      IsButtonEnabled: true
+      ClickMode {
+        Value: "mc:ebuttonclickmode:default"
+      }
+      Font {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
         }
       }
     }
