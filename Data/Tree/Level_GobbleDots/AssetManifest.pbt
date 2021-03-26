@@ -1,4 +1,13 @@
 Assets {
+  Id: 16024444055021791904
+  Name: "Fog Cloud"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "fxmi_fog_material"
+  }
+}
+Assets {
   Id: 12095835209017042614
   Name: "Cube"
   PlatformAssetType: 1

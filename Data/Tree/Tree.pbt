@@ -26,7 +26,6 @@ Objects {
   ChildIds: 13200635763259802459
   ChildIds: 1112385650763072475
   ChildIds: 568490692521295426
-  ChildIds: 15672623760427373018
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -39,47 +38,6 @@ Objects {
     Value: "mc:ecollisionsetting:forceon"
   }
   Folder {
-  }
-}
-Objects {
-  Id: 15672623760427373018
-  Name: "gd.Dot"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 8807720377509234828
-      value {
-        Overrides {
-          Name: "Name"
-          String: "gd.Dot"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 2500
-            Y: 4375
-            Z: 15600
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 3980027196882053381
-    }
   }
 }
 Objects {

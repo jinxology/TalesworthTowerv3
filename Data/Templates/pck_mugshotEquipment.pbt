@@ -34,6 +34,18 @@ Assets {
               SubObjectId: 16499993128992971694
             }
           }
+          Overrides {
+            Name: "cs:barrel"
+            ObjectReference {
+              SubObjectId: 1252167332931131001
+            }
+          }
+          Overrides {
+            Name: "cs:grapple"
+            ObjectReference {
+              SubObjectId: 17542475088066571908
+            }
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -117,6 +129,12 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:reelSFX"
+            ObjectReference {
+              SubObjectId: 5893848390096514398
+            }
+          }
+          Overrides {
             Name: "cs:equipment"
             ObjectReference {
               SubObjectId: 12451032973807524472
@@ -133,14 +151,21 @@ Assets {
             Float: 0
           }
           Overrides {
-            Name: "cs:tetherLocation"
+            Name: "cs:tetherOffset"
             Vector {
             }
           }
           Overrides {
-            Name: "cs:reelSFX"
+            Name: "cs:tetherTravel"
+            Float: 0
+          }
+          Overrides {
+            Name: "cs:tetheredToTarget"
+            Bool: false
+          }
+          Overrides {
+            Name: "cs:tetheredPuck"
             ObjectReference {
-              SubObjectId: 5893848390096514398
             }
           }
           Overrides {
@@ -148,7 +173,19 @@ Assets {
             Bool: true
           }
           Overrides {
-            Name: "cs:tetherLocation:isrep"
+            Name: "cs:tetherOffset:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:tetherTravel:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:tetheredToTarget:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:tetheredPuck:isrep"
             Bool: true
           }
         }
@@ -222,6 +259,18 @@ Assets {
               SubObjectId: 16499993128992971694
             }
           }
+          Overrides {
+            Name: "cs:grapple"
+            ObjectReference {
+              SubObjectId: 17542475088066571908
+            }
+          }
+          Overrides {
+            Name: "cs:barrel"
+            ObjectReference {
+              SubObjectId: 1252167332931131001
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -256,10 +305,7 @@ Assets {
         }
         ParentId: 8282285858322498775
         ChildIds: 14447195453197103600
-        ChildIds: 6318775851616436255
-        ChildIds: 13105115123571185527
-        ChildIds: 11502802023227318829
-        ChildIds: 3005310611497150124
+        ChildIds: 17542475088066571908
         ChildIds: 1252167332931131001
         ChildIds: 14832720852379640314
         ChildIds: 7143351133928754615
@@ -289,7 +335,8 @@ Assets {
           }
           Rotation {
             Pitch: 6.83018879e-06
-            Yaw: -179.999969
+            Yaw: -179.999954
+            Roll: 7.25777767e-08
           }
           Scale {
             X: 0.5
@@ -341,17 +388,56 @@ Assets {
         }
       }
       Objects {
+        Id: 17542475088066571908
+        Name: "grapple"
+        Transform {
+          Location {
+            X: 21.9052734
+            Z: 25.1660156
+          }
+          Rotation {
+            Pitch: -8.7170105
+            Yaw: 180
+            Roll: 90
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3652229039018446778
+        ChildIds: 6318775851616436255
+        ChildIds: 13105115123571185527
+        ChildIds: 11502802023227318829
+        ChildIds: 3005310611497150124
+        ChildIds: 11677570998727255273
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
         Id: 6318775851616436255
         Name: "Fantasy Sword Guard 01"
         Transform {
           Location {
-            X: 68
-            Z: 12
+            X: -46.095
+            Y: -0.00141978264
+            Z: 1.33514404e-05
           }
           Rotation {
-            Pitch: 44.9998245
-            Yaw: 89.9998245
-            Roll: 89.9998398
+            Pitch: -45.0001717
+            Yaw: -90.0002365
+            Roll: 90.0000763
           }
           Scale {
             X: 1.49999988
@@ -359,7 +445,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3652229039018446778
+        ParentId: 17542475088066571908
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
@@ -407,13 +493,14 @@ Assets {
         Name: "Fantasy Sword Guard 01"
         Transform {
           Location {
-            X: 67.9931641
-            Z: 12
+            X: -46.0882111
+            Y: -0.00147223473
+            Z: 1.43051147e-05
           }
           Rotation {
-            Pitch: 44.9998589
-            Yaw: -89.9999084
-            Roll: -89.9998779
+            Pitch: 45.0001221
+            Yaw: -90.0001144
+            Roll: 89.9999771
           }
           Scale {
             X: 1.50000012
@@ -421,7 +508,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3652229039018446778
+        ParentId: 17542475088066571908
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
@@ -469,13 +556,14 @@ Assets {
         Name: "Fantasy Mace Guard 01"
         Transform {
           Location {
-            X: 53
-            Z: 12
+            X: -31.0950089
+            Y: -0.0012960434
+            Z: 9.53674316e-06
           }
           Rotation {
-            Pitch: -3.4150944e-05
-            Yaw: -89.9998932
-            Roll: 89.9998932
+            Pitch: 90
+            Yaw: 159.042389
+            Roll: 159.042358
           }
           Scale {
             X: 1
@@ -483,7 +571,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3652229039018446778
+        ParentId: 17542475088066571908
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -514,13 +602,14 @@ Assets {
         Name: "Fantasy Sword Grip 01"
         Transform {
           Location {
-            X: 18
-            Z: 12
+            X: 3.9049964
+            Y: -0.00101086497
+            Z: -1.25169754e-06
           }
           Rotation {
-            Pitch: -3.4150944e-05
-            Yaw: -89.9998932
-            Roll: 89.9998932
+            Pitch: 90
+            Yaw: 159.042389
+            Roll: 159.042358
           }
           Scale {
             X: 1
@@ -528,7 +617,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3652229039018446778
+        ParentId: 17542475088066571908
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -555,17 +644,63 @@ Assets {
         }
       }
       Objects {
+        Id: 11677570998727255273
+        Name: "Fantasy Staff Grip 01"
+        Transform {
+          Location {
+            X: 4.17204571
+            Y: 0.4233796
+            Z: -1.31130219e-06
+          }
+          Rotation {
+            Pitch: 90
+            Yaw: -9.56235695
+            Roll: 170.436234
+          }
+          Scale {
+            X: 1.75
+            Y: 1.75
+            Z: 0.75
+          }
+        }
+        ParentId: 17542475088066571908
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 6722267691116138132
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
         Id: 1252167332931131001
         Name: "Modern Weapon Barrel 01"
         Transform {
           Location {
             X: 21.9052734
-            Z: 12
+            Z: 25.1660156
           }
           Rotation {
-            Pitch: 1.36603776e-05
-            Yaw: 179.999954
-            Roll: 89.9998779
+            Pitch: -8.7170105
+            Yaw: 180
+            Roll: 90
           }
           Scale {
             X: 1.2
@@ -860,11 +995,13 @@ Assets {
         Name: "PickupTrigger"
         Transform {
           Location {
+            X: 25.0000019
+            Z: 7.07106781
           }
           Rotation {
           }
           Scale {
-            X: 1
+            X: 1.5
             Y: 1
             Z: 1
           }
@@ -881,6 +1018,8 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Trigger {
+          Interactable: true
+          InteractionLabel: "Equip Mugshot"
           TeamSettings {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
@@ -1005,6 +1144,7 @@ Assets {
             }
           }
           ExecutePhaseSettings {
+            Duration: 0.75
             CanMove: true
             CanJump: true
             CanRotate: true
@@ -1026,7 +1166,7 @@ Assets {
             }
           }
           CooldownPhaseSettings {
-            Duration: 3
+            Duration: 0.5
             CanMove: true
             CanJump: true
             CanRotate: true
@@ -1071,7 +1211,6 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Ability {
-          IsEnabled: true
           CastPhaseSettings {
             Duration: 0.1
             CanMove: true
@@ -1419,6 +1558,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_weap_fan_grip_sword_001"
+      }
+    }
+    Assets {
+      Id: 6722267691116138132
+      Name: "Fantasy Staff Grip 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_weap_fan_grip_staff_001"
       }
     }
     Assets {

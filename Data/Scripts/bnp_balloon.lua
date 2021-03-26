@@ -117,13 +117,13 @@ propPhysics:GetCustomProperty("trigger"):WaitForObject().interactedEvent:Connect
 
 function OnDestroy()
 	if propPhysics ~= nil then
-		if propPhysics:IsValid() then
+		if Object.IsValid(propPhysics) then
 			propPhysics:Destroy()
 		end
 		propPhysics = nil
 	end
 	if propEquipment then
-		if propEquipment:IsValid() then
+		if Object.IsValid(propEquipment) then
 			propEquipment:Unequip()
 			propEquipment:Destroy()
 		end
