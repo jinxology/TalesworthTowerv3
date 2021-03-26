@@ -15,6 +15,7 @@ local propTetheredToTarget = false
 
 slackAmount = 0
 
+local ROPE_UNIT_LENGTH = 100
 local FACING_AWAY = 0.2
 
 function CheckAim(targetedPuck)
@@ -89,15 +90,20 @@ end
 
 function TetherLanded()
 	print("Tether landed, checking success...")
-	if propTargetedPuck.context.TetherMugshotToEligibleAnchor(propEquipment, CheckAim(propTargetedPuck).anchors) then
+	propTargetedAnchor = propTargetedPuck.context.TetherMugshotToEligibleAnchor(propEquipment, CheckAim(propTargetedPuck).anchors)
+	if propTargetedAnchor == 0 then
+		propTargetedPuck = nil
+		propTargetedPuck.context.propClankSFX:Play()
+	else
 		print("Tethered successfully!")
 		propTetheredToTarget = true
 		script:SetNetworkedCustomProperty("tetheredToTarget", true)
 		propTetherTravelTask:Cancel()
 		propTetherTravelTask = nil
-	else
-		print("OCCUPADO!")
-		--	play clang sound
+
+		local	distance = propTargetedPuck.context.MugshotToAnchor(propEquipment, propTargetedAnchor).size
+
+		propSlackAmount = math.ceil(distance / ROPE_UNIT_LENGTH) * ROPE_UNIT_LENGTH
 	end
 	propTetherAbility:AdvancePhase()
 end
@@ -196,7 +202,8 @@ function OnCast_Reel(ability)
 end
 
 function OnExecute_Reel(ability)
-	print("decrease slack")
+	propSlackAmount = propSlackAmount - ROPE_UNIT_LENGTH
+	print("reel in")
 end
 
 function OnRecovery_Reel(ability)
@@ -215,7 +222,8 @@ function OnCast_Unreel(ability)
 end
 
 function OnExecute_Unreel(ability)
-	print("increase slack")
+	propSlackAmount = propSlackAmount + ROPE_UNIT_LENGTH
+	print("reel out")
 end
 
 function OnRecovery_Unreel(ability)

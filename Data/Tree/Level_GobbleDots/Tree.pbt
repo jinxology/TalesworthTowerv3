@@ -1,6 +1,35 @@
 Name: "Level_GobbleDots"
 RootId: 13310647076426687416
 Objects {
+  Id: 848490241089693872
+  Name: "gd.Dots"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13310647076426687416
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "gd_Dots"
+  }
+}
+Objects {
   Id: 6399107750957319770
   Name: "Flumes"
   Transform {
@@ -3452,8 +3481,8 @@ Objects {
   }
 }
 Objects {
-  Id: 848490241089693872
-  Name: "gd.Dots"
+  Id: 11343656879275901557
+  Name: "gd.Dots_Client"
   Transform {
     Location {
     }
@@ -3466,6 +3495,54 @@ Objects {
     }
   }
   ParentId: 13310647076426687416
+  ChildIds: 12006386449571712358
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 12006386449571712358
+  Name: "GobbleDots_Client"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11343656879275901557
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:LevelGobbleDots"
+      ObjectReference {
+        SelfId: 7161176820700122570
+      }
+    }
+    Overrides {
+      Name: "cs:gdDots_Client"
+      ObjectReference {
+        SelfId: 11343656879275901557
+      }
+    }
+    Overrides {
+      Name: "cs:gdDot_Client"
+      AssetReference {
+        Id: 11474640445590048576
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3475,9 +3552,10 @@ Objects {
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "gd_Dots"
+  Script {
+    ScriptAsset {
+      Id: 1060831665644931936
+    }
   }
 }
 Objects {
@@ -3485,9 +3563,6 @@ Objects {
   Name: "Level.GobbleDots"
   Transform {
     Location {
-      X: 825
-      Y: -650
-      Z: -12300
     }
     Rotation {
     }
@@ -3506,12 +3581,15 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:gdDot"
-      AssetReference {
-        Id: 3980027196882053381
-      }
+      Name: "cs:LevelState"
+      Int: 0
+    }
+    Overrides {
+      Name: "cs:LevelState:isrep"
+      Bool: true
     }
   }
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
