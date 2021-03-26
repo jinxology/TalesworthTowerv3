@@ -1,39 +1,6 @@
 Name: "exterior"
 RootId: 18032404620007282982
 Objects {
-  Id: 6192968193482616809
-  Name: "FlumePortalPipes"
-  Transform {
-    Location {
-      X: 35
-      Y: 1945
-      Z: 3470
-    }
-    Rotation {
-      Yaw: -90
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 18032404620007282982
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "FlumePortalPipes_2"
-  }
-}
-Objects {
   Id: 864690831883865368
   Name: "Fantasy Castle Wall 03"
   Transform {
@@ -604,49 +571,6 @@ Objects {
   Transform {
     Location {
       X: 1600
-      Y: -2600
-      Z: 3225.0625
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 18032404620007282982
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 8983708969469221779
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 1124973345092476962
-  Name: "Fantasy Castle Wall 03"
-  Transform {
-    Location {
-      X: -799.374268
       Y: -2600
       Z: 3225.0625
     }
