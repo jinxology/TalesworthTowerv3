@@ -5,9 +5,9 @@ Objects {
   Name: "SpeedupTargetBullseye"
   Transform {
     Location {
-      X: 433.465912
-      Y: 978.241211
-      Z: 577.685486
+      X: 433.46579
+      Y: 978.240967
+      Z: 502.436035
     }
     Rotation {
       Yaw: 90

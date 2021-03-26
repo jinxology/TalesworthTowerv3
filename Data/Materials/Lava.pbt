@@ -75,7 +75,7 @@ Assets {
       }
       Overrides {
         Name: "emissive"
-        Float: 0.541144431
+        Float: 0
       }
       Overrides {
         Name: "foam shape max"

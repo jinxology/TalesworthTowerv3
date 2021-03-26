@@ -147,7 +147,6 @@ function LevelEnd()
     --Unequip weapons
     for _, player in pairs(Game.GetPlayers()) do
         for _, myEquipmentObject in pairs(player:GetEquipment()) do
-            print (myEquipmentObject)
             myEquipmentObject:Unequip()
         end
     end    
