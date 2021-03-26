@@ -89,5 +89,5 @@ function UpdateLevelState()
 	--end
 end
 
-UpdateLevelState()
+--UpdateLevelState()
 
