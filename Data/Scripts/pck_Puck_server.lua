@@ -6,7 +6,9 @@ local propShortMooSFX = script:GetCustomProperty("shortMooSFX"):WaitForObject()
 local propRunningSFX = script:GetCustomProperty("runningSFX"):WaitForObject()
 local propLookOutTrigger = script:GetCustomProperty("lookOutTrigger"):WaitForObject()
 local propClankSFX = script:GetCustomProperty("clankSFX"):WaitForObject()
--- local propStableContainer = script:GetCustomProperty("stableContainer"):WaitForObject()
+
+propLevelController = nil
+playMusicOnLanding = false
 
 propAnchorPositions = {
 	Vector3.New(-275, -275, -275), -- 45
@@ -117,6 +119,10 @@ function Stabilize()
 			if propFoundApex then
 				propFallHardSFX.volume = (velocity.z - propVerticalSpeed) * BOUNCE_VOLUME_PER_VELOCITY_UNIT
 				propFallHardSFX:Play()
+				if playMusicOnLanding then
+					propLevelController.context.PlayMusic()
+					playMusicOnLanding = false
+				end
 				propFoundApex = false
 				propVerticalSpeed = velocity.z
 			else

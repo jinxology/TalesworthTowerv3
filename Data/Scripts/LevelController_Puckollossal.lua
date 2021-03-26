@@ -8,6 +8,7 @@ local propMugshotTemplate = script:GetCustomProperty("mugshotTemplate")
 local propMusic = script:GetCustomProperty("music"):WaitForObject()
 local propLookoutAbility = script:GetCustomProperty("lookoutAbility")
 local Ease3D = require(script:GetCustomProperty("Ease3D"))
+local propEntrancePipeTemplate = script:GetCustomProperty("entrancePipeTemplate")
 
 local propLivePucks = {}
 local propLiveMugshots = {}
@@ -18,10 +19,10 @@ exitFlume = nil
 entranceFlume = nil
 exitFlumeLocation = Vector3.New(-20, -20, 1535)
 exitFlumeRotation = Rotation.New(0, -90, 0)
-entranceFlumeLocation = Vector3.New(-3635, 5, 1505)
-entranceFlumeRotation = Rotation.New(0, 0, 0)
-entranceFlumeEjectionVelocity = 5.55
-startPlatformPosition = Vector3.New(1750, 460, -25)
+entranceFlumeLocation = Vector3.New(-3545.294, 5, 638.20)
+entranceFlumeRotation = Rotation.New(0, 36.916, 0)
+entranceFlumeEjectionVelocity = 6.66
+startPlatformPosition = Vector3.New(900, 460, -25)
 startPlatformRotation = Rotation.New(0, 0, 90)
 
 local propSpawnConfigurationIndex = 1
@@ -46,19 +47,25 @@ local propTutorialCurtainTemplate = script:GetCustomProperty("tutorialCurtain")
 local propLookoutAbilityTemplate = script:GetCustomProperty("lookoutAbility")
 local propTutorialCurtain
 local propWalls
+local propEntrancePipe
+
+function PlayMusic()
+    propMusic:Play()
+    Task.Wait(5)
+    propMusic:FadeOut(10)
+end
 
 function LevelPowerUp()
     propWalls = World.SpawnAsset(propWallsTemplate, { parent = script.parent })
     propWalls.visibility = Visibility.FORCE_ON
     propTutorialCurtain = World.SpawnAsset(propTutorialCurtainTemplate, { parent = script.parent })
     script:SetNetworkedCustomProperty("levelState", 1)
-    propMainGameController.context.MakeWorldDark()
+    -- propMainGameController.context.MakeWorldDark()
     
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, 125, 50), rotation = Rotation.New(-135, 90, 0), parent = script.parent }))
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, -125, 50), rotation = Rotation.New(135, 90, 0), parent = script.parent }))
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, -375, 50), rotation = Rotation.New(135, 90, 0), parent = script.parent }))
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, 375, 50), rotation = Rotation.New(-135, 90, 0), parent = script.parent }))
-    
 end
 
 function LevelPlayerEntered(player)
@@ -80,24 +87,38 @@ function LevelBegin()
     local   spawnConfiguration = propSpawnConfigurations[propSpawnConfigurationIndex]
     
     script:SetNetworkedCustomProperty("levelState", 2)
-    propMainGameController.context.MakeWorldLight()
+    -- propMainGameController.context.MakeWorldLight()
     propWalls.visibility = Visibility.FORCE_OFF
+    
+    position = entranceFlume:GetWorldPosition()
+    rotation = entranceFlume:GetWorldRotation()
+
+    entranceFlume.parent = propTutorialCurtain
+    entranceFlume:SetWorldPosition(position)
+    entranceFlume:SetWorldRotation(rotation)
+
     Ease3D.EasePosition(propTutorialCurtain, propTutorialCurtain:GetPosition() - Vector3.UP * 3000, 2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.IN)
     Task.Wait(2)
+
+    entranceFlume.parent = script.parent
+    entranceFlume.visibility = Visibility.FORCE_OFF
+    
     propTutorialCurtain:Destroy()
     propTutorialCurtain = nil
 
-    Task.Spawn(function()
-        propMusic:Play()
-        Task.Wait(5)
-        propMusic:FadeOut(10)
-    end, 3.6)
 
     -- only one in starting configuration
     for _, position in ipairs(spawnConfiguration) do
         local spawner = World.SpawnAsset(propPuckSpawnerTemplate, { position = position, parent = script.parent })
+        
         ExtendSpawner(spawner, position, makePlayersWatch)
-        SpawnPuckFrom(spawner, position, makePlayersWatch)
+        puck = SpawnPuckFrom(spawner, position, makePlayersWatch)
+        
+        local controller = puck:GetCustomProperty("controller"):WaitForObject()
+
+        controller.context.propLevelController = script
+        controller.context.playMusicOnLanding = true
+
         Task.Wait(5)
         RetractSpawner(spawner)
         spawner:Destroy()
@@ -157,13 +178,16 @@ function SpawnPuckFrom(spawner, position, makePlayersWatch)
     --  make all players look at this spawner if it's closer than the one they're looking at
 
     --  create the puck
-    table.insert(propLivePucks, World.SpawnAsset(propPuckTemplate, { position = position + propSpawnerZTravel + propPuckOffset, parent = spawner.parent }))
+    puck = World.SpawnAsset(propPuckTemplate, { position = position + propSpawnerZTravel + propPuckOffset, parent = spawner.parent })
+    table.insert(propLivePucks, puck)
 
     --  recoil the ejector
     position = spawnerGeometry:GetPosition()
     Ease3D.EasePosition(spawnerGeometry, position + propSpawnerZRecoil, 0.4, Ease3D.EasingEquation.BACK, Ease3D.EasingDirection.OUT)
     Task.Wait(0.4)
     Ease3D.EasePosition(spawnerGeometry, position, 0.6)
+
+    return puck
 end
 
 function RetractSpawner(spawner)

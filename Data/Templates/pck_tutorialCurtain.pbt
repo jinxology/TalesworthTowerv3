@@ -40,15 +40,15 @@ Assets {
         Name: "Whitebox Wall 01"
         Transform {
           Location {
-            X: -900
+            X: -1000
             Y: 1000
           }
           Rotation {
           }
           Scale {
-            X: 2.50000095
+            X: 2.5
             Y: 1
-            Z: 1
+            Z: 0.7
           }
         }
         ParentId: 15014805780825794623
@@ -83,16 +83,16 @@ Assets {
         Name: "Whitebox Wall 01"
         Transform {
           Location {
-            X: -900
+            X: -1000
             Y: 1000
           }
           Rotation {
-            Yaw: -89.9999847
+            Yaw: -90
           }
           Scale {
-            X: 2.50000095
+            X: 2.5
             Y: 1
-            Z: 1
+            Z: 0.7
           }
         }
         ParentId: 15014805780825794623
@@ -127,16 +127,16 @@ Assets {
         Name: "Whitebox Wall 01"
         Transform {
           Location {
-            X: 1100
+            X: 1000
             Y: -1000
           }
           Rotation {
             Yaw: 89.9999847
           }
           Scale {
-            X: 2.50000095
+            X: 2.5
             Y: 1
-            Z: 1
+            Z: 0.7
           }
         }
         ParentId: 15014805780825794623
@@ -171,16 +171,16 @@ Assets {
         Name: "Whitebox Wall 01"
         Transform {
           Location {
-            X: 1100
+            X: 1000
             Y: -1000
           }
           Rotation {
             Yaw: -179.999969
           }
           Scale {
-            X: 2.50000095
+            X: 2.5
             Y: 1
-            Z: 1
+            Z: 0.7
           }
         }
         ParentId: 15014805780825794623
@@ -234,6 +234,7 @@ Assets {
         ChildIds: 13804773873267395255
         ChildIds: 11572920638671970517
         ChildIds: 1412912620342462106
+        ChildIds: 6213733366600607832
         ChildIds: 1517120516172410505
         ChildIds: 7457809726718305181
         ChildIds: 11179625262160566564
@@ -272,7 +273,7 @@ Assets {
         Name: "Urban Fence Enclosure - Vestibule Template"
         Transform {
           Location {
-            X: 1100
+            X: 1000
             Y: 1000
           }
           Rotation {
@@ -4445,6 +4446,66 @@ Assets {
         }
       }
       Objects {
+        Id: 6213733366600607832
+        Name: "Pipe"
+        Transform {
+          Location {
+            X: -4065
+            Y: 25
+            Z: 272.78418
+          }
+          Rotation {
+            Pitch: -53.083374
+          }
+          Scale {
+            X: 4.5
+            Y: 4.5
+            Z: 5
+          }
+        }
+        ParentId: 17425528139844993563
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 13668225859767539073
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 0.863157392
+              B: 1
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 5668201541289739547
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
         Id: 1517120516172410505
         Name: "Whitebox Wall 01"
         Transform {
@@ -5691,6 +5752,24 @@ Assets {
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "mi_gen_concrete_001"
+      }
+    }
+    Assets {
+      Id: 5668201541289739547
+      Name: "Pipe - Thin"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_pipe_003"
+      }
+    }
+    Assets {
+      Id: 13668225859767539073
+      Name: "Tech Panel 01"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_sf_gen_tech-panel_001"
       }
     }
     Assets {
