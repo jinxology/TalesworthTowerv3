@@ -55,7 +55,7 @@ function SetRequiredStartPlatforms(nbrPlatforms)
 end
 
 
-function TeleportAllPlayers(currentLev, newLoc)
+function TeleportAllPlayers(currentLev, newLoc, useFlume)
     DestroyLevel(currentLevelIndex)
     if (nextLevelIndex ~= nil) then
         DestroyLevel(nextLevelIndex)
@@ -67,15 +67,23 @@ function TeleportAllPlayers(currentLev, newLoc)
     nextLevelindex = nil
     local players = Game.GetPlayers()
     
-    for _, player in pairs(Game.GetPlayers()) do
-        player:SetWorldPosition(newLoc)
-    end   
     levelControllerScript = GetCurrentLevelController()
 
     levelControllerScript.context.LevelPowerUp()
     SpawnStartingPlatforms(currentLevelIndex)
     SpawnFlumePortals(currentLevelIndex)
 
+    if (useFlume) then
+        levelControllerScript.context.entranceFlume:FindChildByName("Flume Tube Manager").context.EntranceActive(levelControllerScript.context.entranceFlumeEjectionVelocity)
+        local teleportDest = levelControllerScript.context.entranceFlume:FindChildByName("Entrance teleport point"):GetWorldPosition()        
+        for _, player in pairs(Game.GetPlayers()) do
+            player:SetWorldPosition(teleportDest)
+        end       
+    else
+        for _, player in pairs(Game.GetPlayers()) do
+            player:SetWorldPosition(newLoc)
+        end       
+    end
 end
     
 

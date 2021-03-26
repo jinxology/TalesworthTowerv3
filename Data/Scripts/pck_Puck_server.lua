@@ -5,6 +5,7 @@ local propLongMooSFX = script:GetCustomProperty("longMooSFX"):WaitForObject()
 local propShortMooSFX = script:GetCustomProperty("shortMooSFX"):WaitForObject()
 local propRunningSFX = script:GetCustomProperty("runningSFX"):WaitForObject()
 local propLookOutTrigger = script:GetCustomProperty("lookOutTrigger"):WaitForObject()
+local propClankSFX = script:GetCustomProperty("clankSFX"):WaitForObject()
 -- local propStableContainer = script:GetCustomProperty("stableContainer"):WaitForObject()
 
 propAnchorPositions = {
@@ -89,9 +90,9 @@ function Destabilize()
 	end
 end
 
-function Tick()
+function Tick(deltaT)
 	Stabilize()
-	HandleTension()
+	HandleTension(deltaT)
 end
 
 function Stabilize()
@@ -171,14 +172,15 @@ end
 propTetheredMugshots = {}
 
 function TetherMugshotToEligibleAnchor(mugshot, eligibleAnchors)
-	-- do more here
-	-- local		anchorOffset = propAnchorPositions[eligibleAnchors[1]]
-	-- local		controller = mugshot:GetCustomProperty("controller"):WaitForObject()
-	
-	-- controller:SetNetworkedCustomProperty("tetheredPuck", propPhysics:GetReference())
-	-- controller:SetNetworkedCustomProperty("tetherOffset", anchorOffset)
+	local	tetheredIndex = 0
 
-	return true
+	for _, anchorIndex in ipairs(eligibleAnchors) do
+		if propTetheredMugshots[anchorIndex] == nil then
+			propTetheredMugshots[anchorIndex] = mugshot
+			tetheredIndex = anchorIndex
+		end
+	end
+	return tetheredIndex
 end
 
 function UntetherMugshot(mugshot)
@@ -189,15 +191,44 @@ function UntetherMugshot(mugshot)
 	end
 end
 
-function HandleTension()
-	-- for _, mugshot in ipairs(propTetheredMugshots) do
-	-- 	if mugshot ~= nil then
-	-- 		controller = mugshot:GetCustomProperty("controller"):WaitForObject()
+function MugshotToAnchor(mugshot, anchor)
+	local	anchorOffset = propAnchorPositions[anchor]
+	local	anchorPosition = propPhysics:GetWorldPosition() + anchorOffset
+	local	playerPosition = mugshot.owner:GetWorldPosition()
+	
+	return playerPosition - anchorPosition
+end
 
-	-- 		controller:SetNetworkedCustomProperty("tetherOffset", propPhysics:GetWorldPosition())
-	-- 		controller:SetNetworkedCustomProperty("tension", 1)
-	-- 	end
-	-- end
+function ForceForTension(tension)
+	local	FORCE_PER_TENSION = 1
+
+	return FORCE_PER_TENSION * tension
+end
+
+function HandleTension(deltaT)
+	for anchor, mugshot in ipairs(propTetheredMugshots) do
+		if mugshot ~= nil then
+			controller = mugshot:GetCustomProperty("controller"):WaitForObject()
+
+			local	distance = MugshotToAnchor(mugshot, anchor).size
+			local	slack = controller.context.propSlackAmount
+
+			print("distance = " .. distance .. ", slack = " .. slack)
+			if distance > slack then
+				local	force = ForceForTension(distance / slack)
+				local	forceDirection = MugshotToAnchor(mugshot, anchor)
+
+				local	velocity = forceDirection * force * deltaT
+
+				velocity = velocity + propPhysics:GetVelocity()
+				propPhysics:SetVelocity(velocity)
+
+				print("Apply force!")
+			else
+				print("slack, chill out")
+			end
+		end
+	end
 end
 
 --	On instantiation, find your floor. You'll need to do this if you move the puck somewhere as well.

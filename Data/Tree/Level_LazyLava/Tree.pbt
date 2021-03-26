@@ -1,6 +1,58 @@
 Name: "Level_LazyLava"
 RootId: 1647900999251311847
 Objects {
+  Id: 12652013061128333880
+  Name: "Cube"
+  Transform {
+    Location {
+      X: 3944.19922
+      Y: 3249.9375
+      Z: 584.755859
+    }
+    Rotation {
+      Yaw: -90
+    }
+    Scale {
+      X: 0.999996901
+      Y: 26.9210854
+      Z: 13.8349161
+    }
+  }
+  ParentId: 1647900999251311847
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 16256888683008968413
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 16746337448991005587
   Name: "Weaponizer"
   Transform {

@@ -1548,6 +1548,7 @@ Objects {
   ChildIds: 930778993356100130
   ChildIds: 1165206239691775150
   ChildIds: 2329610297248220321
+  ChildIds: 12563080553929098904
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -1558,6 +1559,34 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   NetworkContext {
+  }
+}
+Objects {
+  Id: 12563080553929098904
+  Name: "lights"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3563811700256805507
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
   }
 }
 Objects {

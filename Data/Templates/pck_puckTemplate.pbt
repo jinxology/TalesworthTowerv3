@@ -23,6 +23,7 @@ Assets {
         ChildIds: 14010103477530155103
         ChildIds: 10036626272614406052
         ChildIds: 15229912522508939515
+        ChildIds: 12432890360478450156
         UnregisteredParameters {
           Overrides {
             Name: "cs:controller"
@@ -128,6 +129,12 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:clankSFX"
+            ObjectReference {
+              SubObjectId: 12432890360478450156
+            }
+          }
+          Overrides {
             Name: "cs:canTip:isrep"
             Bool: true
           }
@@ -169,7 +176,7 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            Z: -600
+            Z: -875
           }
           Rotation {
           }
@@ -3055,6 +3062,43 @@ Assets {
           }
         }
       }
+      Objects {
+        Id: 12432890360478450156
+        Name: "Impact Metal Heavy 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3040303582551256267
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 14290261416044847994
+          }
+          Volume: 1
+          Falloff: -1
+          Radius: -1
+          EnableOcclusion: true
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+      }
     }
     Assets {
       Id: 12905923173550510229
@@ -3216,6 +3260,15 @@ Assets {
       PrimaryAsset {
         AssetType: "AudioBlueprintAssetRef"
         AssetId: "sfxabp_nature_earthquake_loops_ref"
+      }
+    }
+    Assets {
+      Id: 14290261416044847994
+      Name: "Impact Metal Heavy 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_gun_impact_metal_heavy_01_Cue_ref"
       }
     }
     PrimaryAssetId {
