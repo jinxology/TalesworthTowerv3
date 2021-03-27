@@ -23,16 +23,15 @@ function OnAttemptPop(whichTrigger, other)
 			for i, v in ipairs(other:GetEquipment()) do
 				if v:IsA("Equipment") and v.name == "bnp_balloonEquipment" then
 					local equipment = v
-					local balloon = equipment:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController
+					local balloon = equipment.serverUserData.balloon
 					local balloonColor = balloon.context.bnpColor
 					
-					print("balloon color is " .. balloonColor .. ", stand color is " .. bnpColor)
 					if bnpColor ~= 0 and bnpColor == balloonColor then
 						local spawner = balloon.context.spawnedBy
 						local position = equipment:GetWorldPosition()
 
 						propLevelController.context.PlayerPoppedBalloon(other.name, balloonColor, spawner, position)
-						balloon:Destroy()
+						balloon.context.PopAtPosition(position)
 					else
 						local player = other
 						local boing = World.SpawnAsset(propLevelController.context.propBounceSFXTemplate)
@@ -51,21 +50,16 @@ function OnAttemptPop(whichTrigger, other)
 		
 		elseif other:IsA("CoreObject") and other.name == "bnp_balloonPhysics" then
 			local physics = other
-			print("physics: " .. physics.id)
-			for _, child in pairs(physics:GetChildren()) do
-				print("  - " .. child.id .. " - " .. child.type)
-			end
-			local balloon = physics:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController
+			local balloon = physics.serverUserData.balloon
 			local boppedBy = balloon.context.lastBoppedBy
 			local balloonColor = balloon.context.bnpColor
 			
-			print("balloon color is " .. balloonColor .. ", stand color is " .. bnpColor)
 			if bnpColor ~= 0 and bnpColor == balloonColor then
 				local spawner = balloon.context.spawnedBy
 				local position = physics:GetWorldPosition()
 
 				propLevelController.context.PlayerPoppedBalloon(boppedBy, balloonColor, spawner, position)
-				balloon:Destroy()
+				balloon.context.PopAtPosition(position)
 			else
 				print("boing")
 			end

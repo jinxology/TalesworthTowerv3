@@ -116,15 +116,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12187164554423389607
-  Name: "Designer Sub Bass Drop 02 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_designer_sub_bass_drop_02_Cue_ref"
-  }
-}
-Assets {
   Id: 11150102244442488264
   Name: "Terrain - Snow"
   PlatformAssetType: 2
@@ -158,6 +149,24 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_basic_pbr_material_001"
+  }
+}
+Assets {
+  Id: 10004799667442629586
+  Name: "Invisible"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_invisible_001"
+  }
+}
+Assets {
+  Id: 9068053932228334318
+  Name: "Sci-fi Meta Power Up 04 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_meta_scifi_powerup_04_Cue_ref"
   }
 }
 Assets {

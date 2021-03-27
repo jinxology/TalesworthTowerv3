@@ -8688,7 +8688,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Light {
-    Intensity: 74.3911362
+    Intensity: 28.0149632
     Color {
       R: 1
       G: 1
@@ -8837,12 +8837,13 @@ Objects {
   }
 }
 Objects {
-  Id: 9259714475453434299
+  Id: 10538940526024711087
   Name: "bnp.poppers"
   Transform {
     Location {
     }
     Rotation {
+      Yaw: 180
     }
     Scale {
       X: 1
@@ -8927,6 +8928,45 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "bnp_ui"
+  }
+}
+Objects {
+  Id: 9622675924933187805
+  Name: "flumedInTrigger"
+  Transform {
+    Location {
+      X: -400
+      Y: -400
+      Z: 900
+    }
+    Rotation {
+      Yaw: -45
+    }
+    Scale {
+      X: 13.750001
+      Y: 1
+      Z: 18
+    }
+  }
+  ParentId: 6466700705943890717
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
   }
 }
 Objects {
@@ -9044,7 +9084,7 @@ Objects {
     Overrides {
       Name: "cs:weaponStands"
       ObjectReference {
-        SelfId: 9259714475453434299
+        SelfId: 10538940526024711087
       }
     }
     Overrides {
@@ -9141,6 +9181,12 @@ Objects {
       Name: "cs:intakeLight"
       ObjectReference {
         SelfId: 2161536350683515756
+      }
+    }
+    Overrides {
+      Name: "cs:flumedInTrigger"
+      ObjectReference {
+        SelfId: 9622675924933187805
       }
     }
     Overrides {

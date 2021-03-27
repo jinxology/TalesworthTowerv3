@@ -23,37 +23,27 @@ entranceFlumeEjectionVelocity = 5
 ------------------------------------------------------------
 --LEVEL SPECIFIC DECLARATIONS
 ------------------------------------------------------------
-local propLevelState = script:GetCustomProperty("LevelState")
+local propInitializeBoard = script:GetCustomProperty("InitialIzeBoard")
+local propDeletedDots = script:GetCustomProperty("DeletedDots")
 
-local DOT_COUNT = 26
+local DOT_COUNT = 300
 
 local levelFolder = script.parent  --Gets the Level Folder
 
-dotsArray = {} --The Array of Dots the Server is holding with current values
-dotsDeleted = {}  --The Array of deleted dots the server is holding (an array of indexes)
+dotsArray = {} --The Array of all of the Dots the Server is holding with current values
+dotsDeletedArray = {}  --The Array of deleted dots the server is holding (an array of indexes)
 
+dotsDeletedNetworkedString = ""
 -------------------------------------------------------------
 -- REQUIRED FUNCTIONS FOR MAINGAMECONTROLLER TO CALL
 -------------------------------------------------------------
 --LevelPowerUp code is called from the previous level to do setup on it before the players arrive
 function LevelPowerUp() 
+
+	--Setup the initial array of dots
 	InitializeDotArray()
 	--print("Setting Network Custom Property")
-	script:SetNetworkedCustomProperty("LevelState", 1)
-	 
-	--print("After Call")
-
-	
-	--dotArray = {}
-	--print(dotsArray)
-	
-	--print("dotArray[1]:", dotsArray[1])
-
-	
---	for dotIndex, dot in next, dotsVectorList do
---		newDot = World.SpawnAsset(propGdDot, {position = dotsVectorList[dotIndex], parent = dotsFolder})
---		table.insert(dotArray, newDot)
---	end	
+	script:SetNetworkedCustomProperty("InitializeBoard", 1)
 end
 
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds
@@ -67,7 +57,7 @@ end
 
 --LevelPowerDown is called from the next level back to this one to clean it up and remove it from memory
 function LevelPowerDown() 
-	script:SetNetworkedCustomProperty("LevelState", 0)
+
 end
 
 --LevelVictory is called when the Win Condition of the game is met
@@ -96,31 +86,50 @@ function InitializeDotArray()
 	end	
 end
 
-function CheckDotsLeft()	
+function CheckDotsLeft(dotDeletedIndex)	
 	--If the number of initial dots on the level is equal to the dots that have been deleted,
 	--then the dots have all been cleared and the Victory condition has been reached
-	--print("Dots Array: ", #dotsArray, " Dots Deleted: ", #dotsDeleted)
-	if #dotsArray == #dotsDeleted then
+	print("Dots Array: ", #dotsArray, " Dots Deleted: ", #dotsDeletedArray, " at Number: ", dotDeletedIndex)
+	if #dotsArray == #dotsDeletedArray then
 		LevelVictory()
 	end
 end
 
---function ConsumeDot(dotIn)
---	for dotIndex, dot in next, dotArray do
---		if(dotArray[dotIndex] == dotIn) then
---		--	print("Removing Dot")
---			table.remove(dotArray, dotIndex)
---		end
---	end
---end
 
 function OnDotDeleted(dotIndex)
-	--print("Removing Dot:", dotIndex)
-	dotsArray[dotIndex] = nil
-	table.insert(dotsDeleted, dotIndex)
-	CheckDotsLeft()
+	
+	--If the current dot in the dot array still exsists
+	if dotsArray[dotIndex] == 1 then
+		dotsArray[dotIndex] = 0  
+		table.insert(dotsDeletedArray, dotIndex)  --Insert this dot number into the deleted array
+		
+		--Call all clients by updating the networked custom property to the string including the new deleted dot
+		script:SetNetworkedCustomProperty("DeletedDots", UpdateDotsDeletedString(dotIndex))
+		
+		--Check to see if the game has been won
+		CheckDotsLeft(dotIndex)
+	end
+
+end
+
+function UpdateDotsDeletedString(deletedDot)
+	--print("Deleted Dot:", deletedDot)
+	
+	if dotsDeletedNetworkedString == "" then
+		--print("First Dot: " , deletedDot)
+		dotsDeletedNetworkedString = deletedDot .. ""
+	else 
+		dotsDeletedNetworkedString = dotsDeletedNetworkedString .. "," .. deletedDot
+		--print("Delete Dot String: ", dotsDeletedNetworkedString)
+	end
+	return(dotsDeletedNetworkedString)
+end
+ 
+function PlayerNumberOfDeletes(currentPlayer, dotsDeleted)
+	print("Player: ", currentPlayer, " has deleted: ", dotsDeleted, " dots!")
 end
 
 Events.Connect("DotDeleted", OnDotDeleted)
+Events.Connect("ClientDotsDeleted", PlayerNumberOfDeletes)
 
 --LevelPowerUp()

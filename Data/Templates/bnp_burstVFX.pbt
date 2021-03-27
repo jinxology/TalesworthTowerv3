@@ -7,7 +7,7 @@ Assets {
       RootId: 17868563517998339757
       Objects {
         Id: 17868563517998339757
-        Name: "bnp.burstVFX"
+        Name: "bnp_burstVFX"
         Transform {
           Scale {
             X: 1
@@ -86,7 +86,6 @@ Assets {
             Float: 4.46765232
           }
         }
-        Lifespan: 4
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -101,11 +100,13 @@ Assets {
           TeamSettings {
           }
           Vfx {
-            AutoPlay: true
             Relevance {
               Value: "mc:evfxrelevance:critical"
             }
           }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
     }

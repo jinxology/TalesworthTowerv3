@@ -7,6 +7,7 @@ local propRunningSFX = script:GetCustomProperty("runningSFX"):WaitForObject()
 local propLookOutTrigger = script:GetCustomProperty("lookOutTrigger"):WaitForObject()
 local propClankSFX = script:GetCustomProperty("clankSFX"):WaitForObject()
 
+
 propLevelController = nil
 playMusicOnLanding = false
 
@@ -18,7 +19,7 @@ propAnchorPositions = {
 }
 
 --	Bump players out of the way
-propLookOutTrigger.beginOverlapEvent:Connect(function(trigger, other)
+propLookOutListener = propLookOutTrigger.beginOverlapEvent:Connect(function(trigger, other)
 	if other:IsA("Player") then
 		--	untether player if they are tethered
 		local triggerCenter = trigger:GetWorldPosition()
@@ -37,6 +38,7 @@ propLookOutTrigger.beginOverlapEvent:Connect(function(trigger, other)
 		end
 	end
 end)
+propLookOutListener:Disconnect()
 
 --	floor level is actually the level the physics *center* will be at when the puck is on the floor
 propVerticalSpeed = -1 -- start falling
@@ -44,7 +46,6 @@ propFoundApex = true
 propFloorLevel = nil
 propRadius = nil
 propKeepStable = true
-script:SetNetworkedCustomProperty("canTip", false)
 
 local BOUNCE_VOLUME_PER_VELOCITY_UNIT = 1.0 / 512.0
 local NORMALIZABLE_MAGNITUDE = 0.1
@@ -83,9 +84,23 @@ function FindFloor()
 	propFloorLevel = hitFloor:GetImpactPosition().z + puckRadius
 end
 
+function ScorePuck()
+	print("Scoring")
+	Destabilize()
+	script:SetNetworkedCustomProperty("scoring", true)
+	
+	for _, mugshot in pairs(propTetheredMugshots) do
+		UntetherMugshot(mugshot)
+	end
+	
+	Task.Spawn(function()
+		print("destroying puck")
+		propPhysics:Destroy()
+	end, 5)
+end
+
 function Destabilize()
 	propKeepStable = false
-	script:SetNetworkedCustomProperty("canTip", true)
 	propLongMooSFX:Play()
 	if propRunningSFX.isPlaying == true then
 		propRunningSFX:Stop()
@@ -130,8 +145,9 @@ function Stabilize()
 				propVerticalSpeed = 0
 				script:SetNetworkedCustomProperty("radius", propRadius)
 				script:SetNetworkedCustomProperty("floorLevel", propFloorLevel)
-				propLookOutTrigger:Destroy()
-				propLookOutTrigger = nil
+				-- propLookOutListener:Disconnect()
+				-- propLookOutTrigger:Destroy()
+				-- propLookOutTrigger = nil
 			end
 		else
 			propVerticalSpeed = velocity.z
@@ -159,6 +175,8 @@ function Stabilize()
 				propPhysics:SetVelocity(translatedVelocity)
 			end
 
+			propLookOutTrigger:SetWorldRotation(Rotation.ZERO)
+
 			--  play running sound
 			-- print("STABILIZED: " .. script.id .. ": z = " .. position.z .. ", floor = " .. propFloorLevel .. ", speed = " .. magnitude .. ", velocity = ", tostring(velocity))
 			if magnitude > 20 then
@@ -184,15 +202,22 @@ function TetherMugshotToEligibleAnchor(mugshot, eligibleAnchors)
 		if propTetheredMugshots[anchorIndex] == nil then
 			propTetheredMugshots[anchorIndex] = mugshot
 			tetheredIndex = anchorIndex
+			print("tethered " .. mugshot.id .. " to anchor " .. anchorIndex)
+			break
 		end
 	end
+
 	return tetheredIndex
 end
 
 function UntetherMugshot(mugshot)
 	for _, tetheredMugshot in pairs(propTetheredMugshots) do
+		print("already tethered to " .. tetheredMugshot.id .. " at anchor " .. _)
 		if tetheredMugshot == mugshot then
 			propTetheredMugshots[_] = nil
+			mugshot:GetCustomProperty("controller"):WaitForObject().context.Untether()
+			print("    ... untethering it")
+			break
 		end
 	end
 end
@@ -212,29 +237,30 @@ function ForceForTension(tension)
 end
 
 function HandleTension(deltaT)
-	for anchor, mugshot in ipairs(propTetheredMugshots) do
+	local	totalForce = Vector3.ZERO
+
+	for anchor, mugshot in pairs(propTetheredMugshots) do
 		if mugshot ~= nil then
 			controller = mugshot:GetCustomProperty("controller"):WaitForObject()
 
 			local	distance = MugshotToAnchor(mugshot, anchor).size
 			local	slack = controller.context.propSlackAmount
 
-			print("distance = " .. distance .. ", slack = " .. slack)
 			if distance > slack then
 				local	force = ForceForTension(distance / slack)
 				local	forceDirection = MugshotToAnchor(mugshot, anchor)
 
-				local	velocity = forceDirection * force * deltaT
+				totalForce = totalForce + forceDirection * force
 
-				velocity = velocity + propPhysics:GetVelocity()
-				propPhysics:SetVelocity(velocity)
-
-				print("Apply force!")
-			else
-				print("slack, chill out")
+				print("distance = " .. distance .. ", slack = " .. slack)
 			end
 		end
 	end
+
+	local	velocity = totalForce * deltaT
+
+	velocity = velocity + propPhysics:GetVelocity()
+	propPhysics:SetVelocity(velocity)
 end
 
 --	On instantiation, find your floor. You'll need to do this if you move the puck somewhere as well.

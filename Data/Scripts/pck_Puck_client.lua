@@ -4,10 +4,13 @@ local propFloorLevel = nil
 
 
 propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
-    if propertyName == "canTip" then
+    if propertyName == "scoring" then
         if coreObject:GetCustomProperty(propertyName) == true then
             propStabilizeTask:Cancel()
             propStabilizeTask = nil
+            Task.Spawn(function()
+                propGeometry:ScaleTo(Vector3.ZERO, 5)
+            end, 1)
         end
     elseif propertyName == "floorLevel" then
         propFloorLevel = coreObject:GetCustomProperty(propertyName)
@@ -17,10 +20,10 @@ propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyNa
 end)
 
 propStabilizeTask = Task.Spawn(function()
-    local   topUpAlways = propGeometry:GetWorldRotation()
+    -- local   topUpAlways = propGeometry:GetWorldRotation()
 
-    topUpAlways.x = 0
-    topUpAlways.y = 0
+    -- topUpAlways.x = 0
+    -- topUpAlways.y = 0
 
     -- if propFloorLevel ~= nil and propRadius ~= nil then
     --     local   onFloorAlways = propGeometry:GetWorldPosition()
@@ -30,7 +33,7 @@ propStabilizeTask = Task.Spawn(function()
     --     -- propGeometry:SetWorldPosition(onFloorAlways)
     -- end
 
-    propGeometry:SetWorldRotation(topUpAlways)
+    -- propGeometry:SetWorldRotation(topUpAlways)
     propGeometry:SetWorldRotation(Rotation.ZERO)
 end)
 propStabilizeTask.repeatCount = -1

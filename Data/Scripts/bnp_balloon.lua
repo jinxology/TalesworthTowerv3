@@ -1,10 +1,12 @@
--- propGeometry = script:GetCustomProperty("geometry"):WaitForObject()
--- local propShooter = script:GetCustomProperty("shooter"):WaitForObject()
 local propEquipmentTemplate = script:GetCustomProperty("equipmentTemplate")
 local propPhysicsTemplate = script:GetCustomProperty("physicsTemplate")
-local propPluckSFXTemplate = script:GetCustomProperty("pluckSFXTemplate")
-local propSqueakSFXTemplate = script:GetCustomProperty("squeakSFXTemplate")
-local propStretchSFXTemplate = script:GetCustomProperty("stretchSFXTemplate")
+local propPluckSFX = script:GetCustomProperty("pluckSFX"):WaitForObject()
+local propSqueakSFX = script:GetCustomProperty("squeakSFX"):WaitForObject()
+local propStretchSFX = script:GetCustomProperty("stretchSFX"):WaitForObject()
+
+local propGeometry = nil
+local propShooter = nil
+
 
 local randomStream = RandomStream.New()
 
@@ -28,28 +30,53 @@ function SetBNPColor(inBNPColor, inColor)
 	
 	local	liveBalloon = propPhysics or propEquipment
 	liveBalloon:SetNetworkedCustomProperty("color", color)
+	script:SetNetworkedCustomProperty("color", color)
+end
+
+function PopAtPosition(position)
+	local	liveBalloon
+	
+	if propPhysics then
+		liveBalloon = propPhysics
+	else
+		liveBalloon = propEquipment
+		propEquipment:Unequip()
+	end
+
+	liveBalloon:Destroy()
+	script:SetNetworkedCustomProperty("popPosition", position)
+print("Pop vfx at " .. tostring(position))
+	Task.Spawn(function()
+		script:Destroy()
+	end, 5)
 end
 
 function PickupByPlayer(player)
 	propEquipment = World.SpawnAsset(propEquipmentTemplate)
-	propEquipment:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController = script
 	propShootAbility = propEquipment:GetCustomProperty("shootAbility"):WaitForObject()
 	propDunkAbility = propEquipment:GetCustomProperty("dunkAbility"):WaitForObject()
 	propGrabAbility = propEquipment:GetCustomProperty("grabAbility"):WaitForObject()
-	propEquipment:SetNetworkedCustomProperty("color", color)
+	propGeometry = propEquipment:GetCustomProperty("geometry"):WaitForObject()
+    propShooter = propEquipment:GetCustomProperty("shooter"):WaitForObject()
+	propEquipment.serverUserData.balloon = script
+
+	for _, object in pairs(propGeometry:GetChildren()) do
+        object:SetColor(color)
+    end
 
 	propShootAbility.castEvent:Connect(OnCast_Shoot)
 	propShootAbility.executeEvent:Connect(OnExecute_Shoot)
 
-	script:SetPosition(Vector3.New(0, 0, 25))
-	script:SetRotation(Rotation.New(0, 0, 0))
-	propPhysics:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController = nil
+	-- script:SetPosition(Vector3.New(0, 0, 25))
+	-- script:SetRotation(Rotation.New(0, 0, 0))
+	propPhysics.serverUserData.balloon = nil
 	propPhysics:Destroy()
 	propPhysics = nil
 	
 	propEquipment:Equip(player)
 	propGrabAbility:Activate()
-	World.SpawnAsset(propSqueakSFXTemplate, { parent = propPhysics }):Play()
+	propSqueakSFX:SetWorldPosition(propEquipment:GetWorldPosition())
+	propSqueakSFX:Play()
 end
 
 function ShootByPlayer(player)
@@ -58,6 +85,7 @@ function ShootByPlayer(player)
 
 	DropByPlayer(player)
 	
+	propPhysics.collision = Collision.INHERIT
 	propPhysics:SetVelocity(direction * 5000 + player:GetVelocity())
 	propPhysics:SetAngularVelocity(randomStream:GetVector3() * 2000)
 end
@@ -66,14 +94,12 @@ function DropByPlayer(player)
 	lastBoppedBy = player.name
 
 	propPhysics = World.SpawnAsset(propPhysicsTemplate)
+	propPhysics.serverUserData.balloon = script
 	propPhysics:SetNetworkedCustomProperty("color", color)
 	propPhysics:GetCustomProperty("trigger"):WaitForObject().interactedEvent:Connect(OnInteracted)
 	propPhysics:SetWorldPosition(propEquipment:GetWorldPosition())
 	propPhysics:SetWorldRotation(propEquipment:GetWorldRotation())
 	
-	propPhysics:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController = script
-	
-	propEquipment:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController = nil
 	propEquipment:Unequip()
 	propEquipment:Destroy()
 	propEquipment = nil
@@ -83,24 +109,22 @@ function ConnectShootEvents(ability)
 end
 
 function OnCast_Shoot(ability)
-	-- local	player = propEquipment.owner
+	propStretchSFX:SetWorldPosition(propEquipment:GetWorldPosition())
+	propStretchSFX:Play()
 
-	-- propEquipment:Unequip()
-	-- propEquipment.socket = "left_arm_prop"
-	
-	-- print(propGeometry.id)
-	-- propShooter:SetPosition(Vector3.New(0, 0, -40))
-	-- propShooter:SetScale(Vector3.New(0.05, 0.05, 1))
-	-- propGeometry:SetPosition(Vector3.New(-28.469, -5.193, -18.268))
-	-- propGeometry:SetRotation(Rotation.New(108.203, 49.897, 64.982))
+	propShooter:SetPosition(Vector3.New(0, 0, -40))
+	propShooter:SetScale(Vector3.New(0.05, 0.05, 1))
+	propGeometry:SetPosition(Vector3.New(46.333, -0.626, 8.843))
+	propGeometry:SetRotation(Rotation.New(-72.69, 57.928, 104.695))
 	-- propEquipment:Equip(player)
 
-	World.SpawnAsset(propStretchSFXTemplate, { parent = propEquipment }):Play()
 end
 
 function OnExecute_Shoot(ability)
-	World.SpawnAsset(propPluckSFXTemplate, { parent = propEquipment }):Play()
-	World.SpawnAsset(propSqueakSFXTemplate, { parent = propEquipment }):Play()
+	propPluckSFX:SetWorldPosition(propEquipment:GetWorldPosition())
+	propSqueakSFX:SetWorldPosition(propEquipment:GetWorldPosition())
+	propPluckSFX:Play()
+	propSqueakSFX:Play()
 	ShootByPlayer(propEquipment.owner)
 	-- propGeometry:SetPosition(Vector3.New(0, 0, -25))
 	-- propGeometry:SetRotation(Rotation.ZERO)
@@ -109,7 +133,8 @@ function OnExecute_Shoot(ability)
 end
 
 propPhysics = World.SpawnAsset(propPhysicsTemplate)
-propPhysics:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController = script
+propPhysics.collision = Collision.INHERIT
+propPhysics.serverUserData.balloon = script
 propPhysics:SetWorldPosition(script:GetWorldPosition())
 propPhysics:SetWorldRotation(script:GetWorldRotation())
 propPhysics:GetCustomProperty("trigger"):WaitForObject().interactedEvent:Connect(OnInteracted)
