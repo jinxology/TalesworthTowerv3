@@ -1,8 +1,9 @@
 local propEquipmentTemplate = script:GetCustomProperty("equipmentTemplate")
 local propPhysicsTemplate = script:GetCustomProperty("physicsTemplate")
-local propPluckSFXTemplate = script:GetCustomProperty("pluckSFXTemplate")
-local propSqueakSFXTemplate = script:GetCustomProperty("squeakSFXTemplate")
-local propStretchSFXTemplate = script:GetCustomProperty("stretchSFXTemplate")
+local propPluckSFX = script:GetCustomProperty("pluckSFX"):WaitForObject()
+local propSqueakSFX = script:GetCustomProperty("squeakSFX"):WaitForObject()
+local propStretchSFX = script:GetCustomProperty("stretchSFX"):WaitForObject()
+
 local propGeometry = nil
 local propShooter = nil
 
@@ -55,7 +56,8 @@ function PickupByPlayer(player)
 	
 	propEquipment:Equip(player)
 	propGrabAbility:Activate()
-	World.SpawnAsset(propSqueakSFXTemplate, { parent = propPhysics }):Play()
+	propSqueakSFX:SetWorldPosition(propEquipment:GetWorldPosition())
+	propSqueakSFX:Play()
 end
 
 function ShootByPlayer(player)
@@ -86,11 +88,8 @@ end
 function ConnectShootEvents(ability)
 end
 
-propStretchSFX = World.SpawnAsset(propStretchSFXTemplate, { parent = propEquipment })
-propPluckSFX = World.SpawnAsset(propPluckSFXTemplate, { parent = propEquipment })
-propSqueakSFX = World.SpawnAsset(propSqueakSFXTemplate, { parent = propEquipment })
-
 function OnCast_Shoot(ability)
+	propStretchSFX:SetWorldPosition(propEquipment:GetWorldPosition())
 	propStretchSFX:Play()
 
 	print(propGeometry.id)
@@ -103,9 +102,11 @@ function OnCast_Shoot(ability)
 end
 
 function OnExecute_Shoot(ability)
-	ShootByPlayer(propEquipment.owner)
+	propPluckSFX:SetWorldPosition(propEquipment:GetWorldPosition())
+	propSqueakSFX:SetWorldPosition(propEquipment:GetWorldPosition())
 	propPluckSFX:Play()
 	propSqueakSFX:Play()
+	ShootByPlayer(propEquipment.owner)
 	-- propGeometry:SetPosition(Vector3.New(0, 0, -25))
 	-- propGeometry:SetRotation(Rotation.ZERO)
 	-- propShooter:SetPosition(Vector3.ZERO)

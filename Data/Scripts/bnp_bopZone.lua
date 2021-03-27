@@ -2,7 +2,6 @@ local propSuctionSFX = script:GetCustomProperty("suctionSFX"):WaitForObject()
 local propTrigger = script:GetCustomProperty("trigger"):WaitForObject()
 local propDisc = script:GetCustomProperty("ModernWeaponDisc01"):WaitForObject()
 local propLevelController = script:GetCustomProperty("levelController"):WaitForObject()
-local propSuctionSFX = script:GetCustomProperty("suctionSFX"):WaitForObject()
 
 -- propSuctionSFX.stopTime = 0.52
 

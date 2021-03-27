@@ -57,6 +57,9 @@ function PlayMusic()
 end
 
 function LevelPowerUp()
+    World.FindObjectByName("Level.GobbleDots").visibility = Visibility.FORCE_OFF
+    World.FindObjectByName("Level.LazyLava").visibility = Visibility.FORCE_OFF
+     
     propWalls = World.SpawnAsset(propWallsTemplate, { parent = script.parent })
     propWalls.visibility = Visibility.FORCE_ON
     propTutorialCurtain = World.SpawnAsset(propTutorialCurtainTemplate, { parent = script.parent })
@@ -220,6 +223,9 @@ function LevelPowerDown()
         mugshot:Unequip()
         mugshot:Destroy()
     end
+
+    -- World.FindObjectByName("Level.GobbleDots").visibility = Visibility.FORCE_OFF
+    -- World.FindObjectByName("Level.LazyLava").visibility = Visibility.FORCE_OFF
 
     propWalls:Destroy()
     propWalls = nil

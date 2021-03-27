@@ -66,6 +66,7 @@ function ActivateInstructions(levelStatus)
 		propRulesPanel.visibility = Visibility.FORCE_OFF
 		showInstructions = Game.GetLocalPlayer().bindingPressedEvent:Connect(OnBindingPressed)
 		hideInstructions = Game.GetLocalPlayer().bindingReleasedEvent:Connect(OnBindingReleased)
+		propLevelPlayingMusic = World.SpawnAsset(propLevelPlayingMusicTemplate)
 		propLevelPlayingMusic:Play()
 	else
 		propRulesPanel.visibility = Visibility.FORCE_OFF
@@ -80,6 +81,11 @@ function ActivateInstructions(levelStatus)
 			propLevelMusic:Stop()
 			propLevelMusic:Destroy()
 			propLevelMusic = nil
+		end
+		if propLevelPlayingMusic ~= nil then
+			propLevelPlayingMusic:Stop()
+			propLevelPlayingMusic:Destroy()
+			propLevelPlayingMusic = nil
 		end
 	end
 end
@@ -101,7 +107,6 @@ function OnPlayerEntered(trigger, player)
 		propScoreIndicator.visibility = Visibility.FORCE_ON
 		propRulesPanel.visibility = Visibility.FORCE_ON
 		propLevelMusic = World.SpawnAsset(propLevelMusicTemplate)
-		propLevelPlayingMusic = World.SpawnAsset(propLevelPlayingMusicTemplate)
 		
 		propLevelMusic:Play()
 		entranceListener:Disconnect(OnPlayerEntered)
