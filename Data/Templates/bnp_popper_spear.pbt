@@ -15,7 +15,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 6466700705943890717
+        ChildIds: 17038840551400366099
         ChildIds: 13981351376373047398
         ChildIds: 2561629949460425856
         ChildIds: 7349832718321831133
@@ -23,6 +24,12 @@ Assets {
         ChildIds: 13236254207739484376
         ChildIds: 7544747322359289016
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:colorElements"
+            ObjectReference {
+              SubObjectId: 17038840551400366099
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -38,6 +45,129 @@ Assets {
         }
       }
       Objects {
+        Id: 17038840551400366099
+        Name: "colorElements"
+        Transform {
+          Location {
+            X: 52
+            Z: 79
+          }
+          Rotation {
+            Yaw: -89.9999924
+            Roll: 22.4998341
+          }
+          Scale {
+            X: 1.30000007
+            Y: 3.10000014
+            Z: 1.2
+          }
+        }
+        ParentId: 8350359172534056667
+        ChildIds: 17333294824370376218
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 17333294824370376218
+        Name: "Fairy Dot Volume VFX"
+        Transform {
+          Location {
+            X: 3.66797764e-07
+            Y: 0.217651084
+            Z: 22.446991
+          }
+          Rotation {
+            Pitch: -1.43469238
+            Yaw: 89.9999847
+          }
+          Scale {
+            X: 0.101395674
+            Y: 0.0828332528
+            Z: 0.50781858
+          }
+        }
+        ParentId: 17038840551400366099
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Secondary Color"
+            Color {
+              R: 0.435
+              G: 0.472417176
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Particle Scale Multiplier"
+            Float: 0.922772765
+          }
+          Overrides {
+            Name: "bp:Gravity"
+            Float: 3.14925289
+          }
+          Overrides {
+            Name: "bp:Wind Speed"
+            Vector {
+              X: 12.0972586
+            }
+          }
+          Overrides {
+            Name: "bp:Visible In Preview"
+            Bool: true
+          }
+          Overrides {
+            Name: "bp:Shape Visibility"
+            Enum {
+              Value: "mc:evolumevisibility:newenumerator1"
+            }
+          }
+          Overrides {
+            Name: "bp:Volume Type"
+            Enum {
+              Value: "mc:evfxvolumetype:0"
+            }
+          }
+          Overrides {
+            Name: "bp:Density"
+            Float: 0.486976147
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 9227131239145577261
+          }
+          TeamSettings {
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+      }
+      Objects {
         Id: 13981351376373047398
         Name: "Fantasy Spear Head 01"
         Transform {
@@ -46,8 +176,8 @@ Assets {
             Z: 79
           }
           Rotation {
-            Yaw: -90
-            Roll: 22.4998894
+            Yaw: -89.9999924
+            Roll: 22.4998512
           }
           Scale {
             X: 1.30000007
@@ -88,7 +218,8 @@ Assets {
             Name: "ma:Shared_Detail1:color"
             Color {
               R: 1
-              G: 0.064803
+              G: 1
+              B: 1
               A: 1
             }
           }
@@ -354,6 +485,15 @@ Assets {
             }
           }
         }
+      }
+    }
+    Assets {
+      Id: 9227131239145577261
+      Name: "Fairy Dot Volume VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_Swirling_Magic_Column"
       }
     }
     Assets {

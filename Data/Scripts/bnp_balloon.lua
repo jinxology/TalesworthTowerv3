@@ -30,6 +30,25 @@ function SetBNPColor(inBNPColor, inColor)
 	
 	local	liveBalloon = propPhysics or propEquipment
 	liveBalloon:SetNetworkedCustomProperty("color", color)
+	script:SetNetworkedCustomProperty("color", color)
+end
+
+function PopAtPosition(position)
+	local	liveBalloon
+	
+	if propPhysics then
+		liveBalloon = propPhysics
+	else
+		liveBalloon = propEquipment
+		propEquipment:Unequip()
+	end
+
+	liveBalloon:Destroy()
+	script:SetNetworkedCustomProperty("popPosition", position)
+print("Pop vfx at " .. tostring(position))
+	Task.Spawn(function()
+		script:Destroy()
+	end, 5)
 end
 
 function PickupByPlayer(player)
@@ -48,8 +67,8 @@ function PickupByPlayer(player)
 	propShootAbility.castEvent:Connect(OnCast_Shoot)
 	propShootAbility.executeEvent:Connect(OnExecute_Shoot)
 
-	script:SetPosition(Vector3.New(0, 0, 25))
-	script:SetRotation(Rotation.New(0, 0, 0))
+	-- script:SetPosition(Vector3.New(0, 0, 25))
+	-- script:SetRotation(Rotation.New(0, 0, 0))
 	propPhysics.serverUserData.balloon = nil
 	propPhysics:Destroy()
 	propPhysics = nil
@@ -66,6 +85,7 @@ function ShootByPlayer(player)
 
 	DropByPlayer(player)
 	
+	propPhysics.collision = Collision.INHERIT
 	propPhysics:SetVelocity(direction * 5000 + player:GetVelocity())
 	propPhysics:SetAngularVelocity(randomStream:GetVector3() * 2000)
 end
@@ -92,7 +112,6 @@ function OnCast_Shoot(ability)
 	propStretchSFX:SetWorldPosition(propEquipment:GetWorldPosition())
 	propStretchSFX:Play()
 
-	print(propGeometry.id)
 	propShooter:SetPosition(Vector3.New(0, 0, -40))
 	propShooter:SetScale(Vector3.New(0.05, 0.05, 1))
 	propGeometry:SetPosition(Vector3.New(46.333, -0.626, 8.843))
@@ -114,6 +133,7 @@ function OnExecute_Shoot(ability)
 end
 
 propPhysics = World.SpawnAsset(propPhysicsTemplate)
+propPhysics.collision = Collision.INHERIT
 propPhysics.serverUserData.balloon = script
 propPhysics:SetWorldPosition(script:GetWorldPosition())
 propPhysics:SetWorldRotation(script:GetWorldRotation())

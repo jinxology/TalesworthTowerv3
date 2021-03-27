@@ -15,7 +15,7 @@ Assets {
             Z: 0.50166297
           }
         }
-        ParentId: 152302868000715184
+        ParentId: 4781671109827199097
         ChildIds: 4741954926345433250
         WantsNetworking: true
         Collidable_v2 {
@@ -40,9 +40,9 @@ Assets {
             Pitch: 90
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 2
+            Y: 2
+            Z: 2
           }
         }
         ParentId: 8168605349169238585
@@ -59,8 +59,8 @@ Assets {
             Name: "bp:Color"
             Color {
               R: 1
-              G: 0.917814553
-              B: 0.83
+              G: 0.826556265
+              B: 0.73
               A: 1
             }
           }

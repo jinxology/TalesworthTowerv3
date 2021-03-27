@@ -15,7 +15,7 @@ Assets {
             Z: 1.02694583
           }
         }
-        ParentId: 1647900999251311847
+        ParentId: 4781671109827199097
         ChildIds: 16528762636607657263
         ChildIds: 15967389784021567551
         ChildIds: 14225615203835153900
@@ -877,7 +877,7 @@ Assets {
         Name: "hiddenRaftFloor"
         Transform {
           Location {
-            X: -163.461121
+            X: -195.652298
             Y: 1.30028975
           }
           Rotation {
@@ -885,8 +885,8 @@ Assets {
           }
           Scale {
             X: 5.71716642
-            Y: 0.374055743
-            Z: 6.84499645
+            Y: 0.374055654
+            Z: 6.59516
           }
         }
         ParentId: 16419828027020315180
@@ -908,6 +908,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          InteractWithTriggers: true
           StaticMesh {
             Physics {
               Mass: 100

@@ -1,17 +1,22 @@
-local propGeometry = script:GetCustomProperty("geometry"):WaitForObject()
-local propColorOwner = script:GetCustomProperty("colorOwner"):WaitForObject()
+local propPopVFX = script:GetCustomProperty("popVFX"):WaitForObject()
+local propBalloonServer = script:GetCustomProperty("balloonServer"):WaitForObject()
 
-function UpdateColorFrom(coreObject)
-    local   color = coreObject:GetCustomProperty("color")
-    for _, object in ipairs(propGeometry:GetChildren()) do
-        object:SetColor(color)
-    end
+function UpdateColor(color)
+    propPopVFX:SetSmartProperty("Color", color)
 end
 
-propColorOwner.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
+function PopAtPosition(position)
+    print("popping on client at " .. tostring(position))
+    propPopVFX:SetWorldPosition(position)
+    propPopVFX:Play()
+end
+
+propBalloonServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
     if propertyName == "color" then
-        UpdateColorFrom(coreObject)
+        UpdateColor(coreObject:GetCustomProperty(propertyName))
+    elseif propertyName == "popPosition" then
+        PopAtPosition(coreObject:GetCustomProperty(propertyName))
     end
 end)
 
-UpdateColorFrom(propColorOwner)
+UpdateColor(propBalloonServer:GetCustomProperty("color"))
