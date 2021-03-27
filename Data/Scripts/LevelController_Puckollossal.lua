@@ -57,8 +57,6 @@ function PlayMusic()
 end
 
 function LevelPowerUp()
-    World.FindObjectByName("Level.GobbleDots").visibility = Visibility.FORCE_OFF
-    World.FindObjectByName("Level.LazyLava").visibility = Visibility.FORCE_OFF
      
     propWalls = World.SpawnAsset(propWallsTemplate, { parent = script.parent })
     propWalls.visibility = Visibility.FORCE_ON
