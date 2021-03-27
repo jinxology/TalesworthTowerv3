@@ -1,5 +1,5 @@
 local raft = script.parent
-local speed=350
+local speed
 local moving=false
 curWaypointIndex = 0;
 local moveDirection = 0
@@ -70,11 +70,14 @@ function EnumMoveDir()
     end
 end
 
-function MoveToNextDestination()
-    curWaypointIndex = curWaypointIndex + 1
-    if (curWaypointIndex > #waypoints) then
-        curWaypointIndex = 1
+function MoveToNextDestination(recalculate)
+    if (not recalculate) then
+        curWaypointIndex = curWaypointIndex + 1
+        if (curWaypointIndex > #waypoints) then
+            curWaypointIndex = 1
+        end
     end
+
     local dest = GetRaftDestPosition()
     local raftPos = raft:GetPosition()
     local distance = 0
@@ -92,25 +95,30 @@ function MoveToNextDestination()
         moveDirection = 3
         distance = raftPos.x - dest.x
     end
-
+    
     local timeToMove = distance/speed
 
-    --print ("move to "..tostring(dest).." ("..EnumMoveDir().."), distance="..distance..", time to move="..timeToMove)
+    --print ("move to "..tostring(dest).." ("..EnumMoveDir().."), distance="..tostring(distance)..", time to move="..tostring(timeToMove))
 
-    raft:StopMove()
+    --raft:StopMove()
     raft:MoveTo(dest, timeToMove, true)
     moving = true
 end
 
-function SpeedUp()
-    speed = speed + 200
+function RecalculateMove()
+    MoveToNextDestination(true)
+end
+
+function SetSpeed(newSpeed)
+    speed = newSpeed
 end
 
 function StartPosition()
     raft:SetPosition(startLoc)
 end
 
-function StartRaft()
+function StartRaft(currentSpeed)
+    speed = currentSpeed
     MoveToNextDestination()
 end
 

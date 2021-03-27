@@ -72,49 +72,45 @@ function InitializeBoard()
 				local propGdDotTrigger_Client = newDot:GetCustomProperty("gdDotTrigger_Client"):WaitForObject()
 				propGdDotTrigger_Client.context.propDotNumber = dotCount
 				table.insert(dotsArrayList, dotCount, newDot)
+				newDot.destroyEvent:Connect(function()
+					countOfDeletedDots = countOfDeletedDots +1
+				end)
 			end
 		end	
 	end	
 	totalDots = #dotsArrayList
+	countOfDeletedDots = 0
+--	-print("totalDots", #dotsArrayList)
+	
+--	for index, element in pairs(dotsArrayList) do 
+--		print(dotsArrayList[index])
+--	end
+	
 end
 
---InitializeBoard(propLevelGobbleDots,"LevelState")
-
 propLevelGobbleDots.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
-	--print("Inside Property Changed Event")
-
+	local arrayIndex = 0
+	
 	--InitializeBoard is used to setup the board at on the LevelPower_Up() call and during resets
     if propertyName == "InitializeBoard" then
+    	--print("In InitializeBoard() from the networkedPropertyChangedEvent")
 		InitializeBoard()
 	else  --Otherwise this is a receipt of the list of dots that have been deleted.
 		--Split the string that is returned into an array of dot values
---		print("Inside the NetworkedChangedEvent: Deleted Dots")
-		local deletedDotsString = propLevelGobbleDots:GetCustomProperty(propertyName)
-		deletedDots = {CoreString.Split(deletedDotsString, {delimiters = ","})}
-		print("Deleted String", deletedDotsString)
-		for i = 1, #deletedDots, 1 do 
-			print("Dot index", i, " is the Dot Number:" , deletedDots[i])
-		end
-
-		print("CountofDeletedDots", countOfDeletedDots)
-		print("#deletedDots", #deletedDots)
 		
-		for deletedIndex = countOfDeletedDots+1, #deletedDots, 1 do 
-			print("In FOR LOOP")
-			if Object.IsValid(dotsArrayList[(deletedDots[deletedIndex]*1)])then
-				print("Count of ArrayList Before Destroy:", #dotsArrayList)
-				print("deletedIndex", deletedIndex)
-				print("deletedDots[deletedIndex]",deletedDots[deletedIndex]) 
-				dotsArrayList[(deletedDots[deletedIndex]*1)]:Destroy()
-				print("Count of ArrayList AFTER Destroy:", #dotsArrayList)
-				countOfDeletedDots = countOfDeletedDots +1
-			else 
-				print("Dot Already Destroyed")		
-			end
-		--	end
+		local deletedDotsString = propLevelGobbleDots:GetCustomProperty(propertyName)
+		deletedDotsTable = {CoreString.Split(deletedDotsString, {delimiters = ","})}
+		
+		for startingIndex = countOfDeletedDots+1, #deletedDotsTable, 1 do 
+			
+			arrayIndex = tonumber(deletedDotsTable[startingIndex])
+
+			if Object.IsValid(dotsArrayList[arrayIndex]) then
+				dotsArrayList[arrayIndex]:Destroy()
+			end					
 		end
-		print("Calling Event:" , Game.GetLocalPlayer().name, " with: ", countOfDeletedDots, " dots deleted")
-		Events.BroadcastToServer("PlayerNumberOfDeletes", Game.GetLocalPlayer(), countOfDeletedDots) 
+		--print("Calling Event:" , Game.GetLocalPlayer().name, " with: ", countOfDeletedDots, " dots deleted")
+		--Events.BroadcastToServer("PlayerNumberOfDeletes", Game.GetLocalPlayer(), countOfDeletedDots) 
 	end
 end)
 

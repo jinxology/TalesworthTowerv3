@@ -4217,6 +4217,12 @@ Objects {
       String: ""
     }
     Overrides {
+      Name: "cs:Ball"
+      AssetReference {
+        Id: 7062845870289079377
+      }
+    }
+    Overrides {
       Name: "cs:InitializeBoard:isrep"
       Bool: true
     }
@@ -4246,9 +4252,9 @@ Objects {
   Name: "Cube"
   Transform {
     Location {
-      X: 3525
-      Y: 2700
-      Z: 1250
+      X: 2200
+      Y: 2625
+      Z: 1575
     }
     Rotation {
     }

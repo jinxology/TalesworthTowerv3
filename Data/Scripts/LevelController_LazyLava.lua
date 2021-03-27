@@ -24,17 +24,36 @@ startPlatformRotation = Rotation.New(0,0,0)
 
 local raft = nil
 local raftController = nil
+
+playerCount = 4
+currentPoints = 0
+maxPoints = 50
+local minSpeed = 350
+currentSpeed = minSpeed
+maxSpeed = 0
+
 local spawnWorldLocations = {
 Vector3.New(3300,300,17600),
 Vector3.New(-3850,7150,17550),
 Vector3.New(-8650,6500,17550)
 }
 
---local players = Game.GetPlayers()
---local numPlayers = #players
-
-
-
+allTargetData = 
+{
+    { --1
+        Vector3.New(4218,8052,372), Vector3.New(4218,8052,1029), Rotation.New(0,0,-90), 
+        Vector3.New(3886,8052,1029), Vector3.New(3886,8052,372), Rotation.New(0,0,-90),  
+        Vector3.New(4568,8052,372), Vector3.New(4568,8052,1029), Rotation.New(0,0,-90), 
+        Vector3.New(4918,8052,1029), Vector3.New(4918,8052,372), Rotation.New(0,0,-90)
+    },
+    { --2
+        Vector3.New(3055,6990,1070), Vector3.New(0,0,0), Rotation.New(0,0,-90)
+    },
+    { --3
+        Vector3.New(5114,3549,1101), Vector3.New(0,0,0), Rotation.New(0,-30,-180)
+    }
+    
+}
 function TimerEnded()
     LevelFailed()
 end
@@ -47,10 +66,24 @@ end
 function LevelBegin()
     --propMainGameController.context.StartTimer(propTimerSeconds, TimerEnded)
     propMainGameController.context.StartTimer(5, StartRaft)
+
+    if (playerCount == 4) then
+        maxPoints = 90
+    elseif (playerCount == 3) then
+        maxPoints = 70
+    elseif (playerCount == 2) then
+        maxPoints = 50
+    elseif (playerCount == 1) then
+        maxPoints = 30
+    end
+
+    script:SetNetworkedCustomProperty("UIControllerProperty","01,"..currentPoints..","..maxPoints..",0,0")    
 end
 
 function StartRaft()
-    raftController.context.StartRaft()        
+    maxSpeed = currentSpeed
+    script:SetNetworkedCustomProperty("UIControllerProperty","01,"..currentPoints..","..maxPoints..","..currentSpeed..","..maxSpeed)    
+    raftController.context.StartRaft(currentSpeed)        
 end
 
 function LevelFailed() 
@@ -69,6 +102,10 @@ end
 function LevelPowerUp() 
     raft = World.SpawnAsset(propRaft, { parent=script.parent} )
     raftController = raft:FindChildByName("RaftController")
+    
+    playerCount = propMainGameController.context.GetEligiblePlayerCount()
+
+    currentPoints = 0            
 end
 
 function LevelPowerDown()
@@ -76,6 +113,7 @@ function LevelPowerDown()
 end
 
 function OnLandInLava(whichTrigger, other)    
+
 	if other:IsA("Player") then
         local player = other
         local spawnPointIndex 
@@ -88,7 +126,9 @@ function OnLandInLava(whichTrigger, other)
                 spawnPointIndex = 3            
             end
         end
-        print (player:GetWorldPosition())
+        
+        SpeedDown()
+
         local vfxpos = player:GetWorldPosition() + Vector3.New(0,0,50)
         World.SpawnAsset(propLavaHitSVFX,{position=vfxpos})
         player:SetWorldPosition(spawnWorldLocations[spawnPointIndex])
@@ -114,10 +154,38 @@ function OnWeaponizer(whichTrigger, other)
 end
 
 function SpeedUp()
-    if (Object.IsValid(raftController)) then
-        raftController.context.SpeedUp()
+    currentSpeed = currentSpeed + 100
+    if (currentSpeed > maxSpeed) then
+        maxSpeed = currentSpeed
     end
+
+    if (Object.IsValid(raftController)) then
+        raftController.context.SetSpeed(currentSpeed)
+    end
+    
+    raftController.context.RecalculateMove()
+
+    script:SetNetworkedCustomProperty("UIControllerProperty","01,"..currentPoints..","..maxPoints..","..currentSpeed..","..maxSpeed)    
 end
+
+function SpeedDown()
+    currentSpeed = currentSpeed - 200
+    if (currentSpeed < minSpeed) then currentSpeed = minSpeed end
+
+    if (Object.IsValid(raftController)) then
+        raftController.context.SetSpeed(currentSpeed)
+    end
+
+    raftController.context.RecalculateMove()
+    
+    script:SetNetworkedCustomProperty("UIControllerProperty","01,"..currentPoints..","..maxPoints..","..currentSpeed..","..maxSpeed)    
+end
+
+function AddPoint()
+    currentPoints = currentPoints + 1
+    script:SetNetworkedCustomProperty("UIControllerProperty","01,"..currentPoints..","..maxPoints..","..currentSpeed..","..maxSpeed)    
+end
+
 
 propLavaDeathTrigger.beginOverlapEvent:Connect(OnLandInLava)
 propWeaponizerTrigger.beginOverlapEvent:Connect(OnWeaponizer)

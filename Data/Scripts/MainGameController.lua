@@ -306,6 +306,11 @@ function DestroyLevel(levelIndex)
     DestroyStartingPlatforms(levelIndex)
 end
 
+function GetEligiblePlayerCount()
+    playerCount = #Game.GetPlayers()
+    return playerCount
+end
+
 function StartingPlatformsActivated()
     if (not levelRunning and not resetingTower) then
         if (nextLevelIndex ~= nil) then        

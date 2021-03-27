@@ -26,6 +26,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13064445591764477429
+  Name: "Frame Outlined Thick 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameFlat_022"
+  }
+}
+Assets {
   Id: 12095835209017042614
   Name: "Cube"
   PlatformAssetType: 1
@@ -53,12 +62,48 @@ Assets {
   }
 }
 Assets {
-  Id: 7438756951221684118
-  Name: "Fantasy Castle Wall 02 - Doorway 01 Half"
+  Id: 7141555184359930417
+  Name: "Line Full 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "LineFull_002"
+  }
+}
+Assets {
+  Id: 6124678718726732514
+  Name: "Boat"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_Boatmedium"
+  }
+}
+Assets {
+  Id: 4642045124989998726
+  Name: "Stone Arch 3m"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_fan_cas_wall_half_002_door_01"
+    AssetId: "sm_stone-arch_6m_002"
+  }
+}
+Assets {
+  Id: 3442190493143268016
+  Name: "BG Flat 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_22"
+  }
+}
+Assets {
+  Id: 2771436356371952810
+  Name: "Target"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Icon_Target"
   }
 }
 Assets {

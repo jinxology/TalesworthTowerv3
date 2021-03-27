@@ -17,7 +17,7 @@ entranceFlume = nil
 exitFlumeLocation = Vector3.New(3150,5900,250)
 exitFlumeRotation = Rotation.New(0,0,-90)
 entranceFlumeLocation = Vector3.New(3175,277.226,684.028)
-entranceFlumeRotation = Rotation.New(0,-13.852,0)
+entranceFlumeRotation = Rotation.New(0,-15.527,90)
 entranceFlumeEjectionVelocity = 5
 
 ------------------------------------------------------------
@@ -42,8 +42,10 @@ function LevelPowerUp()
 
 	--Setup the initial array of dots
 	InitializeDotArray()
-	--print("Setting Network Custom Property")
+
+	--Calling the NetworkedCustomProperty to initialize the board
 	script:SetNetworkedCustomProperty("InitializeBoard", 1)
+	
 end
 
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds
@@ -89,7 +91,7 @@ end
 function CheckDotsLeft(dotDeletedIndex)	
 	--If the number of initial dots on the level is equal to the dots that have been deleted,
 	--then the dots have all been cleared and the Victory condition has been reached
-	print("Dots Array: ", #dotsArray, " Dots Deleted: ", #dotsDeletedArray, " at Number: ", dotDeletedIndex)
+	--print("Dots Array: ", #dotsArray, " Dots Deleted: ", #dotsDeletedArray, " at Number: ", dotDeletedIndex)
 	if #dotsArray == #dotsDeletedArray then
 		LevelVictory()
 	end
@@ -113,23 +115,18 @@ function OnDotDeleted(dotIndex)
 end
 
 function UpdateDotsDeletedString(deletedDot)
-	--print("Deleted Dot:", deletedDot)
 	
 	if dotsDeletedNetworkedString == "" then
-		--print("First Dot: " , deletedDot)
 		dotsDeletedNetworkedString = deletedDot .. ""
 	else 
 		dotsDeletedNetworkedString = dotsDeletedNetworkedString .. "," .. deletedDot
-		--print("Delete Dot String: ", dotsDeletedNetworkedString)
 	end
 	return(dotsDeletedNetworkedString)
 end
  
 function PlayerNumberOfDeletes(currentPlayer, dotsDeleted)
-	print("Player: ", currentPlayer, " has deleted: ", dotsDeleted, " dots!")
+	--print("Player: ", currentPlayer.name, " has deleted: ", dotsDeleted, " dots!")
 end
 
 Events.Connect("DotDeleted", OnDotDeleted)
-Events.Connect("ClientDotsDeleted", PlayerNumberOfDeletes)
-
---LevelPowerUp()
+--Events.Connect("PlayerNumberOfDeletes", PlayerNumberOfDeletes)

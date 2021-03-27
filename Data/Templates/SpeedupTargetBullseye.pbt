@@ -10,13 +10,13 @@ Assets {
         Name: "SpeedupTargetBullseye"
         Transform {
           Scale {
-            X: 0.50166297
-            Y: 0.50166297
-            Z: 0.50166297
+            X: 0.99999994
+            Y: 0.99999994
+            Z: 0.99999994
           }
         }
-        ParentId: 152302868000715184
-        ChildIds: 17107459770727845398
+        ParentId: 1647900999251311847
+        ChildIds: 4801816067256827219
         ChildIds: 6419181761765702616
         ChildIds: 11676614192145424692
         ChildIds: 6169907188041934810
@@ -37,12 +37,15 @@ Assets {
         }
       }
       Objects {
-        Id: 17107459770727845398
-        Name: "SpeedupTarget"
+        Id: 4801816067256827219
+        Name: "LazyLavaTargetScript"
         Transform {
           Location {
           }
           Rotation {
+            Pitch: 2.04905664e-05
+            Yaw: 1.62844271e-12
+            Roll: -6.10666335e-12
           }
           Scale {
             X: 1.00000012
@@ -70,6 +73,12 @@ Assets {
               Id: 56718165384547317
             }
           }
+          Overrides {
+            Name: "cs:TargetBullseyeSpawnVFX"
+            AssetReference {
+              Id: 998761344712588841
+            }
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -83,7 +92,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 17726535118617912171
+            Id: 16452845167330574108
           }
         }
       }
@@ -196,6 +205,7 @@ Assets {
         ChildIds: 5572880867098681688
         ChildIds: 1623263512154710643
         ChildIds: 13245866632686178561
+        ChildIds: 10846212252244496808
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -690,6 +700,84 @@ Assets {
           }
         }
       }
+      Objects {
+        Id: 10846212252244496808
+        Name: "Explosion Kit Fire Ring VFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: -90
+          }
+          Scale {
+            X: 0.99999994
+            Y: 0.99999994
+            Z: 0.99999994
+          }
+        }
+        ParentId: 6169907188041934810
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Local Space"
+            Bool: true
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 2
+              G: 1.86596012
+              B: 1.07999992
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 1.30729544
+          }
+          Overrides {
+            Name: "bp:Density"
+            Float: 0.236405164
+          }
+          Overrides {
+            Name: "bp:Size Min"
+            Float: 0.58410728
+          }
+          Overrides {
+            Name: "bp:Size Max"
+            Float: 1.97491574
+          }
+          Overrides {
+            Name: "bp:Looping"
+            Bool: false
+          }
+          Overrides {
+            Name: "bp:Life"
+            Float: 1.68357611
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 9376144838328749989
+          }
+          TeamSettings {
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+      }
     }
     Assets {
       Id: 1137112816547272582
@@ -725,6 +813,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_plane_1m_001"
+      }
+    }
+    Assets {
+      Id: 9376144838328749989
+      Name: "Explosion Kit Fire Ring VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_mil_explokit_fireRing"
       }
     }
     PrimaryAssetId {
