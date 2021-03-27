@@ -7,7 +7,7 @@ Assets {
       RootId: 5663207270622556790
       Objects {
         Id: 5663207270622556790
-        Name: "bnp.squeakSFX"
+        Name: "bnp_squeakSFX"
         Transform {
           Scale {
             X: 1
@@ -30,7 +30,6 @@ Assets {
           AudioAsset {
             Id: 13448997455137367267
           }
-          Transient: true
           Volume: 1
           Falloff: -1
           Radius: -1

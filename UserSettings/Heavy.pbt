@@ -2864,6 +2864,7 @@ ObjectSettings {
   ObjectStates {
     key: 1232579912354001357
     value {
+      IsLocked: true
     }
   }
   ObjectStates {
@@ -9466,6 +9467,7 @@ ObjectSettings {
   ObjectStates {
     key: 4159855513164329778
     value {
+      IsLocked: true
     }
   }
   ObjectStates {
@@ -10331,6 +10333,11 @@ ObjectSettings {
   }
   ObjectStates {
     key: 4523310278051973038
+    value {
+    }
+  }
+  ObjectStates {
+    key: 4525636193201632143
     value {
     }
   }
@@ -20672,6 +20679,7 @@ ObjectSettings {
   ObjectStates {
     key: 9132562513265036101
     value {
+      IsLocked: true
     }
   }
   ObjectStates {
@@ -29669,6 +29677,7 @@ ObjectSettings {
   ObjectStates {
     key: 13310647076426687416
     value {
+      IsLocked: true
     }
   }
   ObjectStates {
