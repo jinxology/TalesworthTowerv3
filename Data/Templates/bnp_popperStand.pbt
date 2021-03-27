@@ -221,8 +221,7 @@ Assets {
         Name: "Point Light"
         Transform {
           Location {
-            X: 24.9999981
-            Y: 5.7220459e-06
+            X: 206.994629
             Z: 50
           }
           Rotation {
@@ -257,7 +256,7 @@ Assets {
           Light {
             Temperature: 6500
             LocalLight {
-              AttenuationRadius: 1000
+              AttenuationRadius: 441.776917
               PointLight {
                 SourceRadius: 20
                 SoftSourceRadius: 20

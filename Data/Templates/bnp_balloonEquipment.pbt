@@ -130,7 +130,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 12246068808825147421
+              Id: 14335666842020118753
             }
           }
           Overrides {
@@ -191,7 +191,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 12246068808825147421
+              Id: 14335666842020118753
             }
           }
           Overrides {
@@ -250,7 +250,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 12246068808825147421
+              Id: 14335666842020118753
             }
           }
           Overrides {
@@ -309,7 +309,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 12246068808825147421
+              Id: 14335666842020118753
             }
           }
           Overrides {
@@ -582,15 +582,6 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_hemisphere_001"
-      }
-    }
-    Assets {
-      Id: 12246068808825147421
-      Name: "Rubber Basic 01"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_scf_rubber_panels_004_uv"
       }
     }
     Assets {

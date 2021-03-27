@@ -8688,7 +8688,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Light {
-    Intensity: 74.3911362
+    Intensity: 28.0149632
     Color {
       R: 1
       G: 1
@@ -8837,12 +8837,13 @@ Objects {
   }
 }
 Objects {
-  Id: 9259714475453434299
+  Id: 10538940526024711087
   Name: "bnp.poppers"
   Transform {
     Location {
     }
     Rotation {
+      Yaw: 180
     }
     Scale {
       X: 1
@@ -9083,7 +9084,7 @@ Objects {
     Overrides {
       Name: "cs:weaponStands"
       ObjectReference {
-        SelfId: 9259714475453434299
+        SelfId: 10538940526024711087
       }
     }
     Overrides {

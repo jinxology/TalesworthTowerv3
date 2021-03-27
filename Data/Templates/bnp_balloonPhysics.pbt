@@ -15,10 +15,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13991120868083209491
+        ParentId: 6466700705943890717
         ChildIds: 9086921707625912718
         ChildIds: 539193097588741859
-        ChildIds: 7527239617892376013
         UnregisteredParameters {
           Overrides {
             Name: "cs:trigger"
@@ -35,7 +34,7 @@ Assets {
           Overrides {
             Name: "cs:controllerLink"
             ObjectReference {
-              SubObjectId: 7527239617892376013
+              SelfId: 841534158063459245
             }
           }
           Overrides {
@@ -45,7 +44,7 @@ Assets {
         }
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -225,7 +224,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 12246068808825147421
+              Id: 14335666842020118753
             }
           }
           Overrides {
@@ -285,7 +284,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 12246068808825147421
+              Id: 14335666842020118753
             }
           }
           Overrides {
@@ -343,7 +342,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 12246068808825147421
+              Id: 14335666842020118753
             }
           }
           Overrides {
@@ -401,7 +400,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 12246068808825147421
+              Id: 14335666842020118753
             }
           }
           Overrides {
@@ -439,37 +438,6 @@ Assets {
           }
         }
       }
-      Objects {
-        Id: 7527239617892376013
-        Name: "bnp.balloonControllerLink"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 17064424610298029391
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 13178821505783950983
-          }
-        }
-      }
     }
     Assets {
       Id: 18120287186582886745
@@ -478,15 +446,6 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_hemisphere_001"
-      }
-    }
-    Assets {
-      Id: 12246068808825147421
-      Name: "Rubber Basic 01"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_scf_rubber_panels_004_uv"
       }
     }
     Assets {

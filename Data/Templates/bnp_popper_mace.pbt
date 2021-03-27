@@ -15,12 +15,19 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 6466700705943890717
+        ChildIds: 10899241693488998309
         ChildIds: 6995487568637949662
         ChildIds: 14730890628133991340
         ChildIds: 8667535971939080045
         ChildIds: 14630004060653070995
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:colorElements"
+            ObjectReference {
+              SubObjectId: 10899241693488998309
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -33,6 +40,122 @@ Assets {
         }
         Folder {
           IsGroup: true
+        }
+      }
+      Objects {
+        Id: 10899241693488998309
+        Name: "colorElements"
+        Transform {
+          Location {
+            X: 45.3071747
+            Z: 60.9630127
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15109807283486739220
+        ChildIds: 14825657471875630532
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 14825657471875630532
+        Name: "Fairy Dot Volume VFX"
+        Transform {
+          Location {
+            X: -1.52587891e-05
+          }
+          Rotation {
+            Pitch: -23.9345379
+          }
+          Scale {
+            X: 0.415711224
+            Y: 0.505459368
+            Z: 0.459405243
+          }
+        }
+        ParentId: 10899241693488998309
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Secondary Color"
+            Color {
+              R: 0.435
+              G: 0.472417176
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Particle Scale Multiplier"
+            Float: 0.922772765
+          }
+          Overrides {
+            Name: "bp:Gravity"
+            Float: 3.14925289
+          }
+          Overrides {
+            Name: "bp:Wind Speed"
+            Vector {
+              X: 12.0972586
+            }
+          }
+          Overrides {
+            Name: "bp:Visible In Preview"
+            Bool: true
+          }
+          Overrides {
+            Name: "bp:Shape Visibility"
+            Enum {
+              Value: "mc:evolumevisibility:newenumerator1"
+            }
+          }
+          Overrides {
+            Name: "bp:Volume Type"
+            Enum {
+              Value: "mc:evfxvolumetype:1"
+            }
+          }
+          Overrides {
+            Name: "bp:Density"
+            Float: 0.486976147
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 9227131239145577261
+          }
+          TeamSettings {
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
         }
       }
       Objects {
@@ -87,7 +210,7 @@ Assets {
             Z: 38.8029785
           }
           Rotation {
-            Pitch: -22.5
+            Pitch: -22.5000019
           }
           Scale {
             X: 1.5
@@ -116,6 +239,15 @@ Assets {
             Name: "ma:Shared_Trim:id"
             AssetReference {
               Id: 9757497992016708607
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Trim:color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
             }
           }
         }
@@ -229,6 +361,15 @@ Assets {
             }
           }
         }
+      }
+    }
+    Assets {
+      Id: 9227131239145577261
+      Name: "Fairy Dot Volume VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_Swirling_Magic_Column"
       }
     }
     Assets {
