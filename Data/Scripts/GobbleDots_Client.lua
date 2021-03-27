@@ -11,91 +11,110 @@ local Y_MAX = 5600
 local DOT_INCREMENT = 200
 local RAY_CHECK_DISTANCE = 105
 
---print("In Client Context")
+local dotCount = 0
+local deletedDots = {}  --An array of deleted dots
+local countOfDeletedDots = 0
+local dotsArrayList = {}
 
---propLevelGobbleDots.networkedPropertyChangedEvent:Connect(UpdateLevelState)
+local totalDots = 0
 
+function InitializeBoard()
 
---print("In Client Context 2")
+	local hitResult = nil
+	local vectorRight = Vector3.New(150,0,0)
+	local vectorLeft = Vector3.New(-150,0,0)
+	local vectorUp = Vector3.New(0,-150,0)
+	local vectorDown = Vector3.New(0,150,0)
 
-function UpdateLevelState(coreObject, propertyName)
+	--Build all dots (eventually in the client context)
+	for X_Location = X_MIN, X_MAX, DOT_INCREMENT do  
+		for Y_Location = Y_MIN, Y_MAX, DOT_INCREMENT do  
+			
+			dotLocalPosition = Vector3.New(X_Location,Y_Location,Z_COORD_DOT)
+			--print("Local Position: ", dotLocalPosition)
+			
+			dotFolderWorldPosition =  dotsFolder:GetWorldTransform():GetPosition()
+			--print("World Position: ", dotFolderWorldPosition)
+			
+			dotWorldPosition = (dotFolderWorldPosition + dotLocalPosition)
+			--print("Dot World Position: ", dotWorldPosition)
+			
+			dotRayCastForwardPos = dotWorldPosition + (Vector3.FORWARD * RAY_CHECK_DISTANCE)
+			--print("Ray Frwd World Pos:", dotRayCastForwardPos)
 
---function UpdateLevelState()
+			dotRayCastBackPos = dotWorldPosition + (-Vector3.FORWARD * RAY_CHECK_DISTANCE)
+			--print("Ray Back World Pos:", dotRayCastBackPos)
+			
+			dotRayCastUpPos = dotWorldPosition + (Vector3.RIGHT * RAY_CHECK_DISTANCE)
+			--print("Ray Up   World Pos:", dotRayCastUpPos)
 
-	--print("In UpdateLevelState Function")
-	
---    if propertyName == "LevelState" then
---      UpdateLevelState(coreObject:GetCustomProperty(propertyName))
---	elseif propertyName == "GameString" then
---		SyncronizeDots(coreObject:GetCustomProperty(propertyName))
---   end
-    
-	--print("CoreObject: ", coreObject)
-	--print("Property Name: ", propertyName)
-	
---	if levelState == 0 then
-		-- clear level
---	else 
-		local hitResult = nil
-		local vectorRight = Vector3.New(150,0,0)
-		local vectorLeft = Vector3.New(-150,0,0)
-		local vectorUp = Vector3.New(0,-150,0)
-		local vectorDown = Vector3.New(0,150,0)
-
-		--Build all dots (eventually in the client context)
-		for X_Location = X_MIN, 200, DOT_INCREMENT do  
-			for Y_Location = Y_MIN, Y_MAX, DOT_INCREMENT do  
-				
-				dotLocalPosition = Vector3.New(X_Location,Y_Location,Z_COORD_DOT)
-				--print("Local Position: ", dotLocalPosition)
-				
-				dotFolderWorldPosition =  dotsFolder:GetWorldTransform():GetPosition()
-				--print("World Position: ", dotFolderWorldPosition)
-				
-				dotWorldPosition = (dotFolderWorldPosition + dotLocalPosition)
-				--print("Dot World Position: ", dotWorldPosition)
-				
-				dotRayCastForwardPos = dotWorldPosition + (Vector3.FORWARD * RAY_CHECK_DISTANCE)
-				--print("Ray Frwd World Pos:", dotRayCastForwardPos)
-	
-				dotRayCastBackPos = dotWorldPosition + (-Vector3.FORWARD * RAY_CHECK_DISTANCE)
-				--print("Ray Back World Pos:", dotRayCastBackPos)
-				
-				dotRayCastUpPos = dotWorldPosition + (Vector3.RIGHT * RAY_CHECK_DISTANCE)
-				--print("Ray Up   World Pos:", dotRayCastUpPos)
-	
-				dotRayCastDownPos = dotWorldPosition + (-Vector3.RIGHT * RAY_CHECK_DISTANCE)
-				--print("Ray Down World Pos:", dotRayCastDownPos)
-				
-			--	CoreDebug.DrawLine(dotWorldPosition, dotRayCastForwardPos, { color = Color.RED, thickness = 3, duration = 1000 })			
-			--	CoreDebug.DrawLine(dotWorldPosition, dotRayCastBackPos, { color = Color.YELLOW, thickness = 3, duration = 1000})			
-			--	CoreDebug.DrawLine(dotWorldPosition, dotRayCastUpPos, { color = Color.BLUE, thickness = 3, duration = 1000 })			
-			--	CoreDebug.DrawLine(dotWorldPosition, dotRayCastDownPos, { color = Color.GREEN, thickness = 3, duration = 1000 })							
-				
-				hitResult1 = World.Raycast(dotRayCastForwardPos, dotRayCastBackPos)					
-				hitResult2 = World.Raycast(dotRayCastUpPos, dotRayCastDownPos)					
-				hitResult3 = World.Raycast(dotRayCastBackPos, dotRayCastForwardPos)					
-				hitResult4 = World.Raycast(dotRayCastDownPos, dotRayCastUpPos)					
-						
-						
-				if (hitResult1 or hitResult2 or hitResult3 or hitResult4) then
-					--print("Hit Result 1: ", hitResult1)			
-					--print("Hit Result 2: ", hitResult2)			
-					--print("Hit Result 3: ", hitResult3)			
-					--print("Hit Result 4: ", hitResult4)				
-				else
-				
-					newDot = World.SpawnAsset(propGdDot_Client, {position = dotLocalPosition, parent = dotsFolder})
-					--table.insert(dotArray, newDot)			
-				end
-			end	
-		end
-	--end
+			dotRayCastDownPos = dotWorldPosition + (-Vector3.RIGHT * RAY_CHECK_DISTANCE)
+			--print("Ray Down World Pos:", dotRayCastDownPos)
+			
+			--CoreDebug.DrawLine(dotWorldPosition, dotRayCastForwardPos, { color = Color.RED, thickness = 3, duration = 1000 })			
+			--CoreDebug.DrawLine(dotWorldPosition, dotRayCastBackPos, { color = Color.YELLOW, thickness = 3, duration = 1000})			
+			--CoreDebug.DrawLine(dotWorldPosition, dotRayCastUpPos, { color = Color.BLUE, thickness = 3, duration = 1000 })			
+			--CoreDebug.DrawLine(dotWorldPosition, dotRayCastDownPos, { color = Color.GREEN, thickness = 3, duration = 1000 })							
+			
+			hitResult1 = World.Raycast(dotRayCastForwardPos, dotRayCastBackPos)					
+			hitResult2 = World.Raycast(dotRayCastUpPos, dotRayCastDownPos)					
+			hitResult3 = World.Raycast(dotRayCastBackPos, dotRayCastForwardPos)					
+			hitResult4 = World.Raycast(dotRayCastDownPos, dotRayCastUpPos)					
+					
+			if (hitResult1 or hitResult2 or hitResult3 or hitResult4) then
+				--print("Hit Result 1: ", hitResult1)			
+				--print("Hit Result 2: ", hitResult2)			
+				--print("Hit Result 3: ", hitResult3)			
+				--print("Hit Result 4: ", hitResult4)				
+			else
+				dotCount = dotCount + 1				
+				newDot = World.SpawnAsset(propGdDot_Client, {position = dotLocalPosition, parent = dotsFolder})
+				local propGdDotTrigger_Client = newDot:GetCustomProperty("gdDotTrigger_Client"):WaitForObject()
+				propGdDotTrigger_Client.context.propDotNumber = dotCount
+				table.insert(dotsArrayList, dotCount, newDot)
+			end
+		end	
+	end	
+	totalDots = #dotsArrayList
 end
 
-UpdateLevelState(propLevelGobbleDots,"LevelState")
+--InitializeBoard(propLevelGobbleDots,"LevelState")
 
 propLevelGobbleDots.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
 	--print("Inside Property Changed Event")
+
+	--InitializeBoard is used to setup the board at on the LevelPower_Up() call and during resets
+    if propertyName == "InitializeBoard" then
+		InitializeBoard()
+	else  --Otherwise this is a receipt of the list of dots that have been deleted.
+		--Split the string that is returned into an array of dot values
+--		print("Inside the NetworkedChangedEvent: Deleted Dots")
+		local deletedDotsString = propLevelGobbleDots:GetCustomProperty(propertyName)
+		deletedDots = {CoreString.Split(deletedDotsString, {delimiters = ","})}
+		print("Deleted String", deletedDotsString)
+		for i = 1, #deletedDots, 1 do 
+			print("Dot index", i, " is the Dot Number:" , deletedDots[i])
+		end
+
+		print("CountofDeletedDots", countOfDeletedDots)
+		print("#deletedDots", #deletedDots)
+		
+		for deletedIndex = countOfDeletedDots+1, #deletedDots, 1 do 
+			print("In FOR LOOP")
+			if Object.IsValid(dotsArrayList[(deletedDots[deletedIndex]*1)])then
+				print("Count of ArrayList Before Destroy:", #dotsArrayList)
+				print("deletedIndex", deletedIndex)
+				print("deletedDots[deletedIndex]",deletedDots[deletedIndex]) 
+				dotsArrayList[(deletedDots[deletedIndex]*1)]:Destroy()
+				print("Count of ArrayList AFTER Destroy:", #dotsArrayList)
+				countOfDeletedDots = countOfDeletedDots +1
+			else 
+				print("Dot Already Destroyed")		
+			end
+		--	end
+		end
+		print("Calling Event:" , Game.GetLocalPlayer().name, " with: ", countOfDeletedDots, " dots deleted")
+		Events.BroadcastToServer("PlayerNumberOfDeletes", Game.GetLocalPlayer(), countOfDeletedDots) 
+	end
 end)
 

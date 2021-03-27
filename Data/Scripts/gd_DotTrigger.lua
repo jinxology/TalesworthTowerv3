@@ -1,19 +1,16 @@
 local propLevelController = script:GetCustomProperty("LevelController"):WaitForObject()
+propDotNumber = 0
+
 
 local dotObject = script.parent --Gets the current dot
 local levelFolder = script.parent.parent  --Gets the gd.Dots_Client Context Folder
-local dotCount = 1
 
 local dotTrigger = dotObject:FindDescendantByName("DotTrigger_Client")
 
 function OnDotInteraction(whichTrigger, other)
-	--print("In Dot Intercation")
-	--print(other, ":", whichTrigger)
 	
 	if other and other:IsA("Player") then
-		--print("In Dot Intercation")
-        Events.BroadcastToServer("DotDeleted", dotCount)      
-        dotCount = dotCount + 1
+        Events.BroadcastToServer("DotDeleted", propDotNumber)      
         dotObject:Destroy()
     end
 end
