@@ -47,10 +47,10 @@ allTargetData =
         Vector3.New(4918,8052,1029), Vector3.New(4918,8052,372), Rotation.New(0,0,-90)
     },
     { --2
-        Vector3.New(4218,8052,372), Vector3.New(4218,8052,1029), Rotation.New(0,0,-90), 
-        Vector3.New(3886,8052,1029), Vector3.New(3886,8052,372), Rotation.New(0,0,-90),  
-        Vector3.New(4568,8052,372), Vector3.New(4568,8052,1029), Rotation.New(0,0,-90), 
-        Vector3.New(4918,8052,1029), Vector3.New(4918,8052,372), Rotation.New(0,0,-90)
+        Vector3.New(3055,6990,1070), Vector3.New(0,0,0), Rotation.New(0,0,-90)
+    },
+    { --3
+        Vector3.New(5114,3549,1101), Vector3.New(0,0,0), Rotation.New(0,-30,-180)
     }
     
 }

@@ -62,15 +62,6 @@ Assets {
   }
 }
 Assets {
-  Id: 7438756951221684118
-  Name: "Fantasy Castle Wall 02 - Doorway 01 Half"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_fan_cas_wall_half_002_door_01"
-  }
-}
-Assets {
   Id: 7141555184359930417
   Name: "Line Full 002"
   PlatformAssetType: 9
@@ -86,6 +77,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "Icon_Boatmedium"
+  }
+}
+Assets {
+  Id: 4642045124989998726
+  Name: "Stone Arch 3m"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_stone-arch_6m_002"
   }
 }
 Assets {

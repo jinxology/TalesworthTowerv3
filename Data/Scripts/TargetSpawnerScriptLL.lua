@@ -31,7 +31,14 @@ function OnBeginOverlap(whichTrigger, other)
 	if other.name == "hiddenRaftFloor" then
         targetData = propLevelControllerLazyLava.context.allTargetData[propTargetLocationIndex]
         
-        for i=1,propLevelControllerLazyLava.context.playerCount do
+        local iterations
+        if (targetType == 0) then
+            iterations = propLevelControllerLazyLava.context.playerCount
+        else
+            iterations = #targetData
+        end
+
+        for i=1,iterations do
             
             startLoc = targetData[(i-1)*3+1]
             animateLoc = targetData[(i-1)*3+2]
@@ -46,8 +53,9 @@ function OnBeginOverlap(whichTrigger, other)
             local newTarget = World.SpawnAsset(targetTypePtr,{parent=propLevelControllerLazyLava.parent,position=startLoc,rotation=rot})
             local newTargetScript = newTarget:FindChildByName("LazyLavaTargetScript") 
 
-            if (startLoc ~= animateLoc) then
-                newTargetScript.context.SetData(startLoc,animateLoc,targetLife,targetHp,animateTime,targetType)
+            newTargetScript.context.SetData(startLoc,animateLoc,targetLife,targetHp,animateTime,targetType)
+            
+            if (animateTime > 0) then
                 newTargetScript.context.StartAnimation()
             end
         end

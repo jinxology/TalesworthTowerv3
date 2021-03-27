@@ -50,12 +50,12 @@ Objects {
   Name: "DuckObstacle"
   Transform {
     Location {
-      X: -1552.5177
+      X: -2612.99268
       Y: 7049.94873
       Z: 430.568359
     }
     Rotation {
-      Roll: -89.9999847
+      Roll: -90
     }
     Scale {
       X: 0.996684909
@@ -94,7 +94,7 @@ Objects {
   Name: "JumpObstacle"
   Transform {
     Location {
-      X: 1831.20618
+      X: 666.140869
       Y: 5899.97168
       Z: 245.183594
     }
@@ -139,12 +139,12 @@ Objects {
   Name: "DuckObstacle"
   Transform {
     Location {
-      X: 775.185059
+      X: -410.931885
       Y: 7049.96191
       Z: 430.568359
     }
     Rotation {
-      Roll: -89.9999847
+      Roll: -90
     }
     Scale {
       X: 0.996684968
@@ -553,14 +553,14 @@ Objects {
   Transform {
     Location {
       X: 962.113403
-      Y: 946.489624
+      Y: 1609.22437
       Z: 584.755859
     }
     Rotation {
     }
     Scale {
       X: 1
-      Y: 35.6329
+      Y: 43.8379211
       Z: 13.8349161
     }
   }
@@ -603,7 +603,7 @@ Objects {
   Name: "JumpObstacle"
   Transform {
     Location {
-      X: -370.088867
+      X: -1398.6554
       Y: 5899.97168
       Z: 245.824219
     }
