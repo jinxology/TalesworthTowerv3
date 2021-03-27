@@ -17,7 +17,7 @@ Assets {
         }
         ParentId: 1232579912354001357
         ChildIds: 9129683525484421359
-        ChildIds: 1036716290487904769
+        ChildIds: 5504408014851657554
         ChildIds: 13361225289690824571
         ChildIds: 2654900809422222141
         ChildIds: 14010103477530155103
@@ -135,6 +135,12 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:triggerContainer"
+            ObjectReference {
+              SubObjectId: 5504408014851657554
+            }
+          }
+          Overrides {
             Name: "cs:scoring:isrep"
             Bool: true
           }
@@ -172,21 +178,51 @@ Assets {
         }
       }
       Objects {
-        Id: 1036716290487904769
-        Name: "Trigger"
+        Id: 5504408014851657554
+        Name: "Group"
         Transform {
           Location {
-            Z: -875
           }
           Rotation {
           }
           Scale {
-            X: 15
-            Y: 15
-            Z: 15
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 3040303582551256267
+        ChildIds: 1036716290487904769
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Folder {
+          IsGroup: true
+        }
+      }
+      Objects {
+        Id: 1036716290487904769
+        Name: "Trigger"
+        Transform {
+          Location {
+            Z: -899.084
+          }
+          Rotation {
+          }
+          Scale {
+            X: 10.1
+            Y: 10.1
+            Z: 24
+          }
+        }
+        ParentId: 5504408014851657554
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceon"
@@ -203,7 +239,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
+            Value: "mc:etriggershape:capsule"
           }
         }
       }

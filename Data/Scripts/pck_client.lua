@@ -42,3 +42,63 @@ propLevelController.networkedPropertyChangedEvent:Connect(function(coreObject, p
         UpdateLevelState(coreObject:GetCustomProperty(propertyName))
     end
 end)
+
+local propPuckSpawnerTemplate = script:GetCustomProperty("puckSpawner")
+
+local propSpawnerPortholeOpenTime = .75
+local propSpawnerInTime = 1.00
+
+local propSpawners = {}
+
+function ExtendSpawner(index, position, travel, rotate, makePlayersWatch)
+    print("spawning client side spawner " .. tostring(position) .. ", travel = " .. tostring(travel))
+    local spawner = World.SpawnAsset(propPuckSpawnerTemplate, { parent = script.parent, position = position })
+    local spawnerGeometry = spawner:GetCustomProperty("spawnerGeometry"):WaitForObject()
+    local portholeGeometry = spawner:GetCustomProperty("spawnerPorthole"):WaitForObject()
+    local portholeOpenScale = portholeGeometry:GetScale()
+    
+    --  make all players look at this spawner if it's closer than the one they're looking at
+    --  start with thes porthole closed
+    portholeGeometry:SetScale(Vector3.ZERO)
+    
+    --  open the porthole
+    spawner:GetCustomProperty("spawnerInSFX"):WaitForObject():Play()
+    portholeGeometry:ScaleTo(portholeOpenScale, propSpawnerPortholeOpenTime, true)
+    Task.Wait(propSpawnerPortholeOpenTime)
+
+    --  drop the ejector and spin it
+    spawnerGeometry:MoveTo(travel, propSpawnerInTime, true)
+    spawnerGeometry:RotateTo(rotate, propSpawnerInTime, true)
+
+    propSpawners[index] = { spawner = spawner, geometry = spawnerGeometry, porthole = portholeGeometry }
+end
+
+function RecoilSpawner(index, travel)
+    local geometry = propSpawners[index].geometry
+    
+    position = geometry:GetPosition()
+    geometry:MoveTo(position + travel, 0.4, true)
+    Task.Wait(0.4)
+    geometry:MoveTo(position, 0.6, true)
+
+end
+
+function RetractSpawner(index)
+    local spawner = propSpawners[index]
+    local geometry = spawner.geometry
+    local porthole = spawner.porthole
+    
+    local spawnerOutSFX = spawner.spawner:GetCustomProperty("spawnerOutSFX"):WaitForObject()
+   
+    spawnerOutSFX:Play()
+    geometry:MoveTo(Vector3.ZERO, spawnerOutSFX.length / 2.0, true)
+    geometry:RotateTo(Rotation.ZERO, propSpawnerInTime, true)
+    Task.Wait(spawnerOutSFX.length / 2.0)
+    porthole:ScaleTo(Vector3.ZERO, spawnerOutSFX.length / 2.0, true)
+    Task.Wait(spawnerOutSFX.length / 2.0)
+end
+
+-- Events.Connect("pck.Tumbleweed", RollTumbleweed)
+Events.Connect("pck.ExtendSpawner", ExtendSpawner)
+Events.Connect("pck.RecoilSpawner", RecoilSpawner)
+Events.Connect("pck.RetractSpawner", RetractSpawner)

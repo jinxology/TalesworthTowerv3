@@ -5,6 +5,7 @@ local propLongMooSFX = script:GetCustomProperty("longMooSFX"):WaitForObject()
 local propShortMooSFX = script:GetCustomProperty("shortMooSFX"):WaitForObject()
 local propRunningSFX = script:GetCustomProperty("runningSFX"):WaitForObject()
 local propLookOutTrigger = script:GetCustomProperty("lookOutTrigger"):WaitForObject()
+local propTriggerContainer = script:GetCustomProperty("triggerContainer"):WaitForObject()
 local propClankSFX = script:GetCustomProperty("clankSFX"):WaitForObject()
 
 
@@ -38,7 +39,7 @@ propLookOutListener = propLookOutTrigger.beginOverlapEvent:Connect(function(trig
 		end
 	end
 end)
-propLookOutListener:Disconnect()
+-- propLookOutListener:Disconnect()
 
 --	floor level is actually the level the physics *center* will be at when the puck is on the floor
 propVerticalSpeed = -1 -- start falling
@@ -175,8 +176,6 @@ function Stabilize()
 				propPhysics:SetVelocity(translatedVelocity)
 			end
 
-			propLookOutTrigger:SetWorldRotation(Rotation.ZERO)
-
 			--  play running sound
 			-- print("STABILIZED: " .. script.id .. ": z = " .. position.z .. ", floor = " .. propFloorLevel .. ", speed = " .. magnitude .. ", velocity = ", tostring(velocity))
 			if magnitude > 20 then
@@ -191,6 +190,8 @@ function Stabilize()
 			end
 		end
 	end
+	
+	propTriggerContainer:SetWorldRotation(Rotation.ZERO)
 end
 
 propTetheredMugshots = {}
