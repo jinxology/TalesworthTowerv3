@@ -114,7 +114,9 @@ function OnWeaponizer(whichTrigger, other)
 end
 
 function SpeedUp()
-    raftController.context.SpeedUp()
+    if (Object.IsValid(raftController)) then
+        raftController.context.SpeedUp()
+    end
 end
 
 propLavaDeathTrigger.beginOverlapEvent:Connect(OnLandInLava)

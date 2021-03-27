@@ -1,6 +1,58 @@
 Name: "Platforms - LL"
 RootId: 11184597895692412300
 Objects {
+  Id: 15924544395779844322
+  Name: "Spawn2platform"
+  Transform {
+    Location {
+      X: 1712.70679
+      Y: 3611.94922
+      Z: 233.193909
+    }
+    Rotation {
+      Pitch: -90
+    }
+    Scale {
+      X: 3.90000033
+      Y: 3.60000014
+      Z: 0.2
+    }
+  }
+  ParentId: 11184597895692412300
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 29435928370182579
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 10789546840193366307
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 9733581751861278574
   Name: "Spawn3platform"
   Transform {
@@ -56,8 +108,8 @@ Objects {
   Name: "Spawn2platform"
   Transform {
     Location {
-      X: -1548.10205
-      Y: 3611.97168
+      X: 1537.12476
+      Y: 3611.94922
       Z: 76.0225143
     }
     Rotation {
