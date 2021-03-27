@@ -20,6 +20,12 @@ Assets {
         ChildIds: 9145162931314225342
         UnregisteredParameters {
           Overrides {
+            Name: "cs:gdDotTrigger_Client"
+            ObjectReference {
+              SubObjectId: 16453796524035430408
+            }
+          }
+          Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
               Id: 13485243415661967086
@@ -81,6 +87,10 @@ Assets {
             ObjectReference {
               SelfId: 7161176820700122570
             }
+          }
+          Overrides {
+            Name: "cs:dotNumber"
+            Int: 0
           }
         }
         Collidable_v2 {
