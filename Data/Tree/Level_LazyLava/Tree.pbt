@@ -1,13 +1,13 @@
 Name: "Level_LazyLava"
 RootId: 1647900999251311847
 Objects {
-  Id: 2807321196492823192
-  Name: "raftTargetSpawner"
+  Id: 14894977311916925999
+  Name: "RaftTargetSpawner"
   Transform {
     Location {
-      X: 3964.05859
-      Y: 1650
-      Z: 151.994141
+      X: 1081.49487
+      Y: 2627.12573
+      Z: 17300.4531
     }
     Rotation {
     }
@@ -18,110 +18,6 @@ Objects {
     }
   }
   ParentId: 1647900999251311847
-  ChildIds: 5289095749734562314
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:targetHP"
-      Int: 10
-    }
-    Overrides {
-      Name: "cs:targetType"
-      Int: 1
-    }
-    Overrides {
-      Name: "cs:targetLife"
-      Int: 6
-    }
-    Overrides {
-      Name: "cs:animateTime"
-      Float: 3
-    }
-    Overrides {
-      Name: "cs:targetLocationIndex"
-      Int: 1
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 5289095749734562314
-  Name: "TargetSpawnerScriptLL"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.299987555
-      Y: 0.299987555
-      Z: 0.300030023
-    }
-  }
-  ParentId: 2807321196492823192
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:LevelControllerLazyLava"
-      ObjectReference {
-        SelfId: 1573043275725250760
-      }
-    }
-    Overrides {
-      Name: "cs:PointTargetBullseye"
-      AssetReference {
-        Id: 6003286022231524999
-      }
-    }
-    Overrides {
-      Name: "cs:SpeedupTargetBullseye"
-      AssetReference {
-        Id: 11347237642768266339
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 13107769540280647148
-    }
-  }
-}
-Objects {
-  Id: 1702083591309078208
-  Name: "SpeedupTargetBullseye"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1647900999251311847
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -130,37 +26,175 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 11321439615175242077
+      key: 5541269097374687589
       value {
         Overrides {
           Name: "Name"
-          String: "SpeedupTargetBullseye"
+          String: "RaftTargetSpawner"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: 3048.40576
-            Y: 8219.68555
-            Z: 410.291016
+            X: 1845.55334
+            Y: 3893.823
+            Z: 151.994141
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: -90
-            Roll: 9.40182285e-13
           }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 3.08046174
+            Y: 3.08046174
+            Z: 3.0800271
+          }
+        }
+        Overrides {
+          Name: "cs:targetLife"
+          Int: 4
+        }
+        Overrides {
+          Name: "cs:targetLocationIndex"
+          Int: 3
+        }
+        Overrides {
+          Name: "cs:animateTime"
+          Float: 0
         }
       }
     }
     TemplateAsset {
-      Id: 11347237642768266339
+      Id: 11999336721103113198
+    }
+  }
+}
+Objects {
+  Id: 1341583142779302653
+  Name: "RaftTargetSpawner"
+  Transform {
+    Location {
+      X: 3053.65723
+      Y: 4068.44556
+      Z: 17300.4531
+    }
+    Rotation {
+    }
+    Scale {
+      X: 3.08046174
+      Y: 3.08046174
+      Z: 3.0800271
+    }
+  }
+  ParentId: 1647900999251311847
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 5541269097374687589
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RaftTargetSpawner"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 1845.55334
+            Y: 2627.12573
+            Z: 151.994141
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 3.08046174
+            Y: 3.08046174
+            Z: 3.0800271
+          }
+        }
+        Overrides {
+          Name: "cs:targetLocationIndex"
+          Int: 2
+        }
+        Overrides {
+          Name: "cs:animateTime"
+          Float: 0
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 11999336721103113198
+    }
+  }
+}
+Objects {
+  Id: 8923690382363978627
+  Name: "RaftTargetSpawner"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1647900999251311847
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 5541269097374687589
+      value {
+        Overrides {
+          Name: "Name"
+          String: "RaftTargetSpawner"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 3817.71582
+            Y: 4068.44556
+            Z: 151.994141
+          }
+        }
+        Overrides {
+          Name: "cs:targetType"
+          Int: 0
+        }
+        Overrides {
+          Name: "cs:targetLocationIndex"
+          Int: 1
+        }
+        Overrides {
+          Name: "cs:animateTime"
+          Float: 3
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 11999336721103113198
     }
   }
 }
 Objects {
   Id: 3342179982384190142
-  Name: "Cube"
+  Name: "wall-ll"
   Transform {
     Location {
       X: -796.963501
@@ -244,10 +278,10 @@ Objects {
 }
 Objects {
   Id: 12652013061128333880
-  Name: "Cube"
+  Name: "wall-ll"
   Transform {
     Location {
-      X: 1414.05859
+      X: 3947.95068
       Y: 3249.9375
       Z: 584.755859
     }
@@ -299,6 +333,9 @@ Objects {
   Name: "Weaponizer"
   Transform {
     Location {
+      X: 4452.42
+      Y: -20.9091492
+      Z: 396.164063
     }
     Rotation {
     }
@@ -309,13 +346,19 @@ Objects {
     }
   }
   ParentId: 1647900999251311847
+  ChildIds: 516669838946075230
   ChildIds: 631054664668057192
   ChildIds: 12218424334405108813
   ChildIds: 9500475307057677917
-  ChildIds: 4981492189036357548
-  ChildIds: 557133987963930558
   ChildIds: 14198518134098321610
-  ChildIds: 1528546392318412065
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:gun"
+      AssetReference {
+        Id: 841534158063459245
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -330,64 +373,20 @@ Objects {
   }
 }
 Objects {
-  Id: 1528546392318412065
-  Name: "Fantasy Castle Wall 02 - Doorway 01 Half"
-  Transform {
-    Location {
-      X: 4464.05859
-      Y: -372.111786
-      Z: 451.484375
-    }
-    Rotation {
-      Yaw: 89.9999924
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 0.7
-    }
-  }
-  ParentId: 16746337448991005587
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 7438756951221684118
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
   Id: 14198518134098321610
   Name: "weaponizerTrigger"
   Transform {
     Location {
-      X: 4479.27344
-      Y: -182.355286
-      Z: 641.517578
+      X: 26.8535156
+      Y: 37.7025757
+      Z: 262.630859
     }
     Rotation {
     }
     Scale {
       X: 0.376381904
-      Y: 3.52681637
-      Z: 3.8917191
+      Y: 6.52487469
+      Z: 3.86472654
     }
   }
   ParentId: 16746337448991005587
@@ -411,106 +410,20 @@ Objects {
   }
 }
 Objects {
-  Id: 557133987963930558
-  Name: "Cube"
-  Transform {
-    Location {
-      X: 4485.88184
-      Y: -792.275757
-      Z: 676.709
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.402519524
-      Y: 7.76244926
-      Z: 3.15562606
-    }
-  }
-  ParentId: 16746337448991005587
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12095835209017042614
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 4981492189036357548
-  Name: "Cube"
-  Transform {
-    Location {
-      X: 4485.88184
-      Y: 261.568817
-      Z: 676.709
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.402519524
-      Y: 4.49957561
-      Z: 3.15562606
-    }
-  }
-  ParentId: 16746337448991005587
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12095835209017042614
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
   Id: 9500475307057677917
   Name: "forcefield - gun-o-matic"
   Transform {
     Location {
-      X: 4496.31
-      Y: -169.558395
-      Z: 660.654297
+      X: -22.6945801
+      Y: 0.60005188
+      Z: 289.853516
     }
     Rotation {
     }
     Scale {
-      X: 0.141899407
-      Y: 1.92472303
-      Z: 6.113904
+      X: 0.125029311
+      Y: 7.90056705
+      Z: 4.44863176
     }
   }
   ParentId: 16746337448991005587
@@ -560,9 +473,9 @@ Objects {
   Name: "Gun-O-Matic"
   Transform {
     Location {
-      X: 4487.5249
-      Y: -23.4468842
-      Z: 812.541
+      X: 64.8867188
+      Y: 162.992
+      Z: 545.591797
     }
     Rotation {
     }
@@ -608,9 +521,9 @@ Objects {
   Name: "Gun-O-Matic"
   Transform {
     Location {
-      X: 4486.28369
-      Y: -23.4468842
-      Z: 808.703125
+      X: 63.6455078
+      Y: 162.992
+      Z: 541.753906
     }
     Rotation {
     }
@@ -646,6 +559,92 @@ Objects {
       Value: "mc:ecoretextverticalalign:center"
     }
     IsLit: true
+  }
+}
+Objects {
+  Id: 516669838946075230
+  Name: "Stone Arch 3m"
+  Transform {
+    Location {
+      X: -6.89941406
+      Y: -390.355225
+      Z: 39.9609375
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1.38545787
+      Y: 1.38545787
+      Z: 1.72830427
+    }
+  }
+  ParentId: 16746337448991005587
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 4642045124989998726
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 557133987963930558
+  Name: "invisiblewall"
+  Transform {
+    Location {
+      X: 4485.88184
+      Y: -792.275757
+      Z: 676.709
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.402519524
+      Y: 7.76244926
+      Z: 3.15562606
+    }
+  }
+  ParentId: 1647900999251311847
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
   }
 }
 Objects {
@@ -734,54 +733,6 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "entrance flume - LL"
-  }
-}
-Objects {
-  Id: 10616007755666483237
-  Name: "SpeedupTargetBullseye"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1647900999251311847
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 11321439615175242077
-      value {
-        Overrides {
-          Name: "Name"
-          String: "SpeedupTargetBullseye"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 5114.05469
-            Y: 3549.99512
-            Z: 1101.54102
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: -29.9999847
-            Yaw: -179.999985
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 11347237642768266339
-    }
   }
 }
 Objects {
