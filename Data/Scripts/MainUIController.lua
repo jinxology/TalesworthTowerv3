@@ -13,7 +13,7 @@ local timeLeft = 0
 function IncomingUIMessage(coreObject, propertyName)
     
     local msg = propMainGameController:GetCustomProperty(propertyName)
-    print ("UIMESSAGE: "..msg)
+    --print ("UIMESSAGE: "..msg)
     msgData = propUtility_ClientSide.context.Split(msg,",")
     
     if (msgData[1] == "00") then --Update timer
