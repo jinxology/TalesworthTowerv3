@@ -102,7 +102,7 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:canTip"
+            Name: "cs:scoring"
             Bool: false
           }
           Overrides {
@@ -135,7 +135,7 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:canTip:isrep"
+            Name: "cs:scoring:isrep"
             Bool: true
           }
           Overrides {
@@ -282,7 +282,7 @@ Assets {
             Z: -290
           }
           Rotation {
-            Yaw: -45.0000648
+            Yaw: -45.000061
           }
           Scale {
             X: 8

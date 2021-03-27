@@ -23,7 +23,7 @@ function OnAttemptPop(whichTrigger, other)
 			for i, v in ipairs(other:GetEquipment()) do
 				if v:IsA("Equipment") and v.name == "bnp_balloonEquipment" then
 					local equipment = v
-					local balloon = equipment:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController
+					local balloon = equipment.serverUserData.balloon
 					local balloonColor = balloon.context.bnpColor
 					
 					print("balloon color is " .. balloonColor .. ", stand color is " .. bnpColor)
@@ -55,7 +55,7 @@ function OnAttemptPop(whichTrigger, other)
 			for _, child in pairs(physics:GetChildren()) do
 				print("  - " .. child.id .. " - " .. child.type)
 			end
-			local balloon = physics:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController
+			local balloon = physics.serverUserData.balloon
 			local boppedBy = balloon.context.lastBoppedBy
 			local balloonColor = balloon.context.bnpColor
 			

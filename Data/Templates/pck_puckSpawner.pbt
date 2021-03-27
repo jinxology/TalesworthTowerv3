@@ -928,6 +928,7 @@ Assets {
         Name: "Spotlight"
         Transform {
           Location {
+            Z: -11
           }
           Rotation {
             Pitch: -90

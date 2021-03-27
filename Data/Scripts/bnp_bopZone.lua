@@ -10,7 +10,7 @@ function OnBeginOverlap(whichTrigger, other)
 	if other:IsA("Player") then
 		local player = other
 
-		if propLevelController.context.levelActive then
+		if propLevelController.context.propPlayersFlumedIn[player] == true then
 			player:AddImpulse(Vector3.UP * 100000)
 		end
 		-- local animatedMesh = player:FindDescendantByType("AnimatedMesh")
@@ -19,7 +19,7 @@ function OnBeginOverlap(whichTrigger, other)
 		for i, v in ipairs(player:GetEquipment()) do
 			if v:IsA("Equipment") and v.name == "bnp_balloonEquipment" then
 				local equipment = v
-				local balloon = equipment:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController
+				local balloon = equipment.serverUserData.balloon
 				local bnpColor = balloon.context.bnpColor
 				local spawner = balloon.context.spawnedBy
 				
@@ -39,7 +39,7 @@ function OnBeginOverlap(whichTrigger, other)
 		end
 	elseif other.name == "bnp_balloonPhysics" then
 		local physics = other
-		local balloon = physics:GetCustomProperty("controllerLink"):WaitForObject().context.propBalloonController
+		local balloon = physics.serverUserData.balloon
 		
 		print("collide " .. physics.id .. " " .. balloon.id)
 		if balloon ~= nil then

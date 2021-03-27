@@ -26,15 +26,6 @@ Assets {
   }
 }
 Assets {
-  Id: 5959533205679778055
-  Name: "\"Fast Bebop Jazz Chase\" Music Construction Kit (Sections) 01"
-  PlatformAssetType: 10
-  PrimaryAsset {
-    AssetType: "AudioBlueprintAssetRef"
-    AssetId: "abp_fast_bebop_jazz_chase_sections_kit_ref"
-  }
-}
-Assets {
   Id: 3767036724831709460
   Name: "BG Flat 002"
   PlatformAssetType: 9

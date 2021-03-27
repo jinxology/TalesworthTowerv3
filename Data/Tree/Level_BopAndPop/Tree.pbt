@@ -8930,6 +8930,45 @@ Objects {
   }
 }
 Objects {
+  Id: 9622675924933187805
+  Name: "flumedInTrigger"
+  Transform {
+    Location {
+      X: -400
+      Y: -400
+      Z: 900
+    }
+    Rotation {
+      Yaw: -45
+    }
+    Scale {
+      X: 13.750001
+      Y: 1
+      Z: 18
+    }
+  }
+  ParentId: 6466700705943890717
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
   Id: 1900714643325171870
   Name: "LevelController.BopAndPop"
   Transform {
@@ -9141,6 +9180,12 @@ Objects {
       Name: "cs:intakeLight"
       ObjectReference {
         SelfId: 2161536350683515756
+      }
+    }
+    Overrides {
+      Name: "cs:flumedInTrigger"
+      ObjectReference {
+        SelfId: 9622675924933187805
       }
     }
     Overrides {

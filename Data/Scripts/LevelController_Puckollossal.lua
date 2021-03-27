@@ -7,9 +7,10 @@ local propPuckTemplate = script:GetCustomProperty("puckTemplate")
 local propMugshotTemplate = script:GetCustomProperty("mugshotTemplate")
 local propMusic = script:GetCustomProperty("music"):WaitForObject()
 local propLookoutAbility = script:GetCustomProperty("lookoutAbility")
-local Ease3D = require(script:GetCustomProperty("Ease3D"))
+-- local Ease3D = require(script:GetCustomProperty("Ease3D"))
 local propEntrancePipeTemplate = script:GetCustomProperty("entrancePipeTemplate")
 
+local propLivePuckCount = 0
 local propLivePucks = {}
 local propLiveMugshots = {}
 
@@ -22,7 +23,7 @@ exitFlumeRotation = Rotation.New(0, -90, 0)
 entranceFlumeLocation = Vector3.New(-3545.294, 5, 638.20)
 entranceFlumeRotation = Rotation.New(0, 36.916, 0)
 entranceFlumeEjectionVelocity = 6.66
-startPlatformPosition = Vector3.New(900, 460, -25)
+startPlatformPosition = Vector3.New(900, 460, -35)
 startPlatformRotation = Rotation.New(0, 0, 90)
 
 local propSpawnConfigurationIndex = 1
@@ -31,8 +32,8 @@ local propSpawnConfigurations = {
         Vector3.New(3600, 0, 2000)
     },
     {
-        Vector3.New(0, 2400, 1800),
-        Vector3.New(0, -2400, 1800)
+        Vector3.New(0, 2400, 2000),
+        Vector3.New(0, -2400, 2000)
     },
 }
 local propSpawnerZTravel = Vector3.New(0, 0, -350)
@@ -97,7 +98,7 @@ function LevelBegin()
     entranceFlume:SetWorldPosition(position)
     entranceFlume:SetWorldRotation(rotation)
 
-    Ease3D.EasePosition(propTutorialCurtain, propTutorialCurtain:GetPosition() - Vector3.UP * 3000, 2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.IN)
+    propTutorialCurtain:MoveTo(propTutorialCurtain:GetPosition() - Vector3.UP * 3000, 2, true)
     Task.Wait(2)
 
     entranceFlume.parent = script.parent
@@ -109,7 +110,7 @@ function LevelBegin()
     --  get rid of starting platform
     for _, child in ipairs(script.parent:GetChildren()) do
         if child.name == "StartPlatformGroup" then
-            Ease3D.EasePosition(child, child:GetPosition() - Vector3.UP * 26, 2, Ease3D.EasingEquation.QUADRATIC, Ease3D.EasingDirection.IN)
+            child:MoveTo(child:GetPosition() - Vector3.UP * 26, 2, true)
         end
     end
     
@@ -185,13 +186,14 @@ function SpawnPuckFrom(spawner, position, makePlayersWatch)
 
     --  create the puck
     puck = World.SpawnAsset(propPuckTemplate, { position = position + propSpawnerZTravel + propPuckOffset, parent = spawner.parent })
-    table.insert(propLivePucks, puck)
+    propLivePucks[puck] = true
+    propLivePuckCount = propLivePuckCount + 1
 
     --  recoil the ejector
     position = spawnerGeometry:GetPosition()
-    Ease3D.EasePosition(spawnerGeometry, position + propSpawnerZRecoil, 0.4, Ease3D.EasingEquation.BACK, Ease3D.EasingDirection.OUT)
+    spawnerGeometry:MoveTo(position + propSpawnerZRecoil, 0.4, true)
     Task.Wait(0.4)
-    Ease3D.EasePosition(spawnerGeometry, position, 0.6)
+    spawnerGeometry:MoveTo(position, 0.6, true)
 
     return puck
 end
@@ -210,7 +212,7 @@ function RetractSpawner(spawner)
 end
 
 function LevelPowerDown()
-    for _, puck in ipairs(propLivePucks) do
+    for puck, isLive in ipairs(propLivePucks) do
         puck:Destroy()
     end
 
@@ -219,24 +221,43 @@ function LevelPowerDown()
         mugshot:Destroy()
     end
 
-    propSpawnConfigurationIndex = propSpawnConfigurationIndex + 1
-    if (propSpawnConfigurationIndex > #propSpawnConfigurations) then
-        propSpawnConfigurations = 1
-    end
-
     propWalls:Destroy()
     propWalls = nil
+end
+
+propCheckPuckCountTask = nil
+
+function CheckPuckCount()
+    if propLivePuckCount == 0 then
+        propSpawnConfigurationIndex = propSpawnConfigurationIndex + 1
+        if propSpawnConfigurationIndex > #propSpawnConfigurations then
+            propSpawnConfigurationIndex = 1
+        end
+
+        local   spawnConfiguration = propSpawnConfigurations[propSpawnConfigurationIndex]
+        for _, position in ipairs(spawnConfiguration) do
+            Task.Spawn(function()
+                local spawner = World.SpawnAsset(propPuckSpawnerTemplate, { position = position, parent = script.parent })
+                
+                ExtendSpawner(spawner, position, false)
+                puck = SpawnPuckFrom(spawner, position, false)
+                
+                local controller = puck:GetCustomProperty("controller"):WaitForObject()
+        
+                controller.context.propLevelController = script
+        
+                RetractSpawner(spawner)
+                spawner:Destroy()
+            end)
+        end
+    end
 end
 
 function ScoreTriggerDidOverlap(trigger, other)
     if other:IsA("Player") then
         other:AddImpulse(Vector3.New(1000000, 0, 10000))
     elseif other.name == "pck.puckTemplate" then
-        if propCurrentPuck ~= other then
-            propCurrentPuck = other
-            other:GetCustomProperty("controller"):WaitForObject().context.Destabilize()
-            propScoreSFX:Play()
-        end
+        ScorePuck(other, true)
     end
 end
 
@@ -244,13 +265,31 @@ function FailTriggerDidOverlap(trigger, other)
     if other:IsA("Player") then
         other:AddImpulse(Vector3.New(-1000000, 0, 10000))
     elseif other.name == "pck.puckTemplate" then
-        if propCurrentPuck ~= other then
-            propCurrentPuck = other
-            other:GetCustomProperty("controller"):WaitForObject().context.Destabilize()
+        ScorePuck(other, false)
+    end
+end
+
+function ScorePuck(puck, point)
+    if propLivePucks[puck] == true then
+        propLivePucks[puck] = nil
+        propLivePuckCount = propLivePuckCount - 1
+        puck:GetCustomProperty("controller"):WaitForObject().context.ScorePuck()
+        
+        if point then
+            propScoreSFX:Play()
+        else
             propFailSFX:Play()
         end
     end
+
+    if propCheckPuckCountTask ~= nil then
+        propCheckPuckCountTask:Cancel()
+    end
+
+    propCheckPuckCountTask = Task.Spawn(CheckPuckCount, 2)
 end
 
 propScoreTrigger.beginOverlapEvent:Connect(ScoreTriggerDidOverlap)
 propFailTrigger.beginOverlapEvent:Connect(FailTriggerDidOverlap)
+
+

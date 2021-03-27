@@ -279,7 +279,7 @@ Assets {
           Light {
             Temperature: 6500
             LocalLight {
-              AttenuationRadius: 1000
+              AttenuationRadius: 266.709747
               PointLight {
                 SourceRadius: 20
                 SoftSourceRadius: 20
@@ -1397,7 +1397,7 @@ Assets {
             }
           }
           ExecutePhaseSettings {
-            Duration: 10
+            Duration: 1
             CanMove: true
             CanJump: true
             CanRotate: true
@@ -1408,7 +1408,7 @@ Assets {
             }
           }
           RecoveryPhaseSettings {
-            Duration: 0.5
+            Duration: 0.1
             CanMove: true
             CanJump: true
             CanRotate: true
@@ -1419,7 +1419,7 @@ Assets {
             }
           }
           CooldownPhaseSettings {
-            Duration: 0.2
+            Duration: 0.5
             CanMove: true
             CanJump: true
             CanRotate: true
@@ -1465,7 +1465,7 @@ Assets {
         }
         Ability {
           CastPhaseSettings {
-            Duration: 0.15
+            Duration: 0.1
             CanMove: true
             CanJump: true
             CanRotate: true
@@ -1476,6 +1476,7 @@ Assets {
             }
           }
           ExecutePhaseSettings {
+            Duration: 1
             CanMove: true
             CanJump: true
             CanRotate: true
@@ -1497,7 +1498,7 @@ Assets {
             }
           }
           CooldownPhaseSettings {
-            Duration: 3
+            Duration: 0.5
             CanMove: true
             CanJump: true
             CanRotate: true

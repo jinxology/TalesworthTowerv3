@@ -26,7 +26,7 @@ function CheckAim(targetedPuck)
 	local		puckPosition = targetedPuck:GetWorldPosition()
 	
 	-- print("mugshot at " .. tostring(mugshotPosition))
-	print("targeting " .. targetedPuck.id)
+	-- print("targeting " .. targetedPuck.id)
 
 	for index, anchorDirection in pairs(anchorLocations) do
 		local	anchorPosition = puckPosition + anchorDirection
@@ -82,20 +82,20 @@ function OnCast_Tether(ability)
 		script:SetNetworkedCustomProperty("tetherOffset", propTargetedPuck.context.propAnchorPositions[propTargetedAnchor])
 		script:SetNetworkedCustomProperty("tetheredPuck", propTargetedPuck:GetReference())
 	
-		print("Casting Tether...")
+		-- print("Casting Tether...")
 	else
 		ability:Interrupt()
 	end
 end
 
 function TetherLanded()
-	print("Tether landed, checking success...")
+	-- print("Tether landed, checking success...")
 	propTargetedAnchor = propTargetedPuck.context.TetherMugshotToEligibleAnchor(propEquipment, CheckAim(propTargetedPuck).anchors)
 	if propTargetedAnchor == 0 then
 		propTargetedPuck = nil
 		propTargetedPuck.context.propClankSFX:Play()
 	else
-		print("Tethered successfully!")
+		-- print("Tethered successfully!")
 		propTetheredToTarget = true
 		script:SetNetworkedCustomProperty("tetheredToTarget", true)
 		propTetherTravelTask:Cancel()
@@ -116,10 +116,10 @@ function OnExecute_Tether(ability)
 	propTetherTravelStartTime = time()
 	propTetherTravelEndTime = propTetherTravelStartTime + propTetherTravelTotalTime
 
-	print("Execution should take " .. propTetherTravelTotalTime .. " seconds")
+	-- print("Execution should take " .. propTetherTravelTotalTime .. " seconds")
 	propCast1SFX:Play()
 	propReelSFX.fadeInTime = propCast1SFX.length - propCast1SFX.startTime
-	propReelSFX.stopTime = propTetherTravelTotalTime
+	-- propReelSFX.stopTime = propTetherTravelTotalTime
 	propReelSFX:Play()
 	propTetherTravelTask = Task.Spawn(TetherTraveled)
 	propTetherTravelTask.repeatCount = -1
@@ -127,7 +127,8 @@ end
 
 function TetherTraveled()
 	local	currentTime = time()
-
+	
+	propReelSFX:Stop()
 	script:SetNetworkedCustomProperty("tetherTravel", (currentTime - propTetherTravelStartTime) / propTetherTravelTotalTime)
 
 	if currentTime > propTetherTravelEndTime then
@@ -136,13 +137,13 @@ function TetherTraveled()
 end
 
 function OnRecovery_Tether(ability)
-	print("Tether recovered.")
+	-- print("Tether recovered.")
 end
 
 function OnCooldown_Tether(ability)
-	print("Cooled down...")
+	-- print("Cooled down...")
 	if propTetheredToTarget then
-		print("    ... and tethered. New abilities active.")
+		-- print("    ... and tethered. New abilities active.")
 		propTetherAbility.isEnabled = false
 		propUntetherAbility.isEnabled = true
 		propReelAbility.isEnabled = true
@@ -151,40 +152,46 @@ function OnCooldown_Tether(ability)
 end
 
 function OnInterrupted_Tether(ability)
-	print("Tethering interrupted.")
+	-- print("Tethering interrupted.")
 	propTargetedPuck = nil
 	propTargetedAnchor = 0
 end
 
 function OnReady_Tether(ability)
-	print("Tether ready.")
+	-- print("Tether ready.")
 end
 
-
 function OnCast_Untether(ability)
-	print("Casting Untether")
+	-- print("Casting Untether")
 end
 
 function OnExecute_Untether(ability)
 	if propTetheredToTarget and propTargetedPuck ~= nil and Object.IsValid(propTargetedPuck) then
-		print("Untethering...")
+		-- print("Untethering...")
 	end
+end
+
+function Untether()
+	propTetheredToTarget = false
+	propTargetedPuck = nil
+	propTargetedAnchor = 0
+	script:SetNetworkedCustomProperty("tetheredPuck", nil)
+	script:SetNetworkedCustomProperty("tetheredToTarget", false)
+	script:SetNetworkedCustomProperty("tetherOffset", Vector3.ZERO)
 end
 
 function OnRecovery_Untether(ability)
 	if propTetheredToTarget then
 		propTargetedPuck.context.UntetherMugshot(propEquipment)
-		propTetheredToTarget = false
-		script:SetNetworkedCustomProperty("tetheredPuck", nil)
-		script:SetNetworkedCustomProperty("tetheredToTarget", false)
-		script:SetNetworkedCustomProperty("tetherOffset", Vector3.ZERO)
+		-- print("recovered from untethering.")
 	else
+		-- print("faied to untether")
 		ability:Interrupt()
 	end
 end
 
 function OnCooldown_Untether(ability)
-	print("Unethered and cooled down. New abilities active.")
+	-- print("Unethered and cooled down. New abilities active.")
 	propTetherAbility.isEnabled = true
 	propUntetherAbility.isEnabled = false
 	propReelAbility.isEnabled = false
@@ -198,12 +205,12 @@ function OnReady_Untether(ability)
 end
 
 function OnCast_Reel(ability)
-	print("OnCast " .. ability.name)
+	-- print("OnCast " .. ability.name)
 end
 
 function OnExecute_Reel(ability)
-	propSlackAmount = propSlackAmount - ROPE_UNIT_LENGTH
-	print("reel in")
+	propSlackAmount = math.max(propSlackAmount - ROPE_UNIT_LENGTH * 4, ROPE_UNIT_LENGTH * 4)
+	-- print("reeled in, new slack amount is " .. propSlackAmount)
 end
 
 function OnRecovery_Reel(ability)
@@ -222,8 +229,8 @@ function OnCast_Unreel(ability)
 end
 
 function OnExecute_Unreel(ability)
-	propSlackAmount = propSlackAmount + ROPE_UNIT_LENGTH
-	print("reel out")
+	propSlackAmount = math.min(20000, propSlackAmount + ROPE_UNIT_LENGTH * 4)
+	-- print("reeled out, new slack amount is " .. propSlackAmount)
 end
 
 function OnRecovery_Unreel(ability)

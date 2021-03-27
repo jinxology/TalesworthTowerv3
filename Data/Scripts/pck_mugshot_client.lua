@@ -13,6 +13,7 @@ propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyNa
     if propertyName == "tension" then
 
     elseif propertyName == "tetheredPuck" then
+        print("got new tethered puck on client")
         tetheredPuckRef = coreObject:GetCustomProperty(propertyName)
         if tetheredPuckRef == nil then
             propTetheredPuck = nil
@@ -37,6 +38,8 @@ function UpdateTetheredState(tethered)
         print("Untethered on client")
         propTetherOffset = nil
         propTetheredPuck = nil
+        propGrapple:SetPosition(Vector3.ZERO)
+        propGrapple:SetRotation(Rotation.ZERO)
     end
 end
 

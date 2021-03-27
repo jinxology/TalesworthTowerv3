@@ -15,6 +15,7 @@ local propStartSign3 = script:GetCustomProperty("startSign3"):WaitForObject()
 local propIntakeGlow = script:GetCustomProperty("intakeGlow"):WaitForObject()
 local propIntakeLight = script:GetCustomProperty("intakeLight"):WaitForObject()
 local propBopZoneTrigger = script:GetCustomProperty("bopZoneTrigger"):WaitForObject()
+local propFlumedInTrigger = script:GetCustomProperty("flumedInTrigger"):WaitForObject()
 
 propBurstVFXTemplate = script:GetCustomProperty("burstVFX")
 propPopSFXTemplate = script:GetCustomProperty("popSFX")
@@ -219,7 +220,7 @@ end
 
 function UnloadTutorial()
 	for _, object in ipairs(propTutorialContainer:GetChildren()) do
-		print("unloading tutorial object " .. object.id)
+		-- print("unloading tutorial object " .. object.id)
 
 		-- if object.name == "bnp_balloon" then
 		-- 	local	liveBalloon = object.context.propPhysics or object.context.propEquipment
@@ -271,6 +272,14 @@ function UnloadInterior()
 	end
 end
 
+propFlumedInTrigger.beginOverlapEvent:Connect(function(trigger, player)
+	if player:IsA("Player") then
+		propPlayersFlumedIn[player] = true
+	end
+end)
+
+propPlayersFlumedIn = {}
+
 function LevelPowerUp()
 	LoadInterior()
 	LoadTutorial()
@@ -280,7 +289,9 @@ function LevelPowerUp()
 	script:SetNetworkedCustomProperty("levelStatus", 1)
 	script:SetNetworkedCustomProperty("timeRemaining", -1)
 
-	-- propBopZoneTrigger.isEnabled = false
+	propPlayersFlumedIn = {}
+	propFlumedInTrigger.isEnabled = true
+	
 end
 
 function LevelPowerDown()
@@ -294,6 +305,7 @@ end
 
 function LevelBegin()
 	UnloadTutorial()
+	propFlumedInTrigger.isEnabled = false
 	Task.Spawn(FlickerStartSign, 1.2)
 	Task.Spawn(ReadySteadyGo)
 	Task.Spawn(BeginFirstRound, 3)
@@ -641,7 +653,7 @@ function SpawnNextBalloon()
 	balloon.context.spawnedBy = spawner
 
 	if tutorialActive then
-		print("spawning balloon in tutorial")
+		-- print("spawning balloon in tutorial")
 		balloon.parent = propTutorialContainer
 	end
 

@@ -560,9 +560,15 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:levelPlayingMusic"
+      AssetReference {
+        Id: 18183129343858737568
+      }
+    }
+    Overrides {
       Name: "cs:levelMusic"
       AssetReference {
-        Id: 5959533205679778055
+        Id: 17449647410177832228
       }
     }
     Overrides {
