@@ -96,6 +96,9 @@ function RetractSpawner(index)
     Task.Wait(spawnerOutSFX.length / 2.0)
     porthole:ScaleTo(Vector3.ZERO, spawnerOutSFX.length / 2.0, true)
     Task.Wait(spawnerOutSFX.length / 2.0)
+
+    spawner.spawner:Destroy()
+    propSpawners[index] = nil
 end
 
 -- Events.Connect("pck.Tumbleweed", RollTumbleweed)

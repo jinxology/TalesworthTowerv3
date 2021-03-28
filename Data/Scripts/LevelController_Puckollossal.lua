@@ -43,6 +43,7 @@ local propLookoutAbilityTemplate = script:GetCustomProperty("lookoutAbility")
 local propTutorialCurtain
 local propWalls
 local propEntrancePipe
+local propPlayersFlumedIn = {}
 
 local propSpawnerZTravel = Vector3.New(0, 0, -350)
 local propSpawnerZRecoil = Vector3.New(0, 0, 150)
@@ -56,10 +57,18 @@ function PlayMusic()
 end
 
 function LevelPowerUp()
-     
     propWalls = World.SpawnAsset(propWallsTemplate, { parent = script.parent })
     propWalls.visibility = Visibility.FORCE_ON
     propTutorialCurtain = World.SpawnAsset(propTutorialCurtainTemplate, { parent = script.parent })
+    propTutorialCurtain:GetCustomProperty("levelEnteredTrigger"):WaitForObject().beginOverlapEvent:Connect(function(trigger, other)
+        if other:IsA("Player") then
+            if propPlayersFlumedIn[other] == nil then
+                propPlayersFlumedIn[other] = true
+                propMainGameController.context.SetLightLevel(other, 3) -- sunset
+            end
+        end
+    end)
+
     script:SetNetworkedCustomProperty("levelState", 1)
     -- propMainGameController.context.MakeWorldDark()
     
@@ -88,7 +97,7 @@ function LevelBegin()
     local   spawnConfiguration = propSpawnConfigurations[propSpawnConfigurationIndex]
     
     script:SetNetworkedCustomProperty("levelState", 2)
-    -- propMainGameController.context.MakeWorldLight()
+    
     propWalls.visibility = Visibility.FORCE_OFF
     
     position = entranceFlume:GetWorldPosition()

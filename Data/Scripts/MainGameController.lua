@@ -146,14 +146,8 @@ function StartTimerOnClients(timeLeft)
     script:SetNetworkedCustomProperty("UIMessage","02,"..timeLeft)
 end
 
-function MakeWorldDark()
-    local skylight = World.FindObjectByName("Skylight")
-    skylight:SetSmartProperty("Intensity", 0)
-end
-
-function MakeWorldLight()
-    local skylight = World.FindObjectByName("Skylight")
-    skylight:SetSmartProperty("Intensity", 1)
+function SetLightLevel(player, lightLevel)
+    Events.BroadcastToPlayer(player, "sky.SetLightLevel", lightLevel)
 end
 
 --isExit=true for exit, false for entrance
@@ -332,8 +326,7 @@ function LevelBegin()
 
         --Reset these if the players quickly restart level 1
         script:SetNetworkedCustomProperty("UIMessage","04,false, ")
-        MakeWorldLight()
-
+        
         --If started some way other than starting platforms, deactivate them
         DeactivateStartingPlatforms()
             
@@ -392,7 +385,9 @@ function LevelEnd(success)
 
     local lightsDimTime = 5
     if (not success) then
-        MakeWorldDark()
+        for _, player in pairs(Game.GetPlayers()) do
+            Events.BroadcastToPlayer("sky.SetLightLevel", 2) -- tower dark
+        end
     end
     SpawnLevelBeacons(success,lightsDimTime)
 
@@ -402,7 +397,7 @@ function LevelEnd(success)
     script:SetNetworkedCustomProperty("UIMessage","01,false,,")
 
     if (not success) then
-        MakeWorldLight()
+        Events.BroadcastToPlayer("sky.SetLightLevel", 4) -- default daytime
     end
 
 end
@@ -456,11 +451,11 @@ end
 
 function ResetTower()
     resetingTower = true
-    MakeWorldDark()
+    Events.BroadcastToPlayer("sky.SetLightLevel", 2) -- tower dark
     SpawnLevelBeacons(false, 3)
     script:SetNetworkedCustomProperty("UIMessage","07, ")
     Task.Wait(3)
-    MakeWorldLight()
+    Events.BroadcastToPlayer("sky.SetLightLevel", 4) -- default afternoon
 
     --loop through all levels and destroy them
     for i=1,#levelList do

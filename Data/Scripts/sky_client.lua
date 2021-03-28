@@ -1,0 +1,52 @@
+local propPlanet = script:GetCustomProperty("planet"):WaitForObject()
+local propRing = script:GetCustomProperty("ring"):WaitForObject()
+local propMoon = script:GetCustomProperty("moon"):WaitForObject()
+local propSun = script:GetCustomProperty("sun"):WaitForObject()
+local propSkylight = script:GetCustomProperty("skylight"):WaitForObject()
+local propDome = script:GetCustomProperty("dome"):WaitForObject()
+
+propLightLevel = 0
+
+propSunsetRotation = Rotation.New(72, -4, 45)
+propAfternoonRotation = Rotation.New(72, -40, 45)
+
+function SetLightLevel(lightLevel)
+    if lightLevel ~= propLightLevel then
+        propLightLevel = lightLevel
+        
+        if lightLevel == 0 then
+            --  dark af
+            propPlanet.visibility = Visibility.FORCE_OFF
+            propRing.visibility = Visibility.FORCE_OFF
+            propMoon.visibility = Visibility.FORCE_OFF
+            propSun.visibility = Visibility.FORCE_OFF
+            propSkylight.visibility = Visibility.FORCE_OFF
+            propDome.visibility = Visibility.FORCE_OFF
+        else
+            propPlanet.visibility = Visibility.INHERIT
+            propRing.visibility = Visibility.INHERIT
+            propMoon.visibility = Visibility.INHERIT
+            propSun.visibility = Visibility.INHERIT
+            propDome.visibility = Visibility.INHERIT
+            
+            if lightLevel == 1 then
+                --  world dark
+                propSkylight.visibility = Visibility.FORCE_OFF
+                propSun:SetWorldRotation(propAfternoonRotation)
+            elseif lightLevel == 2 then
+                --  tower dark
+                propSun:SetWorldRotation(propAfternoonRotation)
+                propSkylight.visibility = Visibility.INHERIT 
+            elseif lightLevel == 3 then
+                propSun:SetWorldRotation(propSunsetRotation)
+                --  sunset 
+            elseif lightLevel == 4 then
+                propSun:SetWorldRotation(propAfternoonRotation)
+                --  afternoon
+            end
+        end
+    end
+end
+
+SetLightLevel(4)
+Events.Connect("sky.SetLightLevel", SetLightLevel)

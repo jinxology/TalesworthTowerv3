@@ -152,15 +152,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10004799667442629586
-  Name: "Invisible"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_invisible_001"
-  }
-}
-Assets {
   Id: 9068053932228334318
   Name: "Sci-fi Meta Power Up 04 SFX"
   PlatformAssetType: 7
