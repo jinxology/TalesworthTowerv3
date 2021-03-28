@@ -13,9 +13,6 @@ function OnBeginOverlap(whichTrigger, other)
 		--local normal = propForcefield:GetTransform():GetForwardVector()
 		--player:SetVelocity(normal * propVelocityMultiplier)	
 
-		--	reset light level
-		Events.BroadcastToPlayer(player, "sky.SetLightLevel", 4)
-
         local originPt = player:GetWorldPosition()
         local destPt = propWhooshVectorTarget:GetWorldPosition()
         --(b.x - a.x, b.y - a.y, b.z - a.z)

@@ -386,7 +386,8 @@ function LevelEnd(success)
     local lightsDimTime = 5
     if (not success) then
         for _, player in pairs(Game.GetPlayers()) do
-            Events.BroadcastToPlayer("sky.SetLightLevel", 2) -- tower dark
+            print("dim lights for " .. player.name)
+            SetLightLevel(player, 2)
         end
     end
     SpawnLevelBeacons(success,lightsDimTime)
@@ -397,7 +398,9 @@ function LevelEnd(success)
     script:SetNetworkedCustomProperty("UIMessage","01,false,,")
 
     if (not success) then
-        Events.BroadcastToPlayer("sky.SetLightLevel", 4) -- default daytime
+        for _, player in pairs(Game.GetPlayers()) do
+            SetLightLevel(player, 4)
+        end
     end
 
 end
@@ -451,11 +454,15 @@ end
 
 function ResetTower()
     resetingTower = true
-    Events.BroadcastToPlayer("sky.SetLightLevel", 2) -- tower dark
+    for _, player in pairs(Game.GetPlayers()) do
+        SetLightLevel(player, 2)
+    end
     SpawnLevelBeacons(false, 3)
     script:SetNetworkedCustomProperty("UIMessage","07, ")
     Task.Wait(3)
-    Events.BroadcastToPlayer("sky.SetLightLevel", 4) -- default afternoon
+    for _, player in pairs(Game.GetPlayers()) do
+        SetLightLevel(player, 4)
+    end
 
     --loop through all levels and destroy them
     for i=1,#levelList do

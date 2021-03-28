@@ -1195,6 +1195,12 @@ Objects {
         SelfId: 2483886419630832476
       }
     }
+    Overrides {
+      Name: "cs:fog"
+      ObjectReference {
+        SelfId: 8685573234042068311
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

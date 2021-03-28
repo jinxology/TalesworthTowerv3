@@ -4,6 +4,7 @@ local propMoon = script:GetCustomProperty("moon"):WaitForObject()
 local propSun = script:GetCustomProperty("sun"):WaitForObject()
 local propSkylight = script:GetCustomProperty("skylight"):WaitForObject()
 local propDome = script:GetCustomProperty("dome"):WaitForObject()
+local propFog = script:GetCustomProperty("fog"):WaitForObject()
 
 propLightLevel = 0
 
@@ -12,9 +13,10 @@ propAfternoonRotation = Rotation.New(72, -40, 45)
 
 function SetLightLevel(lightLevel)
     if lightLevel ~= propLightLevel then
+        print("received light level from server " .. lightLevel)
         propLightLevel = lightLevel
         
-        if lightLevel == 0 then
+        if lightLevel < 2 then
             --  dark af
             propPlanet.visibility = Visibility.FORCE_OFF
             propRing.visibility = Visibility.FORCE_OFF
@@ -22,25 +24,33 @@ function SetLightLevel(lightLevel)
             propSun.visibility = Visibility.FORCE_OFF
             propSkylight.visibility = Visibility.FORCE_OFF
             propDome.visibility = Visibility.FORCE_OFF
+            
+            if lightLevel == 0 then
+               propFog.visibility = Visibility.FORCE_OFF
+            else
+                --  world dark
+                propFog.visibility = Visibility.FORCE_ON
+            end
         else
+            --  sky on... what else?
             propPlanet.visibility = Visibility.INHERIT
             propRing.visibility = Visibility.INHERIT
             propMoon.visibility = Visibility.INHERIT
             propSun.visibility = Visibility.INHERIT
             propDome.visibility = Visibility.INHERIT
-            
-            if lightLevel == 1 then
-                --  world dark
-                propSkylight.visibility = Visibility.FORCE_OFF
-                propSun:SetWorldRotation(propAfternoonRotation)
-            elseif lightLevel == 2 then
+            propFog.visibility = Visibility.INHERIT
+
+            if lightLevel == 2 then
                 --  tower dark
                 propSun:SetWorldRotation(propAfternoonRotation)
-                propSkylight.visibility = Visibility.INHERIT 
+                propSkylight.visibility = Visibility.FORCE_OFF 
+                propSun:SetWorldRotation(propAfternoonRotation)
             elseif lightLevel == 3 then
-                propSun:SetWorldRotation(propSunsetRotation)
                 --  sunset 
+                propSkylight.visibility = Visibility.INHERIT 
+                propSun:SetWorldRotation(propSunsetRotation)
             elseif lightLevel == 4 then
+                propSkylight.visibility = Visibility.INHERIT 
                 propSun:SetWorldRotation(propAfternoonRotation)
                 --  afternoon
             end
