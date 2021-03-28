@@ -736,6 +736,7 @@ Assets {
           }
         }
         ParentId: 6513163486087200886
+        ChildIds: 11376219262442774661
         ChildIds: 6318775851616436255
         ChildIds: 13105115123571185527
         ChildIds: 11502802023227318829
@@ -752,6 +753,154 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 11376219262442774661
+        Name: "tetherVFX"
+        Transform {
+          Location {
+            X: 2.29269052
+            Z: -2.77330875
+          }
+          Rotation {
+            Yaw: -179.999985
+            Roll: 89.999939
+          }
+          Scale {
+            X: 1.2
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17542475088066571908
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Target Scene Object Reference"
+            ObjectReference {
+              SubObjectId: 1252167332931131001
+            }
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Secondary Color"
+            Color {
+              R: 0.13499999
+              G: 0.0536423847
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Tertiary Color"
+            Color {
+              R: 0.13499999
+              G: 0.0536423847
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 4
+          }
+          Overrides {
+            Name: "bp:Beam Width"
+            Float: 0.25
+          }
+          Overrides {
+            Name: "bp:Beam Appearance"
+            Enum {
+              Value: "mc:ebeamtexturetype:0"
+            }
+          }
+          Overrides {
+            Name: "bp:Color Offset A"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Texture Scale"
+            Float: 0.97
+          }
+          Overrides {
+            Name: "bp:Texture Scroll Speed"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Texture Noise Amount"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Texture Noise Speed"
+            Float: 5
+          }
+          Overrides {
+            Name: "bp:Displacement Amount"
+            Float: 0.0659069717
+          }
+          Overrides {
+            Name: "bp:Displacement Speed"
+            Float: 10
+          }
+          Overrides {
+            Name: "bp:Displacement Scale"
+            Float: 10
+          }
+          Overrides {
+            Name: "bp:Displacement Axis Scale"
+            Vector {
+              Y: 2.51847
+            }
+          }
+          Overrides {
+            Name: "bp:Source Tangent"
+            Vector {
+              Y: 0.001
+              Z: 0.001
+            }
+          }
+          Overrides {
+            Name: "bp:Target Tangent"
+            Vector {
+              Y: 0.001
+              Z: 0.001
+            }
+          }
+          Overrides {
+            Name: "bp:Local Space"
+            Bool: true
+          }
+          Overrides {
+            Name: "bp:Color Offset B"
+            Float: 0.5
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 13319522537581195305
+          }
+          TeamSettings {
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -1037,7 +1186,6 @@ Assets {
           }
         }
         ParentId: 6513163486087200886
-        ChildIds: 11376219262442774661
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1061,153 +1209,6 @@ Assets {
               LinearDamping: 0.01
             }
           }
-        }
-      }
-      Objects {
-        Id: 11376219262442774661
-        Name: "tetherVFX"
-        Transform {
-          Location {
-            X: 39.1903
-            Y: 0.00060606
-            Z: -1.33514404e-05
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 1252167332931131001
-        UnregisteredParameters {
-          Overrides {
-            Name: "bp:Target Scene Object Reference"
-            ObjectReference {
-              SubObjectId: 17542475088066571908
-            }
-          }
-          Overrides {
-            Name: "bp:Color"
-            Color {
-              G: 1
-              B: 1
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "bp:Secondary Color"
-            Color {
-              R: 0.13499999
-              G: 0.0536423847
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "bp:Tertiary Color"
-            Color {
-              R: 0.13499999
-              G: 0.0536423847
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "bp:Emissive Boost"
-            Float: 4
-          }
-          Overrides {
-            Name: "bp:Beam Width"
-            Float: 0.25
-          }
-          Overrides {
-            Name: "bp:Beam Appearance"
-            Enum {
-              Value: "mc:ebeamtexturetype:0"
-            }
-          }
-          Overrides {
-            Name: "bp:Color Offset A"
-            Float: 0
-          }
-          Overrides {
-            Name: "bp:Texture Scale"
-            Float: 0.97
-          }
-          Overrides {
-            Name: "bp:Texture Scroll Speed"
-            Float: 0
-          }
-          Overrides {
-            Name: "bp:Texture Noise Amount"
-            Float: 0
-          }
-          Overrides {
-            Name: "bp:Texture Noise Speed"
-            Float: 5
-          }
-          Overrides {
-            Name: "bp:Displacement Amount"
-            Float: 0.0659069717
-          }
-          Overrides {
-            Name: "bp:Displacement Speed"
-            Float: 10
-          }
-          Overrides {
-            Name: "bp:Displacement Scale"
-            Float: 10
-          }
-          Overrides {
-            Name: "bp:Displacement Axis Scale"
-            Vector {
-              Y: 2.51847
-            }
-          }
-          Overrides {
-            Name: "bp:Source Tangent"
-            Vector {
-              Y: 0.001
-              Z: 0.001
-            }
-          }
-          Overrides {
-            Name: "bp:Target Tangent"
-            Vector {
-              Y: 0.001
-              Z: 0.001
-            }
-          }
-          Overrides {
-            Name: "bp:Local Space"
-            Bool: true
-          }
-          Overrides {
-            Name: "bp:Color Offset B"
-            Float: 0.5
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Blueprint {
-          BlueprintAsset {
-            Id: 13319522537581195305
-          }
-          TeamSettings {
-          }
-          Vfx {
-            AutoPlay: true
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:medium"
         }
       }
       Objects {
@@ -1844,6 +1845,15 @@ Assets {
       }
     }
     Assets {
+      Id: 13319522537581195305
+      Name: "Point To Point Electrical Beam VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_ptp_electrical_beam"
+      }
+    }
+    Assets {
       Id: 1920010878601219178
       Name: "Fantasy Sword Guard 01"
       PlatformAssetType: 1
@@ -1886,15 +1896,6 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_weap_modern_barrel_001"
-      }
-    }
-    Assets {
-      Id: 13319522537581195305
-      Name: "Point To Point Electrical Beam VFX"
-      PlatformAssetType: 8
-      PrimaryAsset {
-        AssetType: "VfxBlueprintAssetRef"
-        AssetId: "fxbp_ptp_electrical_beam"
       }
     }
     Assets {

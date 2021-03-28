@@ -1,3 +1,5 @@
+-- ftp acab xo paegrid
+
 local propMainGameController = script:GetCustomProperty("gameController"):WaitForObject()
 local propScoreTrigger = script:GetCustomProperty("scoreTrigger"):WaitForObject()
 local propScoreSFX = script:GetCustomProperty("scoreSFX"):WaitForObject()

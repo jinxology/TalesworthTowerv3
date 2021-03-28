@@ -1,4 +1,5 @@
 local   propServer = script:GetCustomProperty("mugshotServer"):WaitForObject()
+local   propEquipment = propServer:GetCustomProperty("equipment"):WaitForObject()
 local   propTetherOffset = nil
 local   propTetheredToTarget = false
 local   propTetherTravel = 0.0
@@ -12,21 +13,8 @@ local   propTetherVFX = script:GetCustomProperty("tetherVFX"):WaitForObject()
 propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
     if propertyName == "tension" then
         propTension = coreObject:GetCustomProperty(propertyName)
-    elseif propertyName == "tetheredPuck" then
-        tetheredPuckRef = coreObject:GetCustomProperty(propertyName)
-        if tetheredPuckRef == nil then
-            -- propTetherVFX.visibility = Visibility.FORCE_OFF
-            propTetheredPuck = nil
-            propTetherOffset = nil
-            propTetheredToTarget = false
-        else
-            propTetheredPuck = tetheredPuckRef:WaitForObject()
-            -- propTetherVFX.visibility = Visibility.FORCE_ON
-        end
     elseif propertyName == "tetherOffset" then
         propTetherOffset = coreObject:GetCustomProperty(propertyName)
-    elseif propertyName == "tetheredToTarget" then
-        UpdateTetheredState(coreObject:GetCustomProperty(propertyName))
     elseif propertyName == "tetherTravel" then
         UpdateTetherTravel(coreObject:GetCustomProperty(propertyName))
     end
@@ -36,12 +24,12 @@ propTensionProperies = {
     -- 1: slack (or traveling)
     {
         colors = {
-            ["Color"] = Color.FromStandardHex("00F4FCFF"),
+            ["Color"] = Color.FromStandardHex("674100FF"),
             ["Secondary Color"] = Color.FromStandardHex("674100FF"),
-            ["Tertiary Color"] = Color.FromStandardHex("674100FF"),
+            ["Tertiary Color"] = Color.FromStandardHex("00F4FCFF"),
         },
         numbers = {
-            ["Color Offset B"] = 0.1,
+            ["Color Offset B"] = 0.9,
             ["Emissive Boost"] = 4.0,
             ["Beam Width"] = 0.6,
             ["Texture Scale"] = 0.0,
@@ -53,21 +41,21 @@ propTensionProperies = {
             ["Displacement Scale"] = 2.0,
         },
         vectors = {
-            ["Displacement Axis Scale"] = Vector3.New(0, 20, 20),
-            ["Source Tangent"] = Vector3.New(0, 0.001, 0.001),
-            ["Target Tangent"] = Vector3.New(0, 0.001, 0.001),
+            ["Displacement Axis Scale"] = Vector3.New(20, 20, 10),
+            ["Source Tangent"] = Vector3.New(0, 0.001, 1.501),
+            ["Target Tangent"] = Vector3.New(0, 0.001, 1.501),
         }
     },
         
     -- 2: loose
     {
         colors = {
-            ["Color"] = Color.FromStandardHex("00F4FCFF"),
+            ["Color"] = Color.FromStandardHex("674100FF"),
             ["Secondary Color"] = Color.FromStandardHex("674100FF"),
-            ["Tertiary Color"] = Color.FromStandardHex("674100FF"),
+            ["Tertiary Color"] = Color.FromStandardHex("00F4FCFF"),
         },
         numbers = {
-            ["Color Offset B"] = 0.1,
+            ["Color Offset B"] = 0.9,
             ["Emissive Boost"] = 4.0,
             ["Beam Width"] = 0.5,
             ["Texture Scale"] = 0.97,
@@ -87,9 +75,9 @@ propTensionProperies = {
         -- 3: taut
     {
         colors = {
-            ["Color"] = Color.FromStandardHex("00F4FCFF"),
+            ["Color"] = Color.FromStandardHex("674100FF"),
             ["Secondary Color"] = Color.FromStandardHex("674100FF"),
-            ["Tertiary Color"] = Color.FromStandardHex("674100FF"),
+            ["Tertiary Color"] = Color.FromStandardHex("00F4FCFF"),
         },
         numbers = {
             ["Color Offset B"] = 0.5,
@@ -112,12 +100,12 @@ propTensionProperies = {
     -- 4: breaking
     {
         colors = {
-            ["Color"] = Color.FromStandardHex("BC00FFFF"),
+            ["Color"] = Color.FromStandardHex("FF0000FF"),
             ["Secondary Color"] = Color.FromStandardHex("FF00E1FF"),
-            ["Tertiary Color"] = Color.FromStandardHex("FF0000FF"),
+            ["Tertiary Color"] = Color.FromStandardHex("BC00FFFF"),
         },
         numbers = {
-            ["Color Offset B"] = 0.1,
+            ["Color Offset B"] = 0.9,
             ["Emissive Boost"] = 10.0,
             ["Beam Width"] = 0.05,
             ["Texture Scale"] = 0.0,
@@ -138,23 +126,6 @@ propTensionProperies = {
 
 local   propTetherAttachStartTime = 0
 local   propTetherAttachDuration = 0
-
-function UpdateTetheredState(tethered)
-    if propTetheredToTarget ~= tethered then
-        propTetheredToTarget = tethered
-
-        if propTetheredToTarget then            propTetherAttachStartTime = time()
-            propTetherAttachDuration = 1
-            --  play sound
-        else
-            propTetherOffset = nil
-            propTetheredPuck = nil
-            propGrapple:SetPosition(Vector3.ZERO)
-            propGrapple:SetRotation(Rotation.ZERO)
-            -- propTetherVFX.visibility = Visibility.FORCE_OFF
-        end
-    end
-end
 
 function UpdateTetherTravel(tetherTravel)
     propTetherTravel = tetherTravel
@@ -185,9 +156,10 @@ function Tick()
         local   from = propBarrel:GetWorldPosition()
         local   tetherVFXProperties = nil
         local   tetherTravel = (anchorPosition - from)
+        local   vertical = Vector3.UP * 500 * (1 - (2 * (propTetherTravel - 0.5)) ^ 2)
 
         tetherTravel = tetherTravel - tetherTravel:GetNormalized() * GRAPPLE_SIZE
-        propGrapple:SetWorldPosition(from + tetherTravel * propTetherTravel)
+        propGrapple:SetWorldPosition(from + tetherTravel * propTetherTravel + vertical)
         
         if propTetheredToTarget then
             local   fromProperties = nil
@@ -245,3 +217,39 @@ function UpdateTetherVFX(properties)
         end
     end
 end
+
+function OnMugshotAimed(mugshot, puck, aimed)
+    if mugshot:WaitForObject() == propEquipment then
+        if aimed then
+            propTetheredPuck = puck:WaitForObject()
+            -- propTetherVFX.isEnabled = true
+        else
+            propTetheredPuck = nil
+            propTetherTravel = 0
+            -- propTetherVFX.isEnabled = false
+            propGrapple:SetPosition(Vector3.ZERO)
+            propGrapple:SetRotation(Rotation.ZERO)
+        end
+    end
+end
+
+function OnMugshotTethered(mugshot, puck, tethered)
+    if mugshot:WaitForObject() == propEquipment then
+        propTetheredToTarget = tethered
+        if tethered then
+            propTetherAttachStartTime = time()
+            propTetherAttachDuration = 1
+            -- play sound
+        else
+            propTetheredPuck = nil
+            propTetherTravel = 0
+            -- propTetherVFX.isEnabled = false
+            propGrapple:SetPosition(Vector3.ZERO)
+            propGrapple:SetRotation(Rotation.ZERO)
+        end
+    end
+end
+
+Events.Connect("pck.mugshotAimed", OnMugshotAimed)
+Events.Connect("pck.mugshotTethered", OnMugshotTethered)
+
