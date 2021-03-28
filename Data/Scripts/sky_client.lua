@@ -13,7 +13,6 @@ propAfternoonRotation = Rotation.New(72, -40, 45)
 
 function SetLightLevel(lightLevel)
     if lightLevel ~= propLightLevel then
-        print("received light level from server " .. lightLevel)
         propLightLevel = lightLevel
         
         if lightLevel < 2 then

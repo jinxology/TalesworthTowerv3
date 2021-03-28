@@ -7,6 +7,7 @@ local propPuckTemplate = script:GetCustomProperty("puckTemplate")
 local propMugshotTemplate = script:GetCustomProperty("mugshotTemplate")
 local propMusic = script:GetCustomProperty("music"):WaitForObject()
 local propLookoutAbility = script:GetCustomProperty("lookoutAbility")
+local propBumpers = script:GetCustomProperty("bumpers"):WaitForObject()
 -- local Ease3D = require(script:GetCustomProperty("Ease3D"))
 local propEntrancePipeTemplate = script:GetCustomProperty("entrancePipeTemplate")
 
@@ -56,6 +57,23 @@ function PlayMusic()
     propMusic:FadeOut(10)
 end
 
+function ConnectBumpers(container)
+    for _, bumper in pairs(container:GetChildren()) do
+        if bumper:IsA("Trigger") then
+            bumper.beginOverlapEvent:Connect(function(trigger, other)
+                if other:IsA("Player") then
+                    print("bzzzzt beat it player")
+                else
+                    print("object entered " .. other.type .. " " .. other.id)
+                end
+            end)
+        else
+            ConnectBumpers(bumper)
+        end
+    end
+end
+        
+
 function LevelPowerUp()
     propWalls = World.SpawnAsset(propWallsTemplate, { parent = script.parent })
     propWalls.visibility = Visibility.FORCE_ON
@@ -70,8 +88,9 @@ function LevelPowerUp()
     end)
 
     script:SetNetworkedCustomProperty("levelState", 1)
-    -- propMainGameController.context.MakeWorldDark()
     
+    ConnectBumpers(propBumpers)
+
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, 125, 50), rotation = Rotation.New(-135, 90, 0), parent = script.parent }))
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, -125, 50), rotation = Rotation.New(135, 90, 0), parent = script.parent }))
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, -375, 50), rotation = Rotation.New(135, 90, 0), parent = script.parent }))
@@ -80,6 +99,8 @@ end
 
 function LevelPlayerEntered(player)
     local lookoutAbility = World.SpawnAsset(propLookoutAbilityTemplate)
+
+    player.serverUserData.safeZoneCount = 0
 
     lookoutAbility.owner = player
     player.serverUserData.pckLookoutAbility = lookoutAbility

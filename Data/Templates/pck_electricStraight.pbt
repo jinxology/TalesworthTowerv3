@@ -1,13 +1,13 @@
 Assets {
-  Id: 13418728879169256502
-  Name: "pck.barbwireStraight"
+  Id: 10924982903330412463
+  Name: "pck.electricStraight"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 13479217049159024867
+      RootId: 14046128364520476487
       Objects {
-        Id: 13479217049159024867
-        Name: "pck.barbwireStraight"
+        Id: 14046128364520476487
+        Name: "pck.electricStraight"
         Transform {
           Scale {
             X: 1
@@ -15,8 +15,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 2805378233529989484
-        ChildIds: 16488803875152966911
+        ParentId: 930778993356100130
+        ChildIds: 3608244011574543003
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -31,7 +31,7 @@ Assets {
         }
       }
       Objects {
-        Id: 16488803875152966911
+        Id: 3608244011574543003
         Name: "segment"
         Transform {
           Location {
@@ -44,9 +44,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13479217049159024867
-        ChildIds: 2433781690343472497
-        ChildIds: 17542878949750044864
+        ParentId: 14046128364520476487
+        ChildIds: 5559673333510686710
+        ChildIds: 3785637576087616800
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -61,7 +61,7 @@ Assets {
         }
       }
       Objects {
-        Id: 2433781690343472497
+        Id: 5559673333510686710
         Name: "Helix - 1.0"
         Transform {
           Location {
@@ -75,12 +75,12 @@ Assets {
             Z: 3.0555
           }
         }
-        ParentId: 16488803875152966911
+        ParentId: 3608244011574543003
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15311694679467806527
+              Id: 17767529267016895003
             }
           }
           Overrides {
@@ -94,6 +94,14 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 0.3056
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -123,7 +131,7 @@ Assets {
         }
       }
       Objects {
-        Id: 17542878949750044864
+        Id: 3785637576087616800
         Name: "segment"
         Transform {
           Location {
@@ -137,9 +145,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16488803875152966911
-        ChildIds: 5639667068744853839
-        ChildIds: 6596599446677777590
+        ParentId: 3608244011574543003
+        ChildIds: 14516431898322885061
+        ChildIds: 9119736708445530373
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -154,7 +162,7 @@ Assets {
         }
       }
       Objects {
-        Id: 5639667068744853839
+        Id: 14516431898322885061
         Name: "Helix - 1.0"
         Transform {
           Location {
@@ -168,12 +176,12 @@ Assets {
             Z: 3.0555
           }
         }
-        ParentId: 17542878949750044864
+        ParentId: 3785637576087616800
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15311694679467806527
+              Id: 17767529267016895003
             }
           }
           Overrides {
@@ -187,6 +195,14 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 0.3056
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -216,7 +232,7 @@ Assets {
         }
       }
       Objects {
-        Id: 6596599446677777590
+        Id: 9119736708445530373
         Name: "segment"
         Transform {
           Location {
@@ -230,9 +246,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 17542878949750044864
-        ChildIds: 14147293316469933262
-        ChildIds: 2735699870093976912
+        ParentId: 3785637576087616800
+        ChildIds: 13797197187230397577
+        ChildIds: 10718997096741841872
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -247,7 +263,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14147293316469933262
+        Id: 13797197187230397577
         Name: "Helix - 1.0"
         Transform {
           Location {
@@ -261,12 +277,12 @@ Assets {
             Z: 3.0555
           }
         }
-        ParentId: 6596599446677777590
+        ParentId: 9119736708445530373
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15311694679467806527
+              Id: 17767529267016895003
             }
           }
           Overrides {
@@ -280,6 +296,14 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 0.3056
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -309,7 +333,7 @@ Assets {
         }
       }
       Objects {
-        Id: 2735699870093976912
+        Id: 10718997096741841872
         Name: "segment"
         Transform {
           Location {
@@ -323,9 +347,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 6596599446677777590
-        ChildIds: 1711062785296631939
-        ChildIds: 2840072534295341232
+        ParentId: 9119736708445530373
+        ChildIds: 11725090408465035692
+        ChildIds: 7662713086914345849
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -340,7 +364,7 @@ Assets {
         }
       }
       Objects {
-        Id: 1711062785296631939
+        Id: 11725090408465035692
         Name: "Helix - 1.0"
         Transform {
           Location {
@@ -354,12 +378,12 @@ Assets {
             Z: 3.0555
           }
         }
-        ParentId: 2735699870093976912
+        ParentId: 10718997096741841872
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15311694679467806527
+              Id: 17767529267016895003
             }
           }
           Overrides {
@@ -373,6 +397,14 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 0.3056
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -402,7 +434,7 @@ Assets {
         }
       }
       Objects {
-        Id: 2840072534295341232
+        Id: 7662713086914345849
         Name: "segment"
         Transform {
           Location {
@@ -416,9 +448,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 2735699870093976912
-        ChildIds: 5047339987948505711
-        ChildIds: 471350434084963628
+        ParentId: 10718997096741841872
+        ChildIds: 11051798291925801584
+        ChildIds: 17113667299229074466
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -433,7 +465,7 @@ Assets {
         }
       }
       Objects {
-        Id: 5047339987948505711
+        Id: 11051798291925801584
         Name: "Helix - 1.0"
         Transform {
           Location {
@@ -447,12 +479,12 @@ Assets {
             Z: 3.0555
           }
         }
-        ParentId: 2840072534295341232
+        ParentId: 7662713086914345849
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15311694679467806527
+              Id: 17767529267016895003
             }
           }
           Overrides {
@@ -466,6 +498,14 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 0.3056
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -495,7 +535,7 @@ Assets {
         }
       }
       Objects {
-        Id: 471350434084963628
+        Id: 17113667299229074466
         Name: "segment"
         Transform {
           Location {
@@ -509,9 +549,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 2840072534295341232
-        ChildIds: 7089277260465045560
-        ChildIds: 8300072795251868203
+        ParentId: 7662713086914345849
+        ChildIds: 12965754754223940396
+        ChildIds: 5325439064787415280
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -526,7 +566,7 @@ Assets {
         }
       }
       Objects {
-        Id: 7089277260465045560
+        Id: 12965754754223940396
         Name: "Helix - 1.0"
         Transform {
           Location {
@@ -540,12 +580,12 @@ Assets {
             Z: 3.0555
           }
         }
-        ParentId: 471350434084963628
+        ParentId: 17113667299229074466
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15311694679467806527
+              Id: 17767529267016895003
             }
           }
           Overrides {
@@ -559,6 +599,14 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 0.3056
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -588,7 +636,7 @@ Assets {
         }
       }
       Objects {
-        Id: 8300072795251868203
+        Id: 5325439064787415280
         Name: "segment"
         Transform {
           Location {
@@ -602,9 +650,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 471350434084963628
-        ChildIds: 4790523077529691234
-        ChildIds: 1742310733205163836
+        ParentId: 17113667299229074466
+        ChildIds: 5274555899574562163
+        ChildIds: 13838171083993907562
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -619,7 +667,7 @@ Assets {
         }
       }
       Objects {
-        Id: 4790523077529691234
+        Id: 5274555899574562163
         Name: "Helix - 1.0"
         Transform {
           Location {
@@ -633,12 +681,12 @@ Assets {
             Z: 3.0555
           }
         }
-        ParentId: 8300072795251868203
+        ParentId: 5325439064787415280
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15311694679467806527
+              Id: 17767529267016895003
             }
           }
           Overrides {
@@ -652,6 +700,14 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 0.3056
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -681,7 +737,7 @@ Assets {
         }
       }
       Objects {
-        Id: 1742310733205163836
+        Id: 13838171083993907562
         Name: "segment"
         Transform {
           Location {
@@ -695,9 +751,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8300072795251868203
-        ChildIds: 7817452117816845190
-        ChildIds: 2713693838490643964
+        ParentId: 5325439064787415280
+        ChildIds: 5408664527615736609
+        ChildIds: 13898842461830232905
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -712,7 +768,7 @@ Assets {
         }
       }
       Objects {
-        Id: 7817452117816845190
+        Id: 5408664527615736609
         Name: "Helix - 1.0"
         Transform {
           Location {
@@ -726,12 +782,12 @@ Assets {
             Z: 3.0555
           }
         }
-        ParentId: 1742310733205163836
+        ParentId: 13838171083993907562
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15311694679467806527
+              Id: 17767529267016895003
             }
           }
           Overrides {
@@ -745,6 +801,14 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 0.3056
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -774,7 +838,7 @@ Assets {
         }
       }
       Objects {
-        Id: 2713693838490643964
+        Id: 13898842461830232905
         Name: "segment"
         Transform {
           Location {
@@ -788,9 +852,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1742310733205163836
-        ChildIds: 12645845789245720009
-        ChildIds: 5533985942205926505
+        ParentId: 13838171083993907562
+        ChildIds: 14630599315815445033
+        ChildIds: 11386494661616453245
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -805,7 +869,7 @@ Assets {
         }
       }
       Objects {
-        Id: 12645845789245720009
+        Id: 14630599315815445033
         Name: "Helix - 1.0"
         Transform {
           Location {
@@ -819,12 +883,12 @@ Assets {
             Z: 3.0555
           }
         }
-        ParentId: 2713693838490643964
+        ParentId: 13898842461830232905
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15311694679467806527
+              Id: 17767529267016895003
             }
           }
           Overrides {
@@ -838,6 +902,14 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 0.3056
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -867,7 +939,7 @@ Assets {
         }
       }
       Objects {
-        Id: 5533985942205926505
+        Id: 11386494661616453245
         Name: "segment"
         Transform {
           Location {
@@ -881,9 +953,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 2713693838490643964
-        ChildIds: 5859340159247991533
-        ChildIds: 2603172645377434054
+        ParentId: 13898842461830232905
+        ChildIds: 8859264489189913303
+        ChildIds: 803414154969659011
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -898,7 +970,7 @@ Assets {
         }
       }
       Objects {
-        Id: 5859340159247991533
+        Id: 8859264489189913303
         Name: "Helix - 1.0"
         Transform {
           Location {
@@ -912,12 +984,12 @@ Assets {
             Z: 3.0555
           }
         }
-        ParentId: 5533985942205926505
+        ParentId: 11386494661616453245
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15311694679467806527
+              Id: 17767529267016895003
             }
           }
           Overrides {
@@ -931,6 +1003,14 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 0.3056
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -960,7 +1040,7 @@ Assets {
         }
       }
       Objects {
-        Id: 2603172645377434054
+        Id: 803414154969659011
         Name: "segment"
         Transform {
           Location {
@@ -974,8 +1054,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5533985942205926505
-        ChildIds: 12928488931950789735
+        ParentId: 11386494661616453245
+        ChildIds: 4793437455773893699
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -990,7 +1070,7 @@ Assets {
         }
       }
       Objects {
-        Id: 12928488931950789735
+        Id: 4793437455773893699
         Name: "Helix - 1.0"
         Transform {
           Location {
@@ -1004,12 +1084,12 @@ Assets {
             Z: 3.0555
           }
         }
-        ParentId: 2603172645377434054
+        ParentId: 803414154969659011
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 15311694679467806527
+              Id: 17767529267016895003
             }
           }
           Overrides {
@@ -1023,6 +1103,14 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 0.3056
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
           }
         }
         Collidable_v2 {
@@ -1059,15 +1147,6 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_helix_005"
-      }
-    }
-    Assets {
-      Id: 15311694679467806527
-      Name: "Barbed Wire 01"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_mil_barbed_wire_001_uv_ref"
       }
     }
     PrimaryAssetId {

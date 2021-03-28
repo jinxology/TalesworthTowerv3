@@ -12,6 +12,7 @@ local propReelSFX = script:GetCustomProperty("reelSFX"):WaitForObject()
 local propTargetedPuck = nil
 local propTargetedAnchor = 0	-- 1..4
 local propTetheredToTarget = false
+local propTetherTravelDistance = 0
 
 slackAmount = 0
 
@@ -90,12 +91,13 @@ end
 
 function TetherLanded()
 	-- print("Tether landed, checking success...")
+	propReelSFX:Stop()
 	propTargetedAnchor = propTargetedPuck.context.TetherMugshotToEligibleAnchor(propEquipment, CheckAim(propTargetedPuck).anchors)
 	if propTargetedAnchor == 0 then
 		propTargetedPuck = nil
 		propTargetedPuck.context.propClankSFX:Play()
 	else
-		-- print("Tethered successfully!")
+		print("Tethered successfully!")
 		propTetheredToTarget = true
 		script:SetNetworkedCustomProperty("tetheredToTarget", true)
 		propTetherTravelTask:Cancel()
@@ -109,30 +111,25 @@ function TetherLanded()
 end
 
 function OnExecute_Tether(ability)
-	local		ringPosition = propTargetedPuck:GetWorldPosition() + propTargetedPuck.context.propAnchorPositions[propTargetedAnchor]
-	local		distance = (propEquipment:GetWorldPosition() - ringPosition).size
-	
-	propTetherTravelTotalTime = distance / TETHER_TRAVEL_SPEED
-	propTetherTravelStartTime = time()
-	propTetherTravelEndTime = propTetherTravelStartTime + propTetherTravelTotalTime
-
-	-- print("Execution should take " .. propTetherTravelTotalTime .. " seconds")
 	propCast1SFX:Play()
 	propReelSFX.fadeInTime = propCast1SFX.length - propCast1SFX.startTime
 	-- propReelSFX.stopTime = propTetherTravelTotalTime
 	propReelSFX:Play()
+	propTetherTravelDistance = 0
 	propTetherTravelTask = Task.Spawn(TetherTraveled)
 	propTetherTravelTask.repeatCount = -1
 end
 
-function TetherTraveled()
-	local	currentTime = time()
-	
-	propReelSFX:Stop()
-	script:SetNetworkedCustomProperty("tetherTravel", (currentTime - propTetherTravelStartTime) / propTetherTravelTotalTime)
+function TetherTraveled(deltaTime)
+	local		ringPosition = propTargetedPuck:GetWorldPosition() + propTargetedPuck.context.propAnchorPositions[propTargetedAnchor]
+	local		distance = (propEquipment:GetWorldPosition() - ringPosition).size
 
-	if currentTime > propTetherTravelEndTime then
+	propTetherTravelDistance = propTetherTravelDistance + TETHER_TRAVEL_SPEED * deltaTime
+
+	if propTetherTravelDistance > distance then
 		TetherLanded()
+	else
+		script:SetNetworkedCustomProperty("tetherTravel", propTetherTravelDistance / distance)
 	end
 end
 
