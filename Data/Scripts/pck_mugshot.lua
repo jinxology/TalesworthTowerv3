@@ -238,7 +238,38 @@ end
 function OnCast_Unreel(ability)
 end
 
+-- function FlyPlayer(player)
+-- 	print("fly player" .. player.id)
+-- 	local	startTime = time()
+
+-- 	player:EnableRagdoll("lower_spine", .4)
+-- 	player:EnableRagdoll("right_shoulder", .2)
+-- 	player:EnableRagdoll("left_shoulder", .6)
+-- 	player:EnableRagdoll("right_hip", .6)
+-- 	player:EnableRagdoll("left_hip", .6)		
+
+-- 	player.gravityScale = 0
+-- 	player:SetWorldPosition(player:GetWorldPosition() + Vector3.New(-6000, 0, 500))
+-- 	local	startPosition = player:GetWorldPosition()
+	
+-- 	flipAround = Task.Spawn(function()
+-- 		local	tickTime = time()
+-- 		local	t = tickTime - startTime
+		
+-- 		player:SetWorldRotation(Rotation.New(t * 60, t * 1.4, 0))
+-- 		player:SetWorldPosition(startPosition + Vector3.New(1000 * t, 500 * math.sin(t * math.pi), 500 * math.cos(t * math.pi)))
+-- 	end)
+-- 	flipAround.repeatCount = -1
+
+-- 	Task.Wait(10)
+-- 	flipAround:Cancel()
+-- 	player:DisableRagdoll()
+-- 	player.gravityScale = 1.9
+-- end
+
 function OnExecute_Unreel(ability)
+	-- player = propEquipment.owner
+	-- FlyPlayer(player)
 	propSlackAmount = math.min(20000, propSlackAmount + ROPE_UNIT_LENGTH * 4)
 	-- print("reeled out, new slack amount is " .. propSlackAmount)
 end

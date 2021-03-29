@@ -4,9 +4,9 @@ Assets {
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 13278500210254108100
+      RootId: 10109494805189468283
       Objects {
-        Id: 13278500210254108100
+        Id: 10109494805189468283
         Name: "pck.bumperCorner"
         Transform {
           Scale {
@@ -16,11 +16,13 @@ Assets {
           }
         }
         ParentId: 13358087012448314564
-        ChildIds: 2308674328259319947
-        ChildIds: 8192590320489898349
-        ChildIds: 862494512634249860
-        ChildIds: 13772994535124723571
-        ChildIds: 13837032853080448739
+        ChildIds: 12382498888703627370
+        ChildIds: 10136260968037803714
+        ChildIds: 17958292341643497637
+        ChildIds: 317710364628992746
+        ChildIds: 18105733222064859957
+        ChildIds: 825791149303382933
+        ChildIds: 10687311761020203139
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -35,7 +37,97 @@ Assets {
         }
       }
       Objects {
-        Id: 2308674328259319947
+        Id: 12382498888703627370
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -2400
+            Y: -2775
+            Z: 950
+          }
+          Rotation {
+            Yaw: 90
+            Roll: -90
+          }
+          Scale {
+            X: 11
+            Y: 20
+            Z: 1
+          }
+        }
+        ParentId: 10109494805189468283
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 10136260968037803714
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -2595
+            Y: -3510
+            Z: 950
+          }
+          Rotation {
+            Yaw: 44.176
+            Roll: -90
+          }
+          Scale {
+            X: 5.2661
+            Y: 20
+            Z: 1
+          }
+        }
+        ParentId: 10109494805189468283
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 17958292341643497637
         Name: "Trigger"
         Transform {
           Location {
@@ -52,7 +144,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 13278500210254108100
+        ParentId: 10109494805189468283
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -73,7 +165,7 @@ Assets {
         }
       }
       Objects {
-        Id: 8192590320489898349
+        Id: 317710364628992746
         Name: "Trigger"
         Transform {
           Location {
@@ -90,9 +182,9 @@ Assets {
             Z: 21.25
           }
         }
-        ParentId: 13278500210254108100
+        ParentId: 10109494805189468283
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -111,7 +203,7 @@ Assets {
         }
       }
       Objects {
-        Id: 862494512634249860
+        Id: 18105733222064859957
         Name: "Trigger"
         Transform {
           Location {
@@ -127,7 +219,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 13278500210254108100
+        ParentId: 10109494805189468283
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -148,7 +240,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13772994535124723571
+        Id: 825791149303382933
         Name: "Trigger"
         Transform {
           Location {
@@ -165,9 +257,9 @@ Assets {
             Z: 21
           }
         }
-        ParentId: 13278500210254108100
+        ParentId: 10109494805189468283
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -186,7 +278,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13837032853080448739
+        Id: 10687311761020203139
         Name: "NewFolder"
         Transform {
           Location {
@@ -201,9 +293,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13278500210254108100
-        ChildIds: 13733786710763743761
-        ChildIds: 204646886557574081
+        ParentId: 10109494805189468283
+        ChildIds: 10132579746455191167
+        ChildIds: 12016901675068381363
+        ChildIds: 3121736164564921936
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -218,7 +311,52 @@ Assets {
         }
       }
       Objects {
-        Id: 13733786710763743761
+        Id: 10132579746455191167
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -157.000931
+            Y: -0.000432670116
+            Z: 950
+          }
+          Rotation {
+            Yaw: -3.01854669e-07
+            Roll: -89.9999542
+          }
+          Scale {
+            X: 3.14
+            Y: 19
+            Z: 1
+          }
+        }
+        ParentId: 10687311761020203139
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 12016901675068381363
         Name: "Trigger"
         Transform {
           Location {
@@ -234,7 +372,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 13837032853080448739
+        ParentId: 10687311761020203139
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -255,7 +393,7 @@ Assets {
         }
       }
       Objects {
-        Id: 204646886557574081
+        Id: 3121736164564921936
         Name: "NewFolder"
         Transform {
           Location {
@@ -271,9 +409,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13837032853080448739
-        ChildIds: 8494981658849195524
-        ChildIds: 16072497537491703137
+        ParentId: 10687311761020203139
+        ChildIds: 5988909858355427898
+        ChildIds: 581241288178273569
+        ChildIds: 7827281852763205249
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -288,7 +427,51 @@ Assets {
         }
       }
       Objects {
-        Id: 8494981658849195524
+        Id: 5988909858355427898
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -157.001282
+            Y: -0.0008456707
+            Z: 950
+          }
+          Rotation {
+            Roll: -90.0000076
+          }
+          Scale {
+            X: 3.14
+            Y: 19
+            Z: 1
+          }
+        }
+        ParentId: 3121736164564921936
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 581241288178273569
         Name: "Trigger"
         Transform {
           Location {
@@ -304,7 +487,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 204646886557574081
+        ParentId: 3121736164564921936
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -325,7 +508,7 @@ Assets {
         }
       }
       Objects {
-        Id: 16072497537491703137
+        Id: 7827281852763205249
         Name: "NewFolder"
         Transform {
           Location {
@@ -341,9 +524,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 204646886557574081
-        ChildIds: 12914144193730578163
-        ChildIds: 3371509300681408433
+        ParentId: 3121736164564921936
+        ChildIds: 16511666621594799670
+        ChildIds: 17697953076314851956
+        ChildIds: 16268343029540960131
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -358,7 +542,52 @@ Assets {
         }
       }
       Objects {
-        Id: 12914144193730578163
+        Id: 16511666621594799670
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -157.00177
+            Y: -0.00111436844
+            Z: 950
+          }
+          Rotation {
+            Yaw: -9.65934669e-06
+            Roll: -90.0000153
+          }
+          Scale {
+            X: 3.14
+            Y: 19
+            Z: 1
+          }
+        }
+        ParentId: 7827281852763205249
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 17697953076314851956
         Name: "Trigger"
         Transform {
           Location {
@@ -374,7 +603,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 16072497537491703137
+        ParentId: 7827281852763205249
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -395,7 +624,7 @@ Assets {
         }
       }
       Objects {
-        Id: 3371509300681408433
+        Id: 16268343029540960131
         Name: "NewFolder"
         Transform {
           Location {
@@ -411,9 +640,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16072497537491703137
-        ChildIds: 18073851388751772291
-        ChildIds: 11419501576961581426
+        ParentId: 7827281852763205249
+        ChildIds: 3511503104006991151
+        ChildIds: 11065996359728216516
+        ChildIds: 15774910555671951775
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -428,7 +658,52 @@ Assets {
         }
       }
       Objects {
-        Id: 18073851388751772291
+        Id: 3511503104006991151
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -157.001434
+            Y: -0.000864028931
+            Z: 950
+          }
+          Rotation {
+            Yaw: -1.32816022e-05
+            Roll: -90.0000229
+          }
+          Scale {
+            X: 3.14
+            Y: 19
+            Z: 1
+          }
+        }
+        ParentId: 16268343029540960131
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 11065996359728216516
         Name: "Trigger"
         Transform {
           Location {
@@ -444,7 +719,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 3371509300681408433
+        ParentId: 16268343029540960131
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -465,7 +740,7 @@ Assets {
         }
       }
       Objects {
-        Id: 11419501576961581426
+        Id: 15774910555671951775
         Name: "NewFolder"
         Transform {
           Location {
@@ -481,9 +756,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3371509300681408433
-        ChildIds: 14623416594474613899
-        ChildIds: 15036636383973743801
+        ParentId: 16268343029540960131
+        ChildIds: 4614744353378804564
+        ChildIds: 3202721960833451384
+        ChildIds: 1485228479746800475
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -498,7 +774,53 @@ Assets {
         }
       }
       Objects {
-        Id: 14623416594474613899
+        Id: 4614744353378804564
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -157.001297
+            Y: 0.000207901
+            Z: 950
+          }
+          Rotation {
+            Pitch: 6.83018879e-06
+            Yaw: 3.86373868e-05
+            Roll: -90.0000229
+          }
+          Scale {
+            X: 3.14
+            Y: 19
+            Z: 1
+          }
+        }
+        ParentId: 15774910555671951775
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 3202721960833451384
         Name: "Trigger"
         Transform {
           Location {
@@ -514,7 +836,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 11419501576961581426
+        ParentId: 15774910555671951775
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -535,7 +857,7 @@ Assets {
         }
       }
       Objects {
-        Id: 15036636383973743801
+        Id: 1485228479746800475
         Name: "NewFolder"
         Transform {
           Location {
@@ -551,9 +873,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11419501576961581426
-        ChildIds: 17093647524448046451
-        ChildIds: 2757624008349334745
+        ParentId: 15774910555671951775
+        ChildIds: 14204829622541434685
+        ChildIds: 2483302882799631607
+        ChildIds: 15219042496107244140
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -568,7 +891,53 @@ Assets {
         }
       }
       Objects {
-        Id: 17093647524448046451
+        Id: 14204829622541434685
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -157.000488
+            Y: 0.000705719
+            Z: 950
+          }
+          Rotation {
+            Pitch: 6.83018879e-06
+            Yaw: -2.41483667e-06
+            Roll: -90.0000076
+          }
+          Scale {
+            X: 3.14
+            Y: 19
+            Z: 1
+          }
+        }
+        ParentId: 1485228479746800475
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 2483302882799631607
         Name: "Trigger"
         Transform {
           Location {
@@ -584,7 +953,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 15036636383973743801
+        ParentId: 1485228479746800475
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -605,7 +974,7 @@ Assets {
         }
       }
       Objects {
-        Id: 2757624008349334745
+        Id: 15219042496107244140
         Name: "NewFolder"
         Transform {
           Location {
@@ -621,9 +990,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15036636383973743801
-        ChildIds: 3118868102324779051
-        ChildIds: 12583170416631106483
+        ParentId: 1485228479746800475
+        ChildIds: 6179828076095399384
+        ChildIds: 15223987800827082756
+        ChildIds: 14198065599717112867
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -638,7 +1008,53 @@ Assets {
         }
       }
       Objects {
-        Id: 3118868102324779051
+        Id: 6179828076095399384
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -157.000824
+            Y: 0.000801086426
+            Z: 950
+          }
+          Rotation {
+            Pitch: 6.83018879e-06
+            Yaw: 2.41483622e-06
+            Roll: -90.0000076
+          }
+          Scale {
+            X: 3.14
+            Y: 19
+            Z: 1
+          }
+        }
+        ParentId: 15219042496107244140
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 15223987800827082756
         Name: "Trigger"
         Transform {
           Location {
@@ -654,7 +1070,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 2757624008349334745
+        ParentId: 15219042496107244140
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -675,7 +1091,7 @@ Assets {
         }
       }
       Objects {
-        Id: 12583170416631106483
+        Id: 14198065599717112867
         Name: "NewFolder"
         Transform {
           Location {
@@ -691,9 +1107,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 2757624008349334745
-        ChildIds: 5441622663096099231
-        ChildIds: 13887323549669122385
+        ParentId: 15219042496107244140
+        ChildIds: 14739651853452020770
+        ChildIds: 5285004877733730594
+        ChildIds: 5342286540785144202
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -708,7 +1125,51 @@ Assets {
         }
       }
       Objects {
-        Id: 5441622663096099231
+        Id: 14739651853452020770
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -157.000519
+            Y: 0.000282287598
+            Z: 950
+          }
+          Rotation {
+            Roll: -89.9999924
+          }
+          Scale {
+            X: 3.14
+            Y: 19
+            Z: 1
+          }
+        }
+        ParentId: 14198065599717112867
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 5285004877733730594
         Name: "Trigger"
         Transform {
           Location {
@@ -724,7 +1185,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 12583170416631106483
+        ParentId: 14198065599717112867
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -745,7 +1206,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13887323549669122385
+        Id: 5342286540785144202
         Name: "NewFolder"
         Transform {
           Location {
@@ -761,9 +1222,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12583170416631106483
-        ChildIds: 445235803922679687
-        ChildIds: 9534626179712407378
+        ParentId: 14198065599717112867
+        ChildIds: 11038910294188598717
+        ChildIds: 3862596215529573182
+        ChildIds: 7632214470188457452
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -778,7 +1240,53 @@ Assets {
         }
       }
       Objects {
-        Id: 445235803922679687
+        Id: 11038910294188598717
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -157.000854
+            Y: -0.00110626221
+            Z: 950
+          }
+          Rotation {
+            Pitch: 6.83018879e-06
+            Yaw: -2.41483667e-06
+            Roll: -90.0000153
+          }
+          Scale {
+            X: 3.14
+            Y: 19
+            Z: 1
+          }
+        }
+        ParentId: 5342286540785144202
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 3862596215529573182
         Name: "Trigger"
         Transform {
           Location {
@@ -794,7 +1302,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 13887323549669122385
+        ParentId: 5342286540785144202
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -815,7 +1323,7 @@ Assets {
         }
       }
       Objects {
-        Id: 9534626179712407378
+        Id: 7632214470188457452
         Name: "NewFolder"
         Transform {
           Location {
@@ -831,9 +1339,10 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13887323549669122385
-        ChildIds: 1373658443572836906
-        ChildIds: 16440399847278889126
+        ParentId: 5342286540785144202
+        ChildIds: 543275485888512862
+        ChildIds: 3906440855649769548
+        ChildIds: 14628178176535949496
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -848,7 +1357,53 @@ Assets {
         }
       }
       Objects {
-        Id: 1373658443572836906
+        Id: 543275485888512862
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -157.000565
+            Y: 6.10351563e-05
+            Z: 950
+          }
+          Rotation {
+            Pitch: 6.83018879e-06
+            Yaw: -2.41483667e-06
+            Roll: -90.0000153
+          }
+          Scale {
+            X: 3.14
+            Y: 19
+            Z: 1
+          }
+        }
+        ParentId: 7632214470188457452
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 3906440855649769548
         Name: "Trigger"
         Transform {
           Location {
@@ -864,7 +1419,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 9534626179712407378
+        ParentId: 7632214470188457452
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -885,7 +1440,7 @@ Assets {
         }
       }
       Objects {
-        Id: 16440399847278889126
+        Id: 14628178176535949496
         Name: "NewFolder"
         Transform {
           Location {
@@ -901,8 +1456,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9534626179712407378
-        ChildIds: 4497418981706505354
+        ParentId: 7632214470188457452
+        ChildIds: 4226539847502222703
+        ChildIds: 1675516153307414601
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -917,7 +1473,53 @@ Assets {
         }
       }
       Objects {
-        Id: 4497418981706505354
+        Id: 4226539847502222703
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -156.999817
+            Y: -0.000839233398
+            Z: 950
+          }
+          Rotation {
+            Pitch: 6.83018879e-06
+            Yaw: 2.41483667e-06
+            Roll: -90.0000229
+          }
+          Scale {
+            X: 3.14
+            Y: 19
+            Z: 1
+          }
+        }
+        ParentId: 14628178176535949496
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 1675516153307414601
         Name: "Trigger"
         Transform {
           Location {
@@ -933,7 +1535,7 @@ Assets {
             Z: 20
           }
         }
-        ParentId: 16440399847278889126
+        ParentId: 14628178176535949496
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -952,6 +1554,15 @@ Assets {
             Value: "mc:etriggershape:box"
           }
         }
+      }
+    }
+    Assets {
+      Id: 15355692762836007663
+      Name: "Plane 1m - One Sided"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_plane_1m_001"
       }
     }
     PrimaryAssetId {

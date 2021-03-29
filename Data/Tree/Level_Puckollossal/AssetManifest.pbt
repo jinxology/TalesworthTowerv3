@@ -80,15 +80,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13319522537581195305
-  Name: "Point To Point Electrical Beam VFX"
-  PlatformAssetType: 8
-  PrimaryAsset {
-    AssetType: "VfxBlueprintAssetRef"
-    AssetId: "fxbp_ptp_electrical_beam"
-  }
-}
-Assets {
   Id: 13181413363666234531
   Name: "Dirt 01"
   PlatformAssetType: 2
