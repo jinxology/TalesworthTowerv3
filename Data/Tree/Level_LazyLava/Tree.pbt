@@ -1,76 +1,23 @@
 Name: "Level_LazyLava"
 RootId: 1647900999251311847
 Objects {
-  Id: 10706549380569580614
-  Name: "DestructableWall-LL"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1647900999251311847
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 7403959057062239265
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DestructableWall-LL"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 1733.25891
-            Y: 450
-            Z: 173.162109
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -90
-          }
-        }
-        Overrides {
-          Name: "cs:hp"
-          String: "7,14,21,28"
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 16641942192616246087
-    }
-  }
-}
-Objects {
-  Id: 12704056000625107105
-  Name: "SpinningWall - LL"
+  Id: 17828233614308969262
+  Name: "RaftWallSpawner"
   Transform {
     Location {
-      X: -8389.39453
-      Y: 2275.11694
-      Z: 17363.8281
+      X: -6282.39404
+      Y: 977.931641
+      Z: 17300.4531
     }
     Rotation {
-      Yaw: 88.925148
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 3.08046174
+      Y: 3.08046174
+      Z: 3.0800271
     }
   }
   ParentId: 1647900999251311847
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -79,77 +26,62 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 4362706139033621725
+      key: 15548658892499102451
       value {
         Overrides {
           Name: "Name"
-          String: "SpinningWall - LL"
+          String: "RaftWallSpawner"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: -6454.4126
-            Y: -2079.96191
-            Z: 215.369141
+            X: -7101.6626
+            Y: 22.5614014
+            Z: 151.994141
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 88.925148
           }
         }
         Overrides {
           Name: "Scale"
           Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 15377332058430528766
-      value {
-        Overrides {
-          Name: "Position"
-          Vector {
+            X: 3.08046174
+            Y: 3.08046174
+            Z: 3.0800271
           }
         }
         Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 38.3490906
-          }
+          Name: "cs:wallLocationIndex"
+          Int: 4
         }
       }
     }
     TemplateAsset {
-      Id: 9439824160365784213
+      Id: 2840031018036931075
     }
   }
 }
 Objects {
-  Id: 7531855604375316381
-  Name: "SpinningWall - LL"
+  Id: 12432493557841501320
+  Name: "RaftWallSpawner"
   Transform {
     Location {
-      X: -3385.80713
-      Y: 4509.59863
-      Z: 17363.8281
+      X: 3289.32031
+      Y: 4714.77539
+      Z: 17300.4531
     }
     Rotation {
-      Yaw: 88.925148
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 3.08046174
+      Y: 3.08046174
+      Z: 3.0800271
     }
   }
   ParentId: 1647900999251311847
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -158,79 +90,62 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 4362706139033621725
+      key: 15548658892499102451
       value {
         Overrides {
           Name: "Name"
-          String: "SpinningWall - LL"
+          String: "RaftWallSpawner"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: -7625.33594
-            Y: 2054.66968
-            Z: 215.369141
+            X: -5518.33545
+            Y: 977.931641
+            Z: 151.994141
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 88.925148
           }
         }
         Overrides {
           Name: "Scale"
           Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 15377332058430528766
-      value {
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -9.159412e-06
-            Y: 0.000488195335
+            X: 3.08046174
+            Y: 3.08046174
+            Z: 3.0800271
           }
         }
         Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 72.9782791
-          }
+          Name: "cs:wallLocationIndex"
+          Int: 3
         }
       }
     }
     TemplateAsset {
-      Id: 9439824160365784213
+      Id: 2840031018036931075
     }
   }
 }
 Objects {
-  Id: 2189917526197904170
-  Name: "SpinningWall - LL"
+  Id: 13376276336365950771
+  Name: "RaftWallSpawner"
   Transform {
     Location {
-      X: -4369.38867
-      Y: 3400
-      Z: 17363.8281
+      X: 3289.32031
+      Y: 1696.07166
+      Z: 17300.4531
     }
     Rotation {
-      Yaw: 88.925148
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 3.08046174
+      Y: 3.08046174
+      Z: 3.0800271
     }
   }
   ParentId: 1647900999251311847
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -239,57 +154,48 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 4362706139033621725
+      key: 15548658892499102451
       value {
         Overrides {
           Name: "Name"
-          String: "SpinningWall - LL"
+          String: "RaftWallSpawner"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: -170.327271
-            Y: 808.24707
-            Z: 215.369141
+            X: 4053.37891
+            Y: 4714.77539
+            Z: 151.994141
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 88.925148
           }
         }
         Overrides {
           Name: "Scale"
           Vector {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 3.08046174
+            Y: 3.08046174
+            Z: 3.0800271
           }
         }
         Overrides {
-          Name: "cs:rotateSpeed"
-          Float: 2
+          Name: "cs:wallLocationIndex"
+          Int: 2
         }
       }
     }
     TemplateAsset {
-      Id: 9439824160365784213
+      Id: 2840031018036931075
     }
   }
 }
 Objects {
-  Id: 4667604153709316642
-  Name: "SpinningWall - LL"
+  Id: 18275845842749554301
+  Name: "RaftWallSpawner"
   Transform {
-    Location {
-      X: -3275.89893
-      Y: 4509.59863
-      Z: 17363.8281
-    }
-    Rotation {
-      Yaw: 88.925148
-    }
     Scale {
       X: 1
       Y: 1
@@ -297,7 +203,6 @@ Objects {
     }
   }
   ParentId: 1647900999251311847
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -306,105 +211,24 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 4362706139033621725
+      key: 15548658892499102451
       value {
         Overrides {
           Name: "Name"
-          String: "SpinningWall - LL"
+          String: "RaftWallSpawner"
         }
         Overrides {
           Name: "Position"
           Vector {
-            X: -3605.33
-            Y: 3400
-            Z: 215.369141
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 88.925148
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
-          Name: "cs:rotateSpeed"
-          Float: 2
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 9439824160365784213
-    }
-  }
-}
-Objects {
-  Id: 11309951404596802638
-  Name: "SpinningWall - LL"
-  Transform {
-    Location {
-      X: -4367.99707
-      Y: 4509.59863
-      Z: 17363.8281
-    }
-    Rotation {
-      Yaw: 88.925148
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1647900999251311847
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 4362706139033621725
-      value {
-        Overrides {
-          Name: "Name"
-          String: "SpinningWall - LL"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3603.93848
-            Y: 5827.10645
-            Z: 215.369141
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 88.925148
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 4053.37891
+            Y: 1696.07166
+            Z: 151.994141
           }
         }
       }
     }
     TemplateAsset {
-      Id: 9439824160365784213
+      Id: 2840031018036931075
     }
   }
 }
@@ -1315,55 +1139,18 @@ Objects {
         }
       }
     }
-    TemplateAsset {
-      Id: 11999336721103113198
-    }
-  }
-}
-Objects {
-  Id: 1543559925404853540
-  Name: "SpinningWall - LL"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1647900999251311847
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
     ParameterOverrideMap {
-      key: 4362706139033621725
+      key: 9605955370093209904
       value {
-        Overrides {
-          Name: "Name"
-          String: "SpinningWall - LL"
-        }
         Overrides {
           Name: "Position"
           Vector {
-            X: -2621.74854
-            Y: 4509.59863
-            Z: 215.369141
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 88.925148
           }
         }
       }
     }
     TemplateAsset {
-      Id: 9439824160365784213
+      Id: 11999336721103113198
     }
   }
 }
@@ -1596,183 +1383,6 @@ Objects {
     }
     TemplateAsset {
       Id: 1551455331374435578
-    }
-  }
-}
-Objects {
-  Id: 4787352237580252418
-  Name: "DestructableWall-LL"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1647900999251311847
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 7403959057062239265
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DestructableWall-LL"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -5485.94141
-            Y: 3400
-            Z: 257.349609
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -89.9999924
-          }
-        }
-        Overrides {
-          Name: "cs:hp"
-          String: "4,8,12,16"
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 16641942192616246087
-    }
-  }
-}
-Objects {
-  Id: 6784936935162696920
-  Name: "DestructableWall-LL"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1647900999251311847
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 7403959057062239265
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DestructableWall-LL"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -3083.03955
-            Y: 2250
-            Z: 257.349609
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 89.9999924
-          }
-        }
-        Overrides {
-          Name: "cs:hp"
-          String: "2,4,6,8"
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 16641942192616246087
-    }
-  }
-}
-Objects {
-  Id: 6093644354931167383
-  Name: "DestructableWall-LL"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1647900999251311847
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 7403959057062239265
-      value {
-        Overrides {
-          Name: "Name"
-          String: "DestructableWall-LL"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 3164.05811
-            Y: 4050.61548
-            Z: 257.349609
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 179.999985
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
-          Name: "cs:hp"
-          String: "7,14,21,28"
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 16641942192616246087
     }
   }
 }
@@ -17699,6 +17309,12 @@ Objects {
       Name: "cs:LavaLL"
       ObjectReference {
         SelfId: 14413606484871421030
+      }
+    }
+    Overrides {
+      Name: "cs:SpinningWallLL"
+      AssetReference {
+        Id: 9439824160365784213
       }
     }
     Overrides {

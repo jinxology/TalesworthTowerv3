@@ -7,6 +7,7 @@ local propWeaponizerTrigger2 = script:GetCustomProperty("weaponizerTrigger2"):Wa
 local propWeaponizerTrigger3 = script:GetCustomProperty("weaponizerTrigger3"):WaitForObject()
 local propWeaponizerTrigger4 = script:GetCustomProperty("weaponizerTrigger4"):WaitForObject()
 local propLavaLL = script:GetCustomProperty("LavaLL"):WaitForObject()
+local propSpinningWallLL = script:GetCustomProperty("SpinningWallLL")
 
 
 ------------------------------------------------------------
@@ -31,10 +32,18 @@ local lavaDeadly = true
 playerCount = 4
 currentPoints = 0
 maxPoints = 50
-local minSpeed = 350
+local startingSpeed = 350
+minSpeed = startingSpeed
 currentSpeed = minSpeed
 maxSpeed = 0
 skipTo = 0
+local spinners = {}
+
+local lavalListener = nil
+local weap1Listener = nil
+local weap2Listener = nil
+local weap3Listener = nil
+local weap4Listener = nil
 
 if (skipTo > 0) then
     warn("Checkpoint Skip on LazyLava is on!")
@@ -46,6 +55,22 @@ Vector3.New(-2951,2408,17525),
 Vector3.New(-7024,1150,17525),
 Vector3.New(-3850,-2250,17525),
 Vector3.New(3898,34,17750)
+}
+
+allWallData = 
+{
+    { --1
+        Vector3.New(3164,4050,257), Rotation.New(0,0,180),"7,14,21,28"
+    },
+    { --2
+        Vector3.New(-3083,2250,257), Rotation.New(0,0,90),"2,4,6,8"
+    },
+    { --3
+        Vector3.New(-5485,3400,257), Rotation.New(0,0,-90),"4,8,12,16"
+    },
+    { --4
+        Vector3.New(1733,450,173), Rotation.New(0,0,-90),"7,14,21,28"
+    }
 }
 
 allTargetData = 
@@ -171,22 +196,6 @@ end
 function ResetLevel() 
 end
 
-function LevelPowerUp() 
-    raft = World.SpawnAsset(propRaft, { parent=script.parent} )
-    raftController = raft:FindChildByName("RaftController")
-
-    ResetLava()
-
-    playerCount = propMainGameController.context.GetEligiblePlayerCount()
-
-    currentPoints = 0            
-end
-
-function LevelPowerDown()
-    if (Object.IsValid(raft)) then raft:Destroy() end
-    ResetLava()
-end
-
 function OnLandInLava(whichTrigger, other)    
 
 	if other:IsA("Player") and lavaDeadly then
@@ -306,12 +315,70 @@ function AddPoint()
     end
 end
 
+function LevelPowerUp() 
+    raft = World.SpawnAsset(propRaft, { parent=script.parent} )
+    raftController = raft:FindChildByName("RaftController")
 
-propLavaDeathTrigger.beginOverlapEvent:Connect(OnLandInLava)
-propWeaponizerTrigger1.beginOverlapEvent:Connect(OnWeaponizer)
-propWeaponizerTrigger2.beginOverlapEvent:Connect(OnWeaponizer)
-propWeaponizerTrigger3.beginOverlapEvent:Connect(OnWeaponizer)
-propWeaponizerTrigger4.beginOverlapEvent:Connect(OnWeaponizer)
+    ResetLava()
+
+    playerCount = propMainGameController.context.GetEligiblePlayerCount()
+
+    currentPoints = 0            
+    currentSpeed = startingSpeed
+    maxSpeed = startingSpeed
+
+    --Spawn spinning walls
+    local spinner = World.SpawnAsset(propSpinningWallLL,{parent=script.parent,position=Vector3.New(-2551,4652,215)})
+    spinner:FindChildByName("LavaRotatingWall").context.RotateMe(1)
+    table.insert(spinners, spinner)
+    spinner = World.SpawnAsset(propSpinningWallLL,{parent=script.parent,position=Vector3.New(-3603,5827,215)})
+    spinner:FindChildByName("LavaRotatingWall").context.RotateMe(1)
+    table.insert(spinners, spinner)
+    spinner = World.SpawnAsset(propSpinningWallLL,{parent=script.parent,position=Vector3.New(-3681,3400,215)})
+    spinner:FindChildByName("LavaRotatingWall").context.RotateMe(2)
+    table.insert(spinners, spinner)
+    spinner = World.SpawnAsset(propSpinningWallLL,{parent=script.parent,position=Vector3.New(-170,808,215)})
+    spinner:FindChildByName("LavaRotatingWall").context.RotateMe(2)
+    table.insert(spinners, spinner)
+    spinner = World.SpawnAsset(propSpinningWallLL,{parent=script.parent,position=Vector3.New(-7625,2054,215)})
+    spinner:FindChildByName("LavaRotatingWall").context.RotateMe(1)
+    table.insert(spinners, spinner)
+    spinner = World.SpawnAsset(propSpinningWallLL,{parent=script.parent,position=Vector3.New(-6545,-235,215)})
+    spinner:FindChildByName("LavaRotatingWall").context.RotateMe(1)
+    table.insert(spinners, spinner)
+   
+    lavalListener = propLavaDeathTrigger.beginOverlapEvent:Connect(OnLandInLava)
+    weap1Listener = propWeaponizerTrigger1.beginOverlapEvent:Connect(OnWeaponizer)
+    weap2Listener = propWeaponizerTrigger2.beginOverlapEvent:Connect(OnWeaponizer)
+    weap3Listener = propWeaponizerTrigger3.beginOverlapEvent:Connect(OnWeaponizer)
+    weap4Listener = propWeaponizerTrigger4.beginOverlapEvent:Connect(OnWeaponizer)    
+end
+
+function LevelPowerDown()
+    if (Object.IsValid(raft)) then raft:Destroy() end
+    ResetLava()
+
+    --Delete all spinning walls
+    for _,spinner in ipairs(spinners) do
+        if (Object.IsValid(spinner)) then
+            spinner:Destroy()
+        end
+    end    
+
+    lavalListener:Disconnect()
+    weap1Listener:Disconnect()
+    weap2Listener:Disconnect()
+    weap3Listener:Disconnect()
+    weap4Listener:Disconnect()
+
+    lavalListener = nil
+    weap1Listener = nil
+    weap2Listener = nil
+    weap3Listener = nil
+    weap4Listener = nil    
+end
+
+
 
 
 
