@@ -4,7 +4,7 @@ local propGdDot_Client = script:GetCustomProperty("gdDot_Client")
 
 local Z_COORD_DOT = 175
 
-local X_MIN = 200
+local X_MIN = 175
 local X_MAX = 5800
 local Y_MIN = 600
 local Y_MAX = 5600
@@ -30,51 +30,56 @@ function InitializeBoard()
 	for X_Location = X_MIN, X_MAX, DOT_INCREMENT do  
 		for Y_Location = Y_MIN, Y_MAX, DOT_INCREMENT do  
 			
-			dotLocalPosition = Vector3.New(X_Location,Y_Location,Z_COORD_DOT)
-			--print("Local Position: ", dotLocalPosition)
-			
-			dotFolderWorldPosition =  dotsFolder:GetWorldTransform():GetPosition()
-			--print("World Position: ", dotFolderWorldPosition)
-			
-			dotWorldPosition = (dotFolderWorldPosition + dotLocalPosition)
-			--print("Dot World Position: ", dotWorldPosition)
-			
-			dotRayCastForwardPos = dotWorldPosition + (Vector3.FORWARD * RAY_CHECK_DISTANCE)
-			--print("Ray Frwd World Pos:", dotRayCastForwardPos)
-
-			dotRayCastBackPos = dotWorldPosition + (-Vector3.FORWARD * RAY_CHECK_DISTANCE)
-			--print("Ray Back World Pos:", dotRayCastBackPos)
-			
-			dotRayCastUpPos = dotWorldPosition + (Vector3.RIGHT * RAY_CHECK_DISTANCE)
-			--print("Ray Up   World Pos:", dotRayCastUpPos)
-
-			dotRayCastDownPos = dotWorldPosition + (-Vector3.RIGHT * RAY_CHECK_DISTANCE)
-			--print("Ray Down World Pos:", dotRayCastDownPos)
-			
-			--CoreDebug.DrawLine(dotWorldPosition, dotRayCastForwardPos, { color = Color.RED, thickness = 3, duration = 1000 })			
-			--CoreDebug.DrawLine(dotWorldPosition, dotRayCastBackPos, { color = Color.YELLOW, thickness = 3, duration = 1000})			
-			--CoreDebug.DrawLine(dotWorldPosition, dotRayCastUpPos, { color = Color.BLUE, thickness = 3, duration = 1000 })			
-			--CoreDebug.DrawLine(dotWorldPosition, dotRayCastDownPos, { color = Color.GREEN, thickness = 3, duration = 1000 })							
-			
-			hitResult1 = World.Raycast(dotRayCastForwardPos, dotRayCastBackPos)					
-			hitResult2 = World.Raycast(dotRayCastUpPos, dotRayCastDownPos)					
-			hitResult3 = World.Raycast(dotRayCastBackPos, dotRayCastForwardPos)					
-			hitResult4 = World.Raycast(dotRayCastDownPos, dotRayCastUpPos)					
-					
-			if (hitResult1 or hitResult2 or hitResult3 or hitResult4) then
-				--print("Hit Result 1: ", hitResult1)			
-				--print("Hit Result 2: ", hitResult2)			
-				--print("Hit Result 3: ", hitResult3)			
-				--print("Hit Result 4: ", hitResult4)				
+			if X_Location == 2575 and Y_Location >=2400 and Y_Location <=3800 then
+				--SKIP THESE DOTS IT'S THE STARTING AREA
 			else
-				dotCount = dotCount + 1				
-				newDot = World.SpawnAsset(propGdDot_Client, {position = dotLocalPosition, parent = dotsFolder})
-				local propGdDotTrigger_Client = newDot:GetCustomProperty("gdDotTrigger_Client"):WaitForObject()
-				propGdDotTrigger_Client.context.propDotNumber = dotCount
-				table.insert(dotsArrayList, dotCount, newDot)
-				newDot.destroyEvent:Connect(function()
-					countOfDeletedDots = countOfDeletedDots +1
-				end)
+				--PRINT ALL THE DOTS
+				dotLocalPosition = Vector3.New(X_Location,Y_Location,Z_COORD_DOT)
+				--print("Local Position: ", dotLocalPosition)
+				
+				dotFolderWorldPosition =  dotsFolder:GetWorldTransform():GetPosition()
+				--print("World Position: ", dotFolderWorldPosition)
+				
+				dotWorldPosition = (dotFolderWorldPosition + dotLocalPosition)
+				--print("Dot World Position: ", dotWorldPosition)
+				
+				dotRayCastForwardPos = dotWorldPosition + (Vector3.FORWARD * RAY_CHECK_DISTANCE)
+				--print("Ray Frwd World Pos:", dotRayCastForwardPos)
+	
+				dotRayCastBackPos = dotWorldPosition + (-Vector3.FORWARD * RAY_CHECK_DISTANCE)
+				--print("Ray Back World Pos:", dotRayCastBackPos)
+				
+				dotRayCastUpPos = dotWorldPosition + (Vector3.RIGHT * RAY_CHECK_DISTANCE)
+				--print("Ray Up   World Pos:", dotRayCastUpPos)
+	
+				dotRayCastDownPos = dotWorldPosition + (-Vector3.RIGHT * RAY_CHECK_DISTANCE)
+				--print("Ray Down World Pos:", dotRayCastDownPos)
+				
+				--CoreDebug.DrawLine(dotWorldPosition, dotRayCastForwardPos, { color = Color.RED, thickness = 3, duration = 1000 })			
+				--CoreDebug.DrawLine(dotWorldPosition, dotRayCastBackPos, { color = Color.YELLOW, thickness = 3, duration = 1000})			
+				--CoreDebug.DrawLine(dotWorldPosition, dotRayCastUpPos, { color = Color.BLUE, thickness = 3, duration = 1000 })			
+				--CoreDebug.DrawLine(dotWorldPosition, dotRayCastDownPos, { color = Color.GREEN, thickness = 3, duration = 1000 })							
+				
+				hitResult1 = World.Raycast(dotRayCastForwardPos, dotRayCastBackPos)					
+				hitResult2 = World.Raycast(dotRayCastUpPos, dotRayCastDownPos)					
+				hitResult3 = World.Raycast(dotRayCastBackPos, dotRayCastForwardPos)					
+				hitResult4 = World.Raycast(dotRayCastDownPos, dotRayCastUpPos)					
+						
+				if (hitResult1 or hitResult2 or hitResult3 or hitResult4) then
+					--print("Hit Result 1: ", hitResult1)			
+					--print("Hit Result 2: ", hitResult2)			
+					--print("Hit Result 3: ", hitResult3)			
+					--print("Hit Result 4: ", hitResult4)				
+				else
+					dotCount = dotCount + 1				
+					newDot = World.SpawnAsset(propGdDot_Client, {position = dotLocalPosition, parent = dotsFolder})
+					local propGdDotTrigger_Client = newDot:GetCustomProperty("gdDotTrigger_Client"):WaitForObject()
+					propGdDotTrigger_Client.context.propDotNumber = dotCount
+					table.insert(dotsArrayList, dotCount, newDot)
+					newDot.destroyEvent:Connect(function()
+						countOfDeletedDots = countOfDeletedDots +1
+					end)
+				end
 			end
 		end	
 	end	
@@ -105,7 +110,7 @@ propLevelGobbleDots.networkedPropertyChangedEvent:Connect(function(coreObject, p
 			
 			arrayIndex = tonumber(deletedDotsTable[startingIndex])
 
-			if Object.IsValid(dotsArrayList[arrayIndex]) then
+			if Object.IsValid(dotsArrayList[arrayIndex]) then			
 				dotsArrayList[arrayIndex]:Destroy()
 			end					
 		end
