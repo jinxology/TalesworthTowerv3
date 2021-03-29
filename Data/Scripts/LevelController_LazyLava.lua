@@ -250,7 +250,7 @@ function OnWeaponizer(whichTrigger, other)
 end
 
 function SpeedUp()
-    currentSpeed = currentSpeed + 100
+    currentSpeed = currentSpeed + 75
     if (currentSpeed > maxSpeed) then
         maxSpeed = currentSpeed
     end
