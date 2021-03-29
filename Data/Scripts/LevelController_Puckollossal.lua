@@ -1,3 +1,5 @@
+-- ftp acab xo paegrid
+
 local propMainGameController = script:GetCustomProperty("gameController"):WaitForObject()
 local propScoreTrigger = script:GetCustomProperty("scoreTrigger"):WaitForObject()
 local propScoreSFX = script:GetCustomProperty("scoreSFX"):WaitForObject()
@@ -7,6 +9,7 @@ local propPuckTemplate = script:GetCustomProperty("puckTemplate")
 local propMugshotTemplate = script:GetCustomProperty("mugshotTemplate")
 local propMusic = script:GetCustomProperty("music"):WaitForObject()
 local propLookoutAbility = script:GetCustomProperty("lookoutAbility")
+local propBumpers = script:GetCustomProperty("bumpers"):WaitForObject()
 -- local Ease3D = require(script:GetCustomProperty("Ease3D"))
 local propEntrancePipeTemplate = script:GetCustomProperty("entrancePipeTemplate")
 
@@ -36,19 +39,19 @@ local propSpawnConfigurations = {
         Vector3.New(0, -2400, 2000)
     },
 }
-local propSpawnerZTravel = Vector3.New(0, 0, -350)
-local propSpawnerZRecoil = Vector3.New(0, 0, 150)
-local propSpawnerZRotation = Rotation.New(0, 0, 180)
-local propPuckOffset = Vector3.New(0, 0, 750)
-local propSpawnerPortholeOpenTime = .75
-local propSpawnerInTime = 1.00
-local propPuckSpawnerTemplate = script:GetCustomProperty("puckSpawner")
+
 local propWallsTemplate = script:GetCustomProperty("wallsTemplate")
 local propTutorialCurtainTemplate = script:GetCustomProperty("tutorialCurtain")
 local propLookoutAbilityTemplate = script:GetCustomProperty("lookoutAbility")
 local propTutorialCurtain
 local propWalls
 local propEntrancePipe
+local propPlayersFlumedIn = {}
+
+local propSpawnerZTravel = Vector3.New(0, 0, -350)
+local propSpawnerZRecoil = Vector3.New(0, 0, 150)
+local propSpawnerZRotation = Rotation.New(0, 0, 180)
+local propPuckOffset = Vector3.New(0, 0, 750)
 
 function PlayMusic()
     propMusic:Play()
@@ -56,14 +59,40 @@ function PlayMusic()
     propMusic:FadeOut(10)
 end
 
+function ConnectBumpers(container)
+    for _, bumper in pairs(container:GetChildren()) do
+        if bumper:IsA("Trigger") then
+            bumper.beginOverlapEvent:Connect(function(trigger, other)
+                if other:IsA("Player") then
+                    print("bzzzzt beat it player")
+                else
+                    print("object entered " .. other.type .. " " .. other.id)
+                end
+            end)
+        else
+            ConnectBumpers(bumper)
+        end
+    end
+end
+        
+
 function LevelPowerUp()
-     
     propWalls = World.SpawnAsset(propWallsTemplate, { parent = script.parent })
     propWalls.visibility = Visibility.FORCE_ON
     propTutorialCurtain = World.SpawnAsset(propTutorialCurtainTemplate, { parent = script.parent })
+    propTutorialCurtain:GetCustomProperty("levelEnteredTrigger"):WaitForObject().beginOverlapEvent:Connect(function(trigger, other)
+        if other:IsA("Player") then
+            if propPlayersFlumedIn[other] == nil then
+                propPlayersFlumedIn[other] = true
+                propMainGameController.context.SetLightLevel(other, 3) -- sunset
+            end
+        end
+    end)
+
     script:SetNetworkedCustomProperty("levelState", 1)
-    -- propMainGameController.context.MakeWorldDark()
     
+    ConnectBumpers(propBumpers)
+
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, 125, 50), rotation = Rotation.New(-135, 90, 0), parent = script.parent }))
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, -125, 50), rotation = Rotation.New(135, 90, 0), parent = script.parent }))
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, -375, 50), rotation = Rotation.New(135, 90, 0), parent = script.parent }))
@@ -72,6 +101,8 @@ end
 
 function LevelPlayerEntered(player)
     local lookoutAbility = World.SpawnAsset(propLookoutAbilityTemplate)
+
+    player.serverUserData.safeZoneCount = 0
 
     lookoutAbility.owner = player
     player.serverUserData.pckLookoutAbility = lookoutAbility
@@ -89,7 +120,7 @@ function LevelBegin()
     local   spawnConfiguration = propSpawnConfigurations[propSpawnConfigurationIndex]
     
     script:SetNetworkedCustomProperty("levelState", 2)
-    -- propMainGameController.context.MakeWorldLight()
+    
     propWalls.visibility = Visibility.FORCE_OFF
     
     position = entranceFlume:GetWorldPosition()
@@ -116,11 +147,11 @@ function LevelBegin()
     end
     
     -- only one in starting configuration
-    for _, position in ipairs(spawnConfiguration) do
-        local spawner = World.SpawnAsset(propPuckSpawnerTemplate, { position = position, parent = script.parent })
-        
-        ExtendSpawner(spawner, position, makePlayersWatch)
-        puck = SpawnPuckFrom(spawner, position, makePlayersWatch)
+    for index, position in ipairs(spawnConfiguration) do
+        Events.BroadcastToAllPlayers("pck.ExtendSpawner", index, position, propSpawnerZTravel, propSpawnerZRotation, makePlayersWatch)
+        Task.Wait(1.75)
+        Events.BroadcastToAllPlayers("pck.RecoilSpawner", index, propSpawnerZRecoil)
+        puck = SpawnPuckAt(position, makePlayersWatch)
         
         local controller = puck:GetCustomProperty("controller"):WaitForObject()
 
@@ -128,8 +159,7 @@ function LevelBegin()
         controller.context.playMusicOnLanding = true
 
         Task.Wait(5)
-        RetractSpawner(spawner)
-        spawner:Destroy()
+        Events.BroadcastToAllPlayers("pck.RetractSpawner", index)
     end
     
     --  lol tumbleweed
@@ -158,58 +188,15 @@ function LevelFailed()
 	propMainGameController.context.LevelEnd(false)
 end
 
-function ExtendSpawner(spawner, position, makePlayersWatch)
-    local spawnerGeometry = spawner:GetCustomProperty("spawnerGeometry"):WaitForObject()
-    local portholeGeometry = spawner:GetCustomProperty("spawnerPorthole"):WaitForObject()
-    local spawnerInSFX = spawner:GetCustomProperty("spawnerInSFX"):WaitForObject()
-    local portholeOpenScale = portholeGeometry:GetScale()
-    
-    --  make all players look at this spawner if it's closer than the one they're looking at
-    --  start with thes porthole closed
-    portholeGeometry:SetScale(Vector3.ZERO)
-    
-    --  open the porthole
-    spawnerInSFX:Play()
-    portholeGeometry:ScaleTo(portholeOpenScale, propSpawnerPortholeOpenTime, true)
-    Task.Wait(propSpawnerPortholeOpenTime)
-
-    --  drop the ejector and spin it
-    spawnerGeometry:MoveTo(propSpawnerZTravel, propSpawnerInTime, true)
-    spawnerGeometry:RotateTo(propSpawnerZRotation, propSpawnerInTime, true)
-    Task.Wait(propSpawnerInTime)
-end
-
-
-function SpawnPuckFrom(spawner, position, makePlayersWatch)
-    local spawnerGeometry = spawner:GetCustomProperty("spawnerGeometry"):WaitForObject()
-
+function SpawnPuckAt(position, makePlayersWatch)
     --  make all players look at this spawner if it's closer than the one they're looking at
 
     --  create the puck
-    puck = World.SpawnAsset(propPuckTemplate, { position = position + propSpawnerZTravel + propPuckOffset, parent = spawner.parent })
+    puck = World.SpawnAsset(propPuckTemplate, { position = position + propSpawnerZTravel + propPuckOffset, parent = script.parent })
     propLivePucks[puck] = true
     propLivePuckCount = propLivePuckCount + 1
 
-    --  recoil the ejector
-    position = spawnerGeometry:GetPosition()
-    spawnerGeometry:MoveTo(position + propSpawnerZRecoil, 0.4, true)
-    Task.Wait(0.4)
-    spawnerGeometry:MoveTo(position, 0.6, true)
-
     return puck
-end
-
-function RetractSpawner(spawner)
-    local spawnerOutSFX = spawner:GetCustomProperty("spawnerOutSFX"):WaitForObject()
-    local spawnerGeometry = spawner:GetCustomProperty("spawnerGeometry"):WaitForObject()
-    local portholeGeometry = spawner:GetCustomProperty("spawnerPorthole"):WaitForObject()
-   
-    spawnerOutSFX:Play()
-    spawnerGeometry:MoveTo(Vector3.ZERO, spawnerOutSFX.length / 2.0, true)
-    spawnerGeometry:RotateTo(Rotation.ZERO, propSpawnerInTime, true)
-    Task.Wait(spawnerOutSFX.length / 2.0)
-    portholeGeometry:ScaleTo(Vector3.ZERO, spawnerOutSFX.length / 2.0, true)
-    Task.Wait(spawnerOutSFX.length / 2.0)
 end
 
 function LevelPowerDown()
@@ -239,19 +226,19 @@ function CheckPuckCount()
         end
 
         local   spawnConfiguration = propSpawnConfigurations[propSpawnConfigurationIndex]
-        for _, position in ipairs(spawnConfiguration) do
+        for index, position in ipairs(spawnConfiguration) do
             Task.Spawn(function()
-                local spawner = World.SpawnAsset(propPuckSpawnerTemplate, { position = position, parent = script.parent })
-                
-                ExtendSpawner(spawner, position, false)
-                puck = SpawnPuckFrom(spawner, position, false)
+                Events.BroadcastToAllPlayers("pck.ExtendSpawner", index, position, propSpawnerZTravel, propSpawnerZRotation, makePlayersWatch)
+                Task.Wait(1.75)
+                Events.BroadcastToAllPlayers("pck.RecoilSpawner", index, propSpawnerZRecoil)
+                puck = SpawnPuckAt(position, makePlayersWatch)
                 
                 local controller = puck:GetCustomProperty("controller"):WaitForObject()
         
                 controller.context.propLevelController = script
         
-                RetractSpawner(spawner)
-                spawner:Destroy()
+                Task.Wait(2)
+                Events.BroadcastToAllPlayers("pck.RetractSpawner", index)
             end)
         end
     end

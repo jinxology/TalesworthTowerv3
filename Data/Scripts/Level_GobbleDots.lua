@@ -17,7 +17,7 @@ entranceFlume = nil
 exitFlumeLocation = Vector3.New(3150,5900,250)
 exitFlumeRotation = Rotation.New(0,0,-90)
 entranceFlumeLocation = Vector3.New(3175,277.226,684.028)
-entranceFlumeRotation = Rotation.New(0,-13.852,0)
+entranceFlumeRotation = Rotation.New(0,-15.527,90)
 entranceFlumeEjectionVelocity = 5
 
 ------------------------------------------------------------
