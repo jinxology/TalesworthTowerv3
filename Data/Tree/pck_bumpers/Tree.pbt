@@ -1,6 +1,138 @@
 Name: "pck_bumpers"
 RootId: 13358087012448314564
 Objects {
+  Id: 12444809061661042305
+  Name: "Plane 1m - One Sided"
+  Transform {
+    Location {
+      X: -9525
+      Z: 1525
+    }
+    Rotation {
+      Pitch: 6.83018879e-06
+      Yaw: 90
+      Roll: -89.9999695
+    }
+    Scale {
+      X: 48
+      Y: 6.75
+      Z: 1
+    }
+  }
+  ParentId: 13358087012448314564
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 15355692762836007663
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 7817551219901183789
+  Name: "Plane 1m - One Sided"
+  Transform {
+    Location {
+      X: 9525
+      Z: 1525
+    }
+    Rotation {
+      Yaw: -90
+      Roll: -90
+    }
+    Scale {
+      X: 48
+      Y: 6.75
+      Z: 1
+    }
+  }
+  ParentId: 13358087012448314564
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 15355692762836007663
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 5992164399716613352
+  Name: "Plane 1m - One Sided"
+  Transform {
+    Location {
+      Y: -6050
+      Z: 950
+    }
+    Rotation {
+      Roll: 90
+    }
+    Scale {
+      X: 140
+      Y: 20
+      Z: 1
+    }
+  }
+  ParentId: 13358087012448314564
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 15355692762836007663
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 6600427252752739481
   Name: "Trigger"
   Transform {
@@ -63,7 +195,7 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 13278500210254108100
+      key: 10109494805189468283
       value {
         Overrides {
           Name: "Name"
@@ -80,14 +212,6 @@ Objects {
           Name: "Rotation"
           Rotator {
             Yaw: 180
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
           }
         }
       }
@@ -123,19 +247,11 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 13278500210254108100
+      key: 10109494805189468283
       value {
         Overrides {
           Name: "Name"
           String: "pck.bumperCorner"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: -1
-            Y: 1
-            Z: 1
-          }
         }
         Overrides {
           Name: "Position"
@@ -148,6 +264,27 @@ Objects {
           Name: "Rotation"
           Rotator {
             Yaw: 180
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: -1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 12382498888703627370
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2399.99951
+            Y: -2800.00073
+            Z: 950
           }
         }
       }
@@ -176,7 +313,7 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 13278500210254108100
+      key: 10109494805189468283
       value {
         Overrides {
           Name: "Name"
@@ -220,11 +357,23 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 13278500210254108100
+      key: 10109494805189468283
       value {
         Overrides {
           Name: "Name"
           String: "pck.bumperCorner"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 6800
+            Y: 6050
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
         }
         Overrides {
           Name: "Scale"
@@ -232,13 +381,6 @@ Objects {
             X: -1
             Y: 1
             Z: 1
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 6800
-            Y: 6050
           }
         }
       }
@@ -282,6 +424,49 @@ Objects {
     }
     TriggerShape_v2 {
       Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
+  Id: 2167435138935062340
+  Name: "Plane 1m - One Sided"
+  Transform {
+    Location {
+      Y: 6050
+      Z: 950
+    }
+    Rotation {
+      Roll: -90
+    }
+    Scale {
+      X: 140
+      Y: 20
+      Z: 1
+    }
+  }
+  ParentId: 13358087012448314564
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 15355692762836007663
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
     }
   }
 }

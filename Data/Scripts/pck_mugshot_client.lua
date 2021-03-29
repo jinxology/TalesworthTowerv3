@@ -20,7 +20,7 @@ propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyNa
     end
 end)
 
-propTensionProperies = {
+propTensionProperties = {
     -- 1: slack (or traveling)
     {
         colors = {
@@ -170,13 +170,13 @@ function Tick()
                 --  attaching
                 amount = (time() - propTetherAttachStartTime) / propTetherAttachDuration
                 if amount < 1 then
-                    tetherVFXProperties = LerpProperties(propTensionProperies[1], propTensionProperies[2], amount)
+                    tetherVFXProperties = LerpProperties(propTensionProperties[1], propTensionProperties[2], amount)
                 else
                     propTetherAttachStartTime = 0
-                    tetherVFXProperties = propTensionProperies[2]
+                    tetherVFXProperties = propTensionProperties[2]
                 end
             else
-                tetherVFXProperties = propTensionProperies[2]
+                tetherVFXProperties = propTensionProperties[2]
                 --  attached
                 
                 -- if propTension > 0 and propTension < 0.25
@@ -185,7 +185,7 @@ function Tick()
                 -- else if propTension > 0.75 and propTension < 1.0
             end
         else 
-            tetherVFXProperties = propTensionProperies[1]
+            tetherVFXProperties = propTensionProperties[1]
         end
 
         UpdateTetherVFX(tetherVFXProperties)
@@ -229,6 +229,7 @@ function OnMugshotAimed(mugshot, puck, aimed)
             -- propTetherVFX.isEnabled = false
             propGrapple:SetPosition(Vector3.ZERO)
             propGrapple:SetRotation(Rotation.ZERO)
+            UpdateTetherVFX(propTensionProperties[2])
         end
     end
 end
@@ -252,4 +253,3 @@ end
 
 Events.Connect("pck.mugshotAimed", OnMugshotAimed)
 Events.Connect("pck.mugshotTethered", OnMugshotTethered)
-

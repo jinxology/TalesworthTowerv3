@@ -12,6 +12,9 @@ local propLookoutAbility = script:GetCustomProperty("lookoutAbility")
 local propBumpers = script:GetCustomProperty("bumpers"):WaitForObject()
 -- local Ease3D = require(script:GetCustomProperty("Ease3D"))
 local propEntrancePipeTemplate = script:GetCustomProperty("entrancePipeTemplate")
+local propShockVFX = script:GetCustomProperty("shockVFX")
+local propShockSFX = script:GetCustomProperty("fencePlayerSFX")
+local propFencePuckFXTemplate = script:GetCustomProperty("fencePuckFX")
 
 local propLivePuckCount = 0
 local propLivePucks = {}
@@ -40,11 +43,9 @@ local propSpawnConfigurations = {
     },
 }
 
-local propWallsTemplate = script:GetCustomProperty("wallsTemplate")
 local propTutorialCurtainTemplate = script:GetCustomProperty("tutorialCurtain")
 local propLookoutAbilityTemplate = script:GetCustomProperty("lookoutAbility")
 local propTutorialCurtain
-local propWalls
 local propEntrancePipe
 local propPlayersFlumedIn = {}
 
@@ -64,9 +65,54 @@ function ConnectBumpers(container)
         if bumper:IsA("Trigger") then
             bumper.beginOverlapEvent:Connect(function(trigger, other)
                 if other:IsA("Player") then
-                    print("bzzzzt beat it player")
-                else
-                    print("object entered " .. other.type .. " " .. other.id)
+                    if other.serverUserData.pckShocked ~= true then
+                        other.serverUserData.pckShocked = true
+                        shockVFX = World.SpawnAsset(propShockVFX)
+                        shockVFX:SetWorldPosition(other:GetWorldPosition())
+                        shockSFX = World.SpawnAsset(propShockSFX)
+                        shockSFX:SetWorldPosition(other:GetWorldPosition())
+
+                        target = shockVFX:GetCustomProperty("Capsule"):WaitForObject()
+                        target:AttachToPlayer(other, "upper_spine")
+                        
+                        other:EnableRagdoll("lower_spine", .4)
+                        other:EnableRagdoll("right_shoulder", .2)
+                        other:EnableRagdoll("left_shoulder", .6)
+                        other:EnableRagdoll("right_hip", .6)
+                        other:EnableRagdoll("left_hip", .6)		
+                        
+                        impulse = trigger:GetRotation() * Vector3.FORWARD * other.mass * 3200 + Vector3.UP * other.mass * 1200
+                        print(tostring(impulse))
+                        other:AddImpulse(impulse)
+                        
+                        shockSFX:Play()
+                        shockVFX:Play()
+                        shockVFX:SetSmartProperty("Displacement Speed", math.random() + 0.2 * 0.5)
+                        Task.Wait(0.5)
+                        other.serverUserData.pckShocked = false
+                        shockVFX:SetSmartProperty("Displacement Speed", math.random() + 0.2 * 0.5)
+                        Task.Wait(0.5)
+                        shockVFX:SetSmartProperty("Displacement Speed", math.random() + 0.2 * 0.5)
+                        Task.Wait(0.5)
+                        shockVFX:Stop()
+                        other:DisableRagdoll()
+                    end
+                elseif other.name == "pck.puckTemplate" then
+                    puckVelocity = other:GetVelocity()
+                    surfaceNormal = trigger:GetRotation() * Vector3.FORWARD
+
+                    reflected = puckVelocity - (2 * puckVelocity * surfaceNormal) * surfaceNormal
+                    if reflected.size < 1000 then
+                        reflected = reflected:GetNormalized() * 1000
+                    end
+
+                    print("bounced " .. tostring(puckVelocity) .. " to " .. tostring(reflected) .. " " .. puckVelocity.size .. " -> " .. reflected.size)
+                    other:SetVelocity(reflected)
+
+                    radius = puck:GetCustomProperty("controller"):WaitForObject().context.propRadius
+                    impactLocation = other:GetPosition() - surfaceNormal * radius - Vector3.UP * radius
+
+                    propFencePuckFX = World.SpawnAsset(propFencePuckFXTemplate, { parent = other.parent, position = impactLocation, rotation = trigger:GetRotation() })
                 end
             end)
         else
@@ -77,8 +123,6 @@ end
         
 
 function LevelPowerUp()
-    propWalls = World.SpawnAsset(propWallsTemplate, { parent = script.parent })
-    propWalls.visibility = Visibility.FORCE_ON
     propTutorialCurtain = World.SpawnAsset(propTutorialCurtainTemplate, { parent = script.parent })
     propTutorialCurtain:GetCustomProperty("levelEnteredTrigger"):WaitForObject().beginOverlapEvent:Connect(function(trigger, other)
         if other:IsA("Player") then
@@ -91,8 +135,6 @@ function LevelPowerUp()
 
     script:SetNetworkedCustomProperty("levelState", 1)
     
-    ConnectBumpers(propBumpers)
-
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, 125, 50), rotation = Rotation.New(-135, 90, 0), parent = script.parent }))
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, -125, 50), rotation = Rotation.New(135, 90, 0), parent = script.parent }))
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, -375, 50), rotation = Rotation.New(135, 90, 0), parent = script.parent }))
@@ -120,8 +162,6 @@ function LevelBegin()
     local   spawnConfiguration = propSpawnConfigurations[propSpawnConfigurationIndex]
     
     script:SetNetworkedCustomProperty("levelState", 2)
-    
-    propWalls.visibility = Visibility.FORCE_OFF
     
     position = entranceFlume:GetWorldPosition()
     rotation = entranceFlume:GetWorldRotation()
@@ -211,9 +251,6 @@ function LevelPowerDown()
 
     -- World.FindObjectByName("Level.GobbleDots").visibility = Visibility.FORCE_OFF
     -- World.FindObjectByName("Level.LazyLava").visibility = Visibility.FORCE_OFF
-
-    propWalls:Destroy()
-    propWalls = nil
 end
 
 propCheckPuckCountTask = nil
@@ -284,3 +321,4 @@ propScoreTrigger.beginOverlapEvent:Connect(ScoreTriggerDidOverlap)
 propFailTrigger.beginOverlapEvent:Connect(FailTriggerDidOverlap)
 
 
+ConnectBumpers(propBumpers)
