@@ -7,7 +7,7 @@ local moveDirection = 0
 local distBetweenSquares = 800
 local Xoffset = 4314
 local Yoffset = -1550
-local Zoffset = 175
+local Zoffset = 180
 
 local startLoc = Vector3.New(Xoffset,Yoffset+distBetweenSquares*3,Zoffset)
 
@@ -27,8 +27,8 @@ Vector2.New(12,10),
 Vector2.New(14,10),
 Vector2.New(14,0),
 Vector2.New(3,0),
-Vector2.New(3,2),
-Vector2.New(0,2)
+Vector2.New(3,3),
+Vector2.New(0,3)
 
 }
 
@@ -120,6 +120,15 @@ end
 function StartRaft(currentSpeed)
     speed = currentSpeed
     MoveToNextDestination()
+end
+
+function StopRaft()
+    raft:StopMove()
+end
+
+function MoveToStartPositionByIndex(index)
+    curWaypointIndex = index
+    raft:SetPosition(GetRaftDestPosition())
 end
 
 raft:SetPosition(startLoc)

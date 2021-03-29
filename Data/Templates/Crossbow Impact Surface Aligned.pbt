@@ -1,13 +1,13 @@
 Assets {
-  Id: 13717526892950500426
-  Name: "CowLauncherMuzzleFlash"
+  Id: 18294768118626857261
+  Name: "Crossbow Impact Surface Aligned"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 10538529077681073464
+      RootId: 10169750625927249080
       Objects {
-        Id: 10538529077681073464
-        Name: "CowLauncherMuzzleFlash"
+        Id: 10169750625927249080
+        Name: "Crossbow Impact Surface Aligned"
         Transform {
           Scale {
             X: 1
@@ -16,11 +16,10 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 2456134029264079810
-        ChildIds: 2498394864959667344
-        ChildIds: 14289476446790278791
+        ChildIds: 2658984275732485392
         UnregisteredParameters {
         }
+        Lifespan: 3
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -35,59 +34,8 @@ Assets {
         }
       }
       Objects {
-        Id: 2456134029264079810
-        Name: "Gunshot Projectile Launcher Set 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 10538529077681073464
-        UnregisteredParameters {
-          Overrides {
-            Name: "bp:Type"
-            Enum {
-              Value: "mc:esfx_gunshot_launcher_01:10"
-            }
-          }
-          Overrides {
-            Name: "bp:Enable Dynamic Distant Sound"
-            Bool: true
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Blueprint {
-          BlueprintAsset {
-            Id: 12691441275916690022
-          }
-          AudioBP {
-            AutoPlay: true
-            Volume: 1
-            Falloff: 2000
-            Radius: 400
-            EnableOcclusion: true
-            IsSpatializationEnabled: true
-            IsAttenuationEnabled: true
-          }
-        }
-      }
-      Objects {
-        Id: 2498394864959667344
-        Name: "Generic Muzzleflash VFX"
+        Id: 2658984275732485392
+        Name: "Impact Geo"
         Transform {
           Location {
           }
@@ -100,13 +48,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10538529077681073464
-        UnregisteredParameters {
-          Overrides {
-            Name: "bp:Particle Size Multiplier"
-            Float: 1
-          }
-        }
+        ParentId: 10169750625927249080
+        ChildIds: 17328054617714693974
+        ChildIds: 3297392690640843751
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -116,23 +60,17 @@ Assets {
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
-        Blueprint {
-          BlueprintAsset {
-            Id: 16322635077100878811
-          }
-          Vfx {
-            AutoPlay: true
-          }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
+        Folder {
+          IsGroup: true
         }
       }
       Objects {
-        Id: 14289476446790278791
-        Name: "Creature Cow Moo Long 01 SFX"
+        Id: 17328054617714693974
+        Name: "Impact Ground Dirt 01 SFX"
         Transform {
           Location {
+            X: 9.99999809
+            Z: -9.53674316e-07
           }
           Rotation {
           }
@@ -142,7 +80,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10538529077681073464
+        ParentId: 2658984275732485392
+        UnregisteredParameters {
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -154,41 +94,72 @@ Assets {
         }
         AudioInstance {
           AudioAsset {
-            Id: 7412387329302415405
+            Id: 3307794794401153799
           }
           AutoPlay: true
-          Pitch: -1738.76733
           Volume: 1
-          Falloff: -1
-          Radius: -1
+          Falloff: 3600
+          Radius: 400
+          EnableOcclusion: true
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+      }
+      Objects {
+        Id: 3297392690640843751
+        Name: "Gun Impact Small VFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 2658984275732485392
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 17144409617272687275
+          }
+          TeamSettings {
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
     }
     Assets {
-      Id: 12691441275916690022
-      Name: "Gunshot Projectile Launcher Set 01 SFX"
-      PlatformAssetType: 10
-      PrimaryAsset {
-        AssetType: "AudioBlueprintAssetRef"
-        AssetId: "sfxabp_gunshot_launcher_ref"
-      }
-    }
-    Assets {
-      Id: 16322635077100878811
-      Name: "Generic Muzzleflash VFX"
-      PlatformAssetType: 8
-      PrimaryAsset {
-        AssetType: "VfxBlueprintAssetRef"
-        AssetId: "fxbp_generic_muzzleflash"
-      }
-    }
-    Assets {
-      Id: 7412387329302415405
-      Name: "Creature Cow Moo Long 01 SFX"
+      Id: 3307794794401153799
+      Name: "Impact Ground Dirt 01 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
-        AssetId: "sfx_creature_cow_moo_long_01a_Cue_ref"
+        AssetId: "sfx_bullet_impact_ground_dirt_01_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 17144409617272687275
+      Name: "Gun Impact Small VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_gun_impact_dirt_sm"
       }
     }
     PrimaryAssetId {

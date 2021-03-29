@@ -1,4 +1,13 @@
 Assets {
+  Id: 15894426578071679323
+  Name: "Cone - Truncated Hollow Wide Thin"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cone_truncated_hollow_006"
+  }
+}
+Assets {
   Id: 15340034010401438429
   Name: "Pipe - 90-Degree Short Thin"
   PlatformAssetType: 1
