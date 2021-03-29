@@ -34,14 +34,15 @@ function OnBeginOverlap(whichTrigger, other)
         local iterations
         if (targetType == 0) then
             iterations = propLevelControllerLazyLava.context.playerCount
+            --iterations=4
         else
-            iterations = #targetData
+            iterations = #targetData / 3
         end
 
         for i=1,iterations do
             
-            startLoc = targetData[(i-1)*3+1]
-            animateLoc = targetData[(i-1)*3+2]
+            local startLoc = targetData[(i-1)*3+1]
+            local animateLoc = targetData[(i-1)*3+2]
             local rot = targetData[(i-1)*3+3]
 
             local targetTypePtr

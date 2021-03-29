@@ -54,6 +54,18 @@ function SetRequiredStartPlatforms(nbrPlatforms)
     requiredNbrPlayersReady = nbrPlatforms
 end
 
+function RemoveAllWeapons()
+    --remove all weapons
+    local players = Game.GetPlayers()
+    for _,player in ipairs(players) do
+        for _, myEquipmentObject in pairs(player:GetEquipment()) do
+            myEquipmentObject:Unequip()
+            if (Object.IsValid(myEquipmentObject)) then myEquipmentObject:Destroy() end
+            other.animationStance = "unarmed_stance"
+        end
+    end
+end
+
 
 function TeleportAllPlayers(currentLev, newLoc, useFlume)
     DestroyLevel(currentLevelIndex)
@@ -65,22 +77,24 @@ function TeleportAllPlayers(currentLev, newLoc, useFlume)
 
     currentLevelIndex = currentLev
     nextLevelindex = nil
-    local players = Game.GetPlayers()
     
+    RemoveAllWeapons()
+
     levelControllerScript = GetCurrentLevelController()
 
     levelControllerScript.context.LevelPowerUp()
     SpawnStartingPlatforms(currentLevelIndex)
     SpawnFlumePortals(currentLevelIndex)
 
+    local players = Game.GetPlayers()    
     if (useFlume) then
         levelControllerScript.context.entranceFlume:FindChildByName("Flume Tube Manager").context.EntranceActive(levelControllerScript.context.entranceFlumeEjectionVelocity)
         local teleportDest = levelControllerScript.context.entranceFlume:FindChildByName("Entrance teleport point"):GetWorldPosition()        
-        for _, player in pairs(Game.GetPlayers()) do
+        for _, player in pairs(players) do
             player:SetWorldPosition(teleportDest)
         end       
     else
-        for _, player in pairs(Game.GetPlayers()) do
+        for _, player in pairs(players) do
             player:SetWorldPosition(newLoc)
         end       
     end

@@ -12,7 +12,6 @@ function OnBeginOverlap(whichTrigger, other)
         local whooshVector = Vector3.New(destPt.x - originPt.x, destPt.y - originPt.y, destPt.z - originPt.z)
 		player:SetVelocity(whooshVector * 4)
         
-		--	reset light level
 		Events.BroadcastToPlayer(player, "sky.SetLightLevel", 4)
 
 	end
