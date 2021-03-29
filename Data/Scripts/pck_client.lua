@@ -6,33 +6,27 @@ local propLevelController = script:GetCustomProperty("levelController"):WaitForO
 local propLightsOn1SFX = script:GetCustomProperty("lightsOn1SFX"):WaitForObject()
 local propLightsOn2SFX = script:GetCustomProperty("lightsOn2SFX"):WaitForObject()
 
-local propLightColor1 = Color.FromStandardHex("#00F4FAFF")
-local propLightColor2 = Color.FromStandardHex("#9FFBFFFF")
+-- local propLightColor1 = Color.FromStandardHex("#00F4FAFF")
+-- local propLightColor2 = Color.FromStandardHex("#9FFBFFFF")
 
 function UpdateLevelState(levelState)
     if levelState == 0 then
-        print("level state 0")
     elseif levelState == 1 then
         --1: powered up
-        propFence1.visibility = Visibility.FORCE_OFF
-        propFence2.visibility = Visibility.FORCE_OFF
         -- propCeilingLight1.visibility = Visibility.FORCE_OFF
         -- propCeilingLight2.visibility = Visibility.FORCE_OFF
         propCeilingLight1:SetColor(Color.BLACK)
         propCeilingLight2:SetColor(Color.BLACK)
     elseif levelState == 2 then
-        propFence1.visibility = Visibility.FORCE_ON
-        propFence2.visibility = Visibility.FORCE_ON
         -- propCeilingLight1.visibility = Visibility.FORCE_ON
         -- propCeilingLight2.visibility = Visibility.FORCE_ON
-        propCeilingLight1:SetColor(propLightColor1)
-        propCeilingLight2:SetColor(propLightColor2)
+        -- propCeilingLight1:SetColor(propLightColor1)
+        -- propCeilingLight2:SetColor(propLightColor2)
         propLightsOn1SFX:Play()
         propLightsOn2SFX:Play()
         --2: begun
     elseif levelState == 3 then
         --3: done
-        print("level state 3")
     end
 end
 
@@ -96,6 +90,9 @@ function RetractSpawner(index)
     Task.Wait(spawnerOutSFX.length / 2.0)
     porthole:ScaleTo(Vector3.ZERO, spawnerOutSFX.length / 2.0, true)
     Task.Wait(spawnerOutSFX.length / 2.0)
+
+    spawner.spawner:Destroy()
+    propSpawners[index] = nil
 end
 
 -- Events.Connect("pck.Tumbleweed", RollTumbleweed)

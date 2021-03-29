@@ -8,7 +8,7 @@ local propLookOutTrigger = script:GetCustomProperty("lookOutTrigger"):WaitForObj
 local propTriggerContainer = script:GetCustomProperty("triggerContainer"):WaitForObject()
 local propClankSFX = script:GetCustomProperty("clankSFX"):WaitForObject()
 
-
+propScoring = false
 propLevelController = nil
 playMusicOnLanding = false
 
@@ -86,16 +86,12 @@ function FindFloor()
 end
 
 function ScorePuck()
-	print("Scoring")
 	Destabilize()
+	propScoring = true
 	script:SetNetworkedCustomProperty("scoring", true)
 	
-	for _, mugshot in pairs(propTetheredMugshots) do
-		UntetherMugshot(mugshot)
-	end
-	
 	Task.Spawn(function()
-		print("destroying puck")
+		-- print("destroying puck")
 		propPhysics:Destroy()
 	end, 5)
 end
@@ -203,7 +199,7 @@ function TetherMugshotToEligibleAnchor(mugshot, eligibleAnchors)
 		if propTetheredMugshots[anchorIndex] == nil then
 			propTetheredMugshots[anchorIndex] = mugshot
 			tetheredIndex = anchorIndex
-			print("tethered " .. mugshot.id .. " to anchor " .. anchorIndex)
+			-- print("tethered " .. mugshot.id .. " to anchor " .. anchorIndex)
 			break
 		end
 	end
@@ -213,11 +209,10 @@ end
 
 function UntetherMugshot(mugshot)
 	for _, tetheredMugshot in pairs(propTetheredMugshots) do
-		print("already tethered to " .. tetheredMugshot.id .. " at anchor " .. _)
+		-- print("already tethered to " .. tetheredMugshot.id .. " at anchor " .. _)
 		if tetheredMugshot == mugshot then
 			propTetheredMugshots[_] = nil
-			mugshot:GetCustomProperty("controller"):WaitForObject().context.Untether()
-			print("    ... untethering it")
+			-- print("    ... untethering it")
 			break
 		end
 	end
@@ -253,7 +248,7 @@ function HandleTension(deltaT)
 
 				totalForce = totalForce + forceDirection * force
 
-				print("distance = " .. distance .. ", slack = " .. slack)
+				-- print("distance = " .. distance .. ", slack = " .. slack)
 			end
 		end
 	end

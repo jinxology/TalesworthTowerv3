@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 1232579912354001357
         ChildIds: 16499993128992971694
         ChildIds: 8282285858322498775
         ChildIds: 9169255255245069283
@@ -338,6 +338,12 @@ Assets {
               SubObjectId: 1882084978741898004
             }
           }
+          Overrides {
+            Name: "cs:tetherVFX"
+            ObjectReference {
+              SubObjectId: 11376219262442774661
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -593,7 +599,6 @@ Assets {
         ChildIds: 1119479215754244346
         ChildIds: 6513163486087200886
         ChildIds: 14447195453197103600
-        ChildIds: 368255692165298173
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -731,6 +736,7 @@ Assets {
           }
         }
         ParentId: 6513163486087200886
+        ChildIds: 11376219262442774661
         ChildIds: 6318775851616436255
         ChildIds: 13105115123571185527
         ChildIds: 11502802023227318829
@@ -747,6 +753,154 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 11376219262442774661
+        Name: "tetherVFX"
+        Transform {
+          Location {
+            X: 2.29269052
+            Z: -2.77330875
+          }
+          Rotation {
+            Yaw: -179.999985
+            Roll: 89.999939
+          }
+          Scale {
+            X: 1.2
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17542475088066571908
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Target Scene Object Reference"
+            ObjectReference {
+              SubObjectId: 1252167332931131001
+            }
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Secondary Color"
+            Color {
+              R: 0.13499999
+              G: 0.0536423847
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Tertiary Color"
+            Color {
+              R: 0.13499999
+              G: 0.0536423847
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 4
+          }
+          Overrides {
+            Name: "bp:Beam Width"
+            Float: 0.25
+          }
+          Overrides {
+            Name: "bp:Beam Appearance"
+            Enum {
+              Value: "mc:ebeamtexturetype:0"
+            }
+          }
+          Overrides {
+            Name: "bp:Color Offset A"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Texture Scale"
+            Float: 0.97
+          }
+          Overrides {
+            Name: "bp:Texture Scroll Speed"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Texture Noise Amount"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Texture Noise Speed"
+            Float: 5
+          }
+          Overrides {
+            Name: "bp:Displacement Amount"
+            Float: 0.0659069717
+          }
+          Overrides {
+            Name: "bp:Displacement Speed"
+            Float: 10
+          }
+          Overrides {
+            Name: "bp:Displacement Scale"
+            Float: 10
+          }
+          Overrides {
+            Name: "bp:Displacement Axis Scale"
+            Vector {
+              Y: 2.51847
+            }
+          }
+          Overrides {
+            Name: "bp:Source Tangent"
+            Vector {
+              Y: 0.001
+              Z: 0.001
+            }
+          }
+          Overrides {
+            Name: "bp:Target Tangent"
+            Vector {
+              Y: 0.001
+              Z: 0.001
+            }
+          }
+          Overrides {
+            Name: "bp:Local Space"
+            Bool: true
+          }
+          Overrides {
+            Name: "bp:Color Offset B"
+            Float: 0.5
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 13319522537581195305
+          }
+          TeamSettings {
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -1106,51 +1260,6 @@ Assets {
         CoreMesh {
           MeshAsset {
             Id: 15312805567995783140
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 368255692165298173
-        Name: "Cylinder"
-        Transform {
-          Location {
-            X: 2.49023438
-            Z: -2.22949219
-          }
-          Rotation {
-            Pitch: 90
-            Yaw: -3.05175781e-05
-            Roll: -3.05175781e-05
-          }
-          Scale {
-            X: 0.0499941483
-            Y: 0.0874609202
-            Z: 0.340507
-          }
-        }
-        ParentId: 1882084978741898004
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 1137112816547272582
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1736,6 +1845,15 @@ Assets {
       }
     }
     Assets {
+      Id: 13319522537581195305
+      Name: "Point To Point Electrical Beam VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_ptp_electrical_beam"
+      }
+    }
+    Assets {
       Id: 1920010878601219178
       Name: "Fantasy Sword Guard 01"
       PlatformAssetType: 1
@@ -1787,15 +1905,6 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_weap_fan_foregrip_cross_001"
-      }
-    }
-    Assets {
-      Id: 1137112816547272582
-      Name: "Cylinder"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_cylinder_002"
       }
     }
     Assets {

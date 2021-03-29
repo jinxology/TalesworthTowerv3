@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14304617829904033853
+        ParentId: 4781671109827199097
         ChildIds: 2456134029264079810
         ChildIds: 2498394864959667344
         ChildIds: 14289476446790278791
@@ -157,6 +157,7 @@ Assets {
             Id: 7412387329302415405
           }
           AutoPlay: true
+          Pitch: -1738.76733
           Volume: 1
           Falloff: -1
           Radius: -1

@@ -40,6 +40,57 @@ Objects {
   }
 }
 Objects {
+  Id: 9227022200366264596
+  Name: "Cone - Truncated Hollow Wide Thin"
+  Transform {
+    Location {
+      X: -836.963074
+      Y: 3.03027344
+      Z: -664.120605
+    }
+    Rotation {
+    }
+    Scale {
+      X: 7.2016592
+      Y: 7.51755047
+      Z: 7.51755047
+    }
+  }
+  ParentId: 4159855513164329778
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13668225859767539073
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 15894426578071679323
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 17587017690388574738
   Name: "Pipe (Merged)"
   Transform {
@@ -1178,7 +1229,7 @@ Objects {
   Transform {
     Location {
       X: -830.464966
-      Z: -450
+      Z: -664.120605
     }
     Rotation {
       Yaw: -179.999985
@@ -1187,7 +1238,7 @@ Objects {
     Scale {
       X: 7
       Y: 7
-      Z: 7
+      Z: 4.9
     }
   }
   ParentId: 18039868393229935935
@@ -1381,7 +1432,8 @@ Objects {
   Name: "Teleport In"
   Transform {
     Location {
-      X: -644.306152
+      X: -834.74939
+      Z: -67.4726563
     }
     Rotation {
     }

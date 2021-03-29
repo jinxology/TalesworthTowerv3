@@ -19,6 +19,7 @@ Assets {
         ChildIds: 16528762636607657263
         ChildIds: 15967389784021567551
         ChildIds: 14225615203835153900
+        ChildIds: 12453581318636577772
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -917,6 +918,44 @@ Assets {
           }
         }
       }
+      Objects {
+        Id: 12453581318636577772
+        Name: "Water Boat Surf Movement Loop 01 SFX"
+        Transform {
+          Location {
+            X: -194.752243
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.973761201
+            Y: 0.973761201
+            Z: 0.973761201
+          }
+        }
+        ParentId: 16419828027020315180
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 1744970341948617418
+          }
+          AutoPlay: true
+          Volume: 0.333600879
+          Radius: 200
+          EnableOcclusion: true
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+      }
     }
     Assets {
       Id: 11348673457870803962
@@ -952,6 +991,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_cube_002"
+      }
+    }
+    Assets {
+      Id: 1744970341948617418
+      Name: "Water Boat Surf Movement Loop 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_water_boat_surf_movement_loop_01_Cue_ref"
       }
     }
     PrimaryAssetId {

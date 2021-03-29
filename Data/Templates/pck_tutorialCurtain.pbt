@@ -16,11 +16,20 @@ Assets {
           }
         }
         ParentId: 1232579912354001357
+        ChildIds: 7854944198136454500
         ChildIds: 17425561466512732685
         ChildIds: 2182817273173346973
         ChildIds: 7601048029998038088
         ChildIds: 7134853202217147988
         ChildIds: 17425528139844993563
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:levelEnteredTrigger"
+            ObjectReference {
+              SubObjectId: 7854944198136454500
+            }
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -33,6 +42,43 @@ Assets {
         }
         Folder {
           IsGroup: true
+        }
+      }
+      Objects {
+        Id: 7854944198136454500
+        Name: "Trigger"
+        Transform {
+          Location {
+            X: -3400
+            Z: 800
+          }
+          Rotation {
+          }
+          Scale {
+            X: 5
+            Y: 5
+            Z: 5
+          }
+        }
+        ParentId: 15014805780825794623
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:sphere"
+          }
         }
       }
       Objects {
@@ -4163,7 +4209,7 @@ Assets {
         Transform {
           Location {
             X: 2400
-            Y: -1800
+            Y: -900
           }
           Rotation {
             Pitch: 6.83018879e-06
@@ -4236,7 +4282,7 @@ Assets {
         Transform {
           Location {
             X: -2400
-            Y: -1800
+            Y: -900
           }
           Rotation {
           }
@@ -4307,7 +4353,7 @@ Assets {
         Transform {
           Location {
             X: 2400
-            Y: 1800
+            Y: 900
           }
           Rotation {
             Yaw: -179.999954
@@ -4379,10 +4425,10 @@ Assets {
         Transform {
           Location {
             X: -2400
-            Y: 1800
+            Y: 900
           }
           Rotation {
-            Yaw: -89.9999542
+            Yaw: -89.999939
           }
           Scale {
             X: 3.2
@@ -4511,13 +4557,13 @@ Assets {
         Transform {
           Location {
             X: -3950
-            Y: 1800
+            Y: 900
           }
           Rotation {
-            Yaw: -89.9999924
+            Yaw: -90
           }
           Scale {
-            X: 4.5
+            X: 2.25
             Y: 4.5
             Z: 3.5
           }
@@ -4594,7 +4640,7 @@ Assets {
         Transform {
           Location {
             X: 2400
-            Y: 3350
+            Y: 2450
           }
           Rotation {
             Yaw: -179.999954
@@ -4677,7 +4723,7 @@ Assets {
         Transform {
           Location {
             X: -2400
-            Y: -3350
+            Y: -2450
           }
           Rotation {
           }
@@ -4759,13 +4805,13 @@ Assets {
         Transform {
           Location {
             X: 3950
-            Y: -1800
+            Y: -900
           }
           Rotation {
             Yaw: 89.9999619
           }
           Scale {
-            X: 4.5
+            X: 2.25
             Y: 4.5
             Z: 3.5
           }

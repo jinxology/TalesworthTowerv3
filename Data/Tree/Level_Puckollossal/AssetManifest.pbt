@@ -53,15 +53,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15311694679467806527
-  Name: "Barbed Wire 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_mil_barbed_wire_001_uv_ref"
-  }
-}
-Assets {
   Id: 15112213264769934074
   Name: "Sci-fi Bass Drop Warp Growl 01 SFX"
   PlatformAssetType: 7
@@ -152,15 +143,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10004799667442629586
-  Name: "Invisible"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_invisible_001"
-  }
-}
-Assets {
   Id: 9068053932228334318
   Name: "Sci-fi Meta Power Up 04 SFX"
   PlatformAssetType: 7
@@ -248,15 +230,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_pipe_003"
-  }
-}
-Assets {
-  Id: 5413886523775614888
-  Name: "Helix - 1.0"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_helix_005"
   }
 }
 Assets {
