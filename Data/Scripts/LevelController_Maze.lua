@@ -4,7 +4,7 @@ local propMainGameController = script:GetCustomProperty("MainGameController"):Wa
 
 
 
-local propTimerSeconds = script:GetCustomProperty("TimerSeconds")
+-- local propTimerSeconds = script:GetCustomProperty("TimerSeconds")
 ------------------------------------------------------------
 --REQUIRED BY MAIN CONTROLLER
 ------------------------------------------------------------
@@ -41,7 +41,7 @@ print "level begin"
 --all on pads
 --doors open
 --timer start
-propMainGameController.context.StartTimer(propTimerSeconds, TimerEnded)
+-- propMainGameController.context.StartTimer(propTimerSeconds, TimerEnded)
 end
 
 --LevelEnd code is called when the....
