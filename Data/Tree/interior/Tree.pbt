@@ -1,6 +1,84 @@
 Name: "interior"
 RootId: 10869648306103627850
 Objects {
+  Id: 8195033725806891341
+  Name: "Fantasy Castle Wall 01 Half"
+  Transform {
+    Location {
+      X: 1189.65015
+      Y: -2200
+      Z: 3225.06323
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10869648306103627850
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Building_WallOuter:id"
+      AssetReference {
+        Id: 4795565015153028572
+      }
+    }
+    Overrides {
+      Name: "ma:Building_WallOuter:color"
+      Color {
+        R: 0.65882355
+        G: 1
+        B: 0.772549093
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Building_WallInner:color"
+      Color {
+        R: 0.65882355
+        G: 1
+        B: 0.772549093
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_TrimOuter:color"
+      Color {
+        R: 0.65882355
+        G: 1
+        B: 0.772549093
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 4449885987108302967
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 12387858727186739766
   Name: "Fantasy Castle Wall 01 Half"
   Transform {
@@ -4248,7 +4326,7 @@ Objects {
   Transform {
     Location {
       X: -1235
-      Y: -2162.23267
+      Y: -2169.53882
       Z: 3225.0625
     }
     Rotation {

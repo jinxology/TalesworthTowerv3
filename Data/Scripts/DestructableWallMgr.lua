@@ -1,16 +1,15 @@
 local trigger = script:GetCustomProperty("Trigger"):WaitForObject()
 local propTargetExplosionLL = script:GetCustomProperty("TargetExplosionLL")
-local propHp = script.parent:GetCustomProperty("hp")
 local propLevelControllerLazyLava = script:GetCustomProperty("LevelControllerLazyLava"):WaitForObject()
 
-
-local hpTable = {CoreString.Split(propHp,",")}
+hpList = ""
 local hp = -1
 
 function OnBeginOverlap(whichTrigger, other)    
 	if other:IsA("Projectile") then
 
         if (hp == -1) then
+            hpTable = {CoreString.Split(hpList,",")}
             hp = hpTable[propLevelControllerLazyLava.context.playerCount]
         end
 

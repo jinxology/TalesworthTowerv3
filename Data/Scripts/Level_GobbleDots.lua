@@ -25,10 +25,29 @@ entranceFlumeEjectionVelocity = 5
 ------------------------------------------------------------
 local propInitializeBoard = script:GetCustomProperty("InitialIzeBoard")
 local propDeletedDots = script:GetCustomProperty("DeletedDots")
+local propCartoonFoodEatBiteShort02SFX = script:GetCustomProperty("CartoonFoodEatBiteShort02SFX")
+local propDrinkLiquidGulpSwallow01SFX = script:GetCustomProperty("DrinkLiquidGulpSwallow01SFX")
 
-local DOT_COUNT = 300
+
+local DOT_COUNT = 292
 
 local levelFolder = script.parent  --Gets the Level Folder
+
+local propGhost = script:GetCustomProperty("Ghost")
+
+local mobFolder = levelFolder:FindDescendantByName("Mob AI")
+
+local ghostController = nil
+
+local inkyGhost = nil
+local blinkyGhost = nil
+local pinkyGhost = nil
+local clydeGhost = nil
+
+local INKY_COLOR = Color.FromLinearHex("0FDEFFFF")
+local BLINKY_COLOR = Color.FromLinearHex("CF0000FF")
+local PINKY_COLOR = Color.FromLinearHex("FF28C7FF")
+local CLYDE_COLOR = Color.FromLinearHex("F57A00FF")
 
 dotsArray = {} --The Array of all of the Dots the Server is holding with current values
 dotsDeletedArray = {}  --The Array of deleted dots the server is holding (an array of indexes)
@@ -41,15 +60,20 @@ dotsDeletedNetworkedString = ""
 function LevelPowerUp() 
 
 	--Setup the initial array of dots
-	InitializeDotArray()
-
-	--Calling the NetworkedCustomProperty to initialize the board
-	script:SetNetworkedCustomProperty("InitializeBoard", 1)
-	
+	InitializeDotArray()	
 end
 
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds
 function LevelBegin()
+	--Calling the NetworkedCustomProperty to initialize the board
+	script:SetNetworkedCustomProperty("InitializeBoard", 1)
+	
+	--  get rid of starting platform
+    for _, child in ipairs(script.parent:GetChildren()) do
+        if child.name == "StartPlatformGroup" then
+            child:MoveTo(child:GetPosition() - Vector3.UP * 36, 2, true)
+        end
+    end
 end
 
 --LevelEnd code is called when the....
@@ -86,6 +110,7 @@ function InitializeDotArray()
 	for dotIndex = 1, DOT_COUNT do 
 		dotsArray[dotIndex] = 1
 	end	
+	print("Total Dots:", #dotsArray)
 end
 
 function CheckDotsLeft(dotDeletedIndex)	
@@ -98,7 +123,7 @@ function CheckDotsLeft(dotDeletedIndex)
 end
 
 
-function OnDotDeleted(dotIndex)
+function OnDotDeleted(dotIndex, dotPosition)
 	
 	--If the current dot in the dot array still exsists
 	if dotsArray[dotIndex] == 1 then
@@ -107,7 +132,15 @@ function OnDotDeleted(dotIndex)
 		
 		--Call all clients by updating the networked custom property to the string including the new deleted dot
 		script:SetNetworkedCustomProperty("DeletedDots", UpdateDotsDeletedString(dotIndex))
-		
+		if(math.random(1,30) == 1) then
+			sfx = World.SpawnAsset(propDrinkLiquidGulpSwallow01SFX)
+			sfx:SetWorldPosition(dotPosition)
+			sfx:Play()
+		else 
+			sfx = World.SpawnAsset(propCartoonFoodEatBiteShort02SFX)
+			sfx:SetWorldPosition(dotPosition)
+			sfx:Play()
+		end
 		--Check to see if the game has been won
 		CheckDotsLeft(dotIndex)
 	end
@@ -118,7 +151,8 @@ function UpdateDotsDeletedString(deletedDot)
 	
 	if dotsDeletedNetworkedString == "" then
 		dotsDeletedNetworkedString = deletedDot .. ""
-	else 
+		SpwanGhosts()
+	else
 		dotsDeletedNetworkedString = dotsDeletedNetworkedString .. "," .. deletedDot
 	end
 	return(dotsDeletedNetworkedString)
@@ -130,3 +164,25 @@ end
 
 Events.Connect("DotDeleted", OnDotDeleted)
 --Events.Connect("PlayerNumberOfDeletes", PlayerNumberOfDeletes)
+
+function SpwanGhosts()
+	inkyGhost = World.SpawnAsset(propGhost, {parent = mobFolder})
+    inkyGhostController = inkyGhost:FindChildByName("GhostController")
+ 	inkyGhost:SetNetworkedCustomProperty("Color", INKY_COLOR)
+    inkyGhostController.context.StartGhost()
+    
+    blinkyGhost = World.SpawnAsset(propGhost, {parent = mobFolder})
+    blinkyGhostController = blinkyGhost:FindChildByName("GhostController")
+   	blinkyGhost:SetNetworkedCustomProperty("Color", BLINKY_COLOR)
+    blinkyGhostController.context.StartGhost()
+    
+    pinkyGhost = World.SpawnAsset(propGhost, {parent = mobFolder})
+    pinkyGhostController = pinkyGhost:FindChildByName("GhostController")
+   	pinkyGhost:SetNetworkedCustomProperty("Color", PINKY_COLOR)
+    pinkyGhostController.context.StartGhost()
+
+    clydeGhost = World.SpawnAsset(propGhost, {parent = mobFolder})
+    clydeGhostController = clydeGhost:FindChildByName("GhostController")
+   	clydeGhost:SetNetworkedCustomProperty("Color", CLYDE_COLOR)
+    clydeGhostController.context.StartGhost()
+end

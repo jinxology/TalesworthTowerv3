@@ -20,13 +20,6 @@ targetType = propTargetType --0=point, 1=speedup
 targetLife = propTargetLife
 animateTime = propAnimateTime
 
--- targetData = {
--- Vector3.New(4218,8052,372), Vector3.New(4218,8052,1029), Rotation.New(0,0,-90), 
--- Vector3.New(3886,8052,1029), Vector3.New(3886,8052,372), Rotation.New(0,0,-90),  
--- Vector3.New(4568,8052,372), Vector3.New(4568,8052,1029), Rotation.New(0,0,-90), 
--- Vector3.New(4918,8052,1029), Vector3.New(4918,8052,372), Rotation.New(0,0,-90)
--- }
-
 function OnBeginOverlap(whichTrigger, other)    
 	if other.name == "hiddenRaftFloor" then
         targetData = propLevelControllerLazyLava.context.allTargetData[propTargetLocationIndex]

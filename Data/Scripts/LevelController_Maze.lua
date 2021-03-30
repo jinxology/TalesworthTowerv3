@@ -4,7 +4,7 @@ local propMainGameController = script:GetCustomProperty("MainGameController"):Wa
 
 
 
-local propTimerSeconds = script:GetCustomProperty("TimerSeconds")
+-- local propTimerSeconds = script:GetCustomProperty("TimerSeconds")
 ------------------------------------------------------------
 --REQUIRED BY MAIN CONTROLLER
 ------------------------------------------------------------
@@ -40,8 +40,13 @@ function LevelBegin()
 print "level begin"
 --all on pads
 --doors open
+    local ffs = World.FindObjectsByName("forcefield - FG")
+    for _, obj in ipairs(ffs) do
+        obj.visibility = Visibility.FORCE_OFF
+        obj.collision = Collision.FORCE_OFF
+    end        
 --timer start
-propMainGameController.context.StartTimer(propTimerSeconds, TimerEnded)
+-- propMainGameController.context.StartTimer(propTimerSeconds, TimerEnded)
 end
 
 --LevelEnd code is called when the....

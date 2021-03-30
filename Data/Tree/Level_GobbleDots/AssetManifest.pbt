@@ -1,10 +1,19 @@
 Assets {
-  Id: 16024444055021791904
-  Name: "Fog Cloud"
+  Id: 16082402672103556239
+  Name: "Force Field"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
-    AssetId: "fxmi_fog_material"
+    AssetId: "fxmi_forceField"
+  }
+}
+Assets {
+  Id: 13552945397385832481
+  Name: "Drink Liquid Gulp Swallow 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_drink_gulp_swallow_01a_Cue_ref"
   }
 }
 Assets {
@@ -26,6 +35,15 @@ Assets {
   }
 }
 Assets {
+  Id: 10099212058672913078
+  Name: "Cartoon Food Eat Bite Short 02 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_cartoon_food_eat_bite_short_02_Cue_ref"
+  }
+}
+Assets {
   Id: 7211079400400238887
   Name: "Grid Glow Topographical"
   PlatformAssetType: 2
@@ -35,11 +53,20 @@ Assets {
   }
 }
 Assets {
-  Id: 7062845870289079377
-  Name: "Ball"
-  PlatformAssetType: 1
+  Id: 4647461794779648776
+  Name: "Sci-fi Deep Alien Morphing Machinery Loop 01 SFX"
+  PlatformAssetType: 7
   PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_sphere_001"
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_scifi_deep_alien_morphing_machinery_loop_01_Cue_ref"
+  }
+}
+Assets {
+  Id: 2899842837741361229
+  Name: "Concrete Tiles 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_gen_concrete_tiles_001"
   }
 }

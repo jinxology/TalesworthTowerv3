@@ -21,10 +21,6 @@ Assets {
         ChildIds: 12932956278338984828
         ChildIds: 16899859816752465464
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:hp"
-            String: "5,10,15,20"
-          }
         }
         WantsNetworking: true
         Collidable_v2 {
