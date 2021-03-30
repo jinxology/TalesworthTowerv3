@@ -6,7 +6,8 @@ function OnBeginOverlap(whichTrigger, other)
 		local player = other
 		local teleportDest = World.FindObjectByName("Flume"):FindChildByName("Teleport In")
 
-		player:SetWorldPosition(teleportDest:GetWorldPosition())				
+		player:SetWorldPosition(teleportDest:GetWorldPosition())
+		print("teleported player to " .. tostring(player:GetWorldPosition()))		
 	end
 end
 

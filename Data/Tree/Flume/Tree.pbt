@@ -1,59 +1,21 @@
 Name: "Flume"
 RootId: 4159855513164329778
 Objects {
-  Id: 5348352237610504185
-  Name: "Nature Wind Steady 01 SFX"
-  Transform {
-    Location {
-      X: 900.000488
-      Z: -2250
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.520408034
-      Y: 0.520408034
-      Z: 0.520408034
-    }
-  }
-  ParentId: 4159855513164329778
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 8002337567237634747
-    }
-    AutoPlay: true
-    Volume: 0.623069286
-    Falloff: 603.709839
-    Radius: 1294.27942
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 9227022200366264596
+  Id: 917738590897223729
   Name: "Cone - Truncated Hollow Wide Thin"
   Transform {
     Location {
-      X: -836.963074
-      Y: 3.03027344
-      Z: -664.120605
+      X: 3325.00049
+      Y: 825
+      Z: -1567.76758
     }
     Rotation {
+      Roll: 90
     }
     Scale {
-      X: 7.2016592
-      Y: 7.51755047
-      Z: 7.51755047
+      X: 8.32
+      Y: 8.32
+      Z: 8
     }
   }
   ParentId: 4159855513164329778
@@ -91,10 +53,202 @@ Objects {
   }
 }
 Objects {
-  Id: 17587017690388574738
-  Name: "Pipe (Merged)"
+  Id: 17021161972304768600
+  Name: "Cone - Truncated Hollow Wide Thin"
   Transform {
     Location {
+      X: 3324.60693
+      Y: 1225
+      Z: -1568.46973
+    }
+    Rotation {
+      Roll: 90
+    }
+    Scale {
+      X: 6.45
+      Y: 6.45
+      Z: 8
+    }
+  }
+  ParentId: 4159855513164329778
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13668225859767539073
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 15894426578071679323
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 17520371416788523018
+  Name: "Cone - Truncated Hollow Wide Thin"
+  Transform {
+    Location {
+      X: -724.999512
+      Z: -1200
+    }
+    Rotation {
+    }
+    Scale {
+      X: 8.32
+      Y: 8.32
+      Z: 8
+    }
+  }
+  ParentId: 4159855513164329778
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13668225859767539073
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 15894426578071679323
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 5348352237610504185
+  Name: "Nature Wind Steady 01 SFX"
+  Transform {
+    Location {
+      X: 900.000488
+      Z: -3975
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.520408034
+      Y: 0.520408034
+      Z: 0.520408034
+    }
+  }
+  ParentId: 4159855513164329778
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 8002337567237634747
+    }
+    AutoPlay: true
+    Volume: 0.623069286
+    Falloff: 603.709839
+    Radius: 1294.27942
+    EnableOcclusion: true
+    IsSpatializationEnabled: true
+    IsAttenuationEnabled: true
+  }
+}
+Objects {
+  Id: 9227022200366264596
+  Name: "Cone - Truncated Hollow Wide Thin"
+  Transform {
+    Location {
+      X: -724.999512
+      Z: -800
+    }
+    Rotation {
+    }
+    Scale {
+      X: 6.45
+      Y: 6.45
+      Z: 8
+    }
+  }
+  ParentId: 4159855513164329778
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13668225859767539073
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 15894426578071679323
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 18039868393229935935
+  Name: "Pipe - Wall"
+  Transform {
+    Location {
+      X: 0.00048828125
     }
     Rotation {
     }
@@ -105,58 +259,21 @@ Objects {
     }
   }
   ParentId: 4159855513164329778
-  ChildIds: 18039868393229935935
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    Model {
-    }
-  }
-}
-Objects {
-  Id: 18039868393229935935
-  Name: "Pipe - Wall"
-  Transform {
-    Location {
-      X: -19.5350342
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17587017690388574738
   ChildIds: 5849485291937172583
   ChildIds: 16599673535480060921
   ChildIds: 17634977289779226091
   ChildIds: 6394181916492450172
-  ChildIds: 5828972480388545677
-  ChildIds: 7864516807000612570
-  ChildIds: 6552429056202054033
   ChildIds: 16591341282013579218
   ChildIds: 5004684340597430275
-  ChildIds: 6380614088576227350
-  ChildIds: 12224218109049487401
   ChildIds: 738716257733978949
   ChildIds: 13955452487156004010
   ChildIds: 6912238671818132113
-  ChildIds: 16775911469293705707
-  ChildIds: 39682425324566526
-  ChildIds: 18424483656145481064
-  ChildIds: 6536604824674038246
-  ChildIds: 3122097355754089756
-  ChildIds: 5560127548486036490
   ChildIds: 13933794765670046850
+  ChildIds: 2148812067265371835
+  ChildIds: 6849077654944534288
+  ChildIds: 8200065273234389480
+  ChildIds: 10784736544282396008
+  ChildIds: 5282281498581677671
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -171,13 +288,385 @@ Objects {
   }
 }
 Objects {
+  Id: 5282281498581677671
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: 3331.83691
+      Z: -2770
+    }
+    Rotation {
+    }
+    Scale {
+      X: 9.25
+      Y: 6
+      Z: 23.75
+    }
+  }
+  ParentId: 18039868393229935935
+  ChildIds: 14450835036896749684
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:vector"
+      Vector {
+        Z: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:capsule"
+    }
+  }
+}
+Objects {
+  Id: 14450835036896749684
+  Name: "FlumeVelocityChanger"
+  Transform {
+    Location {
+      X: -1.11366688e-12
+      Y: -6.62796727e-12
+      Z: 6.22807511e-06
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.204081625
+      Y: 0.204081625
+      Z: 0.204081625
+    }
+  }
+  ParentId: 5282281498581677671
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 14572887706246282901
+    }
+  }
+}
+Objects {
+  Id: 10784736544282396008
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: 3090
+      Z: -3770
+    }
+    Rotation {
+      Pitch: -45
+    }
+    Scale {
+      X: 9
+      Y: 9
+      Z: 11.500001
+    }
+  }
+  ParentId: 18039868393229935935
+  ChildIds: 3568661048565619908
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:capsule"
+    }
+  }
+}
+Objects {
+  Id: 3568661048565619908
+  Name: "FlumeVelocityChanger"
+  Transform {
+    Location {
+      X: -1.11366688e-12
+      Y: -6.62796727e-12
+      Z: 6.22807511e-06
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.204081625
+      Y: 0.204081625
+      Z: 0.204081625
+    }
+  }
+  ParentId: 10784736544282396008
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 14572887706246282901
+    }
+  }
+}
+Objects {
+  Id: 8200065273234389480
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: 1365
+      Z: -4035
+    }
+    Rotation {
+      Pitch: -90
+    }
+    Scale {
+      X: 8
+      Y: 8
+      Z: 38
+    }
+  }
+  ParentId: 18039868393229935935
+  ChildIds: 8076578630830401816
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:capsule"
+    }
+  }
+}
+Objects {
+  Id: 8076578630830401816
+  Name: "FlumeVelocityChanger"
+  Transform {
+    Location {
+      X: -1.11366688e-12
+      Y: -6.62796727e-12
+      Z: 6.22807511e-06
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.204081625
+      Y: 0.204081625
+      Z: 0.204081625
+    }
+  }
+  ParentId: 8200065273234389480
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 14572887706246282901
+    }
+  }
+}
+Objects {
+  Id: 6849077654944534288
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: -345
+      Z: -3770
+    }
+    Rotation {
+      Pitch: -135
+    }
+    Scale {
+      X: 9
+      Y: 9
+      Z: 11.500001
+    }
+  }
+  ParentId: 18039868393229935935
+  ChildIds: 15774857229009679680
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:capsule"
+    }
+  }
+}
+Objects {
+  Id: 15774857229009679680
+  Name: "FlumeVelocityChanger"
+  Transform {
+    Location {
+      X: -1.11366688e-12
+      Y: -6.62796727e-12
+      Z: 6.22807511e-06
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.204081625
+      Y: 0.204081625
+      Z: 0.204081625
+    }
+  }
+  ParentId: 6849077654944534288
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 14572887706246282901
+    }
+  }
+}
+Objects {
+  Id: 2148812067265371835
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: -720
+      Z: -1790
+    }
+    Rotation {
+      Pitch: 180
+    }
+    Scale {
+      X: 9
+      Y: 9
+      Z: 36.75
+    }
+  }
+  ParentId: 18039868393229935935
+  ChildIds: 1172356640293673670
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:capsule"
+    }
+  }
+}
+Objects {
+  Id: 1172356640293673670
+  Name: "FlumeVelocityChanger"
+  Transform {
+    Location {
+      X: -1.11366688e-12
+      Y: -6.62796727e-12
+      Z: 6.22807511e-06
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.204081625
+      Y: 0.204081625
+      Z: 0.204081625
+    }
+  }
+  ParentId: 2148812067265371835
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 14572887706246282901
+    }
+  }
+}
+Objects {
   Id: 13933794765670046850
   Name: "ExitTrigger"
   Transform {
     Location {
-      X: 2669.53564
-      Y: 200
-      Z: -2000
+      X: 3182.22583
+      Y: 34.4682617
+      Z: -2120.20068
     }
     Rotation {
       Yaw: 89.9999847
@@ -252,469 +741,20 @@ Objects {
   }
 }
 Objects {
-  Id: 5560127548486036490
-  Name: "Trigger"
-  Transform {
-    Location {
-      X: -630.463684
-      Z: -3950
-    }
-    Rotation {
-      Pitch: 90
-      Yaw: 0.949473321
-      Roll: 0.94954133
-    }
-    Scale {
-      X: 3.5
-      Y: 4.9
-      Z: 4.9
-    }
-  }
-  ParentId: 18039868393229935935
-  ChildIds: 16240021842835005306
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 16240021842835005306
-  Name: "FlumeVelocityChanger"
-  Transform {
-    Location {
-      X: -1.11366688e-12
-      Y: -6.62796727e-12
-      Z: 6.22807511e-06
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.204081625
-      Y: 0.204081625
-      Z: 0.204081625
-    }
-  }
-  ParentId: 5560127548486036490
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:velocityVector"
-      Vector {
-        X: 1
-        Z: 0.4
-      }
-    }
-    Overrides {
-      Name: "cs:velocityMultiplier"
-      Float: 2000
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14572887706246282901
-    }
-  }
-}
-Objects {
-  Id: 3122097355754089756
-  Name: "Trigger"
-  Transform {
-    Location {
-      X: 219.535522
-      Z: -3950
-    }
-    Rotation {
-      Pitch: 90
-      Yaw: -0.158233643
-      Roll: -0.158172607
-    }
-    Scale {
-      X: 3.5
-      Y: 4.9
-      Z: 4.9
-    }
-  }
-  ParentId: 18039868393229935935
-  ChildIds: 4905460712995147665
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 4905460712995147665
-  Name: "FlumeVelocityChanger"
-  Transform {
-    Location {
-      X: -1.11366688e-12
-      Y: -6.62796727e-12
-      Z: 6.22807511e-06
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.204081625
-      Y: 0.204081625
-      Z: 0.204081625
-    }
-  }
-  ParentId: 3122097355754089756
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:velocityVector"
-      Vector {
-        X: 1
-        Z: 0.4
-      }
-    }
-    Overrides {
-      Name: "cs:velocityMultiplier"
-      Float: 2000
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14572887706246282901
-    }
-  }
-}
-Objects {
-  Id: 6536604824674038246
-  Name: "Trigger"
-  Transform {
-    Location {
-      X: 1219.53552
-      Z: -3950
-    }
-    Rotation {
-      Pitch: 90
-      Yaw: -0.0197753906
-      Roll: -0.0197143555
-    }
-    Scale {
-      X: 3.5
-      Y: 4.9
-      Z: 4.9
-    }
-  }
-  ParentId: 18039868393229935935
-  ChildIds: 18440372122312381339
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 18440372122312381339
-  Name: "FlumeVelocityChanger"
-  Transform {
-    Location {
-      X: -1.11366688e-12
-      Y: -6.62796727e-12
-      Z: 6.22807511e-06
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.204081625
-      Y: 0.204081625
-      Z: 0.204081625
-    }
-  }
-  ParentId: 6536604824674038246
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:velocityVector"
-      Vector {
-        X: 1
-        Z: 0.4
-      }
-    }
-    Overrides {
-      Name: "cs:velocityMultiplier"
-      Float: 2000
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14572887706246282901
-    }
-  }
-}
-Objects {
-  Id: 18424483656145481064
-  Name: "Trigger"
-  Transform {
-    Location {
-      X: 2469.53369
-      Y: 0.00048828125
-      Z: -3900
-    }
-    Rotation {
-      Pitch: 90
-      Roll: -179.999985
-    }
-    Scale {
-      X: 4.9
-      Y: 4.9
-      Z: 4.9
-    }
-  }
-  ParentId: 18039868393229935935
-  ChildIds: 17817636847279808252
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 17817636847279808252
-  Name: "FlumeVelocityChanger"
-  Transform {
-    Location {
-      X: -1.11366688e-12
-      Y: -6.62796727e-12
-      Z: 6.22807511e-06
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.204081625
-      Y: 0.204081625
-      Z: 0.204081625
-    }
-  }
-  ParentId: 18424483656145481064
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:velocityVector"
-      Vector {
-        Z: 1
-      }
-    }
-    Overrides {
-      Name: "cs:velocityMultiplier"
-      Float: 7500
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14572887706246282901
-    }
-  }
-}
-Objects {
-  Id: 39682425324566526
-  Name: "Pipe - Thin"
-  Transform {
-    Location {
-      X: 2669.53564
-      Y: 700
-      Z: -1850
-    }
-    Rotation {
-      Pitch: 90
-      Roll: 90
-    }
-    Scale {
-      X: 7
-      Y: 7
-      Z: 7
-    }
-  }
-  ParentId: 18039868393229935935
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 13668225859767539073
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 5668201541289739547
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 16775911469293705707
-  Name: "Pipe - 90-Degree Short Thin"
-  Transform {
-    Location {
-      X: 1969.53552
-      Z: -3900
-    }
-    Rotation {
-      Pitch: 90
-      Yaw: 4.55345935e-06
-      Roll: -179.999969
-    }
-    Scale {
-      X: 7
-      Y: 7
-      Z: 7
-    }
-  }
-  ParentId: 18039868393229935935
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 13668225859767539073
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 15340034010401438429
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
   Id: 6912238671818132113
   Name: "Pipe - 90-Degree Short Thin"
   Transform {
     Location {
-      X: 2669.53564
-      Z: -2550
+      X: 3325
+      Z: -2400
     }
     Rotation {
       Yaw: 90
     }
     Scale {
-      X: 7
-      Y: 7
-      Z: 7
+      X: 8.32
+      Y: 8.32
+      Z: 8.32
     }
   }
   ParentId: 18039868393229935935
@@ -756,17 +796,17 @@ Objects {
   Name: "Pipe - Thin"
   Transform {
     Location {
-      X: 2669.53564
-      Z: -2550
+      X: 3325
+      Z: -2400
     }
     Rotation {
       Yaw: -179.999954
       Roll: -179.999954
     }
     Scale {
-      X: 7
-      Y: 7
-      Z: 7
+      X: 8.32
+      Y: 8.32
+      Z: 8
     }
   }
   ParentId: 18039868393229935935
@@ -808,17 +848,17 @@ Objects {
   Name: "Pipe - 90-Degree Short Thin"
   Transform {
     Location {
-      X: 1969.53552
-      Z: -3900
+      X: 2500
+      Z: -4025
     }
     Rotation {
       Pitch: 90
       Roll: 180
     }
     Scale {
-      X: 7
-      Y: 7
-      Z: 7
+      X: 8.32
+      Y: 8.32
+      Z: 8.32
     }
   }
   ParentId: 18039868393229935935
@@ -856,128 +896,20 @@ Objects {
   }
 }
 Objects {
-  Id: 12224218109049487401
-  Name: "Pipe - Thin"
-  Transform {
-    Location {
-      X: 1969.53552
-      Z: -3900
-    }
-    Rotation {
-      Pitch: 90
-      Yaw: 1.89839828
-      Roll: 1.89837742
-    }
-    Scale {
-      X: 7
-      Y: 7
-      Z: 7
-    }
-  }
-  ParentId: 18039868393229935935
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 13668225859767539073
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 5668201541289739547
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 6380614088576227350
-  Name: "Pipe - Thin"
-  Transform {
-    Location {
-      X: 1269.53552
-      Z: -3950
-    }
-    Rotation {
-      Pitch: 90
-      Yaw: 0.843988657
-      Roll: 0.843968451
-    }
-    Scale {
-      X: 7
-      Y: 7
-      Z: 7
-    }
-  }
-  ParentId: 18039868393229935935
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 13668225859767539073
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 5668201541289739547
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
   Id: 5004684340597430275
   Name: "Pipe - Thin"
   Transform {
     Location {
-      X: 569.535522
-      Z: -3950
+      X: 2500
+      Z: -4025
     }
     Rotation {
       Pitch: 90
-      Yaw: 8.51631737
-      Roll: 8.51629448
     }
     Scale {
-      X: 7
-      Y: 7
-      Z: 7
+      X: 8.32
+      Y: 8.32
+      Z: 24
     }
   }
   ParentId: 18039868393229935935
@@ -1019,18 +951,16 @@ Objects {
   Name: "Pipe - 90-Degree Short Thin"
   Transform {
     Location {
-      X: -130.464478
-      Z: -3950
+      X: -725
+      Z: -3200
     }
     Rotation {
-      Pitch: 90
-      Yaw: -2.16009521
-      Roll: -2.16003418
+      Roll: 180
     }
     Scale {
-      X: 7
-      Y: 7
-      Z: 7
+      X: 8.32
+      Y: 8.32
+      Z: 8.32
     }
   }
   ParentId: 18039868393229935935
@@ -1068,177 +998,21 @@ Objects {
   }
 }
 Objects {
-  Id: 6552429056202054033
-  Name: "Pipe - Thin"
-  Transform {
-    Location {
-      X: -830.464478
-      Z: -2550
-    }
-    Rotation {
-      Yaw: -179.999954
-      Roll: -179.999954
-    }
-    Scale {
-      X: 7
-      Y: 7
-      Z: 7
-    }
-  }
-  ParentId: 18039868393229935935
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 13668225859767539073
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 5668201541289739547
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 7864516807000612570
-  Name: "Pipe - Thin"
-  Transform {
-    Location {
-      X: -830.464478
-      Z: -1850
-    }
-    Rotation {
-      Yaw: -179.999954
-      Roll: -179.999954
-    }
-    Scale {
-      X: 7
-      Y: 7
-      Z: 7
-    }
-  }
-  ParentId: 18039868393229935935
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 13668225859767539073
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 5668201541289739547
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 5828972480388545677
-  Name: "Pipe - Thin"
-  Transform {
-    Location {
-      X: -830.464478
-      Z: -1150
-    }
-    Rotation {
-      Yaw: -179.999954
-      Roll: -179.999954
-    }
-    Scale {
-      X: 7
-      Y: 7
-      Z: 7
-    }
-  }
-  ParentId: 18039868393229935935
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 13668225859767539073
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 5668201541289739547
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
   Id: 6394181916492450172
   Name: "Pipe - Thin"
   Transform {
     Location {
-      X: -830.464966
-      Z: -664.120605
+      X: -730
+      Z: -1200
     }
     Rotation {
-      Yaw: -179.999985
-      Roll: -179.999985
+      Yaw: 180
+      Roll: 180
     }
     Scale {
-      X: 7
-      Y: 7
-      Z: 4.9
+      X: 8.32
+      Y: 8.32
+      Z: 20
     }
   }
   ParentId: 18039868393229935935
@@ -1280,8 +1054,8 @@ Objects {
   Name: "Pipe - 90-Degree Short Thin"
   Transform {
     Location {
-      X: -840.913452
-      Z: -400.000061
+      X: -725
+      Z: -400
     }
     Rotation {
     }
@@ -1330,7 +1104,7 @@ Objects {
   Name: "Pipe - Thin"
   Transform {
     Location {
-      X: -330.464966
+      X: -225
       Z: 100
     }
     Rotation {
@@ -1381,7 +1155,7 @@ Objects {
   Name: "Pipe Ring"
   Transform {
     Location {
-      X: 169.535034
+      X: 250
       Z: 100
     }
     Rotation {
@@ -1432,8 +1206,8 @@ Objects {
   Name: "Teleport In"
   Transform {
     Location {
-      X: -834.74939
-      Z: -67.4726563
+      X: 175.000488
+      Z: 100
     }
     Rotation {
     }
@@ -1474,14 +1248,17 @@ Objects {
   Name: "Trigger"
   Transform {
     Location {
-      X: -699.999512
+      X: -5.13275146
+      Z: 135.108398
     }
     Rotation {
+      Pitch: 12.6951895
+      Yaw: 180
     }
     Scale {
-      X: 11.3530912
-      Y: 11.3530912
-      Z: 11.3530912
+      X: 0.874186039
+      Y: 6.00000954
+      Z: 6
     }
   }
   ParentId: 4159855513164329778
@@ -1520,6 +1297,14 @@ Objects {
     }
   }
   ParentId: 7212484202102289056
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:nextTarget"
+      ObjectReference {
+        SelfId: 841534158063459245
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

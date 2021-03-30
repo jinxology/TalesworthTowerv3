@@ -321,8 +321,9 @@ Assets {
         Name: "Trigger - Teleport to Flume"
         Transform {
           Location {
-            X: -300
-            Z: 0.00048828125
+            X: -355
+            Y: 35
+            Z: 30
           }
           Rotation {
           }
@@ -349,7 +350,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
+            Value: "mc:etriggershape:sphere"
           }
         }
       }
@@ -399,15 +400,16 @@ Assets {
         Name: "Trigger - Sucker"
         Transform {
           Location {
-            X: 800
-            Z: 50.0004883
+            X: 715
+            Z: 25
           }
           Rotation {
+            Pitch: -90
           }
           Scale {
-            X: 10.2
-            Y: 4.9
-            Z: 4.4
+            X: 4
+            Y: 4
+            Z: 15
           }
         }
         ParentId: 17649526533898173544
@@ -427,7 +429,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
+            Value: "mc:etriggershape:capsule"
           }
         }
       }
@@ -483,15 +485,16 @@ Assets {
         Name: "Trigger - Entrance shooter"
         Transform {
           Location {
-            X: -300
-            Z: 100.000488
+            X: -165
+            Y: 20
+            Z: 25
           }
           Rotation {
           }
           Scale {
-            X: 2.39999986
-            Y: 2.39999986
-            Z: 2.39999986
+            X: 4
+            Y: 4
+            Z: 4
           }
         }
         ParentId: 17649526533898173544
@@ -511,7 +514,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
+            Value: "mc:etriggershape:sphere"
           }
         }
       }
