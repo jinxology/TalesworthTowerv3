@@ -8,6 +8,13 @@ ejectionVelocityOverride = nil
 function OnBeginOverlap(whichTrigger, other)
 	if other:IsA("Player") then
 		local player = other
+		
+		print("cancelling fluming task")
+		player.serverUserData.flumingTask:Cancel()
+		player.serverUserData.flumingTask = nil
+		player.serverUserData.currentFlume = nil
+		player.serverUserData.alreadyFlumedIn = nil
+		
 		--local velocityVector = Vector3.New(1,0,0)
 		--local parentRotation = script.parent.rotation
 		-- local normal = propForcefield:GetWorldTransform():TransformDirection(Vector3.FORWARD):GetNormalized()
@@ -27,9 +34,9 @@ function OnBeginOverlap(whichTrigger, other)
 		player:SetVelocity(whooshVector * propVelocityMultiplier)
 
 
-		Task.Wait(1)
+		-- Task.Wait(1)
 		player.animationStance = "unarmed_death"
-		Task.Wait(2)
+		Task.Wait(3)
 		player.animationStance = "unarmed_stance"
 		player.movementControlMode = MovementControlMode.LOOK_RELATIVE
 		player:DisableRagdoll()

@@ -29,6 +29,7 @@ Assets {
         ChildIds: 17487399639570569082
         ChildIds: 9160698222049057169
         ChildIds: 13574779230595404198
+        ChildIds: 11631354051634414129
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -67,9 +68,15 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:Sucker"
+            Name: "cs:Sucker1"
             ObjectReference {
               SubObjectId: 12145920453933706127
+            }
+          }
+          Overrides {
+            Name: "cs:Sucker2"
+            ObjectReference {
+              SubObjectId: 11631354051634414129
             }
           }
           Overrides {
@@ -437,16 +444,16 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            X: 440
+            X: 275
             Z: 20
           }
           Rotation {
             Pitch: 90
           }
           Scale {
-            X: 4
-            Y: 4
-            Z: 12
+            X: 2
+            Y: 2
+            Z: 6
           }
         }
         ParentId: 17649526533898173544
@@ -739,6 +746,81 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
+          }
+        }
+      }
+      Objects {
+        Id: 11631354051634414129
+        Name: "Trigger"
+        Transform {
+          Location {
+            X: 740
+            Z: 20
+          }
+          Rotation {
+            Pitch: 90
+          }
+          Scale {
+            X: 4
+            Y: 4
+            Z: 6
+          }
+        }
+        ParentId: 17649526533898173544
+        ChildIds: 15865983208931652104
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:capsule"
+          }
+        }
+      }
+      Objects {
+        Id: 15865983208931652104
+        Name: "FlumeVelocityChanger"
+        Transform {
+          Location {
+            X: -1.11366688e-12
+            Y: -6.62796727e-12
+            Z: 6.22807511e-06
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.204081625
+            Y: 0.204081625
+            Z: 0.204081625
+          }
+        }
+        ParentId: 11631354051634414129
+        UnregisteredParameters {
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 14572887706246282901
           }
         }
       }

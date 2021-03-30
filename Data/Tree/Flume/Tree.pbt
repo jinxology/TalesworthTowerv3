@@ -274,6 +274,8 @@ Objects {
   ChildIds: 8200065273234389480
   ChildIds: 10784736544282396008
   ChildIds: 5282281498581677671
+  ChildIds: 7302676629827064405
+  ChildIds: 14540752594424998251
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -285,6 +287,154 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 14540752594424998251
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: 130
+      Z: 100
+    }
+    Rotation {
+      Pitch: 90
+      Yaw: -173.27861
+      Roll: -173.278641
+    }
+    Scale {
+      X: 5
+      Y: 5
+      Z: 11.500001
+    }
+  }
+  ParentId: 18039868393229935935
+  ChildIds: 5450958492085334755
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:capsule"
+    }
+  }
+}
+Objects {
+  Id: 5450958492085334755
+  Name: "FlumeVelocityChanger"
+  Transform {
+    Location {
+      X: -1.11366688e-12
+      Y: -6.62796727e-12
+      Z: 6.22807511e-06
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.204081625
+      Y: 0.204081625
+      Z: 0.204081625
+    }
+  }
+  ParentId: 14540752594424998251
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 14572887706246282901
+    }
+  }
+}
+Objects {
+  Id: 7302676629827064405
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: -590
+      Z: -120
+    }
+    Rotation {
+      Pitch: 135
+    }
+    Scale {
+      X: 5
+      Y: 5
+      Z: 11.500001
+    }
+  }
+  ParentId: 18039868393229935935
+  ChildIds: 8709384080153530950
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:capsule"
+    }
+  }
+}
+Objects {
+  Id: 8709384080153530950
+  Name: "FlumeVelocityChanger"
+  Transform {
+    Location {
+      X: -1.11366688e-12
+      Y: -6.62796727e-12
+      Z: 6.22807511e-06
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.204081625
+      Y: 0.204081625
+      Z: 0.204081625
+    }
+  }
+  ParentId: 7302676629827064405
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 14572887706246282901
+    }
   }
 }
 Objects {

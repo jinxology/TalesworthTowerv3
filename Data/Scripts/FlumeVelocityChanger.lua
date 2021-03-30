@@ -52,20 +52,20 @@ function OnBeginOverlap(whichTrigger, other)
 	end
 end
 
-function OnEndOverlap(trigger, other)
-	if other:IsA("Player") then
-		local player = other
-		print("left flume " .. trigger.id)
+-- function OnEndOverlap(trigger, other)
+-- 	if other:IsA("Player") then
+-- 		local player = other
+-- 		print("left flume " .. trigger.id)
 
-		if player.serverUserData.currentFlume == trigger then
-			print("cancelling fluming task")
-			player.serverUserData.flumingTask:Cancel()
-			player.serverUserData.flumingTask = nil
-			player.serverUserData.currentFlume = nil
-			player.serverUserData.alreadyFlumedIn = nil
-		end
-	end
-end
+-- 		if player.serverUserData.currentFlume == trigger then
+-- 			print("cancelling fluming task")
+-- 			player.serverUserData.flumingTask:Cancel()
+-- 			player.serverUserData.flumingTask = nil
+-- 			player.serverUserData.currentFlume = nil
+-- 			player.serverUserData.alreadyFlumedIn = nil
+-- 		end
+-- 	end
+-- end
 
 trigger.beginOverlapEvent:Connect(OnBeginOverlap)
-trigger.endOverlapEvent:Connect(OnEndOverlap)
+-- trigger.endOverlapEvent:Connect(OnEndOverlap)
