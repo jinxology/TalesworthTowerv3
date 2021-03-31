@@ -107,108 +107,110 @@ RedPlatform1 = World.SpawnAsset(propRedPlatform1Template, {parent=script.parent,
 local propBlueChainPlatform1Template = script:GetCustomProperty("BlueChainPlatform1Template")
 BluePlatform1 = World.SpawnAsset(propBlueChainPlatform1Template, {parent=script.parent, position=Vector3.New(4400.021,-1075.01,-325)})
 
---Move Platforms
-local leftTransitionTime = 2
-local rightTransitionTime = 2
+Task.Spawn(function()
+	--Move Platforms
+	local leftTransitionTime = 2
+	local rightTransitionTime = 2
 
---Yellow Move Platform
-local leftPosition = Vector3.New(1569.355,3223.278,99.125)
-local rightPosition = Vector3.New(1166.85,3220.292,101.246)
+	--Yellow Move Platform
+	local leftPosition = Vector3.New(1569.355,3223.278,99.125)
+	local rightPosition = Vector3.New(1166.85,3220.292,101.246)
 
-YellowRailing:MoveTo(leftPosition, leftTransitionTime, true)
-local timeElapsed, timeRequested = Task.Wait(2)
-
-local function MoveYelllowRailing1()
-	YellowRailing:MoveTo(rightPosition, rightTransitionTime, true)
-	local timeElapsed, timeRequested = Task.Wait(2)
 	YellowRailing:MoveTo(leftPosition, leftTransitionTime, true)
 	local timeElapsed, timeRequested = Task.Wait(2)
-	
-	if FlameYellow.visibility == Visibility.FORCE_ON then
-		propYellownMove1Task = Task.Spawn(MoveYelllowRailing1)
-	else
-		propYellownMove1Task:Cancel()
-		YellowRailing:MoveTo(rightPosition, leftTransitionTime, true)		
+
+	local function MoveYelllowRailing1()
+		YellowRailing:MoveTo(rightPosition, rightTransitionTime, true)
+		local timeElapsed, timeRequested = Task.Wait(2)
+		YellowRailing:MoveTo(leftPosition, leftTransitionTime, true)
+		local timeElapsed, timeRequested = Task.Wait(2)
+		
+		if FlameYellow.visibility == Visibility.FORCE_ON then
+			propYellownMove1Task = Task.Spawn(MoveYelllowRailing1)
+		else
+			propYellownMove1Task:Cancel()
+			YellowRailing:MoveTo(rightPosition, leftTransitionTime, true)		
+		end
 	end
-end
 
-if FlameYellow.visibility == Visibility.FORCE_ON then
-	MoveYelllowRailing1()
-end
+	if FlameYellow.visibility == Visibility.FORCE_ON then
+		MoveYelllowRailing1()
+	end
 
---Move Green Platform
-local leftPosition = Vector3.New(1675.998,-1824.852,105.151)
-local rightPosition = Vector3.New(1675.998,-1824.852,-266.808)
+	--Move Green Platform
+	local leftPosition = Vector3.New(1675.998,-1824.852,105.151)
+	local rightPosition = Vector3.New(1675.998,-1824.852,-266.808)
 
-GreenPlatform1:MoveTo(leftPosition, leftTransitionTime, true)
-local timeElapsed, timeRequested = Task.Wait(2)
-
-local function MoveGreenPlatform1()
-	GreenPlatform1:MoveTo(rightPosition, rightTransitionTime, true)
-	local timeElapsed, timeRequested = Task.Wait(2)
 	GreenPlatform1:MoveTo(leftPosition, leftTransitionTime, true)
 	local timeElapsed, timeRequested = Task.Wait(2)
-		
-		if FlameGreen.visibility == Visibility.FORCE_ON then
-			propGreenMove1Task = Task.Spawn(MoveGreenPlatform1)
-		else
-			propGreenMove1Task:Cancel()
-			GreenPlatform1:MoveTo(rightPosition, leftTransitionTime, true)		
-		end
-end
 
-if FlameGreen.visibility == Visibility.FORCE_ON then
-	MoveGreenPlatform1()
-end
+	local function MoveGreenPlatform1()
+		GreenPlatform1:MoveTo(rightPosition, rightTransitionTime, true)
+		local timeElapsed, timeRequested = Task.Wait(2)
+		GreenPlatform1:MoveTo(leftPosition, leftTransitionTime, true)
+		local timeElapsed, timeRequested = Task.Wait(2)
+			
+			if FlameGreen.visibility == Visibility.FORCE_ON then
+				propGreenMove1Task = Task.Spawn(MoveGreenPlatform1)
+			else
+				propGreenMove1Task:Cancel()
+				GreenPlatform1:MoveTo(rightPosition, leftTransitionTime, true)		
+			end
+	end
+
+	if FlameGreen.visibility == Visibility.FORCE_ON then
+		MoveGreenPlatform1()
+	end
 
 
---Move Red Platform
-local leftPosition = Vector3.New(5177.881,2426.618,-50)
-local rightPosition = Vector3.New(4600.002,2425.001,-50)
+	--Move Red Platform
+	local leftPosition = Vector3.New(5177.881,2426.618,-50)
+	local rightPosition = Vector3.New(4600.002,2425.001,-50)
 
-RedPlatform1:MoveTo(leftPosition, leftTransitionTime, true)
-local timeElapsed, timeRequested = Task.Wait(2)
-
-local function MoveRedPlatform1()
-	RedPlatform1:MoveTo(rightPosition, rightTransitionTime, true)
-	local timeElapsed, timeRequested = Task.Wait(2)
 	RedPlatform1:MoveTo(leftPosition, leftTransitionTime, true)
 	local timeElapsed, timeRequested = Task.Wait(2)
-		
-		if FlameRed.visibility == Visibility.FORCE_ON then
-			propRedMove1Task = Task.Spawn(MoveRedPlatform1)
-		else
-			propRedMove1Task:Cancel()
-			RedPlatform1:MoveTo(rightPosition, leftTransitionTime, true)
-		end
-end
-if FlameRed.visibility == Visibility.FORCE_ON then
-	MoveRedPlatform1()
-end
 
---Move Blue Platform with Chain
-local leftPosition = Vector3.New(4400.021,-1075.01,-50)
-local rightPosition = Vector3.New(4400.021,-1075.01,-325)
+	local function MoveRedPlatform1()
+		RedPlatform1:MoveTo(rightPosition, rightTransitionTime, true)
+		local timeElapsed, timeRequested = Task.Wait(2)
+		RedPlatform1:MoveTo(leftPosition, leftTransitionTime, true)
+		local timeElapsed, timeRequested = Task.Wait(2)
+			
+			if FlameRed.visibility == Visibility.FORCE_ON then
+				propRedMove1Task = Task.Spawn(MoveRedPlatform1)
+			else
+				propRedMove1Task:Cancel()
+				RedPlatform1:MoveTo(rightPosition, leftTransitionTime, true)
+			end
+	end
+	if FlameRed.visibility == Visibility.FORCE_ON then
+		MoveRedPlatform1()
+	end
 
-BluePlatform1:MoveTo(leftPosition, leftTransitionTime, true)
-local timeElapsed, timeRequested = Task.Wait(2)
+	--Move Blue Platform with Chain
+	local leftPosition = Vector3.New(4400.021,-1075.01,-50)
+	local rightPosition = Vector3.New(4400.021,-1075.01,-325)
 
-local function MoveBluePlatform1()
-	BluePlatform1:MoveTo(rightPosition, rightTransitionTime, true)
-	local timeElapsed, timeRequested = Task.Wait(2)
 	BluePlatform1:MoveTo(leftPosition, leftTransitionTime, true)
 	local timeElapsed, timeRequested = Task.Wait(2)
-		
-		if FlameBlue.visibility == Visibility.FORCE_ON then
-			propBlueMove1Task = Task.Spawn(MoveBluePlatform1)
-		else
-			propBlueMove1Task:Cancel()
-			BluePlatform1:MoveTo(rightPosition, leftTransitionTime, true)		
-		end
-end
-if FlameBlue.visibility == Visibility.FORCE_ON then
-	MoveBluePlatform1()
-end
+
+	local function MoveBluePlatform1()
+		BluePlatform1:MoveTo(rightPosition, rightTransitionTime, true)
+		local timeElapsed, timeRequested = Task.Wait(2)
+		BluePlatform1:MoveTo(leftPosition, leftTransitionTime, true)
+		local timeElapsed, timeRequested = Task.Wait(2)
+			
+			if FlameBlue.visibility == Visibility.FORCE_ON then
+				propBlueMove1Task = Task.Spawn(MoveBluePlatform1)
+			else
+				propBlueMove1Task:Cancel()
+				BluePlatform1:MoveTo(rightPosition, leftTransitionTime, true)		
+			end
+	end
+	if FlameBlue.visibility == Visibility.FORCE_ON then
+		MoveBluePlatform1()
+	end
+end)
 
 --Create the lowered Main Base Capsule Platforms
 local propGreenCapsuleTemplate = script:GetCustomProperty("GreenCapsule")
