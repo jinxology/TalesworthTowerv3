@@ -92,7 +92,7 @@ local propFlameRedTemplate = script:GetCustomProperty("FlameRedTemplate")
 FlameRed = World.SpawnAsset(propFlameRedTemplate, {parent=script.parent, position=Vector3.New(6014.854,3263.292,432.567), scale=Vector3.New(3,3,3)}) 
 
 local propFlameBlueTemplate = script:GetCustomProperty("FlameBlueTemplate")
-FlameBlue = World.SpawnAsset(propFlameBlueTemplate, {parent=script.parent, position=Vector3.New(6014.141,-3087.181,431.269), scale=Vector3.New(3,3,3)}) 
+FlameBlue = World.SpawnAsset(propFlameBlueTemplate, {parent=script.parent, position=Vector3.New(6015.607,-3087.51,433.279), scale=Vector3.New(3,3,3)}) 
 
 --Create Colored Moving Platforms
 local propYellowRailingTemplate = script:GetCustomProperty("YellowRailingTemplate")
@@ -281,14 +281,14 @@ local propGreenBreath = FlameGreen:GetCustomProperty("GreenBreath"):WaitForObjec
 propFlameGreenTrigger.interactedEvent:Connect(OnflameGreenTriggerInteraction)
 
 --Blue Flame
-local propFlameBlueTrigger = script:GetCustomProperty("flameBlueTrigger"):WaitForObject()
-local propBlueBreath = script:GetCustomProperty("BlueBreath"):WaitForObject()
+local propFlameBlueTrigger = FlameBlue:GetCustomProperty("flameBlueTrigger"):WaitForObject()
+local propBlueBreath = FlameBlue:GetCustomProperty("BlueBreath"):WaitForObject()
 
 	function OnflameBlueTriggerInteraction()
 		propBlueBreath:Play()
-		propFlameBlue.visibility = Visibility.FORCE_OFF
+		FlameBlue.visibility = Visibility.FORCE_OFF
 		local timeElapsed, timeRequested = Task.Wait(2)
-		propBaseRise:Play()
+		BaseRiseSound:Play()
 		propBlueCapsule:MoveTo(Vector3.New(1131.371,0,-675), 2, true)
 		propFlameBlueTrigger.interactionLabel = 'Blue Base Step Enabled!'
 	end 

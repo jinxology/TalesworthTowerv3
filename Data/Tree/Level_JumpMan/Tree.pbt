@@ -1,6 +1,50 @@
 Name: "Level_JumpMan"
 RootId: 9132562513265036101
 Objects {
+  Id: 17489144296900145377
+  Name: "Candle Flame VFX"
+  Transform {
+    Location {
+      X: 6015.60645
+      Y: -3087.50903
+      Z: 433.279297
+    }
+    Rotation {
+      Yaw: 135
+    }
+    Scale {
+      X: 4.357337
+      Y: 4.357337
+      Z: 4.357337
+    }
+  }
+  ParentId: 9132562513265036101
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9199751096616988864
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 5488969737579989806
   Name: "FlumePortalPipes"
   Transform {
@@ -5250,12 +5294,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:FlameBlueTemplate"
-      AssetReference {
-        Id: 7342326284010572306
-      }
-    }
-    Overrides {
       Name: "cs:YellowRailingTemplate"
       AssetReference {
         Id: 7813592556241234842
@@ -5307,6 +5345,12 @@ Objects {
       Name: "cs:BaseDisengageSoundTemplate"
       AssetReference {
         Id: 10690228881228651211
+      }
+    }
+    Overrides {
+      Name: "cs:FlameBlueTemplate"
+      AssetReference {
+        Id: 7342326284010572306
       }
     }
   }
