@@ -12,7 +12,7 @@ exitFlume = nil
 entranceFlume = nil
 exitFlumeLocation = Vector3.New(6204.868,159.1,-425)
 exitFlumeRotation = Rotation.New(0,0,180)
-entranceFlumeLocation = Vector3.New(6363.962,-530.329,775)
+entranceFlumeLocation = Vector3.New(6125.565,530.33,775)
 entranceFlumeRotation = Rotation.New(0,0,180)
 entranceFlumeEjectionVelocity = 20
 
@@ -277,6 +277,21 @@ local propGreenBreath = FlameGreen:GetCustomProperty("GreenBreath"):WaitForObjec
  		propFlameGreenTrigger.interactionLabel = 'Green Base Step Enabled!'
 	end
 propFlameGreenTrigger.interactedEvent:Connect(OnflameGreenTriggerInteraction)
+
+--Blue Flame
+local propFlameBlueTrigger = script:GetCustomProperty("flameBlueTrigger"):WaitForObject()
+local propBlueBreath = script:GetCustomProperty("BlueBreath"):WaitForObject()
+
+	function OnflameBlueTriggerInteraction()
+		propBlueBreath:Play()
+		propFlameBlue.visibility = Visibility.FORCE_OFF
+		local timeElapsed, timeRequested = Task.Wait(2)
+		propBaseRise:Play()
+		propBlueCapsule:MoveTo(Vector3.New(1131.371,0,-675), 2, true)
+		propFlameBlueTrigger.interactionLabel = 'Blue Base Step Enabled!'
+	end 
+	
+propFlameBlueTrigger.interactedEvent:Connect(OnflameBlueTriggerInteraction)
 
 --Red Flame
 local propFlameRedTrigger = FlameRed:GetCustomProperty("flameRedTrigger"):WaitForObject()

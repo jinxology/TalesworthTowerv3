@@ -15,9 +15,11 @@ local propNoStrikeColor = script:GetCustomProperty("noStrikeColor")
 local propScoreIndicator = script:GetCustomProperty("scoreIndicator"):WaitForObject()
 local propEntranceTrigger = script:GetCustomProperty("entranceTrigger"):WaitForObject()
 local propLevelMusicTemplate = script:GetCustomProperty("levelMusic")
+local propLevelPlayingMusicTemplate = script:GetCustomProperty("levelPlayingMusic")
 local propTimerLabel = script:GetCustomProperty("timerLabel"):WaitForObject()
 
 local propLevelMusic = nil
+local propLevelPlayingMusic = nil
 
 propLevelControllerBopAndPop.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
 	if propertyName == "levelStatus" then
@@ -64,6 +66,8 @@ function ActivateInstructions(levelStatus)
 		propRulesPanel.visibility = Visibility.FORCE_OFF
 		showInstructions = Game.GetLocalPlayer().bindingPressedEvent:Connect(OnBindingPressed)
 		hideInstructions = Game.GetLocalPlayer().bindingReleasedEvent:Connect(OnBindingReleased)
+		propLevelPlayingMusic = World.SpawnAsset(propLevelPlayingMusicTemplate)
+		propLevelPlayingMusic:Play()
 	else
 		propRulesPanel.visibility = Visibility.FORCE_OFF
 		propScoreIndicator.visibility = Visibility.FORCE_OFF
@@ -77,6 +81,11 @@ function ActivateInstructions(levelStatus)
 			propLevelMusic:Stop()
 			propLevelMusic:Destroy()
 			propLevelMusic = nil
+		end
+		if propLevelPlayingMusic ~= nil then
+			propLevelPlayingMusic:Stop()
+			propLevelPlayingMusic:Destroy()
+			propLevelPlayingMusic = nil
 		end
 	end
 end
@@ -98,7 +107,14 @@ function OnPlayerEntered(trigger, player)
 		propScoreIndicator.visibility = Visibility.FORCE_ON
 		propRulesPanel.visibility = Visibility.FORCE_ON
 		propLevelMusic = World.SpawnAsset(propLevelMusicTemplate)
+		
 		propLevelMusic:Play()
 		entranceListener:Disconnect(OnPlayerEntered)
+		Task.Spawn(function()
+			propLevelMusic:FadeOut(5)
+			Task.Wait(5)
+			propLevelMusic:Destroy()
+			propLevelMusic = nil
+		end, 10)
 	end
 end

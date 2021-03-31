@@ -15,7 +15,7 @@ Assets {
             Z: 0.2
           }
         }
-        ParentId: 13310647076426687416
+        ParentId: 848490241089693872
         ChildIds: 9211415220961163803
         ChildIds: 4020682657411298305
         UnregisteredParameters {
@@ -37,7 +37,7 @@ Assets {
         }
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -53,7 +53,6 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
-          InteractWithTriggers: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -71,9 +70,9 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 2.5
-            Y: 2.5
-            Z: 2.5
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 8807720377509234828
@@ -110,15 +109,15 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 4
-            Y: 4
-            Z: 4
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
           }
         }
         ParentId: 8807720377509234828
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceon"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -132,7 +131,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
+            Value: "mc:etriggershape:sphere"
           }
         }
       }

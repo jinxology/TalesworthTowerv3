@@ -17,15 +17,6 @@ Assets {
   }
 }
 Assets {
-  Id: 16219670883593009618
-  Name: "Torch Holder Metal"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_torch_holder_001"
-  }
-}
-Assets {
   Id: 16195678737605439523
   Name: "Pipe - 45-Degree Thin"
   PlatformAssetType: 1
@@ -68,15 +59,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_fan_cas_floor_002_4m_corner_001"
-  }
-}
-Assets {
-  Id: 13792655345280641169
-  Name: "Torch Metal"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_torch_001"
   }
 }
 Assets {
@@ -212,15 +194,6 @@ Assets {
   PrimaryAsset {
     AssetType: "VfxBlueprintAssetRef"
     AssetId: "fxbp_magic_swirl_element_volume_vfx"
-  }
-}
-Assets {
-  Id: 7145544328174837896
-  Name: "Torch Fire VFX"
-  PlatformAssetType: 8
-  PrimaryAsset {
-    AssetType: "VfxBlueprintAssetRef"
-    AssetId: "fxbp_torch_fire"
   }
 }
 Assets {

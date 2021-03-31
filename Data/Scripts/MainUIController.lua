@@ -13,7 +13,7 @@ local timeLeft = 0
 function IncomingUIMessage(coreObject, propertyName)
     
     local msg = propMainGameController:GetCustomProperty(propertyName)
-    print ("UIMESSAGE: "..msg)
+    --print ("UIMESSAGE: "..msg)
     msgData = propUtility_ClientSide.context.Split(msg,",")
     
     if (msgData[1] == "00") then --Update timer
@@ -34,7 +34,7 @@ function IncomingUIMessage(coreObject, propertyName)
         ToggleBottomMessage(false,"")
     elseif (msgData[1] == "07") then --resetting tower
         World.SpawnAsset(propLevelFailSound,{position=myPosition})
-        ToggleBottomMessage("true","TOWER RESET IMMINENT")
+        ToggleBottomMessage("true","TOWER EJECTION IMMINENT")
     end
 end
 

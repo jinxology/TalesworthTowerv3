@@ -23,13 +23,13 @@ Assets {
         ChildIds: 2546190901260491166
         ChildIds: 4716715558747682916
         ChildIds: 6195723043482851921
-        ChildIds: 9983842573642808678
-        ChildIds: 747462314088884146
         ChildIds: 6376833988982904340
+        ChildIds: 12145920453933706127
         ChildIds: 10671111645508465895
         ChildIds: 17487399639570569082
         ChildIds: 9160698222049057169
         ChildIds: 13574779230595404198
+        ChildIds: 11631354051634414129
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -68,9 +68,15 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:Sucker"
+            Name: "cs:Sucker1"
             ObjectReference {
-              SubObjectId: 9983842573642808678
+              SubObjectId: 12145920453933706127
+            }
+          }
+          Overrides {
+            Name: "cs:Sucker2"
+            ObjectReference {
+              SubObjectId: 11631354051634414129
             }
           }
           Overrides {
@@ -321,8 +327,9 @@ Assets {
         Name: "Trigger - Teleport to Flume"
         Transform {
           Location {
-            X: -300
-            Z: 0.00048828125
+            X: -355
+            Y: 35
+            Z: 30
           }
           Rotation {
           }
@@ -349,7 +356,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
+            Value: "mc:etriggershape:sphere"
           }
         }
       }
@@ -395,25 +402,26 @@ Assets {
         }
       }
       Objects {
-        Id: 9983842573642808678
-        Name: "Trigger - Sucker"
+        Id: 6376833988982904340
+        Name: "Trigger - Entrance shooter"
         Transform {
           Location {
-            X: 800
-            Z: 50.0004883
+            X: -165
+            Y: 20
+            Z: 25
           }
           Rotation {
           }
           Scale {
-            X: 10.2
-            Y: 4.9
-            Z: 4.4
+            X: 4
+            Y: 4
+            Z: 4
           }
         }
         ParentId: 17649526533898173544
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -427,40 +435,68 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
+            Value: "mc:etriggershape:sphere"
           }
         }
       }
       Objects {
-        Id: 747462314088884146
-        Name: "FlumeWHOOSH"
+        Id: 12145920453933706127
+        Name: "Trigger"
         Transform {
           Location {
-            X: 850
-            Z: 50.0004883
+            X: 275
+            Z: 20
+          }
+          Rotation {
+            Pitch: 90
+          }
+          Scale {
+            X: 2
+            Y: 2
+            Z: 6
+          }
+        }
+        ParentId: 17649526533898173544
+        ChildIds: 12580777701211475430
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:capsule"
+          }
+        }
+      }
+      Objects {
+        Id: 12580777701211475430
+        Name: "FlumeVelocityChanger"
+        Transform {
+          Location {
+            X: -1.11366688e-12
+            Y: -6.62796727e-12
+            Z: 6.22807511e-06
           }
           Rotation {
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.204081625
+            Y: 0.204081625
+            Z: 0.204081625
           }
         }
-        ParentId: 17649526533898173544
+        ParentId: 12145920453933706127
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:destinationForWhoosh"
-            ObjectReference {
-              SubObjectId: 4928125827909756685
-            }
-          }
-          Overrides {
-            Name: "cs:myTrigger"
-            ObjectReference {
-              SubObjectId: 9983842573642808678
-            }
-          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -474,44 +510,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 3268196718473870542
-          }
-        }
-      }
-      Objects {
-        Id: 6376833988982904340
-        Name: "Trigger - Entrance shooter"
-        Transform {
-          Location {
-            X: -300
-            Z: 100.000488
-          }
-          Rotation {
-          }
-          Scale {
-            X: 2.39999986
-            Y: 2.39999986
-            Z: 2.39999986
-          }
-        }
-        ParentId: 17649526533898173544
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
+            Id: 14572887706246282901
           }
         }
       }
@@ -747,6 +746,81 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
+          }
+        }
+      }
+      Objects {
+        Id: 11631354051634414129
+        Name: "Trigger"
+        Transform {
+          Location {
+            X: 740
+            Z: 20
+          }
+          Rotation {
+            Pitch: 90
+          }
+          Scale {
+            X: 4
+            Y: 4
+            Z: 6
+          }
+        }
+        ParentId: 17649526533898173544
+        ChildIds: 15865983208931652104
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:capsule"
+          }
+        }
+      }
+      Objects {
+        Id: 15865983208931652104
+        Name: "FlumeVelocityChanger"
+        Transform {
+          Location {
+            X: -1.11366688e-12
+            Y: -6.62796727e-12
+            Z: 6.22807511e-06
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.204081625
+            Y: 0.204081625
+            Z: 0.204081625
+          }
+        }
+        ParentId: 11631354051634414129
+        UnregisteredParameters {
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 14572887706246282901
           }
         }
       }

@@ -53,15 +53,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15311694679467806527
-  Name: "Barbed Wire 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_mil_barbed_wire_001_uv_ref"
-  }
-}
-Assets {
   Id: 15112213264769934074
   Name: "Sci-fi Bass Drop Warp Growl 01 SFX"
   PlatformAssetType: 7
@@ -116,15 +107,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12187164554423389607
-  Name: "Designer Sub Bass Drop 02 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_designer_sub_bass_drop_02_Cue_ref"
-  }
-}
-Assets {
   Id: 11150102244442488264
   Name: "Terrain - Snow"
   PlatformAssetType: 2
@@ -158,6 +140,24 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_basic_pbr_material_001"
+  }
+}
+Assets {
+  Id: 9068053932228334318
+  Name: "Sci-fi Meta Power Up 04 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_meta_scifi_powerup_04_Cue_ref"
+  }
+}
+Assets {
+  Id: 8923793940830097638
+  Name: "Concrete Basic 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_gen_concrete_001"
   }
 }
 Assets {
@@ -233,15 +233,6 @@ Assets {
   }
 }
 Assets {
-  Id: 5413886523775614888
-  Name: "Helix - 1.0"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_helix_005"
-  }
-}
-Assets {
   Id: 4050437425243511619
   Name: "Wood Raw"
   PlatformAssetType: 2
@@ -260,21 +251,21 @@ Assets {
   }
 }
 Assets {
+  Id: 3980297737540719284
+  Name: "Sci-fi Mech Robotic Servo Powerup Movement 03 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_scifi_mech_robotic_servo_powerup_movement_03_Cue_ref"
+  }
+}
+Assets {
   Id: 3439404920670878710
   Name: "Country & Western Music Score Set 01"
   PlatformAssetType: 10
   PrimaryAsset {
     AssetType: "AudioBlueprintAssetRef"
     AssetId: "abp_CountryWesternMusic_ref"
-  }
-}
-Assets {
-  Id: 3250892020078520154
-  Name: "Sphere"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_sphere_002"
   }
 }
 Assets {
@@ -302,6 +293,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_urb_dtn_mst_trim_002_ref"
+  }
+}
+Assets {
+  Id: 1102174013881666300
+  Name: "Magic Dark Powerup 02 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_magic_dark_buff_powerup_02_Cue_ref"
   }
 }
 Assets {

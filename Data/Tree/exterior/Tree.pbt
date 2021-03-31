@@ -91,8 +91,9 @@ Objects {
   Name: "Fantasy Castle Wall 03"
   Transform {
     Location {
+      X: 325
       Y: 2200
-      Z: 3225.0625
+      Z: 3220
     }
     Rotation {
     }
@@ -133,9 +134,9 @@ Objects {
   Name: "Fantasy Castle Wall 03"
   Transform {
     Location {
-      X: -799.999268
+      X: -1075
       Y: 2200
-      Z: 3225.0625
+      Z: 3220.1438
     }
     Rotation {
     }
@@ -570,49 +571,6 @@ Objects {
   Transform {
     Location {
       X: 1600
-      Y: -2600
-      Z: 3225.0625
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 18032404620007282982
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 8983708969469221779
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 1124973345092476962
-  Name: "Fantasy Castle Wall 03"
-  Transform {
-    Location {
-      X: -799.374268
       Y: -2600
       Z: 3225.0625
     }

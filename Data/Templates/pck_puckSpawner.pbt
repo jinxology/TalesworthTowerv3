@@ -15,11 +15,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
-        ChildIds: 15849514794406429805
-        ChildIds: 11010226650907567488
-        ChildIds: 12030357500768472538
-        ChildIds: 14619364220257982024
+        ParentId: 1232579912354001357
+        ChildIds: 17786595014547791223
         UnregisteredParameters {
           Overrides {
             Name: "cs:spawnerGeometry"
@@ -61,14 +58,47 @@ Assets {
         }
       }
       Objects {
+        Id: 17786595014547791223
+        Name: "ClientContext"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10448727192305754445
+        ChildIds: 15849514794406429805
+        ChildIds: 11010226650907567488
+        ChildIds: 12030357500768472538
+        ChildIds: 14619364220257982024
+        ChildIds: 15016307638657912054
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        NetworkContext {
+        }
+      }
+      Objects {
         Id: 15849514794406429805
         Name: "porthole"
         Transform {
           Location {
-            Z: -41
+            Z: -39
           }
           Rotation {
-            Roll: -179.999969
+            Roll: -179.999954
           }
           Scale {
             X: 15
@@ -76,7 +106,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 17786595014547791223
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -91,12 +121,11 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
+          Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:forceon"
@@ -122,6 +151,7 @@ Assets {
         Name: "geometry"
         Transform {
           Location {
+            Z: -24
           }
           Rotation {
           }
@@ -131,7 +161,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10448727192305754445
+        ParentId: 17786595014547791223
         ChildIds: 3875535371086009788
         ChildIds: 4811771639810637328
         ChildIds: 12317850837893150879
@@ -143,7 +173,6 @@ Assets {
         ChildIds: 938294516143731094
         ChildIds: 15763459510338034067
         ChildIds: 7325190925626011799
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -192,12 +221,11 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceon"
+          Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:forceon"
@@ -210,6 +238,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -254,7 +283,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -272,6 +300,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -316,7 +345,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -334,6 +362,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -379,7 +408,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -397,6 +425,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -442,7 +471,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -460,6 +488,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -504,7 +533,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -522,6 +550,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -566,7 +595,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -584,6 +612,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -630,7 +659,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -648,6 +676,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -694,7 +723,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -712,6 +740,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -758,7 +787,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -776,6 +804,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -822,7 +851,6 @@ Assets {
             }
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -840,6 +868,7 @@ Assets {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableCastShadows: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -853,7 +882,7 @@ Assets {
         Name: "Sci-fi Mech Robotic Transformation Sequence 06 SFX"
         Transform {
           Location {
-            Z: -1050
+            Z: 50
           }
           Rotation {
           }
@@ -863,8 +892,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10448727192305754445
-        WantsNetworking: true
+        ParentId: 17786595014547791223
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -890,6 +918,7 @@ Assets {
         Name: "Sci-fi Door Hatch Airlock Open Close 05"
         Transform {
           Location {
+            Z: 1100
           }
           Rotation {
           }
@@ -899,8 +928,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10448727192305754445
-        WantsNetworking: true
+        ParentId: 17786595014547791223
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -920,6 +948,65 @@ Assets {
           EnableOcclusion: true
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true
+        }
+      }
+      Objects {
+        Id: 15016307638657912054
+        Name: "Spotlight"
+        Transform {
+          Location {
+            Z: 1089
+          }
+          Rotation {
+            Pitch: -90
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 17786595014547791223
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Light {
+          Intensity: 50
+          Color {
+            R: 1
+            G: 1
+            B: 1
+            A: 1
+          }
+          CastShadows: true
+          VolumetricIntensity: 5
+          TeamSettings {
+          }
+          Light {
+            Temperature: 6500
+            LocalLight {
+              AttenuationRadius: 4813.22852
+              SpotLight {
+                SourceRadius: 5
+                SoftSourceRadius: 5
+                FallOffExponent: 8
+                UseFallOffExponent: true
+                InnerConeAngle: 20.5354118
+                OuterConeAngle: 26.8404236
+                Profile {
+                  Value: "mc:espotlightprofile:basicspotlight"
+                }
+              }
+            }
+            MaxDrawDistance: 5000
+            MaxDistanceFadeRange: 1000
+          }
         }
       }
     }

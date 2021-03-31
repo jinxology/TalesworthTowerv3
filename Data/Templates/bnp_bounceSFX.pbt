@@ -7,7 +7,7 @@ Assets {
       RootId: 3858886003239363918
       Objects {
         Id: 3858886003239363918
-        Name: "bnp.bounceSFX"
+        Name: "bnp_bounceSFX"
         Transform {
           Scale {
             X: 1
@@ -30,6 +30,7 @@ Assets {
           AudioAsset {
             Id: 16916983066312112421
           }
+          Transient: true
           Volume: 1
           Falloff: -1
           Radius: -1

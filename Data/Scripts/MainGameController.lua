@@ -11,7 +11,18 @@ local playerKeyBindingListener = nil
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
-levelList = {"ShapesAndButtons","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Maze","Puckollossal"}
+levelList = {
+    "ShapesAndButtons",
+    "BopAndPop",
+    "JumpMan",      -- hitting wall on entrance; misplaced or needs hole in wall
+    "FarmGallery",
+    "ColorDials",
+    "BlockAndEscape",
+    "Maze",
+    "LazyLava",
+    "GobbleDots",
+    "Puckollossal"
+}
 requiredNbrPlayersReady = 4
 resetingTower = false
  
@@ -54,8 +65,20 @@ function SetRequiredStartPlatforms(nbrPlatforms)
     requiredNbrPlayersReady = nbrPlatforms
 end
 
+function RemoveAllWeapons()
+    --remove all weapons
+    local players = Game.GetPlayers()
+    for _,player in ipairs(players) do
+        for _, myEquipmentObject in pairs(player:GetEquipment()) do
+            myEquipmentObject:Unequip()
+            if (Object.IsValid(myEquipmentObject)) then myEquipmentObject:Destroy() end
+            other.animationStance = "unarmed_stance"
+        end
+    end
+end
 
-function TeleportAllPlayers(currentLev, newLoc)
+
+function TeleportAllPlayers(currentLev, newLoc, useFlume)
     DestroyLevel(currentLevelIndex)
     if (nextLevelIndex ~= nil) then
         DestroyLevel(nextLevelIndex)
@@ -65,17 +88,27 @@ function TeleportAllPlayers(currentLev, newLoc)
 
     currentLevelIndex = currentLev
     nextLevelindex = nil
-    local players = Game.GetPlayers()
     
-    for _, player in pairs(Game.GetPlayers()) do
-        player:SetWorldPosition(newLoc)
-    end   
+    RemoveAllWeapons()
+
     levelControllerScript = GetCurrentLevelController()
 
     levelControllerScript.context.LevelPowerUp()
     SpawnStartingPlatforms(currentLevelIndex)
     SpawnFlumePortals(currentLevelIndex)
 
+    local players = Game.GetPlayers()    
+    if (useFlume) then
+        levelControllerScript.context.entranceFlume:FindChildByName("Flume Tube Manager").context.EntranceActive(levelControllerScript.context.entranceFlumeEjectionVelocity)
+        local teleportDest = levelControllerScript.context.entranceFlume:FindChildByName("Entrance teleport point"):GetWorldPosition()        
+        for _, player in pairs(players) do
+            player:SetWorldPosition(teleportDest)
+        end       
+    else
+        for _, player in pairs(players) do
+            player:SetWorldPosition(newLoc)
+        end       
+    end
 end
     
 
@@ -138,14 +171,8 @@ function StartTimerOnClients(timeLeft)
     script:SetNetworkedCustomProperty("UIMessage","02,"..timeLeft)
 end
 
-function MakeWorldDark()
-    local skylight = World.FindObjectByName("Skylight")
-    skylight:SetSmartProperty("Intensity", 0)
-end
-
-function MakeWorldLight()
-    local skylight = World.FindObjectByName("Skylight")
-    skylight:SetSmartProperty("Intensity", 1)
+function SetLightLevel(player, lightLevel)
+    Events.BroadcastToPlayer(player, "sky.SetLightLevel", lightLevel)
 end
 
 --isExit=true for exit, false for entrance
@@ -298,6 +325,11 @@ function DestroyLevel(levelIndex)
     DestroyStartingPlatforms(levelIndex)
 end
 
+function GetEligiblePlayerCount()
+    playerCount = #Game.GetPlayers()
+    return playerCount
+end
+
 function StartingPlatformsActivated()
     if (not levelRunning and not resetingTower) then
         if (nextLevelIndex ~= nil) then        
@@ -319,8 +351,7 @@ function LevelBegin()
 
         --Reset these if the players quickly restart level 1
         script:SetNetworkedCustomProperty("UIMessage","04,false, ")
-        MakeWorldLight()
-
+        
         --If started some way other than starting platforms, deactivate them
         DeactivateStartingPlatforms()
             
@@ -379,7 +410,10 @@ function LevelEnd(success)
 
     local lightsDimTime = 5
     if (not success) then
-        MakeWorldDark()
+        for _, player in pairs(Game.GetPlayers()) do
+            print("dim lights for " .. player.name)
+            SetLightLevel(player, 2)
+        end
     end
     SpawnLevelBeacons(success,lightsDimTime)
 
@@ -389,7 +423,9 @@ function LevelEnd(success)
     script:SetNetworkedCustomProperty("UIMessage","01,false,,")
 
     if (not success) then
-        MakeWorldLight()
+        for _, player in pairs(Game.GetPlayers()) do
+            SetLightLevel(player, 4)
+        end
     end
 
 end
@@ -442,11 +478,16 @@ function GeneralClientToServerMessageHandler(msgType,data)
 end
 
 function ResetTower()
-    MakeWorldDark()
+    resetingTower = true
+    for _, player in pairs(Game.GetPlayers()) do
+        SetLightLevel(player, 2)
+    end
     SpawnLevelBeacons(false, 3)
     script:SetNetworkedCustomProperty("UIMessage","07, ")
     Task.Wait(3)
-    MakeWorldLight()
+    for _, player in pairs(Game.GetPlayers()) do
+        SetLightLevel(player, 4)
+    end
 
     --loop through all levels and destroy them
     for i=1,#levelList do
@@ -462,6 +503,7 @@ function ResetTower()
     for _, player in pairs(Game.GetPlayers()) do
         player:SetWorldPosition(Vector3.New(125,-850,8450))
     end   
+    resetingTower = false
 
 end
 
