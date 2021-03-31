@@ -26,7 +26,6 @@ Objects {
   ChildIds: 1112385650763072475
   ChildIds: 568490692521295426
   ChildIds: 5023631917918388635
-  ChildIds: 17150375335326276847
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -39,47 +38,6 @@ Objects {
     Value: "mc:ecollisionsetting:forceon"
   }
   Folder {
-  }
-}
-Objects {
-  Id: 17150375335326276847
-  Name: "FlameBlueTemplate"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 8691883450555192295
-      value {
-        Overrides {
-          Name: "Name"
-          String: "FlameBlueTemplate"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 413.628235
-            Y: 8.32299805
-            Z: 11378.0234
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 7342326284010572306
-    }
   }
 }
 Objects {
@@ -3898,6 +3856,7 @@ Objects {
       ChatMode {
         Value: "mc:echatmode:teamandall"
       }
+      EnablePlayModeProfiler: true
       ChatSettings {
         ChatMode {
         }

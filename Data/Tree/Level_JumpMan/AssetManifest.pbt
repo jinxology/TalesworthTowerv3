@@ -1,13 +1,4 @@
 Assets {
-  Id: 18119898128928963492
-  Name: "Sci-fi Base Floor 02 4m"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_scf_base_floor_002_4m_ref"
-  }
-}
-Assets {
   Id: 15984031613198292986
   Name: "Electric Surface"
   PlatformAssetType: 2
@@ -32,15 +23,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_gen_whitebox_wall_001"
-  }
-}
-Assets {
-  Id: 9199751096616988864
-  Name: "Candle Flame VFX"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "fxsm_candleflame"
   }
 }
 Assets {

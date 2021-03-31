@@ -1,50 +1,6 @@
 Name: "Level_JumpMan"
 RootId: 9132562513265036101
 Objects {
-  Id: 17489144296900145377
-  Name: "Candle Flame VFX"
-  Transform {
-    Location {
-      X: 6015.60645
-      Y: -3087.50903
-      Z: 433.279297
-    }
-    Rotation {
-      Yaw: 135
-    }
-    Scale {
-      X: 4.357337
-      Y: 4.357337
-      Z: 4.357337
-    }
-  }
-  ParentId: 9132562513265036101
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 9199751096616988864
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
   Id: 5488969737579989806
   Name: "FlumePortalPipes"
   Transform {
@@ -1884,50 +1840,6 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "OverlordPlatform-jmp"
-  }
-}
-Objects {
-  Id: 5145286380523102502
-  Name: "CenterFloorTile-jmp"
-  Transform {
-    Location {
-      X: 2824.99976
-      Y: -400.000732
-      Z: -550
-    }
-    Rotation {
-      Yaw: 89.9999847
-    }
-    Scale {
-      X: 2.1
-      Y: 2.1
-      Z: 2.1
-    }
-  }
-  ParentId: 9132562513265036101
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 18119898128928963492
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
   }
 }
 Objects {
@@ -5351,6 +5263,12 @@ Objects {
       Name: "cs:FlameBlueTemplate"
       AssetReference {
         Id: 7342326284010572306
+      }
+    }
+    Overrides {
+      Name: "cs:CenterFloorTemplate"
+      AssetReference {
+        Id: 12336989625721732150
       }
     }
   }
