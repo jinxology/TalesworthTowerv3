@@ -5,6 +5,7 @@ local propCeilingLight2 = script:GetCustomProperty("ceilingLight2"):WaitForObjec
 local propLevelController = script:GetCustomProperty("levelController"):WaitForObject()
 local propLightsOn1SFX = script:GetCustomProperty("lightsOn1SFX"):WaitForObject()
 local propLightsOn2SFX = script:GetCustomProperty("lightsOn2SFX"):WaitForObject()
+local Ease3D = require(script:GetCustomProperty("Ease3D"))
 
 -- local propLightColor1 = Color.FromStandardHex("#00F4FAFF")
 -- local propLightColor2 = Color.FromStandardHex("#9FFBFFFF")
@@ -13,15 +14,9 @@ function UpdateLevelState(levelState)
     if levelState == 0 then
     elseif levelState == 1 then
         --1: powered up
-        -- propCeilingLight1.visibility = Visibility.FORCE_OFF
-        -- propCeilingLight2.visibility = Visibility.FORCE_OFF
         propCeilingLight1:SetColor(Color.BLACK)
         propCeilingLight2:SetColor(Color.BLACK)
     elseif levelState == 2 then
-        -- propCeilingLight1.visibility = Visibility.FORCE_ON
-        -- propCeilingLight2.visibility = Visibility.FORCE_ON
-        -- propCeilingLight1:SetColor(propLightColor1)
-        -- propCeilingLight2:SetColor(propLightColor2)
         propLightsOn1SFX:Play()
         propLightsOn2SFX:Play()
         --2: begun
@@ -71,9 +66,11 @@ function RecoilSpawner(index, travel)
     local geometry = propSpawners[index].geometry
     
     position = geometry:GetPosition()
-    geometry:MoveTo(position + travel, 0.4, true)
+    Ease3D.EasePosition(geometry, position + travel, 0.4, Ease3D.EasingEquation.BACK, Ease3D.EasingDirection.OUT)
+    -- geometry:MoveTo(position + travel, 0.4, true)
     Task.Wait(0.4)
-    geometry:MoveTo(position, 0.6, true)
+    Ease3D.EasePosition(geometry, position, 0.6)
+    -- geometry:MoveTo(position, 0.6, true)
 
 end
 

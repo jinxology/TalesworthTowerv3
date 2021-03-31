@@ -15,7 +15,18 @@ local towerTimerActive = false
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
-levelList = {"ShapesAndButtons","Puckollossal","BopAndPop","JumpMan","FarmGallery","ColorDials","BlockAndEscape","Maze","LazyLava","GobbleDots"}
+levelList = {
+    "ShapesAndButtons",
+    "BopAndPop",
+    "JumpMan",      -- hitting wall on entrance; misplaced or needs hole in wall
+    "FarmGallery",
+    "ColorDials",
+    "BlockAndEscape",
+    "Maze",
+    "LazyLava",
+    "GobbleDots",
+    "Puckollossal"
+}
 requiredNbrPlayersReady = 4
 resetingTower = false
  

@@ -8,15 +8,6 @@ Assets {
   }
 }
 Assets {
-  Id: 17314135178437891372
-  Name: "Cinematic Synth Growl Impact 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_designer_cinematic_synth_growl_impact_01_Cue_ref"
-  }
-}
-Assets {
   Id: 15984031613198292986
   Name: "Electric Surface"
   PlatformAssetType: 2
@@ -26,39 +17,12 @@ Assets {
   }
 }
 Assets {
-  Id: 15232552443457263526
-  Name: "Sci-fi Barrier Energy Shield Large Impact Shutdown 04 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_scifi_barrier_energy_shield_large_impact_shutdown_04a_Cue_ref"
-  }
-}
-Assets {
   Id: 13485243415661967086
   Name: "Energy Tube Glow"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "Energy_Tube_Glow"
-  }
-}
-Assets {
-  Id: 12187164554423389607
-  Name: "Designer Sub Bass Drop 02 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_designer_sub_bass_drop_02_Cue_ref"
-  }
-}
-Assets {
-  Id: 11190345326845936628
-  Name: "\"Tranquil Abstract Anomaly\" Music Construction Kit (Sections) 01"
-  PlatformAssetType: 10
-  PrimaryAsset {
-    AssetType: "AudioBlueprintAssetRef"
-    AssetId: "abp_tranquil_abstract_anomaly_sections_kit_ref"
   }
 }
 Assets {
@@ -104,15 +68,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_scf_base_floor_001_X_ref"
-  }
-}
-Assets {
-  Id: 1017832589167727899
-  Name: "Reverb Zone"
-  PlatformAssetType: 6
-  PrimaryAsset {
-    AssetType: "BlueprintAssetRef"
-    AssetId: "sfxbp_reverb_zone"
   }
 }
 Assets {

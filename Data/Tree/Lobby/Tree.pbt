@@ -1431,12 +1431,14 @@ Objects {
     }
   }
   ParentId: 11126704810718473895
+  ChildIds: 2425111363334017258
   ChildIds: 13075624472891167336
   ChildIds: 6858450378296700516
   ChildIds: 8631486553616070348
   ChildIds: 5766347069265049748
   ChildIds: 8884021975881639160
   ChildIds: 6557589884882088150
+  ChildIds: 4199972239421548182
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1448,6 +1450,50 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 4199972239421548182
+  Name: "\"Action Combat\" Music Construction Kit (Sections) 01"
+  Transform {
+    Location {
+      X: -108.798851
+      Y: -619.782959
+    }
+    Rotation {
+      Yaw: -43.8784523
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16457494848404983089
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 17249396603803168383
+    }
+    TeamSettings {
+    }
+    AudioBP {
+      AutoPlay: true
+      Volume: 1
+      Falloff: 3600
+      Radius: 500
+      EnableOcclusion: true
+      IsSpatializationEnabled: true
+      IsAttenuationEnabled: true
+    }
   }
 }
 Objects {
@@ -1708,6 +1754,47 @@ Objects {
         LinearDamping: 0.01
       }
     }
+  }
+}
+Objects {
+  Id: 2425111363334017258
+  Name: "Ambient Military Hostile Air Raid Siren Atmosphere 01 SFX"
+  Transform {
+    Location {
+      X: -1554.28369
+      Y: 568.934326
+      Z: 122.455078
+    }
+    Rotation {
+      Yaw: -43.8784485
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16457494848404983089
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 14411085926952196577
+    }
+    AutoPlay: true
+    Volume: 1
+    Falloff: 4000
+    Radius: 500
+    EnableOcclusion: true
+    IsSpatializationEnabled: true
+    IsAttenuationEnabled: true
   }
 }
 Objects {

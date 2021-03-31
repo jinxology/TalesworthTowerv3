@@ -269,15 +269,6 @@ Assets {
   }
 }
 Assets {
-  Id: 3250892020078520154
-  Name: "Sphere"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_sphere_002"
-  }
-}
-Assets {
   Id: 3086929587923392091
   Name: "Terrain - Grass Cliffs"
   PlatformAssetType: 2

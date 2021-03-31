@@ -1,7 +1,7 @@
 local propTetherAbility = script:GetCustomProperty("tetherAbility"):WaitForObject()
 local propUntetherAbility = script:GetCustomProperty("untetherAbility"):WaitForObject()
 local propReelAbility = script:GetCustomProperty("reelAbility"):WaitForObject()
-local propUnreelAbility = script:GetCustomProperty("unreelAbility"):WaitForObject()
+-- local propUnreelAbility = script:GetCustomProperty("unreelAbility"):WaitForObject()
 local propLevelController = script:GetCustomProperty("levelController"):WaitForObject()
 local propTwangSFX = script:GetCustomProperty("twangSFX"):WaitForObject()
 local propCast1SFX = script:GetCustomProperty("cast1SFX"):WaitForObject()
@@ -80,8 +80,7 @@ function OnCast_Tether(ability)
 		propTargetedAnchor = ring.anchors[1]
 		propTargetedPuck = ring.puck
 
-		script:SetNetworkedCustomProperty("tetherOffset", propTargetedPuck.context.propAnchorPositions[propTargetedAnchor])
-		Events.BroadcastToAllPlayers("pck.mugshotAimed", propEquipment:GetReference(), propTargetedPuck:GetReference(), true)
+		Events.BroadcastToAllPlayers("pck.mugshotAimed", propEquipment:GetReference(), propTargetedPuck:GetReference(), propTargetedPuck.context.propAnchorPositions[propTargetedAnchor], true)
 	
 		-- print("Casting Tether...")
 	else
@@ -90,7 +89,6 @@ function OnCast_Tether(ability)
 end
 
 function TetherLanded()
-	-- print("Tether landed, checking success...")
 	propReelSFX:Stop()
 	propTargetedAnchor = propTargetedPuck.context.TetherMugshotToEligibleAnchor(propEquipment, CheckAim(propTargetedPuck).anchors)
 	if propTargetedAnchor == 0 then
@@ -99,7 +97,7 @@ function TetherLanded()
 	else
 		-- print("Tethered successfully!")
 		propTetheredToTarget = true
-		Events.BroadcastToAllPlayers("pck.mugshotTethered", propEquipment:GetReference(), propTargetedPuck:GetReference(), true)
+		Events.BroadcastToAllPlayers("pck.mugshotTethered", propEquipment:GetReference(), propTargetedPuck:GetReference(), propTargetedAnchor, true)
 
 		local	distance = propTargetedPuck.context.MugshotToAnchor(propEquipment, propTargetedAnchor).size
 
@@ -109,6 +107,7 @@ function TetherLanded()
 	propTetherTravelTask = nil
 	propTetherAbility:AdvancePhase()
 end
+
 
 function OnExecute_Tether(ability)
 	propCast1SFX:Play()
@@ -154,7 +153,7 @@ function OnCooldown_Tether(ability)
 		propTetherAbility.isEnabled = false
 		propUntetherAbility.isEnabled = true
 		propReelAbility.isEnabled = true
-		propUnreelAbility.isEnabled = true
+		-- propUnreelAbility.isEnabled = true
 	end
 end
 
@@ -167,6 +166,13 @@ end
 
 function OnReady_Tether(ability)
 	-- print("Tether ready.")
+	if propTetheredToTarget then
+		-- print("    ... and tethered. New abilities active.")
+		propTetherAbility.isEnabled = false
+		propUntetherAbility.isEnabled = true
+		propReelAbility.isEnabled = true
+		-- propUnreelAbility.isEnabled = true
+	end
 end
 
 function OnCast_Untether(ability)
@@ -180,8 +186,7 @@ function OnExecute_Untether(ability)
 end
 
 function ForgetPuck()
-	Events.BroadcastToAllPlayers("pck.mugshotTethered", propEquipment:GetReference(), propTargetedPuck:GetReference(), false)
-	script:SetNetworkedCustomProperty("tetherOffset", Vector3.ZERO)
+	Events.BroadcastToAllPlayers("pck.mugshotTethered", propEquipment:GetReference(), propTargetedPuck:GetReference(), Vector3.ZERO, false)
 	propTetheredToTarget = false
 	propTargetedPuck = nil
 	propTargetedAnchor = 0
@@ -204,7 +209,7 @@ function OnCooldown_Untether(ability)
 		propTetherAbility.isEnabled = true
 		propUntetherAbility.isEnabled = false
 		propReelAbility.isEnabled = false
-		propUnreelAbility.isEnabled = false
+		-- propUnreelAbility.isEnabled = false
 	end
 end
 
@@ -212,6 +217,13 @@ function OnInterrupted_Untether(ability)
 end
 
 function OnReady_Untether(ability)
+	if not propTetheredToTarget then
+		-- print("Unethered and cooled down. New abilities active.")
+		propTetherAbility.isEnabled = true
+		propUntetherAbility.isEnabled = false
+		propReelAbility.isEnabled = false
+		-- propUnreelAbility.isEnabled = false
+	end
 end
 
 function OnCast_Reel(ability)
@@ -219,7 +231,7 @@ function OnCast_Reel(ability)
 end
 
 function OnExecute_Reel(ability)
-	propSlackAmount = math.max(propSlackAmount - ROPE_UNIT_LENGTH * 4, ROPE_UNIT_LENGTH * 4)
+	propSlackAmount = math.min(propSlackAmount - ROPE_UNIT_LENGTH * 4, (propTargetedPuck:GetWorldPosition() - propEquipment.owner:GetWorldPosition()).size)
 	-- print("reeled in, new slack amount is " .. propSlackAmount)
 end
 
@@ -343,7 +355,7 @@ end
 ConnectAbilityEvents_Tether(propTetherAbility)
 ConnectAbilityEvents_Untether(propUntetherAbility)
 ConnectAbilityEvents_Reel(propReelAbility)
-ConnectAbilityEvents_Unreel(propUnreelAbility)
+-- ConnectAbilityEvents_Unreel(propUnreelAbility)
 propEquipment.equippedEvent:Connect(OnEquipped)
 propEquipment.unequippedEvent:Connect(OnUnequipped)
 

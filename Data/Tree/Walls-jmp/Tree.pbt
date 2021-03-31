@@ -2008,12 +2008,12 @@ Objects {
   Name: "Walls1-jmp"
   Transform {
     Location {
-      X: 1925
-      Y: 4700
-      Z: 1199.99976
+      X: 1901.22607
+      Y: 4700.01172
+      Z: 1200
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -90
     }
     Scale {
       X: 1
@@ -3376,12 +3376,12 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 2160.23706
-      Y: -2157.18433
+      X: 2160.23022
+      Y: -2150.33423
       Z: -75
     }
     Rotation {
-      Yaw: 5
+      Yaw: -0.0643310547
     }
     Scale {
       X: 1
@@ -4458,6 +4458,8 @@ Objects {
     }
   }
   ParentId: 13107223069222843812
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4501,6 +4503,8 @@ Objects {
     }
   }
   ParentId: 13107223069222843812
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4544,6 +4548,8 @@ Objects {
     }
   }
   ParentId: 13107223069222843812
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4587,6 +4593,8 @@ Objects {
     }
   }
   ParentId: 13107223069222843812
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4630,6 +4638,8 @@ Objects {
     }
   }
   ParentId: 13107223069222843812
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4673,6 +4683,8 @@ Objects {
     }
   }
   ParentId: 13107223069222843812
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4716,6 +4728,8 @@ Objects {
     }
   }
   ParentId: 13107223069222843812
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4759,6 +4773,8 @@ Objects {
     }
   }
   ParentId: 13107223069222843812
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

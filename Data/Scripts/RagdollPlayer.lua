@@ -1,4 +1,5 @@
 local trigger = script.parent
+local propNextTarget = script:GetCustomProperty("nextTarget"):WaitForObject()
 
 function OnBeginOverlap(whichTrigger, other)
 	if other:IsA("Player") then
@@ -9,8 +10,7 @@ function OnBeginOverlap(whichTrigger, other)
         player:EnableRagdoll("left_shoulder", .6)
         player:EnableRagdoll("right_hip", .6)
         player:EnableRagdoll("left_hip", .6)		
-        player.movementControlMode = MovementControlMode.NONE      
-        
+        player.movementControlMode = MovementControlMode.NONE
 
     end
 		

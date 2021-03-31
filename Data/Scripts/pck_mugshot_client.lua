@@ -13,8 +13,6 @@ local   propTetherVFX = script:GetCustomProperty("tetherVFX"):WaitForObject()
 propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
     if propertyName == "tension" then
         propTension = coreObject:GetCustomProperty(propertyName)
-    elseif propertyName == "tetherOffset" then
-        propTetherOffset = coreObject:GetCustomProperty(propertyName)
     elseif propertyName == "tetherTravel" then
         UpdateTetherTravel(coreObject:GetCustomProperty(propertyName))
     end
@@ -218,10 +216,11 @@ function UpdateTetherVFX(properties)
     end
 end
 
-function OnMugshotAimed(mugshot, puck, aimed)
+function OnMugshotAimed(mugshot, puck, anchor, aimed)
     if mugshot:WaitForObject() == propEquipment then
         if aimed then
             propTetheredPuck = puck:WaitForObject()
+            propTetherOffset = anchor
             -- propTetherVFX.isEnabled = true
         else
             propTetheredPuck = nil
@@ -234,7 +233,7 @@ function OnMugshotAimed(mugshot, puck, aimed)
     end
 end
 
-function OnMugshotTethered(mugshot, puck, tethered)
+function OnMugshotTethered(mugshot, puck, anchor, tethered)
     if mugshot:WaitForObject() == propEquipment then
         propTetheredToTarget = tethered
         if tethered then
@@ -245,6 +244,7 @@ function OnMugshotTethered(mugshot, puck, tethered)
             propTetheredPuck = nil
             propTetherTravel = 0
             -- propTetherVFX.isEnabled = false
+
             propGrapple:SetPosition(Vector3.ZERO)
             propGrapple:SetRotation(Rotation.ZERO)
         end
