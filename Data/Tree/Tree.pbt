@@ -4968,6 +4968,7 @@ Objects {
   ChildIds: 8573270706784511485
   ChildIds: 1119104670142202433
   ChildIds: 5679648554755152430
+  ChildIds: 16833838141883833062
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4986,6 +4987,320 @@ Objects {
     Canvas {
       ContentType {
         Value: "mc:ecanvascontenttype:dynamic"
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 16833838141883833062
+  Name: "MainTimerPanel"
+  Transform {
+    Location {
+      X: -1050.51904
+      Y: 764.926514
+      Z: -306.5513
+    }
+    Rotation {
+      Yaw: 142.459686
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8246799554883067851
+  ChildIds: 15954026196059135416
+  ChildIds: 5256690116021477971
+  ChildIds: 296477757847824242
+  ChildIds: 858783912670990656
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceon"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 405
+    Height: 172
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Panel {
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 858783912670990656
+  Name: "totalTime"
+  Transform {
+    Location {
+      X: -0.000854492188
+      Y: -0.000118255615
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1.00000012
+    }
+  }
+  ParentId: 16833838141883833062
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 235
+    Height: 71
+    UIX: -145.805222
+    UIY: 36.6753
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "00:00"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 37
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 841534158063459245
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topright"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topright"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 296477757847824242
+  Name: "lblTowerTime"
+  Transform {
+    Location {
+      X: -0.000854492188
+      Y: -0.000118255615
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1.00000012
+    }
+  }
+  ParentId: 16833838141883833062
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 235
+    Height: 32
+    UIX: -148.60582
+    UIY: 24.0761871
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "TOWER TIME"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 15
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 841534158063459245
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topright"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topright"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 5256690116021477971
+  Name: "frame"
+  Transform {
+    Location {
+      X: 0.00109863281
+      Y: 0.0039100647
+      Z: -0.00390624977
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 0.999999881
+    }
+  }
+  ParentId: 16833838141883833062
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 241
+    Height: 93
+    UIX: 20.349472
+    UIY: 19.1159515
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Image {
+      Brush {
+        Id: 13064445591764477429
+      }
+      Color {
+        G: 0.829999864
+        B: 0.830000043
+        A: 1
+      }
+      TeamSettings {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 15954026196059135416
+  Name: "frameBG"
+  Transform {
+    Location {
+      X: 0.00109863281
+      Y: 0.0039100647
+      Z: -0.00390624977
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 0.999999881
+    }
+  }
+  ParentId: 16833838141883833062
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 241
+    Height: 93
+    UIX: 20.349472
+    UIY: 19.1159515
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Image {
+      Brush {
+        Id: 3442190493143268016
+      }
+      Color {
+        A: 0.245
+      }
+      TeamSettings {
       }
     }
     AnchorLayout {
@@ -7275,6 +7590,18 @@ Objects {
         Id: 8709810933941914775
       }
     }
+    Overrides {
+      Name: "cs:MainTimerPanel"
+      ObjectReference {
+        SelfId: 16833838141883833062
+      }
+    }
+    Overrides {
+      Name: "cs:totalTime"
+      ObjectReference {
+        SelfId: 858783912670990656
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -7336,7 +7663,15 @@ Objects {
       String: ""
     }
     Overrides {
+      Name: "cs:towerTimerState"
+      String: ""
+    }
+    Overrides {
       Name: "cs:UIMessage:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:towerTimerState:isrep"
       Bool: true
     }
   }

@@ -1,6 +1,6 @@
 GameId: "30e12690313c49e59c67249b56275733"
 ClientVersion: "1.0.178-prod-s"
-Name: "Talesworth Tower Pre-pre-Alpha"
+Name: "Talesworth Tower Pre-Alpha"
 Description: "The game"
 MaxPlayers: 4
 Tags: "Cooperative"
