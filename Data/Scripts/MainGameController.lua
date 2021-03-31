@@ -8,10 +8,11 @@ local timeLeft = 0
 local timerEndCallback
 local playerKeyBindingListener = nil
 
-local lastCheckpointTime = nil
+local lastCheckpointTime = 0
 local totalTowerTime = 0
 local towerTimerActive = false
 local towerTimerTask = nil
+local lastTTTUpdateTime = 0
 
 levelRunning = false
 currentLevelIndex = 1
