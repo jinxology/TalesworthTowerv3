@@ -7,7 +7,11 @@ local timerStarted = false
 local timeLeft = 0
 local timerEndCallback
 local playerKeyBindingListener = nil
- 
+
+local lastCheckpointTime = nil
+local totalTowerTime = 0
+local towerTimerActive = false
+
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
@@ -130,6 +134,10 @@ end
 function Tick(deltaTime)
     Task.Wait(1) --slow it down to only run once a second
     
+    if (towerTimerActive) then
+        totalTowerTime = totalTowerTime + deltaTime
+    end
+
     if (timerStarted and not resetingTower) then        
         timeLeft = timeLeft - 1
         --UpdateTimerText(timeLeft)
@@ -338,8 +346,14 @@ function LevelBegin()
     if (not levelRunning) then
         levelRunning = true
 
+        towerTimerActive = true
+        if (currentLevelIndex == 1) then
+            totalTowerTime = 0
+        end
+        script:SetNetworkedCustomProperty("UIMessage","08,false, ")    
+
         --Reset these if the players quickly restart level 1
-        script:SetNetworkedCustomProperty("UIMessage","04,false, ")
+        --script:SetNetworkedCustomProperty("UIMessage","04,false, ")
         
         --If started some way other than starting platforms, deactivate them
         DeactivateStartingPlatforms()
@@ -353,6 +367,8 @@ function LevelEnd(success)
     levelRunning = false 
     SetNextLevelIndex(success)
     
+
+
     if (not success and currentLevelIndex == 1) then
         ResetStartingPlatforms()
     else

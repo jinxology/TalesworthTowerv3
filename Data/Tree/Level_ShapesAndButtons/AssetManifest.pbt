@@ -17,12 +17,30 @@ Assets {
   }
 }
 Assets {
+  Id: 14541226177347501673
+  Name: "Center Hex 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "CenterHex_001"
+  }
+}
+Assets {
   Id: 13637078664533668977
   Name: "Prism - 3-Sided Polished"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_prism_hq_001"
+  }
+}
+Assets {
+  Id: 13064445591764477429
+  Name: "Frame Outlined Thick 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameFlat_022"
   }
 }
 Assets {
@@ -140,6 +158,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_sf_gen_tech-panel_002_uv"
+  }
+}
+Assets {
+  Id: 3442190493143268016
+  Name: "BG Flat 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_22"
   }
 }
 Assets {

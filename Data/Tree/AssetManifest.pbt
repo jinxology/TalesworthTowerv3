@@ -17,6 +17,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13064445591764477429
+  Name: "Frame Outlined Thick 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameFlat_022"
+  }
+}
+Assets {
   Id: 10988486045141043269
   Name: "Sun Halo"
   PlatformAssetType: 6
@@ -68,6 +77,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_plane_4m_001"
+  }
+}
+Assets {
+  Id: 3442190493143268016
+  Name: "BG Flat 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_22"
   }
 }
 Assets {

@@ -6,9 +6,14 @@ local propUtility_ClientSide = script:GetCustomProperty("Utility_ClientSide"):Wa
 local propLevelFailSound = script:GetCustomProperty("LevelFailSound")
 local propLevelVictorySound = script:GetCustomProperty("LevelVictorySound")
 local propResetTowerEjectSFX = script:GetCustomProperty("ResetTowerEjectSFX")
+local propMainTimerPanel = script:GetCustomProperty("MainTimerPanel"):WaitForObject()
+local propTotalTime = script:GetCustomProperty("totalTime"):WaitForObject()
 
 local timerStarted = false
 local timeLeft = 0
+local totalTime = 0
+local totalTimerStarted = false
+local towerStartTime
 
 function IncomingUIMessage(coreObject, propertyName)
     
@@ -35,7 +40,20 @@ function IncomingUIMessage(coreObject, propertyName)
     elseif (msgData[1] == "07") then --resetting tower
         World.SpawnAsset(propLevelFailSound,{position=myPosition})
         ToggleBottomMessage("true","TOWER EJECTION IMMINENT")
+    elseif (msgData[1] == "08") then --start main total tower timer
+        StartAndUpdateClientTowerTimer(msgData[2])
+    elseif (msgData[1] == "09") then --fail horn
+        myPosition = Game.GetLocalPlayer():GetWorldPosition()        
+        World.SpawnAsset(propLevelFailSound,{position=myPosition})
     end
+end
+
+function StartAndUpdateClientTowerTimer(timeSoFar)
+    if (propMainTimerPanel.visibility == Visibility.FORCE_OFF) then
+        propMainTimerPanel.visibility = Visibility.FORCE_ON
+    end
+    towerStartTime = timeSoFar
+    totalTimerStarted = true
 end
 
 function ShowSmallUIMessage(msg) 
@@ -52,9 +70,24 @@ function StopTimerLocal()
     UpdateTimer(-1)
 end
 
+function FormatTime(inTime)
+    local minutes = CoreMath.Round(inTime / 60)
+    local seconds = CoreMath.Round(inTime % 60)
+    local minStr = string.format("%02d",minutes)
+    local secStr = string.format("%02d",seconds)
+    
+    return minStr..":"..secStr
+end
+
 function Tick(deltaTime)
     Task.Wait(1) --slow it down to only run once a second
-    
+
+    if (totalTimerStarted) then 
+        --totalTime = totalTime + deltaTime
+        local seconds = time() - towerStartTime
+        propTotalTime.text = FormatTime(seconds)
+    end
+
     if (timerStarted == true) then       
         timeLeft = timeLeft - 1
         UpdateTimer(timeLeft)
@@ -106,6 +139,8 @@ function ToggleGoToExit(showMe, msg, success)
         end
     end
 end
+
+
 
 function ToggleBottomMessage(showMe, msg)
     propTxtGoToExit.text = msg

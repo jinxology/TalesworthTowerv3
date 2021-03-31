@@ -12,11 +12,13 @@ local myColor
 local myShape 
 local myShapeObj --pointer to the actual 3d object
 local successes = 0
-local successesForVictory = 4
+local successesForVictory = 8
 
 --EventListeners
 local playerOnConnectedListener = nil
 local pressedColoredButtonListener = nil
+
+--secondsPerButton = {20,16,14,12,10,8,4,6}
 
 ------------------------------------------------------------
 --REQUIRED BY MAIN CONTROLLER
@@ -33,9 +35,6 @@ startingPlatforms = nil
 startPlatformPosition = Vector3.New(317,-1164,4)
 startPlatformRotation = Rotation.New(0,0,0)
 ------------------------------------------------------------
-
---local players = Game.GetPlayers()
---local numPlayers = #players
 
 function SpawnShape() 
     --Shapes
@@ -84,11 +83,6 @@ function SpawnShape()
     
 end
 
--- function OnPlayerJoined(player)
---     playerKeyBindingListener = player.bindingPressedEvent:Connect(OnBindingPressed)
--- end
-
-
 function TimerEnded()
     LevelFailed()
 end
@@ -119,21 +113,44 @@ end
 function OnColorButtonPressed(whichShape, whichColor, whoDidIt) 
     --print ("pressed " .. whichShape .. " : " .. whichColor)
     --print ("Current Shape: " .. whichShape .. ", Current Color: " .. whichColor)
-
-    propMainGameController.context.SendGeneralMessageToClients("05,"..whoDidIt.." pressed a "..GetColorName(whichColor).." button near "..GetShapeName(whichShape))
-
+    local correct = "true"
     if (propMainGameController.context.levelRunning) then
         if (whichShape == myShape and whichColor == myColor) then
             successes = successes + 1
+            --script:SetNetworkedCustomProperty("UIControllerProperty","01,"..successes..","..successesForVictory) 
             if successes >= successesForVictory then
                 LevelVictory()
             else
                 SpawnShape()
             end
         else
-            LevelFailed()
+            correct = "false"
+            successes = 0
+            Task.Spawn(WrongButton)
         end
     end
+
+    --propMainGameController.context.SendGeneralMessageToClients("05,"..whoDidIt.." pressed a "..GetColorName(whichColor).." button near "..GetShapeName(whichShape)..","..correct)
+    script:SetNetworkedCustomProperty("UIControllerProperty",
+    "01,"..successes..","..successesForVictory..","..whoDidIt.." pressed a "..GetColorName(whichColor).." button near "..GetShapeName(whichShape)..","..correct)
+
+end
+
+function WrongButton()
+    --script:SetNetworkedCustomProperty("UIControllerProperty","01,"..successes..","..successesForVictory..",false")    
+
+    local lightsDimTime = 3
+    for _, player in pairs(Game.GetPlayers()) do
+        propMainGameController.context.SetLightLevel(player, 2)
+    end
+    propMainGameController.context.SpawnLevelBeacons(false,lightsDimTime)
+
+    Task.Wait(lightsDimTime)
+
+    for _, player in pairs(Game.GetPlayers()) do
+        propMainGameController.context.SetLightLevel(player, 4)
+    end
+
 end
 
 -----------------------------------------------------------------------
@@ -143,7 +160,8 @@ end
 function LevelBegin()
     --print ("Start!!")
     propInstructions.visibility = Visibility.FORCE_OFF
-    propMainGameController.context.StartTimer(propTimerSeconds, TimerEnded)
+    --propMainGameController.context.StartTimer(propTimerSeconds, TimerEnded)
+    script:SetNetworkedCustomProperty("UIControllerProperty","01,"..successes..","..successesForVictory..",,")    
     SpawnShape()
 end
 
