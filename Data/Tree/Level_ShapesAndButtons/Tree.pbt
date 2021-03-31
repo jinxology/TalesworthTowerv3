@@ -3822,6 +3822,7 @@ Objects {
     }
   }
   ParentId: 13112159771555538840
+  ChildIds: 7171660540408170395
   ChildIds: 8365951635215087980
   ChildIds: 8854509585167765196
   ChildIds: 1389329799743976026
@@ -4010,7 +4011,6 @@ Objects {
     }
   }
   ParentId: 14823356953080158463
-  ChildIds: 7171660540408170395
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4023,8 +4023,8 @@ Objects {
   Control {
     Width: 293
     Height: 132
-    UIX: 87.5644531
-    UIY: 7.91674805
+    UIX: -19.2630615
+    UIY: 6.49280548
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -4045,12 +4045,12 @@ Objects {
     AnchorLayout {
       SelfAnchor {
         Anchor {
-          Value: "mc:euianchor:topleft"
+          Value: "mc:euianchor:topright"
         }
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:topleft"
+          Value: "mc:euianchor:topright"
         }
       }
     }
@@ -4073,7 +4073,7 @@ Objects {
       Z: 0.999999881
     }
   }
-  ParentId: 8365951635215087980
+  ParentId: 14823356953080158463
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4085,7 +4085,9 @@ Objects {
   }
   Control {
     Width: 293
-    Height: 248
+    Height: 132
+    UIX: -19.2630615
+    UIY: 6.49280548
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -4104,12 +4106,12 @@ Objects {
     AnchorLayout {
       SelfAnchor {
         Anchor {
-          Value: "mc:euianchor:topleft"
+          Value: "mc:euianchor:topright"
         }
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:topleft"
+          Value: "mc:euianchor:topright"
         }
       }
     }

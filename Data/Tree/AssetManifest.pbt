@@ -44,15 +44,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13064445591764477429
-  Name: "Frame Outlined Thick 004"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "FrameFlat_022"
-  }
-}
-Assets {
   Id: 14567488825727808590
   Name: "Sign Font 1 Neon Lines: H"
   PlatformAssetType: 1
@@ -77,6 +68,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_sf_gen_tech-panel_001"
+  }
+}
+Assets {
+  Id: 13064445591764477429
+  Name: "Frame Outlined Thick 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameFlat_022"
   }
 }
 Assets {
@@ -215,15 +215,6 @@ Assets {
   }
 }
 Assets {
-  Id: 3442190493143268016
-  Name: "BG Flat 004"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundNoOutline_22"
-  }
-}
-Assets {
   Id: 6295944276558082631
   Name: "Sign Font 1 Neon Lines: E"
   PlatformAssetType: 1
@@ -275,6 +266,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_mil_fence_pole_02_end_002"
+  }
+}
+Assets {
+  Id: 3442190493143268016
+  Name: "BG Flat 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_22"
   }
 }
 Assets {

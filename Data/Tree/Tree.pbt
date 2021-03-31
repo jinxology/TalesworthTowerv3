@@ -4980,6 +4980,7 @@ Objects {
     }
   }
   ParentId: 8246799554883067851
+  ChildIds: 15954026196059135416
   ChildIds: 5256690116021477971
   ChildIds: 296477757847824242
   ChildIds: 858783912670990656
@@ -4987,7 +4988,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
+    Value: "mc:evisibilitysetting:forceon"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -5168,7 +5169,6 @@ Objects {
     }
   }
   ParentId: 16833838141883833062
-  ChildIds: 15954026196059135416
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -5231,7 +5231,7 @@ Objects {
       Z: 0.999999881
     }
   }
-  ParentId: 5256690116021477971
+  ParentId: 16833838141883833062
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -5242,8 +5242,10 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Control {
-    Width: 293
-    Height: 248
+    Width: 241
+    Height: 93
+    UIX: 20.349472
+    UIY: 19.1159515
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -7619,7 +7621,15 @@ Objects {
       String: ""
     }
     Overrides {
+      Name: "cs:towerTimerState"
+      String: ""
+    }
+    Overrides {
       Name: "cs:UIMessage:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:towerTimerState:isrep"
       Bool: true
     }
   }
