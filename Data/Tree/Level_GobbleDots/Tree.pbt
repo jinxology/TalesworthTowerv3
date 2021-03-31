@@ -2339,7 +2339,7 @@ Objects {
       Z: 12575
     }
     Rotation {
-      Roll: -89.9999924
+      Roll: -90
     }
     Scale {
       X: 19

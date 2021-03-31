@@ -1435,7 +1435,7 @@ Objects {
       Z: -1
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -90
     }
     Scale {
       X: -5.6
@@ -1514,7 +1514,7 @@ Objects {
       Z: -1
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -90
     }
     Scale {
       X: 5.6
@@ -32085,10 +32085,10 @@ Objects {
   Name: "pck.ceiling"
   Transform {
     Location {
+      X: -31
       Z: 1960
     }
     Rotation {
-      Pitch: -1.36603776e-05
       Yaw: 180
       Roll: 180
     }
@@ -32179,10 +32179,10 @@ Objects {
   Name: "pck.ceiling"
   Transform {
     Location {
+      X: -31
       Z: 1950
     }
     Rotation {
-      Pitch: -1.36603776e-05
       Yaw: 180
       Roll: 180
     }
@@ -55764,7 +55764,7 @@ Objects {
   Name: "Whitebox Floor 01 8m x 8m"
   Transform {
     Location {
-      X: -9600
+      X: -9631
       Y: 6400
     }
     Rotation {
@@ -55907,11 +55907,11 @@ Objects {
   Name: "Trim - Curve 90\302\260 - 16m Radius"
   Transform {
     Location {
-      X: 1550
+      X: 1519
       Z: 1
     }
     Rotation {
-      Yaw: -89.9999771
+      Yaw: -89.9999695
     }
     Scale {
       X: 1
@@ -56010,6 +56010,7 @@ Objects {
   Name: "Trim - Curve 90\302\260 - 16m Radius"
   Transform {
     Location {
+      X: -31
       Y: -1550
       Z: 1
     }
@@ -57153,7 +57154,7 @@ Objects {
   Name: "pck.floor"
   Transform {
     Location {
-      X: -6400
+      X: -6431
       Y: 3200
     }
     Rotation {
@@ -57204,7 +57205,7 @@ Objects {
   Name: "pck.floor"
   Transform {
     Location {
-      X: -37.5
+      X: -68.5
       Y: 6400.02441
       Z: 1
     }
@@ -57381,6 +57382,7 @@ Objects {
   Name: "pck.ceiling"
   Transform {
     Location {
+      X: -31
       Z: 1999
     }
     Rotation {

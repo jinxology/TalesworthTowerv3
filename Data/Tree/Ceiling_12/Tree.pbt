@@ -5,8 +5,8 @@ Objects {
   Name: "Sci-fi Base Roof 01 - 8m"
   Transform {
     Location {
-      X: -1550
-      Y: -800
+      X: -1644.47681
+      Y: -799.911804
     }
     Rotation {
     }
@@ -47,7 +47,8 @@ Objects {
   Name: "Sci-fi Base Roof 01 - 8m"
   Transform {
     Location {
-      X: -775
+      X: -840.052368
+      Y: 0.446960449
     }
     Rotation {
     }
@@ -88,7 +89,8 @@ Objects {
   Name: "Sci-fi Base Roof 01 - 8m"
   Transform {
     Location {
-      X: -1550
+      X: -1644.47559
+      Y: 0.0884094238
     }
     Rotation {
     }
@@ -129,8 +131,8 @@ Objects {
   Name: "Sci-fi Base Roof 01 - 8m"
   Transform {
     Location {
-      X: -775
-      Y: -800
+      X: -840.05249
+      Y: -799.553467
     }
     Rotation {
     }

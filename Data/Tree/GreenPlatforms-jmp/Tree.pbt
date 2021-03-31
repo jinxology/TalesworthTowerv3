@@ -1,6 +1,59 @@
 Name: "GreenPlatforms-jmp"
 RootId: 2181799923005855375
 Objects {
+  Id: 5894468691403573230
+  Name: "Sci-fi Base Stairs 01"
+  Transform {
+    Location {
+      X: 1675.00195
+      Y: -1825.00171
+      Z: -275
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.5
+      Y: 0.5
+      Z: 0.5
+    }
+  }
+  ParentId: 2181799923005855375
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.0331125818
+        G: 0.100000024
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3837819661749083272
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 5374103981825421982
   Name: "Urban Floor Grate Fire Escape - 1m x 4m"
   Transform {
@@ -883,7 +936,6 @@ Objects {
       Z: -275
     }
     Rotation {
-      Yaw: -3.4150944e-06
     }
     Scale {
       X: 0.5
@@ -991,8 +1043,8 @@ Objects {
   Name: "Sci-fi Base Railing 01"
   Transform {
     Location {
-      X: 3832.82861
-      Y: -2769.50098
+      X: 3796.29541
+      Y: -2806.04028
       Z: -916.666626
     }
     Rotation {
@@ -1054,8 +1106,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 3541.16
-      Y: -2769.5022
+      X: 3504.62549
+      Y: -2806.03979
       Z: -958.333313
     }
     Rotation {
@@ -1291,110 +1343,6 @@ Objects {
   }
 }
 Objects {
-  Id: 13684837385261200745
-  Name: "Sci-fi Base Floor 03 4m"
-  Transform {
-    Location {
-      X: 1679.39795
-      Y: -1820.82178
-      Z: -275
-    }
-    Rotation {
-      Yaw: 90
-    }
-    Scale {
-      X: 0.5
-      Y: 0.5
-      Z: 0.5
-    }
-  }
-  ParentId: 2181799923005855375
-  ChildIds: 17064943016219259334
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Building_Floor:color"
-      Color {
-        G: 0.120000005
-        B: 0.0150993355
-        A: 1
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 17112041820881791716
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 17064943016219259334
-  Name: "greenMove1"
-  Transform {
-    Location {
-      X: -2650
-      Y: -5000
-      Z: -700
-    }
-    Rotation {
-    }
-    Scale {
-      X: 2
-      Y: 2
-      Z: 2
-    }
-  }
-  ParentId: 13684837385261200745
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:ScifiBaseFloor034m"
-      ObjectReference {
-        SelfId: 13684837385261200745
-      }
-    }
-    Overrides {
-      Name: "cs:FlameGreen"
-      ObjectReference {
-        SelfId: 3336956588970473080
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 4261413218981896524
-    }
-  }
-}
-Objects {
   Id: 6656259244034748189
   Name: "Fantasy Candle Lit - Holder 02 (Prop)"
   Transform {
@@ -1414,9 +1362,7 @@ Objects {
   }
   ParentId: 2181799923005855375
   ChildIds: 6998410576958261345
-  ChildIds: 3336956588970473080
   ChildIds: 187661689682858208
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1442,8 +1388,8 @@ Objects {
   Name: "Floor Candle Holder 02"
   Transform {
     Location {
-      X: -112
-      Y: -91
+      X: -111.999878
+      Y: -91.000206
       Z: -190
     }
     Rotation {
@@ -1481,7 +1427,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1513,196 +1458,6 @@ Objects {
   }
 }
 Objects {
-  Id: 3336956588970473080
-  Name: "FlameGreen"
-  Transform {
-    Location {
-      X: -111.489594
-      Y: -89.7712402
-      Z: 6.67944336
-    }
-    Rotation {
-    }
-    Scale {
-      X: 3
-      Y: 3
-      Z: 3
-    }
-  }
-  ParentId: 6656259244034748189
-  ChildIds: 1053241173469803115
-  ChildIds: 4512922542380036250
-  ChildIds: 14928989913209188359
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Flame_A:color"
-      Color {
-        R: 0.0814573765
-        G: 0.0500000119
-        B: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Flame_B:color"
-      Color {
-        R: 0.0231126547
-        G: 0.00999999
-        B: 1
-        A: 1
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceon"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 9199751096616988864
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-      }
-    }
-  }
-  InstanceHistory {
-    SelfId: 9594782255966504366
-    SubobjectId: 13566737109319645555
-    InstanceId: 1297525825995880485
-    TemplateId: 8080692546549158181
-  }
-}
-Objects {
-  Id: 14928989913209188359
-  Name: "GreenBreath"
-  Transform {
-    Location {
-      X: 37.1631889
-      Y: 29.9236908
-      Z: -2.2264812
-    }
-    Rotation {
-      Yaw: 7.04845252e-06
-    }
-    Scale {
-      X: 0.333333343
-      Y: 0.333333343
-      Z: 0.333333343
-    }
-  }
-  ParentId: 3336956588970473080
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 6232320401704415995
-    }
-    Volume: 1
-    Falloff: -1
-    Radius: -1
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 4512922542380036250
-  Name: "GreenCanisterAppear"
-  Transform {
-    Location {
-      X: -5.08621e-06
-      Y: -8.13802108e-05
-    }
-    Rotation {
-      Yaw: 7.04845252e-06
-    }
-    Scale {
-      X: 0.333333343
-      Y: 0.333333343
-      Z: 0.333333343
-    }
-  }
-  ParentId: 3336956588970473080
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 1256248629485427064
-    }
-    Volume: 1
-    Falloff: -1
-    Radius: -1
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 1053241173469803115
-  Name: "flameGreenTrigger"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.333333343
-      Y: 0.333333343
-      Z: 0.333333343
-    }
-  }
-  ParentId: 3336956588970473080
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Extinguish Green Flame"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
   Id: 6998410576958261345
   Name: "ClientContext"
   Transform {
@@ -1721,7 +1476,6 @@ Objects {
   }
   ParentId: 6656259244034748189
   ChildIds: 14145582643169174462
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

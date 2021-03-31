@@ -1,211 +1,6 @@
 Name: "Level_JumpMan"
 RootId: 9132562513265036101
 Objects {
-  Id: 5429094307745568096
-  Name: "BaseRise"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9132562513265036101
-  UnregisteredParameters {
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 15232552443457263526
-    }
-    Volume: 1.86145258
-    Falloff: -1
-    Radius: -1
-  }
-}
-Objects {
-  Id: 6833047475156071797
-  Name: "SwirlSuccess"
-  Transform {
-    Location {
-      X: 795.495239
-      Y: -300.520386
-      Z: 50
-    }
-    Rotation {
-      Yaw: 135
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9132562513265036101
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 17314135178437891372
-    }
-    Volume: 1
-    Falloff: -1
-    Radius: -1
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 10761276145236582620
-  Name: "BaseDisengage"
-  Transform {
-    Location {
-      X: 1343.50317
-      Y: -282.842651
-      Z: 125
-    }
-    Rotation {
-      Yaw: 135
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9132562513265036101
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 12187164554423389607
-    }
-    Volume: 1
-    Falloff: -1
-    Radius: -1
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 7587633514078415992
-  Name: "Reverb Zone"
-  Transform {
-    Location {
-      X: 5904.35059
-      Y: -35.3554688
-      Z: -375
-    }
-    Rotation {
-      Yaw: 90
-    }
-    Scale {
-      X: 19.3000011
-      Y: 6.4
-      Z: 8.3
-    }
-  }
-  ParentId: 9132562513265036101
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:AmbientJumpmanScore"
-      ObjectReference {
-        SelfId: 11449835060749216090
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 1017832589167727899
-    }
-    TeamSettings {
-    }
-  }
-}
-Objects {
-  Id: 11449835060749216090
-  Name: "AmbientJumpmanScore"
-  Transform {
-    Location {
-      X: 3217.33545
-      Y: 0.00122070313
-      Z: -125
-    }
-    Rotation {
-      Yaw: 135
-    }
-    Scale {
-      X: 0.400000215
-      Y: 0.399999768
-      Z: 0.0999999121
-    }
-  }
-  ParentId: 9132562513265036101
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 11190345326845936628
-    }
-    TeamSettings {
-    }
-    AudioBP {
-      Repeat: true
-      Volume: 0.161900789
-      Falloff: 3600
-      Radius: 400
-    }
-  }
-}
-Objects {
   Id: 5488969737579989806
   Name: "FlumePortalPipes"
   Transform {
@@ -2021,6 +1816,8 @@ Objects {
   Name: "OverlordPlatform-jmp"
   Transform {
     Location {
+      X: 0.000345349312
+      Y: -1.27058268
     }
     Rotation {
     }
@@ -2962,8 +2759,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1175
-      Y: 2675
+      X: 1153.07983
+      Y: 2653.08057
       Z: -75
     }
     Rotation {
@@ -3091,8 +2888,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1175
-      Y: 3450
+      X: 1153.08044
+      Y: 3428.08154
       Z: -75
     }
     Rotation {
@@ -3693,8 +3490,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1950.00012
-      Y: 2675
+      X: 1928.08301
+      Y: 2653.08472
       Z: -75
     }
     Rotation {
@@ -5376,18 +5173,6 @@ Objects {
   ParentId: 9132562513265036101
   UnregisteredParameters {
     Overrides {
-      Name: "cs:MainGameController"
-      ObjectReference {
-        SelfId: 6965558101138960242
-      }
-    }
-    Overrides {
-      Name: "cs:GreenCapsule"
-      AssetReference {
-        Id: 10472903789979705492
-      }
-    }
-    Overrides {
       Name: "cs:BlueCapsule"
       AssetReference {
         Id: 14114133663481397920
@@ -5406,213 +5191,122 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:FlameGreen"
-      ObjectReference {
-        SelfId: 3336956588970473080
+      Name: "cs:ScifiBaseStairs01L"
+      AssetReference {
+        Id: 2076753024680643121
       }
     }
     Overrides {
-      Name: "cs:flameGreenTrigger"
-      ObjectReference {
-        SelfId: 1053241173469803115
+      Name: "cs:GreenCapsule"
+      AssetReference {
+        Id: 10472903789979705492
       }
     }
     Overrides {
-      Name: "cs:GreenCanisterAppear"
-      ObjectReference {
-        SelfId: 4512922542380036250
+      Name: "cs:YellowBase"
+      AssetReference {
+        Id: 11421921060521024320
       }
     }
     Overrides {
-      Name: "cs:GreenBreath"
-      ObjectReference {
-        SelfId: 14928989913209188359
+      Name: "cs:GreenBaseTemplate"
+      AssetReference {
+        Id: 12399224009993297397
+      }
+    }
+    Overrides {
+      Name: "cs:BlueBaseTemplate"
+      AssetReference {
+        Id: 5786830380303575415
+      }
+    }
+    Overrides {
+      Name: "cs:RedBaseTemplate"
+      AssetReference {
+        Id: 15232919508060689225
+      }
+    }
+    Overrides {
+      Name: "cs:FlameYellowTemplate"
+      AssetReference {
+        Id: 17194519173808693758
       }
     }
     Overrides {
       Name: "cs:AmbientJumpmanScore"
       ObjectReference {
-        SelfId: 11449835060749216090
       }
     }
     Overrides {
-      Name: "cs:FlameBlue"
-      ObjectReference {
-        SelfId: 68179953906578805
+      Name: "cs:FlameGreenTemplate"
+      AssetReference {
+        Id: 4617985881815292677
       }
     }
     Overrides {
-      Name: "cs:flameBlueTrigger"
-      ObjectReference {
-        SelfId: 8923750658510996524
+      Name: "cs:FlameRedTemplate"
+      AssetReference {
+        Id: 1675243904474070930
       }
     }
     Overrides {
-      Name: "cs:BlueBreath"
-      ObjectReference {
-        SelfId: 14634859672426499512
+      Name: "cs:FlameBlueTemplate"
+      AssetReference {
+        Id: 7342326284010572306
       }
     }
     Overrides {
-      Name: "cs:BlueCanisterAppear"
-      ObjectReference {
-        SelfId: 17058413418764017126
+      Name: "cs:YellowRailingTemplate"
+      AssetReference {
+        Id: 7813592556241234842
       }
     }
     Overrides {
-      Name: "cs:FlameRed"
-      ObjectReference {
-        SelfId: 1157179011478865946
+      Name: "cs:GreenPlatform1Template"
+      AssetReference {
+        Id: 7086690368510480406
       }
     }
     Overrides {
-      Name: "cs:flameRedTrigger"
-      ObjectReference {
-        SelfId: 11552662806965724039
+      Name: "cs:RedPlatform1Template"
+      AssetReference {
+        Id: 14472004475060050851
       }
     }
     Overrides {
-      Name: "cs:RedBreath"
-      ObjectReference {
-        SelfId: 9809685742098046639
+      Name: "cs:BlueChainPlatform1Template"
+      AssetReference {
+        Id: 4494819497218631179
       }
     }
     Overrides {
-      Name: "cs:RedCanisterAppear"
-      ObjectReference {
-        SelfId: 7781215598585827952
+      Name: "cs:BaseRiseTemplate"
+      AssetReference {
+        Id: 6555449377122684997
       }
     }
     Overrides {
-      Name: "cs:FlameYellow"
-      ObjectReference {
-        SelfId: 8188827612800850643
+      Name: "cs:JumpmanScoreTemplate"
+      AssetReference {
+        Id: 16675055024067607213
       }
     }
     Overrides {
-      Name: "cs:flameYellowTrigger"
+      Name: "cs:MainGameController"
       ObjectReference {
-        SelfId: 16677650451049277518
+        SelfId: 6965558101138960242
       }
     }
     Overrides {
-      Name: "cs:YellowBreath"
-      ObjectReference {
-        SelfId: 9152697209134174006
+      Name: "cs:SwirlSuccessSoundTemplate"
+      AssetReference {
+        Id: 16485768198499389599
       }
     }
     Overrides {
-      Name: "cs:YellowCanisterAppear"
-      ObjectReference {
-        SelfId: 10474278980338511602
-      }
-    }
-    Overrides {
-      Name: "cs:blueBeam"
-      ObjectReference {
-        SelfId: 8054863456920481186
-      }
-    }
-    Overrides {
-      Name: "cs:blueLever"
-      ObjectReference {
-        SelfId: 6860712732248338230
-      }
-    }
-    Overrides {
-      Name: "cs:blueBaseTrigger"
-      ObjectReference {
-        SelfId: 10910709794840007749
-      }
-    }
-    Overrides {
-      Name: "cs:SwirlSuccess"
-      ObjectReference {
-        SelfId: 6833047475156071797
-      }
-    }
-    Overrides {
-      Name: "cs:BaseDisengage"
-      ObjectReference {
-        SelfId: 10761276145236582620
-      }
-    }
-    Overrides {
-      Name: "cs:redBaseTrigger"
-      ObjectReference {
-        SelfId: 15319385519744865671
-      }
-    }
-    Overrides {
-      Name: "cs:redLever"
-      ObjectReference {
-        SelfId: 8260424568808607406
-      }
-    }
-    Overrides {
-      Name: "cs:redLeverPull"
-      ObjectReference {
-        SelfId: 9126538932224519518
-      }
-    }
-    Overrides {
-      Name: "cs:redBeam"
-      ObjectReference {
-        SelfId: 16852413474830748652
-      }
-    }
-    Overrides {
-      Name: "cs:yellowBaseTrigger"
-      ObjectReference {
-        SelfId: 6558443972384531303
-      }
-    }
-    Overrides {
-      Name: "cs:yellowLever"
-      ObjectReference {
-        SelfId: 8348988820628757870
-      }
-    }
-    Overrides {
-      Name: "cs:yellowLeverPull"
-      ObjectReference {
-        SelfId: 7232838433418334898
-      }
-    }
-    Overrides {
-      Name: "cs:yellowBeam"
-      ObjectReference {
-        SelfId: 10982257888781357
-      }
-    }
-    Overrides {
-      Name: "cs:greenBaseTrigger"
-      ObjectReference {
-        SelfId: 2496361737963425051
-      }
-    }
-    Overrides {
-      Name: "cs:greenLever"
-      ObjectReference {
-        SelfId: 14946306445708431708
-      }
-    }
-    Overrides {
-      Name: "cs:greenLeverPull"
-      ObjectReference {
-        SelfId: 5108007411010076011
-      }
-    }
-    Overrides {
-      Name: "cs:greenBeam"
-      ObjectReference {
-        SelfId: 12168086492485386782
-      }
-    }
-    Overrides {
-      Name: "cs:BaseRise"
-      ObjectReference {
-        SelfId: 5429094307745568096
+      Name: "cs:BaseDisengageSoundTemplate"
+      AssetReference {
+        Id: 10690228881228651211
       }
     }
   }

@@ -1463,39 +1463,6 @@ Objects {
   }
 }
 Objects {
-  Id: 13830262633780100308
-  Name: "BlueChainPlatform"
-  Transform {
-    Location {
-      X: 4400.01904
-      Y: -1075.00903
-      Z: -325
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 12789478544213492695
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "BlueChainPlatform"
-  }
-}
-Objects {
   Id: 15652781831574897725
   Name: "Sci-fi Base Floor Trim 01 - 4m"
   Transform {
@@ -1839,7 +1806,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1889,9 +1855,7 @@ Objects {
     }
   }
   ParentId: 12789478544213492695
-  ChildIds: 68179953906578805
   ChildIds: 14644086806880170764
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1931,7 +1895,6 @@ Objects {
   }
   ParentId: 16039741499907528224
   ChildIds: 5300391661742048189
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2008,187 +1971,5 @@ Objects {
     SubobjectId: 5875783212787176612
     InstanceId: 12506160578408558583
     TemplateId: 8080692546549158181
-  }
-}
-Objects {
-  Id: 68179953906578805
-  Name: "FlameBlue"
-  Transform {
-    Location {
-      X: -111.489594
-      Y: -89.7712402
-      Z: 6.67944336
-    }
-    Rotation {
-    }
-    Scale {
-      X: 3
-      Y: 3
-      Z: 3
-    }
-  }
-  ParentId: 16039741499907528224
-  ChildIds: 8923750658510996524
-  ChildIds: 14634859672426499512
-  ChildIds: 17058413418764017126
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Flame_A:color"
-      Color {
-        R: 1
-        G: 0.444900692
-        B: 0.339999974
-        A: 1
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceon"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 9199751096616988864
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-      }
-    }
-  }
-  InstanceHistory {
-    SelfId: 11551614790326925242
-    SubobjectId: 13566737109319645555
-    InstanceId: 12506160578408558583
-    TemplateId: 8080692546549158181
-  }
-}
-Objects {
-  Id: 17058413418764017126
-  Name: "BlueCanisterAppear"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.333333343
-      Y: 0.333333343
-      Z: 0.333333343
-    }
-  }
-  ParentId: 68179953906578805
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:BlueCanisterAppear"
-      ObjectReference {
-        SelfId: 17058413418764017126
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 1256248629485427064
-    }
-    Volume: 1
-    Falloff: -1
-    Radius: -1
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 14634859672426499512
-  Name: "BlueBreath"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.333333343
-      Y: 0.333333343
-      Z: 0.333333343
-    }
-  }
-  ParentId: 68179953906578805
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 6232320401704415995
-    }
-    Volume: 1
-    Falloff: -1
-    Radius: -1
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 8923750658510996524
-  Name: "flameBlueTrigger"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.333333343
-      Y: 0.333333343
-      Z: 0.333333343
-    }
-  }
-  ParentId: 68179953906578805
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Extinguish Blue Flame"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
   }
 }
