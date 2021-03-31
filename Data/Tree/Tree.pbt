@@ -3663,7 +3663,9 @@ Objects {
   Name: "Mountains"
   Transform {
     Location {
-      Z: -8746.94434
+      X: -3.12890625
+      Y: 3.51123047
+      Z: -8746.94531
     }
     Rotation {
     }
