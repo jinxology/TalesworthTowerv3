@@ -10,7 +10,7 @@ startPlatformRotation = Rotation.New(0,0,88.597)
 --To be finalized when Flumes objects and code are completed
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(6237.928,6237.928,-426.896)
+exitFlumeLocation = Vector3.New(6221.739,186.517,-425.271)
 exitFlumeRotation = Rotation.New(0,0,176.83)
 entranceFlumeLocation = Vector3.New(6251.078,-2926.557,-400.323)
 entranceFlumeRotation = Rotation.New(0,0,176.83)
