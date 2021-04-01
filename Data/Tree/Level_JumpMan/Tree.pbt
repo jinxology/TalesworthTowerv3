@@ -1,6 +1,90 @@
 Name: "Level_JumpMan"
 RootId: 9132562513265036101
 Objects {
+  Id: 10429917104283011764
+  Name: "OverlordTemplate"
+  Transform {
+    Location {
+      X: 3404.3374
+      Y: 2180.28955
+      Z: 172.442383
+    }
+    Rotation {
+      Yaw: -90.0000153
+    }
+    Scale {
+      X: 2.3
+      Y: 2.3
+      Z: 2.3
+    }
+  }
+  ParentId: 9132562513265036101
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:0:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 119634730838561693
+      }
+    }
+    Overrides {
+      Name: "ma:0:Shared_Detail1:color"
+      Color {
+        G: 0.322119147
+        B: 0.76
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16476982538438381011
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    AnimatedMesh {
+      AnimationStance: "un"
+      AnimationStancePlaybackRate: 1
+      AnimationStanceShouldLoop: true
+      AnimationPlaybackRateMultiplier: 1
+      PlayOnStartAnimation {
+        Animation: "unarmed_sit_chair_upright"
+        PlaybackRate: 1
+        ShouldLoop: true
+      }
+      SkinnedMeshes {
+        Id: 12934523307509100711
+      }
+      SkinnedMeshes {
+        Id: 841534158063459245
+      }
+      SkinnedMeshes {
+        Id: 841534158063459245
+      }
+      SkinnedMeshes {
+        Id: 841534158063459245
+      }
+    }
+  }
+  InstanceHistory {
+    SelfId: 10429917104283011764
+    SubobjectId: 12540555551789722791
+    InstanceId: 4897073140166263436
+    TemplateId: 11083338047860390514
+    WasRoot: true
+  }
+}
+Objects {
   Id: 5488969737579989806
   Name: "FlumePortalPipes"
   Transform {
@@ -5269,6 +5353,12 @@ Objects {
       Name: "cs:CenterFloorTemplate"
       AssetReference {
         Id: 12336989625721732150
+      }
+    }
+    Overrides {
+      Name: "cs:OverlordTemplate"
+      AssetReference {
+        Id: 11083338047860390514
       }
     }
   }

@@ -8,30 +8,12 @@ Assets {
   }
 }
 Assets {
-  Id: 16476982538438381011
-  Name: "Humanoid 1 Rig"
-  PlatformAssetType: 25
-  PrimaryAsset {
-    AssetType: "SkeletonAssetRef"
-    AssetId: "npc_gal_wireframe_001_ref"
-  }
-}
-Assets {
   Id: 13485243415661967086
   Name: "Energy Tube Glow"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "Energy_Tube_Glow"
-  }
-}
-Assets {
-  Id: 12934523307509100711
-  Name: "Humanoid 1 Nancy"
-  PlatformAssetType: 26
-  PrimaryAsset {
-    AssetType: "SkinnedMeshAssetRef"
-    AssetId: "npc_human_gal_head_basic_002_ref"
   }
 }
 Assets {
@@ -59,14 +41,5 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_scf_base_floor_001_X_ref"
-  }
-}
-Assets {
-  Id: 119634730838561693
-  Name: "Amethyst"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "fxmi_amethyst"
   }
 }

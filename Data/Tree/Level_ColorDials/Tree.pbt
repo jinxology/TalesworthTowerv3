@@ -2464,7 +2464,7 @@ Objects {
 }
 Objects {
   Id: 14350879185081861378
-  Name: "Level4Room"
+  Name: "Color Dials Red Room"
   Transform {
     Scale {
       X: 1
@@ -2473,56 +2473,13 @@ Objects {
     }
   }
   ParentId: 5669723044310532949
-  CameraCollidable {
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
-    ParameterOverrideMap {
-      key: 666160950509247830
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Color Dials Room Dial"
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 1150802557621099204
-      value {
-        Overrides {
-          Name: "ma:Shared_BaseMaterial:color"
-          Color {
-            R: 1
-            G: 0.168269426
-            B: 0.00972121768
-            A: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 1590128360469353687
-      value {
-        Overrides {
-          Name: "ma:Font_Neon:color"
-          Color {
-            R: 0.799999952
-            A: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 1942074783367117323
-      value {
-        Overrides {
-          Name: "cs:GameController"
-          ObjectReference {
-            SelfId: 14936187602590324966
-          }
-        }
-      }
-    }
     ParameterOverrideMap {
       key: 14606025309394720798
       value {
@@ -2538,246 +2495,15 @@ Objects {
             Z: 1625
           }
         }
-      }
-    }
-    ParameterOverrideMap {
-      key: 16056974418017265656
-      value {
         Overrides {
-          Name: "Name"
-          String: "Color Dials Wall Buttons"
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 16290426519032917805
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Color Dials Pedestals"
+          Name: "Rotation"
+          Rotator {
+          }
         }
       }
     }
     TemplateAsset {
       Id: 9999136141922897482
-    }
-  }
-}
-Objects {
-  Id: 7624215931323442849
-  Name: "Room Wall Text"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 5669723044310532949
-  WantsNetworking: true
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 9351830048649735537
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Color Dials Yellow Room Wall Text"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -2800
-            Y: -1175
-            Z: 1850
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 11
-            Y: 11
-            Z: 11
-          }
-        }
-        Overrides {
-          Name: "cs:Room"
-          Int: 4
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 13102056293259725925
-    }
-  }
-}
-Objects {
-  Id: 3870670053095091253
-  Name: "Room Wall Text"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 5669723044310532949
-  WantsNetworking: true
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 9351830048649735537
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Color Dials Green Room Wall Text"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 1050
-            Y: -1875
-            Z: 1850
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 180
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 11
-            Y: 11
-            Z: 11
-          }
-        }
-        Overrides {
-          Name: "cs:Room"
-          Int: 3
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 13102056293259725925
-    }
-  }
-}
-Objects {
-  Id: 17875496595869155716
-  Name: "Room Wall Text"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 5669723044310532949
-  WantsNetworking: true
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 9351830048649735537
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Color Dials Blue Room Wall Text"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 1050
-            Y: -25
-            Z: 1850
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: 180
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 11
-            Y: 11
-            Z: 11
-          }
-        }
-        Overrides {
-          Name: "cs:Room"
-          Int: 2
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 13102056293259725925
-    }
-  }
-}
-Objects {
-  Id: 9629236149791579627
-  Name: "Room Wall Text"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 5669723044310532949
-  WantsNetworking: true
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 9351830048649735537
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Color Dials Red Room Wall Text"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -2800
-            Y: 825
-            Z: 1850
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 11
-            Y: 11
-            Z: 11
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 13102056293259725925
     }
   }
 }
@@ -2834,42 +2560,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:RedWallText"
-      ObjectReference {
-        SelfId: 2838677382439011891
-        SubObjectId: 9351830048649735537
-        InstanceId: 9629236149791579627
-        TemplateId: 13102056293259725925
-      }
-    }
-    Overrides {
-      Name: "cs:BlueWallText"
-      ObjectReference {
-        SelfId: 10210819676066670595
-        SubObjectId: 9351830048649735537
-        InstanceId: 17875496595869155716
-        TemplateId: 13102056293259725925
-      }
-    }
-    Overrides {
-      Name: "cs:GreenWallText"
-      ObjectReference {
-        SelfId: 6102927064675912854
-        SubObjectId: 9351830048649735537
-        InstanceId: 3870670053095091253
-        TemplateId: 13102056293259725925
-      }
-    }
-    Overrides {
-      Name: "cs:YellowWallText"
-      ObjectReference {
-        SelfId: 2639172332846434959
-        SubObjectId: 9351830048649735537
-        InstanceId: 7624215931323442849
-        TemplateId: 13102056293259725925
-      }
-    }
-    Overrides {
       Name: "cs:levelBeaconFolder"
       ObjectReference {
         SelfId: 833513093181602089
@@ -2879,6 +2569,12 @@ Objects {
       Name: "cs:MainGameController"
       ObjectReference {
         SelfId: 6965558101138960242
+      }
+    }
+    Overrides {
+      Name: "cs:ColorDialsRoomWallText"
+      AssetReference {
+        Id: 13102056293259725925
       }
     }
   }

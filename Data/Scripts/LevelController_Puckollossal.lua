@@ -57,9 +57,11 @@ local propSpawnerZRotation = Rotation.New(0, 0, 180)
 local propPuckOffset = Vector3.New(0, 0, 750)
 
 function PlayMusic()
-    propMusic:Play()
-    Task.Wait(5)
-    propMusic:FadeOut(10)
+    Task.Spawn(function()
+        propMusic:Play()
+        Task.Wait(5)
+        propMusic:FadeOut(10)
+    end)
 end
 
 function ShockPlayerAwayFromTrigger(player, trigger)
@@ -107,6 +109,8 @@ function ConnectBumpers(container)
                     ShockPlayerAwayFromTrigger(other, trigger)
                 elseif other.name == "pck.puckTemplate" then
                     puckVelocity = other:GetVelocity()
+                    puckAngularVelocity = other:GetAngularVelocity()
+
                     surfaceNormal = trigger:GetRotation() * Vector3.FORWARD
 
                     reflected = puckVelocity - (2 * puckVelocity * surfaceNormal) * surfaceNormal
@@ -115,6 +119,9 @@ function ConnectBumpers(container)
                     end
 
                     other:SetVelocity(reflected)
+                    
+                    reflected = puckAngularVelocity - (2 * puckAngularVelocity * surfaceNormal) * surfaceNormal
+                    other:SetAngularVelocity(reflected)
 
                     radius = puck:GetCustomProperty("controller"):WaitForObject().context.propRadius
                     impactLocation = other:GetPosition() - surfaceNormal * radius - Vector3.UP * radius

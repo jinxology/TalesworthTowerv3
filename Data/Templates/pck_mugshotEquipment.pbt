@@ -15,14 +15,13 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1232579912354001357
+        ParentId: 4781671109827199097
         ChildIds: 16499993128992971694
         ChildIds: 8282285858322498775
         ChildIds: 9169255255245069283
         ChildIds: 9514343388950691764
         ChildIds: 6095569065247696458
         ChildIds: 14861458570756854188
-        ChildIds: 4055843621976047510
         ChildIds: 13847976873302710750
         ChildIds: 17315019106475987237
         ChildIds: 5893848390096514398
@@ -101,7 +100,6 @@ Assets {
           Overrides {
             Name: "cs:unreelAbility"
             ObjectReference {
-              SubObjectId: 4055843621976047510
             }
           }
           Overrides {
@@ -151,29 +149,20 @@ Assets {
             Float: 0
           }
           Overrides {
-            Name: "cs:tetherOffset"
-            Vector {
-            }
-          }
-          Overrides {
             Name: "cs:tetherTravel"
             Float: 0
           }
           Overrides {
-            Name: "cs:tetheredToTarget"
-            Bool: false
-          }
-          Overrides {
-            Name: "cs:tetheredPuck"
-            ObjectReference {
+            Name: "cs:targetPosition"
+            Vector {
             }
           }
           Overrides {
-            Name: "cs:tension:isrep"
-            Bool: true
+            Name: "cs:tetheredState"
+            Int: 0
           }
           Overrides {
-            Name: "cs:tetherOffset:isrep"
+            Name: "cs:tension:isrep"
             Bool: true
           }
           Overrides {
@@ -181,11 +170,11 @@ Assets {
             Bool: true
           }
           Overrides {
-            Name: "cs:tetheredToTarget:isrep"
+            Name: "cs:targetPosition:isrep"
             Bool: true
           }
           Overrides {
-            Name: "cs:tetheredPuck:isrep"
+            Name: "cs:tetheredState:isrep"
             Bool: true
           }
         }
@@ -1340,7 +1329,7 @@ Assets {
         Ability {
           IsEnabled: true
           CastPhaseSettings {
-            Duration: 0.1
+            Duration: 10
             CanMove: true
             CanJump: true
             CanRotate: true
@@ -1351,7 +1340,7 @@ Assets {
             }
           }
           ExecutePhaseSettings {
-            Duration: 10
+            Duration: 0.2
             CanMove: true
             CanJump: true
             CanRotate: true
@@ -1415,6 +1404,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Ability {
+          IsEnabled: true
           CastPhaseSettings {
             Duration: 0.15
             CanMove: true
@@ -1494,6 +1484,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Ability {
+          IsEnabled: true
           CastPhaseSettings {
             Duration: 0.1
             CanMove: true
@@ -1541,85 +1532,6 @@ Assets {
           Animation: "unarmed_use"
           KeyBinding_v2 {
             Value: "mc:egameaction:extraaction_01"
-          }
-        }
-      }
-      Objects {
-        Id: 4055843621976047510
-        Name: "Unreel"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Pitch: 1.36603776e-05
-            Yaw: -1.70754925e-06
-            Roll: -2.39056571e-05
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12451032973807524472
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Ability {
-          CastPhaseSettings {
-            Duration: 0.1
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          ExecutePhaseSettings {
-            Duration: 1
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          RecoveryPhaseSettings {
-            Duration: 0.1
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:none"
-            }
-          }
-          CooldownPhaseSettings {
-            Duration: 0.5
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:none"
-            }
-          }
-          Animation: "unarmed_use"
-          KeyBinding_v2 {
-            Value: "mc:egameaction:extraaction_02"
           }
         }
       }

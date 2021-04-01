@@ -1773,16 +1773,16 @@ Objects {
   Name: "Cube"
   Transform {
     Location {
-      X: -1297.17163
-      Y: 1479.26904
+      X: -1287.87231
+      Y: 1488.56836
       Z: 422.415253
     }
     Rotation {
-      Yaw: -34.7714539
+      Yaw: -45
     }
     Scale {
-      X: 1.00000334
-      Y: 5.36446905
+      X: 1.00000167
+      Y: 5.45302105
       Z: 8.11892891
     }
   }
@@ -1817,12 +1817,12 @@ Objects {
   Name: "World Text"
   Transform {
     Location {
-      X: -1156.56958
-      Y: 1574.43896
-      Z: 740.451111
+      X: -1155
+      Y: 1545
+      Z: 750
     }
     Rotation {
-      Yaw: -34.7714539
+      Yaw: -45
     }
     Scale {
       X: 3.10309911
@@ -1858,6 +1858,71 @@ Objects {
     }
     VerticalAlignment {
       Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
+  Id: 11081390179535736089
+  Name: "LobbyClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11126704810718473895
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 7418441557279590316
+  Name: "LevelController.Lobby"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11126704810718473895
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:MainGameController"
+      ObjectReference {
+        SelfId: 6965558101138960242
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 4974869516970216
     }
   }
 }

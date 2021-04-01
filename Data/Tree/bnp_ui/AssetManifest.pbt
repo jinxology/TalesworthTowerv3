@@ -8,24 +8,6 @@ Assets {
   }
 }
 Assets {
-  Id: 7806263357886694608
-  Name: "Center Circle 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "CenterCircle_001"
-  }
-}
-Assets {
-  Id: 6863397032709958776
-  Name: "Icon Close"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "Icon_Close"
-  }
-}
-Assets {
   Id: 3767036724831709460
   Name: "BG Flat 002"
   PlatformAssetType: 9

@@ -7,7 +7,7 @@ Assets {
       RootId: 14606025309394720798
       Objects {
         Id: 14606025309394720798
-        Name: "Level4Room"
+        Name: "Color Dials Red Room"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11759269028155008640
+        ParentId: 5669723044310532949
         ChildIds: 666160950509247830
         ChildIds: 16056974418017265656
         ChildIds: 16290426519032917805
@@ -34,7 +34,7 @@ Assets {
       }
       Objects {
         Id: 666160950509247830
-        Name: "Room Dial"
+        Name: "Color Dials Room Dial"
         Transform {
           Location {
             Z: 100
@@ -59,6 +59,12 @@ Assets {
           Overrides {
             Name: "cs:RoomColor"
             Int: 1
+          }
+          Overrides {
+            Name: "cs:MetalScrapingOnConcreteSurfaceFloorLoop0"
+            AssetReference {
+              Id: 6948323657275883420
+            }
           }
         }
         WantsNetworking: true
@@ -259,7 +265,13 @@ Assets {
           Overrides {
             Name: "cs:GameController"
             ObjectReference {
-              SelfId: 10073532120123443083
+              SelfId: 14936187602590324966
+            }
+          }
+          Overrides {
+            Name: "cs:ColorDialsMetalScraping"
+            AssetReference {
+              Id: 5573949800779384139
             }
           }
         }
@@ -281,7 +293,7 @@ Assets {
       }
       Objects {
         Id: 16056974418017265656
-        Name: "Wall Buttons"
+        Name: "Color Dials Wall Buttons"
         Transform {
           Location {
             Z: 625
@@ -574,8 +586,8 @@ Assets {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
               R: 1
-              G: 0.167351007
-              B: 0.00999999
+              G: 0.168269426
+              B: 0.00972121768
               A: 1
             }
           }
@@ -613,7 +625,7 @@ Assets {
       }
       Objects {
         Id: 16290426519032917805
-        Name: "Pedestals"
+        Name: "Color Dials Pedestals"
         Transform {
           Location {
             X: 200
@@ -1241,6 +1253,15 @@ Assets {
             Value: "mc:etriggershape:box"
           }
         }
+      }
+    }
+    Assets {
+      Id: 6948323657275883420
+      Name: "Metal Scraping on Concrete Surface Floor Loop 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_metal_scraping_on_concrete_surface_loop_01_Cue_ref"
       }
     }
     Assets {

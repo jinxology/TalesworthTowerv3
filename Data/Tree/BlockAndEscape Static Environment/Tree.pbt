@@ -114,15 +114,15 @@ Objects {
   Name: "Fantasy Castle Stairs 01"
   Transform {
     Location {
-      X: -1825
+      X: -1850
       Y: 2725
       Z: 1200
     }
     Rotation {
     }
     Scale {
-      X: 0.538131058
-      Y: 1
+      X: 0.630057096
+      Y: 1.16042972
       Z: 0.999999881
     }
   }
@@ -165,8 +165,8 @@ Objects {
       Yaw: -179.999954
     }
     Scale {
-      X: 0.518315434
-      Y: 0.999999881
+      X: 0.612485945
+      Y: 1.13408303
       Z: 0.999999881
     }
   }
