@@ -80,6 +80,15 @@ Assets {
   }
 }
 Assets {
+  Id: 14431903638307090445
+  Name: "Sign Font 1: C"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "CollegeInset_01_Text_002_ref"
+  }
+}
+Assets {
   Id: 13850238119703870853
   Name: "Sign Font 1 Neon Lines: I"
   PlatformAssetType: 1

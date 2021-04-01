@@ -536,7 +536,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 11413216525724972651
+      Id: 14431903638307090445
     }
     Teams {
       IsTeamCollisionEnabled: true
