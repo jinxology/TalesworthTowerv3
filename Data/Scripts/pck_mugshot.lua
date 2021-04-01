@@ -66,71 +66,15 @@ local	propTetherTravelTotalTime = 0
 local	propTetherTravelStartTime = 0
 local	propTetherTravelEndTime = 0
 local	TETHER_TRAVEL_SPEED = 1600
-
-function OnCast_Tether(ability)
-	propCast2SFX:Play()
-	
-	local	targetData = propTetherAbility:GetTargetData()
-	local	hitObject = targetData.hitObject
-	
-	if hitObject ~= nil and hitObject.name == "pck.puckTemplate" then
-		ring = CheckAim(hitObject:GetCustomProperty("controller"):WaitForObject())
-
-		--	cast even if all rings are occupied, check when it lands cause situations are fluid in this game
-		propTargetedAnchor = ring.anchors[1]
-		propTargetedPuck = ring.puck
-
-		Events.BroadcastToAllPlayers("pck.mugshotAimed", propEquipment:GetReference(), propTargetedPuck:GetReference(), propTargetedPuck.context.propAnchorPositions[propTargetedAnchor], true)
-	
-		-- print("Casting Tether...")
-	else
-		ability:Interrupt()
-	end
-end
-
-function TetherLanded()
-	propReelSFX:Stop()
-	propTargetedAnchor = propTargetedPuck.context.TetherMugshotToEligibleAnchor(propEquipment, CheckAim(propTargetedPuck).anchors)
-	if propTargetedAnchor == 0 then
-		propTargetedPuck = nil
-		propTargetedPuck.context.propClankSFX:Play()
-	else
-		-- print("Tethered successfully!")
-		propTetheredToTarget = true
-		Events.BroadcastToAllPlayers("pck.mugshotTethered", propEquipment:GetReference(), propTargetedPuck:GetReference(), propTargetedAnchor, true)
-
-		local	distance = propTargetedPuck.context.MugshotToAnchor(propEquipment, propTargetedAnchor).size
-
-		propSlackAmount = math.ceil(distance / ROPE_UNIT_LENGTH) * ROPE_UNIT_LENGTH
-	end
-	propTetherTravelTask:Cancel()
-	propTetherTravelTask = nil
-	propTetherAbility:AdvancePhase()
-end
-
-
-function OnExecute_Tether(ability)
-	propCast1SFX:Play()
-	propReelSFX.fadeInTime = propCast1SFX.length - propCast1SFX.startTime
-	-- propReelSFX.stopTime = propTetherTravelTotalTime
-	propReelSFX:Play()
-	propTetherTravelDistance = 0
-	propTetherTravelTask = Task.Spawn(TetherTraveled)
-	propTetherTravelTask.repeatCount = -1
-end
+local	TETHER_REEL_IN_SPEED = 3200
 
 function TetherTraveled(deltaTime)
 	if propTargetedPuck.context.propScoring then
-		-- print("puck is scoring, unaiming")
-		Events.BroadcastToAllPlayers("pck.mugshotAimed", propEquipment:GetReference(), propTargetedPuck:GetReference(), false)
-		ForgetPuck()
-				--	play sound
-		propTetherTravelTask:Cancel()
-		propTetherTravelTask = nil
-		propTetherAbility:AdvancePhase()
+		-- print("puck is scoring, interrupting tether")
+		propTetherAbility:Interrupt()
 	else
-		local		ringPosition = propTargetedPuck:GetWorldPosition() + propTargetedPuck.context.propAnchorPositions[propTargetedAnchor]
-		local		distance = (propEquipment:GetWorldPosition() - ringPosition).size
+		local		position = propTargetedPuck:GetWorldPosition()
+		local		distance = (propEquipment.owner:GetWorldPosition() - position).size
 
 		propTetherTravelDistance = propTetherTravelDistance + TETHER_TRAVEL_SPEED * deltaTime
 
@@ -142,25 +86,74 @@ function TetherTraveled(deltaTime)
 	end
 end
 
+function OnCast_Tether(ability)
+	if not propTetheredToTarget then
+		propCast2SFX:Play()
+		
+		local	targetData = propTetherAbility:GetTargetData()
+		local	hitObject = targetData.hitObject
+		
+		if hitObject ~= nil and hitObject.name == "pck.puckTemplate" then
+			propTargetedPuck = hitObject:GetCustomProperty("controller"):WaitForObject()
+
+			script:SetNetworkedCustomProperty("targetedPuck", hitObject:GetReference())
+
+			propCast1SFX:Play()
+			propReelSFX.fadeInTime = propCast1SFX.length - propCast1SFX.startTime
+			-- propReelSFX.stopTime = propTetherTravelTotalTime
+			propReelSFX:Play()
+			propTetherTravelDistance = 0
+			propTetherTravelTask = Task.Spawn(TetherTraveled)
+			propTetherTravelTask.repeatCount = -1
+		else
+			ability:Interrupt()
+		end
+	end
+end
+
+function TetherLanded()
+	propReelSFX:Stop()
+	
+	propTargetedPuck.context.TetherMugshot(propEquipment)
+	propTetheredToTarget = true
+	propSlackAmount = math.ceil((propTargetedPuck:GetWorldPosition() - propEquipment.owner:GetWorldPosition()).size / ROPE_UNIT_LENGTH) * ROPE_UNIT_LENGTH
+	script:SetNetworkedCustomProperty("tethered", true)
+	
+	propTetherTravelTask:Cancel()
+	propTetherTravelTask = nil
+	propTetherAbility:AdvancePhase()
+end
+
+
+function OnExecute_Tether(ability)
+	-- if propTetheredToTarget then
+	-- 	-- print("    ... and tethered. New abilities active.")
+	-- 	propTetherAbility.isEnabled = false
+	-- 	propUntetherAbility.isEnabled = true
+	-- 	propReelAbility.isEnabled = true
+	-- 	-- propUnreelAbility.isEnabled = true
+	-- end
+end
+
 function OnRecovery_Tether(ability)
 	-- print("Tether recovered.")
 end
 
 function OnCooldown_Tether(ability)
 	-- print("Cooled down...")
-	if propTetheredToTarget then
-		-- print("    ... and tethered. New abilities active.")
-		propTetherAbility.isEnabled = false
-		propUntetherAbility.isEnabled = true
-		propReelAbility.isEnabled = true
-		-- propUnreelAbility.isEnabled = true
-	end
 end
 
 function OnInterrupted_Tether(ability)
 	-- print("Tethering interrupted.")
-	if propTargetedPuck ~= nil then
-		ForgetPuck()
+	if propTargetedPuck then
+		propTargetedPuck = nil
+		propTetheredToTarget = false
+		script:SetNetworkedCustomProperty("targetedPuck", nil)
+		script:SetNetworkedCustomProperty("tethered", propTetheredToTarget)
+		
+		--	TODO: unreel??
+		propTetherTravelTask:Cancel()
+		propTetherTravelTask = nil
 	end
 end
 
@@ -168,62 +161,57 @@ function OnReady_Tether(ability)
 	-- print("Tether ready.")
 	if propTetheredToTarget then
 		-- print("    ... and tethered. New abilities active.")
-		propTetherAbility.isEnabled = false
-		propUntetherAbility.isEnabled = true
-		propReelAbility.isEnabled = true
+		-- propTetherAbility.isEnabled = false
+		-- propUntetherAbility.isEnabled = true
+		-- propReelAbility.isEnabled = true
 		-- propUnreelAbility.isEnabled = true
 	end
 end
 
 function OnCast_Untether(ability)
-	-- print("Casting Untether")
+	if not propTetheredToTarget then
+		ability:Interrupt()
+	else
+		print("Casting Untether")
+	end
 end
 
 function OnExecute_Untether(ability)
 	if propTetheredToTarget and propTargetedPuck ~= nil and Object.IsValid(propTargetedPuck) then
+		propTargetedPuck.context.UntetherMugshot(propEquipment)
+		propTetheredToTarget = false
+		propTargetedPuck = nil
+		script:SetNetworkedCustomProperty("targetedPuck", nil)
+		script:SetNetworkedCustomProperty("tethered", propTetheredToTarget)
+		--TODO: unreel??
 		-- print("Untethering...")
 	end
 end
 
-function ForgetPuck()
-	Events.BroadcastToAllPlayers("pck.mugshotTethered", propEquipment:GetReference(), propTargetedPuck:GetReference(), Vector3.ZERO, false)
-	propTetheredToTarget = false
-	propTargetedPuck = nil
-	propTargetedAnchor = 0
-end
-
 function OnRecovery_Untether(ability)
-	if propTetheredToTarget then
-		propTargetedPuck.context.UntetherMugshot(propEquipment)
-		ForgetPuck()
-		-- print("recovered from untethering.")
-	else
-		-- print("faied to untether")
-		ability:Interrupt()
-	end
 end
 
 function OnCooldown_Untether(ability)
-	if not propTetheredToTarget then
+	-- if not propTetheredToTarget then
 		-- print("Unethered and cooled down. New abilities active.")
-		propTetherAbility.isEnabled = true
-		propUntetherAbility.isEnabled = false
-		propReelAbility.isEnabled = false
+		-- propTetherAbility.isEnabled = true
+		-- propUntetherAbility.isEnabled = false
+		-- propReelAbility.isEnabled = false
 		-- propUnreelAbility.isEnabled = false
-	end
+	-- end
 end
 
 function OnInterrupted_Untether(ability)
 end
 
 function OnReady_Untether(ability)
-	if not propTetheredToTarget then
-		-- print("Unethered and cooled down. New abilities active.")
-		propTetherAbility.isEnabled = true
-		propUntetherAbility.isEnabled = false
-		propReelAbility.isEnabled = false
-		-- propUnreelAbility.isEnabled = false
-	end
+	-- if not propTetheredToTarget then
+	-- 	-- print("Unethered and cooled down. New abilities active.")
+	-- 	propTetherAbility.isEnabled = true
+	-- 	propUntetherAbility.isEnabled = false
+	-- 	propReelAbility.isEnabled = false
+	-- 	-- propUnreelAbility.isEnabled = false
+	-- end
 end
 
 function OnCast_Reel(ability)

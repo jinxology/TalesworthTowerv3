@@ -1,6 +1,5 @@
 local   propServer = script:GetCustomProperty("mugshotServer"):WaitForObject()
 local   propEquipment = propServer:GetCustomProperty("equipment"):WaitForObject()
-local   propTetherOffset = nil
 local   propTetheredToTarget = false
 local   propTetherTravel = 0.0
 local   propTension = nil
@@ -11,10 +10,15 @@ local   propTurretRotateZ = script:GetCustomProperty("turretRotateZ"):WaitForObj
 local   propTetherVFX = script:GetCustomProperty("tetherVFX"):WaitForObject()
 
 propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
+    print("property " .. propertyName .. " changed on object " .. coreObject.id)
     if propertyName == "tension" then
         propTension = coreObject:GetCustomProperty(propertyName)
     elseif propertyName == "tetherTravel" then
         UpdateTetherTravel(coreObject:GetCustomProperty(propertyName))
+    elseif propertyName == "targetedPuck" then
+        AimAtPuck(coreObject:GetCustomProperty(propertyName))
+    elseif propertyName == "tethered" then
+        SetTethered(coreObject:GetCustomProperty(propertyName))
     end
 end)
 
@@ -127,16 +131,21 @@ local   propTetherAttachDuration = 0
 
 function UpdateTetherTravel(tetherTravel)
     propTetherTravel = tetherTravel
+    print("tetherTravel " .. tetherTravel)
 end
 
 local   GRAPPLE_SIZE = 100
+local   SLACK_TENSION = 0.9
+local   TAUT_TENSION = 1.1
+local   BREAKING_TENSION = 2
 
 function Tick()
-    if propTetheredPuck ~= nil then
+    if propTargetedPuck ~= nil then
         --  rotate turret and barrel to point at puck
         -- local   turretRotateYPosition = propTurretRotateY:GetWorldPosition()
         local   turretRotateZPosition = propTurretRotateZ:GetWorldPosition()
-        local   anchorPosition = propTetheredPuck:GetWorldPosition() + propTetherOffset
+        local   anchorPosition = propTargetedPuck:GetWorldPosition()
+    
 
         propTurretRotateZ:LookAt(anchorPosition)
         
@@ -174,15 +183,27 @@ function Tick()
                     tetherVFXProperties = propTensionProperties[2]
                 end
             else
-                tetherVFXProperties = propTensionProperties[2]
-                --  attached
-                
-                -- if propTension > 0 and propTension < 0.25
-                -- else if propTension > 0 and propTension < 0.25
-                -- else if propTension > 0 and propTension < 0.25
-                -- else if propTension > 0.75 and propTension < 1.0
+                if propTension == nil then
+                    tetherVFXProperties = propTensionProperties[2]
+                else
+                    if propTension < SLACK_TENSION then
+                        fromProperties = propTensionProperties[1]
+                        toProperties = propTensionProperties[2]
+                        amount = propTension / SLACK_TENSION
+                    elseif propTension < TAUT_TENSION then
+                        fromProperties = propTensionProperties[2]
+                        toProperties = propTensionProperties[3]
+                        amount = (propTension - SLACK_TENSION) / (TAUT_TENSION - SLACK_TENSION)
+                    else
+                        fromProperties = propTensionProperties[3]
+                        toProperties = propTensionProperties[4]
+                        amount = math.min(1, (propTension - TAUT_TENSION) / (BREAKING_TENSION - TAUT_TENSION))
+                    end
+                    tetherVFXProperties = LerpProperties(fromProperties, toProperties, amount)
+                end
             end
         else 
+            print("traveling " .. propTetherTravel)
             tetherVFXProperties = propTensionProperties[1]
         end
 
@@ -216,40 +237,37 @@ function UpdateTetherVFX(properties)
     end
 end
 
-function OnMugshotAimed(mugshot, puck, anchor, aimed)
-    if mugshot:WaitForObject() == propEquipment then
-        if aimed then
-            propTetheredPuck = puck:WaitForObject()
-            propTetherOffset = anchor
-            -- propTetherVFX.isEnabled = true
-        else
-            propTetheredPuck = nil
+function AimAtPuck(puckRef)
+    -- if mugshot == propEquipment then
+        if puckRef == nil then
+            propTargetedPuck = nil
             propTetherTravel = 0
-            -- propTetherVFX.isEnabled = false
+            --TODO: unreel?? don't set travel here
             propGrapple:SetPosition(Vector3.ZERO)
             propGrapple:SetRotation(Rotation.ZERO)
             UpdateTetherVFX(propTensionProperties[2])
+        else
+            propTargetedPuck = puckRef:WaitForObject()
         end
-    end
+    -- end
 end
 
-function OnMugshotTethered(mugshot, puck, anchor, tethered)
-    if mugshot:WaitForObject() == propEquipment then
+function SetTethered(tethered)
+    -- if mugshot == propEquipment then
         propTetheredToTarget = tethered
         if tethered then
             propTetherAttachStartTime = time()
             propTetherAttachDuration = 1
             -- play sound
         else
-            propTetheredPuck = nil
+            propTargetedPuck = nil
             propTetherTravel = 0
+            propTetheredToTarget = false
             -- propTetherVFX.isEnabled = false
 
             propGrapple:SetPosition(Vector3.ZERO)
             propGrapple:SetRotation(Rotation.ZERO)
+            UpdateTetherVFX(propTensionProperties[2])
         end
-    end
+    -- end
 end
-
-Events.Connect("pck.mugshotAimed", OnMugshotAimed)
-Events.Connect("pck.mugshotTethered", OnMugshotTethered)

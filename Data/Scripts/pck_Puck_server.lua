@@ -12,13 +12,6 @@ propScoring = false
 propLevelController = nil
 playMusicOnLanding = false
 
-propAnchorPositions = {
-	Vector3.New(-275, -275, -275), -- 45
-	Vector3.New(-275, 275, -275), -- -45
-	Vector3.New(275, 275, -275), -- -135
-	Vector3.New(275, -275, -275) -- 135
-}
-
 --	Bump players out of the way
 propLookOutListener = propLookOutTrigger.beginOverlapEvent:Connect(function(trigger, other)
 	if other:IsA("Player") then
@@ -192,38 +185,13 @@ end
 
 propTetheredMugshots = {}
 
-function TetherMugshotToEligibleAnchor(mugshot, eligibleAnchors)
-	local	tetheredIndex = 0
-
-	for _, anchorIndex in ipairs(eligibleAnchors) do
-		if propTetheredMugshots[anchorIndex] == nil then
-			propTetheredMugshots[anchorIndex] = mugshot
-			tetheredIndex = anchorIndex
-			-- print("tethered " .. mugshot.id .. " to anchor " .. anchorIndex)
-			break
-		end
-	end
-
-	return tetheredIndex
+function TetherMugshot(mugshot)
+	propTetheredMugshots[mugshot] = true
+	--	possibly observe destroy event on mugshot for safety
 end
 
 function UntetherMugshot(mugshot)
-	for _, tetheredMugshot in pairs(propTetheredMugshots) do
-		-- print("already tethered to " .. tetheredMugshot.id .. " at anchor " .. _)
-		if tetheredMugshot == mugshot then
-			propTetheredMugshots[_] = nil
-			-- print("    ... untethering it")
-			break
-		end
-	end
-end
-
-function MugshotToAnchor(mugshot, anchor)
-	local	anchorOffset = propAnchorPositions[anchor]
-	local	anchorPosition = propPhysics:GetWorldPosition() + anchorOffset
-	local	playerPosition = mugshot.owner:GetWorldPosition()
-	
-	return playerPosition - anchorPosition
+	propTetheredMugshots[mugshot] = nil
 end
 
 function ForceForTension(tension)
@@ -234,19 +202,23 @@ end
 
 function HandleTension(deltaT)
 	local	totalForce = Vector3.ZERO
+	local	puckPosition = propPhysics:GetWorldPosition()
 
-	for anchor, mugshot in pairs(propTetheredMugshots) do
+	for mugshot, _ in pairs(propTetheredMugshots) do
 		if mugshot ~= nil then
 			controller = mugshot:GetCustomProperty("controller"):WaitForObject()
-
-			local	distance = MugshotToAnchor(mugshot, anchor).size
+			
+			local	direction = mugshot:GetWorldPosition() - puckPosition
+			local	distance = direction.size
 			local	slack = controller.context.propSlackAmount
+			local	tension = distance / slack
+			
+			controller:SetNetworkedCustomProperty("tension", tension)
 
 			if distance > slack then
-				local	force = ForceForTension(distance / slack)
-				local	forceDirection = MugshotToAnchor(mugshot, anchor)
+				local	force = ForceForTension(tension)
 
-				totalForce = totalForce + forceDirection * force
+				totalForce = totalForce + direction * force
 
 				-- print("distance = " .. distance .. ", slack = " .. slack)
 			end
