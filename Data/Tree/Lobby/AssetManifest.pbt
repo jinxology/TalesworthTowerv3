@@ -1,28 +1,10 @@
 Assets {
-  Id: 17249396603803168383
-  Name: "\"Action Combat\" Music Construction Kit (Sections) 01"
-  PlatformAssetType: 10
-  PrimaryAsset {
-    AssetType: "AudioBlueprintAssetRef"
-    AssetId: "abp_action_combat_sections_kit_ref"
-  }
-}
-Assets {
   Id: 16484883515100221657
   Name: "Tech Panel 05"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_sf_gen_tech-panel_005"
-  }
-}
-Assets {
-  Id: 14411085926952196577
-  Name: "Ambient Military Hostile Air Raid Siren Atmosphere 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_ambient_air_raid_siren_hostile_atmosphere_loop_01_Cue_ref"
   }
 }
 Assets {
