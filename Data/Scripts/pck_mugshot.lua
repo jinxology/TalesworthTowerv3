@@ -175,6 +175,10 @@ function OnCast_Untether(ability)
 end
 
 function OnExecute_Untether(ability)
+	UntetherFromPuck()
+end
+
+function UntetherFromPuck()
 	if propTetheredState == TETHERED_STATE and propTargetedPuck ~= nil and Object.IsValid(propTargetedPuck) then
 		propTargetedPuck.context.UntetherMugshot(propEquipment)
 		propTetheredState = UNTETHERED_STATE

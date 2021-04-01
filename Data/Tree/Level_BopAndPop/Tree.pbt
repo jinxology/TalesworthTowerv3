@@ -9070,12 +9070,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:mainTextLabel"
-      ObjectReference {
-        SelfId: 4257948563620531967
-      }
-    }
-    Overrides {
       Name: "cs:instructionsTextLabel"
       ObjectReference {
         SelfId: 9615790920875632181
@@ -9157,12 +9151,6 @@ Objects {
       Name: "cs:inflateSFXTemplate"
       AssetReference {
         Id: 13709869374179460685
-      }
-    }
-    Overrides {
-      Name: "cs:countSFXTemplate"
-      AssetReference {
-        Id: 865476989643332622
       }
     }
     Overrides {

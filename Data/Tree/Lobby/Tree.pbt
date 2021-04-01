@@ -1487,8 +1487,8 @@ Objects {
     }
     AudioBP {
       AutoPlay: true
-      Volume: 1
-      Falloff: 3600
+      Volume: 0.75
+      Falloff: 3000
       Radius: 500
       EnableOcclusion: true
       IsSpatializationEnabled: true
@@ -1789,8 +1789,8 @@ Objects {
       Id: 14411085926952196577
     }
     AutoPlay: true
-    Volume: 1
-    Falloff: 4000
+    Volume: 0.6
+    Falloff: 3000
     Radius: 500
     EnableOcclusion: true
     IsSpatializationEnabled: true

@@ -1,25 +1,16 @@
 local propLevelControllerBopAndPop = script:GetCustomProperty("LevelControllerBopAndPop"):WaitForObject()
 local propRulesPanel = script:GetCustomProperty("UIPanel"):WaitForObject()
 local propInstructionsTextLabel = script:GetCustomProperty("instructionsTextLabel"):WaitForObject()
-local propStrikeImages = {
-	script:GetCustomProperty("strike1Image"):WaitForObject(),
-	script:GetCustomProperty("strike2Image"):WaitForObject(),
-	script:GetCustomProperty("strike3Image"):WaitForObject()
-}
 local propCurrentScoreLabel = script:GetCustomProperty("currentScoreLabel"):WaitForObject()
 local propWinConditionLabel = script:GetCustomProperty("winConditionLabel"):WaitForObject()
-local propStrikeImage = script:GetCustomProperty("strikeImage")
-local propNoStrikeImage = script:GetCustomProperty("noStrikeImage")
-local propStrikeColor = script:GetCustomProperty("strikeColor")
-local propNoStrikeColor = script:GetCustomProperty("noStrikeColor")
 local propScoreIndicator = script:GetCustomProperty("scoreIndicator"):WaitForObject()
 local propEntranceTrigger = script:GetCustomProperty("entranceTrigger"):WaitForObject()
 local propLevelMusicTemplate = script:GetCustomProperty("levelMusic")
 local propLevelPlayingMusicTemplate = script:GetCustomProperty("levelPlayingMusic")
-local propTimerLabel = script:GetCustomProperty("timerLabel"):WaitForObject()
+local propBroadcastLabel = script:GetCustomProperty("broadcastLabel"):WaitForObject()
+local propCountSFXTemplate = script:GetCustomProperty("countSFXTemplate")
 
 local propLevelMusic = nil
-local propLevelPlayingMusic = nil
 
 propLevelControllerBopAndPop.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
 	if propertyName == "levelStatus" then
@@ -28,30 +19,6 @@ propLevelControllerBopAndPop.networkedPropertyChangedEvent:Connect(function(core
 		propWinConditionLabel.text = "/ " .. coreObject:GetCustomProperty("winCondition")
 	elseif propertyName == "currentScore" then
 		propCurrentScoreLabel.text = "" .. coreObject:GetCustomProperty(propertyName)
-	elseif propertyName == "strikeCount" then
-		numStrikes = coreObject:GetCustomProperty(propertyName)
-		print("numStrikes is " .. numStrikes)
-		for strike, image in ipairs(propStrikeImages) do
-			if strike <= numStrikes then
-				propStrikeImages[strike]:SetImage(propStrikeImage)
-				propStrikeImages[strike]:SetColor(propStrikeColor)
-			else
-				propStrikeImages[strike]:SetImage(propNoStrikeImage)
-				propStrikeImages[strike]:SetColor(propNoStrikeColor)
-			end
-		end
-	elseif propertyName == "timeRemaining" then
-		timeRemaining = coreObject:GetCustomProperty(propertyName)
-		if timeRemaining < 0 then
-			propTimerLabel.text = ""
-		else    
-			secondsRemaining = timeRemaining % 60
-			minutesRemaining = math.tointeger((timeRemaining - secondsRemaining) / 60)
-			if secondsRemaining < 10 then
-				secondsRemaining = "0" .. secondsRemaining
-			end
-			propTimerLabel.text = minutesRemaining .. ":" .. secondsRemaining
-		end
 	end
 end)
 
@@ -66,8 +33,15 @@ function ActivateInstructions(levelStatus)
 		propRulesPanel.visibility = Visibility.FORCE_OFF
 		showInstructions = Game.GetLocalPlayer().bindingPressedEvent:Connect(OnBindingPressed)
 		hideInstructions = Game.GetLocalPlayer().bindingReleasedEvent:Connect(OnBindingReleased)
-		propLevelPlayingMusic = World.SpawnAsset(propLevelPlayingMusicTemplate)
-		propLevelPlayingMusic:Play()
+		
+		if fadeoutIntroMusicTask then
+			fadeoutIntroMusicTask:Cancel()
+			fadeoutIntroMusicTask = nil
+			propLevelMusic:Stop()
+		end
+
+		propLevelMusic = World.SpawnAsset(propLevelPlayingMusicTemplate)
+		propLevelMusic:Play()
 	else
 		propRulesPanel.visibility = Visibility.FORCE_OFF
 		propScoreIndicator.visibility = Visibility.FORCE_OFF
@@ -81,11 +55,6 @@ function ActivateInstructions(levelStatus)
 			propLevelMusic:Stop()
 			propLevelMusic:Destroy()
 			propLevelMusic = nil
-		end
-		if propLevelPlayingMusic ~= nil then
-			propLevelPlayingMusic:Stop()
-			propLevelPlayingMusic:Destroy()
-			propLevelPlayingMusic = nil
 		end
 	end
 end
@@ -110,11 +79,49 @@ function OnPlayerEntered(trigger, player)
 		
 		propLevelMusic:Play()
 		entranceListener:Disconnect(OnPlayerEntered)
-		Task.Spawn(function()
+		fadeoutIntroMusicTask = Task.Spawn(function()
 			propLevelMusic:FadeOut(5)
 			Task.Wait(5)
 			propLevelMusic:Destroy()
 			propLevelMusic = nil
+			fadeoutIntroMusicTask = nil
 		end, 10)
 	end
 end
+
+function OnPlayerScored(playerName)
+	propBroadcastLabel.text = playerName .. " scored!" 
+end
+
+function OnPlayerFumbled(playerName)
+	propBroadcastLabel.text = playerName .. " fumbled!"
+end
+
+function OnPlayerWon(playerName)
+	propBroadcastLabel.text = playerName .. " scored!"
+end
+
+function ReadySteadyGo()
+	local	countSFX = World.SpawnAsset(propCountSFXTemplate)
+
+	countSFX.stopTime = 1
+	countSFX:Play()
+	propBroadcastLabel.text = "READY"
+	Task.Wait(1)
+	countSFX:Play()
+	propBroadcastLabel.text = "STEADY"
+	Task.Wait(1)
+	countSFX:Play()
+	propBroadcastLabel.text = "GO"
+	Task.Wait(1)
+	countSFX.stopTime = countSFX.length
+	countSFX:Play()
+	propBroadcastLabel.text = ""
+	Task.Wait(countSFX.length)
+	countSFX:Destroy()
+end
+
+Events.Connect("bnp.scoreByPlayer", OnPlayerScored)
+Events.Connect("bnp.fumbleByPlayer", OnPlayerFumbled)
+Events.Connect("bnp.playerWon", OnPlayerWon)
+Events.Connect("bnp.readySteadyGo", ReadySteadyGo)
