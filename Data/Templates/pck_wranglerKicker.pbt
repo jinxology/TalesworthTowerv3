@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1232579912354001357
+        ParentId: 9132562513265036101
         ChildIds: 12175264614468137581
         ChildIds: 11153665520900970025
         ChildIds: 8608010913598086739
@@ -223,12 +223,12 @@ Assets {
           Overrides {
             Name: "cs:geometryRetracted"
             Vector {
-              Z: 75
             }
           }
           Overrides {
             Name: "cs:geometryExtended"
             Vector {
+              Z: -75
             }
           }
           Overrides {

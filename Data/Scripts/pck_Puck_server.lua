@@ -83,6 +83,10 @@ function ScorePuck()
 	propScoring = true
 	script:SetNetworkedCustomProperty("scoring", true)
 	
+	for mugshot, _ in pairs(propTetheredMugshots) do
+		mugshot:GetCustomProperty("controller"):WaitForObject().context.UntetherFromPuck()
+	end
+
 	Task.Spawn(function()
 		-- print("destroying puck")
 		propPhysics:Destroy()
@@ -246,9 +250,7 @@ function HandleTension(deltaT)
 							player:DisableRagdoll()
 						end, 2)		
 					end, 1)
-					print("BOINNNNGGGGG")
 				else
-					print("careful now...")
 				end
 			end
 
