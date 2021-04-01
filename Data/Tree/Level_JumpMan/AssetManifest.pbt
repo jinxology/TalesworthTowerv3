@@ -1,4 +1,13 @@
 Assets {
+  Id: 16476982538438381011
+  Name: "Humanoid 1 Rig"
+  PlatformAssetType: 25
+  PrimaryAsset {
+    AssetType: "SkeletonAssetRef"
+    AssetId: "npc_gal_wireframe_001_ref"
+  }
+}
+Assets {
   Id: 15984031613198292986
   Name: "Electric Surface"
   PlatformAssetType: 2
@@ -14,6 +23,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "Energy_Tube_Glow"
+  }
+}
+Assets {
+  Id: 12934523307509100711
+  Name: "Humanoid 1 Nancy"
+  PlatformAssetType: 26
+  PrimaryAsset {
+    AssetType: "SkinnedMeshAssetRef"
+    AssetId: "npc_human_gal_head_basic_002_ref"
   }
 }
 Assets {

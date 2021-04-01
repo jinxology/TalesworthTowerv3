@@ -85,11 +85,6 @@ function InitializeBoard()
 	end	
 	totalDots = #dotsArrayList
 	countOfDeletedDots = 0
---	-print("totalDots", #dotsArrayList)
-	
---	for index, element in pairs(dotsArrayList) do 
---		print(dotsArrayList[index])
---	end
 	
 end
 

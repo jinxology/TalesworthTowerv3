@@ -20,8 +20,8 @@ currentLevelIndex = 1
 nextLevelIndex = nil
 levelList = {
     "ShapesAndButtons",
-    "BopAndPop",
     "JumpMan",      -- hitting wall on entrance; misplaced or needs hole in wall
+    "BopAndPop",
     "FarmGallery",
     "ColorDials",
     "BlockAndEscape",
