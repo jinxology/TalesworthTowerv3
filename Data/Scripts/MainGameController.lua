@@ -9,10 +9,11 @@ local timerEndCallback
 local playerKeyBindingListener = nil
 
 local lastCheckpointTime = 0
-local totalTowerTime = 0
 local towerTimerActive = false
 local towerTimerTask = nil
 local lastTTTUpdateTime = 0
+totalTowerTime = 0
+startingPlayerCount = 4
 
 levelRunning = false
 currentLevelIndex = 1
@@ -44,7 +45,8 @@ function OnBindingPressed(player, bindingPressed)
             --local levelControllerScript = GetCurrentLevelController()
             --levelControllerScript.context.LevelPowerUp() 
             
-            LevelBegin()
+            --LevelBegin()
+            StartingPlatformsActivated()
         end
     elseif (bindingPressed == "ability_extra_26") then
         --U
@@ -368,10 +370,11 @@ function LevelBegin()
         towerTimerActive = true
         if (currentLevelIndex == 1) then
             totalTowerTime = 0
-            lastTTTUpdateTime = time()
+            startingPlayerCount = 4            
         end
+        lastTTTUpdateTime = time()
 
-        script:SetNetworkedCustomProperty("towerTimerState","true,0")    
+        script:SetNetworkedCustomProperty("towerTimerState","true,"..totalTowerTime)    
 
         --Reset these if the players quickly restart level 1
         --script:SetNetworkedCustomProperty("UIMessage","04,false, ")

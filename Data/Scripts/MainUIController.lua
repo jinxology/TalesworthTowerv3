@@ -21,7 +21,7 @@ local towerTimerTask = nil
 function IncomingUIMessage(coreObject, propertyName)
     
     local msg = propMainGameController:GetCustomProperty(propertyName)
-    print ("UIMESSAGE: "..msg)
+    --print ("UIMESSAGE: "..msg)
 
     msgData = {CoreString.Split(msg,",")}
     
@@ -66,11 +66,20 @@ function StartAndUpdateClientTowerTimer(started, timeSoFar)
     lastTTTUpdateTime = time()
 end
 
+function FormatTime(inTime)
+    local minutes = math.floor(inTime / 60)
+    local seconds = math.floor(inTime % 60)
+    local minStr = string.format("%02d",minutes)
+    local secStr = string.format("%02d",seconds)
+    
+    return minStr..":"..secStr
+end
+
 function TalesworthTowerTimerTask()
     if (towerTimerActive) then
         totalTowerTime = totalTowerTime + (time() - lastTTTUpdateTime)
         lastTTTUpdateTime = time()
-        print (totalTowerTime)
+        --print (totalTowerTime)
         propTotalTime.text = FormatTime(totalTowerTime)
     end
 end
@@ -88,17 +97,6 @@ function StopTimerLocal()
     timerStarted = false
     UpdateTimer(-1)
 end
-
-function FormatTime(inTime)
-    local minutes = CoreMath.Round(inTime / 60)
-    local seconds = CoreMath.Round(inTime % 60)
-    local minStr = string.format("%02d",minutes)
-    local secStr = string.format("%02d",seconds)
-    
-    return minStr..":"..secStr
-end
-
-
 
 function Tick(deltaTime)
     Task.Wait(1) --slow it down to only run once a second
