@@ -327,14 +327,14 @@ Assets {
         Name: "Trigger - Teleport to Flume"
         Transform {
           Location {
-            X: -355
+            X: -275
             Y: 35
             Z: 30
           }
           Rotation {
           }
           Scale {
-            X: 1.80000007
+            X: 2.9
             Y: 2.9
             Z: 2.9
           }
@@ -444,7 +444,7 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            X: 275
+            X: 175
             Z: 20
           }
           Rotation {
@@ -453,7 +453,7 @@ Assets {
           Scale {
             X: 2
             Y: 2
-            Z: 6
+            Z: 7.49999952
           }
         }
         ParentId: 17649526533898173544

@@ -40,7 +40,7 @@ Assets {
           TeamSettings {
           }
           AudioBP {
-            Volume: 1
+            Volume: 0.75
             Falloff: 3600
             Radius: 400
           }
