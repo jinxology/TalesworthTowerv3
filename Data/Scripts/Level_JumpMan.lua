@@ -10,10 +10,10 @@ startPlatformRotation = Rotation.New(0,0,88.597)
 --To be finalized when Flumes objects and code are completed
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(6340.98,160.359,-416.324)
-exitFlumeRotation = Rotation.New(0,0,179.25)
-entranceFlumeLocation = Vector3.New(6351.984,-2933.272,-397.326)
-entranceFlumeRotation = Rotation.New(0,0,179.553)
+exitFlumeLocation = Vector3.New(6237.928,6237.928,-426.896)
+exitFlumeRotation = Rotation.New(0,0,176.83)
+entranceFlumeLocation = Vector3.New(6251.078,-2926.557,-400.323)
+entranceFlumeRotation = Rotation.New(0,0,176.83)
 entranceFlumeEjectionVelocity = 20
 
 -- propMainGameController.context.SendGeneralMessageToClients("05,"..whoDidIt.." pressed a "..GetColorName(whichColor).." button near "..GetShapeName(whichShape))
@@ -51,9 +51,6 @@ local CenterFloor
 -------------------------------------------------------------
 --LevelPowerUp code is called from the previous level to do setup on it before the players arrive
 function LevelPowerUp()
-
---Overlord Stands Up
---propOverlord.animationStance = "unarmed_idle_relaxed"
 
 --Create Center Platform
 local propCenterFloorTemplate = script:GetCustomProperty("CenterFloorTemplate")
@@ -410,26 +407,26 @@ end
 --LevelPowerDown is called from the next level back to this one to clean it up and remove it from memory
 function LevelPowerDown()
 --Destroy Network Object
---propGreenCapsule:Destroy()
---propBlueCapsule:Destroy()
---propYellowCapsule:Destroy()
---propRedCapsule:Destroy()
---GreenBase:Destroy()
---YellowBase:Destroy()
---RedBase:Destroy()
---BlueBase:Destroy()
---FlameYellow:Destroy()
---FlameGreen:Destroy()
---FlameRed:Destroy()
---FlameBlue:Destroy()
+propGreenCapsule:Destroy()
+propBlueCapsule:Destroy()
+propYellowCapsule:Destroy()
+propRedCapsule:Destroy()
+GreenBase:Destroy()
+YellowBase:Destroy()
+RedBase:Destroy()
+BlueBase:Destroy()
+FlameYellow:Destroy()
+FlameGreen:Destroy()
+FlameRed:Destroy()
+FlameBlue:Destroy()
 --YellowRailing:Destroy()
 --GreenPlatform1:Destroy()
 --RedPlatform1:Destroy()
 --BluePlatform1:Destroy()
---JumpmanScore:Destroy()
---BaseDisengageSound:Destroy()
---SwirlSuccessSound:Destroy()
---BaseRiseSound:Destroy()
+JumpmanScore:Destroy()
+BaseDisengageSound:Destroy()
+SwirlSuccessSound:Destroy()
+BaseRiseSound:Destroy()
 end
 
 --LevelVictory is called when the Win Condition of the game is met
