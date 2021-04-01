@@ -28,7 +28,6 @@ local propDeletedDots = script:GetCustomProperty("DeletedDots")
 local propCartoonFoodEatBiteShort02SFX = script:GetCustomProperty("CartoonFoodEatBiteShort02SFX")
 local propDrinkLiquidGulpSwallow01SFX = script:GetCustomProperty("DrinkLiquidGulpSwallow01SFX")
 
-
 local DOT_COUNT = 292
 
 local levelFolder = script.parent  --Gets the Level Folder
@@ -110,7 +109,7 @@ function InitializeDotArray()
 	for dotIndex = 1, DOT_COUNT do 
 		dotsArray[dotIndex] = 1
 	end	
-	print("Total Dots:", #dotsArray)
+	print("Total Dots:", #dotsArray)	
 end
 
 function CheckDotsLeft(dotDeletedIndex)	

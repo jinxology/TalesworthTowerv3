@@ -9,9 +9,13 @@ local propCast2SFX = script:GetCustomProperty("cast2SFX"):WaitForObject()
 local propEquipment = script:GetCustomProperty("equipment"):WaitForObject()
 local propReelSFX = script:GetCustomProperty("reelSFX"):WaitForObject()
 
+local UNTETHERED_STATE = 0
+local TRAVELING_STATE = 1
+local TETHERED_STATE = 2
+
 local propTargetedPuck = nil
 local propTargetedAnchor = 0	-- 1..4
-local propTetheredToTarget = false
+local propTetheredState = UNTETHERED_STATE
 local propTetherTravelDistance = 0
 
 slackAmount = 0
@@ -19,121 +23,67 @@ slackAmount = 0
 local ROPE_UNIT_LENGTH = 100
 local FACING_AWAY = 0.2
 
-function CheckAim(targetedPuck)
-	local		anchorLocations = targetedPuck.context.propAnchorPositions
-	local		facingAnchors = {}
-	local		closestFacing = -1
-	local		mugshotPosition = propEquipment:GetWorldPosition()
-	local		puckPosition = targetedPuck:GetWorldPosition()
+-- function CheckAim(targetedPuck)
+-- 	local		anchorLocations = targetedPuck.context.propAnchorPositions
+-- 	local		facingAnchors = {}
+-- 	local		closestFacing = -1
+-- 	local		mugshotPosition = propEquipment:GetWorldPosition()
+-- 	local		puckPosition = targetedPuck:GetWorldPosition()
 	
-	-- print("mugshot at " .. tostring(mugshotPosition))
-	-- print("targeting " .. targetedPuck.id)
+-- 	-- print("mugshot at " .. tostring(mugshotPosition))
+-- 	-- print("targeting " .. targetedPuck.id)
 
-	for index, anchorDirection in pairs(anchorLocations) do
-		local	anchorPosition = puckPosition + anchorDirection
-		local	mugshotToAnchor = anchorPosition - mugshotPosition
-		local	mugshotDirection = mugshotToAnchor:GetNormalized()
-		local	dot = anchorDirection .. mugshotDirection
+-- 	for index, anchorDirection in pairs(anchorLocations) do
+-- 		local	anchorPosition = puckPosition + anchorDirection
+-- 		local	mugshotToAnchor = anchorPosition - mugshotPosition
+-- 		local	mugshotDirection = mugshotToAnchor:GetNormalized()
+-- 		local	dot = anchorDirection .. mugshotDirection
 		
-		--highest dot product is closest
-		--dot products under a threshold are ineligible
+-- 		--highest dot product is closest
+-- 		--dot products under a threshold are ineligible
 
-		if dot < FACING_AWAY then
-			if dot > closestFacing then
-				table.insert(facingAnchors, index, 1)
-				closestFacing = dot
-			else
-				table.insert(facingAnchors, index)
-			end
-		end
-		-- print("from mugshot to anchor: " .. index .. " " .. anchor.id .. " " .. tostring(mugshotDirection) .. ", anchor facing " .. tostring(anchorDirection) .. " (" .. dot .. ")")
-	end
+-- 		if dot < FACING_AWAY then
+-- 			if dot > closestFacing then
+-- 				table.insert(facingAnchors, index, 1)
+-- 				closestFacing = dot
+-- 			else
+-- 				table.insert(facingAnchors, index)
+-- 			end
+-- 		end
+-- 		-- print("from mugshot to anchor: " .. index .. " " .. anchor.id .. " " .. tostring(mugshotDirection) .. ", anchor facing " .. tostring(anchorDirection) .. " (" .. dot .. ")")
+-- 	end
 
-	for index, anchorIndex in ipairs(facingAnchors) do
-		local	anchorPosition = puckPosition + anchorLocations[anchorIndex]
+-- 	for index, anchorIndex in ipairs(facingAnchors) do
+-- 		local	anchorPosition = puckPosition + anchorLocations[anchorIndex]
 
-		-- if index == 1 then
-		-- 	CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.GREEN, thickness = 3, duration = 0.5 })
-		-- else
-		-- 	CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.BLUE, thickness = 3, duration = 0.5 })
-		-- end
-	end
+-- 		-- if index == 1 then
+-- 		-- 	CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.GREEN, thickness = 3, duration = 0.5 })
+-- 		-- else
+-- 		-- 	CoreDebug.DrawLine(mugshotPosition, anchorPosition, { color = Color.BLUE, thickness = 3, duration = 0.5 })
+-- 		-- end
+-- 	end
 
-	return { puck = targetedPuck, anchors = facingAnchors}
-end
+-- 	return { puck = targetedPuck, anchors = facingAnchors}
+-- end
 
 local	propTetherTravelTotalTime = 0
 local	propTetherTravelStartTime = 0
 local	propTetherTravelEndTime = 0
-local	TETHER_TRAVEL_SPEED = 1600
-
-function OnCast_Tether(ability)
-	propCast2SFX:Play()
-	
-	local	targetData = propTetherAbility:GetTargetData()
-	local	hitObject = targetData.hitObject
-	
-	if hitObject ~= nil and hitObject.name == "pck.puckTemplate" then
-		ring = CheckAim(hitObject:GetCustomProperty("controller"):WaitForObject())
-
-		--	cast even if all rings are occupied, check when it lands cause situations are fluid in this game
-		propTargetedAnchor = ring.anchors[1]
-		propTargetedPuck = ring.puck
-
-		Events.BroadcastToAllPlayers("pck.mugshotAimed", propEquipment:GetReference(), propTargetedPuck:GetReference(), propTargetedPuck.context.propAnchorPositions[propTargetedAnchor], true)
-	
-		-- print("Casting Tether...")
-	else
-		ability:Interrupt()
-	end
-end
-
-function TetherLanded()
-	propReelSFX:Stop()
-	propTargetedAnchor = propTargetedPuck.context.TetherMugshotToEligibleAnchor(propEquipment, CheckAim(propTargetedPuck).anchors)
-	if propTargetedAnchor == 0 then
-		propTargetedPuck = nil
-		propTargetedPuck.context.propClankSFX:Play()
-	else
-		-- print("Tethered successfully!")
-		propTetheredToTarget = true
-		Events.BroadcastToAllPlayers("pck.mugshotTethered", propEquipment:GetReference(), propTargetedPuck:GetReference(), propTargetedAnchor, true)
-
-		local	distance = propTargetedPuck.context.MugshotToAnchor(propEquipment, propTargetedAnchor).size
-
-		propSlackAmount = math.ceil(distance / ROPE_UNIT_LENGTH) * ROPE_UNIT_LENGTH
-	end
-	propTetherTravelTask:Cancel()
-	propTetherTravelTask = nil
-	propTetherAbility:AdvancePhase()
-end
-
-
-function OnExecute_Tether(ability)
-	propCast1SFX:Play()
-	propReelSFX.fadeInTime = propCast1SFX.length - propCast1SFX.startTime
-	-- propReelSFX.stopTime = propTetherTravelTotalTime
-	propReelSFX:Play()
-	propTetherTravelDistance = 0
-	propTetherTravelTask = Task.Spawn(TetherTraveled)
-	propTetherTravelTask.repeatCount = -1
-end
+local	TETHER_TRAVEL_SPEED = 2400
+local	TETHER_REEL_IN_SPEED = 3200
 
 function TetherTraveled(deltaTime)
 	if propTargetedPuck.context.propScoring then
-		-- print("puck is scoring, unaiming")
-		Events.BroadcastToAllPlayers("pck.mugshotAimed", propEquipment:GetReference(), propTargetedPuck:GetReference(), false)
-		ForgetPuck()
-				--	play sound
-		propTetherTravelTask:Cancel()
-		propTetherTravelTask = nil
-		propTetherAbility:AdvancePhase()
+		-- print("puck is scoring, interrupting tether")
+		propTetherAbility:Interrupt()
 	else
-		local		ringPosition = propTargetedPuck:GetWorldPosition() + propTargetedPuck.context.propAnchorPositions[propTargetedAnchor]
-		local		distance = (propEquipment:GetWorldPosition() - ringPosition).size
+		local		position = propTargetedPuck:GetWorldPosition()
+		local		distance = (propEquipment.owner:GetWorldPosition() - position).size
 
+		script:SetNetworkedCustomProperty("targetPosition", position)
 		propTetherTravelDistance = propTetherTravelDistance + TETHER_TRAVEL_SPEED * deltaTime
 
+		-- print("tether has traveled " .. propTetherTravelDistance .. " of " .. distance)
 		if propTetherTravelDistance > distance then
 			TetherLanded()
 		else
@@ -142,88 +92,110 @@ function TetherTraveled(deltaTime)
 	end
 end
 
+function OnCast_Tether(ability)
+	if propTetheredState == UNTETHERED_STATE then
+		propCast2SFX:Play()
+		
+		local	targetData = propTetherAbility:GetTargetData()
+		local	hitObject = targetData.hitObject
+		
+		if hitObject ~= nil and hitObject.name == "pck.puckTemplate" then
+			propTargetedPuck = hitObject:GetCustomProperty("controller"):WaitForObject()
+
+			propCast1SFX:Play()
+			propReelSFX.fadeInTime = propCast1SFX.length - propCast1SFX.startTime
+			-- propReelSFX.stopTime = propTetherTravelTotalTime
+			propReelSFX:Play()
+			propTetherTravelDistance = 0
+			propTetherTravelTask = Task.Spawn(TetherTraveled)
+			propTetherTravelTask.repeatCount = -1
+
+			propTetheredState = TRAVELING_STATE
+			script:SetNetworkedCustomProperty("tetheredState", propTetheredState)
+		else
+			ability:Interrupt()
+		end
+	end
+end
+
+function TetherLanded()
+	propReelSFX:Stop()
+	
+	propTargetedPuck.context.TetherMugshot(propEquipment)
+	propTetheredState = TETHERED_STATE
+	propSlackAmount = math.ceil((propTargetedPuck:GetWorldPosition() - propEquipment.owner:GetWorldPosition()).size / ROPE_UNIT_LENGTH) * ROPE_UNIT_LENGTH
+	script:SetNetworkedCustomProperty("tetheredState", propTetheredState)
+	
+	if propTetherTravelTask then
+		propTetherTravelTask:Cancel()
+		propTetherTravelTask = nil
+	end
+	-- print("propTetherAbility " .. propTetherAbility.id .. " in state " .. propTetherAbility:GetCurrentPhase())
+	propTetherAbility:AdvancePhase()
+	-- print("propTetherAbility " .. propTetherAbility.id .. " in state " .. propTetherAbility:GetCurrentPhase())
+end
+
+
+function OnExecute_Tether(ability)
+end
+
 function OnRecovery_Tether(ability)
 	-- print("Tether recovered.")
 end
 
 function OnCooldown_Tether(ability)
 	-- print("Cooled down...")
-	if propTetheredToTarget then
-		-- print("    ... and tethered. New abilities active.")
-		propTetherAbility.isEnabled = false
-		propUntetherAbility.isEnabled = true
-		propReelAbility.isEnabled = true
-		-- propUnreelAbility.isEnabled = true
-	end
 end
 
 function OnInterrupted_Tether(ability)
 	-- print("Tethering interrupted.")
-	if propTargetedPuck ~= nil then
-		ForgetPuck()
+	if propTargetedPuck then
+		propTargetedPuck = nil
+		propTetheredState = UNTETHERED_STATE
+		script:SetNetworkedCustomProperty("tetheredState", propTetheredState)
+		script:SetNetworkedCustomProperty("targetPosition", propEquipment:GetWorldPosition())
+		
+		--	TODO: unreel??
+		if propTetherTravelTask then
+			propTetherTravelTask:Cancel()
+			propTetherTravelTask = nil
+		end
 	end
 end
 
 function OnReady_Tether(ability)
-	-- print("Tether ready.")
-	if propTetheredToTarget then
-		-- print("    ... and tethered. New abilities active.")
-		propTetherAbility.isEnabled = false
-		propUntetherAbility.isEnabled = true
-		propReelAbility.isEnabled = true
-		-- propUnreelAbility.isEnabled = true
-	end
 end
 
 function OnCast_Untether(ability)
-	-- print("Casting Untether")
-end
-
-function OnExecute_Untether(ability)
-	if propTetheredToTarget and propTargetedPuck ~= nil and Object.IsValid(propTargetedPuck) then
-		-- print("Untethering...")
-	end
-end
-
-function ForgetPuck()
-	Events.BroadcastToAllPlayers("pck.mugshotTethered", propEquipment:GetReference(), propTargetedPuck:GetReference(), Vector3.ZERO, false)
-	propTetheredToTarget = false
-	propTargetedPuck = nil
-	propTargetedAnchor = 0
-end
-
-function OnRecovery_Untether(ability)
-	if propTetheredToTarget then
-		propTargetedPuck.context.UntetherMugshot(propEquipment)
-		ForgetPuck()
-		-- print("recovered from untethering.")
+	if propTetheredState == TETHERED_STATE then
+		-- print("Casting Untether")
 	else
-		-- print("faied to untether")
 		ability:Interrupt()
 	end
 end
 
-function OnCooldown_Untether(ability)
-	if not propTetheredToTarget then
-		-- print("Unethered and cooled down. New abilities active.")
-		propTetherAbility.isEnabled = true
-		propUntetherAbility.isEnabled = false
-		propReelAbility.isEnabled = false
-		-- propUnreelAbility.isEnabled = false
+function OnExecute_Untether(ability)
+	if propTetheredState == TETHERED_STATE and propTargetedPuck ~= nil and Object.IsValid(propTargetedPuck) then
+		propTargetedPuck.context.UntetherMugshot(propEquipment)
+		propTetheredState = UNTETHERED_STATE
+		propTargetedPuck = nil
+		script:SetNetworkedCustomProperty("tetheredState", propTetheredState)
+		script:SetNetworkedCustomProperty("targetPosition", propEquipment:GetWorldPosition())
+		--TODO: unreel??
+		-- print("Untethering...")
 	end
+end
+
+function OnRecovery_Untether(ability)
+end
+
+function OnCooldown_Untether(ability)
 end
 
 function OnInterrupted_Untether(ability)
 end
 
 function OnReady_Untether(ability)
-	if not propTetheredToTarget then
-		-- print("Unethered and cooled down. New abilities active.")
-		propTetherAbility.isEnabled = true
-		propUntetherAbility.isEnabled = false
-		propReelAbility.isEnabled = false
-		-- propUnreelAbility.isEnabled = false
-	end
 end
 
 function OnCast_Reel(ability)
@@ -231,8 +203,9 @@ function OnCast_Reel(ability)
 end
 
 function OnExecute_Reel(ability)
-	propSlackAmount = math.min(propSlackAmount - ROPE_UNIT_LENGTH * 4, (propTargetedPuck:GetWorldPosition() - propEquipment.owner:GetWorldPosition()).size)
-	-- print("reeled in, new slack amount is " .. propSlackAmount)
+	if propTetheredState == TETHERED_STATE then
+		propSlackAmount = math.min(propSlackAmount - ROPE_UNIT_LENGTH * 4, (propTargetedPuck:GetWorldPosition() - propEquipment.owner:GetWorldPosition()).size)
+	end-- print("reeled in, new slack amount is " .. propSlackAmount)
 end
 
 function OnRecovery_Reel(ability)
@@ -358,4 +331,3 @@ ConnectAbilityEvents_Reel(propReelAbility)
 -- ConnectAbilityEvents_Unreel(propUnreelAbility)
 propEquipment.equippedEvent:Connect(OnEquipped)
 propEquipment.unequippedEvent:Connect(OnUnequipped)
-

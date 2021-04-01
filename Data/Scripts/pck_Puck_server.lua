@@ -12,13 +12,6 @@ propScoring = false
 propLevelController = nil
 playMusicOnLanding = false
 
-propAnchorPositions = {
-	Vector3.New(-275, -275, -275), -- 45
-	Vector3.New(-275, 275, -275), -- -45
-	Vector3.New(275, 275, -275), -- -135
-	Vector3.New(275, -275, -275) -- 135
-}
-
 --	Bump players out of the way
 propLookOutListener = propLookOutTrigger.beginOverlapEvent:Connect(function(trigger, other)
 	if other:IsA("Player") then
@@ -192,64 +185,84 @@ end
 
 propTetheredMugshots = {}
 
-function TetherMugshotToEligibleAnchor(mugshot, eligibleAnchors)
-	local	tetheredIndex = 0
-
-	for _, anchorIndex in ipairs(eligibleAnchors) do
-		if propTetheredMugshots[anchorIndex] == nil then
-			propTetheredMugshots[anchorIndex] = mugshot
-			tetheredIndex = anchorIndex
-			-- print("tethered " .. mugshot.id .. " to anchor " .. anchorIndex)
-			break
-		end
-	end
-
-	return tetheredIndex
+function TetherMugshot(mugshot)
+	-- print("tethered mugshot " .. mugshot.id)
+	propTetheredMugshots[mugshot] = true
+	--	possibly observe destroy event on mugshot for safety
 end
 
 function UntetherMugshot(mugshot)
-	for _, tetheredMugshot in pairs(propTetheredMugshots) do
-		-- print("already tethered to " .. tetheredMugshot.id .. " at anchor " .. _)
-		if tetheredMugshot == mugshot then
-			propTetheredMugshots[_] = nil
-			-- print("    ... untethering it")
-			break
-		end
-	end
-end
-
-function MugshotToAnchor(mugshot, anchor)
-	local	anchorOffset = propAnchorPositions[anchor]
-	local	anchorPosition = propPhysics:GetWorldPosition() + anchorOffset
-	local	playerPosition = mugshot.owner:GetWorldPosition()
-	
-	return playerPosition - anchorPosition
+	propTetheredMugshots[mugshot] = nil
 end
 
 function ForceForTension(tension)
-	local	FORCE_PER_TENSION = 1
+	local	FORCE_PER_TENSION = .8
 
 	return FORCE_PER_TENSION * tension
 end
 
+SNAP_THRESHOLD = 1.5
+local propCurrentUnragdollTask = nil
+
 function HandleTension(deltaT)
 	local	totalForce = Vector3.ZERO
+	local	puckPosition = propPhysics:GetWorldPosition()
 
-	for anchor, mugshot in pairs(propTetheredMugshots) do
+	for mugshot, _ in pairs(propTetheredMugshots) do
 		if mugshot ~= nil then
 			controller = mugshot:GetCustomProperty("controller"):WaitForObject()
-
-			local	distance = MugshotToAnchor(mugshot, anchor).size
+			
+			local	direction = mugshot:GetWorldPosition() - puckPosition
+			local	distance = direction.size
 			local	slack = controller.context.propSlackAmount
+			local	tension = distance / slack
+			
+			if tension > SNAP_THRESHOLD then
+				local	player = mugshot.owner
+				local	puckVelocity = propPhysics:GetVelocity()
+				local	playerVelocity = player:GetVelocity()
 
-			if distance > slack then
-				local	force = ForceForTension(distance / slack)
-				local	forceDirection = MugshotToAnchor(mugshot, anchor)
+				if puckVelocity .. playerVelocity < 0 then
+					player:EnableRagdoll("lower_spine", .4)
+					player:EnableRagdoll("right_shoulder", .2)
+					player:EnableRagdoll("left_shoulder", .6)
+					player:EnableRagdoll("right_hip", .6)
+					player:EnableRagdoll("left_hip", .6)		
+					player:AddImpulse(-direction * 1.5 * player.mass + Vector3.UP + 1000)
+					
+					if propCurrentUnragdollTask then
+						propCurrentUnragdollTask:Cancel()
+					end
 
-				totalForce = totalForce + forceDirection * force
-
-				-- print("distance = " .. distance .. ", slack = " .. slack)
+					propCurrentUnragdollTask = Task.Spawn(function()
+						player.movementControlMode = MovementControlMode.LOOK_RELATIVE
+						player:DisableRagdoll()
+						player:EnableRagdoll("right_shoulder", .2)
+						player:EnableRagdoll("left_shoulder", .2)
+						player:EnableRagdoll("right_hip", .1)
+						player:EnableRagdoll("left_hip", .1)
+						
+						propCurrentUnragdollTask = Task.Spawn(function()
+							player:DisableRagdoll()
+						end, 2)		
+					end, 1)
+					print("BOINNNNGGGGG")
+				else
+					print("careful now...")
+				end
 			end
+
+			-- else
+				controller:SetNetworkedCustomProperty("tension", tension)
+				controller:SetNetworkedCustomProperty("targetPosition", puckPosition)
+
+				if distance > slack then
+					local	force = ForceForTension(tension)
+
+					totalForce = totalForce + direction * force
+				end
+				-- print("distance = " .. distance .. ", slack = " .. slack)
+			-- end
 		end
 	end
 
