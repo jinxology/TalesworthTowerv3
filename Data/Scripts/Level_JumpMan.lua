@@ -4,16 +4,16 @@
 --Place StartPlatformGroup(networked) template and record the Position and Rotation values here
 --After adding the inital values, delete the StartingPlatormGroup template out of the project
 startingPlatforms = nil
-startPlatformPosition = Vector3.New(5815.968,548.008,-700)
-startPlatformRotation = Rotation.New(0,0,90)  
+startPlatformPosition = Vector3.New(5803.202,540.392,-695.701)
+startPlatformRotation = Rotation.New(0,0,88.597)  
 
 --To be finalized when Flumes objects and code are completed
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(6204.868,159.1,-425)
-exitFlumeRotation = Rotation.New(0,0,180)
-entranceFlumeLocation = Vector3.New(6125.565,530.33,775)
-entranceFlumeRotation = Rotation.New(0,0,180)
+exitFlumeLocation = Vector3.New(6340.98,160.359,-416.324)
+exitFlumeRotation = Rotation.New(0,0,179.25)
+entranceFlumeLocation = Vector3.New(6351.984,-2933.272,-397.326)
+entranceFlumeRotation = Rotation.New(0,0,179.553)
 entranceFlumeEjectionVelocity = 20
 
 -- propMainGameController.context.SendGeneralMessageToClients("05,"..whoDidIt.." pressed a "..GetColorName(whichColor).." button near "..GetShapeName(whichShape))
@@ -44,6 +44,7 @@ local JumpmanScore
 local BaseDisengageSound
 local SwirlSuccessSound
 local BaseRiseSound
+local CenterFloor
 
 -------------------------------------------------------------
 -- REQUIRED FUNCTIONS FOR MAINGAMECONTROLLER TO CALL
@@ -53,6 +54,10 @@ function LevelPowerUp()
 
 --Overlord Stands Up
 --propOverlord.animationStance = "unarmed_idle_relaxed"
+
+--Create Center Platform
+local propCenterFloorTemplate = script:GetCustomProperty("CenterFloorTemplate")
+CenterFloor = World.SpawnAsset(propCenterFloorTemplate, {parent=script.parent, position=Vector3.New(2825.031,-400.007,-721.008), rotation=Rotation.New(0,0,90), scale=Vector3.New(2.1,2.1,2.1)})
 
 --Create Sounds
 local propBaseRiseTemplate = script:GetCustomProperty("BaseRiseTemplate")
@@ -92,7 +97,7 @@ local propFlameRedTemplate = script:GetCustomProperty("FlameRedTemplate")
 FlameRed = World.SpawnAsset(propFlameRedTemplate, {parent=script.parent, position=Vector3.New(6014.854,3263.292,432.567), scale=Vector3.New(3,3,3)}) 
 
 local propFlameBlueTemplate = script:GetCustomProperty("FlameBlueTemplate")
-FlameBlue = World.SpawnAsset(propFlameBlueTemplate, {parent=script.parent, position=Vector3.New(6014.141,-3087.181,431.269), scale=Vector3.New(3,3,3)}) 
+FlameBlue = World.SpawnAsset(propFlameBlueTemplate, {parent=script.parent, position=Vector3.New(6015.607,-3087.51,433.279), scale=Vector3.New(3,3,3)}) 
 
 --Create Colored Moving Platforms
 local propYellowRailingTemplate = script:GetCustomProperty("YellowRailingTemplate")
@@ -251,6 +256,8 @@ propMainGameController.context.SendGeneralMessageToClients("05,Overlord: Steps t
 local timeElapsed, timeRequested = Task.Wait(2)
 propMainGameController.context.SendGeneralMessageToClients("05,Overlord: Your time is limited. Extinguish your flames.")
 
+CenterFloor:MoveTo(Vector3.New(2825.001,-400.001,-550), 2, true)
+
 --Extinguish Flames
 --Yellow Flame
 local propFlameYellowTrigger = FlameYellow:GetCustomProperty("flameYellowTrigger"):WaitForObject()
@@ -281,14 +288,14 @@ local propGreenBreath = FlameGreen:GetCustomProperty("GreenBreath"):WaitForObjec
 propFlameGreenTrigger.interactedEvent:Connect(OnflameGreenTriggerInteraction)
 
 --Blue Flame
-local propFlameBlueTrigger = script:GetCustomProperty("flameBlueTrigger"):WaitForObject()
-local propBlueBreath = script:GetCustomProperty("BlueBreath"):WaitForObject()
+local propFlameBlueTrigger = FlameBlue:GetCustomProperty("flameBlueTrigger"):WaitForObject()
+local propBlueBreath = FlameBlue:GetCustomProperty("BlueBreath"):WaitForObject()
 
 	function OnflameBlueTriggerInteraction()
 		propBlueBreath:Play()
-		propFlameBlue.visibility = Visibility.FORCE_OFF
+		FlameBlue.visibility = Visibility.FORCE_OFF
 		local timeElapsed, timeRequested = Task.Wait(2)
-		propBaseRise:Play()
+		BaseRiseSound:Play()
 		propBlueCapsule:MoveTo(Vector3.New(1131.371,0,-675), 2, true)
 		propFlameBlueTrigger.interactionLabel = 'Blue Base Step Enabled!'
 	end 

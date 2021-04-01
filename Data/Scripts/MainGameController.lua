@@ -7,7 +7,14 @@ local timerStarted = false
 local timeLeft = 0
 local timerEndCallback
 local playerKeyBindingListener = nil
- 
+
+local lastCheckpointTime = 0
+local towerTimerActive = false
+local towerTimerTask = nil
+local lastTTTUpdateTime = 0
+totalTowerTime = 0
+startingPlayerCount = 4
+
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
@@ -25,6 +32,8 @@ levelList = {
 }
 requiredNbrPlayersReady = 4
 resetingTower = false
+
+
  
 function OnBindingPressed(player, bindingPressed)
     --print ("pressed " .. bindingPressed)
@@ -36,7 +45,8 @@ function OnBindingPressed(player, bindingPressed)
             --local levelControllerScript = GetCurrentLevelController()
             --levelControllerScript.context.LevelPowerUp() 
             
-            LevelBegin()
+            --LevelBegin()
+            StartingPlatformsActivated()
         end
     elseif (bindingPressed == "ability_extra_26") then
         --U
@@ -138,9 +148,9 @@ function SpawnLevelBeacons(success, lifespan)
 
 end
 
-function Tick(deltaTime)
+function Tick(deltaTime)  
     Task.Wait(1) --slow it down to only run once a second
-    
+
     if (timerStarted and not resetingTower) then        
         timeLeft = timeLeft - 1
         --UpdateTimerText(timeLeft)
@@ -345,12 +355,29 @@ function StartingPlatformsActivated()
     end
 end
 
+function TalesworthTowerTimerTask()
+    if (towerTimerActive) then
+        totalTowerTime = totalTowerTime + (time() - lastTTTUpdateTime)
+        lastTTTUpdateTime = time()
+        --print (totalTowerTime)
+    end
+end
+
 function LevelBegin()
     if (not levelRunning) then
         levelRunning = true
 
+        towerTimerActive = true
+        if (currentLevelIndex == 1) then
+            totalTowerTime = 0
+            startingPlayerCount = 4            
+        end
+        lastTTTUpdateTime = time()
+
+        script:SetNetworkedCustomProperty("towerTimerState","true,"..totalTowerTime)    
+
         --Reset these if the players quickly restart level 1
-        script:SetNetworkedCustomProperty("UIMessage","04,false, ")
+        --script:SetNetworkedCustomProperty("UIMessage","04,false, ")
         
         --If started some way other than starting platforms, deactivate them
         DeactivateStartingPlatforms()
@@ -362,8 +389,10 @@ end
 
 function LevelEnd(success)    
     levelRunning = false 
-    SetNextLevelIndex(success)
-    
+    SetNextLevelIndex(success)    
+    towerTimerActive = false
+    script:SetNetworkedCustomProperty("towerTimerState","false,"..totalTowerTime)
+
     if (not success and currentLevelIndex == 1) then
         ResetStartingPlatforms()
     else
@@ -543,3 +572,7 @@ local levelControllerScript = GetCurrentLevelController()
 SpawnFlumePortals(1)
 SpawnStartingPlatforms(1)
 levelControllerScript.context.LevelPowerUp() 
+
+towerTimerTask = Task.Spawn(TalesworthTowerTimerTask)
+towerTimerTask.repeatCount = -1
+towerTimerTask.repeatInterval = 1

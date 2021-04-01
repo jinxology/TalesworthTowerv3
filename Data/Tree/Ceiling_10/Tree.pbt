@@ -5,8 +5,8 @@ Objects {
   Name: "Sci-fi Base Roof 01 - 8m"
   Transform {
     Location {
-      X: -1638.63721
-      Y: -829.335876
+      X: -1617.14783
+      Y: -829.335754
     }
     Rotation {
     }

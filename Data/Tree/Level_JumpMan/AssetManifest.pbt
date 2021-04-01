@@ -1,13 +1,4 @@
 Assets {
-  Id: 18119898128928963492
-  Name: "Sci-fi Base Floor 02 4m"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_scf_base_floor_002_4m_ref"
-  }
-}
-Assets {
   Id: 15984031613198292986
   Name: "Electric Surface"
   PlatformAssetType: 2

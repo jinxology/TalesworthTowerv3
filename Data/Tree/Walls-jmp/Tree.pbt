@@ -1238,8 +1238,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: -200
-      Y: -2150
+      X: -273.831787
+      Y: -2150.01172
       Z: -75
     }
     Rotation {
@@ -1281,8 +1281,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 599.998
-      Y: -2149.99243
+      X: 526.169312
+      Y: -2150.00391
       Z: -75
     }
     Rotation {
@@ -1324,8 +1324,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 1399.99585
-      Y: -2149.99023
+      X: 1325.32642
+      Y: -2150.0083
       Z: -75
     }
     Rotation {
@@ -1664,8 +1664,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: -250
-      Y: -2150
+      X: -277.391479
+      Y: -2150.00195
       Z: -75
     }
     Rotation {
@@ -1965,8 +1965,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 6100
-      Y: -2150
+      X: 6126.72559
+      Y: -2149.99878
       Z: -75
     }
     Rotation {
@@ -3247,8 +3247,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: -200
-      Y: -2150
+      X: -276.701416
+      Y: -2149.92896
       Z: -75
     }
     Rotation {
@@ -3290,8 +3290,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 599.996826
-      Y: -2149.98657
+      X: 523.285889
+      Y: -2149.91724
       Z: -75
     }
     Rotation {
@@ -3333,8 +3333,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 1399.99023
-      Y: -2149.97876
+      X: 1325.00684
+      Y: -2149.92651
       Z: -75
     }
     Rotation {
@@ -3376,8 +3376,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 2160.23022
-      Y: -2150.33423
+      X: 2127.97388
+      Y: -2150.29199
       Z: -75
     }
     Rotation {
@@ -3677,9 +3677,9 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 525
-      Y: -2150
-      Z: -75
+      X: 498.460205
+      Y: -2149.96753
+      Z: -76.3994141
     }
     Rotation {
     }
@@ -3720,9 +3720,9 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 1325
-      Y: -2150
-      Z: -75
+      X: 1298.44861
+      Y: -2149.96973
+      Z: -76.3994141
     }
     Rotation {
     }
@@ -3763,8 +3763,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 2117.06494
-      Y: -2142.67847
+      X: 2095.60718
+      Y: -2142.67188
       Z: -75
     }
     Rotation {
@@ -3806,8 +3806,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 2916.99341
-      Y: -2142.64063
+      X: 2895.53418
+      Y: -2142.63379
       Z: -75
     }
     Rotation {
@@ -4233,8 +4233,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 3699.9939
-      Y: -2149.99512
+      X: 3723.91309
+      Y: -2149.9917
       Z: -75
     }
     Rotation {
@@ -4276,8 +4276,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 4499.99658
-      Y: -2149.99316
+      X: 4523.91504
+      Y: -2149.99268
       Z: -75
     }
     Rotation {
@@ -4319,8 +4319,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 5299.9873
-      Y: -2149.99414
+      X: 5323.90967
+      Y: -2149.99756
       Z: -75
     }
     Rotation {
@@ -4362,8 +4362,8 @@ Objects {
   Name: "Sci-fi Base Wall 02"
   Transform {
     Location {
-      X: 6099.98633
-      Y: -2149.99561
+      X: 6123.91
+      Y: -2149.99658
       Z: -75
     }
     Rotation {

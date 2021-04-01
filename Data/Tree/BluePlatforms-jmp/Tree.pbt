@@ -1649,12 +1649,12 @@ Objects {
   Name: "Sci-fi Base Stairs 01 150cm"
   Transform {
     Location {
-      X: 3725.00073
-      Y: -1150.00098
+      X: 3748.27832
+      Y: -1150.02783
       Z: -100
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -90
     }
     Scale {
       X: 1
