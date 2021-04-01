@@ -1,6 +1,10 @@
+local UNTETHERED_STATE = 0
+local TRAVELING_STATE = 1
+local TETHERED_STATE = 2
+
 local   propServer = script:GetCustomProperty("mugshotServer"):WaitForObject()
 local   propEquipment = propServer:GetCustomProperty("equipment"):WaitForObject()
-local   propTetheredToTarget = false
+local   propTetheredState = UNTETHERED_STATE
 local   propTetherTravel = 0.0
 local   propTension = nil
 local   propBarrel = script:GetCustomProperty("barrel"):WaitForObject()
@@ -10,15 +14,14 @@ local   propTurretRotateZ = script:GetCustomProperty("turretRotateZ"):WaitForObj
 local   propTetherVFX = script:GetCustomProperty("tetherVFX"):WaitForObject()
 
 propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
-    print("property " .. propertyName .. " changed on object " .. coreObject.id)
     if propertyName == "tension" then
         propTension = coreObject:GetCustomProperty(propertyName)
     elseif propertyName == "tetherTravel" then
         UpdateTetherTravel(coreObject:GetCustomProperty(propertyName))
-    elseif propertyName == "targetedPuck" then
-        AimAtPuck(coreObject:GetCustomProperty(propertyName))
-    elseif propertyName == "tethered" then
-        SetTethered(coreObject:GetCustomProperty(propertyName))
+    elseif propertyName == "targetPosition" then
+        AimAtPosition(coreObject:GetCustomProperty(propertyName))
+    elseif propertyName == "tetheredState" then
+        SetTetheredState(coreObject:GetCustomProperty(propertyName))
     end
 end)
 
@@ -131,7 +134,7 @@ local   propTetherAttachDuration = 0
 
 function UpdateTetherTravel(tetherTravel)
     propTetherTravel = tetherTravel
-    print("tetherTravel " .. tetherTravel)
+    -- print("tetherTravel " .. tetherTravel)
 end
 
 local   GRAPPLE_SIZE = 100
@@ -140,11 +143,11 @@ local   TAUT_TENSION = 1.1
 local   BREAKING_TENSION = 2
 
 function Tick()
-    if propTargetedPuck ~= nil then
+    if propTargetPosition ~= nil then
         --  rotate turret and barrel to point at puck
         -- local   turretRotateYPosition = propTurretRotateY:GetWorldPosition()
         local   turretRotateZPosition = propTurretRotateZ:GetWorldPosition()
-        local   anchorPosition = propTargetedPuck:GetWorldPosition()
+        local   anchorPosition = propTargetPosition
     
 
         propTurretRotateZ:LookAt(anchorPosition)
@@ -166,9 +169,10 @@ function Tick()
         local   vertical = Vector3.UP * 500 * (1 - (2 * (propTetherTravel - 0.5)) ^ 2)
 
         tetherTravel = tetherTravel - tetherTravel:GetNormalized() * GRAPPLE_SIZE
-        propGrapple:SetWorldPosition(from + tetherTravel * propTetherTravel + vertical)
         
-        if propTetheredToTarget then
+        if propTetheredState == TETHERED_STATE then
+            propGrapple:SetWorldPosition(anchorPosition)
+
             local   fromProperties = nil
             local   toProperties = nil
             local   amount = 0
@@ -202,12 +206,14 @@ function Tick()
                     tetherVFXProperties = LerpProperties(fromProperties, toProperties, amount)
                 end
             end
-        else 
-            print("traveling " .. propTetherTravel)
+            UpdateTetherVFX(tetherVFXProperties)
+        elseif propTetheredState == TRAVELING_STATE then
             tetherVFXProperties = propTensionProperties[1]
+            propGrapple:SetWorldPosition(from + tetherTravel * propTetherTravel + vertical)
+            -- print("traveling " .. propTetherTravel)
+            UpdateTetherVFX(tetherVFXProperties)
         end
 
-        UpdateTetherVFX(tetherVFXProperties)
     end
 end
 
@@ -237,37 +243,27 @@ function UpdateTetherVFX(properties)
     end
 end
 
-function AimAtPuck(puckRef)
+function AimAtPosition(position)
     -- if mugshot == propEquipment then
-        if puckRef == nil then
-            propTargetedPuck = nil
-            propTetherTravel = 0
-            --TODO: unreel?? don't set travel here
-            propGrapple:SetPosition(Vector3.ZERO)
-            propGrapple:SetRotation(Rotation.ZERO)
-            UpdateTetherVFX(propTensionProperties[2])
-        else
-            propTargetedPuck = puckRef:WaitForObject()
-        end
+        propTargetPosition = position
     -- end
 end
 
-function SetTethered(tethered)
+function SetTetheredState(tetheredState)
     -- if mugshot == propEquipment then
-        propTetheredToTarget = tethered
-        if tethered then
-            propTetherAttachStartTime = time()
-            propTetherAttachDuration = 1
-            -- play sound
-        else
-            propTargetedPuck = nil
+        propTetheredState = tetheredState
+        if propTetheredState == UNTETHERED_STATE then
+            propTargetPosition = nil
             propTetherTravel = 0
-            propTetheredToTarget = false
             -- propTetherVFX.isEnabled = false
 
             propGrapple:SetPosition(Vector3.ZERO)
             propGrapple:SetRotation(Rotation.ZERO)
             UpdateTetherVFX(propTensionProperties[2])
+        else
+            propTetherAttachStartTime = time()
+            propTetherAttachDuration = 1
+            -- play sound
         end
     -- end
 end

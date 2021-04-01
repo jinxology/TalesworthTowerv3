@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13358087012448314564
+        ParentId: 4781671109827199097
         ChildIds: 16499993128992971694
         ChildIds: 8282285858322498775
         ChildIds: 9169255255245069283
@@ -100,7 +100,6 @@ Assets {
           Overrides {
             Name: "cs:unreelAbility"
             ObjectReference {
-              SelfId: 841534158063459245
             }
           }
           Overrides {
@@ -154,13 +153,13 @@ Assets {
             Float: 0
           }
           Overrides {
-            Name: "cs:tethered"
-            Bool: false
+            Name: "cs:targetPosition"
+            Vector {
+            }
           }
           Overrides {
-            Name: "cs:targetedPuck"
-            ObjectReference {
-            }
+            Name: "cs:tetheredState"
+            Int: 0
           }
           Overrides {
             Name: "cs:tension:isrep"
@@ -171,11 +170,11 @@ Assets {
             Bool: true
           }
           Overrides {
-            Name: "cs:tethered:isrep"
+            Name: "cs:targetPosition:isrep"
             Bool: true
           }
           Overrides {
-            Name: "cs:targetedPuck:isrep"
+            Name: "cs:tetheredState:isrep"
             Bool: true
           }
         }

@@ -186,6 +186,7 @@ end
 propTetheredMugshots = {}
 
 function TetherMugshot(mugshot)
+	-- print("tethered mugshot " .. mugshot.id)
 	propTetheredMugshots[mugshot] = true
 	--	possibly observe destroy event on mugshot for safety
 end
@@ -195,10 +196,13 @@ function UntetherMugshot(mugshot)
 end
 
 function ForceForTension(tension)
-	local	FORCE_PER_TENSION = 1
+	local	FORCE_PER_TENSION = .8
 
 	return FORCE_PER_TENSION * tension
 end
+
+SNAP_THRESHOLD = 1.5
+local propCurrentUnragdollTask = nil
 
 function HandleTension(deltaT)
 	local	totalForce = Vector3.ZERO
@@ -213,15 +217,52 @@ function HandleTension(deltaT)
 			local	slack = controller.context.propSlackAmount
 			local	tension = distance / slack
 			
-			controller:SetNetworkedCustomProperty("tension", tension)
+			if tension > SNAP_THRESHOLD then
+				local	player = mugshot.owner
+				local	puckVelocity = propPhysics:GetVelocity()
+				local	playerVelocity = player:GetVelocity()
 
-			if distance > slack then
-				local	force = ForceForTension(tension)
+				if puckVelocity .. playerVelocity < 0 then
+					player:EnableRagdoll("lower_spine", .4)
+					player:EnableRagdoll("right_shoulder", .2)
+					player:EnableRagdoll("left_shoulder", .6)
+					player:EnableRagdoll("right_hip", .6)
+					player:EnableRagdoll("left_hip", .6)		
+					player:AddImpulse(-direction * 1.5 * player.mass + Vector3.UP + 1000)
+					
+					if propCurrentUnragdollTask then
+						propCurrentUnragdollTask:Cancel()
+					end
 
-				totalForce = totalForce + direction * force
-
-				-- print("distance = " .. distance .. ", slack = " .. slack)
+					propCurrentUnragdollTask = Task.Spawn(function()
+						player.movementControlMode = MovementControlMode.LOOK_RELATIVE
+						player:DisableRagdoll()
+						player:EnableRagdoll("right_shoulder", .2)
+						player:EnableRagdoll("left_shoulder", .2)
+						player:EnableRagdoll("right_hip", .1)
+						player:EnableRagdoll("left_hip", .1)
+						
+						propCurrentUnragdollTask = Task.Spawn(function()
+							player:DisableRagdoll()
+						end, 2)		
+					end, 1)
+					print("BOINNNNGGGGG")
+				else
+					print("careful now...")
+				end
 			end
+
+			-- else
+				controller:SetNetworkedCustomProperty("tension", tension)
+				controller:SetNetworkedCustomProperty("targetPosition", puckPosition)
+
+				if distance > slack then
+					local	force = ForceForTension(tension)
+
+					totalForce = totalForce + direction * force
+				end
+				-- print("distance = " .. distance .. ", slack = " .. slack)
+			-- end
 		end
 	end
 

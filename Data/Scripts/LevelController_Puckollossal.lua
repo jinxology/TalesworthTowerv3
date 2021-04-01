@@ -57,9 +57,11 @@ local propSpawnerZRotation = Rotation.New(0, 0, 180)
 local propPuckOffset = Vector3.New(0, 0, 750)
 
 function PlayMusic()
-    propMusic:Play()
-    Task.Wait(5)
-    propMusic:FadeOut(10)
+    Task.Spawn(function()
+        propMusic:Play()
+        Task.Wait(5)
+        propMusic:FadeOut(10)
+    end)
 end
 
 function ShockPlayerAwayFromTrigger(player, trigger)
