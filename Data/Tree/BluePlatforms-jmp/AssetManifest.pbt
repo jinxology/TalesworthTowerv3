@@ -35,24 +35,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9199751096616988864
-  Name: "Candle Flame VFX"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "fxsm_candleflame"
-  }
-}
-Assets {
-  Id: 6232320401704415995
-  Name: "Fire Breath Whoosh 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_fire_breath_whoosh_01_Cue_ref"
-  }
-}
-Assets {
   Id: 6201098066527333077
   Name: "Sci-fi Base Stairs 01 150cm"
   PlatformAssetType: 1
@@ -104,15 +86,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_scf_base_acc_cap_top_002_ref"
-  }
-}
-Assets {
-  Id: 1256248629485427064
-  Name: "Steam Mechanical Gear Load Rearm 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_steam_gear_load_rearm_01_Cue_ref"
   }
 }
 Assets {

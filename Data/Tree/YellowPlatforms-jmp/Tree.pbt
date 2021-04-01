@@ -193,8 +193,8 @@ Objects {
   Name: "Sci-fi Base Floor Trim 01 - 4m"
   Transform {
     Location {
-      X: 1900.00195
-      Y: -5300.00195
+      X: 1900.01025
+      Y: -5300.02148
       Z: -1050
     }
     Rotation {
@@ -706,8 +706,8 @@ Objects {
   Name: "Sci-fi Base Railing 01"
   Transform {
     Location {
-      X: -49.9991417
-      Y: -50.0012436
+      X: -7.9256897
+      Y: -50.0013199
       Z: 50
     }
     Rotation {
@@ -769,8 +769,8 @@ Objects {
   Name: "Sci-fi Base Railing 01"
   Transform {
     Location {
-      X: -799.999268
-      Y: -50.0014648
+      X: -812.173
+      Y: -50.0029907
       Z: 50
     }
     Rotation {
@@ -1252,43 +1252,13 @@ Objects {
   }
 }
 Objects {
-  Id: 15876394939919846607
-  Name: "YellowRailingMove"
+  Id: 5116206280531288971
+  Name: "YellowCandleHolder"
   Transform {
     Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 14585010629724643386
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "YellowRailingMove"
-  }
-}
-Objects {
-  Id: 4819330861677440683
-  Name: "Floor Candle Holder 02"
-  Transform {
-    Location {
-      X: -2568.00024
-      Y: -274.001221
-      Z: 320
+      X: -2750.00049
+      Y: -50.0009766
+      Z: 700
     }
     Rotation {
       Yaw: 90.0000076
@@ -1300,6 +1270,55 @@ Objects {
     }
   }
   ParentId: 14585010629724643386
+  ChildIds: 11757272784648271678
+  ChildIds: 4819330861677440683
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:FlameYellow"
+      ObjectReference {
+        SelfId: 841534158063459245
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+  InstanceHistory {
+    SelfId: 11812283574649327670
+    SubobjectId: 13335815332911535660
+    InstanceId: 2972875044465671216
+    TemplateId: 8080692546549158181
+    WasRoot: true
+  }
+}
+Objects {
+  Id: 4819330861677440683
+  Name: "Floor Candle Holder 02"
+  Transform {
+    Location {
+      X: -112.00029
+      Y: -90.9997864
+      Z: -190
+    }
+    Rotation {
+      Yaw: -3.4150944e-06
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5116206280531288971
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_Detail2:color"
@@ -1318,7 +1337,6 @@ Objects {
       }
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1350,214 +1368,6 @@ Objects {
   }
 }
 Objects {
-  Id: 5116206280531288971
-  Name: "Fantasy Candle Lit - Holder 02 (Prop)"
-  Transform {
-    Location {
-      X: -2750.00049
-      Y: -50.0009766
-      Z: 700
-    }
-    Rotation {
-      Yaw: 90.0000076
-    }
-    Scale {
-      X: 2
-      Y: 2
-      Z: 2
-    }
-  }
-  ParentId: 14585010629724643386
-  ChildIds: 11757272784648271678
-  ChildIds: 8188827612800850643
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-  InstanceHistory {
-    SelfId: 11812283574649327670
-    SubobjectId: 13335815332911535660
-    InstanceId: 2972875044465671216
-    TemplateId: 8080692546549158181
-    WasRoot: true
-  }
-}
-Objects {
-  Id: 8188827612800850643
-  Name: "FlameYellow"
-  Transform {
-    Location {
-      X: -111.489746
-      Y: -89.7712402
-      Z: 6.67944336
-    }
-    Rotation {
-    }
-    Scale {
-      X: 3
-      Y: 3
-      Z: 3
-    }
-  }
-  ParentId: 5116206280531288971
-  ChildIds: 16677650451049277518
-  ChildIds: 9152697209134174006
-  ChildIds: 10474278980338511602
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceon"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 9199751096616988864
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-      }
-    }
-  }
-  InstanceHistory {
-    SelfId: 12013712325234835305
-    SubobjectId: 13566737109319645555
-    InstanceId: 2972875044465671216
-    TemplateId: 8080692546549158181
-  }
-}
-Objects {
-  Id: 10474278980338511602
-  Name: "YellowCanisterAppear"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.333333343
-      Y: 0.333333343
-      Z: 0.333333343
-    }
-  }
-  ParentId: 8188827612800850643
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 1256248629485427064
-    }
-    Volume: 1
-    Falloff: -1
-    Radius: -1
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 9152697209134174006
-  Name: "YellowBreath"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.333333343
-      Y: 0.333333343
-      Z: 0.333333343
-    }
-  }
-  ParentId: 8188827612800850643
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 6232320401704415995
-    }
-    Volume: 1
-    Falloff: -1
-    Radius: -1
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 16677650451049277518
-  Name: "flameYellowTrigger"
-  Transform {
-    Location {
-      X: -4.50341797
-      Y: -3.40958667
-      Z: -27.2264824
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.4
-      Y: 0.4
-      Z: 0.4
-    }
-  }
-  ParentId: 8188827612800850643
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Extinguish Yellow Flame"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
   Id: 11757272784648271678
   Name: "ClientContext"
   Transform {
@@ -1576,7 +1386,6 @@ Objects {
   }
   ParentId: 5116206280531288971
   ChildIds: 9385750755224618937
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

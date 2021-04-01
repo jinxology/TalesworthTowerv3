@@ -1,6 +1,254 @@
 Name: "Level_Maze"
 RootId: 4040143929711443956
 Objects {
+  Id: 1602373174848160459
+  Name: "forcefield - FG"
+  Transform {
+    Location {
+      X: -601.486755
+      Y: 1096.22095
+      Z: 3600.81152
+    }
+    Rotation {
+      Yaw: 89.9999847
+    }
+    Scale {
+      X: 0.49569571
+      Y: 3.03550148
+      Z: 7.65332556
+    }
+  }
+  ParentId: 4040143929711443956
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 16457879760224337482
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.0199999809
+        G: 0.746887207
+        B: 1
+        A: 0.389000028
+      }
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceon"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 7684429752496173319
+  Name: "forcefield - FG"
+  Transform {
+    Location {
+      X: 599.291443
+      Y: 1096.22095
+      Z: 3600.81152
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 0.49569571
+      Y: 3.03550148
+      Z: 7.65332556
+    }
+  }
+  ParentId: 4040143929711443956
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 16457879760224337482
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.0199999809
+        G: 0.746887207
+        B: 1
+        A: 0.389000028
+      }
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceon"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 1140765612412313838
+  Name: "forcefield - FG"
+  Transform {
+    Location {
+      X: 784.911377
+      Y: 1968.03491
+      Z: 3600.81152
+    }
+    Rotation {
+      Yaw: -179.999954
+    }
+    Scale {
+      X: 0.49569571
+      Y: 3.03550148
+      Z: 7.65332556
+    }
+  }
+  ParentId: 4040143929711443956
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 16457879760224337482
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.0199999809
+        G: 0.746887207
+        B: 1
+        A: 0.389000028
+      }
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceon"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 2995573138758945636
+  Name: "forcefield - FG"
+  Transform {
+    Location {
+      X: -795
+      Y: 1968.03491
+      Z: 3600.81152
+    }
+    Rotation {
+      Yaw: -179.999969
+    }
+    Scale {
+      X: 0.49569571
+      Y: 3.03550148
+      Z: 7.65332556
+    }
+  }
+  ParentId: 4040143929711443956
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 16457879760224337482
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.0199999809
+        G: 0.746887207
+        B: 1
+        A: 0.389000028
+      }
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceon"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 3318373236154842674
   Name: "doors"
   Transform {

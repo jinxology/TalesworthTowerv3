@@ -1,5 +1,6 @@
 local propEntranceShooter = script:GetCustomProperty("entranceShooter"):WaitForObject()
-local propSucker = script:GetCustomProperty("Sucker"):WaitForObject()
+local propSucker1 = script:GetCustomProperty("Sucker1"):WaitForObject()
+local propSucker2 = script:GetCustomProperty("Sucker2"):WaitForObject()
 local propTornado = script:GetCustomProperty("Tornado"):WaitForObject()
 local propWindSFX = script:GetCustomProperty("WindSFX"):WaitForObject()
 local propTeleportToFlume = script:GetCustomProperty("TeleportToFlume"):WaitForObject()
@@ -19,7 +20,8 @@ end
 
 function Reset()
     propEntranceShooter.collision = Collision.FORCE_OFF
-    propSucker.collision = Collision.FORCE_OFF
+    propSucker1.collision = Collision.FORCE_OFF
+    propSucker2.collision = Collision.FORCE_OFF
     propTeleportToFlume.collision = Collision.FORCE_OFF
     propTornado.visibility = Visibility.FORCE_OFF
     propWindSFX:Stop()    
@@ -35,7 +37,8 @@ end
 
 function ExitActive(success)
     propEntranceShooter.collision = Collision.FORCE_OFF
-    propSucker.collision = Collision.FORCE_ON
+    propSucker1.collision = Collision.FORCE_ON
+    propSucker2.collision = Collision.FORCE_ON
     propTeleportToFlume.collision = Collision.FORCE_ON
     propTornado.visibility = Visibility.FORCE_ON
     propWindSFX:Play()    
@@ -55,7 +58,8 @@ end
 
 function EntranceActive(ejectionVelocity)
     propEntranceShooter.collision = Collision.FORCE_ON
-    propSucker.collision = Collision.FORCE_OFF
+    propSucker1.collision = Collision.FORCE_OFF
+    propSucker2.collision = Collision.FORCE_OFF
     propTeleportToFlume.collision = Collision.FORCE_OFF
     propTornado.visibility = Visibility.FORCE_OFF
     propWindSFX:Stop()    

@@ -1,211 +1,6 @@
 Name: "Level_JumpMan"
 RootId: 9132562513265036101
 Objects {
-  Id: 5429094307745568096
-  Name: "BaseRise"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9132562513265036101
-  UnregisteredParameters {
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 15232552443457263526
-    }
-    Volume: 1.86145258
-    Falloff: -1
-    Radius: -1
-  }
-}
-Objects {
-  Id: 6833047475156071797
-  Name: "SwirlSuccess"
-  Transform {
-    Location {
-      X: 795.495239
-      Y: -300.520386
-      Z: 50
-    }
-    Rotation {
-      Yaw: 135
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9132562513265036101
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 17314135178437891372
-    }
-    Volume: 1
-    Falloff: -1
-    Radius: -1
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 10761276145236582620
-  Name: "BaseDisengage"
-  Transform {
-    Location {
-      X: 1343.50317
-      Y: -282.842651
-      Z: 125
-    }
-    Rotation {
-      Yaw: 135
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9132562513265036101
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 12187164554423389607
-    }
-    Volume: 1
-    Falloff: -1
-    Radius: -1
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 7587633514078415992
-  Name: "Reverb Zone"
-  Transform {
-    Location {
-      X: 5904.35059
-      Y: -35.3554688
-      Z: -375
-    }
-    Rotation {
-      Yaw: 90
-    }
-    Scale {
-      X: 19.3000011
-      Y: 6.4
-      Z: 8.3
-    }
-  }
-  ParentId: 9132562513265036101
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:AmbientJumpmanScore"
-      ObjectReference {
-        SelfId: 11449835060749216090
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 1017832589167727899
-    }
-    TeamSettings {
-    }
-  }
-}
-Objects {
-  Id: 11449835060749216090
-  Name: "AmbientJumpmanScore"
-  Transform {
-    Location {
-      X: 3217.33545
-      Y: 0.00122070313
-      Z: -125
-    }
-    Rotation {
-      Yaw: 135
-    }
-    Scale {
-      X: 0.400000215
-      Y: 0.399999768
-      Z: 0.0999999121
-    }
-  }
-  ParentId: 9132562513265036101
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 11190345326845936628
-    }
-    TeamSettings {
-    }
-    AudioBP {
-      Repeat: true
-      Volume: 0.161900789
-      Falloff: 3600
-      Radius: 400
-    }
-  }
-}
-Objects {
   Id: 5488969737579989806
   Name: "FlumePortalPipes"
   Transform {
@@ -217,7 +12,7 @@ Objects {
     Rotation {
       Pitch: -90
       Yaw: -170.247559
-      Roll: 168.987137
+      Roll: 168.987
     }
     Scale {
       X: 1
@@ -2021,6 +1816,8 @@ Objects {
   Name: "OverlordPlatform-jmp"
   Transform {
     Location {
+      X: 0.000345349312
+      Y: -1.27058268
     }
     Rotation {
     }
@@ -2043,50 +1840,6 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "OverlordPlatform-jmp"
-  }
-}
-Objects {
-  Id: 5145286380523102502
-  Name: "CenterFloorTile-jmp"
-  Transform {
-    Location {
-      X: 2824.99976
-      Y: -400.000732
-      Z: -550
-    }
-    Rotation {
-      Yaw: 89.9999847
-    }
-    Scale {
-      X: 2.1
-      Y: 2.1
-      Z: 2.1
-    }
-  }
-  ParentId: 9132562513265036101
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 18119898128928963492
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
   }
 }
 Objects {
@@ -2231,8 +1984,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: -225
-      Y: -500
+      X: -475.444
+      Y: -551.667236
       Z: -75
     }
     Rotation {
@@ -2274,8 +2027,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: -225
-      Y: 300
+      X: -475.443939
+      Y: 248.332565
       Z: -75
     }
     Rotation {
@@ -2317,8 +2070,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: -225
-      Y: 1100
+      X: -475.813873
+      Y: 1048.33215
       Z: -75
     }
     Rotation {
@@ -2360,8 +2113,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: -225
-      Y: 1875
+      X: -473.109344
+      Y: 1851.25
       Z: -75
     }
     Rotation {
@@ -2403,8 +2156,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: -225
-      Y: 2675
+      X: -476.157867
+      Y: 2652.00635
       Z: -75
     }
     Rotation {
@@ -2446,8 +2199,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: -250
-      Y: 3450
+      X: -474.717773
+      Y: 3449.08203
       Z: -75
     }
     Rotation {
@@ -2489,8 +2242,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: -225
-      Y: 4250
+      X: -480.007935
+      Y: 4249.10449
       Z: -75
     }
     Rotation {
@@ -2532,8 +2285,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1175
-      Y: -1300
+      X: 1127.07544
+      Y: -1351.16504
       Z: -75
     }
     Rotation {
@@ -2575,8 +2328,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 375
-      Y: -500
+      X: 327.070099
+      Y: -551.159058
       Z: -75
     }
     Rotation {
@@ -2618,8 +2371,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1175
-      Y: -500
+      X: 1127.07202
+      Y: -551.16217
       Z: -75
     }
     Rotation {
@@ -2661,8 +2414,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 375
-      Y: -1300
+      X: 327.069763
+      Y: -1351.15991
       Z: -75
     }
     Rotation {
@@ -2704,8 +2457,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1175
-      Y: 300
+      X: 1127.0708
+      Y: 248.840775
       Z: -75
     }
     Rotation {
@@ -2747,8 +2500,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 375
-      Y: 300
+      X: 327.069244
+      Y: 248.840637
       Z: -75
     }
     Rotation {
@@ -2790,8 +2543,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1175
-      Y: 1100
+      X: 1126.70581
+      Y: 1048.84912
       Z: -75
     }
     Rotation {
@@ -2833,8 +2586,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 375
-      Y: 1100
+      X: 326.699982
+      Y: 1048.84546
       Z: -75
     }
     Rotation {
@@ -2876,8 +2629,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 375
-      Y: 1875
+      X: 326.05661
+      Y: 1851.24121
       Z: -75
     }
     Rotation {
@@ -2919,8 +2672,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1175
-      Y: 1875
+      X: 1126.06567
+      Y: 1851.2522
       Z: -75
     }
     Rotation {
@@ -2962,8 +2715,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1175
-      Y: 2675
+      X: 1125.85864
+      Y: 2652.14111
       Z: -75
     }
     Rotation {
@@ -3005,8 +2758,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 375
-      Y: 2675
+      X: 325.362305
+      Y: 2652.00293
       Z: -75
     }
     Rotation {
@@ -3048,8 +2801,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 375
-      Y: 3450
+      X: 325.354736
+      Y: 3449.07397
       Z: -75
     }
     Rotation {
@@ -3091,8 +2844,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1175
-      Y: 3450
+      X: 1125.8645
+      Y: 3448.09961
       Z: -75
     }
     Rotation {
@@ -3134,8 +2887,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1175
-      Y: 4250
+      X: 1125.14697
+      Y: 4249.07959
       Z: -75
     }
     Rotation {
@@ -3177,8 +2930,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 375
-      Y: 4250
+      X: 323.448853
+      Y: 4249.08887
       Z: -75
     }
     Rotation {
@@ -3220,8 +2973,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 2750
-      Y: -1300
+      X: 2728.36108
+      Y: -1351.16223
       Z: -75
     }
     Rotation {
@@ -3263,8 +3016,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1950
-      Y: -500
+      X: 1928.35889
+      Y: -551.161194
       Z: -75
     }
     Rotation {
@@ -3306,8 +3059,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 2750
-      Y: -500
+      X: 2728.36035
+      Y: -551.162903
       Z: -75
     }
     Rotation {
@@ -3349,8 +3102,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1950
-      Y: -1300
+      X: 1928.35913
+      Y: -1351.16162
       Z: -75
     }
     Rotation {
@@ -3392,8 +3145,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 2750
-      Y: 300
+      X: 2728.36328
+      Y: 248.841125
       Z: -75
     }
     Rotation {
@@ -3435,8 +3188,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1950
-      Y: 300
+      X: 1928.36011
+      Y: 248.841125
       Z: -75
     }
     Rotation {
@@ -3478,8 +3231,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 2750
-      Y: 1100
+      X: 2728.36
+      Y: 1048.84265
       Z: -75
     }
     Rotation {
@@ -3521,8 +3274,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1950
-      Y: 1100
+      X: 1928.36011
+      Y: 1048.84302
       Z: -75
     }
     Rotation {
@@ -3564,8 +3317,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1950
-      Y: 1875
+      X: 1928.36121
+      Y: 1849.32861
       Z: -75
     }
     Rotation {
@@ -3607,8 +3360,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 2750
-      Y: 1875
+      X: 2728.36548
+      Y: 1849.33154
       Z: -75
     }
     Rotation {
@@ -3650,8 +3403,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 2750.00049
-      Y: 2675.00073
+      X: 2728.3606
+      Y: 2649.32813
       Z: -75
     }
     Rotation {
@@ -3693,8 +3446,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1950.00012
-      Y: 2675
+      X: 1930.09302
+      Y: 2648.44751
       Z: -75
     }
     Rotation {
@@ -3736,8 +3489,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1950
-      Y: 3450
+      X: 1925.86914
+      Y: 3452.0625
       Z: -75
     }
     Rotation {
@@ -3779,8 +3532,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 2750
-      Y: 3450.00073
+      X: 2725.88232
+      Y: 3452.06592
       Z: -75
     }
     Rotation {
@@ -3822,8 +3575,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 2750
-      Y: 4250.00098
+      X: 2725.88
+      Y: 4252.06299
       Z: -75
     }
     Rotation {
@@ -3865,8 +3618,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 1950.00049
-      Y: 4250
+      X: 1925.86877
+      Y: 4252.06836
       Z: -75
     }
     Rotation {
@@ -3908,8 +3661,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 4325
-      Y: -1300
+      X: 4328.25439
+      Y: -1352.96411
       Z: -75
     }
     Rotation {
@@ -3951,8 +3704,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 3525
-      Y: -500
+      X: 3528.25659
+      Y: -552.959534
       Z: -75
     }
     Rotation {
@@ -3994,8 +3747,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 4325
-      Y: -500
+      X: 4328.25586
+      Y: -552.960144
       Z: -75
     }
     Rotation {
@@ -4037,8 +3790,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 3525
-      Y: -1300
+      X: 3528.25562
+      Y: -1352.96265
       Z: -75
     }
     Rotation {
@@ -4080,8 +3833,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 4325
-      Y: 300
+      X: 4328.26514
+      Y: 247.045105
       Z: -75
     }
     Rotation {
@@ -4123,8 +3876,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 3525
-      Y: 300
+      X: 3528.25732
+      Y: 247.044434
       Z: -75
     }
     Rotation {
@@ -4166,8 +3919,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 4325
-      Y: 1100
+      X: 4328.25781
+      Y: 1047.04346
       Z: -75
     }
     Rotation {
@@ -4209,8 +3962,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 3525
-      Y: 1100
+      X: 3528.24951
+      Y: 1047.04297
       Z: -75
     }
     Rotation {
@@ -4252,8 +4005,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 3525
-      Y: 1875
+      X: 3528.24902
+      Y: 1850.50952
       Z: -75
     }
     Rotation {
@@ -4295,8 +4048,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 4325
-      Y: 1875
+      X: 4328.25
+      Y: 1850.51221
       Z: -75
     }
     Rotation {
@@ -4338,8 +4091,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 4325
-      Y: 2675
+      X: 4328.24658
+      Y: 2650.51465
       Z: -75
     }
     Rotation {
@@ -4381,8 +4134,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 3525
-      Y: 2675
+      X: 3528.24927
+      Y: 2650.51172
       Z: -75
     }
     Rotation {
@@ -4424,8 +4177,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 3525
-      Y: 3450
+      X: 3525.51807
+      Y: 3449.99194
       Z: -75
     }
     Rotation {
@@ -4467,8 +4220,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 4325
-      Y: 3450
+      X: 4325.51514
+      Y: 3449.99438
       Z: -75
     }
     Rotation {
@@ -4510,8 +4263,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 4325
-      Y: 4250
+      X: 4325.51953
+      Y: 4249.99658
       Z: -75
     }
     Rotation {
@@ -4553,8 +4306,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 3525
-      Y: 4250
+      X: 3525.52148
+      Y: 4249.99707
       Z: -75
     }
     Rotation {
@@ -4596,8 +4349,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5125
-      Y: 4250
+      X: 5128.78174
+      Y: 4245.84473
       Z: -75
     }
     Rotation {
@@ -4639,8 +4392,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5125
-      Y: 3450
+      X: 5128.78125
+      Y: 3445.84766
       Z: -75
     }
     Rotation {
@@ -4682,8 +4435,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5925
-      Y: 3450
+      X: 5928.80664
+      Y: 3445.85449
       Z: -75
     }
     Rotation {
@@ -4725,8 +4478,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5925
-      Y: 4250
+      X: 5928.79346
+      Y: 4245.84717
       Z: -75
     }
     Rotation {
@@ -4768,8 +4521,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5125
-      Y: 2675
+      X: 5128.80078
+      Y: 2650.03247
       Z: -75
     }
     Rotation {
@@ -4811,8 +4564,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5125
-      Y: 1875
+      X: 5128.79834
+      Y: 1850.02112
       Z: -75
     }
     Rotation {
@@ -4854,8 +4607,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5925
-      Y: 1875
+      X: 5928.80176
+      Y: 1850.03662
       Z: -75
     }
     Rotation {
@@ -4897,8 +4650,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5925
-      Y: 2675
+      X: 5928.7959
+      Y: 2650.05029
       Z: -75
     }
     Rotation {
@@ -4940,8 +4693,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5125
-      Y: 1100
+      X: 5127.53174
+      Y: 1048.52307
       Z: -75
     }
     Rotation {
@@ -4983,8 +4736,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5125
-      Y: 300
+      X: 5127.54395
+      Y: 248.519531
       Z: -75
     }
     Rotation {
@@ -5026,8 +4779,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5925
-      Y: 300
+      X: 5927.54785
+      Y: 248.520142
       Z: -75
     }
     Rotation {
@@ -5069,8 +4822,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5925
-      Y: 1100
+      X: 5927.55176
+      Y: 1048.52979
       Z: -75
     }
     Rotation {
@@ -5112,8 +4865,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5125
-      Y: -1300
+      X: 5127.53223
+      Y: -1351.5
       Z: -75
     }
     Rotation {
@@ -5155,8 +4908,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5125
-      Y: -500
+      X: 5127.5376
+      Y: -551.491577
       Z: -75
     }
     Rotation {
@@ -5198,8 +4951,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5925
-      Y: -500
+      X: 5927.54834
+      Y: -551.493652
       Z: -75
     }
     Rotation {
@@ -5241,8 +4994,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: 5925
-      Y: -1300
+      X: 5927.55078
+      Y: -1351.5
       Z: -75
     }
     Rotation {
@@ -5284,8 +5037,8 @@ Objects {
   Name: "Sci-fi Base Floor 01 - 4-Way"
   Transform {
     Location {
-      X: -244.515167
-      Y: -1305.48474
+      X: -474.399597
+      Y: -1353.55811
       Z: -75
     }
     Rotation {
@@ -5376,18 +5129,6 @@ Objects {
   ParentId: 9132562513265036101
   UnregisteredParameters {
     Overrides {
-      Name: "cs:MainGameController"
-      ObjectReference {
-        SelfId: 6965558101138960242
-      }
-    }
-    Overrides {
-      Name: "cs:GreenCapsule"
-      AssetReference {
-        Id: 10472903789979705492
-      }
-    }
-    Overrides {
       Name: "cs:BlueCapsule"
       AssetReference {
         Id: 14114133663481397920
@@ -5406,213 +5147,128 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:FlameGreen"
-      ObjectReference {
-        SelfId: 3336956588970473080
+      Name: "cs:ScifiBaseStairs01L"
+      AssetReference {
+        Id: 2076753024680643121
       }
     }
     Overrides {
-      Name: "cs:flameGreenTrigger"
-      ObjectReference {
-        SelfId: 1053241173469803115
+      Name: "cs:GreenCapsule"
+      AssetReference {
+        Id: 10472903789979705492
       }
     }
     Overrides {
-      Name: "cs:GreenCanisterAppear"
-      ObjectReference {
-        SelfId: 4512922542380036250
+      Name: "cs:YellowBase"
+      AssetReference {
+        Id: 11421921060521024320
       }
     }
     Overrides {
-      Name: "cs:GreenBreath"
-      ObjectReference {
-        SelfId: 14928989913209188359
+      Name: "cs:GreenBaseTemplate"
+      AssetReference {
+        Id: 12399224009993297397
+      }
+    }
+    Overrides {
+      Name: "cs:BlueBaseTemplate"
+      AssetReference {
+        Id: 5786830380303575415
+      }
+    }
+    Overrides {
+      Name: "cs:RedBaseTemplate"
+      AssetReference {
+        Id: 15232919508060689225
+      }
+    }
+    Overrides {
+      Name: "cs:FlameYellowTemplate"
+      AssetReference {
+        Id: 17194519173808693758
       }
     }
     Overrides {
       Name: "cs:AmbientJumpmanScore"
       ObjectReference {
-        SelfId: 11449835060749216090
       }
     }
     Overrides {
-      Name: "cs:FlameBlue"
-      ObjectReference {
-        SelfId: 68179953906578805
+      Name: "cs:FlameGreenTemplate"
+      AssetReference {
+        Id: 4617985881815292677
       }
     }
     Overrides {
-      Name: "cs:flameBlueTrigger"
-      ObjectReference {
-        SelfId: 8923750658510996524
+      Name: "cs:FlameRedTemplate"
+      AssetReference {
+        Id: 1675243904474070930
       }
     }
     Overrides {
-      Name: "cs:BlueBreath"
-      ObjectReference {
-        SelfId: 14634859672426499512
+      Name: "cs:YellowRailingTemplate"
+      AssetReference {
+        Id: 7813592556241234842
       }
     }
     Overrides {
-      Name: "cs:BlueCanisterAppear"
-      ObjectReference {
-        SelfId: 17058413418764017126
+      Name: "cs:GreenPlatform1Template"
+      AssetReference {
+        Id: 7086690368510480406
       }
     }
     Overrides {
-      Name: "cs:FlameRed"
-      ObjectReference {
-        SelfId: 1157179011478865946
+      Name: "cs:RedPlatform1Template"
+      AssetReference {
+        Id: 14472004475060050851
       }
     }
     Overrides {
-      Name: "cs:flameRedTrigger"
-      ObjectReference {
-        SelfId: 11552662806965724039
+      Name: "cs:BlueChainPlatform1Template"
+      AssetReference {
+        Id: 4494819497218631179
       }
     }
     Overrides {
-      Name: "cs:RedBreath"
-      ObjectReference {
-        SelfId: 9809685742098046639
+      Name: "cs:BaseRiseTemplate"
+      AssetReference {
+        Id: 6555449377122684997
       }
     }
     Overrides {
-      Name: "cs:RedCanisterAppear"
-      ObjectReference {
-        SelfId: 7781215598585827952
+      Name: "cs:JumpmanScoreTemplate"
+      AssetReference {
+        Id: 16675055024067607213
       }
     }
     Overrides {
-      Name: "cs:FlameYellow"
+      Name: "cs:MainGameController"
       ObjectReference {
-        SelfId: 8188827612800850643
+        SelfId: 6965558101138960242
       }
     }
     Overrides {
-      Name: "cs:flameYellowTrigger"
-      ObjectReference {
-        SelfId: 16677650451049277518
+      Name: "cs:SwirlSuccessSoundTemplate"
+      AssetReference {
+        Id: 16485768198499389599
       }
     }
     Overrides {
-      Name: "cs:YellowBreath"
-      ObjectReference {
-        SelfId: 9152697209134174006
+      Name: "cs:BaseDisengageSoundTemplate"
+      AssetReference {
+        Id: 10690228881228651211
       }
     }
     Overrides {
-      Name: "cs:YellowCanisterAppear"
-      ObjectReference {
-        SelfId: 10474278980338511602
+      Name: "cs:FlameBlueTemplate"
+      AssetReference {
+        Id: 7342326284010572306
       }
     }
     Overrides {
-      Name: "cs:blueBeam"
-      ObjectReference {
-        SelfId: 8054863456920481186
-      }
-    }
-    Overrides {
-      Name: "cs:blueLever"
-      ObjectReference {
-        SelfId: 6860712732248338230
-      }
-    }
-    Overrides {
-      Name: "cs:blueBaseTrigger"
-      ObjectReference {
-        SelfId: 10910709794840007749
-      }
-    }
-    Overrides {
-      Name: "cs:SwirlSuccess"
-      ObjectReference {
-        SelfId: 6833047475156071797
-      }
-    }
-    Overrides {
-      Name: "cs:BaseDisengage"
-      ObjectReference {
-        SelfId: 10761276145236582620
-      }
-    }
-    Overrides {
-      Name: "cs:redBaseTrigger"
-      ObjectReference {
-        SelfId: 15319385519744865671
-      }
-    }
-    Overrides {
-      Name: "cs:redLever"
-      ObjectReference {
-        SelfId: 8260424568808607406
-      }
-    }
-    Overrides {
-      Name: "cs:redLeverPull"
-      ObjectReference {
-        SelfId: 9126538932224519518
-      }
-    }
-    Overrides {
-      Name: "cs:redBeam"
-      ObjectReference {
-        SelfId: 16852413474830748652
-      }
-    }
-    Overrides {
-      Name: "cs:yellowBaseTrigger"
-      ObjectReference {
-        SelfId: 6558443972384531303
-      }
-    }
-    Overrides {
-      Name: "cs:yellowLever"
-      ObjectReference {
-        SelfId: 8348988820628757870
-      }
-    }
-    Overrides {
-      Name: "cs:yellowLeverPull"
-      ObjectReference {
-        SelfId: 7232838433418334898
-      }
-    }
-    Overrides {
-      Name: "cs:yellowBeam"
-      ObjectReference {
-        SelfId: 10982257888781357
-      }
-    }
-    Overrides {
-      Name: "cs:greenBaseTrigger"
-      ObjectReference {
-        SelfId: 2496361737963425051
-      }
-    }
-    Overrides {
-      Name: "cs:greenLever"
-      ObjectReference {
-        SelfId: 14946306445708431708
-      }
-    }
-    Overrides {
-      Name: "cs:greenLeverPull"
-      ObjectReference {
-        SelfId: 5108007411010076011
-      }
-    }
-    Overrides {
-      Name: "cs:greenBeam"
-      ObjectReference {
-        SelfId: 12168086492485386782
-      }
-    }
-    Overrides {
-      Name: "cs:BaseRise"
-      ObjectReference {
-        SelfId: 5429094307745568096
+      Name: "cs:CenterFloorTemplate"
+      AssetReference {
+        Id: 12336989625721732150
       }
     }
   }

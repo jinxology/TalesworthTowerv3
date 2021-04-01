@@ -15,10 +15,12 @@ local propEntrancePipeTemplate = script:GetCustomProperty("entrancePipeTemplate"
 local propShockVFX = script:GetCustomProperty("shockVFX")
 local propShockSFX = script:GetCustomProperty("fencePlayerSFX")
 local propFencePuckFXTemplate = script:GetCustomProperty("fencePuckFX")
-
+local propPuncherTemplate = script:GetCustomProperty("puncherTemplate")
+local propKickerTemplate = script:GetCustomProperty("kickerTemplate")
 local propLivePuckCount = 0
 local propLivePucks = {}
 local propLiveMugshots = {}
+local propLiveSmackers = {}
 
 propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
 
@@ -55,9 +57,48 @@ local propSpawnerZRotation = Rotation.New(0, 0, 180)
 local propPuckOffset = Vector3.New(0, 0, 750)
 
 function PlayMusic()
-    propMusic:Play()
-    Task.Wait(5)
-    propMusic:FadeOut(10)
+    Task.Spawn(function()
+        propMusic:Play()
+        Task.Wait(5)
+        propMusic:FadeOut(10)
+    end)
+end
+
+function ShockPlayerAwayFromTrigger(player, trigger)
+    if player.serverUserData.pckRebounding ~= true then
+        player.serverUserData.pckRebounding = true
+        shockVFX = World.SpawnAsset(propShockVFX)
+        shockVFX:SetWorldPosition(player:GetWorldPosition())
+        shockSFX = World.SpawnAsset(propShockSFX)
+        shockSFX:SetWorldPosition(player:GetWorldPosition())
+
+        target = shockVFX:GetCustomProperty("Capsule"):WaitForObject()
+        target:AttachToPlayer(player, "upper_spine")
+        
+        player:EnableRagdoll("lower_spine", .4)
+        player:EnableRagdoll("right_shoulder", .2)
+        player:EnableRagdoll("left_shoulder", .6)
+        player:EnableRagdoll("right_hip", .6)
+        player:EnableRagdoll("left_hip", .6)		
+        
+        impulse = trigger:GetWorldRotation() * Vector3.FORWARD * player.mass * 3200
+        impulse.z = math.max(impulse.z,  (Vector3.UP * player.mass * 1200).z)
+
+        -- print(tostring(impulse))
+        player:AddImpulse(impulse)
+        
+        shockSFX:Play()
+        shockVFX:Play()
+        shockVFX:SetSmartProperty("Displacement Speed", math.random() + 0.2 * 0.5)
+        Task.Wait(0.5)
+        shockVFX:SetSmartProperty("Displacement Speed", math.random() + 0.2 * 0.5)
+        Task.Wait(0.5)
+        shockVFX:SetSmartProperty("Displacement Speed", math.random() + 0.2 * 0.5)
+        Task.Wait(0.5)
+        shockVFX:Stop()
+        player.serverUserData.pckRebounding = false
+        player:DisableRagdoll()
+    end
 end
 
 function ConnectBumpers(container)
@@ -65,38 +106,7 @@ function ConnectBumpers(container)
         if bumper:IsA("Trigger") then
             bumper.beginOverlapEvent:Connect(function(trigger, other)
                 if other:IsA("Player") then
-                    if other.serverUserData.pckShocked ~= true then
-                        other.serverUserData.pckShocked = true
-                        shockVFX = World.SpawnAsset(propShockVFX)
-                        shockVFX:SetWorldPosition(other:GetWorldPosition())
-                        shockSFX = World.SpawnAsset(propShockSFX)
-                        shockSFX:SetWorldPosition(other:GetWorldPosition())
-
-                        target = shockVFX:GetCustomProperty("Capsule"):WaitForObject()
-                        target:AttachToPlayer(other, "upper_spine")
-                        
-                        other:EnableRagdoll("lower_spine", .4)
-                        other:EnableRagdoll("right_shoulder", .2)
-                        other:EnableRagdoll("left_shoulder", .6)
-                        other:EnableRagdoll("right_hip", .6)
-                        other:EnableRagdoll("left_hip", .6)		
-                        
-                        impulse = trigger:GetRotation() * Vector3.FORWARD * other.mass * 3200 + Vector3.UP * other.mass * 1200
-                        print(tostring(impulse))
-                        other:AddImpulse(impulse)
-                        
-                        shockSFX:Play()
-                        shockVFX:Play()
-                        shockVFX:SetSmartProperty("Displacement Speed", math.random() + 0.2 * 0.5)
-                        Task.Wait(0.5)
-                        other.serverUserData.pckShocked = false
-                        shockVFX:SetSmartProperty("Displacement Speed", math.random() + 0.2 * 0.5)
-                        Task.Wait(0.5)
-                        shockVFX:SetSmartProperty("Displacement Speed", math.random() + 0.2 * 0.5)
-                        Task.Wait(0.5)
-                        shockVFX:Stop()
-                        other:DisableRagdoll()
-                    end
+                    ShockPlayerAwayFromTrigger(other, trigger)
                 elseif other.name == "pck.puckTemplate" then
                     puckVelocity = other:GetVelocity()
                     surfaceNormal = trigger:GetRotation() * Vector3.FORWARD
@@ -106,7 +116,6 @@ function ConnectBumpers(container)
                         reflected = reflected:GetNormalized() * 1000
                     end
 
-                    print("bounced " .. tostring(puckVelocity) .. " to " .. tostring(reflected) .. " " .. puckVelocity.size .. " -> " .. reflected.size)
                     other:SetVelocity(reflected)
 
                     radius = puck:GetCustomProperty("controller"):WaitForObject().context.propRadius
@@ -201,6 +210,9 @@ function LevelBegin()
         Task.Wait(5)
         Events.BroadcastToAllPlayers("pck.RetractSpawner", index)
     end
+
+    SpawnSmackers()
+    
     
     --  lol tumbleweed
 end
@@ -209,6 +221,12 @@ function LevelEnd()
     script:SetNetworkedCustomProperty("levelState", 3)
     for _, player in ipairs(Game.GetPlayers()) do
         LevelPlayerExited(player)
+    end
+
+    propSmackerTask:Cancel()
+
+    for _, smacker in propLiveSmackers do
+        smacker.context.DismissWrangler()
     end
 end
 
@@ -240,6 +258,14 @@ function SpawnPuckAt(position, makePlayersWatch)
 end
 
 function LevelPowerDown()
+    if propSmackerTask ~= nil then
+        propSmackerTask:Cancel()
+    end
+
+    for _, smacker in ipairs(propLiveSmackers) do
+        smacker:Destroy()
+    end
+
     for puck, isLive in ipairs(propLivePucks) do
         puck:Destroy()
     end
@@ -249,9 +275,18 @@ function LevelPowerDown()
         mugshot:Destroy()
     end
 
+    if propDefenderTask ~= nil then
+        propDefenderTask:Cancel()
+    end
+
+    if propTutorialCurtain ~= nil then
+        propTutorialCurtain:Destroy()
+        propTutorialCurtain = nil
+    end
     -- World.FindObjectByName("Level.GobbleDots").visibility = Visibility.FORCE_OFF
     -- World.FindObjectByName("Level.LazyLava").visibility = Visibility.FORCE_OFF
 end
+
 
 propCheckPuckCountTask = nil
 
@@ -283,7 +318,7 @@ end
 
 function ScoreTriggerDidOverlap(trigger, other)
     if other:IsA("Player") then
-        other:AddImpulse(Vector3.New(1000000, 0, 10000))
+        ShockPlayerAwayFromTrigger(other, trigger)
     elseif other.name == "pck.puckTemplate" then
         ScorePuck(other, true)
     end
@@ -291,7 +326,7 @@ end
 
 function FailTriggerDidOverlap(trigger, other)
     if other:IsA("Player") then
-        other:AddImpulse(Vector3.New(-1000000, 0, 10000))
+        ShockPlayerAwayFromTrigger(other, trigger)
     elseif other.name == "pck.puckTemplate" then
         ScorePuck(other, false)
     end
@@ -321,4 +356,32 @@ propScoreTrigger.beginOverlapEvent:Connect(ScoreTriggerDidOverlap)
 propFailTrigger.beginOverlapEvent:Connect(FailTriggerDidOverlap)
 
 
+
+function SpawnSmackers()
+    puncher1 = World.SpawnAsset(propPuncherTemplate, { parent = script.parent, position = Vector3.New(-5200, -3200, 0) })
+    puncher2 = World.SpawnAsset(propPuncherTemplate, { parent = script.parent, position = Vector3.New(-5200, 0, 0) })
+    kicker1 = World.SpawnAsset(propKickerTemplate, { parent = script.parent, position = Vector3.New(2400, 3200, 0) })
+    kicker2 = World.SpawnAsset(propKickerTemplate, { parent = script.parent, position = Vector3.New(2400, 0, 0) })
+
+    puncher1:GetCustomProperty("controller"):WaitForObject().context.PresentWrangler()
+    puncher2:GetCustomProperty("controller"):WaitForObject().context.PresentWrangler()
+    kicker1:GetCustomProperty("controller"):WaitForObject().context.PresentWrangler()
+    kicker2:GetCustomProperty("controller"):WaitForObject().context.PresentWrangler()
+
+    propSmackerTask = Task.Spawn(function()
+        puncher1:MoveTo(puncher1:GetWorldPosition() + Vector3.New(0, 3200, 0), 3)
+        puncher2:MoveTo(puncher2:GetWorldPosition() + Vector3.New(0, 3200, 0), 3)
+        kicker1:MoveTo(kicker1:GetWorldPosition() + Vector3.New(0, -3200, 0), 3)
+        kicker2:MoveTo(kicker2:GetWorldPosition() + Vector3.New(0, -3200, 0), 3)
+        Task.Wait(6)
+        puncher1:MoveTo(puncher1:GetWorldPosition() + Vector3.New(0, -3200, 0), 3)
+        puncher2:MoveTo(puncher2:GetWorldPosition() + Vector3.New(0, -3200, 0), 3)
+        kicker1:MoveTo(kicker1:GetWorldPosition() + Vector3.New(0, 3200, 0), 3)
+        kicker2:MoveTo(kicker2:GetWorldPosition() + Vector3.New(0, 3200, 0), 3)
+        Task.Wait(6)
+    end, 6)
+    propSmackerTask.repeatCount = -1
+end
+
 ConnectBumpers(propBumpers)
+
