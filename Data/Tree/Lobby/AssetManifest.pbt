@@ -8,6 +8,51 @@ Assets {
   }
 }
 Assets {
+  Id: 18200200076012147990
+  Name: "Fantasy Castle Pillar 02 - Top"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_pillar_002_top"
+  }
+}
+Assets {
+  Id: 18197186228327347907
+  Name: "Creature Small Dinosaur Flutter Squawk 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_creature_small_dinosaur_flutter_squawk_01a_Cue_ref"
+  }
+}
+Assets {
+  Id: 17698885993987528668
+  Name: "Creature Small Dinosaur Bark 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_creature_small_dinosaur_bark_01a_Cue_ref"
+  }
+}
+Assets {
+  Id: 17439298068888343129
+  Name: "Voice Character Zombie Death Groan 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_vo_zombie_death_groan_01a_Cue_ref"
+  }
+}
+Assets {
+  Id: 17401401805426803623
+  Name: "Nature Mud Bubble Single 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_mud_bubble_single_01a_Cue_ref"
+  }
+}
+Assets {
   Id: 17137079350310296840
   Name: "Sign Font 1: G"
   PlatformAssetType: 1
@@ -35,12 +80,48 @@ Assets {
   }
 }
 Assets {
+  Id: 16760348895641702758
+  Name: "Flower Bellflower 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_foliage_gen_flower_bell_002_ref"
+  }
+}
+Assets {
+  Id: 16752997548390058292
+  Name: "Metal Old Beaten Gold 02"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_metal_gold_002"
+  }
+}
+Assets {
+  Id: 16621814471056366444
+  Name: "Ellipsoid - Truncated Wedge"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ellipsoid_truncated_wedge_001"
+  }
+}
+Assets {
   Id: 16484883515100221657
   Name: "Tech Panel 05"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_sf_gen_tech-panel_005"
+  }
+}
+Assets {
+  Id: 16434286610783612703
+  Name: "Bone Raw"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_bone_raw_001_uv_ref"
   }
 }
 Assets {
@@ -53,12 +134,48 @@ Assets {
   }
 }
 Assets {
+  Id: 16001810976215835413
+  Name: "VO Generic Male Jump Grunt 04 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_vo_generic_male_jump_grunt_04a_Cue_ref"
+  }
+}
+Assets {
   Id: 15597995346241655860
   Name: "Sign Font 1: S"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "CollegeInset_01_Text_018_ref"
+  }
+}
+Assets {
+  Id: 15355692762836007663
+  Name: "Plane 1m - One Sided"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_plane_1m_001"
+  }
+}
+Assets {
+  Id: 14818101500022479773
+  Name: "Creature Small Puppy Dog Whimper Cry 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_creature_small_cartoon_dog_whimper_cry_01a_Cue_ref"
+  }
+}
+Assets {
+  Id: 14673752559994095181
+  Name: "Marble Basic 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_gen_marble_tiles_001_uv"
   }
 }
 Assets {
@@ -80,12 +197,30 @@ Assets {
   }
 }
 Assets {
+  Id: 14452616722762075696
+  Name: "Fantasy Castle Pillar 01 Base"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_pillar_001_base"
+  }
+}
+Assets {
   Id: 14431903638307090445
   Name: "Sign Font 1: C"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "CollegeInset_01_Text_002_ref"
+  }
+}
+Assets {
+  Id: 14156856615426081636
+  Name: "Lens"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_lense_001"
   }
 }
 Assets {
@@ -125,6 +260,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12793453388884854742
+  Name: "Voice Character Zombie Snarl Attack 02 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_vo_zombie_snarl_attack_02_Cue_ref"
+  }
+}
+Assets {
   Id: 12479049602930528551
   Name: "Military Tank Modern Armorplate 02"
   PlatformAssetType: 1
@@ -140,6 +284,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_brick_stone_floor_layered_001"
+  }
+}
+Assets {
+  Id: 12343018467419829012
+  Name: "Voice Character Zombie Snarl Attack 04 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_vo_zombie_snarl_attack_04_Cue_ref"
   }
 }
 Assets {
@@ -161,12 +314,39 @@ Assets {
   }
 }
 Assets {
+  Id: 11752865664453712949
+  Name: "Voice Character Orc Attack Quick Grunt 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_char_vo_orc_attack_quick_grunt_01a_Cue_ref"
+  }
+}
+Assets {
   Id: 11413216525724972651
   Name: "Sign Font 1: P"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "CollegeInset_01_Text_015_ref"
+  }
+}
+Assets {
+  Id: 10987162044759799372
+  Name: "Voice Character Zombie Snarl Attack 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_vo_zombie_snarl_attack_01_Cue_ref"
+  }
+}
+Assets {
+  Id: 10961301416643743052
+  Name: "Voice Character Zombie Grunt Jump Attack 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_vo_zombie_grunt_jump_attack_01a_Cue_ref"
   }
 }
 Assets {
@@ -188,12 +368,30 @@ Assets {
   }
 }
 Assets {
+  Id: 10432933609158866146
+  Name: "Voice Character Orc Pain Groan 02 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_char_vo_orc_pain_groan_02a_Cue_ref"
+  }
+}
+Assets {
   Id: 10380019042932752253
   Name: "Sign Font 1 Neon Lines: S"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "CollegeNeon_Horizontal_01_Text_018"
+  }
+}
+Assets {
+  Id: 10184847056121543272
+  Name: "Basic Material"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_basic_pbr_material_001"
   }
 }
 Assets {
@@ -215,6 +413,15 @@ Assets {
   }
 }
 Assets {
+  Id: 9348120320040725071
+  Name: "Hay 02"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_fan_hay_002_uv"
+  }
+}
+Assets {
   Id: 9268326332692138019
   Name: "Sci-fi Trim 01 bend 90"
   PlatformAssetType: 1
@@ -224,12 +431,30 @@ Assets {
   }
 }
 Assets {
+  Id: 9188351867310556903
+  Name: "Fantasy Chest Lid 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_fantasy_chest_lid_001_ref"
+  }
+}
+Assets {
   Id: 8923793940830097638
   Name: "Concrete Basic 01"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_gen_concrete_001"
+  }
+}
+Assets {
+  Id: 8908970518128512887
+  Name: "Winding Squeaky Old Clock Mechanism 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_winding_squeaky_old_clock_mechanism_01a_Cue_ref"
   }
 }
 Assets {
@@ -260,6 +485,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7875882458517863090
+  Name: "Voice Character Zombie Snarl Attack 03 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_vo_zombie_snarl_attack_03a_Cue_ref"
+  }
+}
+Assets {
   Id: 7745273024190730456
   Name: "Modern Stairs Steps 01 - 8m 01"
   PlatformAssetType: 1
@@ -284,6 +518,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_plane_circle_001"
+  }
+}
+Assets {
+  Id: 7033388215135810562
+  Name: "Sphere - Half Thin"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_hemisphere_002"
   }
 }
 Assets {
@@ -323,6 +566,15 @@ Assets {
   }
 }
 Assets {
+  Id: 5869299530258896571
+  Name: "Voice Character Orc Fight Jump Grunt 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_char_vo_orc_fight_jump_grunt_01a_Cue_ref"
+  }
+}
+Assets {
   Id: 5861223425148352605
   Name: "Metal Basic Steel"
   PlatformAssetType: 2
@@ -359,6 +611,15 @@ Assets {
   }
 }
 Assets {
+  Id: 5154607475027091610
+  Name: "VO Generic Male Jump Grunt 05 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_vo_generic_male_jump_grunt_05a_Cue_ref"
+  }
+}
+Assets {
   Id: 5072562443545438121
   Name: "Trim - Curve 90\302\260 - 06m Radius"
   PlatformAssetType: 1
@@ -386,6 +647,24 @@ Assets {
   }
 }
 Assets {
+  Id: 4064316215728705266
+  Name: "VO Generic Male Jump Grunt 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_vo_generic_male_jump_grunt_01a_Cue_ref"
+  }
+}
+Assets {
+  Id: 4050437425243511619
+  Name: "Wood Raw"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_wood_raw_001_uv"
+  }
+}
+Assets {
   Id: 3844709690263076331
   Name: "Urban Fence Pole - Gate End"
   PlatformAssetType: 1
@@ -401,6 +680,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_corner_smooth_thin_001_ref"
+  }
+}
+Assets {
+  Id: 3753434009625901326
+  Name: "Fantasy Chest Base 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_fantasy_chest_001_ref"
   }
 }
 Assets {
@@ -431,12 +719,30 @@ Assets {
   }
 }
 Assets {
+  Id: 2781203817413588476
+  Name: "Voice Character Zombie Grunt Jump Attack 02 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_vo_zombie_grunt_jump_attack_02a_Cue_ref"
+  }
+}
+Assets {
   Id: 2342107764869404199
   Name: "Tornado VFX"
   PlatformAssetType: 6
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "fxbp_tornado"
+  }
+}
+Assets {
+  Id: 1898360577079242338
+  Name: "Creature Insect Bug Hiss 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_creature_insect_bug_hiss_01a_Cue_ref"
   }
 }
 Assets {

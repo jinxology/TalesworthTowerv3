@@ -80,6 +80,15 @@ Assets {
   }
 }
 Assets {
+  Id: 6519448119196567060
+  Name: "Flower Bellflower 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_foliage_gen_flower_bell_001_ref"
+  }
+}
+Assets {
   Id: 6254241289527944789
   Name: "Tip the Tower Staff"
   PlatformAssetType: 24

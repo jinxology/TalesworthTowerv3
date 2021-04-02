@@ -1,6 +1,6 @@
 Assets {
   Id: 6078735011601991389
-  Name: "lby.tipLeaderboard"
+  Name: "lby.tipJar.client"
   PlatformAssetType: 3
   TextAsset {
   }
