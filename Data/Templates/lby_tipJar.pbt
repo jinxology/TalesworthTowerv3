@@ -4157,15 +4157,13 @@ Assets {
           }
         }
         ParentId: 13459703872294740199
+        ChildIds: 13956974780672987378
+        ChildIds: 12659186122411373467
+        ChildIds: 3929730171571985671
+        ChildIds: 5504947556191608083
         ChildIds: 1163063349353207843
         ChildIds: 14761276297571500532
         ChildIds: 18362692210910473299
-        ChildIds: 13956974780672987378
-        ChildIds: 618698670773750752
-        ChildIds: 12659186122411373467
-        ChildIds: 16366271224638497719
-        ChildIds: 3929730171571985671
-        ChildIds: 5504947556191608083
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4177,126 +4175,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-      }
-      Objects {
-        Id: 1163063349353207843
-        Name: "VO Generic Male Jump Grunt 05 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 7640535971674969507
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: 500
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 5154607475027091610
-          }
-          Pitch: 500
-          Volume: 1
-          Falloff: -1
-          Radius: -1
-        }
-      }
-      Objects {
-        Id: 14761276297571500532
-        Name: "VO Generic Male Jump Grunt 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 7640535971674969507
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: 750
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 4064316215728705266
-          }
-          Pitch: 750
-          Volume: 1
-          Falloff: -1
-          Radius: -1
-        }
-      }
-      Objects {
-        Id: 18362692210910473299
-        Name: "VO Generic Male Jump Grunt 04 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 7640535971674969507
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: 1000
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 16001810976215835413
-          }
-          Pitch: 1005.02319
-          Volume: 1
-          Falloff: -1
-          Radius: -1
         }
       }
       Objects {
@@ -4317,7 +4195,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:basePitch"
-            Float: -1500
+            Float: 1000
           }
         }
         Collidable_v2 {
@@ -4333,50 +4211,11 @@ Assets {
           AudioAsset {
             Id: 14818101500022479773
           }
-          Pitch: -1304.98694
+          Pitch: 841.143799
           Volume: 1
           Falloff: -1
           Radius: -1
-        }
-      }
-      Objects {
-        Id: 618698670773750752
-        Name: "Voice Character Orc Attack Quick Grunt 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 7640535971674969507
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: 1000
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 11752865664453712949
-          }
-          Pitch: 1250
-          Volume: 1
-          Falloff: -1
-          Radius: -1
+          StopTime: 0.2
         }
       }
       Objects {
@@ -4417,11 +4256,184 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
+          StopTime: 0.3
         }
       }
       Objects {
-        Id: 16366271224638497719
-        Name: "Voice Character Orc Pain Groan 02 SFX"
+        Id: 3929730171571985671
+        Name: "Creature Small Dinosaur Bark 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 7640535971674969507
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:basePitch"
+            Float: -750
+          }
+          Overrides {
+            Name: "cs:syllables"
+            Int: 2
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 17698885993987528668
+          }
+          Pitch: -1000
+          Volume: 1
+          Falloff: -1
+          Radius: -1
+          StopTime: 0.6
+        }
+      }
+      Objects {
+        Id: 5504947556191608083
+        Name: "Creature Small Dinosaur Flutter Squawk 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 7640535971674969507
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:basePitch"
+            Float: -1250
+          }
+          Overrides {
+            Name: "cs:syllables"
+            Int: 2
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 18197186228327347907
+          }
+          Pitch: -1357.48718
+          Volume: 1
+          Falloff: -1
+          Radius: -1
+          StopTime: 0.75
+        }
+      }
+      Objects {
+        Id: 1163063349353207843
+        Name: "VO Generic Male Jump Grunt 05 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 7640535971674969507
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:basePitch"
+            Float: 500
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 5154607475027091610
+          }
+          Pitch: 500
+          Volume: 1
+          Falloff: -1
+          Radius: -1
+          StopTime: 0.2
+        }
+      }
+      Objects {
+        Id: 14761276297571500532
+        Name: "VO Generic Male Jump Grunt 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 7640535971674969507
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:basePitch"
+            Float: 750
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 4064316215728705266
+          }
+          Pitch: 750
+          Volume: 1
+          Falloff: -1
+          Radius: -1
+          StopTime: 0.2
+        }
+      }
+      Objects {
+        Id: 18362692210910473299
+        Name: "VO Generic Male Jump Grunt 04 SFX"
         Transform {
           Location {
           }
@@ -4451,92 +4463,14 @@ Assets {
         }
         AudioInstance {
           AudioAsset {
-            Id: 10432933609158866146
+            Id: 16001810976215835413
           }
-          Pitch: 1250
+          Pitch: 1005.02319
           Volume: 1
           Falloff: -1
           Radius: -1
-        }
-      }
-      Objects {
-        Id: 3929730171571985671
-        Name: "Creature Small Dinosaur Bark 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 7640535971674969507
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: -750
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 17698885993987528668
-          }
-          Pitch: -1000
-          Volume: 1
-          Falloff: -1
-          Radius: -1
-        }
-      }
-      Objects {
-        Id: 5504947556191608083
-        Name: "Creature Small Dinosaur Flutter Squawk 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 7640535971674969507
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: -1250
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 18197186228327347907
-          }
-          Pitch: -1357.48718
-          Volume: 1
-          Falloff: -1
-          Radius: -1
+          FadeOutTime: 0.2
+          StopTime: 0.2
         }
       }
       Objects {
@@ -4559,11 +4493,7 @@ Assets {
         ChildIds: 9657021723609658884
         ChildIds: 7830722855821807632
         ChildIds: 3539047184211416263
-        ChildIds: 11821624996830475742
-        ChildIds: 16620679266530380642
-        ChildIds: 11845117347062059503
         ChildIds: 12997674431028517542
-        ChildIds: 4839397260901552292
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4615,6 +4545,7 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
+          StopTime: 0.2
         }
       }
       Objects {
@@ -4656,6 +4587,7 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
+          StopTime: 0.2
         }
       }
       Objects {
@@ -4696,6 +4628,7 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
+          StopTime: 0.3
         }
       }
       Objects {
@@ -4736,130 +4669,7 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
-          FadeOutTime: 0.75
-        }
-      }
-      Objects {
-        Id: 11821624996830475742
-        Name: "Voice Character Zombie Grunt Jump Attack 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 9316475096190900407
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: 1000
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 10961301416643743052
-          }
-          Pitch: 1000
-          Volume: 1
-          Falloff: -1
-          Radius: -1
-          FadeOutTime: 0.75
-        }
-      }
-      Objects {
-        Id: 16620679266530380642
-        Name: "Voice Character Zombie Grunt Jump Attack 02 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 9316475096190900407
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: 1000
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 2781203817413588476
-          }
-          Pitch: 1000
-          Volume: 1
-          Falloff: -1
-          Radius: -1
-          FadeOutTime: 0.75
-        }
-      }
-      Objects {
-        Id: 11845117347062059503
-        Name: "Voice Character Zombie Snarl Attack 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 9316475096190900407
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: 1000
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 10987162044759799372
-          }
-          Pitch: 1000
-          Volume: 1
-          Falloff: -1
-          Radius: -1
-          FadeOutTime: 0.75
+          StopTime: 0.2
         }
       }
       Objects {
@@ -4900,48 +4710,7 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
-          FadeOutTime: 0.75
-        }
-      }
-      Objects {
-        Id: 4839397260901552292
-        Name: "Voice Character Zombie Snarl Attack 03 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 9316475096190900407
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: 1000
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 7875882458517863090
-          }
-          Pitch: 1000
-          Volume: 1
-          Falloff: -1
-          Radius: -1
-          FadeOutTime: 0.75
+          StopTime: 0.2
         }
       }
       Objects {
@@ -11942,6 +11711,42 @@ Assets {
       }
     }
     Assets {
+      Id: 14818101500022479773
+      Name: "Creature Small Puppy Dog Whimper Cry 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_creature_small_cartoon_dog_whimper_cry_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 5869299530258896571
+      Name: "Voice Character Orc Fight Jump Grunt 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_char_vo_orc_fight_jump_grunt_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 17698885993987528668
+      Name: "Creature Small Dinosaur Bark 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_creature_small_dinosaur_bark_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 18197186228327347907
+      Name: "Creature Small Dinosaur Flutter Squawk 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_creature_small_dinosaur_flutter_squawk_01a_Cue_ref"
+      }
+    }
+    Assets {
       Id: 5154607475027091610
       Name: "VO Generic Male Jump Grunt 05 SFX"
       PlatformAssetType: 7
@@ -11966,60 +11771,6 @@ Assets {
       PrimaryAsset {
         AssetType: "AudioAssetRef"
         AssetId: "sfx_vo_generic_male_jump_grunt_04a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 14818101500022479773
-      Name: "Creature Small Puppy Dog Whimper Cry 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_creature_small_cartoon_dog_whimper_cry_01a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 11752865664453712949
-      Name: "Voice Character Orc Attack Quick Grunt 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_char_vo_orc_attack_quick_grunt_01a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 5869299530258896571
-      Name: "Voice Character Orc Fight Jump Grunt 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_char_vo_orc_fight_jump_grunt_01a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 10432933609158866146
-      Name: "Voice Character Orc Pain Groan 02 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_char_vo_orc_pain_groan_02a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 17698885993987528668
-      Name: "Creature Small Dinosaur Bark 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_creature_small_dinosaur_bark_01a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 18197186228327347907
-      Name: "Creature Small Dinosaur Flutter Squawk 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_creature_small_dinosaur_flutter_squawk_01a_Cue_ref"
       }
     }
     Assets {
@@ -12059,48 +11810,12 @@ Assets {
       }
     }
     Assets {
-      Id: 10961301416643743052
-      Name: "Voice Character Zombie Grunt Jump Attack 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_vo_zombie_grunt_jump_attack_01a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 2781203817413588476
-      Name: "Voice Character Zombie Grunt Jump Attack 02 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_vo_zombie_grunt_jump_attack_02a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 10987162044759799372
-      Name: "Voice Character Zombie Snarl Attack 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_vo_zombie_snarl_attack_01_Cue_ref"
-      }
-    }
-    Assets {
       Id: 12793453388884854742
       Name: "Voice Character Zombie Snarl Attack 02 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
         AssetId: "sfx_vo_zombie_snarl_attack_02_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 7875882458517863090
-      Name: "Voice Character Zombie Snarl Attack 03 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_vo_zombie_snarl_attack_03a_Cue_ref"
       }
     }
     Assets {
