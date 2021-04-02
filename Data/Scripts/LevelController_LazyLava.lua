@@ -150,13 +150,13 @@ function LevelBegin()
     end
 
     if (playerCount == 4) then
-        maxPoints = 40
+        maxPoints = 24 --each player gets 3 per circuit
     elseif (playerCount == 3) then
-        maxPoints = 30
+        maxPoints = 18 --each player gets 3 per circuit
     elseif (playerCount == 2) then
-        maxPoints = 20
+        maxPoints = 16 -- each player gets 4 per circuit
     elseif (playerCount == 1) then
-        maxPoints = 10
+        maxPoints = 8 --player gets 4 per circuit
     end
 
     script:SetNetworkedCustomProperty("UIControllerProperty","01,"..currentPoints..","..maxPoints..",0,0")    

@@ -1,4 +1,6 @@
 local propGameController = script:GetCustomProperty("GameController"):WaitForObject()
+local propColorDialsMetalScraping = script:GetCustomProperty("ColorDialsMetalScraping")
+
 local propSide = 0  --1 Left, 2 Right
 local roomColor = 0  --1 Red, 2 Blue, 3 Green, 4 Yellow
 
@@ -32,18 +34,31 @@ local function OnPedestalInteraction(whichTrigger, other)
 	if propSide == LEFT then
 		if currentLocation > 1 then
 			propGameController.context.roomCurrentDials[roomColor] = currentLocation - 1
+			
+			--Rotate the currentDial to the correct button on the wall
+			local sfx = World.SpawnAsset(propColorDialsMetalScraping)
+			sfx:SetWorldPosition(roomDial:GetWorldPosition())
+			sfx:Play()
+			roomDial:RotateTo(rotateToPosition[propGameController.context.roomCurrentDials[roomColor]], rotationTime, true)	
 		end
 	end
 	if propSide == RIGHT then
 		if currentLocation < 5 then
 			propGameController.context.roomCurrentDials[roomColor] = currentLocation +1
+			
+			--Rotate the currentDial to the correct button on the wall
+			local sfx = World.SpawnAsset(propColorDialsMetalScraping)
+			sfx:SetWorldPosition(roomDial:GetWorldPosition())
+			sfx:Play()
+			roomDial:RotateTo(rotateToPosition[propGameController.context.roomCurrentDials[roomColor]], rotationTime, true)	
+			
+--			myTask = Task.Spawn(function()
+--				Task.Wait(rotationTime)			
+--				sfx:Stop()
+--			end)
 		end
-
 	end
 	
-	--Rotate the currentDial to the correct button on the wall
-	roomDial:RotateTo(rotateToPosition[propGameController.context.roomCurrentDials[roomColor]], rotationTime, true)	
-
 	WinConditionCheck()  --Check if changing this dial solved the room
 end
 

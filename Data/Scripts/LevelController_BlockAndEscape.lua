@@ -4,6 +4,7 @@
 --Add a Custom Property to the LevelController script called "MainGameController"
 --Drag a copy of "MainGameController" to this custom property
 propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
+local propBaeRockRumble = script:GetCustomProperty("baeRockRumble")
 
 --Place StartPlatformGroup(networked) template and record the Position and Rotation values here
 --After adding the inital values, delete the StartingPlatormGroup template out of the project
@@ -66,7 +67,6 @@ end
 
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds
 function LevelBegin()
-	propMainGameController.context.StartTimer(SECONDS_TO_COMPLETE_LEVELS, LevelFailed)
 	local forceField = folderRoot:FindDescendantByName("ForceField")
 	forceField.visibility = Visibility.FORCE_OFF
 	forceField.collision = Collision.FORCE_OFF
@@ -93,7 +93,7 @@ end
 --LevelFailed is called when the Loss Condition of the game is met
 --This function will call LevelEnd(false) on the MainGameController 
 function LevelFailed()
-	propMainGameController.context.LevelEnd(false)
+
 end
 
 --ResetLevel is called when the level needs to get reset to its original state

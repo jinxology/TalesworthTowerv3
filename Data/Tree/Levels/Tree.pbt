@@ -347,6 +347,36 @@ Objects {
   }
 }
 Objects {
+  Id: 16614468857374372845
+  Name: "LobbySean"
+  Transform {
+    Location {
+      Y: -4173.22168
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13991120868083209491
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "LobbySean"
+  }
+}
+Objects {
   Id: 13310647076426687416
   Name: "Level.GobbleDots"
   Transform {

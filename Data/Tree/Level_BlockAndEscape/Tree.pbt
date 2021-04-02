@@ -3402,6 +3402,12 @@ Objects {
         SelfId: 6343086973649214213
       }
     }
+    Overrides {
+      Name: "cs:baeRockRumble"
+      AssetReference {
+        Id: 15876711595831864388
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

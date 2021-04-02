@@ -367,14 +367,6 @@ function LevelBegin()
     if (not levelRunning) then
         levelRunning = true
 
-        towerTimerActive = true
-        if (currentLevelIndex == 1) then
-            totalTowerTime = 0
-            startingPlayerCount = 4            
-        end
-        lastTTTUpdateTime = time()
-
-        script:SetNetworkedCustomProperty("towerTimerState","true,"..totalTowerTime)    
 
         --Reset these if the players quickly restart level 1
         --script:SetNetworkedCustomProperty("UIMessage","04,false, ")
@@ -384,6 +376,16 @@ function LevelBegin()
             
         local levelControllerScript = GetCurrentLevelController()
         levelControllerScript.context.LevelBegin()    
+
+        towerTimerActive = true
+        if (currentLevelIndex == 1) then
+            totalTowerTime = 0
+            startingPlayerCount = 4            
+        end
+        lastTTTUpdateTime = time()
+
+        script:SetNetworkedCustomProperty("towerTimerState","true,"..totalTowerTime)    
+
     end
 end
 

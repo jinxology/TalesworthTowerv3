@@ -23,9 +23,7 @@ propBounceSFXTemplate = script:GetCustomProperty("bounceSFX")
 propScoreSFXTemplate = script:GetCustomProperty("scoreSFXTemplate")
 propFumbleSFXTemplate = script:GetCustomProperty("fumbleSFXTemplate")
 propInflateSFXTemplate = script:GetCustomProperty("inflateSFXTemplate")
-propCountSFXTemplate = script:GetCustomProperty("countSFXTemplate")
 
-local propMainTextLabel = script:GetCustomProperty("mainTextLabel"):WaitForObject()
 local propWeaponStandContainer = script:GetCustomProperty("weaponStands"):WaitForObject()
 local propSpawnerContainer = script:GetCustomProperty("spawners"):WaitForObject()
 local propSignContainer = script:GetCustomProperty("signContainer"):WaitForObject()
@@ -287,7 +285,6 @@ function LevelPowerUp()
 	script:SetNetworkedCustomProperty("currentScore", teamScore)
 	script:SetNetworkedCustomProperty("strikeCount", teamFailures)
 	script:SetNetworkedCustomProperty("levelStatus", 1)
-	script:SetNetworkedCustomProperty("timeRemaining", -1)
 
 	propPlayersFlumedIn = {}
 	propFlumedInTrigger.isEnabled = true
@@ -296,10 +293,6 @@ end
 
 function LevelPowerDown()
 	UnloadInterior()
-	if propTimerTask ~= nil then
-		propTimerTask:Cancel()
-		propTimerTask = nil
-	end
 	script:SetNetworkedCustomProperty("levelStatus", 0)
 end
 
@@ -309,6 +302,7 @@ function LevelBegin()
 	Task.Spawn(FlickerStartSign, 1.2)
 	Task.Spawn(ReadySteadyGo)
 	Task.Spawn(BeginFirstRound, 3)
+	Task.Wait(3)
 	-- propBopZoneTrigger.isEnabled = true
 end
 
@@ -351,7 +345,7 @@ function BuildRuleset()
 	-- if allowBopping then
 		instructions = instructions .. "• Bop a balloon into the center zone to score\n"
 		instructions = instructions .. "• Bop the wrong color balloon at your own peril\n"
-		instructions = instructions .. "• Pop extra balloons on wall mounted weapons\n"
+		instructions = instructions .. "• Pop unboppable balloons on wall mounted weapons\n"
 	-- end
 	if coloredWeapons then
 		instructions = instructions .. "• Weapons only work on balloons of the same color\n"
@@ -359,7 +353,7 @@ function BuildRuleset()
 	if armoredBalloons then
 		instructions = instructions .. "• The balloons have... armor?\n"
 	end
-	instructions = instructions .. "• Score " .. winCondition .. " points in " .. levelDuration .. " seconds to win\n"
+	instructions = instructions .. "• Score " .. winCondition .. " points as fast as you can to advance to the next floor\n"
 	script:SetNetworkedCustomProperty("levelInstructions", instructions)
 	script:SetNetworkedCustomProperty("winCondition", winCondition)
 end
@@ -411,6 +405,7 @@ function LevelVictory()
 		-- LevelPlayerExited(player)
 	end
 
+	script:SetNetworkedCustomProperty("levelStatus", 3)
 	propMainGameController.context.LevelEnd(true)
 end
 
@@ -423,35 +418,7 @@ function LevelFailed()
 end
 
 function ReadySteadyGo()
-	local	countSFX = World.SpawnAsset(propCountSFXTemplate)
-
-	countSFX.stopTime = 1
-	countSFX:Play()
-	propMainTextLabel.text = "READY"
-	Task.Wait(1)
-	countSFX:Play()
-	propMainTextLabel.text = "STEADY"
-	Task.Wait(1)
-	countSFX:Play()
-	propMainTextLabel.text = "GO"
-	Task.Wait(1)
-	countSFX.stopTime = countSFX.length
-	countSFX:Play()
-	propMainTextLabel.text = ""
-	
-	propTimerTask = Task.Spawn(CountdownRound)
-	propTimerTask.repeatInterval = 1
-	propTimerTask.repeatCount = roundDuration
-	timeRemaining = roundDuration
-end
-
-function CountdownRound()
-	script:SetNetworkedCustomProperty("timeRemaining", timeRemaining)
-	timeRemaining = timeRemaining - 1
-	
-	if timeRemaining < 0 then
-		LevelFailed()
-	end
+	Events.BroadcastToAllPlayers("bnp.readySteadyGo")
 end
 
 function FlickerStartSign()
@@ -735,30 +702,32 @@ function ScoreRound(playerName, balloonColor, scored)
 	else
 		if scored then
 			teamScore = teamScore + 1
-			script:SetNetworkedCustomProperty("currentScore", teamScore)
-			message = playerName .. " scores!"
+
+			if teamScore >= winCondition then
+				Events.BroadcastToAllPlayers("bnp.winByPlayer", playerName)
+				LevelVictory()
+			else
+				Events.BroadcastToAllPlayers("bnp.scoreByPlayer", playerName)
+				Task.Spawn(SpawnNextBalloon, 3)
+			end
 		else
-			teamFailures = teamFailures + 1
-			script:SetNetworkedCustomProperty("strikeCount", teamFailures)
-			message = playerName .. " fumbles!"
-		end
-			
-		if (teamScore >= winCondition) then
-			propMainTextLabel.text = message .. "\nTEAM WINS\nFLUME SYSTEM ENGAGED"
-			Task.Wait(3)
-			propMainTextLabel.text = ""
-			LevelVictory()
-		elseif teamFailures >= lossCondition then
-			propMainTextLabel.text = message .. "\nTEAM LOSES\nFLUME SYSTEM ENGAGED"
-			Task.Wait(3)
-			propMainTextLabel.text = ""
-			LevelFailed()
-		else
+			teamScore = math.max(teamScore - 1, 0)
+			Events.BroadcastToAllPlayers("bnp.fumbleByPlayer", playerName)
 			Task.Spawn(SpawnNextBalloon, 3)
-			propMainTextLabel.text = message
-			Task.Wait(3)
-			propMainTextLabel.text = ""
 		end
+
+		script:SetNetworkedCustomProperty("currentScore", teamScore)
+		
+		-- if (teamScore >= winCondition) then
+		-- 	propMainTextLabel.text = message .. "\nTEAM WINS\nFLUME SYSTEM ENGAGED"
+		-- 	Task.Wait(3)
+		-- 	propMainTextLabel.text = ""
+		-- elseif teamFailures >= lossCondition then
+		-- 	propMainTextLabel.text = message .. "\nTEAM LOSES\nFLUME SYSTEM ENGAGED"
+		-- 	Task.Wait(3)
+		-- 	propMainTextLabel.text = ""
+		-- 	LevelFailed()
+		-- end
 	end
 end
 

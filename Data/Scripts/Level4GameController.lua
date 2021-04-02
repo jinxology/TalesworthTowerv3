@@ -30,22 +30,28 @@ local ORANGEBIT = 32
 
 local SECONDS_TO_COMPLETE_LEVELS = 300
 
+local WALL_TEXT_SCALE = 11
+
 local REDCOLORHEX = "E80000FF"
 local BLUECOLORHEX = "0063FEFF"
 local GREENCOLORHEX = "009E43FF"
 local YELLOWCOLORHEX = "EDFA00FF"
 local ORANGECOLORHEX = "FF7219FF"
 
+local propColorDialsRoomWallText = script:GetCustomProperty("ColorDialsRoomWallText")
+
 local propRedRoom = script:GetCustomProperty("RedRoom"):WaitForObject()
 local propBlueRoom = script:GetCustomProperty("BlueRoom"):WaitForObject()
 local propGreenRoom = script:GetCustomProperty("GreenRoom"):WaitForObject()
 local propYellowRoom = script:GetCustomProperty("YellowRoom"):WaitForObject()
 
-local propRedWallText = script:GetCustomProperty("RedWallText"):WaitForObject()
-local propBlueWallText = script:GetCustomProperty("BlueWallText"):WaitForObject()
-local propGreenWallText = script:GetCustomProperty("GreenWallText"):WaitForObject()
-local propYellowWallText = script:GetCustomProperty("YellowWallText"):WaitForObject()
-						
+local wallTextConfig = {
+	{ position = Vector3.New( -2800,   825, 1850), rotation = Rotation.New(0,0,0) },
+	{ position = Vector3.New(  1050,   -25, 1850), rotation = Rotation.New(0,0,180) },
+	{ position = Vector3.New(  1050, -1875, 1850), rotation = Rotation.New(0,0,180) },
+	{ position = Vector3.New( -2800, -1175, 1850), rotation = Rotation.New(0,0,0) }
+	}
+
 local rotateToPosition = { 	Rotation.New(-90, 0, 90), --Rotating Positions Array 1,2,3,4,5
 							Rotation.New(-45, 0, 90),
 							Rotation.New(0, 0, 90),
@@ -130,23 +136,41 @@ local function SetSolutionsOnWalls()
 			randomRoom = YELLOWROOM
 		end
 		
-		addBit = 0
+		addBit = 0		
+		
 		if randomRoom == REDROOM then
-			addBit = REDBIT
-			propRedWallText.text = GetTextForWall(roomSolutions[roomIndex]) --Get actual text to be written on the Wall
-			propRedWallText:SetColor(Color.FromStandardHex(GetHexColorValues(roomIndex)))			
+			addBit = REDBIT	
+			redWallText = World.SpawnAsset(propColorDialsRoomWallText, {position = wallTextConfig[REDROOM].position, 
+																	  	rotation = wallTextConfig[REDROOM].rotation,
+																		parent = propLevelBeaconFolder,})	
+			redWallText:SetScale(redWallText:GetWorldScale() * WALL_TEXT_SCALE)
+			redWallText.text = GetTextForWall(roomSolutions[roomIndex]) 
+			redWallText:SetColor(Color.FromStandardHex(GetHexColorValues(roomIndex)))
 		elseif randomRoom == BLUEROOM then
 			addBit = BLUEBIT
-			propBlueWallText.text = GetTextForWall(roomSolutions[roomIndex]) 
-			propBlueWallText:SetColor(Color.FromStandardHex(GetHexColorValues(roomIndex)))
+			blueWallText = World.SpawnAsset(propColorDialsRoomWallText, {position = wallTextConfig[BLUEROOM].position, 
+																	  	rotation = wallTextConfig[BLUEROOM].rotation,
+																		parent = propLevelBeaconFolder,})	
+			blueWallText:SetScale(blueWallText:GetWorldScale() * WALL_TEXT_SCALE)
+			blueWallText.text = GetTextForWall(roomSolutions[roomIndex]) 
+			blueWallText:SetColor(Color.FromStandardHex(GetHexColorValues(roomIndex)))			
 		elseif randomRoom == GREENROOM then
 			addBit = GREENBIT
-			propGreenWallText.text = GetTextForWall(roomSolutions[roomIndex]) 
-			propGreenWallText:SetColor(Color.FromStandardHex(GetHexColorValues(roomIndex)))
+			greenWallText = World.SpawnAsset(propColorDialsRoomWallText, {position = wallTextConfig[GREENROOM].position, 
+																	  	rotation = wallTextConfig[GREENROOM].rotation,
+																		parent = propLevelBeaconFolder,})	
+			greenWallText:SetScale(greenWallText:GetWorldScale() * WALL_TEXT_SCALE)
+			greenWallText.text = GetTextForWall(roomSolutions[roomIndex]) 
+			greenWallText:SetColor(Color.FromStandardHex(GetHexColorValues(roomIndex)))	
+
 		elseif randomRoom == YELLOWROOM then
 			addBit = YELLOWBIT
-			propYellowWallText.text = GetTextForWall(roomSolutions[roomIndex])
-			propYellowWallText:SetColor(Color.FromStandardHex(GetHexColorValues(roomIndex)))
+			yellowWallText = World.SpawnAsset(propColorDialsRoomWallText, {position = wallTextConfig[YELLOWROOM].position, 
+																	  	rotation = wallTextConfig[YELLOWROOM].rotation,
+																		parent = propLevelBeaconFolder,})	
+			yellowWallText:SetScale(yellowWallText:GetWorldScale() * WALL_TEXT_SCALE)
+			yellowWallText.text = GetTextForWall(roomSolutions[roomIndex]) 
+			yellowWallText:SetColor(Color.FromStandardHex(GetHexColorValues(roomIndex)))				
 		end
 		randomizeBit = randomizeBit + addBit
 	end
@@ -183,11 +207,10 @@ function LevelPowerUp()
 	PickRandomDialSolutions()
 	PickRandomInitialDialLocations()
 	InitializeDialLocations()
-	SetSolutionsOnWalls()
 end
 
 function LevelBegin()
-	propMainGameController.context.StartTimer(SECONDS_TO_COMPLETE_LEVELS, LevelFailed)
+	SetSolutionsOnWalls()
 end
 
 function LevelEnd()
@@ -195,6 +218,11 @@ function LevelEnd()
 end
 
 function LevelPowerDown() 
+	redWallText:Destroy()
+	blueWallText:Destroy()
+	greenWallText:Destroy()
+	yellowWallText:Destroy()
+
 end
 
 function LevelVictory()
@@ -202,4 +230,5 @@ function LevelVictory()
 	propMainGameController.context.LevelEnd(true)
 end
 
+LevelPowerUp()
 	

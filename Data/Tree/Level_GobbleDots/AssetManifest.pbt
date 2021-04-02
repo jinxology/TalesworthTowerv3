@@ -53,15 +53,6 @@ Assets {
   }
 }
 Assets {
-  Id: 4647461794779648776
-  Name: "Sci-fi Deep Alien Morphing Machinery Loop 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_scifi_deep_alien_morphing_machinery_loop_01_Cue_ref"
-  }
-}
-Assets {
   Id: 2899842837741361229
   Name: "Concrete Tiles 01"
   PlatformAssetType: 2
