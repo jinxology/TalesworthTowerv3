@@ -183,68 +183,67 @@ local VOCAL_OVERLAP = 0.0
 local PERCUSSIVE_OVERLAP = 0
 
 function SaySomething()
-    local   words = math.random(6, 10)
+    local   words = math.random(4, 8)
     local   MAX_OPEN_SYLLABLES = 3
-    local   openSyllables = 0
-    local   open = true
     local   playingVocal = propSyllableVocalSFX[1]
     local   playingPercussive = propSyllablePercussiveSFX[1]
     
     for word = 1, words, 1 do
         propChompSFX:Play()
-        SetProperties(MinPropertiesFrom(propMouthClosedState), 0.1, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.IN)
-        Task.Wait(0.1)
+        SetProperties(MinPropertiesFrom(propMouthClosedState), 0.15, Ease3D.EasingEquation.CUBIC, Ease3D.EasingDirection.IN)
+        Task.Wait(0.15)
 
         local   syllables = math.random(4, 8)
         local   direction = Ease3D.EasingDirection.OUT
 
         for syllable = 1, syllables, 1 do
-            local   mouthStates
-            local   duration = 0.1 + math.random() * 0.15
             local   equation = Ease3D.EasingEquation.CUBIC
+            local   duration
+            local   vocalDuration
+            local   percussiveDuration
+        
+            playingVocal = propSyllableVocalSFX[math.random(#propSyllableVocalSFX)]
+            playingPercussive = propSyllablePercussiveSFX[math.random(#propSyllablePercussiveSFX)]
 
-            -- 1 in 5 syllables is longer
-            if math.random(1, 5) == 1 then
-                duration = 0.2 + math.random() * .2
-                equation = Ease3D.EasingEquation.ELASTIC
-            end
+            -- print("vocal = " .. playingVocal.length .. ", perc = " .. playingPercussive.length)
+            playingVocal.pitch = playingVocal:GetCustomProperty("basePitch") + math.random(1, 750)
+            playingPercussive.pitch = playingPercussive:GetCustomProperty("basePitch") + math.random(1, 500)
 
-            if open then
-                mouthStates = propMouthOpenWideStates
-                if openSyllables == 0 then
-                end
-                openSyllables = openSyllables + 1
-                if math.random(openSyllables, MAX_OPEN_SYLLABLES) == MAX_OPEN_SYLLABLES then
-                    open = false
-                end 
-                
-                if (not playingVocal.isPlaying) or (playingVocal.length - playingVocal.currentPlaybackTime > VOCAL_OVERLAP) then
-                    playingVocal = propSyllableVocalSFX[math.random(#propSyllableVocalSFX)]
-                    playingVocal.pitch = playingVocal:GetCustomProperty("basePitch") + math.random(1, 750)
+            vocalDuration = math.min(.75, playingVocal.length / (2 ^ ((playingVocal.pitch - 1) / 1000)))
+            percussiveDuration = math.min(.75, playingPercussive.length / (2 ^ ((playingPercussive.pitch - 1) / 1000)))
+            -- print("vocal = " .. playingVocal.length .. ", perc = " .. playingPercussive.length)
+            duration = math.max(vocalDuration, percussiveDuration)
+            
+            Task.Spawn(function()
+                local   percussiveAtEnd = false
+                local   remainingDuration
+
+                if percussiveAtEnd then
                     playingVocal:Play()
-                end 
-                if (not playingPercussive.isPlaying) or (playingPercussive.length - playingPercussive.currentPlaybackTime > PERCUSSIVE_OVERLAP) then
-                    if math.random(5) > 3 then
-                        playingPercussive = propSyllablePercussiveSFX[math.random(#propSyllablePercussiveSFX)]
-                        playingPercussive.pitch = playingPercussive:GetCustomProperty("basePitch") + math.random(1, 500)
-                        playingPercussive:Play()
-                    end
-                end 
-            else
-                openSyllables = 0
-                mouthStates = propMouthOpenNarrowStates
-                open = true
-            end
+                    remainingDuration = percussiveDuration
+                    Task.Wait(duration - remainingDuration)
+                    playingPercussive:Play()
+                else
+                    playingPercussive:Play()
+                    remainingDuration = vocalDuration
+                    Task.Wait(duration - remainingDuration)
+                    playingVocal:Play()
+                end
+            end)
             
-            if not propChompSFX.isPlaying then
-                propChompSFX.pitch = 500 + math.random(1, 750)
-                propChompSFX:Play()
-            end
+            -- if not propChompSFX.isPlaying then
+            --     if math.random(1, 5) > 4 then
+            --         propChompSFX.pitch = 500 + math.random(1, 750)
+            --         propChompSFX:Play()
+            --     end
+            -- end
             
-            SetProperties(RandomPropertiesFrom(mouthStates[math.random(#mouthStates)]), duration, equation, direction)
-            direction = Ease3D.EasingDirection.INOUT
-            
-            Task.Wait(duration)
+            -- print(time() .. " ease open " .. duration / 2.0)
+            SetProperties(RandomPropertiesFrom(propMouthOpenWideStates[math.random(#propMouthOpenWideStates)]), duration, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.OUT)
+            Task.Wait(duration / 2.0 - 0.06)
+            -- print(time() .. " ease closed " .. duration / 2.0)
+            SetProperties(RandomPropertiesFrom(propMouthOpenNarrowStates[math.random(#propMouthOpenNarrowStates)]), duration, Ease3D.EasingEquation.SINE, Ease3D.EasingDirection.IN)
+            Task.Wait(duration / 2.0 - 0.06)
         end
     end
     propChompSFX:Play()

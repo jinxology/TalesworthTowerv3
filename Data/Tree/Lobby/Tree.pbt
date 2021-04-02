@@ -86,6 +86,7 @@ Objects {
           Vector {
             X: 1742.54956
             Y: 2001.57666
+            Z: 25
           }
         }
         Overrides {

@@ -4555,6 +4555,8 @@ Assets {
           }
         }
         ParentId: 13459703872294740199
+        ChildIds: 2895518253614443435
+        ChildIds: 9657021723609658884
         ChildIds: 7830722855821807632
         ChildIds: 3539047184211416263
         ChildIds: 11821624996830475742
@@ -4562,8 +4564,6 @@ Assets {
         ChildIds: 11845117347062059503
         ChildIds: 12997674431028517542
         ChildIds: 4839397260901552292
-        ChildIds: 10086399542236208203
-        ChildIds: 7069966587164316639
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4575,6 +4575,87 @@ Assets {
         }
         Folder {
           IsGroup: true
+        }
+      }
+      Objects {
+        Id: 2895518253614443435
+        Name: "Cartoon Funny Random Farts 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 9316475096190900407
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:basePitch"
+            Float: 750
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 8800422337477001345
+          }
+          Pitch: 1083.77344
+          Volume: 1
+          Falloff: -1
+          Radius: -1
+        }
+      }
+      Objects {
+        Id: 9657021723609658884
+        Name: "Funny Fart Short 01 SFX"
+        Transform {
+          Location {
+            Z: 133.333344
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 9316475096190900407
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:basePitch"
+            Float: 500
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 15132530911516486271
+          }
+          Pitch: 1000
+          Volume: 1
+          Falloff: -1
+          Radius: -1
         }
       }
       Objects {
@@ -4655,6 +4736,7 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
+          FadeOutTime: 0.75
         }
       }
       Objects {
@@ -4695,6 +4777,7 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
+          FadeOutTime: 0.75
         }
       }
       Objects {
@@ -4735,6 +4818,7 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
+          FadeOutTime: 0.75
         }
       }
       Objects {
@@ -4775,6 +4859,7 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
+          FadeOutTime: 0.75
         }
       }
       Objects {
@@ -4815,6 +4900,7 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
+          FadeOutTime: 0.75
         }
       }
       Objects {
@@ -4855,87 +4941,7 @@ Assets {
           Volume: 1
           Falloff: -1
           Radius: -1
-        }
-      }
-      Objects {
-        Id: 10086399542236208203
-        Name: "Voice Character Zombie Snarl Attack 04 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 9316475096190900407
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: 1000
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 12343018467419829012
-          }
-          Pitch: 1000
-          Volume: 1
-          Falloff: -1
-          Radius: -1
-        }
-      }
-      Objects {
-        Id: 7069966587164316639
-        Name: "Nature Mud Bubble Single 01 SFX"
-        Transform {
-          Location {
-            Z: 133.333344
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 9316475096190900407
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: 500
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 17401401805426803623
-          }
-          Pitch: 500
-          Volume: 0.453133851
-          Falloff: -1
-          Radius: -1
+          FadeOutTime: 0.75
         }
       }
       Objects {
@@ -12017,6 +12023,24 @@ Assets {
       }
     }
     Assets {
+      Id: 8800422337477001345
+      Name: "Cartoon Funny Random Farts 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_funny_object_fart_01_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 15132530911516486271
+      Name: "Funny Fart Short 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_funny_fart_short_01a_Cue_ref"
+      }
+    }
+    Assets {
       Id: 1898360577079242338
       Name: "Creature Insect Bug Hiss 01 SFX"
       PlatformAssetType: 7
@@ -12077,24 +12101,6 @@ Assets {
       PrimaryAsset {
         AssetType: "AudioAssetRef"
         AssetId: "sfx_vo_zombie_snarl_attack_03a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 12343018467419829012
-      Name: "Voice Character Zombie Snarl Attack 04 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_vo_zombie_snarl_attack_04_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 17401401805426803623
-      Name: "Nature Mud Bubble Single 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_mud_bubble_single_01a_Cue_ref"
       }
     }
     Assets {
