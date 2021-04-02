@@ -48,6 +48,8 @@ local BLINKY_COLOR = Color.FromLinearHex("CF0000FF")
 local PINKY_COLOR = Color.FromLinearHex("FF28C7FF")
 local CLYDE_COLOR = Color.FromLinearHex("F57A00FF")
 
+local GHOST_SCALE = 2.2
+
 dotsArray = {} --The Array of all of the Dots the Server is holding with current values
 dotsDeletedArray = {}  --The Array of deleted dots the server is holding (an array of indexes)
 
@@ -109,7 +111,7 @@ function InitializeDotArray()
 	for dotIndex = 1, DOT_COUNT do 
 		dotsArray[dotIndex] = 1
 	end	
-	print("Total Dots:", #dotsArray)	
+	--print("Total Dots:", #dotsArray)	
 end
 
 function CheckDotsLeft(dotDeletedIndex)	
@@ -121,6 +123,20 @@ function CheckDotsLeft(dotDeletedIndex)
 	end
 end
 
+function UpdateDotsDeletedString(deletedDot)
+	
+	if dotsDeletedNetworkedString == "" then
+		dotsDeletedNetworkedString = deletedDot .. ""
+		SpwanGhosts()
+	else
+		dotsDeletedNetworkedString = dotsDeletedNetworkedString .. "," .. deletedDot
+	end
+	return(dotsDeletedNetworkedString)
+end
+ 
+--function PlayerNumberOfDeletes(currentPlayer, dotsDeleted)
+	--print("Player: ", currentPlayer.name, " has deleted: ", dotsDeleted, " dots!")
+--end
 
 function OnDotDeleted(dotIndex, dotPosition)
 	
@@ -146,42 +162,50 @@ function OnDotDeleted(dotIndex, dotPosition)
 
 end
 
-function UpdateDotsDeletedString(deletedDot)
-	
-	if dotsDeletedNetworkedString == "" then
-		dotsDeletedNetworkedString = deletedDot .. ""
-		SpwanGhosts()
-	else
-		dotsDeletedNetworkedString = dotsDeletedNetworkedString .. "," .. deletedDot
-	end
-	return(dotsDeletedNetworkedString)
-end
- 
-function PlayerNumberOfDeletes(currentPlayer, dotsDeleted)
-	--print("Player: ", currentPlayer.name, " has deleted: ", dotsDeleted, " dots!")
+Events.Connect("DotDeleted", OnDotDeleted)
+
+function OnPlayerDeath(inPlayer)
+	print(inPlayer.name)
+	print("Player: ", inPlayer.name, " has died.")
+	inPlayer:Die()
+	--inPlayer.Respawn()
 end
 
-Events.Connect("DotDeleted", OnDotDeleted)
---Events.Connect("PlayerNumberOfDeletes", PlayerNumberOfDeletes)
+function OnPlayerDied(player, damage)
+    print("Player " .. player.name .. " has been killed!")
+
+    -- Now, revive them after 2 seconds at a spawn point:
+  --  Task.Wait(2)
+   -- player:Respawn(Vector3.New(2550, 4100, 15625))
+end
+
 
 function SpwanGhosts()
 	inkyGhost = World.SpawnAsset(propGhost, {parent = mobFolder})
+	inkyGhost:SetScale(inkyGhost:GetWorldScale() * GHOST_SCALE)
     inkyGhostController = inkyGhost:FindChildByName("GhostController")
  	inkyGhost:SetNetworkedCustomProperty("Color", INKY_COLOR)
     inkyGhostController.context.StartGhost()
     
     blinkyGhost = World.SpawnAsset(propGhost, {parent = mobFolder})
+	blinkyGhost:SetScale(blinkyGhost:GetWorldScale() * GHOST_SCALE)
     blinkyGhostController = blinkyGhost:FindChildByName("GhostController")
    	blinkyGhost:SetNetworkedCustomProperty("Color", BLINKY_COLOR)
     blinkyGhostController.context.StartGhost()
     
     pinkyGhost = World.SpawnAsset(propGhost, {parent = mobFolder})
+	pinkyGhost:SetScale(pinkyGhost:GetWorldScale() * GHOST_SCALE)
     pinkyGhostController = pinkyGhost:FindChildByName("GhostController")
    	pinkyGhost:SetNetworkedCustomProperty("Color", PINKY_COLOR)
     pinkyGhostController.context.StartGhost()
 
     clydeGhost = World.SpawnAsset(propGhost, {parent = mobFolder})
+	clydeGhost:SetScale(clydeGhost:GetWorldScale() * GHOST_SCALE)
     clydeGhostController = clydeGhost:FindChildByName("GhostController")
    	clydeGhost:SetNetworkedCustomProperty("Color", CLYDE_COLOR)
     clydeGhostController.context.StartGhost()
+end
+
+for _, p in pairs(Game.GetPlayers()) do
+    p.diedEvent:Connect(OnPlayerDied)
 end

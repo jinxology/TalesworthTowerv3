@@ -1,4 +1,4 @@
-local propLevelController = script:GetCustomProperty("LevelController"):WaitForObject()
+--local propLevelController = script:GetCustomProperty("LevelController"):WaitForObject()
 propDotNumber = 0
 
 local dotObject = script.parent --Gets the current dot
@@ -17,5 +17,3 @@ function OnDotInteraction(whichTrigger, other)
 end
 
 dotTrigger.beginOverlapEvent:Connect(OnDotInteraction)
-
-

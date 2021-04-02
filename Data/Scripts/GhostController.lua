@@ -25,8 +25,10 @@ GHOST_FACE_RIGHT = Rotation.New(0,0,90)
 GHOST_FACE_DOWN = Rotation.New(0,0,180)
 GHOST_FACE_LEFT = Rotation.New(0,0,270)
 
+local propLevelControllerGobbleDots = script:GetCustomProperty("LevelControllerGobbleDots"):WaitForObject()
+
 local propGhost = script:GetCustomProperty("Ghost"):WaitForObject()
-local propScifiDeepAlienMorphingMachineryLoop01SFX = script:GetCustomProperty("ScifiDeepAlienMorphingMachineryLoop01SFX")
+local propGhostTrigger = propGhost:FindDescendantByName("GhostTrigger")
 
 propGhost.networkedPropertyChangedEvent:Connect(function (coreObject, propertyName)
     if propertyName == "Color" then
@@ -35,6 +37,14 @@ propGhost.networkedPropertyChangedEvent:Connect(function (coreObject, propertyNa
 end)
 
 propGhost:SetColor(propGhost:GetCustomProperty("Color"))
+
+function OnGhostInteraction(whichTrigger, player)
+	
+	if player and player:IsA("Player") then
+		print(player.name)
+		propLevelControllerGobbleDots.context.OnPlayerDeath(player)
+    end
+end
 
 function GetGhostDestinationPosition(ghostWorldPosition)
 	
@@ -149,3 +159,5 @@ function StartGhost()
 end
 
 ghost:SetPosition(ghostSpawnPoint)
+
+propGhostTrigger.beginOverlapEvent:Connect(OnGhostInteraction)
