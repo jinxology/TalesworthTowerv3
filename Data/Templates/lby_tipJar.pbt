@@ -17,6 +17,8 @@ Assets {
         }
         ParentId: 11126704810718473895
         ChildIds: 10102353570877056710
+        ChildIds: 9741958255193099208
+        ChildIds: 2324981250861504840
         ChildIds: 18089542733210464134
         ChildIds: 12337258380622830765
         Folder {
@@ -58,6 +60,94 @@ Assets {
         Script {
           ScriptAsset {
             Id: 7818383660691663155
+          }
+        }
+      }
+      Objects {
+        Id: 9741958255193099208
+        Name: "Cube"
+        Transform {
+          Location {
+            X: 339.038788
+            Y: -181.596313
+            Z: 159.624496
+          }
+          Rotation {
+            Yaw: -165.079422
+          }
+          Scale {
+            X: 3.49999833
+            Y: 3.42885232
+            Z: 3.34767962
+          }
+        }
+        ParentId: 4869051430168391141
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 12095835209017042614
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 2324981250861504840
+        Name: "Cube"
+        Transform {
+          Location {
+            X: 32.9828568
+            Y: -60.0926208
+            Z: 99.9999695
+          }
+          Rotation {
+            Yaw: -26.8301525
+          }
+          Scale {
+            X: 1.125
+            Y: 1.00000036
+            Z: 1.875
+          }
+        }
+        ParentId: 4869051430168391141
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 12095835209017042614
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
           }
         }
       }
@@ -2447,6 +2537,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "tongue"
         }
       }
       Objects {
@@ -4066,9 +4157,13 @@ Assets {
           }
         }
         ParentId: 13459703872294740199
+        ChildIds: 1163063349353207843
         ChildIds: 14761276297571500532
         ChildIds: 18362692210910473299
-        ChildIds: 1163063349353207843
+        ChildIds: 13956974780672987378
+        ChildIds: 618698670773750752
+        ChildIds: 12659186122411373467
+        ChildIds: 16366271224638497719
         ChildIds: 3929730171571985671
         ChildIds: 5504947556191608083
         Collidable_v2 {
@@ -4082,6 +4177,46 @@ Assets {
         }
         Folder {
           IsGroup: true
+        }
+      }
+      Objects {
+        Id: 1163063349353207843
+        Name: "VO Generic Male Jump Grunt 05 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 7640535971674969507
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:basePitch"
+            Float: 500
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 5154607475027091610
+          }
+          Pitch: 500
+          Volume: 1
+          Falloff: -1
+          Radius: -1
         }
       }
       Objects {
@@ -4165,8 +4300,8 @@ Assets {
         }
       }
       Objects {
-        Id: 1163063349353207843
-        Name: "VO Generic Male Jump Grunt 05 SFX"
+        Id: 13956974780672987378
+        Name: "Creature Small Puppy Dog Whimper Cry 01 SFX"
         Transform {
           Location {
           }
@@ -4182,7 +4317,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:basePitch"
-            Float: 500
+            Float: -1500
           }
         }
         Collidable_v2 {
@@ -4196,9 +4331,129 @@ Assets {
         }
         AudioInstance {
           AudioAsset {
-            Id: 5154607475027091610
+            Id: 14818101500022479773
           }
-          Pitch: 500
+          Pitch: -1304.98694
+          Volume: 1
+          Falloff: -1
+          Radius: -1
+        }
+      }
+      Objects {
+        Id: 618698670773750752
+        Name: "Voice Character Orc Attack Quick Grunt 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 7640535971674969507
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:basePitch"
+            Float: 1000
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 11752865664453712949
+          }
+          Pitch: 1250
+          Volume: 1
+          Falloff: -1
+          Radius: -1
+        }
+      }
+      Objects {
+        Id: 12659186122411373467
+        Name: "Voice Character Orc Fight Jump Grunt 01 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 7640535971674969507
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:basePitch"
+            Float: 1000
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 5869299530258896571
+          }
+          Pitch: 1250
+          Volume: 1
+          Falloff: -1
+          Radius: -1
+        }
+      }
+      Objects {
+        Id: 16366271224638497719
+        Name: "Voice Character Orc Pain Groan 02 SFX"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 7640535971674969507
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:basePitch"
+            Float: 1000
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 10432933609158866146
+          }
+          Pitch: 1250
           Volume: 1
           Falloff: -1
           Radius: -1
@@ -4300,8 +4555,6 @@ Assets {
           }
         }
         ParentId: 13459703872294740199
-        ChildIds: 397946392652173368
-        ChildIds: 2895433075310868412
         ChildIds: 7830722855821807632
         ChildIds: 3539047184211416263
         ChildIds: 11821624996830475742
@@ -4310,6 +4563,7 @@ Assets {
         ChildIds: 12997674431028517542
         ChildIds: 4839397260901552292
         ChildIds: 10086399542236208203
+        ChildIds: 7069966587164316639
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4321,86 +4575,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-      }
-      Objects {
-        Id: 397946392652173368
-        Name: "Creature Small Critter Animal Squeak Double  01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 9316475096190900407
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: -1000
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 13245481798500104416
-          }
-          Pitch: -1000
-          Volume: 1
-          Falloff: -1
-          Radius: -1
-        }
-      }
-      Objects {
-        Id: 2895433075310868412
-        Name: "Creature Small Critter Animal Squeak Single 01 SFX"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1.33333337
-            Y: 1.33333337
-            Z: 1.33333337
-          }
-        }
-        ParentId: 9316475096190900407
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:basePitch"
-            Float: -1000
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 16574121906375401758
-          }
-          Pitch: -1000
-          Volume: 1
-          Falloff: -1
-          Radius: -1
         }
       }
       Objects {
@@ -4719,6 +4893,47 @@ Assets {
           }
           Pitch: 1000
           Volume: 1
+          Falloff: -1
+          Radius: -1
+        }
+      }
+      Objects {
+        Id: 7069966587164316639
+        Name: "Nature Mud Bubble Single 01 SFX"
+        Transform {
+          Location {
+            Z: 133.333344
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1.33333337
+            Y: 1.33333337
+            Z: 1.33333337
+          }
+        }
+        ParentId: 9316475096190900407
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:basePitch"
+            Float: 500
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 17401401805426803623
+          }
+          Pitch: 500
+          Volume: 0.453133851
           Falloff: -1
           Radius: -1
         }
@@ -11541,6 +11756,15 @@ Assets {
       }
     }
     Assets {
+      Id: 12095835209017042614
+      Name: "Cube"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_cube_002"
+      }
+    }
+    Assets {
       Id: 3753434009625901326
       Name: "Fantasy Chest Base 01"
       PlatformAssetType: 1
@@ -11712,6 +11936,15 @@ Assets {
       }
     }
     Assets {
+      Id: 5154607475027091610
+      Name: "VO Generic Male Jump Grunt 05 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_vo_generic_male_jump_grunt_05a_Cue_ref"
+      }
+    }
+    Assets {
       Id: 4064316215728705266
       Name: "VO Generic Male Jump Grunt 01 SFX"
       PlatformAssetType: 7
@@ -11730,12 +11963,39 @@ Assets {
       }
     }
     Assets {
-      Id: 5154607475027091610
-      Name: "VO Generic Male Jump Grunt 05 SFX"
+      Id: 14818101500022479773
+      Name: "Creature Small Puppy Dog Whimper Cry 01 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
-        AssetId: "sfx_vo_generic_male_jump_grunt_05a_Cue_ref"
+        AssetId: "sfx_creature_small_cartoon_dog_whimper_cry_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 11752865664453712949
+      Name: "Voice Character Orc Attack Quick Grunt 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_char_vo_orc_attack_quick_grunt_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 5869299530258896571
+      Name: "Voice Character Orc Fight Jump Grunt 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_char_vo_orc_fight_jump_grunt_01a_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 10432933609158866146
+      Name: "Voice Character Orc Pain Groan 02 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_char_vo_orc_pain_groan_02a_Cue_ref"
       }
     }
     Assets {
@@ -11754,24 +12014,6 @@ Assets {
       PrimaryAsset {
         AssetType: "AudioAssetRef"
         AssetId: "sfx_creature_small_dinosaur_flutter_squawk_01a_Cue_ref"
-      }
-    }
-    Assets {
-      Id: 13245481798500104416
-      Name: "Creature Small Critter Animal Squeak Double  01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_creature_small_critter_animal_squeak_double_01a_Cue1_ref"
-      }
-    }
-    Assets {
-      Id: 16574121906375401758
-      Name: "Creature Small Critter Animal Squeak Single 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_creature_small_critter_animal_squeak_01a_Cue_ref"
       }
     }
     Assets {
@@ -11844,6 +12086,15 @@ Assets {
       PrimaryAsset {
         AssetType: "AudioAssetRef"
         AssetId: "sfx_vo_zombie_snarl_attack_04_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 17401401805426803623
+      Name: "Nature Mud Bubble Single 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_mud_bubble_single_01a_Cue_ref"
       }
     }
     Assets {
