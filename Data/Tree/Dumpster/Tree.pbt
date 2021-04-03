@@ -1,33 +1,26 @@
-Name: "HalfPipe"
-RootId: 15947145885925920448
+Name: "Dumpster"
+RootId: 17572482214223389751
 Objects {
-  Id: 11689357872275871043
-  Name: "Sphere"
+  Id: 1362627347526563371
+  Name: "Urban Dumpster 01 - Base"
   Transform {
     Location {
-      X: 89.114624
-      Y: -2377.69189
-      Z: 327.508667
+      X: 7155.35352
+      Y: -5738.76807
+      Z: -350.395966
     }
     Rotation {
-      Yaw: 66.948204
+      Pitch: 1.57414675
+      Yaw: -113.242645
+      Roll: -0.675994873
     }
     Scale {
-      X: 2.72801399
-      Y: 2.72801399
-      Z: 2.72801399
+      X: 1
+      Y: 1
+      Z: 1
     }
   }
-  ParentId: 15947145885925920448
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 1528481314929565134
-      }
-    }
-  }
-  WantsNetworking: true
+  ParentId: 17572482214223389751
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -39,7 +32,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 3250892020078520154
+      Id: 17680666645830167541
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -54,32 +47,26 @@ Objects {
   }
 }
 Objects {
-  Id: 14817592903949100869
-  Name: "Wedge - Concave Polished"
+  Id: 13531019582276926034
+  Name: "Urban Dumpster 01 - Lid"
   Transform {
     Location {
-      X: 208.886353
-      Y: -2435.39307
-      Z: 27.6913147
+      X: 7093.22949
+      Y: -5637.94971
+      Z: -181.992233
     }
     Rotation {
-      Yaw: 66.948204
+      Pitch: 1.58004808
+      Yaw: -112.736847
+      Roll: -0.662017822
     }
     Scale {
-      X: 2.72801399
-      Y: 2.72801399
-      Z: 2.72801399
+      X: 1
+      Y: 1
+      Z: 1
     }
   }
-  ParentId: 15947145885925920448
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 1528481314929565134
-      }
-    }
-  }
+  ParentId: 17572482214223389751
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -91,7 +78,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 10105911878724528536
+      Id: 628634007863935959
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -106,32 +93,26 @@ Objects {
   }
 }
 Objects {
-  Id: 303244211596250665
-  Name: "Wedge - Concave Polished"
+  Id: 12135216240649478883
+  Name: "Urban Dumpster 01 - Lid"
   Transform {
     Location {
-      X: -836.654053
-      Y: -1969.03857
-      Z: 26.3568039
+      X: 7044.24121
+      Y: -5757.4126
+      Z: -179.939972
     }
     Rotation {
-      Yaw: -115.311615
+      Pitch: 1.21616292
+      Yaw: -112.729187
+      Roll: -1.53079224
     }
     Scale {
-      X: 2.72801399
-      Y: 2.72801399
-      Z: 2.72801399
+      X: 1
+      Y: 1
+      Z: 1
     }
   }
-  ParentId: 15947145885925920448
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 1528481314929565134
-      }
-    }
-  }
+  ParentId: 17572482214223389751
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -143,7 +124,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 10105911878724528536
+      Id: 628634007863935959
     }
     Teams {
       IsTeamCollisionEnabled: true
