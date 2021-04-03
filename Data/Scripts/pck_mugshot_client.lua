@@ -12,18 +12,27 @@ local   propGrapple = script:GetCustomProperty("grapple"):WaitForObject()
 local   propTurretRotateY = script:GetCustomProperty("turretRotateY"):WaitForObject()
 local   propTurretRotateZ = script:GetCustomProperty("turretRotateZ"):WaitForObject()
 local   propTetherVFX = script:GetCustomProperty("tetherVFX"):WaitForObject()
+local   propMugshotUI = script:GetCustomProperty("mugshotUI"):WaitForObject()
+local   propTetheredUI = script:GetCustomProperty("tetheredUI"):WaitForObject()
+local   propUntetheredUI = script:GetCustomProperty("untetheredUI"):WaitForObject()
+local   propTensionUI = script:GetCustomProperty("tensionUI"):WaitForObject()
+local   propTensionMark = script:GetCustomProperty("tensionMark"):WaitForObject()
+local   propSnapMark = script:GetCustomProperty("snapMark"):WaitForObject()
+local   propStandingMark = script:GetCustomProperty("standingMark"):WaitForObject()
+local   propCrouchingMark = script:GetCustomProperty("crouchingMark"):WaitForObject()
+local   propMountedMark = script:GetCustomProperty("mountedMark"):WaitForObject()
 
-propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
-    if propertyName == "tension" then
-        propTension = coreObject:GetCustomProperty(propertyName)
-    elseif propertyName == "tetherTravel" then
-        UpdateTetherTravel(coreObject:GetCustomProperty(propertyName))
-    elseif propertyName == "targetPosition" then
-        AimAtPosition(coreObject:GetCustomProperty(propertyName))
-    elseif propertyName == "tetheredState" then
-        SetTetheredState(coreObject:GetCustomProperty(propertyName))
-    end
-end)
+function OnEquipped(equipment)
+    -- Spawn a pickup sound when a player picks up the weapon
+    propMugshotUI.visibility = Visibility.INHERIT
+    propUntetheredUI.visibility = Visibility.INHERIT
+    propTetheredUI.visibility = Visibility.FORCE_OFF
+end
+
+function OnUnequipped(equipment)
+    -- Spawn a pickup sound when a player picks up the weapon
+    -- propMugshotUI.visibility = Visibility.FORCE_OFF
+end
 
 propTensionProperties = {
     -- 1: slack (or traveling)
@@ -260,10 +269,53 @@ function SetTetheredState(tetheredState)
             propGrapple:SetPosition(Vector3.ZERO)
             propGrapple:SetRotation(Rotation.ZERO)
             UpdateTetherVFX(propTensionProperties[2])
+
+            propTetheredUI.visibility = Visibility.FORCE_OFF
+            propUntetheredUI.visibility = Visibility.INHERIT
         else
             propTetherAttachStartTime = time()
             propTetherAttachDuration = 1
+            propTetheredUI.visibility = Visibility.INHERIT
+            propUntetheredUI.visibility = Visibility.FORCE_OFF
             -- play sound
         end
     -- end
 end
+
+local   propT1Mark = 0.2
+local   propSnapTension = 2.5
+
+function UpdateTension(tension)
+    propTension = tension
+
+    if tension <= 1 then
+        propTensionUI.progress = tension * propT1Mark
+        --  color is slack
+    else
+        propTensionUI.progress = propT1Mark + ((1 - propT1Mark) * (tension - 1) / propSnapTension)
+    end
+end
+
+-- Initialize
+propEquipment.equippedEvent:Connect(OnEquipped)
+propEquipment.unequippedEvent:Connect(OnUnequipped)
+
+propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)
+    if propertyName == "tension" then
+        UpdateTension(coreObject:GetCustomProperty(propertyName))
+    elseif propertyName == "tetherTravel" then
+        UpdateTetherTravel(coreObject:GetCustomProperty(propertyName))
+    elseif propertyName == "targetPosition" then
+        AimAtPosition(coreObject:GetCustomProperty(propertyName))
+    elseif propertyName == "tetheredState" then
+        SetTetheredState(coreObject:GetCustomProperty(propertyName))
+    end
+end)
+
+-- place marks on tension bar
+
+-- propTensionMark
+-- propSnapMark
+-- propStandingMark
+-- propCrouchingMark
+-- propMountedMark
