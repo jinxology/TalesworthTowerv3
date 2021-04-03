@@ -20,7 +20,8 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 --]]
 
 -- User exposed settings properties
-local OBJECT = script:GetCustomProperty("Object"):WaitForObject()
+--local OBJECT = script:GetCustomProperty("Object"):WaitForObject()
+OBJECT = nil
 local DELAY_RANGE = script:GetCustomProperty("StartDelayRange")
 local LOCAL_SPACE = script:GetCustomProperty("LocalSpace")
 
@@ -30,10 +31,6 @@ local ROTATE_VELOCITY = script:GetCustomProperty("RotateVelocity")
 local ROTATION_MULTIPLIER = script:GetCustomProperty("RotationMultiplier")
 local SCALE_VELOCITY = script:GetCustomProperty("ScaleVelocity")
 
--- Check user properties
-if not Object.IsValid(OBJECT) then
-    error("This script needs an object to change transform properties.")
-end
 
 if DELAY_RANGE.x < 0 then
     warn("DelayRange can't be negative. Setting it to 0.")
@@ -75,4 +72,4 @@ function RandomFloat(lower, greater)
 end
 
 -- Initialize
-StartAction()
+--StartAction()

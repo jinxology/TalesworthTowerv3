@@ -1,20 +1,68 @@
 Name: "LobbySean"
 RootId: 16614468857374372845
 Objects {
+  Id: 10202056864065937710
+  Name: "Sci-fi Base Wall Interior 01 - Double Sliding Door Template"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 14633673777962383534
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Sci-fi Base Wall Interior 01 - Double Sliding Door Template"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -477.174957
+            Y: 623.22168
+            Z: -6.10351563e-05
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 15763843669171592235
+    }
+  }
+}
+Objects {
   Id: 1406295511696529939
   Name: "Grass Tall"
   Transform {
     Location {
-      X: 293.243164
-      Y: 246.615967
-      Z: -6.04154968
+      X: 359.787628
+      Y: 197.836182
+      Z: -6.04151917
     }
     Rotation {
     }
     Scale {
       X: 1
       Y: 1
-      Z: 1
+      Z: 0.853323758
     }
   }
   ParentId: 16614468857374372845
@@ -48,12 +96,14 @@ Objects {
   Name: "ThisTallSign"
   Transform {
     Location {
-      X: 334.116943
-      Y: 176.278076
+      X: 416.492065
+      Y: 131.30127
       Z: 3.05175781e-05
     }
     Rotation {
-      Yaw: -35.6184692
+      Pitch: 3.83030844
+      Yaw: -35.5773926
+      Roll: 2.92796063
     }
     Scale {
       X: 1
@@ -86,12 +136,14 @@ Objects {
   Name: "Sign Neon Arrow Outline: Single Line Basic Pointed"
   Transform {
     Location {
-      X: -87.8457184
-      Y: -9.84429741
-      Z: 168.005676
+      X: -87.0456238
+      Y: -10.9610882
+      Z: 167.894928
     }
     Rotation {
       Pitch: 90
+      Yaw: -19.4712219
+      Roll: -19.4712219
     }
     Scale {
       X: 0.165309593
@@ -100,6 +152,14 @@ Objects {
     }
   }
   ParentId: 9244846028819706679
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Font_Neon:id"
+      AssetReference {
+        Id: 12183396615709571274
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

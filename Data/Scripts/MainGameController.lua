@@ -3,21 +3,32 @@ local propLevelBeaconFail = script:GetCustomProperty("LevelBeaconFail")
 local propLevelBeaconSuccess = script:GetCustomProperty("LevelBeaconSuccess")
 local propStartPlatformGroup = script:GetCustomProperty("StartPlatformGroup")
 
+--Generic top-center timer
 local timerStarted = false
 local timeLeft = 0
 local timerEndCallback
-local playerKeyBindingListener = nil
 
-local lastCheckpointTime = 0
+--Total tower timer
 local towerTimerActive = false
 local towerTimerTask = nil
-local lastTTTUpdateTime = 0
 totalTowerTime = 0
+
+--Autostart timer
+local autostartTimerActive = false
+local autostartTimerTask = nil
+local autostartSeconds = 30 --time until the game autostarts
+totalAutostartTime = 0
+
+--High score data
 startingPlayerCount = 4
 
+--Game State
+local devMode = true
+local towerRunning = false
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
+requiredNbrPlayersReady = 4
 levelList = {
     "ShapesAndButtons",
     "BopAndPop",
@@ -30,44 +41,30 @@ levelList = {
     "GobbleDots",
     "Puckollossal"
 }
-requiredNbrPlayersReady = 4
+
+--Tower Reset 
+playerVotesForReset = {}
 resetingTower = false
 
+--Event listeners
+local playerKeyBindingListener = nil
 
  
 function OnBindingPressed(player, bindingPressed)
     --print ("pressed " .. bindingPressed)
     local ctrl = GetCurrentLevelController()
 
-    if (bindingPressed == "ability_extra_25") then 
+    if (bindingPressed == "ability_extra_25" and devMode) then 
         --Y    
         if not levelRunning and not resetingTower then
-            --local levelControllerScript = GetCurrentLevelController()
-            --levelControllerScript.context.LevelPowerUp() 
-            
-            --LevelBegin()
             StartingPlatformsActivated()
         end
     elseif (bindingPressed == "ability_extra_26") then
         --U
         ctrl.context.LevelVictory()
-        --LevelEnd(true)
     elseif (bindingPressed == "ability_extra_27") then
         --I
         ctrl.context.LevelFailed()
-        --LevelEnd(false)
-    elseif (bindingPressed == "ability_extra_35") then
-        --h
-        currentLevelIndex = 2
-    elseif (bindingPressed == "ability_extra_36") then
-        --j
-        currentLevelIndex = 3
-    elseif (bindingPressed == "ability_extra_37") then
-        --k
-        currentLevelIndex = 4
-    elseif (bindingPressed == "ability_extra_38") then
-        --l
-        currentLevelIndex = 5
     end
 end    
 
@@ -355,15 +352,41 @@ function StartingPlatformsActivated()
     end
 end
 
-function TalesworthTowerTimerTask()
+function StartingPlatformsOccupied(nbrReady)
+    if (nbrReady > 0) then
+        if (not autostartTimerActive) then
+            totalAutostartTime = autostartSeconds
+            autostartTimerActive = true
+        end
+    else
+        autostartTimerActive = false
+    end
+end
+
+function AutostartTimerTask(deltaTime)
+    if (autostartTimerActive) then
+        totalAutostartTime = totalAutostartTime - deltaTime
+        if (totalAutostartTime <= 0) then
+            StartingPlatformsActivated()
+        end
+        --print (totalAutostartTime)
+    end
+end
+
+function TalesworthTowerTimerTask(deltaTime)
     if (towerTimerActive) then
-        totalTowerTime = totalTowerTime + (time() - lastTTTUpdateTime)
-        lastTTTUpdateTime = time()
-        --print (totalTowerTime)
+        totalTowerTime = totalTowerTime + deltaTime
     end
 end
 
 function LevelBegin()
+    if (not towerRunning) then
+        towerRunning = true
+        if (currentLevelIndex == 1) then
+            print ("if all players aren't in starting room, bring them in")
+        end
+    end
+
     if (not levelRunning) then
         levelRunning = true
 
@@ -509,13 +532,24 @@ function GeneralClientToServerMessageHandler(msgType,data)
 end
 
 function ResetTower()
-    resetingTower = true
-    for _, player in pairs(Game.GetPlayers()) do
-        SetLightLevel(player, 2)
+    if (not resetingTower) then
+        resetingTower = true
+        
+        towerTimerActive = false
+        totalTowerTime = 0
+        script:SetNetworkedCustomProperty("towerTimerState","false,"..totalTowerTime)    
+
+        playerVotesForReset = {}
+        for _, player in pairs(Game.GetPlayers()) do
+            SetLightLevel(player, 2)
+        end
+        SpawnLevelBeacons(false, 3)
+        script:SetNetworkedCustomProperty("UIMessage","07, ")
+        Task.Spawn(EjectForTowerReset,3)
     end
-    SpawnLevelBeacons(false, 3)
-    script:SetNetworkedCustomProperty("UIMessage","07, ")
-    Task.Wait(3)
+end
+
+function EjectForTowerReset()
     for _, player in pairs(Game.GetPlayers()) do
         SetLightLevel(player, 4)
     end
@@ -532,41 +566,52 @@ function ResetTower()
     nextLevelindex = nil    
 
     for _, player in pairs(Game.GetPlayers()) do
-        player:SetWorldPosition(Vector3.New(125,-850,8450))
+        player:SetWorldPosition(Vector3.New(147,-929,8605))
     end   
     resetingTower = false
-
+    towerRunning = false
 end
 
-function Split(pString, pPattern)
-    local Table = {}  -- NOTE: use {n = 0} in Lua-5.0
-    local fpat = "(.-)" .. pPattern
-    local last_end = 1
-    local s, e, cap = pString:find(fpat, 1)
-    while s do
-       if s ~= 1 or cap ~= "" then
-      table.insert(Table,cap)
-       end
-       last_end = e+1
-       s, e, cap = pString:find(fpat, last_end)
+function ResetVoteHandler(player)
+    --If not already resetting tower, and the tower is actually running
+    if (not resetingTower and towerRunning) then
+        if (playerVotesForReset[player.name] ~= true) then
+            playerVotesForReset[player.name] = true
+            script:SetNetworkedCustomProperty("towerResetVote",player.name)
+        end
+
+        local allReset = true
+        for _, player in pairs(Game.GetPlayers()) do
+            if (playerVotesForReset[player.name] ~= true) then
+                allReset = false
+            end
+        end	
+        
+
+        if (allReset) then
+            ResetTower()
+        end
     end
-    if last_end <= #pString then
-       cap = pString:sub(last_end)
-       table.insert(Table, cap)
-    end
-    return Table 
 end
 
 ClearTimer()
 
 function OnPlayerJoined(player)
     player.bindingPressedEvent:Connect(OnBindingPressed)
+
+    if (towerRunning) then
+        print ("give player 60s then teleport them")
+    else
+        totalAutostartTime = autostartSeconds
+    end
+    
 end
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 
 Events.Connect("TeleportAllPlayers", TeleportAllPlayers)
 Events.Connect("SetRequiredStartPlatforms", SetRequiredStartPlatforms)
 Events.Connect("GeneralClientToServerMessage", GeneralClientToServerMessageHandler)
+Events.Connect("VoteForReset", ResetVoteHandler)
 
 --fire up first level
 Task.Wait(.1)
@@ -578,3 +623,7 @@ levelControllerScript.context.LevelPowerUp()
 towerTimerTask = Task.Spawn(TalesworthTowerTimerTask)
 towerTimerTask.repeatCount = -1
 towerTimerTask.repeatInterval = 1
+
+autostartTimerTask = Task.Spawn(AutostartTimerTask)
+autostartTimerTask.repeatCount = -1
+autostartTimerTask.repeatInterval = 1

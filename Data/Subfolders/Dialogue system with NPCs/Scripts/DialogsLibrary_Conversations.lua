@@ -28,7 +28,7 @@ function Dialogs.RegisterDialogue()
 
     id = "GenericConversation2"
     API.RegisterDialogueId(id)
-    API.AddText(id, "Just make it to the top. Fast, preferrably.", YES_ANIMATION)
+    API.AddText(id, "Just work together and make it to the top. Fast, preferrably.", YES_ANIMATION)
     API.AddText(id, "Simply sign here, stating that Talesworth Tower...", NO_ANIMATION)
     API.AddText(id, "...and its subsidiaries...", NO_ANIMATION)
     API.AddText(id, "...are not responsible for death, dismemberment, cow and/or chicken attacks, vaccuum-pipe injuries...", NO_ANIMATION)

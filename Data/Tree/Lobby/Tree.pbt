@@ -181,12 +181,11 @@ Objects {
     Location {
       X: 24.5101318
       Y: -177.600098
-      Z: 189.365234
+      Z: 148.285156
     }
     Rotation {
-      Pitch: -74.9999161
-      Yaw: -89.9998932
-      Roll: 6.59744819e-06
+      Pitch: -45.7507935
+      Yaw: -90
     }
     Scale {
       X: 4.5
@@ -350,9 +349,9 @@ Objects {
   Name: "TowerResetVectorTarget"
   Transform {
     Location {
-      X: 20.9513092
-      Y: -777.6
-      Z: 389.365234
+      X: 24.8421478
+      Y: -825.875122
+      Z: 729.482422
     }
     Rotation {
     }
@@ -401,8 +400,9 @@ Objects {
   Name: "TriggerTowerResetShooter"
   Transform {
     Location {
+      X: 12.9821777
       Y: -427.599976
-      Z: 239.365234
+      Z: 316.65625
     }
     Rotation {
     }
