@@ -1,6 +1,41 @@
 Name: "Level_ShapesAndButtons"
 RootId: 17470512920309096864
 Objects {
+  Id: 15397268061493203098
+  Name: "level1autostartTrigger"
+  Transform {
+    Location {
+      Z: 288.236938
+    }
+    Rotation {
+    }
+    Scale {
+      X: 38.1000023
+      Y: 38.1000023
+      Z: 6.20000076
+    }
+  }
+  ParentId: 17470512920309096864
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
   Id: 11561130811103538332
   Name: "antechamber"
   Transform {
@@ -3301,7 +3336,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:forceon"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -3743,7 +3778,15 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:UIVisibility"
+      String: ""
+    }
+    Overrides {
       Name: "cs:UIControllerProperty:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:UIVisibility:isrep"
       Bool: true
     }
   }

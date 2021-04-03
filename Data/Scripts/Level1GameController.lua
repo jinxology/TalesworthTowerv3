@@ -46,7 +46,7 @@ function SpawnShape()
     --Square=1, Triangle=2, Circle=3, Hexagon=4
     HideShapes()
     objTable[5]:Play()
-    Task.Wait(.1)
+    --Task.Wait(.1)
 
     local shapeIndex = math.random(#shapesLeftToSpawn)
     myShape = shapesLeftToSpawn[shapeIndex]
@@ -178,14 +178,13 @@ function LevelFailed()
 end
 
 function LevelVictory()
-    UI.PrintToScreen("Success")
-    ResetLevel()
+    script:SetNetworkedCustomProperty("UIVisibility","false")    
     propMainGameController.context.LevelEnd(true)
 end
 
 function ResetLevel() 
     successes = 0
-    HideShapes()
+    --HideShapes()
 end
 
 function LevelPowerUp() 
@@ -204,8 +203,12 @@ end
 
 function LevelPowerDown()
     for _,obj in ipairs(objTable) do
-        if (Object.IsValid(obj)) then obj:Destroy() end
+        if (Object.IsValid(obj)) then 
+            obj:Destroy() 
+            obj = nil
+        end
     end    
+    objTable = {}
 
     --Unwire events
     if (pressedColoredButtonListener ~= nil) then

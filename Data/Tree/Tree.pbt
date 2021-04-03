@@ -1699,6 +1699,7 @@ Objects {
   }
   ParentId: 1517245690180969780
   ChildIds: 17156775274313253422
+  ChildIds: 2553325091537673497
   ChildIds: 10264120089458786505
   ChildIds: 8573270706784511485
   ChildIds: 1119104670142202433
@@ -1782,7 +1783,7 @@ Objects {
     }
     Image {
       Brush {
-        Id: 12435542820319095269
+        Id: 13388933104152186131
       }
       Color {
         G: 0.830769897
@@ -1914,7 +1915,7 @@ Objects {
     }
     Image {
       Brush {
-        Id: 110266922694183738
+        Id: 3442190493143268016
       }
       Color {
         A: 0.274000019
@@ -4602,6 +4603,70 @@ Objects {
   }
 }
 Objects {
+  Id: 2553325091537673497
+  Name: "TxtAutoStart"
+  Transform {
+    Location {
+      X: -0.000386507832
+      Y: -0.000102296093
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8246799554883067851
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceon"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 1012
+    Height: 100
+    UIY: -949.337097
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "TOWER BEGINS IN "
+      Color {
+        G: 0.970330775
+        B: 0.99
+        A: 1
+      }
+      Size: 50
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      Font {
+        Id: 12517336444367163721
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+    }
+  }
+}
+Objects {
   Id: 17156775274313253422
   Name: "MainUIController"
   Transform {
@@ -4638,7 +4703,6 @@ Objects {
     Overrides {
       Name: "cs:Utility_ClientSide"
       ObjectReference {
-        SelfId: 841534158063459245
       }
     }
     Overrides {
@@ -4669,6 +4733,12 @@ Objects {
       Name: "cs:totalTime"
       ObjectReference {
         SelfId: 858783912670990656
+      }
+    }
+    Overrides {
+      Name: "cs:TxtAutoStart"
+      ObjectReference {
+        SelfId: 2553325091537673497
       }
     }
   }
@@ -4740,6 +4810,16 @@ Objects {
       String: ""
     }
     Overrides {
+      Name: "cs:autostartTimerState"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:level1autostartTrigger"
+      ObjectReference {
+        SelfId: 15397268061493203098
+      }
+    }
+    Overrides {
       Name: "cs:UIMessage:isrep"
       Bool: true
     }
@@ -4749,6 +4829,10 @@ Objects {
     }
     Overrides {
       Name: "cs:towerResetVote:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:autostartTimerState:isrep"
       Bool: true
     }
   }
