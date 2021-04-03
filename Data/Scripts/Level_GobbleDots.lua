@@ -14,8 +14,8 @@ startPlatformRotation = Rotation.New(0,0,-90)
 --To be finalized when Flumes objects and code are completed
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(3150,5900,250)
-exitFlumeRotation = Rotation.New(0,0,-90)
+exitFlumeLocation = Vector3.New(3150,5771,722)
+exitFlumeRotation = Rotation.New(0,-22.5,-90)
 entranceFlumeLocation = Vector3.New(3175,277.226,684.028)
 entranceFlumeRotation = Rotation.New(0,-15.527,90)
 entranceFlumeEjectionVelocity = 5
@@ -75,6 +75,9 @@ function LevelBegin()
             child:MoveTo(child:GetPosition() - Vector3.UP * 36, 2, true)
         end
     end
+    
+	--player = Game.GetPlayers()
+	--player[1]:Die()
 end
 
 --LevelEnd code is called when the....
@@ -168,7 +171,7 @@ function OnPlayerDeath(inPlayer)
 	print(inPlayer.name)
 	print("Player: ", inPlayer.name, " has died.")
 	inPlayer:Die()
-	--inPlayer.Respawn()
+	--inPlayer.Respawn(Vector3.New(0,0,0))
 end
 
 function OnPlayerDied(player, damage)
