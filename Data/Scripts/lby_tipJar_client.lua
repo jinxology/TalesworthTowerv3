@@ -1,3 +1,6 @@
+local propServerTipJar = script:GetCustomProperty("server"):WaitForObject()
+
+local propMimi = script:GetCustomProperty("mimi"):WaitForObject()
 local propUpperJaw = script:GetCustomProperty("upperJaw"):WaitForObject()
 local propTongueRetractor = script:GetCustomProperty("tongueRetractor"):WaitForObject()
 local propTongue = script:GetCustomProperty("tongue"):WaitForObject()
@@ -6,10 +9,9 @@ local propTongueTip = script:GetCustomProperty("tongueTip"):WaitForObject()
 local propSyllableVocalSFX = script:GetCustomProperty("syllableVocalSFX"):WaitForObject():GetChildren()
 local propSyllablePercussiveSFX = script:GetCustomProperty("syllablePercussiveSFX"):WaitForObject():GetChildren()
 local propChompSFX = script:GetCustomProperty("chompSFX"):WaitForObject()
-local Ease3D = require(script:GetCustomProperty("Ease3D"))
 
 local propNameSlots = script:GetCustomProperty("nameSlots"):WaitForObject():GetChildren() -- table of all the name slots
--- local leaderboard = script:GetCustomProperty("leaderboard")
+local leaderboard = script:GetCustomProperty("leaderboard")
 local LEADERBOARD_REFRESH_INTERVAL = script:GetCustomProperty("refreshInterval")
 
 local propMouthBooState = {
@@ -180,7 +182,9 @@ function UpdateSpring(dt, damping, frequency, goal, p0, v0)
     return { position = p1, velocity = v1 }
 end
 
-
+function PlayMimiAnimation(animation)
+    print("play mimi animation " .. animation)
+end
 
 function clearLeaderboard () -- empties out all the text from the WorldTexts
     for _, name in ipairs(propNameSlots) do
@@ -292,8 +296,8 @@ end
 
 function Idle(duration)
     while duration > 0 do
-        local   pauseDuration = math.random() * 0.3
-        local   fidgetDuration = math.min(duration - pauseDuration, 0.5 + math.random() * 1.0)
+        local   pauseDuration = math.random() * 1 + .3
+        local   fidgetDuration = math.min(duration - pauseDuration, 0.3 + math.random() * 0.3)
 
         if fidgetDuration < 0 then
             fidgetDuration = duration
@@ -353,8 +357,6 @@ function SaySomething()
 
             vocalDuration = playingVocal.stopTime
             percussiveDuration = playingPercussive.stopTime
-            -- percussiveDuration = math.min(.75, playingPercussive.length / (2 ^ ((playingPercussive.pitch - 1) / 1000))) * (math.random() * 0.4 + 0.6)
-            -- print("vocal = " .. playingVocal.length .. ", perc = " .. playingPercussive.length)
             duration = math.max(vocalDuration, percussiveDuration)
             
             Task.Spawn(function()
@@ -381,8 +383,6 @@ function SaySomething()
             --     end
             -- end
             
-            -- duration = 4
-            -- print(time() .. " ease open " .. duration / 2.0)
             if playingVocal:GetCustomProperty("syllables") == 2 then
                 SpeakSyllable({
                     propMouthOpenWideStates[math.random(#propMouthOpenWideStates)],
@@ -411,10 +411,109 @@ function TalkContinuously()
     end
 end
 
-function LookAtMimi()
+-- local propTips = require(script:GetCustomProperty("lby.codingTips"))
+local propMimiUI = script:GetCustomProperty("mimiUI"):WaitForObject()
+-- local propAdvanceTextButton = script:GetCustomProperty("nextButton"):WaitForObject()
+-- local propLeaveButton = script:GetCustomProperty("leaveButton"):WaitForObject()
+local propPerkButton = script:GetCustomProperty("perkButton"):WaitForObject()
+local propListener = nil
+
+local LOCAL_PLAYER = Game.GetLocalPlayer()
+local DEFAULT_ROTATION = Vector3.ZERO
+local ROTATE_SPEED = .5
+-- local INDICATOR_OFFSET = 180
+
+if propMimi:IsValid() then
+    DEFAULT_ROTATION = propMimi:GetWorldRotation()
+end
+
+function BeginMimiInteraction()
+    propMimiUI.visibility = Visibility.FORCE_ON
+    UI.SetCanCursorInteractWithUI(true)
+    UI.SetCursorVisible(true)
+
+    if propMimi:IsValid() then
+        propMimi.parent:LookAtContinuous(LOCAL_PLAYER, true, ROTATE_SPEED * 5)
+        Events.Broadcast("StartDialog", "Mimi", "lby.Mimi1", propMimi.id)
+    end
+
+    propListener = Game.GetLocalPlayer().bindingPressedEvent:Connect(function(player, binding)
+        if (binding == "ability_extra_40") then 
+            EndMimiInteraction()
+        end
+    end)
+    
     TalkContinuously()
 end
 
--- Task.Spawn(loadLeaderboard)
+function EndMimiInteraction()
+    if propMimi:IsValid() then
+        propMimi:RotateTo(Rotate.ZERO, ROTATE_SPEED)
+    end
+    propMimiUI.visibility = Visibility.FORCE_OFF
+    UI.SetCanCursorInteractWithUI(false)
+    UI.SetCursorVisible(false)
+    propListener:Disconnect()
+    propListener = nil
+end
 
-Events.Connect("lby.InteractMimi", LookAtMimi)
+Task.Spawn(loadLeaderboard)
+Events.Connect("lby.InteractMimi", BeginMimiInteraction)
+propPerkButton:SetPerkReference(propServerTipJar:GetCustomProperty("perk"))
+
+-- propLeaveButton.pressedEvent:Connect(EndMimiInteraction)
+
+
+-- local messages = require(script:GetCustomProperty("FunnyMessages"))
+
+-- local lines = {}
+-- for s in messages:gmatch("[^\r\n]+") do
+--     table.insert(lines, s)
+-- end
+
+-- local day = os.date("%d", os.time())
+-- print(day)
+
+-- local messageToPrint = lines[(day % #lines) + 1]
+-- propFunnyMessage.text = messageToPrint
+
+
+-- local INDICATOR_ASSET = script:GetCustomProperty("DialogIndicator")
+
+-- User exposed properties
+-- Constants
+-- local indicatorInstance = nil
+
+-- function TriggerDialogIndicator(trigger)
+--     if not Object.IsValid(indicatorInstance) then return end
+--     if trigger then
+--         indicatorInstance.visibility = Visibility.INHERIT
+--     else
+--         indicatorInstance.visibility = Visibility.FORCE_OFF
+--     end
+-- end
+
+-- function OnInteracted(whichTrigger, other)
+--     if other:IsA("Player") then
+--         if propMimi:IsValid() then
+--             Events.Broadcast("StartDialog", "Mimi", "lby.Mimi1", propMimi.id)
+--             NPCRotateToPlayer()
+--             NPCStopLoopAnimation()
+--         else
+--             Events.Broadcast("StartDialog", NAME, START_DIALOGUE_ID)
+--         end
+--         TRIGGER.isInteractable = false
+-- 	end
+-- end
+
+-- Initialize
+-- -- TRIGGER.interactedEvent:Connect(OnInteracted)
+
+-- if PLAY_ANIMATIONS then
+--     NPCPlayLoopAnimation()
+-- end
+
+-- if INDICATOR_ASSET and Object.IsValid(ANIMATED_MESH) then
+--     indicatorInstance = World.SpawnAsset(INDICATOR_ASSET, {position = ANIMATED_MESH:GetWorldPosition() + Vector3.UP * INDICATOR_OFFSET})
+--     indicatorInstance:LookAtContinuous(LOCAL_PLAYER, true)
+-- end

@@ -39,6 +39,15 @@ function Dialogs.RegisterDialogue()
     id = "GenericConversation3"
     API.RegisterDialogueId(id)
     API.AddText(id, "Great, head on in. Good luck, have fun, don't die.", WAVE_ANIMATION)
+
+    id = "lby.Mimi1"
+    API.RegisterDialogueId(id)
+    API.AddText(id, "BOO! Haha! Oh wait, did I really scare you? Wow, okay. I didn't think anyone fell for us mimics anymore.", "mimi.boo")
+    API.AddText(id, "Well, it's nice to meet you. You can just go ahead and... just, yeah... Um. Tip.", "mimi.awkward")
+    API.AddText(id, "Oh.", "mimi.blink")
+    API.AddText(id, "Well, this is awkward. You were looking for like... with the tower... like... Tips.", "mimi.talk")
+    API.AddText(id, "Uh, yeah. That's not... that's not what this is. I mean... I can try to come up with something... but I can't promise it'll be anything good.", "mimi.talk")
+    
     
 end
 
