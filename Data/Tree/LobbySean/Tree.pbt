@@ -1,6 +1,85 @@
 Name: "LobbySean"
 RootId: 16614468857374372845
 Objects {
+  Id: 15944994166182577803
+  Name: "TowerProgressSign"
+  Transform {
+    Location {
+      X: -551.083862
+      Y: 589.729492
+      Z: 333.28479
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16614468857374372845
+  ChildIds: 9114324584553932207
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceon"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 9114324584553932207
+  Name: "txtTowerInProgress"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Yaw: -89.9999924
+    }
+    Scale {
+      X: 2.94121456
+      Y: 2.94121456
+      Z: 2.94121456
+    }
+  }
+  ParentId: 15944994166182577803
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "TOWER IN PROGRESS"
+    FontAsset {
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:left"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
   Id: 16898374997326262982
   Name: "LobbyFence"
   Transform {
@@ -9241,6 +9320,170 @@ Objects {
     }
     TemplateAsset {
       Id: 15763843669171592235
+    }
+  }
+}
+Objects {
+  Id: 2165718692555384750
+  Name: "Basic Water Splash VFX"
+  Transform {
+    Location {
+      X: -4229.66797
+      Y: 989.694336
+      Z: -522.314514
+    }
+    Rotation {
+    }
+    Scale {
+      X: 14.3772478
+      Y: 14.017518
+      Z: 7.44000101
+    }
+  }
+  ParentId: 16614468857374372845
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Local Space"
+      Bool: true
+    }
+    Overrides {
+      Name: "bp:Looping"
+      Bool: true
+    }
+    Overrides {
+      Name: "bp:Loop Duration"
+      Float: 0.0848309696
+    }
+    Overrides {
+      Name: "bp:Particle Scale Multiplier"
+      Float: 1.6319412
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 2134873693972537524
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:medium"
+  }
+}
+Objects {
+  Id: 13249651671532165521
+  Name: "Waterfall Straight"
+  Transform {
+    Location {
+      X: -6332.29736
+      Y: 123.22168
+      Z: -461.585114
+    }
+    Rotation {
+      Yaw: -178.337357
+    }
+    Scale {
+      X: 1.14505422
+      Y: 3.99999976
+      Z: 3.50846362
+    }
+  }
+  ParentId: 16614468857374372845
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:waterfall:color"
+      Color {
+        G: 0.0497065745
+        B: 0.0395462364
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17064621874275756231
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 2470449509531210804
+  Name: "lake"
+  Transform {
+    Location {
+      X: -4912.01514
+      Y: 971.118652
+      Z: -983.692871
+    }
+    Rotation {
+    }
+    Scale {
+      X: 31.9868393
+      Y: 20.5481415
+      Z: 10.5310898
+    }
+  }
+  ParentId: 16614468857374372845
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 15336837002190568185
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
     }
   }
 }

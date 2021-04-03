@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17064621874275756231
+  Name: "Waterfall Straight"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "fxsm_waterfall_straight"
+  }
+}
+Assets {
   Id: 16122416315602602797
   Name: "Plane 4m - Two Sided"
   PlatformAssetType: 1

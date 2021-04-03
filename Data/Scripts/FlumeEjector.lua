@@ -9,11 +9,14 @@ function OnBeginOverlap(whichTrigger, other)
 	if other:IsA("Player") then
 		local player = other
 		
-		print("cancelling fluming task")
-		player.serverUserData.flumingTask:Cancel()
-		player.serverUserData.flumingTask = nil
-		player.serverUserData.currentFlume = nil
-		player.serverUserData.alreadyFlumedIn = nil
+		--print("cancelling fluming task")
+		
+		if (player.serverUserData.flumingTask ~= nil) then
+			player.serverUserData.flumingTask:Cancel()
+			player.serverUserData.flumingTask = nil
+			player.serverUserData.currentFlume = nil
+			player.serverUserData.alreadyFlumedIn = nil
+		end
 		
 		--local velocityVector = Vector3.New(1,0,0)
 		--local parentRotation = script.parent.rotation

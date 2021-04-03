@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17064621874275756231
+  Name: "Waterfall Straight"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "fxsm_waterfall_straight"
+  }
+}
+Assets {
   Id: 17056298086880758238
   Name: "BG Flat 010"
   PlatformAssetType: 9
@@ -212,6 +221,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameHighlighted_020"
+  }
+}
+Assets {
+  Id: 2134873693972537524
+  Name: "Basic Water Splash VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_watersplash"
   }
 }
 Assets {
