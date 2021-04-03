@@ -1,6 +1,66 @@
 Name: "Levels"
 RootId: 13991120868083209491
 Objects {
+  Id: 16404564442041701439
+  Name: "lby.tipJar"
+  Transform {
+    Location {
+      X: 1200
+      Y: -4475
+      Z: 25.000061
+    }
+    Rotation {
+      Yaw: 103.651527
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13991120868083209491
+  Collidable_v2 {
+  }
+  Visible_v2 {
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4869051430168391141
+      value {
+        Overrides {
+          Name: "Name"
+          String: "lby.tipJar"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 1200
+            Y: -4475
+            Z: 25.000061
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 103.651543
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 6508462106954975332
+    }
+  }
+}
+Objects {
   Id: 1647900999251311847
   Name: "Level.LazyLava"
   Transform {

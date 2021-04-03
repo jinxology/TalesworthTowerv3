@@ -1,6 +1,6 @@
 Assets {
-  Id: 6078735011601991389
-  Name: "lby.tipJar.client"
+  Id: 7818383660691663155
+  Name: "lby_tipJar_server"
   PlatformAssetType: 3
   TextAsset {
   }
