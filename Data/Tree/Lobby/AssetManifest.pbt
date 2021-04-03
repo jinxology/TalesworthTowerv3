@@ -143,6 +143,15 @@ Assets {
   }
 }
 Assets {
+  Id: 3806173829220646276
+  Name: "Metal Steel Hexagon 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_metal_steel_hex_001"
+  }
+}
+Assets {
   Id: 3503051390155897964
   Name: "Tech Panel 02"
   PlatformAssetType: 2

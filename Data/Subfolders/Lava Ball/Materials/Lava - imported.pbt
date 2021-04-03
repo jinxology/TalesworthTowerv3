@@ -37,7 +37,7 @@ Assets {
       }
       Overrides {
         Name: "flatten amount"
-        Float: 0
+        Float: 0.659475327
       }
       Overrides {
         Name: "roughness"
@@ -62,7 +62,7 @@ Assets {
       }
       Overrides {
         Name: "tessellation multiplier"
-        Float: 2
+        Float: 0.64533776
       }
       Overrides {
         Name: "noise scale"

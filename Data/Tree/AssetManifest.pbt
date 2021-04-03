@@ -98,6 +98,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12435542820319095269
+  Name: "Frame Outline Thin 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameOutline_022"
+  }
+}
+Assets {
   Id: 12240560098310455594
   Name: "Sign Font 1 Neon Lines: F"
   PlatformAssetType: 1
@@ -329,6 +338,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "CollegeNeon_Horizontal_01_Text_015"
+  }
+}
+Assets {
+  Id: 110266922694183738
+  Name: "BG Gradient 004"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundFlat_022"
   }
 }
 Assets {

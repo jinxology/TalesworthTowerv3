@@ -26,15 +26,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13637078664533668977
-  Name: "Prism - 3-Sided Polished"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_prism_hq_001"
-  }
-}
-Assets {
   Id: 13064445591764477429
   Name: "Frame Outlined Thick 004"
   PlatformAssetType: 9
@@ -80,15 +71,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10157635529776638510
-  Name: "Diamond - 6-Sided"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_diamond_6_sided_001"
-  }
-}
-Assets {
   Id: 8770848245513668855
   Name: "Wedge Concave - Large"
   PlatformAssetType: 1
@@ -113,15 +95,6 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_painted_metal_basic_001"
-  }
-}
-Assets {
-  Id: 7588893138122858901
-  Name: "Dust Puff VFX"
-  PlatformAssetType: 8
-  PrimaryAsset {
-    AssetType: "VfxBlueprintAssetRef"
-    AssetId: "fxbp_dust_puff"
   }
 }
 Assets {
@@ -170,30 +143,12 @@ Assets {
   }
 }
 Assets {
-  Id: 2911227906765589941
-  Name: "Glitchy Hologram"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "fxmi_hologram"
-  }
-}
-Assets {
   Id: 1955615951257317412
   Name: "Primitive Neon: Circle"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "NeonPrimitives_01_004"
-  }
-}
-Assets {
-  Id: 1137112816547272582
-  Name: "Cylinder"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cylinder_002"
   }
 }
 Assets {

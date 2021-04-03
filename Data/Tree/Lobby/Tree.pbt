@@ -1,6 +1,143 @@
 Name: "Lobby"
 RootId: 11126704810718473895
 Objects {
+  Id: 10589427155570673045
+  Name: "Antechamber"
+  Transform {
+    Location {
+      X: 439.779114
+      Y: 3676.57666
+      Z: -6.10351563e-05
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11126704810718473895
+  ChildIds: 16205526288163512306
+  ChildIds: 6642713919523018006
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 6642713919523018006
+  Name: "Antechamber floor - SNB"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 23.6
+      Y: 15.7
+      Z: 0.822
+    }
+  }
+  ParentId: 10589427155570673045
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 3806173829220646276
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    InteractWithTriggers: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+}
+Objects {
+  Id: 16205526288163512306
+  Name: "Sci-fi Base Wall 01 - Double Sliding Door Template"
+  Transform {
+    Location {
+      X: -477.920288
+      Y: -3600
+      Z: 110.393524
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 10589427155570673045
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 8437128731131810625
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Sci-fi Base Wall 01 - Double Sliding Door Template"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -375.149841
+            Y: -800
+            Z: 6.38989258
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 9630214704950052691
+    }
+  }
+}
+Objects {
   Id: 10321528496889073699
   Name: "Reset Tower Flume"
   Transform {
@@ -79,12 +216,11 @@ Objects {
     Location {
       X: 24.5101318
       Y: -177.600098
-      Z: 189.365234
+      Z: 148.285156
     }
     Rotation {
-      Pitch: -74.9999161
-      Yaw: -89.9998932
-      Roll: 6.59744819e-06
+      Pitch: -45.7507935
+      Yaw: -90
     }
     Scale {
       X: 4.5
@@ -248,9 +384,9 @@ Objects {
   Name: "TowerResetVectorTarget"
   Transform {
     Location {
-      X: 20.9513092
-      Y: -777.6
-      Z: 389.365234
+      X: 24.8421478
+      Y: -825.875122
+      Z: 729.482422
     }
     Rotation {
     }
@@ -299,8 +435,9 @@ Objects {
   Name: "TriggerTowerResetShooter"
   Transform {
     Location {
+      X: 12.9821777
       Y: -427.599976
-      Z: 239.365234
+      Z: 316.65625
     }
     Rotation {
     }
