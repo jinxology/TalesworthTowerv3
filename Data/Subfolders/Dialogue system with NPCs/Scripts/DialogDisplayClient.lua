@@ -146,7 +146,12 @@ function ProcessDialog(dialogTable, id)
             ResizePanelBasedOnText(textTable.text)
 
             if Object.IsValid(currentAnimatedMesh) and textTable.animation then
-                currentAnimatedMesh:PlayAnimation(textTable.animation)
+                -- DTB - What if it's not an animated mesh tho
+                if currentAnimatedMesh.name == "mimi" then
+                    currentAnimatedMesh:GetCustomProperty("controller"):WaitForObject().context.PlayMimiAnimation(textTable.animation)
+                else
+                    currentAnimatedMesh:PlayAnimation(textTable.animation)
+                end
             end
 
             if textTable.rewardTable then

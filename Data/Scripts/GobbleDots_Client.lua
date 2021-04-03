@@ -85,7 +85,6 @@ function InitializeBoard()
 	end	
 	totalDots = #dotsArrayList
 	countOfDeletedDots = 0
-	
 end
 
 propLevelGobbleDots.networkedPropertyChangedEvent:Connect(function(coreObject, propertyName)

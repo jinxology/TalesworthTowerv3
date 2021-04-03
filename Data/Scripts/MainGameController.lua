@@ -31,8 +31,8 @@ nextLevelIndex = nil
 requiredNbrPlayersReady = 4
 levelList = {
     "ShapesAndButtons",
-    "JumpMan",      -- hitting wall on entrance; misplaced or needs hole in wall
     "BopAndPop",
+    "JumpMan",      -- hitting wall on entrance; misplaced or needs hole in wall
     "FarmGallery",
     "ColorDials",
     "BlockAndEscape",
