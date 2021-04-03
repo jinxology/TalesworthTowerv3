@@ -26,6 +26,15 @@ Assets {
   }
 }
 Assets {
+  Id: 15355692762836007663
+  Name: "Plane 1m - One Sided"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_plane_1m_001"
+  }
+}
+Assets {
   Id: 13304908840312358092
   Name: "Fantasy Castle Pillar 01 Top"
   PlatformAssetType: 1
@@ -194,6 +203,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_wedge_curved_convex_001"
+  }
+}
+Assets {
+  Id: 1854457264003910494
+  Name: "Teko Bold"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "TekoBold_ref"
   }
 }
 Assets {

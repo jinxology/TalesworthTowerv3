@@ -18,6 +18,20 @@ local towerTimerActive = false
 local lastTTTUpdateTime = 0
 local towerTimerTask = nil
 
+function OnBindingPressed(player, bindingPressed)
+    --print ("pressed " .. bindingPressed)
+
+    if (bindingPressed == "ability_extra_36") then 
+        Events.BroadcastToServer("VoteForReset",Game.GetLocalPlayer())
+    end
+
+end
+
+function OnPlayerJoined(player)
+    player.bindingPressedEvent:Connect(OnBindingPressed)
+end
+Game.playerJoinedEvent:Connect(OnPlayerJoined)
+
 function IncomingUIMessage(coreObject, propertyName)
     
     local msg = propMainGameController:GetCustomProperty(propertyName)
@@ -54,6 +68,8 @@ function IncomingUIMessage(coreObject, propertyName)
         end
     elseif (propertyName == "towerTimerState") then 
         StartAndUpdateClientTowerTimer(msgData[1],msgData[2])
+    elseif (propertyName == "towerResetVote") then 
+        ShowSmallUIMessage(msgData[1].." voted to reset the tower")
     end
 end
 
@@ -61,9 +77,15 @@ function StartAndUpdateClientTowerTimer(started, timeSoFar)
     if (propMainTimerPanel.visibility == Visibility.FORCE_OFF) then
         propMainTimerPanel.visibility = Visibility.FORCE_ON
     end
+    
     towerTimerActive = toboolean(started)    
     totalTowerTime = timeSoFar
-    lastTTTUpdateTime = time()
+
+    --when disabling, set the time one last time
+    if (not towerTimerActive) then
+        propTotalTime.text = FormatTime(totalTowerTime)    
+    end
+
 end
 
 function FormatTime(inTime)
@@ -75,11 +97,9 @@ function FormatTime(inTime)
     return minStr..":"..secStr
 end
 
-function TalesworthTowerTimerTask()
+function TalesworthTowerTimerTask(deltaTime)
     if (towerTimerActive) then
-        totalTowerTime = totalTowerTime + (time() - lastTTTUpdateTime)
-        lastTTTUpdateTime = time()
-        --print (totalTowerTime)
+        totalTowerTime = totalTowerTime + deltaTime
         propTotalTime.text = FormatTime(totalTowerTime)
     end
 end
