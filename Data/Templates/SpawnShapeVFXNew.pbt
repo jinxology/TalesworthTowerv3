@@ -1,62 +1,58 @@
 Assets {
-  Id: 17848407372247716833
-  Name: "SNBShapeSpawnVFX"
+  Id: 16766320456518409069
+  Name: "SpawnShapeVFXNew"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 8326227634731393982
+      RootId: 4092690203436040764
       Objects {
-        Id: 8326227634731393982
-        Name: "SpawnVFX"
+        Id: 4092690203436040764
+        Name: "SpawnShapeVFXNew"
         Transform {
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 3.332057
+            Y: 10.3946323
+            Z: 5.46228886
           }
         }
-        ParentId: 9167470617022525336
+        ParentId: 4781671109827199097
         UnregisteredParameters {
+          Overrides {
+            Name: "bp:Ring"
+            Bool: false
+          }
+          Overrides {
+            Name: "bp:Particle Scale Multiplier"
+            Float: 1.38344121
+          }
+          Overrides {
+            Name: "bp:Spiral Speed"
+            Float: 1.88044119
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 17.359129
+          }
+          Overrides {
+            Name: "bp:Ring Life"
+            Float: 2.62919593
+          }
+          Overrides {
+            Name: "bp:Local Space"
+            Bool: true
+          }
           Overrides {
             Name: "bp:Color"
             Color {
-              R: 1
-              G: 0.992053
-              B: 0.7
+              R: 0.399999976
+              G: 1
+              B: 0.964238524
               A: 1
             }
           }
           Overrides {
-            Name: "bp:Density"
-            Float: 1.66137147
-          }
-          Overrides {
-            Name: "bp:Particle Scale Multiplier"
-            Float: 1.17670298
-          }
-          Overrides {
-            Name: "bp:Radius"
-            Float: 2.20022464
-          }
-          Overrides {
-            Name: "bp:Wind Speed"
-            Vector {
-              X: 5
-              Y: 5
-              Z: 5
-            }
-          }
-          Overrides {
-            Name: "bp:Gravity"
-            Float: 0
-          }
-          Overrides {
-            Name: "bp:Radial Velocity Min"
-            Float: 2.95682383
-          }
-          Overrides {
-            Name: "bp:Upward Velocity Min"
-            Float: 0.909555435
+            Name: "bp:Life"
+            Float: 2.16022539
           }
         }
         WantsNetworking: true
@@ -71,7 +67,7 @@ Assets {
         }
         Blueprint {
           BlueprintAsset {
-            Id: 7588893138122858901
+            Id: 11770839392849308993
           }
           TeamSettings {
           }
@@ -84,12 +80,12 @@ Assets {
       }
     }
     Assets {
-      Id: 7588893138122858901
-      Name: "Dust Puff VFX"
+      Id: 11770839392849308993
+      Name: "Health Spiral VFX"
       PlatformAssetType: 8
       PrimaryAsset {
         AssetType: "VfxBlueprintAssetRef"
-        AssetId: "fxbp_dust_puff"
+        AssetId: "fxbp_health_spiral"
       }
     }
     PrimaryAssetId {

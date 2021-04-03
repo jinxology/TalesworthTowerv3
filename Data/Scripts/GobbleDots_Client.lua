@@ -66,10 +66,7 @@ function InitializeBoard()
 				hitResult4 = World.Raycast(dotRayCastDownPos, dotRayCastUpPos)					
 						
 				if (hitResult1 or hitResult2 or hitResult3 or hitResult4) then
-					--print("Hit Result 1: ", hitResult1)			
-					--print("Hit Result 2: ", hitResult2)			
-					--print("Hit Result 3: ", hitResult3)			
-					--print("Hit Result 4: ", hitResult4)				
+					--Do not spawn anything			
 				else
 					dotCount = dotCount + 1				
 					newDot = World.SpawnAsset(propGdDot_Client, {position = dotLocalPosition, parent = dotsFolder})
@@ -94,7 +91,7 @@ propLevelGobbleDots.networkedPropertyChangedEvent:Connect(function(coreObject, p
     if propertyName == "InitializeBoard" then
     	--print("In InitializeBoard() from the networkedPropertyChangedEvent")
 		InitializeBoard()
-	else  --Otherwise this is a receipt of the list of dots that have been deleted.
+	elseif propertyName == "DeletedDots" then  --Otherwise this is a receipt of the list of dots that have been deleted.
 		--Split the string that is returned into an array of dot values
 		
 		local deletedDotsString = propLevelGobbleDots:GetCustomProperty(propertyName)
@@ -107,9 +104,15 @@ propLevelGobbleDots.networkedPropertyChangedEvent:Connect(function(coreObject, p
 			if Object.IsValid(dotsArrayList[arrayIndex]) then			
 				dotsArrayList[arrayIndex]:Destroy()
 			end					
-		end
-		--print("Calling Event:" , Game.GetLocalPlayer().name, " with: ", countOfDeletedDots, " dots deleted")
-		--Events.BroadcastToServer("PlayerNumberOfDeletes", Game.GetLocalPlayer(), countOfDeletedDots) 
+		end 
+--	elseif propertyName == "ResetLevel" then
+--		print("RESETTING LEVEL")
+		
+--		for _, dotToDelete in ipairs(dotsArrayList) do
+--			if Object.IsValid(dotToDelete) then			
+--				dotToDelete:Destroy()
+--			end					
+--		end 
 	end
 end)
 

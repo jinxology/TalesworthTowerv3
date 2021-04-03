@@ -10,9 +10,9 @@ Assets {
         Name: "Ghost"
         Transform {
           Scale {
-            X: 2.4
-            Y: 2.4
-            Z: 2.4
+            X: 2
+            Y: 2
+            Z: 2
           }
         }
         ParentId: 424163457214865685
@@ -235,12 +235,6 @@ Assets {
               Id: 4647461794779648776
             }
           }
-          Overrides {
-            Name: "cs:LevelControllerGobbleDots"
-            ObjectReference {
-              SelfId: 7161176820700122570
-            }
-          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -269,14 +263,14 @@ Assets {
           }
           Scale {
             X: 1.25
-            Y: 1.25
+            Y: 1.1
             Z: 1.25
           }
         }
         ParentId: 8743173940440615883
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
+          Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"

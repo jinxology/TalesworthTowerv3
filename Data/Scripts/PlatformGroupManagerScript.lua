@@ -43,7 +43,7 @@ function CheckIfPlayersReady()
     if nbrReady >= propMainGameController.context.requiredNbrPlayersReady then
         Deactivate()
         propMainGameController.context.StartingPlatformsActivated()  
-    elseif (nbrReady > 0) then
+    else
         propMainGameController.context.StartingPlatformsOccupied(nbrReady) 
     end
 end

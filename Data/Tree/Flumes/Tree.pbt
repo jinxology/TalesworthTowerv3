@@ -41,9 +41,10 @@ Objects {
     Location {
       X: 3175
       Y: 5650
-      Z: 250
+      Z: 675
     }
     Rotation {
+      Pitch: -22.5
       Yaw: -90
     }
     Scale {

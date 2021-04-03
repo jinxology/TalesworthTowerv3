@@ -1,8 +1,8 @@
 Name: "Level_GobbleDots"
 RootId: 13310647076426687416
 Objects {
-  Id: 848490241089693872
-  Name: "gd.Dots"
+  Id: 11344910419484066011
+  Name: "GobbleDots.Beacons"
   Transform {
     Location {
     }
@@ -26,7 +26,126 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "gd_Dots"
+    FilePartitionName: "GobbleDots_Beacons"
+  }
+}
+Objects {
+  Id: 11535273514704079029
+  Name: "TeleportArch"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13310647076426687416
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 6292285592507664290
+      value {
+        Overrides {
+          Name: "Name"
+          String: "TeleportArch"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 3150
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 105376969988289370
+    }
+  }
+}
+Objects {
+  Id: 17894760573842865631
+  Name: "TeleportArch"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13310647076426687416
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 2799580777828353879
+      value {
+        Overrides {
+          Name: "cs:ArchSide"
+          String: "RIGHT"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 6292285592507664290
+      value {
+        Overrides {
+          Name: "Name"
+          String: "TeleportArch"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 3200
+            Y: 6225
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -179.999985
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17230334546939582652
+      value {
+        Overrides {
+          Name: "cs:TeleportArch"
+          ObjectReference {
+            SelfId: 2865148869563167308
+            SubObjectId: 6292285592507664290
+            InstanceId: 17894760573842865631
+            TemplateId: 105376969988289370
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 105376969988289370
+    }
   }
 }
 Objects {
@@ -142,8 +261,6 @@ Objects {
   ChildIds: 16020687296716870530
   ChildIds: 9302322437453866196
   ChildIds: 10722119184156024834
-  ChildIds: 3718408550073648796
-  ChildIds: 2323327424796235952
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -155,130 +272,6 @@ Objects {
   }
   Folder {
     IsGroup: true
-  }
-}
-Objects {
-  Id: 2323327424796235952
-  Name: "Cube - Bottom-Aligned"
-  Transform {
-    Location {
-      X: 2150
-      Y: 6600
-      Z: 12400
-    }
-    Rotation {
-      Yaw: -89.9999695
-      Roll: 89.9999695
-    }
-    Scale {
-      X: 1
-      Y: 0.5
-      Z: 4
-    }
-  }
-  ParentId: 5857129843129618845
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.160000026
-        G: 0.24900651
-        B: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 7211079400400238887
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 10789546840193366307
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 3718408550073648796
-  Name: "Cube - Bottom-Aligned"
-  Transform {
-    Location {
-      X: 2150
-      Y: 900
-      Z: 12575
-    }
-    Rotation {
-      Yaw: -90
-      Roll: 90
-    }
-    Scale {
-      X: 1
-      Y: 4
-      Z: 4
-    }
-  }
-  ParentId: 5857129843129618845
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.160000026
-        G: 0.24900651
-        B: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 7211079400400238887
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 10789546840193366307
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
   }
 }
 Objects {
@@ -4523,6 +4516,18 @@ Objects {
       Name: "cs:DrinkLiquidGulpSwallow01SFX"
       AssetReference {
         Id: 13552945397385832481
+      }
+    }
+    Overrides {
+      Name: "cs:HittingGhostSVFX"
+      AssetReference {
+        Id: 17121013347983082254
+      }
+    }
+    Overrides {
+      Name: "cs:levelBeaconFolder"
+      ObjectReference {
+        SelfId: 11344910419484066011
       }
     }
     Overrides {

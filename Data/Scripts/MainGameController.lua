@@ -2,6 +2,10 @@ local propFlumePortal = script:GetCustomProperty("FlumePortal")
 local propLevelBeaconFail = script:GetCustomProperty("LevelBeaconFail")
 local propLevelBeaconSuccess = script:GetCustomProperty("LevelBeaconSuccess")
 local propStartPlatformGroup = script:GetCustomProperty("StartPlatformGroup")
+local propLevel1autostartTrigger = script:GetCustomProperty("level1autostartTrigger"):WaitForObject()
+local propTxtTowerInProgress = script:GetCustomProperty("txtTowerInProgress"):WaitForObject()
+local propTowerProgressSign = script:GetCustomProperty("TowerProgressSign"):WaitForObject()
+
 
 --Generic top-center timer
 local timerStarted = false
@@ -16,7 +20,7 @@ totalTowerTime = 0
 --Autostart timer
 local autostartTimerActive = false
 local autostartTimerTask = nil
-local autostartSeconds = 30 --time until the game autostarts
+local autostartSeconds = 10 --time until the game autostarts
 totalAutostartTime = 0
 
 --High score data
@@ -24,7 +28,7 @@ startingPlayerCount = 4
 
 --Game State
 local devMode = true
-local towerRunning = false
+towerRunning = false
 levelRunning = false
 currentLevelIndex = 1
 nextLevelIndex = nil
@@ -52,18 +56,17 @@ local playerKeyBindingListener = nil
  
 function OnBindingPressed(player, bindingPressed)
     --print ("pressed " .. bindingPressed)
-    local ctrl = GetCurrentLevelController()
 
-    if (bindingPressed == "ability_extra_25" and devMode) then 
+    if (bindingPressed == "ability_extra_25" and devMode and not levelRunning and not resetingTower) then 
         --Y    
-        if not levelRunning and not resetingTower then
-            StartingPlatformsActivated()
-        end
-    elseif (bindingPressed == "ability_extra_26") then
+        StartingPlatformsActivated()
+    elseif (bindingPressed == "ability_extra_26" and devMode and levelRunning) then
         --U
+        local ctrl = GetCurrentLevelController()
         ctrl.context.LevelVictory()
-    elseif (bindingPressed == "ability_extra_27") then
+    elseif (bindingPressed == "ability_extra_27" and devMode and levelRunning) then
         --I
+        local ctrl = GetCurrentLevelController()
         ctrl.context.LevelFailed()
     end
 end    
@@ -357,19 +360,22 @@ function StartingPlatformsOccupied(nbrReady)
         if (not autostartTimerActive) then
             totalAutostartTime = autostartSeconds
             autostartTimerActive = true
+            script:SetNetworkedCustomProperty("autostartTimerState","true,"..totalAutostartTime..","..autostartSeconds)
         end
     else
         autostartTimerActive = false
+        script:SetNetworkedCustomProperty("autostartTimerState","false,")
     end
 end
 
 function AutostartTimerTask(deltaTime)
-    if (autostartTimerActive) then
-        totalAutostartTime = totalAutostartTime - deltaTime
+    if (autostartTimerActive) then        
         if (totalAutostartTime <= 0) then
+            autostartTimerActive = false
+            script:SetNetworkedCustomProperty("autostartTimerState","false,")
             StartingPlatformsActivated()
         end
-        --print (totalAutostartTime)
+        totalAutostartTime = totalAutostartTime - deltaTime
     end
 end
 
@@ -379,11 +385,29 @@ function TalesworthTowerTimerTask(deltaTime)
     end
 end
 
+function SetTowerRunning(newVal)
+    towerRunning = newVal
+
+    if (towerRunning) then
+        propTxtTowerInProgress.text = "Tower In Progress"
+        propTowerProgressSign.visibility = Visibility.FORCE_ON
+    else
+        propTxtTowerInProgress.text = ""
+        propTowerProgressSign.visibility = Visibility.FORCE_OFF
+    end
+end
+
 function LevelBegin()
     if (not towerRunning) then
-        towerRunning = true
+        SetTowerRunning(true)
+        
         if (currentLevelIndex == 1) then
-            print ("if all players aren't in starting room, bring them in")
+            for _, player in pairs(Game.GetPlayers()) do
+                if (not propLevel1autostartTrigger:IsOverlapping(player)) then
+                    player:SetWorldPosition(Vector3.New(124,-1451,135))
+                end                
+            end
+    
         end
     end
 
@@ -569,7 +593,8 @@ function EjectForTowerReset()
         player:SetWorldPosition(Vector3.New(147,-929,8605))
     end   
     resetingTower = false
-    towerRunning = false
+    SetTowerRunning(false)
+    SpawnLevel1()
 end
 
 function ResetVoteHandler(player)
@@ -577,7 +602,8 @@ function ResetVoteHandler(player)
     if (not resetingTower and towerRunning) then
         if (playerVotesForReset[player.name] ~= true) then
             playerVotesForReset[player.name] = true
-            script:SetNetworkedCustomProperty("towerResetVote",player.name)
+            --script:SetNetworkedCustomProperty("towerResetVote",player.name)
+            Chat.BroadcastMessage(player.name .. " voted to reset the tower")
         end
 
         local allReset = true
@@ -602,23 +628,41 @@ function OnPlayerJoined(player)
     if (towerRunning) then
         print ("give player 60s then teleport them")
     else
-        totalAutostartTime = autostartSeconds
+        if (autostartTimerActive) then
+            totalAutostartTime = autostartSeconds
+            script:SetNetworkedCustomProperty("autostartTimerState","true,"..totalAutostartTime..","..autostartSeconds)
+        end
     end
     
 end
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
+
+function OnPlayerLeft(player)
+    local allPlayers = Game.GetPlayers()
+    if (#allPlayers <= 1) then
+        print ("Resetting tower - no players")
+        ResetTower()
+    end
+end
+Game.playerLeftEvent:Connect(OnPlayerLeft)
+
 
 Events.Connect("TeleportAllPlayers", TeleportAllPlayers)
 Events.Connect("SetRequiredStartPlatforms", SetRequiredStartPlatforms)
 Events.Connect("GeneralClientToServerMessage", GeneralClientToServerMessageHandler)
 Events.Connect("VoteForReset", ResetVoteHandler)
 
---fire up first level
+function SpawnLevel1()
+    --fire up first level
+    currentLevelIndex = 1
+    local levelControllerScript = GetCurrentLevelController()
+    SpawnFlumePortals(1)
+    SpawnStartingPlatforms(1)
+    levelControllerScript.context.LevelPowerUp() 
+end
+
 Task.Wait(.1)
-local levelControllerScript = GetCurrentLevelController()
-SpawnFlumePortals(1)
-SpawnStartingPlatforms(1)
-levelControllerScript.context.LevelPowerUp() 
+SpawnLevel1()
 
 towerTimerTask = Task.Spawn(TalesworthTowerTimerTask)
 towerTimerTask.repeatCount = -1
@@ -627,3 +671,5 @@ towerTimerTask.repeatInterval = 1
 autostartTimerTask = Task.Spawn(AutostartTimerTask)
 autostartTimerTask.repeatCount = -1
 autostartTimerTask.repeatInterval = 1
+
+SetTowerRunning(false)

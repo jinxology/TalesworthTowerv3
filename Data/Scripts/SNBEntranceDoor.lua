@@ -105,7 +105,7 @@ end
 -- Handles the player overlapping if AutoOpen is true
 function OnBeginOverlap(trigger, other)
 	if other:IsA("Player") then
-		if (GetDoorOffset() == 0.0 and not propMainGameController.context.levelRunning) then								-- Can't auto open if the door isn't closed
+		if (GetDoorOffset() == 0.0 and not propMainGameController.context.towerRunning) then								-- Can't auto open if the door isn't closed
 			OpenDoor(other)
 
 			autoCloseTime = time() + TIME_OPEN

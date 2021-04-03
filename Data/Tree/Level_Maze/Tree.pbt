@@ -1837,35 +1837,6 @@ Objects {
   }
 }
 Objects {
-  Id: 14302838693384440743
-  Name: "ceiling"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4040143929711443956
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "ceiling_19"
-  }
-}
-Objects {
   Id: 7732004034413392390
   Name: "walls"
   Transform {

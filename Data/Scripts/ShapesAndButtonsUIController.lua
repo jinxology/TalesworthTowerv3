@@ -29,16 +29,22 @@ end
 function IncomingUIMessage(coreObject, propertyName)
     
     local msg = propLevelControllerShapesAndButtons:GetCustomProperty(propertyName)
-    --print ("SNB UI Msg: "..msg)
     local msgParams = {CoreString.Split(msg,",")}
 
-    if (msgParams[1] == "01") then
-        SetUIData(msgParams[2],msgParams[3])
-        UI.PrintToScreen(msgParams[4])
-        if (msgParams[5] == "false") then
-            print ("play sound")
-            myPosition = Game.GetLocalPlayer():GetWorldPosition()        
-            World.SpawnAsset(propLevelFailSound,{position=myPosition})    
+    if (propertyName == "UIVisibility") then
+        showingMe = false
+        ToggleUIVisibility()
+    else        
+        if (msgParams[1] == "01") then
+            SetUIData(msgParams[2],msgParams[3])
+            
+            --Only sends to chat now            
+            --Events.Broadcast("BannerMessage", msgParams[4])
+
+            if (msgParams[5] == "false") then
+                myPosition = Game.GetLocalPlayer():GetWorldPosition()        
+                World.SpawnAsset(propLevelFailSound,{position=myPosition})    
+            end
         end
     end
 end

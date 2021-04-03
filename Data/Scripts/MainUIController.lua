@@ -1,13 +1,13 @@
-    
 local propRoomTimer = script:GetCustomProperty("RoomTimer"):WaitForObject()
 local propTxtGoToExit = script:GetCustomProperty("TxtGoToExit"):WaitForObject()
 local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
-local propUtility_ClientSide = script:GetCustomProperty("Utility_ClientSide"):WaitForObject()
 local propLevelFailSound = script:GetCustomProperty("LevelFailSound")
 local propLevelVictorySound = script:GetCustomProperty("LevelVictorySound")
 local propResetTowerEjectSFX = script:GetCustomProperty("ResetTowerEjectSFX")
 local propMainTimerPanel = script:GetCustomProperty("MainTimerPanel"):WaitForObject()
 local propTotalTime = script:GetCustomProperty("totalTime"):WaitForObject()
+local propTxtAutoStart = script:GetCustomProperty("TxtAutoStart"):WaitForObject()
+
 
 local timerStarted = false
 local timeLeft = 0
@@ -15,8 +15,14 @@ local timeLeft = 0
 --Main tower timer
 local totalTowerTime = 0
 local towerTimerActive = false
-local lastTTTUpdateTime = 0
 local towerTimerTask = nil
+
+--Autostart timer
+local totalAutostartTime = 0
+local autostartTimerActive = false
+local autostartTimerTask = nil
+local maxAutostartTime = 0
+local autoStartTextDelay = 1.2
 
 function OnBindingPressed(player, bindingPressed)
     --print ("pressed " .. bindingPressed)
@@ -68,9 +74,27 @@ function IncomingUIMessage(coreObject, propertyName)
         end
     elseif (propertyName == "towerTimerState") then 
         StartAndUpdateClientTowerTimer(msgData[1],msgData[2])
-    elseif (propertyName == "towerResetVote") then 
-        ShowSmallUIMessage(msgData[1].." voted to reset the tower")
+    --elseif (propertyName == "towerResetVote") then 
+      --  ShowSmallUIMessage(msgData[1].." voted to reset the tower")
+    elseif (propertyName == "autostartTimerState") then         
+        StartAndUpdateClientAutostartTimer(msgData[1],msgData[2],msgData[3])
     end
+end
+
+function StartAndUpdateClientAutostartTimer(started, timeSoFar,maxTime)
+    autostartTimerActive = toboolean(started)    
+    totalAutostartTime = timeSoFar
+    maxAutostartTime = maxTime
+    --print (timeSoFar)
+    --when disabling, set the time one last time
+    if (not autostartTimerActive) then
+        propTxtAutoStart.text = ""   
+        propTxtAutoStart.visibility = Visibility.FORCE_OFF
+    else
+        --propTxtAutoStart.text = AutoStartText(timeSoFar)
+        propTxtAutoStart.visibility = Visibility.FORCE_ON
+    end
+
 end
 
 function StartAndUpdateClientTowerTimer(started, timeSoFar)
@@ -88,6 +112,14 @@ function StartAndUpdateClientTowerTimer(started, timeSoFar)
 
 end
 
+function AutoStartText(timeVal)
+    local playerCount = #Game.GetPlayers()
+    local pText = ""
+    if (playerCount == 1) then pText = "player" else pText = "players" end
+    return "Starting Tower with "..playerCount.." "..pText.." in " .. tostring(math.ceil(totalAutostartTime)) .. "s"
+end
+
+
 function FormatTime(inTime)
     local minutes = math.floor(inTime / 60)
     local seconds = math.floor(inTime % 60)
@@ -97,6 +129,15 @@ function FormatTime(inTime)
     return minStr..":"..secStr
 end
 
+function AutostartTimerTask(deltaTime)
+    if (autostartTimerActive) then
+        totalAutostartTime = totalAutostartTime - deltaTime
+        if (totalAutostartTime < (maxAutostartTime-autoStartTextDelay)) then
+            propTxtAutoStart.text = AutoStartText(totalAutostartTime)
+        end
+    end
+end
+
 function TalesworthTowerTimerTask(deltaTime)
     if (towerTimerActive) then
         totalTowerTime = totalTowerTime + deltaTime
@@ -104,8 +145,8 @@ function TalesworthTowerTimerTask(deltaTime)
     end
 end
 
-function ShowSmallUIMessage(msg) 
-    UI.PrintToScreen(msg)
+function ShowSmallUIMessage(msg)     
+    Events.Broadcast("BannerMessage", msg)
 end
 
 function StartTimerLocal(t)
@@ -189,3 +230,9 @@ propMainGameController.networkedPropertyChangedEvent:Connect(IncomingUIMessage)
 towerTimerTask = Task.Spawn(TalesworthTowerTimerTask)
 towerTimerTask.repeatCount = -1
 towerTimerTask.repeatInterval = 1
+
+autostartTimerTask = Task.Spawn(AutostartTimerTask)
+autostartTimerTask.repeatCount = -1
+autostartTimerTask.repeatInterval = 1
+
+propTxtAutoStart.text = ""
