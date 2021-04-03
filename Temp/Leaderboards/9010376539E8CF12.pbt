@@ -1,8 +1,8 @@
 GlobalEntries {
   Id: "4b79055fee3541cf9a18e2cde3538a87"
   Name: "paegrid"
-  ScoreFormatted: "3.0"
-  DateTime: "2021-04-03T03:08:12.069Z"
+  ScoreFormatted: "12.0"
+  DateTime: "2021-04-03T04:47:59.618Z"
 }
 Config {
   SortType {

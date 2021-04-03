@@ -1,4 +1,5 @@
 local propServerTipJar = script:GetCustomProperty("server"):WaitForObject()
+local propTrigger = script:GetCustomProperty("trigger"):WaitForObject()
 
 local propMimi = script:GetCustomProperty("mimi"):WaitForObject()
 local propUpperJaw = script:GetCustomProperty("upperJaw"):WaitForObject()
@@ -14,6 +15,7 @@ local propNameSlots = script:GetCustomProperty("nameSlots"):WaitForObject():GetC
 local propScoreSlots = script:GetCustomProperty("scoreSlots"):WaitForObject():GetChildren() -- table of all the name slots
 local leaderboard = script:GetCustomProperty("leaderboard")
 local LEADERBOARD_REFRESH_INTERVAL = script:GetCustomProperty("refreshInterval")
+local propDefaultMimiRotation = propMimi.parent:GetWorldRotation()
 
 local propMouthBooState = {
     upperJawMin = -55,
@@ -183,8 +185,10 @@ function UpdateSpring(dt, damping, frequency, goal, p0, v0)
     return { position = p1, velocity = v1 }
 end
 
+local propTalkingTask = nil
+
 function PlayMimiAnimation(animation)
-    print("play mimi animation " .. animation)
+    SaySomething()
 end
 
 function clearLeaderboard () -- empties out all the text from the WorldTexts
@@ -268,6 +272,10 @@ function SetProperties(properties)
 end
 
 function Tick()
+    if not propTrigger.isInteractable and not UI.IsCursorVisible() then
+        propTrigger.isInteractable = true
+        EndMimiInteraction()
+    end
 
     if propSpringStartTime ~= 0 and propSpringDuration ~= 0 then
         local   dt = (time() - propSpringStartTime) / propSpringDuration
@@ -299,21 +307,19 @@ function RandomPropertiesFrom(state)
     }
 end
 
-function Idle(duration)
-    while duration > 0 do
-        local   pauseDuration = math.random() * 1 + .3
-        local   fidgetDuration = math.min(duration - pauseDuration, 0.3 + math.random() * 0.3)
+local propIdleTask = nil
 
-        if fidgetDuration < 0 then
-            fidgetDuration = duration
-            pauseDuration = 0
-        end
-
-        ResetSprings(fidgetDuration)
-        SetProperties(RandomPropertiesFrom(propMouthOpenNarrowStates[1]))
-        
-        duration = duration - (fidgetDuration + pauseDuration)
-        Task.Wait(fidgetDuration + math.random() * 0.3)
+function Idle()
+    if not propIdleTask then
+        propIdleTask = Task.Spawn(function()
+            local   pauseDuration = math.random() * 1 + .3
+            local   fidgetDuration = 0.3 + math.random() * 0.3
+    
+            ResetSprings(fidgetDuration)
+            SetProperties(RandomPropertiesFrom(propMouthOpenNarrowStates[1]))
+            
+            Task.Wait(fidgetDuration + pauseDuration)
+        end)
     end
 end
 
@@ -335,86 +341,91 @@ function SpeakSyllable(states, totalDuration)
 end
 
 function SaySomething()
-    local   words = math.random(3, 6)
-    local   MAX_OPEN_SYLLABLES = 3
-    local   playingVocal = propSyllableVocalSFX[1]
-    local   playingPercussive = propSyllablePercussiveSFX[1]
-    
-    for word = 1, words, 1 do
-        propChompSFX:Play()
-        ResetSprings(0.15)
-        SetProperties(MinPropertiesFrom(propMouthClosedState))
-        Task.Wait(0.15)
-
-        local   syllables = math.random(3, 5)
-
-        for syllable = 1, syllables, 1 do
-            local   duration
-            local   vocalDuration
-            local   percussiveDuration
+    if propIdleTask then
+        propIdleTask:Cancel()
+        propIdleTask = nil
+    end
+    if propTalkingTask then
+        propTalkingTask:Cancel()
+        propTalkingTask = nil
+    end
+    propTalkingTask = Task.Spawn(function()
+        local   words = math.random(3, 6)
+        local   MAX_OPEN_SYLLABLES = 3
+        local   playingVocal = propSyllableVocalSFX[1]
+        local   playingPercussive = propSyllablePercussiveSFX[1]
         
-            playingVocal = propSyllableVocalSFX[math.random(#propSyllableVocalSFX)]
-            playingPercussive = propSyllablePercussiveSFX[math.random(#propSyllablePercussiveSFX)]
+        for word = 1, words, 1 do
+            propChompSFX:Play()
+            ResetSprings(0.15)
+            SetProperties(MinPropertiesFrom(propMouthClosedState))
+            Task.Wait(0.15)
 
-            -- print("vocal = " .. playingVocal.length .. ", perc = " .. playingPercussive.length)
-            playingVocal.pitch = playingVocal:GetCustomProperty("basePitch") + math.random(1, 750)
-            playingPercussive.pitch = playingPercussive:GetCustomProperty("basePitch") + math.random(1, 500)
+            local   syllables = math.random(3, 5)
 
-            vocalDuration = playingVocal.stopTime
-            percussiveDuration = playingPercussive.stopTime
-            duration = math.max(vocalDuration, percussiveDuration)
+            for syllable = 1, syllables, 1 do
+                local   duration
+                local   vocalDuration
+                local   percussiveDuration
             
-            Task.Spawn(function()
-                local   percussiveAtEnd = (math.random(2) == 2)
-                local   remainingDuration
+                playingVocal = propSyllableVocalSFX[math.random(#propSyllableVocalSFX)]
+                playingPercussive = propSyllablePercussiveSFX[math.random(#propSyllablePercussiveSFX)]
 
-                if percussiveAtEnd then
-                    playingVocal:Play()
-                    remainingDuration = percussiveDuration
-                    Task.Wait(duration - remainingDuration)
-                    playingPercussive:Play()
+                -- print("vocal = " .. playingVocal.length .. ", perc = " .. playingPercussive.length)
+                playingVocal.pitch = playingVocal:GetCustomProperty("basePitch") + math.random(1, 750)
+                playingPercussive.pitch = playingPercussive:GetCustomProperty("basePitch") + math.random(1, 500)
+
+                vocalDuration = playingVocal.stopTime * (0.5 + math.random() * 0.6)
+                percussiveDuration = playingPercussive.stopTime * (0.5 + math.random() * 0.6)
+                duration = math.max(vocalDuration, percussiveDuration)
+                
+                Task.Spawn(function()
+                    local   percussiveAtEnd = (math.random(2) == 2)
+                    local   remainingDuration
+
+                    if percussiveAtEnd then
+                        playingVocal:Play()
+                        remainingDuration = percussiveDuration
+                        Task.Wait(duration - remainingDuration)
+                        playingPercussive:Play()
+                    else
+                        playingPercussive:Play()
+                        remainingDuration = vocalDuration
+                        Task.Wait(duration - remainingDuration)
+                        playingVocal:Play()
+                    end
+                end)
+                
+                -- if not propChompSFX.isPlaying then
+                --     if math.random(1, 5) > 4 then
+                --         propChompSFX.pitch = 500 + math.random(1, 750)
+                --         propChompSFX:Play()
+                --     end
+                -- end
+                
+                if playingVocal:GetCustomProperty("syllables") == 2 then
+                    SpeakSyllable({
+                        propMouthOpenWideStates[math.random(#propMouthOpenWideStates)],
+                        propMouthOpenNarrowStates[math.random(#propMouthOpenNarrowStates)],
+                        propMouthOpenWideStates[math.random(#propMouthOpenWideStates)],
+                        propMouthOpenNarrowStates[math.random(#propMouthOpenNarrowStates)],
+                    }, duration)
                 else
-                    playingPercussive:Play()
-                    remainingDuration = vocalDuration
-                    Task.Wait(duration - remainingDuration)
-                    playingVocal:Play()
+                    SpeakSyllable({
+                        propMouthOpenWideStates[math.random(#propMouthOpenWideStates)],
+                        propMouthOpenNarrowStates[math.random(#propMouthOpenNarrowStates)]
+                    }, duration)
                 end
-            end)
-            
-            -- if not propChompSFX.isPlaying then
-            --     if math.random(1, 5) > 4 then
-            --         propChompSFX.pitch = 500 + math.random(1, 750)
-            --         propChompSFX:Play()
-            --     end
-            -- end
-            
-            if playingVocal:GetCustomProperty("syllables") == 2 then
-                SpeakSyllable({
-                    propMouthOpenWideStates[math.random(#propMouthOpenWideStates)],
-                    propMouthOpenNarrowStates[math.random(#propMouthOpenNarrowStates)],
-                    propMouthOpenWideStates[math.random(#propMouthOpenWideStates)],
-                    propMouthOpenNarrowStates[math.random(#propMouthOpenNarrowStates)],
-                }, duration)
-            else
-                SpeakSyllable({
-                    propMouthOpenWideStates[math.random(#propMouthOpenWideStates)],
-                    propMouthOpenNarrowStates[math.random(#propMouthOpenNarrowStates)]
-                }, duration)
             end
         end
-    end
-    propChompSFX:Play()
-    ResetSprings(0.1)
-    SetProperties(MinPropertiesFrom(propMouthClosedState))
-    Task.Wait(0.1)
+        propChompSFX:Play()
+        ResetSprings(0.1)
+        SetProperties(MinPropertiesFrom(propMouthClosedState))
+        Task.Wait(0.1)
+        Idle()
+    end)
 end
 
-function TalkContinuously()
-    while true do
-        SaySomething()
-        Idle(4)
-    end
-end
 
 -- local propTips = require(script:GetCustomProperty("lby.codingTips"))
 local propMimiUI = script:GetCustomProperty("mimiUI"):WaitForObject()
@@ -425,12 +436,26 @@ local propListener = nil
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 local DEFAULT_ROTATION = Vector3.ZERO
-local ROTATE_SPEED = .5
+local ROTATE_SPEED = 1
 -- local INDICATOR_OFFSET = 180
 
 if propMimi:IsValid() then
     DEFAULT_ROTATION = propMimi:GetWorldRotation()
 end
+
+function GetPlayerActiveCamera(player)
+    if not Object.IsValid(player) then
+        return nil
+    end
+
+    if player:GetOverrideCamera() then
+        return player:GetOverrideCamera()
+    else
+        return player:GetDefaultCamera()
+    end
+end
+
+local   propDefaultCameraDistance
 
 function BeginMimiInteraction()
     propMimiUI.visibility = Visibility.FORCE_ON
@@ -447,23 +472,88 @@ function BeginMimiInteraction()
             EndMimiInteraction()
         end
     end)
-    
-    TalkContinuously()
+
+    activeCamera = GetPlayerActiveCamera(Game.GetLocalPlayer())
+    propDefaultCameraDistance = activeCamera.currentDistance
+
+    local   cameraDuration = 1.0
+    local   cameraDamping = 0.2
+    local   cameraFrequency = 4.0
+    local   cameraStartTime = time()
+    local   cameraDistanceGoal = 100.0
+
+    Task.Spawn(function()
+        local   dt = (time() - cameraStartTime) / cameraDuration
+        local   pv = UpdateSpring(dt, cameraDamping, cameraFrequency, cameraDistanceGoal, propDefaultCameraDistance, 0.0)
+
+        activeCamera.currentDistance = pv.position
+        
+        if dt >= 1 then
+            Task.GetCurrent():Cancel()
+        end 
+    end).repeatCount = -1
+
+    -- TalkContinuously()
 end
 
 function EndMimiInteraction()
     if propMimi:IsValid() then
-        propMimi:RotateTo(Rotate.ZERO, ROTATE_SPEED)
+        propMimi.parent:StopRotate()
+        propMimi.parent:RotateTo(propDefaultMimiRotation, ROTATE_SPEED, false)
     end
+    activeCamera = GetPlayerActiveCamera(Game.GetLocalPlayer())
+    
+    local   cameraDuration = 1.0
+    local   cameraDamping = 0.8
+    local   cameraFrequency = 1.0
+    local   cameraStartTime = time()
+    local   cameraDistanceGoal = propDefaultCameraDistance
+
+    Task.Spawn(function()
+        local   dt = (time() - cameraStartTime) / cameraDuration
+        local   pv = UpdateSpring(dt, cameraDamping, cameraFrequency, cameraDistanceGoal, propDefaultCameraDistance, 0.0)
+
+        activeCamera.currentDistance = pv.position
+        
+        if dt >= 1 then
+            Task.GetCurrent():Cancel()
+        end 
+    end).repeatCount = -1
+
+
     propMimiUI.visibility = Visibility.FORCE_OFF
     UI.SetCanCursorInteractWithUI(false)
     UI.SetCursorVisible(false)
     propListener:Disconnect()
     propListener = nil
+
+    if propTalkingTask then
+        propTalkingTask:Cancel()
+        propTalkingTask = nil
+    end
+
+    if propIdleTask then
+        propIdleTask:Cancel()
+        propIdleTask = nil
+    end
+
+    Task.Spawn(function()
+        ResetSprings(0.2)
+        SetProperties(MinPropertiesFrom(propMouthClosedState))
+        Task.Wait(0.2)
+    end)
 end
 
+function OnInteracted(whichTrigger, other)
+	if other:IsA("Player") then
+        whichTrigger.isInteractable = false
+		BeginMimiInteraction()
+	end
+end
+
+propTrigger.interactedEvent:Connect(OnInteracted)
+
 Task.Spawn(loadLeaderboard)
-Events.Connect("lby.InteractMimi", BeginMimiInteraction)
 propPerkButton:SetPerkReference(propServerTipJar:GetCustomProperty("perk"))
 
 -- propLeaveButton.pressedEvent:Connect(EndMimiInteraction)
