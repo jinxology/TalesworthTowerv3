@@ -66,10 +66,7 @@ function InitializeBoard()
 				hitResult4 = World.Raycast(dotRayCastDownPos, dotRayCastUpPos)					
 						
 				if (hitResult1 or hitResult2 or hitResult3 or hitResult4) then
-					--print("Hit Result 1: ", hitResult1)			
-					--print("Hit Result 2: ", hitResult2)			
-					--print("Hit Result 3: ", hitResult3)			
-					--print("Hit Result 4: ", hitResult4)				
+					--Do not spawn anything			
 				else
 					dotCount = dotCount + 1				
 					newDot = World.SpawnAsset(propGdDot_Client, {position = dotLocalPosition, parent = dotsFolder})
@@ -107,9 +104,7 @@ propLevelGobbleDots.networkedPropertyChangedEvent:Connect(function(coreObject, p
 			if Object.IsValid(dotsArrayList[arrayIndex]) then			
 				dotsArrayList[arrayIndex]:Destroy()
 			end					
-		end
-		--print("Calling Event:" , Game.GetLocalPlayer().name, " with: ", countOfDeletedDots, " dots deleted")
-		--Events.BroadcastToServer("PlayerNumberOfDeletes", Game.GetLocalPlayer(), countOfDeletedDots) 
+		end 
 	end
 end)
 

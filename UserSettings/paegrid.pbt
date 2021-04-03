@@ -30017,3 +30017,24 @@ ObjectSettings {
     }
   }
 }
+DebugPerks {
+  Perks {
+    PerkId: "7cc6aaecc08d44dbaf32c318d70bbc20"
+    PerkCounts {
+      key: 0
+      value: 0
+    }
+    PerkCounts {
+      key: 1
+      value: 0
+    }
+    PerkCounts {
+      key: 2
+      value: 0
+    }
+    PerkCounts {
+      key: 3
+      value: 0
+    }
+  }
+}
