@@ -199,13 +199,11 @@ function UntetherMugshot(mugshot)
 	propTetheredMugshots[mugshot] = nil
 end
 
-function ForceForTension(tension)
-	local	FORCE_PER_TENSION = .8
+local SNAP_TENSION_THRESHOLD = 1.5
+local PLAYER_STANDING_FRICTION = 800
+local PLAYER_CROUCHING_FRICTION = 1200
+local PLAYER_MOUNTED_FRICTION = 1600
 
-	return FORCE_PER_TENSION * tension
-end
-
-SNAP_THRESHOLD = 1.5
 local propCurrentUnragdollTask = nil
 
 function HandleTension(deltaT)
@@ -215,60 +213,15 @@ function HandleTension(deltaT)
 	for mugshot, _ in pairs(propTetheredMugshots) do
 		if mugshot ~= nil then
 			controller = mugshot:GetCustomProperty("controller"):WaitForObject()
-			
-			local	direction = mugshot:GetWorldPosition() - puckPosition
-			local	distance = direction.size
-			local	slack = controller.context.propSlackAmount
-			local	tension = distance / slack
-			
-			if tension > SNAP_THRESHOLD then
-				local	player = mugshot.owner
-				local	puckVelocity = propPhysics:GetVelocity()
-				local	playerVelocity = player:GetVelocity()
+			controller.context.UpdateTension(propPhysics, deltaT)
 
-				if puckVelocity .. playerVelocity < 0 then
-					player:EnableRagdoll("lower_spine", .4)
-					player:EnableRagdoll("right_shoulder", .2)
-					player:EnableRagdoll("left_shoulder", .6)
-					player:EnableRagdoll("right_hip", .6)
-					player:EnableRagdoll("left_hip", .6)		
-					player:AddImpulse(-direction * 1.5 * player.mass + Vector3.UP + 1000)
-					
-					if propCurrentUnragdollTask then
-						propCurrentUnragdollTask:Cancel()
-					end
-
-					propCurrentUnragdollTask = Task.Spawn(function()
-						player.movementControlMode = MovementControlMode.LOOK_RELATIVE
-						player:DisableRagdoll()
-						player:EnableRagdoll("right_shoulder", .2)
-						player:EnableRagdoll("left_shoulder", .2)
-						player:EnableRagdoll("right_hip", .1)
-						player:EnableRagdoll("left_hip", .1)
-						
-						propCurrentUnragdollTask = Task.Spawn(function()
-							player:DisableRagdoll()
-						end, 2)		
-					end, 1)
-				else
-				end
-			end
-
-			-- else
-				controller:SetNetworkedCustomProperty("tension", tension)
-				controller:SetNetworkedCustomProperty("targetPosition", puckPosition)
-
-				if distance > slack then
-					local	force = ForceForTension(tension)
-
-					totalForce = totalForce + direction * force
-				end
-				-- print("distance = " .. distance .. ", slack = " .. slack)
-			-- end
+			totalForce = totalForce + controller.context.propForceOfTension * deltaT
 		end
 	end
 
-	local	velocity = totalForce * deltaT
+	local	velocity = totalForce * deltaT * 100
+
+	-- print(tostring(velocity))
 
 	velocity = velocity + propPhysics:GetVelocity()
 	propPhysics:SetVelocity(velocity)
@@ -276,3 +229,5 @@ end
 
 --	On instantiation, find your floor. You'll need to do this if you move the puck somewhere as well.
 FindFloor()
+
+

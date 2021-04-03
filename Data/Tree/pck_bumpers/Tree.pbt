@@ -1,6 +1,93 @@
 Name: "pck_bumpers"
 RootId: 13358087012448314564
 Objects {
+  Id: 18102967151554038110
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: -10000
+      Y: 0.00048828125
+      Z: 250
+    }
+    Rotation {
+    }
+    Scale {
+      X: -9
+      Y: 50
+      Z: 18
+    }
+  }
+  ParentId: 13358087012448314564
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:playerOnly"
+      Bool: true
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
+  Id: 5163705657513405003
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: 10000
+      Y: 0.00048828125
+      Z: 250
+    }
+    Rotation {
+      Yaw: 180
+    }
+    Scale {
+      X: -9
+      Y: 50
+      Z: 18
+    }
+  }
+  ParentId: 13358087012448314564
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:playerOnly"
+      Bool: true
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
   Id: 12444809061661042305
   Name: "Plane 1m - One Sided"
   Transform {

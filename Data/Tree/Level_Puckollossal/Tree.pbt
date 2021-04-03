@@ -318,7 +318,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 10184847056121543272
+        Id: 3086929587923392091
       }
     }
     Overrides {
@@ -17199,9 +17199,44 @@ Objects {
     TeamSettings {
     }
     AudioBP {
-      Volume: 1
+      Volume: 0.75
       Falloff: 3600
       Radius: 2000
+    }
+  }
+}
+Objects {
+  Id: 6281652873977458052
+  Name: "boundary"
+  Transform {
+    Location {
+      Z: 1000
+    }
+    Rotation {
+    }
+    Scale {
+      X: 192
+      Y: 128
+      Z: 20
+    }
+  }
+  ParentId: 1232579912354001357
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
     }
   }
 }
@@ -17339,6 +17374,12 @@ Objects {
       Name: "cs:kickerTemplate"
       AssetReference {
         Id: 8143091135183387649
+      }
+    }
+    Overrides {
+      Name: "cs:boundary"
+      ObjectReference {
+        SelfId: 6281652873977458052
       }
     }
     Overrides {

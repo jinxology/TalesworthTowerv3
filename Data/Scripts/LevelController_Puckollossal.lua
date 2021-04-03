@@ -10,6 +10,7 @@ local propMugshotTemplate = script:GetCustomProperty("mugshotTemplate")
 local propMusic = script:GetCustomProperty("music"):WaitForObject()
 local propLookoutAbility = script:GetCustomProperty("lookoutAbility")
 local propBumpers = script:GetCustomProperty("bumpers"):WaitForObject()
+local propBoundary = script:GetCustomProperty("boundary"):WaitForObject()
 -- local Ease3D = require(script:GetCustomProperty("Ease3D"))
 local propEntrancePipeTemplate = script:GetCustomProperty("entrancePipeTemplate")
 local propShockVFX = script:GetCustomProperty("shockVFX")
@@ -65,7 +66,7 @@ function PlayMusic()
 end
 
 function ShockPlayerAwayFromTrigger(player, trigger)
-    if player.serverUserData.pckRebounding ~= true then
+    if player.serverUserData.pckRebounding ~= true or trigger:GetCustomProperty("playerOnly") ~= nil then
         player.serverUserData.pckRebounding = true
         shockVFX = World.SpawnAsset(propShockVFX)
         shockVFX:SetWorldPosition(player:GetWorldPosition())
@@ -81,11 +82,17 @@ function ShockPlayerAwayFromTrigger(player, trigger)
         player:EnableRagdoll("right_hip", .6)
         player:EnableRagdoll("left_hip", .6)		
         
-        impulse = trigger:GetWorldRotation() * Vector3.FORWARD * player.mass * 3200
-        impulse.z = math.max(impulse.z,  (Vector3.UP * player.mass * 1200).z)
+        impulse = trigger:GetWorldRotation() * Vector3.FORWARD * 320
+        impulse.z = math.max(impulse.z,  (Vector3.UP * 120).z)
+        if trigger:GetCustomProperty("playerOnly") ~= nil then
+            print("sending player out of goal")
+            player:SetVelocity(impulse)
+        else
+            print("bumper hit player")
+            player:AddImpulse(impulse * player.mass * 10)
+        end
 
         -- print(tostring(impulse))
-        player:AddImpulse(impulse)
         
         shockSFX:Play()
         shockVFX:Play()
@@ -107,7 +114,7 @@ function ConnectBumpers(container)
             bumper.beginOverlapEvent:Connect(function(trigger, other)
                 if other:IsA("Player") then
                     ShockPlayerAwayFromTrigger(other, trigger)
-                elseif other.name == "pck.puckTemplate" then
+                elseif other.name == "pck.puckTemplate" and bumper:GetCustomProperty("playerOnly") == nil  then
                     puckVelocity = other:GetVelocity()
                     puckAngularVelocity = other:GetAngularVelocity()
 
@@ -123,7 +130,7 @@ function ConnectBumpers(container)
                     reflected = puckAngularVelocity - (2 * puckAngularVelocity * surfaceNormal) * surfaceNormal
                     other:SetAngularVelocity(reflected)
 
-                    radius = puck:GetCustomProperty("controller"):WaitForObject().context.propRadius
+                    radius = other:GetCustomProperty("controller"):WaitForObject().context.propRadius
                     impactLocation = other:GetPosition() - surfaceNormal * radius - Vector3.UP * radius
 
                     propFencePuckFX = World.SpawnAsset(propFencePuckFXTemplate, { parent = other.parent, position = impactLocation, rotation = trigger:GetRotation() })
@@ -134,9 +141,30 @@ function ConnectBumpers(container)
         end
     end
 end
-        
+
+local propBoundaryListener = nil
+
+function ConnectBoundary(boundary)
+    if not propBoundaryListener then
+        propBoundaryListener = boundary.endOverlapEvent:Connect(function(trigger, other)
+            if other:IsA("Player") then
+                other:ResetVelocity()
+                other:SetWorldPosition(trigger:GetWorldPosition())
+                other:EnableRagdoll()
+
+                other.movementControlMode = MovementControlMode.NONE
+                Task.Spawn(function()
+                    other:DisableRagdoll()
+                    other.movementControlMode = MovementControlMode.LOOK_RELATIVE
+                end, 2)
+            end
+        end)
+    end
+end
 
 function LevelPowerUp()
+    ConnectBoundary(propBoundary)
+
     propTutorialCurtain = World.SpawnAsset(propTutorialCurtainTemplate, { parent = script.parent })
     propTutorialCurtain:GetCustomProperty("levelEnteredTrigger"):WaitForObject().beginOverlapEvent:Connect(function(trigger, other)
         if other:IsA("Player") then
@@ -155,6 +183,7 @@ function LevelPowerUp()
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, 375, 50), rotation = Rotation.New(-135, 90, 0), parent = script.parent }))
 end
 
+
 function LevelPlayerEntered(player)
     local lookoutAbility = World.SpawnAsset(propLookoutAbilityTemplate)
 
@@ -162,7 +191,11 @@ function LevelPlayerEntered(player)
 
     lookoutAbility.owner = player
     player.serverUserData.pckLookoutAbility = lookoutAbility
+    print("connected " .. player.name)
 end
+-- print("REMOVE THIS DAVE")
+-- Game.playerJoinedEvent:Connect(LevelPlayerEntered)
+
 
 function LevelPlayerExited(player)
     player:RemoveAbility(player.serverUserData.pckLookoutAbility)
@@ -322,17 +355,13 @@ function CheckPuckCount()
 end
 
 function ScoreTriggerDidOverlap(trigger, other)
-    if other:IsA("Player") then
-        ShockPlayerAwayFromTrigger(other, trigger)
-    elseif other.name == "pck.puckTemplate" then
+    if other.name == "pck.puckTemplate" then
         ScorePuck(other, true)
     end
 end
 
 function FailTriggerDidOverlap(trigger, other)
-    if other:IsA("Player") then
-        ShockPlayerAwayFromTrigger(other, trigger)
-    elseif other.name == "pck.puckTemplate" then
+    if other.name == "pck.puckTemplate" then
         ScorePuck(other, false)
     end
 end
@@ -389,4 +418,4 @@ function SpawnSmackers()
 end
 
 ConnectBumpers(propBumpers)
-
+ConnectBoundary(propBoundary)

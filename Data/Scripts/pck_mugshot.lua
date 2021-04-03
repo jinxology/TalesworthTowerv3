@@ -23,6 +23,103 @@ slackAmount = 0
 local ROPE_UNIT_LENGTH = 100
 local FACING_AWAY = 0.2
 
+local PLAYER_STANDING_FRICTION = 200
+local PLAYER_CROUCHING_FRICTION = 300
+local PLAYER_MOUNTED_FRICTION = 400
+local FORCE_PER_TENSION = 1200
+
+function ForceForTension(tension)
+	return FORCE_PER_TENSION * math.max(tension - 1.0, 0.0)
+end
+
+function UpdateTension(puck, deltaT)
+	local	player = propEquipment.owner
+	local	playerPosition = player:GetWorldPosition()
+	local	playerVelocity = player:GetVelocity()
+	local	puckPosition = puck:GetWorldPosition()
+	local	puckVelocity = puck:GetVelocity()
+	local	direction = playerPosition - puckPosition
+	local	distance = direction.size
+	local	slack = propSlackAmount
+	local	tension = distance / slack
+	local	force = ForceForTension(tension) * direction:GetNormalized()
+	local	forceSize = force.size
+
+	if math.abs(force.z) > 1 then
+		
+		force.z = 0
+		force = force:GetNormalized() * forceSize
+	end
+
+	script:SetNetworkedCustomProperty("tension", tension)
+	script:SetNetworkedCustomProperty("targetPosition", puckPosition)
+
+	local	playerFriction = 0
+
+	if player.isGrounded and not player.isJumping then
+		if player.isCrouching then
+			playerFriction = PLAYER_CROUCHING_FRICTION
+		elseif player.isMounted then
+			playerFriction = PLAYER_MOUNTED_FRICTION
+		else
+			playerFriction = PLAYER_STANDING_FRICTION
+		end
+	end
+	
+	print("force of tension = " .. forceSize .. ", friction = " .. playerFriction)
+	if false and forceSize > playerFriction then
+		-- player:EnableRagdoll("left_clavicle", .5)
+		-- player:EnableRagdoll("right_clavicle", .5)
+		-- player:EnableRagdoll("left_shoulder", .5)
+		-- player:EnableRagdoll("right_shoulder", .5)
+		player:EnableRagdoll("left_elbow", .5)
+		player:EnableRagdoll("right_elbow", .5)
+		player:EnableRagdoll("left_wrist", .5)
+		player:EnableRagdoll("right_wrist", .5)
+		-- player:EnableRagdoll("neck", .5)
+
+		-- player:EnableRagdoll("upper_spine", .5)
+		-- player:EnableRagdoll("lower_spine", .5)
+		-- player:EnableRagdoll("pelvis", .5)
+		player:EnableRagdoll("left_hip", .5)
+		player:EnableRagdoll("right_hip", .5)
+		player:EnableRagdoll("left_knee", .5)
+		player:EnableRagdoll("right_knee", .5)
+		player:EnableRagdoll("left_ankle", .5)
+		player:EnableRagdoll("right_ankle", .5)
+		
+		impulse = (force * deltaT * player.mass * -500) + (Vector3.UP * 1.9 * deltaT * player.mass * 5000)
+		-- print("dragging player, adding v = " .. tostring(impulse))
+
+		player:AddImpulse(impulse)
+		player.movementControlMode = MovementControlMode.NONE
+
+		if propCurrentUnragdollTask then
+			propCurrentUnragdollTask:Cancel()
+		end
+
+		propCurrentUnragdollTask = Task.Spawn(function()
+			player.movementControlMode = MovementControlMode.LOOK_RELATIVE
+			player:DisableRagdoll()
+			player:EnableRagdoll("right_shoulder", .2)
+			player:EnableRagdoll("left_shoulder", .2)
+			player:EnableRagdoll("right_hip", .1)
+			player:EnableRagdoll("left_hip", .1)
+			player:EnableRagdoll("neck", .2)
+			player:EnableRagdoll("upper_spine", .2)
+				
+			propCurrentUnragdollTask = Task.Spawn(function()
+				player:DisableRagdoll()
+			end, (distance - slack) / 1000)	
+		end, 1)
+
+		propForceOfTension = Vector3.ZERO
+	else
+		propForceOfTension = force
+	end
+end
+
+
 -- function CheckAim(targetedPuck)
 -- 	local		anchorLocations = targetedPuck.context.propAnchorPositions
 -- 	local		facingAnchors = {}
@@ -94,12 +191,12 @@ end
 
 function OnCast_Tether(ability)
 	if propTetheredState == UNTETHERED_STATE then
-		propCast2SFX:Play()
 		
 		local	targetData = propTetherAbility:GetTargetData()
 		local	hitObject = targetData.hitObject
 		
 		if hitObject ~= nil and hitObject.name == "pck.puckTemplate" then
+			propCast2SFX:Play()
 			propTargetedPuck = hitObject:GetCustomProperty("controller"):WaitForObject()
 
 			propCast1SFX:Play()
@@ -125,7 +222,7 @@ function TetherLanded()
 	propTetheredState = TETHERED_STATE
 	propSlackAmount = math.ceil((propTargetedPuck:GetWorldPosition() - propEquipment.owner:GetWorldPosition()).size / ROPE_UNIT_LENGTH) * ROPE_UNIT_LENGTH
 	script:SetNetworkedCustomProperty("tetheredState", propTetheredState)
-	
+
 	if propTetherTravelTask then
 		propTetherTravelTask:Cancel()
 		propTetherTravelTask = nil
@@ -135,7 +232,6 @@ function TetherLanded()
 	-- print("propTetherAbility " .. propTetherAbility.id .. " in state " .. propTetherAbility:GetCurrentPhase())
 end
 
-
 function OnExecute_Tether(ability)
 end
 
@@ -144,7 +240,11 @@ function OnRecovery_Tether(ability)
 end
 
 function OnCooldown_Tether(ability)
-	-- print("Cooled down...")
+	if propTetheredState == TETHERED_STATE then
+		propTetherAbility.isEnabled = false
+	else
+		propTetherAbility.isEnabled = true
+	end
 end
 
 function OnInterrupted_Tether(ability)
@@ -155,6 +255,7 @@ function OnInterrupted_Tether(ability)
 		script:SetNetworkedCustomProperty("tetheredState", propTetheredState)
 		script:SetNetworkedCustomProperty("targetPosition", propEquipment:GetWorldPosition())
 		
+		propTetherAbility.isEnabled = true
 		--	TODO: unreel??
 		if propTetherTravelTask then
 			propTetherTravelTask:Cancel()
@@ -185,6 +286,8 @@ function UntetherFromPuck()
 		propTargetedPuck = nil
 		script:SetNetworkedCustomProperty("tetheredState", propTetheredState)
 		script:SetNetworkedCustomProperty("targetPosition", propEquipment:GetWorldPosition())
+		
+		propTetherAbility.isEnabled = true
 		--TODO: unreel??
 		-- print("Untethering...")
 	end
@@ -203,7 +306,10 @@ function OnReady_Untether(ability)
 end
 
 function OnCast_Reel(ability)
-	-- print("OnCast " .. ability.name)
+	if propTetheredState ~= TETHERED_STATE then
+		ability:Interrupt()
+	end
+		-- print("OnCast " .. ability.name)
 end
 
 function OnExecute_Reel(ability)
@@ -312,26 +418,38 @@ function ConnectAbilityEvents_Unreel(ability)
 	ability.readyEvent:Connect(OnReady_Unreel)
 end
 
-local	RETICLE_TEMPLATE = script:GetCustomProperty("reticleTemplate")
-local	reticleInstance = nil
+local propBindingPressedListener = nil
+local propBindingReleasedListener = nil
 
-function OnEquipped(equipment, player)
-    if RETICLE_TEMPLATE and reticleInstance == nil then
-		reticleInstance = World.SpawnAsset(RETICLE_TEMPLATE)
-    end
+function OnBindingPressed(player, bindingPressed)
+	if bindingPressed == "ability_primary" then
+		print("start reeling")
+	elseif bindingPressed == "ability_secondary" then
+		print("start unreeling")
+	end
 end
 
-function OnUnequipped(equipment, player)
-    if Object.IsValid(reticleInstance) then
-        reticleInstance:Destroy()
-        reticleInstance = nil
-    end
-    isSpawned = false
+function OnBindingReleased(player, bindingReleased)
+	if bindingReleased == "ability_primary" then
+		print("stop reeling")
+	elseif bindingReleased == "ability_secondary" then
+		print("stop unreeling")
+	end
+end
+
+function OnEquipped(equipment)
+	propBindingPressedListener = equipment.owner.bindingPressedEvent:Connect(OnBindingPressed)
+	propBindingReleasedListener = equipment.owner.bindingReleasedEvent:Connect(OnBindingReleased)
+end
+
+function OnUnequipped(equipment)
+	propBindingPressedListener:Disconnect()
+	propBindingReleasedListener:Disconnect()
 end
 
 ConnectAbilityEvents_Tether(propTetherAbility)
 ConnectAbilityEvents_Untether(propUntetherAbility)
-ConnectAbilityEvents_Reel(propReelAbility)
+-- ConnectAbilityEvents_Reel(propReelAbility)
 -- ConnectAbilityEvents_Unreel(propUnreelAbility)
 propEquipment.equippedEvent:Connect(OnEquipped)
 propEquipment.unequippedEvent:Connect(OnUnequipped)
