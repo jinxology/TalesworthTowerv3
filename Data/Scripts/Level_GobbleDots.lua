@@ -4,6 +4,7 @@
 --Add a Custom Property to the LevelController script called "MainGameController"
 --Drag a copy of "MainGameController" to this custom property
 local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
+propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
 
 --Place StartPlatformGroup(networked) template and record the Position and Rotation values here
 --After adding the inital values, delete the StartingPlatormGroup template out of the project
@@ -25,8 +26,11 @@ entranceFlumeEjectionVelocity = 5
 ------------------------------------------------------------
 local propInitializeBoard = script:GetCustomProperty("InitialIzeBoard")
 local propDeletedDots = script:GetCustomProperty("DeletedDots")
+local propResetLevel = script:GetCustomProperty("ResetLevel")
+
 local propCartoonFoodEatBiteShort02SFX = script:GetCustomProperty("CartoonFoodEatBiteShort02SFX")
 local propDrinkLiquidGulpSwallow01SFX = script:GetCustomProperty("DrinkLiquidGulpSwallow01SFX")
+local propHittingGhostSVFX = script:GetCustomProperty("HittingGhostSVFX")
 
 local DOT_COUNT = 292
 
@@ -49,6 +53,9 @@ local PINKY_COLOR = Color.FromLinearHex("FF28C7FF")
 local CLYDE_COLOR = Color.FromLinearHex("F57A00FF")
 
 local GHOST_SCALE = 2.2
+
+local PLAYER_RESPAWN_POINT = Vector3.New(2500,4300,15550)
+local SECONDS_AFTER_DEATH = 5
 
 dotsArray = {} --The Array of all of the Dots the Server is holding with current values
 dotsDeletedArray = {}  --The Array of deleted dots the server is holding (an array of indexes)
@@ -75,9 +82,6 @@ function LevelBegin()
             child:MoveTo(child:GetPosition() - Vector3.UP * 36, 2, true)
         end
     end
-    
-	--player = Game.GetPlayers()
-	--player[1]:Die()
 end
 
 --LevelEnd code is called when the....
@@ -87,19 +91,21 @@ end
 
 --LevelPowerDown is called from the next level back to this one to clean it up and remove it from memory
 function LevelPowerDown() 
-
 end
 
 --LevelVictory is called when the Win Condition of the game is met
 --This function will call LevelEnd(true) on the MainGameController 
 function LevelVictory()
+	inkyGhost:Destroy()
+	blinkyGhost:Destroy()
+	pinkyGhost:Destroy()
+	clydeGhost:Destroy()
 	propMainGameController.context.LevelEnd(true)
 end
 
 --LevelFailed is called when the Loss Condition of the game is met
 --This function will call LevelEnd(false) on the MainGameController 
 function LevelFailed()
-	propMainGameController.context.LevelEnd(false)
 end
 
 --ResetLevel is called when the level needs to get reset to its original state
@@ -114,7 +120,6 @@ function InitializeDotArray()
 	for dotIndex = 1, DOT_COUNT do 
 		dotsArray[dotIndex] = 1
 	end	
-	--print("Total Dots:", #dotsArray)	
 end
 
 function CheckDotsLeft(dotDeletedIndex)	
@@ -136,10 +141,6 @@ function UpdateDotsDeletedString(deletedDot)
 	end
 	return(dotsDeletedNetworkedString)
 end
- 
---function PlayerNumberOfDeletes(currentPlayer, dotsDeleted)
-	--print("Player: ", currentPlayer.name, " has deleted: ", dotsDeleted, " dots!")
---end
 
 function OnDotDeleted(dotIndex, dotPosition)
 	
@@ -162,26 +163,29 @@ function OnDotDeleted(dotIndex, dotPosition)
 		--Check to see if the game has been won
 		CheckDotsLeft(dotIndex)
 	end
-
 end
 
 Events.Connect("DotDeleted", OnDotDeleted)
 
-function OnPlayerDeath(inPlayer)
-	print(inPlayer.name)
-	print("Player: ", inPlayer.name, " has died.")
-	inPlayer:Die()
-	--inPlayer.Respawn(Vector3.New(0,0,0))
+function OnPlayerDeath(inPlayer, inGhost)
+	if inPlayer.isDead == false then
+	    local vfxpos = inPlayer:GetWorldPosition() --+ Vector3.New(0,0,50)
+	    World.SpawnAsset(propHittingGhostSVFX,{position=vfxpos})  --[[, parent = levelFolder}) ]]--
+	        
+		inPlayer:Die()
+		
+		inPlayer:EnableRagdoll()
+		inPlayer.animationStance = "unarmed_death"
+	end
 end
 
 function OnPlayerDied(player, damage)
-    print("Player " .. player.name .. " has been killed!")
-
-    -- Now, revive them after 2 seconds at a spawn point:
-  --  Task.Wait(2)
-   -- player:Respawn(Vector3.New(2550, 4100, 15625))
+    -- Now, revive them after SECONDS_AFTER_DEATH seconds at a spawn point:
+	Task.Wait(SECONDS_AFTER_DEATH)
+	
+	player:Respawn({position = PLAYER_RESPAWN_POINT})
+	player.animationStance = "unarmed_stance"
 end
-
 
 function SpwanGhosts()
 	inkyGhost = World.SpawnAsset(propGhost, {parent = mobFolder})

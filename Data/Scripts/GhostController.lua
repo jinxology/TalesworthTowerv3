@@ -41,8 +41,9 @@ propGhost:SetColor(propGhost:GetCustomProperty("Color"))
 function OnGhostInteraction(whichTrigger, player)
 	
 	if player and player:IsA("Player") then
-		print(player.name)
-		propLevelControllerGobbleDots.context.OnPlayerDeath(player)
+		if player.isDead ~= true then
+			propLevelControllerGobbleDots.context.OnPlayerDeath(player, propGhost)
+		end
     end
 end
 
@@ -126,36 +127,35 @@ function GetGhostDestinationPosition(ghostWorldPosition)
 end
 
 function MoveGhost()
-	ghostWorldPosition = ghost:GetWorldTransform():GetPosition()
-	--print("Ghost World Position: ", ghostWorldPosition)
-	
-    local ghostDestination = GetGhostDestinationPosition(ghostWorldPosition)
-	--print(ghostDestination)
-	
-	if currentDirection == MOVING_UP then
-		ghost:RotateTo(GHOST_FACE_UP, GHOST_ROTATE_SPEED)
-	elseif currentDirection == MOVING_RIGHT then
-		ghost:RotateTo(GHOST_FACE_RIGHT, GHOST_ROTATE_SPEED)
-	elseif currentDirection == MOVING_DOWN then
-		ghost:RotateTo(GHOST_FACE_DOWN, GHOST_ROTATE_SPEED)
-	else
-		ghost:RotateTo(GHOST_FACE_LEFT, GHOST_ROTATE_SPEED)
-	end
+	--If the ghosts have been destroyed but you are in the middle of a movement
+	--if Object.IsValid(ghost) then
+		ghostWorldPosition = ghost:GetWorldTransform():GetPosition()
+		--print("Ghost World Position: ", ghostWorldPosition)
 		
-	ghost:MoveTo(ghostDestination, GHOST_SPEED)
-	Task.Wait(GHOST_SPEED)
+	    local ghostDestination = GetGhostDestinationPosition(ghostWorldPosition)
+		--print(ghostDestination)
+		
+		if currentDirection == MOVING_UP then
+			ghost:RotateTo(GHOST_FACE_UP, GHOST_ROTATE_SPEED)
+		elseif currentDirection == MOVING_RIGHT then
+			ghost:RotateTo(GHOST_FACE_RIGHT, GHOST_ROTATE_SPEED)
+		elseif currentDirection == MOVING_DOWN then
+			ghost:RotateTo(GHOST_FACE_DOWN, GHOST_ROTATE_SPEED)
+		else
+			ghost:RotateTo(GHOST_FACE_LEFT, GHOST_ROTATE_SPEED)
+		end
+			
+		ghost:MoveTo(ghostDestination, GHOST_SPEED)
+		Task.Wait(GHOST_SPEED)
+	--end
 end
 
 function StartGhost()
 	ghostAITask = Task.Spawn(function()
-	while true do
+	while Object.IsValid(ghost) do
 		MoveGhost()	
 	end 
 	end)
-
-	--sfx = World.SpawnAsset(propScifiDeepAlienMorphingMachineryLoop01SFX)
-	--sfx:SetWorldPosition(ghost:GetWorldTransform():GetPosition())
-	--sfx:Play()
 end
 
 ghost:SetPosition(ghostSpawnPoint)
