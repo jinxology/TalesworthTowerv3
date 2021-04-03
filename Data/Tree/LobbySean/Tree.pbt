@@ -1,6 +1,54 @@
 Name: "LobbySean"
 RootId: 16614468857374372845
 Objects {
+  Id: 10202056864065937710
+  Name: "Sci-fi Base Wall Interior 01 - Double Sliding Door Template"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 14633673777962383534
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Sci-fi Base Wall Interior 01 - Double Sliding Door Template"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -477.174957
+            Y: 623.22168
+            Z: -6.10351563e-05
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 15763843669171592235
+    }
+  }
+}
+Objects {
   Id: 1406295511696529939
   Name: "Grass Tall"
   Transform {

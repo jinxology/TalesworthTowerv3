@@ -683,12 +683,12 @@ Assets {
   }
 }
 Assets {
-  Id: 3806173829220646276
-  Name: "Metal Steel Hexagon 01"
-  PlatformAssetType: 2
+  Id: 3753434009625901326
+  Name: "Fantasy Chest Base 01"
+  PlatformAssetType: 1
   PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_metal_steel_hex_001"
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_fantasy_chest_001_ref"
   }
 }
 Assets {

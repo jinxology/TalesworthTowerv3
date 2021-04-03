@@ -1,6 +1,55 @@
 Name: "Level_ShapesAndButtons"
 RootId: 17470512920309096864
 Objects {
+  Id: 11561130811103538332
+  Name: "antechamber"
+  Transform {
+    Location {
+      X: -93.8981934
+      Y: -2801.82397
+    }
+    Rotation {
+    }
+    Scale {
+      X: 24.2853909
+      Y: 15.7888584
+      Z: 0.822079718
+    }
+  }
+  ParentId: 17470512920309096864
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 3806173829220646276
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    InteractWithTriggers: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+}
+Objects {
   Id: 293531888720428441
   Name: "FlumePortalWallFrame"
   Transform {
