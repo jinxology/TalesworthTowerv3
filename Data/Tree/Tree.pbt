@@ -1329,7 +1329,7 @@ Objects {
   }
   ParentId: 4781671109827199097
   ChildIds: 8246799554883067851
-  ChildIds: 15691876057323174744
+  ChildIds: 7391733560471700038
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -1343,11 +1343,10 @@ Objects {
   }
 }
 Objects {
-  Id: 15691876057323174744
-  Name: "Utility_ClientSide"
+  Id: 7391733560471700038
+  Name: "Nameplates"
   Transform {
     Location {
-      Z: 6265.69092
     }
     Rotation {
     }
@@ -1358,6 +1357,313 @@ Objects {
     }
   }
   ParentId: 1517245690180969780
+  ChildIds: 807463502133418659
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ShowNames"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:ShowHealthbars"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:ShowOnSelf"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:ShowOnTeammates"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:MaxDistanceOnTeammates"
+      Float: 0
+    }
+    Overrides {
+      Name: "cs:ShowOnEnemies"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:MaxDistanceOnEnemies"
+      Float: 2000
+    }
+    Overrides {
+      Name: "cs:ShowOnDeadPlayers"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:Scale"
+      Float: 1
+    }
+    Overrides {
+      Name: "cs:ShowNumbers"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:AnimateChanges"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:ChangeAnimationTime"
+      Float: 0.4
+    }
+    Overrides {
+      Name: "cs:ShowSegments"
+      Bool: false
+    }
+    Overrides {
+      Name: "cs:SegmentSize"
+      Float: 20
+    }
+    Overrides {
+      Name: "cs:FriendlyNameColor"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:EnemyNameColor"
+      Color {
+        R: 0.450000048
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:BorderColor"
+      Color {
+        R: 0.0110000009
+        G: 0.0110000009
+        B: 0.0110000009
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:BackgroundColor"
+      Color {
+        R: 0.334000021
+        G: 0.334000021
+        B: 0.334000021
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:FriendlyHealthColor"
+      Color {
+        G: 0.0762913
+        B: 0.72
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:EnemyHealthColor"
+      Color {
+        R: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:DamageChangeColor"
+      Color {
+        R: 0.590000033
+        G: 0.152384102
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:HealChangeColor"
+      Color {
+        R: 0.0670196861
+        G: 0.919999957
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:HealthNumberColor"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:ShowNames:tooltip"
+      String: "Show names as part of the nameplate. Default names are hidden either way."
+    }
+    Overrides {
+      Name: "cs:ShowOnSelf:tooltip"
+      String: "Show a nameplate on the local player"
+    }
+    Overrides {
+      Name: "cs:ShowOnTeammates:tooltip"
+      String: "Show nameplates on teammates"
+    }
+    Overrides {
+      Name: "cs:MaxDistanceOnTeammates:tooltip"
+      String: "Only show nameplates on teammates up to this distance away. 0 means always show them."
+    }
+    Overrides {
+      Name: "cs:ShowOnEnemies:tooltip"
+      String: "Show nameplates on enemies"
+    }
+    Overrides {
+      Name: "cs:MaxDistanceOnEnemies:tooltip"
+      String: "Only show nameplates on enemies up to this distance away. 0 means always show them."
+    }
+    Overrides {
+      Name: "cs:ShowOnDeadPlayers:tooltip"
+      String: "Show nameplates even on dead players"
+    }
+    Overrides {
+      Name: "cs:Scale:tooltip"
+      String: "Overall scale factor for nameplates"
+    }
+    Overrides {
+      Name: "cs:ShowNumbers:tooltip"
+      String: "Show numerical value for hitpoints and maximum"
+    }
+    Overrides {
+      Name: "cs:AnimateChanges:tooltip"
+      String: "Show animated region when a player\'s health changes"
+    }
+    Overrides {
+      Name: "cs:ChangeAnimationTime:tooltip"
+      String: "Duration of animated health change"
+    }
+    Overrides {
+      Name: "cs:FriendlyNameColor:tooltip"
+      String: "Name color for teammates and self"
+    }
+    Overrides {
+      Name: "cs:EnemyNameColor:tooltip"
+      String: "Name color for enemies"
+    }
+    Overrides {
+      Name: "cs:BorderColor:tooltip"
+      String: "Color of border"
+    }
+    Overrides {
+      Name: "cs:BackgroundColor:tooltip"
+      String: "Color of space where health is missing"
+    }
+    Overrides {
+      Name: "cs:FriendlyHealthColor:tooltip"
+      String: "Color of friendly health bars"
+    }
+    Overrides {
+      Name: "cs:EnemyHealthColor:tooltip"
+      String: "Color of enemy health bars"
+    }
+    Overrides {
+      Name: "cs:DamageChangeColor:tooltip"
+      String: "Color for damage when animating changes"
+    }
+    Overrides {
+      Name: "cs:HealChangeColor:tooltip"
+      String: "Color for heals when animating changes"
+    }
+    Overrides {
+      Name: "cs:HealthNumberColor:tooltip"
+      String: "Color of health number text"
+    }
+    Overrides {
+      Name: "cs:ShowHealthbars:tooltip"
+      String: "Whether to show healthbars at all"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 807463502133418659
+  Name: "ClientContext"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7391733560471700038
+  ChildIds: 10355449009963340355
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 10355449009963340355
+  Name: "NameplateControllerClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 807463502133418659
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:API"
+      AssetReference {
+        Id: 14633632985083390763
+      }
+    }
+    Overrides {
+      Name: "cs:ComponentRoot"
+      ObjectReference {
+        SelfId: 7391733560471700038
+      }
+    }
+    Overrides {
+      Name: "cs:NameplateTemplate"
+      AssetReference {
+        Id: 5049470299132475441
+      }
+    }
+    Overrides {
+      Name: "cs:SegmentSeparatorTemplate"
+      AssetReference {
+        Id: 621782261612844046
+      }
+    }
+    Overrides {
+      Name: "cs:playersLoggedIn"
+      ObjectReference {
+        SelfId: 7618492900341624844
+      }
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1369,7 +1675,7 @@ Objects {
   }
   Script {
     ScriptAsset {
-      Id: 15319700005624589838
+      Id: 14278482860986951316
     }
   }
 }
@@ -1393,11 +1699,14 @@ Objects {
   }
   ParentId: 1517245690180969780
   ChildIds: 17156775274313253422
+  ChildIds: 2553325091537673497
   ChildIds: 10264120089458786505
   ChildIds: 8573270706784511485
   ChildIds: 1119104670142202433
   ChildIds: 5679648554755152430
   ChildIds: 16833838141883833062
+  ChildIds: 7037950846960905776
+  ChildIds: 5236334920001311372
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1433,6 +1742,562 @@ Objects {
   }
 }
 Objects {
+  Id: 5236334920001311372
+  Name: "SmallTextBanner"
+  Transform {
+    Location {
+      X: -2.32436969e-06
+      Y: -3.02476792e-06
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8246799554883067851
+  ChildIds: 5629975203324798412
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:DefaultDuration"
+      Float: 3
+    }
+    Overrides {
+      Name: "cs:DefaultDuration:tooltip"
+      String: "Default duration of a message if none is specified"
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 5629975203324798412
+  Name: "MessageBannerClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5236334920001311372
+  ChildIds: 8643682485886869321
+  ChildIds: 7397845670220919147
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 7397845670220919147
+  Name: "BannerCanvas"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5629975203324798412
+  ChildIds: 7546326718803895155
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Canvas {
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 7546326718803895155
+  Name: "Panel"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7397845670220919147
+  ChildIds: 14741742274415576640
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 600
+    Height: 100
+    UIX: -891.84021
+    UIY: -319.431519
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Panel {
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 14741742274415576640
+  Name: "BannerText"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7546326718803895155
+  UnregisteredParameters {
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 461
+    Height: 158
+    UIX: 7.8923645
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "Message Banner"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 20
+      Justification {
+        Value: "mc:etextjustify:left"
+      }
+      AutoWrapText: true
+      Font {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 8643682485886869321
+  Name: "MainUI_SmallUIMessageBanner"
+  Transform {
+    Location {
+      Y: -0.000366210938
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5629975203324798412
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:SmallTextBanner"
+      ObjectReference {
+        SelfId: 5236334920001311372
+      }
+    }
+    Overrides {
+      Name: "cs:Panel"
+      ObjectReference {
+        SelfId: 7546326718803895155
+      }
+    }
+    Overrides {
+      Name: "cs:BannerText"
+      ObjectReference {
+        SelfId: 14741742274415576640
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Script {
+    ScriptAsset {
+      Id: 6919381476883514446
+    }
+  }
+}
+Objects {
+  Id: 7037950846960905776
+  Name: "UI Image"
+  Transform {
+    Location {
+      X: -1050.51904
+      Y: 764.926514
+      Z: -306.5513
+    }
+    Rotation {
+      Yaw: 142.459686
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8246799554883067851
+  ChildIds: 3073709182130993364
+  ChildIds: 3722522390986877573
+  ChildIds: 6623274160722999380
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 86
+    Height: 80
+    UIX: 20.966053
+    UIY: -40.5710449
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Image {
+      Brush {
+        Id: 13388933104152186131
+      }
+      Color {
+        G: 0.830769897
+        B: 0.830770075
+        A: 1
+      }
+      TeamSettings {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 6623274160722999380
+  Name: "J"
+  Transform {
+    Location {
+      X: -1050.51904
+      Y: 764.926514
+      Z: -306.5513
+    }
+    Rotation {
+      Yaw: 142.459686
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7037950846960905776
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 73
+    Height: 76
+    UIX: -1.86370683
+    UIY: -9.00488281
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    AddSizeToParentIfUsingParentSize: true
+    Text {
+      Label: "J"
+      Color {
+        R: 0.0280978791
+        G: 0.668999612
+        B: 0.669
+        A: 1
+      }
+      Size: 55
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 10953097053886714955
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 3722522390986877573
+  Name: "UI Image"
+  Transform {
+    Location {
+      X: -1050.51917
+      Y: 764.926758
+      Z: -306.5513
+    }
+    Rotation {
+      Yaw: 142.459686
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7037950846960905776
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 86
+    Height: 80
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Image {
+      Brush {
+        Id: 3442190493143268016
+      }
+      Color {
+        A: 0.274000019
+      }
+      TeamSettings {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 3073709182130993364
+  Name: "ResetVoteText"
+  Transform {
+    Location {
+      X: -1050.51904
+      Y: 764.926514
+      Z: -306.5513
+    }
+    Rotation {
+      Yaw: 142.459686
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7037950846960905776
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 169
+    Height: 34
+    UIX: 4.02344751
+    UIY: 33.1859131
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "Vote for Tower Reset"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 15
+      Justification {
+        Value: "mc:etextjustify:left"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 841534158063459245
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomleft"
+        }
+      }
+    }
+  }
+}
+Objects {
   Id: 16833838141883833062
   Name: "MainTimerPanel"
   Transform {
@@ -1455,6 +2320,7 @@ Objects {
   ChildIds: 5256690116021477971
   ChildIds: 296477757847824242
   ChildIds: 858783912670990656
+  ChildIds: 7618492900341624844
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1466,7 +2332,7 @@ Objects {
   }
   Control {
     Width: 405
-    Height: 172
+    Height: 216
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -1483,6 +2349,72 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 7618492900341624844
+  Name: "playersLoggedIn"
+  Transform {
+    Location {
+      X: -0.000854492188
+      Y: -0.000118255615
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1.00000012
+    }
+  }
+  ParentId: 16833838141883833062
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 215
+    Height: 154
+    UIX: 87.3323517
+    UIY: 13.0231209
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 20
+      Justification {
+        Value: "mc:etextjustify:left"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 841534158063459245
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topright"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topright"
         }
       }
     }
@@ -3962,6 +4894,70 @@ Objects {
   }
 }
 Objects {
+  Id: 2553325091537673497
+  Name: "TxtAutoStart"
+  Transform {
+    Location {
+      X: -0.000386507832
+      Y: -0.000102296093
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8246799554883067851
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 1012
+    Height: 100
+    UIY: -949.337097
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "TOWER BEGINS IN "
+      Color {
+        G: 0.970330775
+        B: 0.99
+        A: 1
+      }
+      Size: 50
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      Font {
+        Id: 12517336444367163721
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+    }
+  }
+}
+Objects {
   Id: 17156775274313253422
   Name: "MainUIController"
   Transform {
@@ -3996,12 +4992,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:Utility_ClientSide"
-      ObjectReference {
-        SelfId: 15691876057323174744
-      }
-    }
-    Overrides {
       Name: "cs:LevelFailSound"
       AssetReference {
         Id: 17682678845342809470
@@ -4029,6 +5019,18 @@ Objects {
       Name: "cs:totalTime"
       ObjectReference {
         SelfId: 858783912670990656
+      }
+    }
+    Overrides {
+      Name: "cs:TxtAutoStart"
+      ObjectReference {
+        SelfId: 2553325091537673497
+      }
+    }
+    Overrides {
+      Name: "cs:MainUI_SmallUIMessageBanner"
+      ObjectReference {
+        SelfId: 8643682485886869321
       }
     }
   }
@@ -4096,11 +5098,45 @@ Objects {
       String: ""
     }
     Overrides {
+      Name: "cs:towerResetVote"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:autostartTimerState"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:level1autostartTrigger"
+      ObjectReference {
+        SelfId: 15397268061493203098
+      }
+    }
+    Overrides {
+      Name: "cs:txtTowerInProgress"
+      ObjectReference {
+        SelfId: 9114324584553932207
+      }
+    }
+    Overrides {
+      Name: "cs:TowerProgressSign"
+      ObjectReference {
+        SelfId: 15944994166182577803
+      }
+    }
+    Overrides {
       Name: "cs:UIMessage:isrep"
       Bool: true
     }
     Overrides {
       Name: "cs:towerTimerState:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:towerResetVote:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:autostartTimerState:isrep"
       Bool: true
     }
   }

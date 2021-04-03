@@ -2193,13 +2193,13 @@ Objects {
           Vector {
             X: -5885.94092
             Y: 4365.67627
-            Z: 167.087891
+            Z: 150.023438
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: -89.9999771
+            Yaw: -89.9999695
           }
         }
         Overrides {
@@ -2208,6 +2208,18 @@ Objects {
             X: 0.99999994
             Y: 0.99999994
             Z: 0.99999994
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16318544285979259951
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            Y: -200
+            Z: 150
           }
         }
       }
@@ -11030,6 +11042,334 @@ Objects {
         Mass: 100
         LinearDamping: 0.01
       }
+    }
+  }
+}
+Objects {
+  Id: 9241697703533511122
+  Name: "ExitSign"
+  Transform {
+    Location {
+      X: -5300
+      Y: 4450
+      Z: 450
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1647900999251311847
+  ChildIds: 11906275642178878888
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 11906275642178878888
+  Name: "Exit Sign"
+  Transform {
+    Location {
+      X: -1.65478516
+      Y: 14.5942383
+      Z: 22.1269531
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9241697703533511122
+  ChildIds: 11487764445997896469
+  ChildIds: 10346767390873478905
+  ChildIds: 16746543113915825517
+  ChildIds: 18049360058345130795
+  ChildIds: 11521859065939461749
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 11521859065939461749
+  Name: "World Text"
+  Transform {
+    Location {
+      X: 22.5297852
+      Y: 55.3413086
+      Z: 119.677734
+    }
+    Rotation {
+      Yaw: -90
+    }
+    Scale {
+      X: 4.76405239
+      Y: 5.36619043
+      Z: 5.36619043
+    }
+  }
+  ParentId: 11906275642178878888
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "EXIT RIGHT"
+    FontAsset {
+      Id: 1854457264003910494
+    }
+    Color {
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:left"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
+  Id: 18049360058345130795
+  Name: "World Text"
+  Transform {
+    Location {
+      X: 23.2602539
+      Y: 55.3413086
+      Z: 200.09375
+    }
+    Rotation {
+      Yaw: -90
+    }
+    Scale {
+      X: 5.75131273
+      Y: 6.47823381
+      Z: 6.47823381
+    }
+  }
+  ParentId: 11906275642178878888
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "CAUTION"
+    FontAsset {
+      Id: 1854457264003910494
+    }
+    Color {
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:left"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
+  Id: 16746543113915825517
+  Name: "Plane 1m - One Sided"
+  Transform {
+    Location {
+      X: -171.017578
+      Y: 52.5610352
+      Z: -12.1054688
+    }
+    Rotation {
+      Pitch: 90
+      Yaw: -48.3664551
+      Roll: -138.366455
+    }
+    Scale {
+      X: 1.80000007
+      Y: 3.8
+      Z: 1.30000007
+    }
+  }
+  ParentId: 11906275642178878888
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 15837653348734747337
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:utile"
+      Float: 0.762932777
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:vtile"
+      Float: 0.691695213
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 15355692762836007663
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 10346767390873478905
+  Name: "World Text"
+  Transform {
+    Location {
+      X: 22.5297852
+      Y: 45.2573242
+      Z: 128.285156
+    }
+    Rotation {
+      Yaw: -90
+    }
+    Scale {
+      X: 5.36619043
+      Y: 5.36619043
+      Z: 5.36619043
+    }
+  }
+  ParentId: 11906275642178878888
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "EXIT RIGHT"
+    FontAsset {
+      Id: 1854457264003910494
+    }
+    Color {
+      R: 1
+      G: 0.560927153
+      B: 0.220000029
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:left"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
+  Id: 11487764445997896469
+  Name: "World Text"
+  Transform {
+    Location {
+      X: 23.2602539
+      Y: 45.2573242
+      Z: 208.701172
+    }
+    Rotation {
+      Yaw: -90
+    }
+    Scale {
+      X: 6.47823381
+      Y: 6.47823381
+      Z: 6.47823381
+    }
+  }
+  ParentId: 11906275642178878888
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "CAUTION"
+    FontAsset {
+      Id: 1854457264003910494
+    }
+    Color {
+      R: 1
+      G: 0.560927153
+      B: 0.220000029
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:left"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
     }
   }
 }

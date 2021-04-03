@@ -11,6 +11,7 @@ function OnPlatform(pNbr, whoCouldItBeNow, callingScript)
     callingScript.context.TurnOffBeam()
     callingScript.context.TurnOnRingLight()    
     CheckIfPlayersReady()
+    
 end
 
 function OffPlatform(pNbr, whoCouldItBeNow, callingScript)
@@ -38,9 +39,12 @@ end
 
 function CheckIfPlayersReady()
     local nbrReady = NbrOfPlayersOnStartPlatforms()
+
     if nbrReady >= propMainGameController.context.requiredNbrPlayersReady then
         Deactivate()
         propMainGameController.context.StartingPlatformsActivated()  
+    else
+        propMainGameController.context.StartingPlatformsOccupied(nbrReady) 
     end
 end
 

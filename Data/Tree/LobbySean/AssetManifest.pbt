@@ -8,6 +8,24 @@ Assets {
   }
 }
 Assets {
+  Id: 17290960252098944379
+  Name: "Bush 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bush_generic_002"
+  }
+}
+Assets {
+  Id: 17064621874275756231
+  Name: "Waterfall Straight"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "fxsm_waterfall_straight"
+  }
+}
+Assets {
   Id: 17056298086880758238
   Name: "BG Flat 010"
   PlatformAssetType: 9
@@ -80,6 +98,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13932294441285886795
+  Name: "Grass Short"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_grass_generic_002"
+  }
+}
+Assets {
   Id: 13741622039984821582
   Name: "Fantasy Symbol 02"
   PlatformAssetType: 9
@@ -107,12 +134,39 @@ Assets {
   }
 }
 Assets {
+  Id: 12946598305854582651
+  Name: "Cube - Chamfered Large"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_chamfer"
+  }
+}
+Assets {
+  Id: 12095835209017042614
+  Name: "Cube"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_002"
+  }
+}
+Assets {
   Id: 10789546840193366307
   Name: "Cube - Bottom-Aligned"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cube_001"
+  }
+}
+Assets {
+  Id: 9627380735913518424
+  Name: "Tree Redwood Big"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_redwood_001"
   }
 }
 Assets {
@@ -143,6 +197,15 @@ Assets {
   }
 }
 Assets {
+  Id: 5821579475232613487
+  Name: "Tree Redwood Small"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_redwood_005"
+  }
+}
+Assets {
   Id: 5759979273121365350
   Name: " Wood 9 Slice Crate 01"
   PlatformAssetType: 2
@@ -170,6 +233,15 @@ Assets {
   }
 }
 Assets {
+  Id: 4841635215687283907
+  Name: "Wood Planks"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_wood_planks_001_uv"
+  }
+}
+Assets {
   Id: 4330917524255714842
   Name: "Helm"
   PlatformAssetType: 9
@@ -185,6 +257,33 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameHighlighted_020"
+  }
+}
+Assets {
+  Id: 2261151074761971500
+  Name: "Tree Redwood Medium"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_redwood_002"
+  }
+}
+Assets {
+  Id: 2134873693972537524
+  Name: "Basic Water Splash VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_watersplash"
+  }
+}
+Assets {
+  Id: 1137112816547272582
+  Name: "Cylinder"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cylinder_002"
   }
 }
 Assets {

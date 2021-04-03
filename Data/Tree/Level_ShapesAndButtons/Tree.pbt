@@ -1,6 +1,90 @@
 Name: "Level_ShapesAndButtons"
 RootId: 17470512920309096864
 Objects {
+  Id: 15397268061493203098
+  Name: "level1autostartTrigger"
+  Transform {
+    Location {
+      Z: 288.236938
+    }
+    Rotation {
+    }
+    Scale {
+      X: 38.1000023
+      Y: 38.1000023
+      Z: 6.20000076
+    }
+  }
+  ParentId: 17470512920309096864
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
+  Id: 11561130811103538332
+  Name: "antechamber"
+  Transform {
+    Location {
+      X: -93.8981934
+      Y: -2801.82397
+    }
+    Rotation {
+    }
+    Scale {
+      X: 24.2853909
+      Y: 15.7888584
+      Z: 0.822079718
+    }
+  }
+  ParentId: 17470512920309096864
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 3806173829220646276
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    InteractWithTriggers: true
+    StaticMesh {
+      Physics {
+      }
+    }
+  }
+}
+Objects {
   Id: 293531888720428441
   Name: "FlumePortalWallFrame"
   Transform {
@@ -1805,15 +1889,7 @@ Objects {
     }
   }
   ParentId: 17470512920309096864
-  ChildIds: 13538748502445639929
   ChildIds: 8747698076641259855
-  ChildIds: 7973452077870440027
-  ChildIds: 5831564490956585725
-  ChildIds: 1794149876223652523
-  ChildIds: 8722154384272996423
-  ChildIds: 3121179148652407302
-  ChildIds: 15879044789012098602
-  ChildIds: 13493493302430201244
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1825,459 +1901,6 @@ Objects {
   }
   Folder {
     IsGroup: true
-  }
-}
-Objects {
-  Id: 13493493302430201244
-  Name: "SpawnVFX"
-  Transform {
-    Location {
-      X: 163.163635
-      Y: -160.861694
-      Z: 681.862854
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9167470617022525336
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Color"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "bp:Density"
-      Float: 1.66137147
-    }
-    Overrides {
-      Name: "bp:Particle Scale Multiplier"
-      Float: 1.17670298
-    }
-    Overrides {
-      Name: "bp:Radius"
-      Float: 2.20022464
-    }
-    Overrides {
-      Name: "bp:Wind Speed"
-      Vector {
-        X: 5
-        Y: 5
-        Z: 5
-      }
-    }
-    Overrides {
-      Name: "bp:Gravity"
-      Float: 0
-    }
-    Overrides {
-      Name: "bp:Radial Velocity Min"
-      Float: 2.95682383
-    }
-    Overrides {
-      Name: "bp:Upward Velocity Min"
-      Float: 0.909555435
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 7588893138122858901
-    }
-    TeamSettings {
-    }
-    Vfx {
-    }
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:medium"
-  }
-}
-Objects {
-  Id: 15879044789012098602
-  Name: "Object Rotator Continuous"
-  Transform {
-    Location {
-      X: -709.66864
-      Y: -458.292786
-      Z: 120
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9167470617022525336
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 5456438743692384211
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Object Rotator Continuous"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
-          Name: "cs:Object"
-          ObjectReference {
-            SelfId: 3121179148652407302
-          }
-        }
-        Overrides {
-          Name: "cs:RotationMultiplier"
-          Float: 3
-        }
-        Overrides {
-          Name: "cs:RotateVelocity"
-          Rotator {
-            Pitch: 30
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 11418723875149364730
-    }
-  }
-}
-Objects {
-  Id: 3121179148652407302
-  Name: "Hexagon"
-  Transform {
-    Location {
-      X: 159.66864
-      Y: -141.707214
-      Z: 685.819031
-    }
-    Rotation {
-      Roll: 88.1473465
-    }
-    Scale {
-      X: 4.49999952
-      Y: 4.49999952
-      Z: 1.80000031
-    }
-  }
-  ParentId: 9167470617022525336
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 2911227906765589941
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 10157635529776638510
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 8722154384272996423
-  Name: "Object Rotator Continuous"
-  Transform {
-    Location {
-      X: -709.66864
-      Y: -458.292786
-      Z: 120
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9167470617022525336
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 5456438743692384211
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Object Rotator Continuous"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
-          Name: "cs:Object"
-          ObjectReference {
-            SelfId: 1794149876223652523
-          }
-        }
-        Overrides {
-          Name: "cs:RotationMultiplier"
-          Float: 3
-        }
-        Overrides {
-          Name: "cs:RotateVelocity"
-          Rotator {
-            Pitch: 30
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 11418723875149364730
-    }
-  }
-}
-Objects {
-  Id: 1794149876223652523
-  Name: "Circle"
-  Transform {
-    Location {
-      X: 159.66864
-      Y: -141.707092
-      Z: 685.819031
-    }
-    Rotation {
-      Roll: 90
-    }
-    Scale {
-      X: 3.8
-      Y: 3.8
-      Z: 0.4
-    }
-  }
-  ParentId: 9167470617022525336
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 2911227906765589941
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 1137112816547272582
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 5831564490956585725
-  Name: "Object Rotator Continuous"
-  Transform {
-    Location {
-      X: -709.66864
-      Y: -458.292786
-      Z: 120
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 9167470617022525336
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 5456438743692384211
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Object Rotator Continuous"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
-          Name: "cs:Object"
-          ObjectReference {
-            SelfId: 7973452077870440027
-          }
-        }
-        Overrides {
-          Name: "cs:RotationMultiplier"
-          Float: 3
-        }
-        Overrides {
-          Name: "cs:RotateVelocity"
-          Rotator {
-            Pitch: 30
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 11418723875149364730
-    }
-  }
-}
-Objects {
-  Id: 7973452077870440027
-  Name: "Triangle"
-  Transform {
-    Location {
-      X: 173.033813
-      Y: -113.145935
-      Z: 635.819031
-    }
-    Rotation {
-      Roll: -90
-    }
-    Scale {
-      X: 4.6
-      Y: 4.6
-      Z: 0.5
-    }
-  }
-  ParentId: 9167470617022525336
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 2911227906765589941
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 13637078664533668977
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
   }
 }
 Objects {
@@ -2311,12 +1934,6 @@ Objects {
           }
         }
         Overrides {
-          Name: "cs:Object"
-          ObjectReference {
-            SelfId: 13538748502445639929
-          }
-        }
-        Overrides {
           Name: "cs:RotationMultiplier"
           Float: 3
         }
@@ -2330,68 +1947,6 @@ Objects {
     }
     TemplateAsset {
       Id: 11418723875149364730
-    }
-  }
-}
-Objects {
-  Id: 13538748502445639929
-  Name: "Square"
-  Transform {
-    Location {
-      X: 167.804016
-      Y: -141.707214
-      Z: 685.819031
-    }
-    Rotation {
-      Roll: -90
-    }
-    Scale {
-      X: 3.80000162
-      Y: 3.80000162
-      Z: 0.5
-    }
-  }
-  ParentId: 9167470617022525336
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 2911227906765589941
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        R: 0.745404482
-        G: 0.745404482
-        B: 0.745404482
-        A: 1
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12095835209017042614
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
     }
   }
 }
@@ -3671,55 +3226,6 @@ Objects {
   }
 }
 Objects {
-  Id: 6642713919523018006
-  Name: "Antechamber floor - SNB"
-  Transform {
-    Location {
-      X: -102.770447
-      Y: -2800
-    }
-    Rotation {
-    }
-    Scale {
-      X: 23.6
-      Y: 15.7
-      Z: 0.822
-    }
-  }
-  ParentId: 17470512920309096864
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 3806173829220646276
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12095835209017042614
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-      }
-    }
-  }
-}
-Objects {
   Id: 16422115805359955745
   Name: "ClientUI-SNB"
   Transform {
@@ -3830,7 +3336,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:forceon"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -4205,36 +3711,6 @@ Objects {
       Int: 60
     }
     Overrides {
-      Name: "cs:shapeSquare"
-      ObjectReference {
-        SelfId: 13538748502445639929
-      }
-    }
-    Overrides {
-      Name: "cs:shapeTriangle"
-      ObjectReference {
-        SelfId: 7973452077870440027
-      }
-    }
-    Overrides {
-      Name: "cs:shapeCircle"
-      ObjectReference {
-        SelfId: 1794149876223652523
-      }
-    }
-    Overrides {
-      Name: "cs:shapeHexagon"
-      ObjectReference {
-        SelfId: 3121179148652407302
-      }
-    }
-    Overrides {
-      Name: "cs:shapeSpawnVFX"
-      ObjectReference {
-        SelfId: 13493493302430201244
-      }
-    }
-    Overrides {
       Name: "cs:Instructions"
       ObjectReference {
         SelfId: 10490562085245272731
@@ -4251,7 +3727,66 @@ Objects {
       String: ""
     }
     Overrides {
+      Name: "cs:DoorIntoSNB"
+      AssetReference {
+        Id: 11786709875249238107
+      }
+    }
+    Overrides {
+      Name: "cs:SNBCircle"
+      AssetReference {
+        Id: 407267918236775261
+      }
+    }
+    Overrides {
+      Name: "cs:SNBHexagon"
+      AssetReference {
+        Id: 9156555851722334184
+      }
+    }
+    Overrides {
+      Name: "cs:SNBSquare"
+      AssetReference {
+        Id: 10168365413207243580
+      }
+    }
+    Overrides {
+      Name: "cs:SNBTriangle"
+      AssetReference {
+        Id: 4869601496653642119
+      }
+    }
+    Overrides {
+      Name: "cs:shapeRotater"
+      ObjectReference {
+        SelfId: 16656804494722500318
+        SubObjectId: 5456438743692384211
+        InstanceId: 8747698076641259855
+        TemplateId: 11418723875149364730
+      }
+    }
+    Overrides {
+      Name: "cs:RandomShape"
+      ObjectReference {
+        SelfId: 9167470617022525336
+      }
+    }
+    Overrides {
+      Name: "cs:UIVisibility"
+      String: ""
+    }
+    Overrides {
+      Name: "cs:SpawnShapeVFXNew"
+      AssetReference {
+        Id: 16766320456518409069
+      }
+    }
+    Overrides {
       Name: "cs:UIControllerProperty:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:UIVisibility:isrep"
       Bool: true
     }
   }

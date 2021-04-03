@@ -1,6 +1,58 @@
 Name: "Level_FarmGallery"
 RootId: 9559405966006854558
 Objects {
+  Id: 17143573607981366028
+  Name: "Waterfall Straight"
+  Transform {
+    Location {
+      X: -3700
+      Y: -2500
+      Z: 71.8203125
+    }
+    Rotation {
+      Yaw: -90
+    }
+    Scale {
+      X: 3.2
+      Y: 2.10000014
+      Z: 18.6000023
+    }
+  }
+  ParentId: 9559405966006854558
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:waterfall:id"
+      AssetReference {
+        Id: 15390532017153884732
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17064621874275756231
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 17599611845930976058
   Name: "Pig"
   Transform {
@@ -14451,7 +14503,7 @@ Objects {
     Overrides {
       Name: "cs:Utility_ClientSide"
       ObjectReference {
-        SelfId: 15691876057323174744
+        SelfId: 841534158063459245
       }
     }
     Overrides {

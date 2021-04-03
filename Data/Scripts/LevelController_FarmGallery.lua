@@ -90,7 +90,7 @@ end
 
 
 function LevelBegin()
-    propMainGameController.context.StartTimer(timerSeconds, TimerEnded)
+    --propMainGameController.context.StartTimer(timerSeconds, TimerEnded)
 
     --Turn off forcefields
     local ffs = World.FindObjectsByName("forcefield - FG")
@@ -181,7 +181,8 @@ end
 
 function LevelPowerUp() 
     hitsPerPlayer = {0,0,0,0}
-
+    playersAtZone = {"","","",""}
+    
     --Turn on forcefields
     local ffs = World.FindObjectsByName("forcefield - FG")
     for _, obj in ipairs(ffs) do

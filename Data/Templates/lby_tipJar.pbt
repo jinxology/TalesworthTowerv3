@@ -88,6 +88,8 @@ Assets {
           }
         }
         ParentId: 4869051430168391141
+        UnregisteredParameters {
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -164,6 +166,7 @@ Assets {
             X: 50
           }
           Rotation {
+            Yaw: -76.8213348
           }
           Scale {
             X: 1
@@ -176,7 +179,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -185,14 +188,28 @@ Assets {
           MeshAsset {
             Id: 16760348895641702758
           }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
+          Image {
+            Brush {
+              Id: 3429530483237481287
+            }
+            Color {
+              G: 0.0212190095
+              B: 0.0241576321
+              A: 1
+            }
+            TeamSettings {
+            }
           }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
             }
           }
         }

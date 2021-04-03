@@ -74,7 +74,7 @@ function PrintText(text)
     currentText = text
     text = string.gsub(text, "{name}", LOCAL_PLAYER.name)
     for i = 1, string.len(text) do
-        if(PLAY_PRINT_SOUND) then
+        if(PLAY_PRINT_SOUND and currentAnimatedMesh.name ~= "mimi") then
             PRINT_SOUND:Play()
         end
         DIALOG_TEXT.text = string.sub(text, 1, i)
@@ -146,7 +146,12 @@ function ProcessDialog(dialogTable, id)
             ResizePanelBasedOnText(textTable.text)
 
             if Object.IsValid(currentAnimatedMesh) and textTable.animation then
-                currentAnimatedMesh:PlayAnimation(textTable.animation)
+                -- DTB - What if it's not an animated mesh tho
+                if currentAnimatedMesh.name == "mimi" then
+                    currentAnimatedMesh:GetCustomProperty("controller"):WaitForObject().context.PlayMimiAnimation(textTable.animation)
+                else
+                    currentAnimatedMesh:PlayAnimation(textTable.animation)
+                end
             end
 
             if textTable.rewardTable then
