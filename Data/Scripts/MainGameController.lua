@@ -53,18 +53,19 @@ local playerKeyBindingListener = nil
  
 function OnBindingPressed(player, bindingPressed)
     --print ("pressed " .. bindingPressed)
-    local ctrl = GetCurrentLevelController()
 
     if (bindingPressed == "ability_extra_25" and devMode) then 
         --Y    
         if not levelRunning and not resetingTower then
             StartingPlatformsActivated()
         end
-    elseif (bindingPressed == "ability_extra_26") then
+    elseif (bindingPressed == "ability_extra_26" and devMode and levelRunning) then
         --U
+        local ctrl = GetCurrentLevelController()
         ctrl.context.LevelVictory()
-    elseif (bindingPressed == "ability_extra_27") then
+    elseif (bindingPressed == "ability_extra_27" and devMode and levelRunning) then
         --I
+        local ctrl = GetCurrentLevelController()
         ctrl.context.LevelFailed()
     end
 end    
@@ -587,7 +588,8 @@ function ResetVoteHandler(player)
     if (not resetingTower and towerRunning) then
         if (playerVotesForReset[player.name] ~= true) then
             playerVotesForReset[player.name] = true
-            script:SetNetworkedCustomProperty("towerResetVote",player.name)
+            --script:SetNetworkedCustomProperty("towerResetVote",player.name)
+            Chat.BroadcastMessage(player.name .. " voted to reset the tower")
         end
 
         local allReset = true

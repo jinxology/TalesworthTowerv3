@@ -19,6 +19,7 @@ local propBtnLazyLava = script:GetCustomProperty("btnLazyLava"):WaitForObject()
 local propBtnFlumeMe = script:GetCustomProperty("btnFlumeMe"):WaitForObject()
 local propTxtFlumeMe = script:GetCustomProperty("txtFlumeMe"):WaitForObject()
 
+local devMode = true
 local showingMe = false
 levelList = {
     "ShapesAndButtons",
@@ -139,7 +140,7 @@ propBtnFlumeMe.clickedEvent:Connect(OnClickedFlumeMe)
 function OnBindingPressed(player, bindingPressed)
     --print ("Dev Menu Controller: pressed " .. bindingPressed)
 
-    if (bindingPressed == "ability_extra_45") then
+    if (bindingPressed == "ability_extra_45" and devMode) then
         --M - Dev Menu
         if (showingMe) then
             DisableUI()

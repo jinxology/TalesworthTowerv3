@@ -1,6 +1,6 @@
 local propLevelControllerFarmGallery = script:GetCustomProperty("LevelControllerFarmGallery"):WaitForObject()
 local propHitCount = script:GetCustomProperty("HitCount"):WaitForObject()
-local propUtility_ClientSide = script:GetCustomProperty("Utility_ClientSide"):WaitForObject()
+--local propUtility_ClientSide = script:GetCustomProperty("Utility_ClientSide"):WaitForObject()
 local propUIContainer = script:GetCustomProperty("UIContainer"):WaitForObject()
 local propP1HitCount = script:GetCustomProperty("p1HitCount"):WaitForObject()
 local propP2HitCount = script:GetCustomProperty("p2HitCount"):WaitForObject()
@@ -19,7 +19,7 @@ function HitCountUpdate(coreObject, propertyName)
             propUIContainer.visibility = Visibility.FORCE_ON
         end
 
-        local hitData = propUtility_ClientSide.context.Split(hitCountString,",")
+        local hitData = {CoreString.Split(hitCountString,",")}
         propHitCount.text = ""
         --print (hitData[1]..":"..hitData[2]..":"..hitData[3])
         for i=1,#hitData,4 do
@@ -35,9 +35,10 @@ function HitCountUpdate(coreObject, propertyName)
             
             if (hitData[i+3] == Game.GetLocalPlayer().name) then
                 if (playerHits >= playerRequiredHits) then
-                    propHitCount.text = "COMPLETE - WAITING FOR TEAMMATES"
+                    propHitCount.text = "ZONE COMPLETED"
                 else
-                    propHitCount.text = "" .. playerHits .. "/" .. playerRequiredHits
+                    --propHitCount.text = "" .. playerHits .. "/" .. playerRequiredHits
+                    propHitCount.text = ""
                 end
             end
         end

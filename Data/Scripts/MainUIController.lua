@@ -74,8 +74,8 @@ function IncomingUIMessage(coreObject, propertyName)
         end
     elseif (propertyName == "towerTimerState") then 
         StartAndUpdateClientTowerTimer(msgData[1],msgData[2])
-    elseif (propertyName == "towerResetVote") then 
-        ShowSmallUIMessage(msgData[1].." voted to reset the tower")
+    --elseif (propertyName == "towerResetVote") then 
+      --  ShowSmallUIMessage(msgData[1].." voted to reset the tower")
     elseif (propertyName == "autostartTimerState") then 
         StartAndUpdateClientAutostartTimer(msgData[1],msgData[2])
     end
@@ -140,8 +140,8 @@ function TalesworthTowerTimerTask(deltaTime)
     end
 end
 
-function ShowSmallUIMessage(msg) 
-    UI.PrintToScreen(msg)
+function ShowSmallUIMessage(msg)     
+    Events.Broadcast("BannerMessage", msg)
 end
 
 function StartTimerLocal(t)

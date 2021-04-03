@@ -3739,12 +3739,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:SNBShapeSpawnVFX"
-      AssetReference {
-        Id: 17848407372247716833
-      }
-    }
-    Overrides {
       Name: "cs:SNBHexagon"
       AssetReference {
         Id: 9156555851722334184
@@ -3780,6 +3774,12 @@ Objects {
     Overrides {
       Name: "cs:UIVisibility"
       String: ""
+    }
+    Overrides {
+      Name: "cs:SpawnShapeVFXNew"
+      AssetReference {
+        Id: 16766320456518409069
+      }
     }
     Overrides {
       Name: "cs:UIControllerProperty:isrep"
