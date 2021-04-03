@@ -8,6 +8,24 @@ Assets {
   }
 }
 Assets {
+  Id: 17290960252098944379
+  Name: "Bush 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bush_generic_002"
+  }
+}
+Assets {
+  Id: 17064621874275756231
+  Name: "Waterfall Straight"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "fxsm_waterfall_straight"
+  }
+}
+Assets {
   Id: 17056298086880758238
   Name: "BG Flat 010"
   PlatformAssetType: 9
@@ -80,6 +98,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13932294441285886795
+  Name: "Grass Short"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_grass_generic_002"
+  }
+}
+Assets {
   Id: 13741622039984821582
   Name: "Fantasy Symbol 02"
   PlatformAssetType: 9
@@ -134,6 +161,15 @@ Assets {
   }
 }
 Assets {
+  Id: 9627380735913518424
+  Name: "Tree Redwood Big"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_redwood_001"
+  }
+}
+Assets {
   Id: 9192750492296921810
   Name: "Bark Redwood 01"
   PlatformAssetType: 2
@@ -158,6 +194,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "BackgroundNoOutline_020"
+  }
+}
+Assets {
+  Id: 5821579475232613487
+  Name: "Tree Redwood Small"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_redwood_005"
   }
 }
 Assets {
@@ -212,6 +257,24 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameHighlighted_020"
+  }
+}
+Assets {
+  Id: 2261151074761971500
+  Name: "Tree Redwood Medium"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_redwood_002"
+  }
+}
+Assets {
+  Id: 2134873693972537524
+  Name: "Basic Water Splash VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_watersplash"
   }
 }
 Assets {

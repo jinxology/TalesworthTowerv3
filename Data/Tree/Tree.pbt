@@ -4992,11 +4992,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:Utility_ClientSide"
-      ObjectReference {
-      }
-    }
-    Overrides {
       Name: "cs:LevelFailSound"
       AssetReference {
         Id: 17682678845342809470
@@ -5114,6 +5109,18 @@ Objects {
       Name: "cs:level1autostartTrigger"
       ObjectReference {
         SelfId: 15397268061493203098
+      }
+    }
+    Overrides {
+      Name: "cs:txtTowerInProgress"
+      ObjectReference {
+        SelfId: 9114324584553932207
+      }
+    }
+    Overrides {
+      Name: "cs:TowerProgressSign"
+      ObjectReference {
+        SelfId: 15944994166182577803
       }
     }
     Overrides {

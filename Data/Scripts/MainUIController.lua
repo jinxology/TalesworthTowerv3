@@ -1,7 +1,6 @@
 local propRoomTimer = script:GetCustomProperty("RoomTimer"):WaitForObject()
 local propTxtGoToExit = script:GetCustomProperty("TxtGoToExit"):WaitForObject()
 local propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
-local propUtility_ClientSide = script:GetCustomProperty("Utility_ClientSide"):WaitForObject()
 local propLevelFailSound = script:GetCustomProperty("LevelFailSound")
 local propLevelVictorySound = script:GetCustomProperty("LevelVictorySound")
 local propResetTowerEjectSFX = script:GetCustomProperty("ResetTowerEjectSFX")
@@ -22,7 +21,8 @@ local towerTimerTask = nil
 local totalAutostartTime = 0
 local autostartTimerActive = false
 local autostartTimerTask = nil
-
+local maxAutostartTime = 0
+local autoStartTextDelay = 1.2
 
 function OnBindingPressed(player, bindingPressed)
     --print ("pressed " .. bindingPressed)
@@ -76,20 +76,23 @@ function IncomingUIMessage(coreObject, propertyName)
         StartAndUpdateClientTowerTimer(msgData[1],msgData[2])
     --elseif (propertyName == "towerResetVote") then 
       --  ShowSmallUIMessage(msgData[1].." voted to reset the tower")
-    elseif (propertyName == "autostartTimerState") then 
-        StartAndUpdateClientAutostartTimer(msgData[1],msgData[2])
+    elseif (propertyName == "autostartTimerState") then         
+        StartAndUpdateClientAutostartTimer(msgData[1],msgData[2],msgData[3])
     end
 end
 
-function StartAndUpdateClientAutostartTimer(started, timeSoFar)
+function StartAndUpdateClientAutostartTimer(started, timeSoFar,maxTime)
     autostartTimerActive = toboolean(started)    
     totalAutostartTime = timeSoFar
+    maxAutostartTime = maxTime
     --print (timeSoFar)
     --when disabling, set the time one last time
     if (not autostartTimerActive) then
         propTxtAutoStart.text = ""   
+        propTxtAutoStart.visibility = Visibility.FORCE_OFF
     else
-        propTxtAutoStart.text = AutoStartText(timeSoFar)
+        --propTxtAutoStart.text = AutoStartText(timeSoFar)
+        propTxtAutoStart.visibility = Visibility.FORCE_ON
     end
 
 end
@@ -129,7 +132,9 @@ end
 function AutostartTimerTask(deltaTime)
     if (autostartTimerActive) then
         totalAutostartTime = totalAutostartTime - deltaTime
-        propTxtAutoStart.text = AutoStartText(totalAutostartTime)
+        if (totalAutostartTime < (maxAutostartTime-autoStartTextDelay)) then
+            propTxtAutoStart.text = AutoStartText(totalAutostartTime)
+        end
     end
 end
 

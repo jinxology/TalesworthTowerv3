@@ -3,6 +3,9 @@ local propLevelBeaconFail = script:GetCustomProperty("LevelBeaconFail")
 local propLevelBeaconSuccess = script:GetCustomProperty("LevelBeaconSuccess")
 local propStartPlatformGroup = script:GetCustomProperty("StartPlatformGroup")
 local propLevel1autostartTrigger = script:GetCustomProperty("level1autostartTrigger"):WaitForObject()
+local propTxtTowerInProgress = script:GetCustomProperty("txtTowerInProgress"):WaitForObject()
+local propTowerProgressSign = script:GetCustomProperty("TowerProgressSign"):WaitForObject()
+
 
 --Generic top-center timer
 local timerStarted = false
@@ -54,11 +57,9 @@ local playerKeyBindingListener = nil
 function OnBindingPressed(player, bindingPressed)
     --print ("pressed " .. bindingPressed)
 
-    if (bindingPressed == "ability_extra_25" and devMode) then 
+    if (bindingPressed == "ability_extra_25" and devMode and not levelRunning and not resetingTower) then 
         --Y    
-        if not levelRunning and not resetingTower then
-            StartingPlatformsActivated()
-        end
+        StartingPlatformsActivated()
     elseif (bindingPressed == "ability_extra_26" and devMode and levelRunning) then
         --U
         local ctrl = GetCurrentLevelController()
@@ -359,7 +360,7 @@ function StartingPlatformsOccupied(nbrReady)
         if (not autostartTimerActive) then
             totalAutostartTime = autostartSeconds
             autostartTimerActive = true
-            script:SetNetworkedCustomProperty("autostartTimerState","true,"..totalAutostartTime)
+            script:SetNetworkedCustomProperty("autostartTimerState","true,"..totalAutostartTime..","..autostartSeconds)
         end
     else
         autostartTimerActive = false
@@ -384,9 +385,22 @@ function TalesworthTowerTimerTask(deltaTime)
     end
 end
 
+function SetTowerRunning(newVal)
+    towerRunning = newVal
+
+    if (towerRunning) then
+        propTxtTowerInProgress.text = "Tower In Progress"
+        propTowerProgressSign.visibility = Visibility.FORCE_ON
+    else
+        propTxtTowerInProgress.text = ""
+        propTowerProgressSign.visibility = Visibility.FORCE_OFF
+    end
+end
+
 function LevelBegin()
     if (not towerRunning) then
-        towerRunning = true
+        SetTowerRunning(true)
+        
         if (currentLevelIndex == 1) then
             for _, player in pairs(Game.GetPlayers()) do
                 if (not propLevel1autostartTrigger:IsOverlapping(player)) then
@@ -579,7 +593,7 @@ function EjectForTowerReset()
         player:SetWorldPosition(Vector3.New(147,-929,8605))
     end   
     resetingTower = false
-    towerRunning = false
+    SetTowerRunning(false)
     SpawnLevel1()
 end
 
@@ -614,7 +628,10 @@ function OnPlayerJoined(player)
     if (towerRunning) then
         print ("give player 60s then teleport them")
     else
-        totalAutostartTime = autostartSeconds
+        if (autostartTimerActive) then
+            totalAutostartTime = autostartSeconds
+            script:SetNetworkedCustomProperty("autostartTimerState","true,"..totalAutostartTime..","..autostartSeconds)
+        end
     end
     
 end
@@ -654,3 +671,5 @@ towerTimerTask.repeatInterval = 1
 autostartTimerTask = Task.Spawn(AutostartTimerTask)
 autostartTimerTask.repeatCount = -1
 autostartTimerTask.repeatInterval = 1
+
+SetTowerRunning(false)
