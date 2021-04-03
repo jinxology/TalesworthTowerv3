@@ -11,6 +11,7 @@ local propSyllablePercussiveSFX = script:GetCustomProperty("syllablePercussiveSF
 local propChompSFX = script:GetCustomProperty("chompSFX"):WaitForObject()
 
 local propNameSlots = script:GetCustomProperty("nameSlots"):WaitForObject():GetChildren() -- table of all the name slots
+local propScoreSlots = script:GetCustomProperty("scoreSlots"):WaitForObject():GetChildren() -- table of all the name slots
 local leaderboard = script:GetCustomProperty("leaderboard")
 local LEADERBOARD_REFRESH_INTERVAL = script:GetCustomProperty("refreshInterval")
 
@@ -190,6 +191,9 @@ function clearLeaderboard () -- empties out all the text from the WorldTexts
     for _, name in ipairs(propNameSlots) do
         name.text = ""
     end
+    for _, score in ipairs(propScoreSlots) do
+        score.text = ""
+    end
 end 
 
 function displayLeaderboard() -- displays all the players in the Leaderboard in the slots in propNameSlots
@@ -197,7 +201,8 @@ function displayLeaderboard() -- displays all the players in the Leaderboard in 
     local entries = Leaderboards.GetLeaderboard(leaderboard, LeaderboardType.GLOBAL)
     if #entries > 0 then
         for i, entry in ipairs(entries) do
-            propNameSlots[i].text = tostring(i) .. " " .. entry.name .. " " .. entry.score
+            propNameSlots[i].text = entry.name
+            propScoreSlots[i].text = tostring(math.tointeger(entry.score))
             if i == #propNameSlots then return end
         end
     end

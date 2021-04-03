@@ -386,6 +386,15 @@ Assets {
   }
 }
 Assets {
+  Id: 9805942287566312257
+  Name: "Glass 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_basic_glass_refrac_001"
+  }
+}
+Assets {
   Id: 9497951731488909799
   Name: "Metal Basic 01"
   PlatformAssetType: 2
@@ -761,6 +770,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "CollegeNeon_Horizontal_01_Text_014"
+  }
+}
+Assets {
+  Id: 1498795800571910036
+  Name: "Cube - Polished"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_hq_test_001"
   }
 }
 Assets {
