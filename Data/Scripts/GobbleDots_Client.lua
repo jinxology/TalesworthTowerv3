@@ -91,7 +91,7 @@ propLevelGobbleDots.networkedPropertyChangedEvent:Connect(function(coreObject, p
     if propertyName == "InitializeBoard" then
     	--print("In InitializeBoard() from the networkedPropertyChangedEvent")
 		InitializeBoard()
-	else  --Otherwise this is a receipt of the list of dots that have been deleted.
+	elseif propertyName == "DeletedDots" then  --Otherwise this is a receipt of the list of dots that have been deleted.
 		--Split the string that is returned into an array of dot values
 		
 		local deletedDotsString = propLevelGobbleDots:GetCustomProperty(propertyName)
@@ -105,6 +105,14 @@ propLevelGobbleDots.networkedPropertyChangedEvent:Connect(function(coreObject, p
 				dotsArrayList[arrayIndex]:Destroy()
 			end					
 		end 
+--	elseif propertyName == "ResetLevel" then
+--		print("RESETTING LEVEL")
+		
+--		for _, dotToDelete in ipairs(dotsArrayList) do
+--			if Object.IsValid(dotToDelete) then			
+--				dotToDelete:Destroy()
+--			end					
+--		end 
 	end
 end)
 

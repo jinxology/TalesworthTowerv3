@@ -1,6 +1,35 @@
 Name: "Level_GobbleDots"
 RootId: 13310647076426687416
 Objects {
+  Id: 11344910419484066011
+  Name: "GobbleDots.Beacons"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13310647076426687416
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "GobbleDots_Beacons"
+  }
+}
+Objects {
   Id: 11535273514704079029
   Name: "TeleportArch"
   Transform {
@@ -4487,6 +4516,18 @@ Objects {
       Name: "cs:DrinkLiquidGulpSwallow01SFX"
       AssetReference {
         Id: 13552945397385832481
+      }
+    }
+    Overrides {
+      Name: "cs:HittingGhostSVFX"
+      AssetReference {
+        Id: 17121013347983082254
+      }
+    }
+    Overrides {
+      Name: "cs:levelBeaconFolder"
+      ObjectReference {
+        SelfId: 11344910419484066011
       }
     }
     Overrides {

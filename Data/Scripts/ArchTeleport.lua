@@ -11,7 +11,7 @@ function OnArchInteraction(whichTrigger, player)
 	
 	if player and (player:IsA("Player") or player:IsA("Ghost")) then
     	--If Arch is on the left side
-    	print(whichTrigger:GetCustomProperty("ArchSide"))
+		--print(whichTrigger:GetCustomProperty("ArchSide"))
     	
     	if whichTrigger:GetCustomProperty("ArchSide") == "LEFT" then
 			--Teleport player to right side 
