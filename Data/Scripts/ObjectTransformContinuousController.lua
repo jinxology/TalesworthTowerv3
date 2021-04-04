@@ -20,7 +20,7 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 --]]
 
 -- User exposed settings properties
-local OBJECT = script:GetCustomProperty("Object"):WaitForObject()
+OBJECT = script:GetCustomProperty("Object"):WaitForObject()
 --OBJECT = nil
 local DELAY_RANGE = script:GetCustomProperty("StartDelayRange")
 local LOCAL_SPACE = script:GetCustomProperty("LocalSpace")
@@ -45,6 +45,7 @@ end
 -- nil StartAction()
 -- Starts moving, rotating or scaling the target object
 function StartAction()
+    print ("started")
     if not Object.IsValid(OBJECT) then return end
 
     Task.Wait(RandomFloat(DELAY_RANGE.x, DELAY_RANGE.y))

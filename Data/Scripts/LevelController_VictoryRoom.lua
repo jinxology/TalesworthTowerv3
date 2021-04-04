@@ -3,6 +3,9 @@ local propOpeningFloor1VR = script:GetCustomProperty("OpeningFloor1VR"):WaitForO
 local propOpeningFloor2VR = script:GetCustomProperty("OpeningFloor2VR"):WaitForObject()
 propLevelBeaconFolder = script:GetCustomProperty("propLevelBeaconFolder"):WaitForObject()
 local propTxtFinalTime = script:GetCustomProperty("txtFinalTime"):WaitForObject()
+local propEnteredVRTrigger = script:GetCustomProperty("EnteredVRTrigger"):WaitForObject()
+local propVictoryRoomEntranceVFX = script:GetCustomProperty("VictoryRoomEntranceVFX")
+local propTelelportInLoc = script:GetCustomProperty("telelportInLoc"):WaitForObject()
 
 ------------------------------------------------------------
 --REQUIRED BY MAIN CONTROLLER
@@ -19,7 +22,25 @@ startPlatformPosition = Vector3.New(0,0,0)
 startPlatformRotation = Rotation.New(0,0,0)
 ------------------------------------------------------------
 
+local ejectTimerRunning = false
+local playersEntered = 0
+local totalPlayers = 0
+local forceOpeninSeconds = 30
+local pauseWhenEveryoneIn = 10
+autoOpenFloorTask = nil
+
+--Start 30s timer when first person enters
+--Once everyone comes in, it cancels timer, then opens doors after 5 second delay
+
 function OpenFloor()
+    if (autoOpenFloorTask ~= nil) then autoOpenFloorTask:Cancel() end
+
+    for _, player in pairs(Game.GetPlayers()) do
+        if (not propEnteredVRTrigger:IsOverlapping(player)) then
+            player:SetWorldPosition(propTelelportInLoc:GetWorldPosition())
+        end                
+    end    
+
     propOpeningFloor1VR:RotateTo(Rotation.New(100,0,0),16,true)
     propOpeningFloor2VR:RotateTo(Rotation.New(100,0,180),16,true)
 end
@@ -37,6 +58,36 @@ function FormatTime(inTime)
     
     return minStr..":"..secStr
 end
+
+function OnEnterVictoryRoom(whichTrigger, other)
+	if other:IsA("Player") then
+        local player = other
+        Task.Spawn(function() ConfettiAndVictory(other) end,.6)
+
+        if (ejectTimerRunning == false) then
+            ejectTimerRunning = true
+            autoOpenFloorTask = Task.Spawn(AutoOpenFloor, forceOpeninSeconds)
+        end
+
+        playersEntered = playersEntered + 1
+
+        if (playersEntered == totalPlayers) then
+            autoOpenFloorTask:Cancel()
+            autoOpenFloorTask = Task.Spawn(AutoOpenFloor, pauseWhenEveryoneIn)
+        end
+	end
+end
+
+function AutoOpenFloor()
+    propMainGameController.context.ResetTower()
+end
+
+function ConfettiAndVictory(player)
+    local vfxpos = player:GetWorldPosition() + Vector3.New(0,0,50)
+    World.SpawnAsset(propVictoryRoomEntranceVFX,{position=vfxpos})
+end
+
+propEnteredVRTrigger.beginOverlapEvent:Connect(OnEnterVictoryRoom)
 
 
 -----------------------------------------------------------------------
@@ -57,11 +108,15 @@ end
 
 
 function LevelPowerUp() 
+    ejectTimerRunning = false
     CloseFloor()
     propTxtFinalTime.text = FormatTime(propMainGameController.context.totalTowerTime)
+    totalPlayers = #Game.GetPlayers()
 end
 
 function LevelPowerDown()
+    if (autoOpenFloorTask ~= nil) then autoOpenFloorTask:Cancel() end
+    ejectTimerRunning = false
     CloseFloor()
 end
 

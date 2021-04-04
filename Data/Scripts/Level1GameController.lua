@@ -16,7 +16,7 @@ local myColor
 local myShape 
 local myShapeObj --pointer to the actual 3d object
 local successes = 0
-local successesForVictory = 1
+local successesForVictory = 8
 local objTable = {}
 
 --EventListeners
