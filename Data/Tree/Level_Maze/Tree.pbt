@@ -2,7 +2,7 @@ Name: "Level_Maze"
 RootId: 4040143929711443956
 Objects {
   Id: 1602373174848160459
-  Name: "forcefield - FG"
+  Name: "forcefield - MAZE"
   Transform {
     Location {
       X: -601.486755
@@ -64,7 +64,7 @@ Objects {
 }
 Objects {
   Id: 7684429752496173319
-  Name: "forcefield - FG"
+  Name: "forcefield - MAZE"
   Transform {
     Location {
       X: 599.291443
@@ -126,7 +126,7 @@ Objects {
 }
 Objects {
   Id: 1140765612412313838
-  Name: "forcefield - FG"
+  Name: "forcefield - MAZE"
   Transform {
     Location {
       X: 784.911377
@@ -188,7 +188,7 @@ Objects {
 }
 Objects {
   Id: 2995573138758945636
-  Name: "forcefield - FG"
+  Name: "forcefield - MAZE"
   Transform {
     Location {
       X: -795

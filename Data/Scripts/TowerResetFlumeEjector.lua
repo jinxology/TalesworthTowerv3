@@ -12,7 +12,7 @@ function OnBeginOverlap(whichTrigger, other)
         local destPt = propTowerResetVectorTarget:GetWorldPosition()
         destPt.x = destPt.x + math.random(-5,5)
         destPt.z = destPt.z + math.random(-5,5)
-        propVelocityMultiplier = 4
+        propVelocityMultiplier = 6
         --propVelocityMultiplier = propVelocityMultiplier + math.random(0,2)
 
         local whooshVector = Vector3.New(destPt.x - originPt.x, destPt.y - originPt.y, destPt.z - originPt.z)

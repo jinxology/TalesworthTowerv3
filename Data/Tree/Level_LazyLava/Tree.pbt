@@ -1479,7 +1479,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "FlumePortalPipes"
+    FilePartitionName: "FlumePortalPipes_1"
   }
 }
 Objects {
@@ -1623,6 +1623,7 @@ Objects {
   ChildIds: 1870476394947091339
   ChildIds: 80253440350171182
   ChildIds: 15667912109429321588
+  ChildIds: 14768301329459099819
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1634,6 +1635,58 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 14768301329459099819
+  Name: "Centerwall"
+  Transform {
+    Location {
+      X: 699.773682
+      Y: -3870.32568
+      Z: 255.27832
+    }
+    Rotation {
+      Yaw: -175
+    }
+    Scale {
+      X: 1
+      Y: 10.5
+      Z: 3.60000014
+    }
+  }
+  ParentId: 9082053591959343520
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 16256888683008968413
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
   }
 }
 Objects {
@@ -3068,7 +3121,7 @@ Objects {
     Location {
       X: -596.568237
       Y: 3470.40479
-      Z: 133.955078
+      Z: 210.848633
     }
     Rotation {
       Yaw: 88.925148
@@ -3076,7 +3129,7 @@ Objects {
     Scale {
       X: 0.999998868
       Y: 30.7919674
-      Z: 4.36073637
+      Z: 3.07788467
     }
   }
   ParentId: 9082053591959343520
@@ -3118,17 +3171,17 @@ Objects {
   Name: "wall-ll"
   Transform {
     Location {
-      X: 3947.95068
-      Y: 3249.93726
-      Z: 584.755859
+      X: 3947.95044
+      Y: 3249.93701
+      Z: 661.147461
     }
     Rotation {
-      Yaw: -89.9999771
+      Yaw: -89.9999695
     }
     Scale {
       X: 0.999996841
       Y: 26.9210854
-      Z: 13.8349152
+      Z: 12.1526108
     }
   }
   ParentId: 9082053591959343520
@@ -3327,16 +3380,16 @@ Objects {
   Transform {
     Location {
       X: -2369.96045
-      Y: -750.000183
-      Z: 584.755859
+      Y: -750.000244
+      Z: 690.69043
     }
     Rotation {
-      Yaw: -89.9999771
+      Yaw: -89.9999695
     }
     Scale {
       X: 1.00000381
       Y: 65.4291077
-      Z: 13.8349152
+      Z: 11.3237438
     }
   }
   ParentId: 9082053591959343520
@@ -3380,14 +3433,14 @@ Objects {
     Location {
       X: -4771.93262
       Y: 5120.22656
-      Z: 584.755859
+      Z: 703.944336
     }
     Rotation {
     }
     Scale {
       X: 0.99999994
       Y: 65.9809418
-      Z: 13.8349152
+      Z: 12.5709305
     }
   }
   ParentId: 9082053591959343520
@@ -3429,16 +3482,16 @@ Objects {
   Name: "Centerwall"
   Transform {
     Location {
-      X: 962.113342
-      Y: 1449.99988
-      Z: 584.755859
+      X: 962.113281
+      Y: 1450
+      Z: 682.422852
     }
     Rotation {
     }
     Scale {
       X: 0.99999994
       Y: 43.8379173
-      Z: 13.8349152
+      Z: 11.9414778
     }
   }
   ParentId: 9082053591959343520

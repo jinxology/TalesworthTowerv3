@@ -27,9 +27,7 @@ entranceFlumeEjectionVelocity = 5
 local propInitializeBoard = script:GetCustomProperty("InitialIzeBoard")
 local propDeletedDots = script:GetCustomProperty("DeletedDots")
 local propResetLevel = script:GetCustomProperty("ResetLevel")
-
-local propCartoonFoodEatBiteShort02SFX = script:GetCustomProperty("CartoonFoodEatBiteShort02SFX")
-local propDrinkLiquidGulpSwallow01SFX = script:GetCustomProperty("DrinkLiquidGulpSwallow01SFX")
+local propGobbleDotsEatSFX = script:GetCustomProperty("GobbleDotsEatSFX")
 local propHittingGhostSVFX = script:GetCustomProperty("HittingGhostSVFX")
 
 local DOT_COUNT = 292
@@ -41,6 +39,7 @@ local propGhost = script:GetCustomProperty("Ghost")
 local mobFolder = levelFolder:FindDescendantByName("Mob AI")
 
 local ghostController = nil
+local clearDotsCount = 0
 
 local inkyGhost = nil
 local blinkyGhost = nil
@@ -91,15 +90,32 @@ end
 
 --LevelPowerDown is called from the next level back to this one to clean it up and remove it from memory
 function LevelPowerDown() 
+	clearDotsCount = clearDotsCount + 1
+	script:SetNetworkedCustomProperty("ClearDots", clearDotsCount)
 end
 
 --LevelVictory is called when the Win Condition of the game is met
 --This function will call LevelEnd(true) on the MainGameController 
 function LevelVictory()
-	inkyGhost:Destroy()
-	blinkyGhost:Destroy()
-	pinkyGhost:Destroy()
-	clydeGhost:Destroy()
+	if Object.IsValid(inkyGhost) then
+		inkyGhost.KillGhost()
+		inkyGhost:Destroy()
+	end
+	
+	if Object.IsValid(blinkyGhost) then
+		blinkyGhost.KillGhost()
+		blinkyGhost:Destroy()
+	end
+
+	if Object.IsValid(pinkyGhost) then
+		pinkyGhost.KillGhost()
+		pinkyGhost:Destroy()
+	end
+
+	if Object.IsValid(clydeGhost) then
+		clydeGhost.KillGhost()
+		clydeGhost:Destroy()
+	end
 	propMainGameController.context.LevelEnd(true)
 end
 
@@ -151,15 +167,11 @@ function OnDotDeleted(dotIndex, dotPosition)
 		
 		--Call all clients by updating the networked custom property to the string including the new deleted dot
 		script:SetNetworkedCustomProperty("DeletedDots", UpdateDotsDeletedString(dotIndex))
-		if(math.random(1,30) == 1) then
-			sfx = World.SpawnAsset(propDrinkLiquidGulpSwallow01SFX)
-			sfx:SetWorldPosition(dotPosition)
-			sfx:Play()
-		else 
-			sfx = World.SpawnAsset(propCartoonFoodEatBiteShort02SFX)
-			sfx:SetWorldPosition(dotPosition)
-			sfx:Play()
-		end
+
+		sfx = World.SpawnAsset(propHittingGhostSVFX)
+		sfx:SetWorldPosition(dotPosition)
+		sfx:Play()
+
 		--Check to see if the game has been won
 		CheckDotsLeft(dotIndex)
 	end

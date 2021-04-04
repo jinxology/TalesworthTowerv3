@@ -4442,6 +4442,46 @@ Objects {
   }
 }
 Objects {
+  Id: 1807460302868643166
+  Name: "gd.Dot_Client"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13310647076426687416
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 1207248188178312656
+      value {
+        Overrides {
+          Name: "Name"
+          String: "gd.Dot_Client"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 0.1
+            Y: 0.1
+            Z: 0.1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 11474640445590048576
+    }
+  }
+}
+Objects {
   Id: 424163457214865685
   Name: "Mob AI"
   Transform {
@@ -4507,18 +4547,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:CartoonFoodEatBiteShort02SFX"
-      AssetReference {
-        Id: 10099212058672913078
-      }
-    }
-    Overrides {
-      Name: "cs:DrinkLiquidGulpSwallow01SFX"
-      AssetReference {
-        Id: 13552945397385832481
-      }
-    }
-    Overrides {
       Name: "cs:HittingGhostSVFX"
       AssetReference {
         Id: 17121013347983082254
@@ -4531,11 +4559,25 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:ClearDots"
+      Int: 0
+    }
+    Overrides {
+      Name: "cs:GobbleDotsEatSFX"
+      AssetReference {
+        Id: 8275345109879027780
+      }
+    }
+    Overrides {
       Name: "cs:InitializeBoard:isrep"
       Bool: true
     }
     Overrides {
       Name: "cs:DeletedDots:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:ClearDots:isrep"
       Bool: true
     }
   }
@@ -4553,5 +4595,81 @@ Objects {
     ScriptAsset {
       Id: 3657344011592394992
     }
+  }
+}
+Objects {
+  Id: 6473598550330563796
+  Name: "\"Retro Fast Paced Fury\" Music Construction Kit (Sections) 01"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13310647076426687416
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15115007538563226022
+    }
+    TeamSettings {
+    }
+    AudioBP {
+      Volume: 1
+      Falloff: 3600
+      Radius: 400
+      EnableOcclusion: true
+      IsSpatializationEnabled: true
+      IsAttenuationEnabled: true
+    }
+  }
+}
+Objects {
+  Id: 16510099729606906049
+  Name: "Button Click Select Core 01 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13310647076426687416
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 13735835896106546216
+    }
+    Volume: 1
+    Falloff: -1
+    Radius: -1
+    EnableOcclusion: true
+    IsSpatializationEnabled: true
+    IsAttenuationEnabled: true
   }
 }

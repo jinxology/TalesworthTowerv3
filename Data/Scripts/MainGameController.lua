@@ -5,6 +5,7 @@ local propStartPlatformGroup = script:GetCustomProperty("StartPlatformGroup")
 local propLevel1autostartTrigger = script:GetCustomProperty("level1autostartTrigger"):WaitForObject()
 local propTxtTowerInProgress = script:GetCustomProperty("txtTowerInProgress"):WaitForObject()
 local propTowerProgressSign = script:GetCustomProperty("TowerProgressSign"):WaitForObject()
+local propTowerEjectStartPoint = script:GetCustomProperty("TowerEjectStartPoint"):WaitForObject()
 
 
 --Generic top-center timer
@@ -36,14 +37,14 @@ requiredNbrPlayersReady = 4
 levelList = {
     "ShapesAndButtons",
     "BopAndPop",
-    "JumpMan",      -- hitting wall on entrance; misplaced or needs hole in wall
+    "JumpMan",      
     "FarmGallery",
     "ColorDials",
     "BlockAndEscape",
-    "Maze",
     "LazyLava",
     "GobbleDots",
-    "Puckollossal"
+    "Puckollossal",
+    "VictoryRoom"    --Must keep victory room last in the list
 }
 
 --Tower Reset 
@@ -126,7 +127,7 @@ function SpawnLevelBeacons(success, lifespan)
     local ctrl = GetCurrentLevelController()
     local beaconsFolder = ctrl.context.propLevelBeaconFolder
 
-    if (beaconsFolder == nil) then
+    if (beaconsFolder == nil and currentLevelIndex ~= #levelList) then
         print ("Please setup level beacons on level script!!!")
         return nil
     end
@@ -300,13 +301,17 @@ end
 
 function SpawnFlumePortals(levelIndex)
     local controller = GetLevelControllerByLevelIndex(levelIndex)    
-    controller.context.exitFlume = PlaceFlume(levelIndex, false, controller.context.exitFlumeLocation, controller.context.exitFlumeRotation)
+    if (levelIndex ~= #levelList) then
+        controller.context.exitFlume = PlaceFlume(levelIndex, false, controller.context.exitFlumeLocation, controller.context.exitFlumeRotation)
+    end
     controller.context.entranceFlume = PlaceFlume(levelIndex, true, controller.context.entranceFlumeLocation, controller.context.entranceFlumeRotation)
 end
 
 function SpawnStartingPlatforms(levelIndex)
-    local controller = GetLevelControllerByLevelIndex(levelIndex)    
-    controller.context.startingPlatforms = PlaceStartingPlatforms(levelIndex, controller.context.startPlatformPosition, controller.context.startPlatformRotation)
+    if (levelIndex ~= #levelList) then
+        local controller = GetLevelControllerByLevelIndex(levelIndex)    
+        controller.context.startingPlatforms = PlaceStartingPlatforms(levelIndex, controller.context.startPlatformPosition, controller.context.startPlatformRotation)
+    end
 end
 
 function DestroyFlumePortals(levelIndex)
@@ -589,8 +594,9 @@ function EjectForTowerReset()
     currentLevelIndex = 1
     nextLevelindex = nil    
 
+    local startLoc = propTowerEjectStartPoint:GetWorldPosition()
     for _, player in pairs(Game.GetPlayers()) do
-        player:SetWorldPosition(Vector3.New(147,-929,8605))
+        player:SetWorldPosition(startLoc)
     end   
     resetingTower = false
     SetTowerRunning(false)

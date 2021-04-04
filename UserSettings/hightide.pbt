@@ -3931,6 +3931,7 @@ ObjectSettings {
   ObjectStates {
     key: 1647900999251311847
     value {
+      IsLocked: true
     }
   }
   ObjectStates {

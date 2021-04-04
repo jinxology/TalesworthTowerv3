@@ -1696,6 +1696,7 @@ Objects {
   ChildIds: 7398267376290155823
   ChildIds: 9020203249463625227
   ChildIds: 13428269129981893233
+  ChildIds: 16255978702679965936
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1707,6 +1708,38 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 16255978702679965936
+  Name: "FlumePortalPipes"
+  Transform {
+    Location {
+      X: -6300
+      Z: 1079.34521
+    }
+    Rotation {
+      Pitch: 90
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12108254107566023661
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "FlumePortalPipes_5"
   }
 }
 Objects {
@@ -2518,7 +2551,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "FlumePortalPipes_5"
+    FilePartitionName: "FlumePortalPipes_6"
   }
 }
 Objects {
@@ -2551,7 +2584,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "FlumePortalPipes_6"
+    FilePartitionName: "FlumePortalPipes_7"
   }
 }
 Objects {
@@ -2585,7 +2618,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "FlumePortalPipes_7"
+    FilePartitionName: "FlumePortalPipes_8"
   }
 }
 Objects {
