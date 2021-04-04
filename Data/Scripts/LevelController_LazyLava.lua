@@ -49,13 +49,13 @@ if (skipTo > 0) then
     warn("Checkpoint Skip on LazyLava is on!")
 end
 
-local spawnWorldLocations = {
-Vector3.New(2300,7245,17350),
-Vector3.New(-2951,2408,17525),
-Vector3.New(-7024,1150,17525),
-Vector3.New(-3850,-2250,17525),
-Vector3.New(3898,34,17750)
-}
+local spawnWorldLocations  = {}
+spawnWorldLocations[1] = script.parent:FindChildByName("spawnPoint1-LL"):GetWorldPosition()
+spawnWorldLocations[2] = script.parent:FindChildByName("spawnPoint2-LL"):GetWorldPosition()
+spawnWorldLocations[3] = script.parent:FindChildByName("spawnPoint3-LL"):GetWorldPosition()
+spawnWorldLocations[4] = script.parent:FindChildByName("spawnPoint4-LL"):GetWorldPosition()
+spawnWorldLocations[5] = script.parent:FindChildByName("spawnPoint5-LL"):GetWorldPosition()
+
 
 allWallData = 
 {
@@ -143,6 +143,7 @@ end
 
 function LevelBegin()
     --propMainGameController.context.StartTimer(propTimerSeconds, TimerEnded)
+    print ("lava begin")
     if (skipTo > 0) then
         propMainGameController.context.StartTimer(1, StartRaft)
     else 
@@ -225,6 +226,7 @@ function OnLandInLava(whichTrigger, other)
 
         local vfxpos = player:GetWorldPosition() + Vector3.New(0,0,50)
         World.SpawnAsset(propLavaHitSVFX,{position=vfxpos})
+        print (spawnWorldLocations[spawnPointIndex])
         player:SetWorldPosition(spawnWorldLocations[spawnPointIndex])
 	end
 end

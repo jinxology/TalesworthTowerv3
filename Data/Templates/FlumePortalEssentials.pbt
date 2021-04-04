@@ -30,6 +30,8 @@ Assets {
         ChildIds: 9160698222049057169
         ChildIds: 13574779230595404198
         ChildIds: 11631354051634414129
+        UnregisteredParameters {
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -107,6 +109,18 @@ Assets {
             Name: "cs:FlumeEjector"
             ObjectReference {
               SubObjectId: 10671111645508465895
+            }
+          }
+          Overrides {
+            Name: "cs:noclip1"
+            ObjectReference {
+              SubObjectId: 13574779230595404198
+            }
+          }
+          Overrides {
+            Name: "cs:noclip2"
+            ObjectReference {
+              SubObjectId: 9160698222049057169
             }
           }
         }

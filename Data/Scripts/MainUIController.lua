@@ -71,6 +71,8 @@ function IncomingUIMessage(coreObject, propertyName)
         elseif (msgData[1] == "09") then --fail horn
             myPosition = Game.GetLocalPlayer():GetWorldPosition()        
             World.SpawnAsset(propLevelFailSound,{position=myPosition})
+        elseif (msgData[1] == "10") then --resetting tower
+            World.SpawnAsset(propLevelFailSound,{position=myPosition})
         end
     elseif (propertyName == "towerTimerState") then 
         StartAndUpdateClientTowerTimer(msgData[1],msgData[2])

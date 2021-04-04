@@ -20,8 +20,8 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 --]]
 
 -- User exposed settings properties
---local OBJECT = script:GetCustomProperty("Object"):WaitForObject()
-OBJECT = nil
+local OBJECT = script:GetCustomProperty("Object"):WaitForObject()
+--OBJECT = nil
 local DELAY_RANGE = script:GetCustomProperty("StartDelayRange")
 local LOCAL_SPACE = script:GetCustomProperty("LocalSpace")
 
@@ -72,4 +72,4 @@ function RandomFloat(lower, greater)
 end
 
 -- Initialize
---StartAction()
+StartAction()

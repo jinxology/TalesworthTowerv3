@@ -3226,6 +3226,55 @@ Objects {
   }
 }
 Objects {
+  Id: 5176247218221819577
+  Name: "DoorIntoSNB"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17470512920309096864
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17889747579981738560
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DoorIntoSNB"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -450
+            Y: -2050
+            Z: 3.05175781e-05
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 11786709875249238107
+    }
+  }
+}
+Objects {
   Id: 16422115805359955745
   Name: "ClientUI-SNB"
   Transform {

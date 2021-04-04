@@ -116,6 +116,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7062845870289079377
+  Name: "Ball"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_sphere_001"
+  }
+}
+Assets {
   Id: 6154454405595338428
   Name: "Fantasy Castle Wall 04 - Window 01 Mid"
   PlatformAssetType: 1

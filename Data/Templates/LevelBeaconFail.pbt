@@ -15,9 +15,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 17470512920309096864
-        ChildIds: 12721899695207328033
+        ParentId: 4781671109827199097
         ChildIds: 10698334184149203595
+        ChildIds: 12721899695207328033
         Lifespan: 5
         WantsNetworking: true
         Collidable_v2 {
@@ -30,63 +30,6 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         NetworkContext {
-        }
-      }
-      Objects {
-        Id: 12721899695207328033
-        Name: "Spotlight"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Pitch: 90
-            Yaw: 90
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 3555846426530619815
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Light {
-          Intensity: 50.4861107
-          Color {
-            R: 0.9
-            G: 4.29153431e-07
-            A: 1
-          }
-          VolumetricIntensity: 5
-          TeamSettings {
-          }
-          Light {
-            Temperature: 6500
-            LocalLight {
-              AttenuationRadius: 1048.22852
-              SpotLight {
-                SourceRadius: 20
-                SoftSourceRadius: 20
-                FallOffExponent: 8
-                UseFallOffExponent: true
-                InnerConeAngle: 30
-                OuterConeAngle: 40
-                Profile {
-                  Value: "mc:espotlightprofile:basicspotlight"
-                }
-              }
-            }
-            MaxDrawDistance: 5000
-            MaxDistanceFadeRange: 1000
-          }
         }
       }
       Objects {
@@ -164,6 +107,63 @@ Assets {
         Script {
           ScriptAsset {
             Id: 2331688389429807128
+          }
+        }
+      }
+      Objects {
+        Id: 12721899695207328033
+        Name: "Spotlight"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 90
+            Yaw: 90
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3555846426530619815
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Light {
+          Intensity: 50.4861107
+          Color {
+            R: 0.9
+            G: 4.29153431e-07
+            A: 1
+          }
+          VolumetricIntensity: 5
+          TeamSettings {
+          }
+          Light {
+            Temperature: 6500
+            LocalLight {
+              AttenuationRadius: 1048.22852
+              SpotLight {
+                SourceRadius: 20
+                SoftSourceRadius: 20
+                FallOffExponent: 8
+                UseFallOffExponent: true
+                InnerConeAngle: 30
+                OuterConeAngle: 40
+                Profile {
+                  Value: "mc:espotlightprofile:basicspotlight"
+                }
+              }
+            }
+            MaxDrawDistance: 5000
+            MaxDistanceFadeRange: 1000
           }
         }
       }
