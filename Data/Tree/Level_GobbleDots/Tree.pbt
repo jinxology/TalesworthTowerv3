@@ -1,6 +1,47 @@
 Name: "Level_GobbleDots"
 RootId: 13310647076426687416
 Objects {
+  Id: 18069427443098873980
+  Name: "Ghost"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13310647076426687416
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 8743173940440615883
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Ghost"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 2
+            Y: 2
+            Z: 2
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 11153608437705457168
+    }
+  }
+}
+Objects {
   Id: 11344910419484066011
   Name: "GobbleDots.Beacons"
   Transform {
