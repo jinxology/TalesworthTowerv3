@@ -144,26 +144,8 @@ end
 
 local propBoundaryListener = nil
 
-function ConnectBoundary(boundary)
-    if not propBoundaryListener then
-        propBoundaryListener = boundary.endOverlapEvent:Connect(function(trigger, other)
-            if other:IsA("Player") then
-                other:ResetVelocity()
-                other:SetWorldPosition(trigger:GetWorldPosition())
-                other:EnableRagdoll()
-
-                other.movementControlMode = MovementControlMode.NONE
-                Task.Spawn(function()
-                    other:DisableRagdoll()
-                    other.movementControlMode = MovementControlMode.LOOK_RELATIVE
-                end, 2)
-            end
-        end)
-    end
-end
-
 function LevelPowerUp()
-    ConnectBoundary(propBoundary)
+    -- ConnectBoundary(propBoundary)
 
     propTutorialCurtain = World.SpawnAsset(propTutorialCurtainTemplate, { parent = script.parent })
     propTutorialCurtain:GetCustomProperty("levelEnteredTrigger"):WaitForObject().beginOverlapEvent:Connect(function(trigger, other)
@@ -201,10 +183,28 @@ function LevelPlayerExited(player)
     player:RemoveAbility(player.serverUserData.pckLookoutAbility)
 end
 
+local propOutOfBoundsTask = nil
+
 function LevelBegin()
     for _, player in ipairs(Game.GetPlayers()) do
         LevelPlayerEntered(player)
     end
+
+    propOutOfBoundsTask = Task.Spawn(function()
+        for _, player in pairs(Game:GetPlayers()) do
+            if not propBoundary:IsOverlapping(player) then
+                other:ResetVelocity()
+                other:SetWorldPosition(trigger:GetWorldPosition())
+                other:EnableRagdoll()
+
+                other.movementControlMode = MovementControlMode.NONE
+                Task.Spawn(function()
+                    other:DisableRagdoll()
+                    other.movementControlMode = MovementControlMode.LOOK_RELATIVE
+                end, 2)
+            end
+        end
+    end)
 
     local   spawnConfiguration = propSpawnConfigurations[propSpawnConfigurationIndex]
     
@@ -262,6 +262,7 @@ function LevelEnd()
     end
 
     propSmackerTask:Cancel()
+    propOutOfBoundsTask:Cancel()
 
     for _, smacker in propLiveSmackers do
         smacker.context.DismissWrangler()
@@ -418,4 +419,4 @@ function SpawnSmackers()
 end
 
 ConnectBumpers(propBumpers)
-ConnectBoundary(propBoundary)
+-- ConnectBoundary(propBoundary)
