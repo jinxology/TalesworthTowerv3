@@ -1892,8 +1892,8 @@ Objects {
   Control {
     Width: 600
     Height: 100
-    UIX: -891.84021
-    UIY: -319.431519
+    UIX: 29.0578613
+    UIY: 163.591614
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -1904,12 +1904,12 @@ Objects {
     AnchorLayout {
       SelfAnchor {
         Anchor {
-          Value: "mc:euianchor:middlecenter"
+          Value: "mc:euianchor:topleft"
         }
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:middlecenter"
+          Value: "mc:euianchor:topleft"
         }
       }
     }
@@ -1951,7 +1951,6 @@ Objects {
       }
     }
     Text {
-      Label: "Message Banner"
       Color {
         R: 1
         G: 1
