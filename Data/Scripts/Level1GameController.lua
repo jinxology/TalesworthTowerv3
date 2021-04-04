@@ -16,7 +16,7 @@ local myColor
 local myShape 
 local myShapeObj --pointer to the actual 3d object
 local successes = 0
-local successesForVictory = 8
+local successesForVictory = 1
 local objTable = {}
 
 --EventListeners
@@ -127,7 +127,7 @@ function OnColorButtonPressed(whichShape, whichColor, whoDidIt)
             successes = successes + 1
             --script:SetNetworkedCustomProperty("UIControllerProperty","01,"..successes..","..successesForVictory) 
             if successes >= successesForVictory then
-                LevelVictory()
+                Task.Spawn(LevelVictory)
             else
                 SpawnShape()
             end

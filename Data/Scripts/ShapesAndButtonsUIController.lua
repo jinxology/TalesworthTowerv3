@@ -30,7 +30,7 @@ function IncomingUIMessage(coreObject, propertyName)
     
     local msg = propLevelControllerShapesAndButtons:GetCustomProperty(propertyName)
     local msgParams = {CoreString.Split(msg,",")}
-
+print (msg)
     if (propertyName == "UIVisibility") then
         showingMe = false
         ToggleUIVisibility()
