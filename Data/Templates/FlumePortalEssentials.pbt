@@ -20,7 +20,6 @@ Assets {
         ChildIds: 4928125827909756685
         ChildIds: 11499057527066145812
         ChildIds: 3044120525320889385
-        ChildIds: 2546190901260491166
         ChildIds: 4716715558747682916
         ChildIds: 6195723043482851921
         ChildIds: 6376833988982904340
@@ -88,12 +87,6 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:WindSFX"
-            ObjectReference {
-              SubObjectId: 2546190901260491166
-            }
-          }
-          Overrides {
             Name: "cs:TeleportToFlume"
             ObjectReference {
               SubObjectId: 4716715558747682916
@@ -121,6 +114,12 @@ Assets {
             Name: "cs:noclip2"
             ObjectReference {
               SubObjectId: 9160698222049057169
+            }
+          }
+          Overrides {
+            Name: "cs:FlumeExitTornadoSound"
+            AssetReference {
+              Id: 446346771086770497
             }
           }
         }
@@ -295,45 +294,6 @@ Assets {
           }
           TeamSettings {
           }
-        }
-      }
-      Objects {
-        Id: 2546190901260491166
-        Name: "Nature Wind Steady 01 SFX"
-        Transform {
-          Location {
-            X: 200
-            Z: 0.00048828125
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.5
-            Y: 0.5
-            Z: 0.5
-          }
-        }
-        ParentId: 17649526533898173544
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        AudioInstance {
-          AudioAsset {
-            Id: 8002337567237634747
-          }
-          Volume: 0.984679461
-          Falloff: 1500
-          Radius: 1119.51978
-          EnableOcclusion: true
-          IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
         }
       }
       Objects {
@@ -855,15 +815,6 @@ Assets {
       PrimaryAsset {
         AssetType: "BlueprintAssetRef"
         AssetId: "fxbp_tornado"
-      }
-    }
-    Assets {
-      Id: 8002337567237634747
-      Name: "Nature Wind Steady 01 SFX"
-      PlatformAssetType: 7
-      PrimaryAsset {
-        AssetType: "AudioAssetRef"
-        AssetId: "sfx_nature_wind_steady_01_Cue_ref"
       }
     }
     Assets {

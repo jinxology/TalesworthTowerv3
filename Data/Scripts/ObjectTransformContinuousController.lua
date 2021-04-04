@@ -45,7 +45,7 @@ end
 -- nil StartAction()
 -- Starts moving, rotating or scaling the target object
 function StartAction()
-    print ("started")
+    
     if not Object.IsValid(OBJECT) then return end
 
     Task.Wait(RandomFloat(DELAY_RANGE.x, DELAY_RANGE.y))

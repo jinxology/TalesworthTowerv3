@@ -11,6 +11,7 @@ local propTxtAutoStart = script:GetCustomProperty("TxtAutoStart"):WaitForObject(
 
 local timerStarted = false
 local timeLeft = 0
+local devMode = true
 
 --Main tower timer
 local totalTowerTime = 0
@@ -29,6 +30,10 @@ function OnBindingPressed(player, bindingPressed)
 
     if (bindingPressed == "ability_extra_36") then 
         Events.BroadcastToServer("VoteForReset",Game.GetLocalPlayer())
+    elseif (bindingPressed == "ability_extra_29" and devMode) then
+        --P
+        local myPos = Game.GetLocalPlayer():GetWorldPosition()
+        Events.BroadcastToServer("ResetPlayerLocations",myPos)
     end
 
 end

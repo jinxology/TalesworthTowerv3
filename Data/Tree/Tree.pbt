@@ -2822,6 +2822,12 @@ Objects {
         SelfId: 7180215364173416988
       }
     }
+    Overrides {
+      Name: "cs:btnShapesAndButtons"
+      ObjectReference {
+        SelfId: 14202293665943916180
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2880,6 +2886,7 @@ Objects {
   ChildIds: 3652971634510445742
   ChildIds: 9618469353080633819
   ChildIds: 7180215364173416988
+  ChildIds: 14202293665943916180
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2910,6 +2917,97 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:bottomright"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 14202293665943916180
+  Name: "btnShapesAndButtons"
+  Transform {
+    Location {
+      X: 6.97067298e-06
+      Y: -0.000345196633
+    }
+    Rotation {
+      Yaw: -3.75660384e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1119104670142202433
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 176
+    Height: 49
+    UIX: 401.115479
+    UIY: 331.814819
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Button {
+      Label: "Shapes/Buttons"
+      FontColor {
+        A: 1
+      }
+      FontSize: 20
+      ButtonColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      HoveredColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      PressedColor {
+        R: 0.705960155
+        G: 1
+        B: 0.399999976
+        A: 1
+      }
+      DisabledColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Brush {
+        Id: 841534158063459245
+      }
+      IsButtonEnabled: true
+      ClickMode {
+        Value: "mc:ebuttonclickmode:default"
+      }
+      Font {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
         }
       }
     }
@@ -5224,6 +5322,39 @@ Objects {
       Name: "cs:TowerEjectStartPoint"
       ObjectReference {
         SelfId: 1332893525166653039
+      }
+    }
+    Overrides {
+      Name: "cs:LatecomerFlume"
+      ObjectReference {
+        SelfId: 6061807551485468827
+        SubObjectId: 17649526533898173544
+        InstanceId: 17998245531023862534
+        TemplateId: 13204994640971399595
+      }
+    }
+    Overrides {
+      Name: "cs:txtTowerInProgressLine2"
+      ObjectReference {
+        SelfId: 4841513043553708079
+      }
+    }
+    Overrides {
+      Name: "cs:TowerProgressBeacon1"
+      ObjectReference {
+        SelfId: 3706959577580554499
+        SubObjectId: 3982134986615908093
+        InstanceId: 9119419800998815412
+        TemplateId: 5908325410418310682
+      }
+    }
+    Overrides {
+      Name: "cs:TowerProgressBeacon2"
+      ObjectReference {
+        SelfId: 12956016446171998555
+        SubObjectId: 3982134986615908093
+        InstanceId: 6257205940140795644
+        TemplateId: 5908325410418310682
       }
     }
     Overrides {
