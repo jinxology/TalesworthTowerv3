@@ -71,6 +71,15 @@ Assets {
   }
 }
 Assets {
+  Id: 15355692762836007663
+  Name: "Plane 1m - One Sided"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_plane_1m_001"
+  }
+}
+Assets {
   Id: 15111302418853499192
   Name: "Humanoid 1 Military Pants"
   PlatformAssetType: 26
@@ -152,6 +161,15 @@ Assets {
   }
 }
 Assets {
+  Id: 11926090024424894139
+  Name: "Frosted Glass No Distortion"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "fxma_frosted_glass_nodistortion"
+  }
+}
+Assets {
   Id: 10789546840193366307
   Name: "Cube - Bottom-Aligned"
   PlatformAssetType: 1
@@ -188,12 +206,30 @@ Assets {
   }
 }
 Assets {
+  Id: 7917643843895697114
+  Name: "Sci-fi Console Screen 03"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_scf_screen_003_ref"
+  }
+}
+Assets {
   Id: 7871110820329172543
   Name: "Magic Star Collect 03 SFX"
   PlatformAssetType: 7
   PrimaryAsset {
     AssetType: "AudioAssetRef"
     AssetId: "sfx_magic_star_collect_03_Cue_ref"
+  }
+}
+Assets {
+  Id: 6498147152032758814
+  Name: "Screen Overlay 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "fxmi_screen_overlay_01"
   }
 }
 Assets {
@@ -248,6 +284,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_wood_planks_001_uv"
+  }
+}
+Assets {
+  Id: 4640070354326659050
+  Name: "Roboto Slab Black"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "RobotoSlabBlack_ref"
   }
 }
 Assets {

@@ -1,7 +1,7 @@
-Name: "Exit Pipes_1"
-RootId: 13709605810309238397
+Name: "Exit Pipes_2"
+RootId: 15460699240210930912
 Objects {
-  Id: 10703209663645897930
+  Id: 7369269516686307962
   Name: "Pipe"
   Transform {
     Location {
@@ -16,7 +16,7 @@ Objects {
       Z: 4.45676661
     }
   }
-  ParentId: 13709605810309238397
+  ParentId: 15460699240210930912
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -51,25 +51,25 @@ Objects {
   }
 }
 Objects {
-  Id: 16461108298178816929
+  Id: 12740411368644844635
   Name: "Pipe"
   Transform {
     Location {
-      X: -1106.70117
-      Y: 1.26200497
-      Z: -384.275513
+      X: -1100
+      Z: -400
     }
     Rotation {
+      Pitch: -1.36603776e-05
       Yaw: -179.999985
       Roll: -179.999985
     }
     Scale {
       X: 4.54961681
-      Y: 4.54961634
-      Z: 5.81276464
+      Y: 4.54961681
+      Z: 4.45676661
     }
   }
-  ParentId: 13709605810309238397
+  ParentId: 15460699240210930912
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
@@ -104,7 +104,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6066893712199114152
+  Id: 11788038348241578438
   Name: "Pipe"
   Transform {
     Location {
@@ -120,7 +120,7 @@ Objects {
       Z: 1.81299722
     }
   }
-  ParentId: 13709605810309238397
+  ParentId: 15460699240210930912
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"

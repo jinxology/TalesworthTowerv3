@@ -1272,13 +1272,311 @@ Objects {
   }
 }
 Objects {
+  Id: 9119419800998815412
+  Name: "LevelBeaconSuccess"
+  Transform {
+    Location {
+      X: 358.972198
+      Y: -3683.94556
+      Z: 547.454285
+    }
+    Rotation {
+      Yaw: 89.9999924
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16614468857374372845
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 3982134986615908093
+      value {
+        Overrides {
+          Name: "Name"
+          String: "TowerProgressBeacon1"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -483.507172
+            Y: 558.900635
+            Z: 453.066772
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 89.9999847
+          }
+        }
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5908325410418310682
+    }
+  }
+}
+Objects {
+  Id: 9021731146846335370
+  Name: "LevelBeacon"
+  Transform {
+    Location {
+      X: 354.952881
+      Y: -3647.86694
+      Z: 545.765076
+    }
+    Rotation {
+      Yaw: 89.9999924
+    }
+    Scale {
+      X: 0.686268926
+      Y: 0.686268926
+      Z: 0.686268926
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 435981588591393957
+      value {
+        Overrides {
+          Name: "Name"
+          String: "LevelBeacon"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 0.686268926
+            Y: 0.686268926
+            Z: 0.686268926
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -482.293
+            Y: 595.223389
+            Z: 454
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 89.9999847
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4136461131608212019
+    }
+  }
+}
+Objects {
+  Id: 7068388706901661866
+  Name: "towerprogresscreenoverlay"
+  Transform {
+    Location {
+      X: -75.8896408
+      Y: 467.307861
+      Z: 604.361084
+    }
+    Rotation {
+      Roll: -90
+    }
+    Scale {
+      X: 5.17933893
+      Y: 2.06649733
+      Z: 1.00000048
+    }
+  }
+  ParentId: 16614468857374372845
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 6498147152032758814
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 15355692762836007663
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 6257205940140795644
+  Name: "LevelBeaconSuccess"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16614468857374372845
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 3982134986615908093
+      value {
+        Overrides {
+          Name: "Name"
+          String: "TowerProgressBeacon2"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 326.445862
+            Y: 561.508301
+            Z: 456.139374
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 90
+          }
+        }
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5908325410418310682
+    }
+  }
+}
+Objects {
+  Id: 8466647632443399897
+  Name: "LevelBeacon"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 435981588591393957
+      value {
+        Overrides {
+          Name: "Name"
+          String: "LevelBeacon"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 0.686268926
+            Y: 0.686268926
+            Z: 0.686268926
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 322.426544
+            Y: 597.586914
+            Z: 454
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 90
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4136461131608212019
+    }
+  }
+}
+Objects {
   Id: 15944994166182577803
   Name: "TowerProgressSign"
   Transform {
     Location {
-      X: -551.083862
-      Y: 589.729492
-      Z: 333.28479
+      X: 230.625244
+      Y: 486.0979
+      Z: 580.373535
     }
     Rotation {
     }
@@ -1290,6 +1588,7 @@ Objects {
   }
   ParentId: 16614468857374372845
   ChildIds: 9114324584553932207
+  ChildIds: 4841513043553708079
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -1305,18 +1604,71 @@ Objects {
   }
 }
 Objects {
+  Id: 4841513043553708079
+  Name: "txtTowerInProgressLine2"
+  Transform {
+    Location {
+      X: -304.886414
+      Y: -9.91137695
+      Z: -8.70239258
+    }
+    Rotation {
+      Yaw: -90
+    }
+    Scale {
+      X: 1.35267127
+      Y: 1.35267127
+      Z: 1.35267127
+    }
+  }
+  ParentId: 15944994166182577803
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "ENTER TOWER TO JOIN TEAM"
+    FontAsset {
+      Id: 4640070354326659050
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
   Id: 9114324584553932207
   Name: "txtTowerInProgress"
   Transform {
     Location {
+      X: -302.537231
+      Y: -9.91137695
+      Z: 55.9292603
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -90
     }
     Scale {
-      X: 2.94121456
-      Y: 2.94121456
-      Z: 2.94121456
+      X: 2.11254978
+      Y: 2.11254978
+      Z: 2.11254978
     }
   }
   ParentId: 15944994166182577803
@@ -1333,20 +1685,79 @@ Objects {
   Text {
     Text: "TOWER IN PROGRESS"
     FontAsset {
+      Id: 4640070354326659050
     }
     Color {
-      R: 1
+      R: 0.0813906193
       G: 1
-      B: 1
+      B: 0.0299999714
       A: 1
     }
     HorizontalSize: 1
     VerticalSize: 1
     HorizontalAlignment {
-      Value: "mc:ecoretexthorizontalalign:left"
+      Value: "mc:ecoretexthorizontalalign:center"
     }
     VerticalAlignment {
       Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
+  Id: 5108290213925719190
+  Name: "Sci-fi Console Screen 03"
+  Transform {
+    Location {
+      X: -71.9059753
+      Y: 509.223145
+      Z: 469.362183
+    }
+    Rotation {
+      Yaw: -179.999985
+    }
+    Scale {
+      X: 4.15411568
+      Y: 2.90000343
+      Z: 2.89999986
+    }
+  }
+  ParentId: 16614468857374372845
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_Detail1:id"
+      AssetReference {
+        Id: 11926090024424894139
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_Detail1:color"
+      Color {
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 7917643843895697114
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
     }
   }
 }
@@ -14130,6 +14541,68 @@ Objects {
   Script {
     ScriptAsset {
       Id: 14991226518396717695
+    }
+  }
+}
+Objects {
+  Id: 17998245531023862534
+  Name: "FlumePortalEssentials"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16614468857374372845
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 17487399639570569082
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 13.7749014
+            Y: 21.543457
+            Z: 20.9472656
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17649526533898173544
+      value {
+        Overrides {
+          Name: "Name"
+          String: "LatecomerFlume"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1175.48169
+            Y: 968.889893
+            Z: 319.503113
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 13204994640971399595
     }
   }
 }
