@@ -92,7 +92,7 @@ end
 function TeleportAllPlayers(currentLev, newLoc, useFlume)
     DestroyLevel(currentLevelIndex)
     if (nextLevelIndex ~= nil) then
-        DestroyLevel(nextLevelIndex)
+        Task.Spawn(function() DestroyLevel(nextLevelIndex) end)
     end
     levelRunning = false
     ClearTimer()
@@ -351,7 +351,7 @@ function StartingPlatformsActivated()
     if (not levelRunning and not resetingTower) then
         if (nextLevelIndex ~= nil) then        
             --Coming from a different level
-            DestroyLevel(currentLevelIndex)
+            Task.Spawn(function() DestroyLevel(currentLevelIndex) end)
             currentLevelIndex = nextLevelIndex
             nextLevelIndex = nil
         else   
@@ -618,7 +618,7 @@ function EjectForTowerReset()
 
     --loop through all levels and destroy them
     for i=1,#levelList do
-        DestroyLevel(currentLevelIndex)
+        Task.Spawn(function() DestroyLevel(currentLevelIndex) end)
     end
 
     levelRunning = false

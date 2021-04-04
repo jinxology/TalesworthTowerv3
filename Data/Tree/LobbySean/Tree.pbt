@@ -10596,45 +10596,6 @@ Objects {
   }
 }
 Objects {
-  Id: 10658665643290559126
-  Name: "Waterfall Large SFX"
-  Transform {
-    Location {
-      X: -3155.9
-      Y: 298.067627
-      Z: -349.999939
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 16614468857374372845
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 11671992401622297254
-    }
-    AutoPlay: true
-    Volume: 1
-    Falloff: 998.837158
-    Radius: 1157.52319
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
   Id: 2165718692555384750
   Name: "Basic Water Splash VFX"
   Transform {
