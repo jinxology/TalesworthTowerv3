@@ -315,25 +315,32 @@ function SpawnPuckAt(position, makePlayersWatch)
 end
 
 function LevelPowerDown()
-    if propSmackerTask ~= nil then
+    if propSmackerTask then
         propSmackerTask:Cancel()
+        propSmackerTask = nil
     end
 
     for _, smacker in ipairs(propLiveSmackers) do
         smacker:Destroy()
     end
+    propLiveSmackers = {}
 
     for puck, isLive in ipairs(propLivePucks) do
         puck:Destroy()
     end
+    propLivePucks = {}
 
     for _, mugshot in ipairs(propLiveMugshots) do
-        mugshot:Unequip()
-        mugshot:Destroy()
+        if propLiveMugshots:IsValid() then
+            mugshot:Unequip()
+            mugshot:Destroy()
+        end
     end
+    propLiveMugshots = {}
 
     if propDefenderTask ~= nil then
         propDefenderTask:Cancel()
+        propDefenderTask = nil
     end
 
     if propTutorialCurtain ~= nil then
@@ -343,7 +350,6 @@ function LevelPowerDown()
     -- World.FindObjectByName("Level.GobbleDots").visibility = Visibility.FORCE_OFF
     -- World.FindObjectByName("Level.LazyLava").visibility = Visibility.FORCE_OFF
 end
-
 
 propCheckPuckCountTask = nil
 

@@ -180,23 +180,19 @@ end
 Events.Connect("DotDeleted", OnDotDeleted)
 
 function OnPlayerDeath(inPlayer, inGhost)
-	if inPlayer.isDead == false then
+	if Object.IsValid(inPlayer) then
 	    local vfxpos = inPlayer:GetWorldPosition() --+ Vector3.New(0,0,50)
 	    World.SpawnAsset(propHittingGhostSVFX,{position=vfxpos})  --[[, parent = levelFolder}) ]]--
-	        
-		inPlayer:Die()
 		
 		inPlayer:EnableRagdoll()
 		inPlayer.animationStance = "unarmed_death"
-	end
-end
-
-function OnPlayerDied(player, damage)
-    -- Now, revive them after SECONDS_AFTER_DEATH seconds at a spawn point:
-	Task.Wait(SECONDS_AFTER_DEATH)
+		-- Now, revive them after SECONDS_AFTER_DEATH seconds at a spawn point:
+		Task.Wait(SECONDS_AFTER_DEATH)
 	
-	player:Respawn({position = PLAYER_RESPAWN_POINT})
-	player.animationStance = "unarmed_stance"
+		inPlayer:SetWorldPosition(PLAYER_RESPAWN_POINT)
+		inPlayer:DisableRagdoll()
+		inPlayer.animationStance = "unarmed_stance"
+	end
 end
 
 function SpwanGhosts()
@@ -224,8 +220,3 @@ function SpwanGhosts()
    	clydeGhost:SetNetworkedCustomProperty("Color", CLYDE_COLOR)
     clydeGhostController.context.StartGhost()
 end
-
-for _, p in pairs(Game.GetPlayers()) do
-    p.diedEvent:Connect(OnPlayerDied)
-end
-

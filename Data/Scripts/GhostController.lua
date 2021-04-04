@@ -161,6 +161,7 @@ end
 
 function KillGhost()
 	ghostAITask:Cancel()
+	ghostAITask = nil
 end
 
 ghost:SetPosition(ghostSpawnPoint)

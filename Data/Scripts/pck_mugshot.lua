@@ -73,7 +73,7 @@ function UpdateTension(puck, deltaT)
 		end
 	end
 	
-	print("force of tension = " .. forceSize .. ", friction = " .. playerFriction)
+	-- print("force of tension = " .. forceSize .. ", friction = " .. playerFriction)
 	if false and forceSize > playerFriction then
 		-- player:EnableRagdoll("left_clavicle", .5)
 		-- player:EnableRagdoll("right_clavicle", .5)
