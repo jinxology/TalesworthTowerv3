@@ -35,7 +35,7 @@ local ballsStartingConfig = {
 	{color = Color.BLUE, 	position = Vector3.New(   68,  187, -125), scale = LARGE_BALL_SCALE},
 	{color = Color.YELLOW, 	position = Vector3.New(  875, 1108, -150), scale = MEDIUM_BALL_SCALE},
 	{color = Color.YELLOW, 	position = Vector3.New(-1200,-1095, -150), scale = MEDIUM_BALL_SCALE},
-	{color = Color.RED, 	position = Vector3.New(-1622,  772, -200), scale = SMALL_BALL_SCALE},
+	{color = Color.RED, 	position = Vector3.New(-2075,  1400, -200), scale = SMALL_BALL_SCALE},
 	{color = Color.RED, 	position = Vector3.New(  542, -818, -200), scale = SMALL_BALL_SCALE}, 
 	--Begin Second Room
 	{color = Color.BLUE, 	position = Vector3.New(-4075,  700, -125), scale = LARGE_BALL_SCALE},

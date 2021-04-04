@@ -56,6 +56,9 @@ local GHOST_SCALE = 2.2
 local PLAYER_RESPAWN_POINT = Vector3.New(-1025,1325,11400)
 local SECONDS_AFTER_DEATH = 5
 
+local activeCamera
+local propDefaultCameraDistance
+    
 dotsArray = {} --The Array of all of the Dots the Server is holding with current values
 dotsDeletedArray = {}  --The Array of deleted dots the server is holding (an array of indexes)
 
@@ -81,6 +84,27 @@ function LevelBegin()
             child:MoveTo(child:GetPosition() - Vector3.UP * 36, 2, true)
         end
     end
+    
+    --put in client context
+   	--activeCamera = GetPlayerActiveCamera(Game.GetLocalPlayer())
+    --propDefaultCameraDistance = activeCamera.currentDistance
+    --activeCamera.currentDistance = 1000 --or whatever number
+    
+    
+	--[[Goes in Client Context
+	function GetPlayerActiveCamera(player)
+		if not Object.IsValid(player) then
+		        return nil
+		end
+		
+		if player:GetOverrideCamera() then
+		    return player:GetOverrideCamera()
+		else
+		    return player:GetDefaultCamera()
+		end
+	end
+	]]--
+
 end
 
 --LevelEnd code is called when the....
@@ -98,22 +122,22 @@ end
 --This function will call LevelEnd(true) on the MainGameController 
 function LevelVictory()
 	if Object.IsValid(inkyGhost) then
-		inkyGhost.KillGhost()
+		inkyGhostController.context.KillGhost()
 		inkyGhost:Destroy()
 	end
 	
 	if Object.IsValid(blinkyGhost) then
-		blinkyGhost.KillGhost()
+		blinkyGhostController.context.KillGhost()
 		blinkyGhost:Destroy()
 	end
 
 	if Object.IsValid(pinkyGhost) then
-		pinkyGhost.KillGhost()
+		pinkyGhostController.context.KillGhost()
 		pinkyGhost:Destroy()
 	end
 
 	if Object.IsValid(clydeGhost) then
-		clydeGhost.KillGhost()
+		clydeGhostController.context.KillGhost()
 		clydeGhost:Destroy()
 	end
 	propMainGameController.context.LevelEnd(true)
@@ -146,6 +170,7 @@ function CheckDotsLeft(dotDeletedIndex)
 		LevelVictory()
 	end
 end
+
 
 function UpdateDotsDeletedString(deletedDot)
 	
