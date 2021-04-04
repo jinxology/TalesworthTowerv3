@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 9132562513265036101
+        ParentId: 1232579912354001357
         ChildIds: 12175264614468137581
         ChildIds: 11153665520900970025
         ChildIds: 8608010913598086739
@@ -61,10 +61,27 @@ Assets {
           }
           Overrides {
             Name: "cs:presented"
-            Bool: false
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:cockedAtPlayer"
+            String: ""
+          }
+          Overrides {
+            Name: "cs:cockedAtPuck"
+            ObjectReference {
+            }
           }
           Overrides {
             Name: "cs:presented:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:cockedAtPlayer:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:cockedAtPuck:isrep"
             Bool: true
           }
         }
@@ -89,7 +106,7 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            Z: 865
+            Z: 605.141602
           }
           Rotation {
           }
@@ -212,7 +229,7 @@ Assets {
           Overrides {
             Name: "cs:bodyRetracted"
             Vector {
-              Z: 1450
+              Z: 1550
             }
           }
           Overrides {

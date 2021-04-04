@@ -294,7 +294,6 @@ Objects {
   Name: "Trigger"
   Transform {
     Location {
-      X: 130
       Z: 100
     }
     Rotation {
@@ -305,7 +304,7 @@ Objects {
     Scale {
       X: 5
       Y: 5
-      Z: 11.500001
+      Z: 8.8
     }
   }
   ParentId: 18039868393229935935
@@ -1390,83 +1389,6 @@ Objects {
         Mass: 100
         LinearDamping: 0.01
       }
-    }
-  }
-}
-Objects {
-  Id: 7212484202102289056
-  Name: "Trigger"
-  Transform {
-    Location {
-      X: -5.13275146
-      Z: 135.108398
-    }
-    Rotation {
-      Pitch: 12.6951895
-      Yaw: 180
-    }
-    Scale {
-      X: 0.874186039
-      Y: 6.00000954
-      Z: 6
-    }
-  }
-  ParentId: 4159855513164329778
-  ChildIds: 3927091474525225093
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 3927091474525225093
-  Name: "RagdollPlayer"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.285327762
-      Y: 0.285327762
-      Z: 0.285327762
-    }
-  }
-  ParentId: 7212484202102289056
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:nextTarget"
-      ObjectReference {
-        SelfId: 841534158063459245
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 16741261518964209400
     }
   }
 }

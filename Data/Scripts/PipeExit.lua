@@ -12,7 +12,12 @@ function OnBeginOverlap(whichTrigger, other)
 		player.serverUserData.currentFlume = nil
 		player.serverUserData.alreadyFlumedIn = nil
 		
+		v = player:GetVelocity()
+		v = whichTrigger:GetWorldTransform():GetInverse():TransformDirection(v)
+		v = teleportDest:GetWorldTransform():TransformDirection(v)
+
 		player:SetWorldPosition(teleportDest:GetWorldPosition())
+		player:SetVelocity(v)
 		-- print("teleported player to " .. tostring(player:GetWorldPosition()))	
 		Events.BroadcastToPlayer(player, "sky.SetLightLevel", 4)	
 	end
