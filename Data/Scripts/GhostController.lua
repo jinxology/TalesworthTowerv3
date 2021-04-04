@@ -25,6 +25,8 @@ GHOST_FACE_RIGHT = Rotation.New(0,0,90)
 GHOST_FACE_DOWN = Rotation.New(0,0,180)
 GHOST_FACE_LEFT = Rotation.New(0,0,270)
 
+ghostAITask = nil
+
 local propLevelControllerGobbleDots = script:GetCustomProperty("LevelControllerGobbleDots"):WaitForObject()
 
 local propGhost = script:GetCustomProperty("Ghost"):WaitForObject()
@@ -156,6 +158,10 @@ function StartGhost()
 		MoveGhost()	
 	end 
 	end)
+end
+
+function KillGhost()
+	ghostAITask:Cancel()
 end
 
 ghost:SetPosition(ghostSpawnPoint)

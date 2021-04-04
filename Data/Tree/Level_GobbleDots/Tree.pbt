@@ -4531,11 +4531,19 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:ClearDots"
+      Int: 0
+    }
+    Overrides {
       Name: "cs:InitializeBoard:isrep"
       Bool: true
     }
     Overrides {
       Name: "cs:DeletedDots:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:ClearDots:isrep"
       Bool: true
     }
   }

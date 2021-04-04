@@ -16,11 +16,18 @@ local   propMugshotUI = script:GetCustomProperty("mugshotUI"):WaitForObject()
 local   propTetheredUI = script:GetCustomProperty("tetheredUI"):WaitForObject()
 local   propUntetheredUI = script:GetCustomProperty("untetheredUI"):WaitForObject()
 local   propTensionUI = script:GetCustomProperty("tensionUI"):WaitForObject()
-local   propTensionMark = script:GetCustomProperty("tensionMark"):WaitForObject()
+local   propT1Mark = script:GetCustomProperty("tensionMark"):WaitForObject()
 local   propSnapMark = script:GetCustomProperty("snapMark"):WaitForObject()
 local   propStandingMark = script:GetCustomProperty("standingMark"):WaitForObject()
 local   propCrouchingMark = script:GetCustomProperty("crouchingMark"):WaitForObject()
 local   propMountedMark = script:GetCustomProperty("mountedMark"):WaitForObject()
+local   propReelUI = script:GetCustomProperty("reelUI"):WaitForObject()
+local   propUnreelUI = script:GetCustomProperty("unreelUI"):WaitForObject()
+
+local   propT1Position = (propTensionUI.width / 2.0 + propT1Mark.x) / propTensionUI.width
+local   propStandingPosition = (propTensionUI.width / 2.0 + propStandingMark.x) / propTensionUI.width
+local   propCrouchingPosition = (propTensionUI.width / 2.0 + propCrouchingMark.x) / propTensionUI.width
+local   propMountedPosition = (propTensionUI.width / 2.0 + propMountedMark.x) / propTensionUI.width
 
 function OnEquipped(equipment)
     -- Spawn a pickup sound when a player picks up the weapon
@@ -272,27 +279,44 @@ function SetTetheredState(tetheredState)
 
             propTetheredUI.visibility = Visibility.FORCE_OFF
             propUntetheredUI.visibility = Visibility.INHERIT
-        else
+            propUntetheredUI.text = "LMB TO TETHER"
+        elseif propTetheredState == TRAVELING_STATE then
+            propUntetheredUI.text = "TETHERING"
+            propReelUI.visibility = Visibility.FORCE_OFF
+            propUnreelUI.visibility = Visibility.FORCE_OFF
+            propT1Mark.visibility = Visibility.FORCE_OFF
+            propStandingMark.visibility = Visibility.FORCE_OFF
+            propCrouchingMark.visibility = Visibility.FORCE_OFF
+            propMountedMark.visibility = Visibility.FORCE_OFF
+            propSnapMark.visibility = Visibility.FORCE_OFF
+        elseif propTetheredState == TETHERED_STATE then
             propTetherAttachStartTime = time()
             propTetherAttachDuration = 1
             propTetheredUI.visibility = Visibility.INHERIT
+            propReelUI.visibility = Visibility.INHERIT
+            propUnreelUI.visibility = Visibility.INHERIT
+            propT1Mark.visibility = Visibility.INHERIT
+            propStandingMark.visibility = Visibility.INHERIT
+            propCrouchingMark.visibility = Visibility.INHERIT
+            propMountedMark.visibility = Visibility.INHERIT
+            propSnapMark.visibility = Visibility.INHERIT
             propUntetheredUI.visibility = Visibility.FORCE_OFF
             -- play sound
         end
     -- end
 end
 
-local   propT1Mark = 0.2
+-- local   propT1Mark = 0.2
 local   propSnapTension = 2.5
 
 function UpdateTension(tension)
     propTension = tension
 
     if tension <= 1 then
-        propTensionUI.progress = tension * propT1Mark
+        propTensionUI.progress = tension * propT1Position
         --  color is slack
     else
-        propTensionUI.progress = propT1Mark + ((1 - propT1Mark) * (tension - 1) / propSnapTension)
+        propTensionUI.progress = propT1Position + ((1 - propT1Position) * (tension - 1) / propSnapTension)
     end
 end
 

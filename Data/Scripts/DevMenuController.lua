@@ -90,7 +90,7 @@ function OnClickedSetLevel(whichButton)
         newLoc = Vector3.New (4598,1430,8045)
     elseif (whichButton.name == "btnPuckollossal") then
         levelName = "Puckollossal"
-        newLoc = Vector3.New (-394,3418,14302)
+        newLoc = Vector3.New (-800,4000,14250)
     elseif (whichButton.name == "btnGobbleDots") then
         levelName = "GobbleDots"
         newLoc = Vector3.New (-1537,1871,11517)

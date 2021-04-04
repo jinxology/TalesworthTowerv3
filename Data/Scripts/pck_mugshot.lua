@@ -13,12 +13,18 @@ local UNTETHERED_STATE = 0
 local TRAVELING_STATE = 1
 local TETHERED_STATE = 2
 
+local REELING_IN = -1
+local REELING_NONE = 0
+local REELING_OUT = 1
+local propReelingDirection = REELING_NONE
+
 local propTargetedPuck = nil
 local propTargetedAnchor = 0	-- 1..4
 local propTetheredState = UNTETHERED_STATE
 local propTetherTravelDistance = 0
 
-slackAmount = 0
+propSlackAmount = 0
+propTension = 0
 
 local ROPE_UNIT_LENGTH = 100
 local FACING_AWAY = 0.2
@@ -26,7 +32,7 @@ local FACING_AWAY = 0.2
 local PLAYER_STANDING_FRICTION = 200
 local PLAYER_CROUCHING_FRICTION = 300
 local PLAYER_MOUNTED_FRICTION = 400
-local FORCE_PER_TENSION = 1200
+local FORCE_PER_TENSION = 800
 
 function ForceForTension(tension)
 	return FORCE_PER_TENSION * math.max(tension - 1.0, 0.0)
@@ -51,6 +57,7 @@ function UpdateTension(puck, deltaT)
 		force = force:GetNormalized() * forceSize
 	end
 
+	propTension = tension
 	script:SetNetworkedCustomProperty("tension", tension)
 	script:SetNetworkedCustomProperty("targetPosition", puckPosition)
 
@@ -279,6 +286,32 @@ function OnExecute_Untether(ability)
 	UntetherFromPuck()
 end
 
+function DistanceToPuck()
+	if propTargetedPuck then
+		return (propTargetedPuck:GetWorldPosition() - propEquipment.owner:GetWorldPosition()).size
+	end
+	return 0
+end
+
+function ReelIn(deltaT)
+	propSlackAmount = propSlackAmount - (400 * deltaT / propTension)
+end
+
+function ReelOut(deltaT)
+	local	distance = DistanceToPuck()
+
+	propSlackAmount = math.max(distance + 1000, propSlackAmount + 400 * deltaT)
+end
+
+function Tick(deltaT)
+	-- print("tick, reeling " .. propReelingDirection)
+	if propReelingDirection == REELING_IN then
+		ReelIn(deltaT)
+	elseif propReelingDirection == REELING_OUT then
+		ReelOut(deltaT)
+	end
+end
+
 function UntetherFromPuck()
 	if propTetheredState == TETHERED_STATE and propTargetedPuck ~= nil and Object.IsValid(propTargetedPuck) then
 		propTargetedPuck.context.UntetherMugshot(propEquipment)
@@ -305,33 +338,33 @@ end
 function OnReady_Untether(ability)
 end
 
-function OnCast_Reel(ability)
-	if propTetheredState ~= TETHERED_STATE then
-		ability:Interrupt()
-	end
-		-- print("OnCast " .. ability.name)
-end
+-- function OnCast_Reel(ability)
+-- 	if propTetheredState ~= TETHERED_STATE then
+-- 		ability:Interrupt()
+-- 	end
+-- 		-- print("OnCast " .. ability.name)
+-- end
 
-function OnExecute_Reel(ability)
-	if propTetheredState == TETHERED_STATE then
-		propSlackAmount = math.min(propSlackAmount - ROPE_UNIT_LENGTH * 4, (propTargetedPuck:GetWorldPosition() - propEquipment.owner:GetWorldPosition()).size)
-	end-- print("reeled in, new slack amount is " .. propSlackAmount)
-end
+-- function OnExecute_Reel(ability)
+-- 	if propTetheredState == TETHERED_STATE then
+-- 		propSlackAmount = math.min(propSlackAmount - ROPE_UNIT_LENGTH * 4, (propTargetedPuck:GetWorldPosition() - propEquipment.owner:GetWorldPosition()).size)
+-- 	end-- print("reeled in, new slack amount is " .. propSlackAmount)
+-- end
 
-function OnRecovery_Reel(ability)
-end
+-- function OnRecovery_Reel(ability)
+-- end
 
-function OnCooldown_Reel(ability)
-end
+-- function OnCooldown_Reel(ability)
+-- end
 
-function OnInterrupted_Reel(ability)
-end
+-- function OnInterrupted_Reel(ability)
+-- end
 
-function OnReady_Reel(ability)
-end
+-- function OnReady_Reel(ability)
+-- end
 
-function OnCast_Unreel(ability)
-end
+-- function OnCast_Unreel(ability)
+-- end
 
 -- function FlyPlayer(player)
 -- 	print("fly player" .. player.id)
@@ -423,17 +456,25 @@ local propBindingReleasedListener = nil
 
 function OnBindingPressed(player, bindingPressed)
 	if bindingPressed == "ability_primary" then
-		print("start reeling")
+		if propReelingDirection == REELING_NONE then
+			propReelingDirection = REELING_OUT
+		end
 	elseif bindingPressed == "ability_secondary" then
-		print("start unreeling")
+		if propReelingDirection == REELING_NONE then
+			propReelingDirection = REELING_IN
+		end
 	end
 end
 
 function OnBindingReleased(player, bindingReleased)
 	if bindingReleased == "ability_primary" then
-		print("stop reeling")
+		if propReelingDirection == REELING_OUT then
+			propReelingDirection = REELING_NONE
+		end
 	elseif bindingReleased == "ability_secondary" then
-		print("stop unreeling")
+		if propReelingDirection == REELING_IN then
+			propReelingDirection = REELING_NONE
+		end
 	end
 end
 
