@@ -40,7 +40,7 @@ local propSpawnerInTime = 1.00
 local propSpawners = {}
 
 function ExtendSpawner(index, position, travel, rotate, makePlayersWatch)
-    print("spawning client side spawner " .. tostring(position) .. ", travel = " .. tostring(travel))
+    -- print("spawning client side spawner " .. tostring(position) .. ", travel = " .. tostring(travel))
     local spawner = World.SpawnAsset(propPuckSpawnerTemplate, { parent = script.parent, position = position })
     local spawnerGeometry = spawner:GetCustomProperty("spawnerGeometry"):WaitForObject()
     local portholeGeometry = spawner:GetCustomProperty("spawnerPorthole"):WaitForObject()

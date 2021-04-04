@@ -31,14 +31,18 @@ local   propMountedPosition = (propTensionUI.width / 2.0 + propMountedMark.x) / 
 
 function OnEquipped(equipment)
     -- Spawn a pickup sound when a player picks up the weapon
-    propMugshotUI.visibility = Visibility.INHERIT
-    propUntetheredUI.visibility = Visibility.INHERIT
-    propTetheredUI.visibility = Visibility.FORCE_OFF
+    if equipment.owner == Game:GetLocalPlayer() then
+        propMugshotUI.visibility = Visibility.INHERIT
+        propUntetheredUI.visibility = Visibility.INHERIT
+        propTetheredUI.visibility = Visibility.FORCE_OFF
+    end
 end
 
 function OnUnequipped(equipment)
     -- Spawn a pickup sound when a player picks up the weapon
-    -- propMugshotUI.visibility = Visibility.FORCE_OFF
+    if equipment.owner == Game:GetLocalPlayer() then
+        propMugshotUI.visibility = Visibility.FORCE_OFF
+    end
 end
 
 propTensionProperties = {
