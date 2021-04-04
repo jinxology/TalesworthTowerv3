@@ -31,7 +31,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "FlumePortalPipes_9"
+    FilePartitionName: "FlumePortalPipes_10"
   }
 }
 Objects {
@@ -65,6 +65,6 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "FlumePortalPipes_10"
+    FilePartitionName: "FlumePortalPipes_11"
   }
 }

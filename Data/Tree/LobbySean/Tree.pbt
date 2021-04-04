@@ -10600,8 +10600,8 @@ Objects {
   Name: "Waterfall Large SFX"
   Transform {
     Location {
-      X: -2400
-      Y: 123.22168
+      X: -3155.9
+      Y: 298.067627
       Z: -349.999939
     }
     Rotation {

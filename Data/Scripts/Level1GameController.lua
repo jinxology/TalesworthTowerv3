@@ -194,7 +194,7 @@ function LevelPowerUp()
     table.insert(objTable,World.SpawnAsset(propSNBCircle,{parent=propRandomShape,position=Vector3.New(-167,-141,685),rotation=Rotation.New(-90,0,0),scale=Vector3.New(5,5,.768)}))
     table.insert(objTable,World.SpawnAsset(propSNBHexagon,{parent=propRandomShape,position=Vector3.New(-167,-141,685),rotation=Rotation.New(-90,0,0),scale=Vector3.New(5,5,.768)}))
     table.insert(objTable,World.SpawnAsset(propSpawnShapeVFXNew,{parent=propRandomShape,position=Vector3.New(-218,-202,356),scale=Vector3.New(3.3,10.4,5.462)}))
-    table.insert(objTable,World.SpawnAsset(propDoorIntoSNB,{parent=script.parent,position=Vector3.New(-477.92,-1991.177,0)}))
+    --table.insert(objTable,World.SpawnAsset(propDoorIntoSNB,{parent=script.parent,position=Vector3.New(-477.92,-1991.177,0)}))
 
     ResetLevel()
 

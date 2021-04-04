@@ -41,9 +41,9 @@ levelList = {
     "FarmGallery",
     "ColorDials",
     "BlockAndEscape",
-    "LazyLava",
     "GobbleDots",
     "Puckollossal",
+    "LazyLava",
     "VictoryRoom"    --Must keep victory room last in the list
 }
 
@@ -127,7 +127,7 @@ function SpawnLevelBeacons(success, lifespan)
     local ctrl = GetCurrentLevelController()
     local beaconsFolder = ctrl.context.propLevelBeaconFolder
 
-    if (beaconsFolder == nil and currentLevelIndex ~= #levelList) then
+    if (beaconsFolder == nil) then
         print ("Please setup level beacons on level script!!!")
         return nil
     end
@@ -220,8 +220,10 @@ function PlaceStartingPlatforms(levelIndex, in_position, in_rotation)
 end
 
 function DeactivateStartingPlatforms()
-    local controller = GetLevelControllerByLevelIndex(currentLevelIndex)    
-    controller.context.startingPlatforms:GetCustomProperty("MgrScript"):WaitForObject().context.Deactivate()
+    if (currentLevelIndex ~= #levelList) then
+        local controller = GetLevelControllerByLevelIndex(currentLevelIndex)    
+        controller.context.startingPlatforms:GetCustomProperty("MgrScript"):WaitForObject().context.Deactivate()
+    end
 end
 
 function ResetStartingPlatforms()
@@ -437,7 +439,6 @@ function LevelBegin()
         lastTTTUpdateTime = time()
 
         script:SetNetworkedCustomProperty("towerTimerState","true,"..totalTowerTime)    
-
     end
 end
 
@@ -494,7 +495,7 @@ function LevelEnd(success)
     local lightsDimTime = 5
     if (not success) then
         for _, player in pairs(Game.GetPlayers()) do
-            print("dim lights for " .. player.name)
+            --print("dim lights for " .. player.name)
             SetLightLevel(player, 2)
         end
     end
@@ -573,12 +574,44 @@ function ResetTower()
             SetLightLevel(player, 2)
         end
         SpawnLevelBeacons(false, 3)
-        script:SetNetworkedCustomProperty("UIMessage","07, ")
-        Task.Spawn(EjectForTowerReset,3)
+        
+        if (currentLevelIndex == #levelList) then
+            script:SetNetworkedCustomProperty("UIMessage","10, ")
+            Task.Spawn(VictoryRoomEject)
+        else            
+            script:SetNetworkedCustomProperty("UIMessage","07, ")
+            Task.Spawn(EjectForTowerReset,3)
+        end
     end
 end
 
-function EjectForTowerReset()
+function VictoryRoomEject()
+    local levelControllerScript = GetCurrentLevelController()
+    levelControllerScript.context.OpenFloor()
+
+    for _, player in pairs(Game.GetPlayers()) do
+        SetLightLevel(player, 4)
+    end
+
+    levelRunning = false
+    ClearTimer()
+
+    currentLevelIndex = 1
+    nextLevelindex = nil    
+
+    --loop through all levels and destroy them
+    for i=1,#levelList do
+        DestroyLevel(currentLevelIndex)
+    end
+
+    resetingTower = false
+    SetTowerRunning(false)
+    SpawnLevel1()
+
+end
+
+function EjectForTowerReset()    
+
     for _, player in pairs(Game.GetPlayers()) do
         SetLightLevel(player, 4)
     end
