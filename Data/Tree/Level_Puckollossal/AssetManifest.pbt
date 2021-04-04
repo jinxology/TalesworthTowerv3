@@ -17,6 +17,24 @@ Assets {
   }
 }
 Assets {
+  Id: 17895563106547683038
+  Name: "Sports Fishing Rod Reel Cranking Set 01 SFX"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "sfxabp_sports_fishingrod_crank_set_ref"
+  }
+}
+Assets {
+  Id: 17788889273874535271
+  Name: "Bone Human Humerus 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bones_human_humerus_01_ref"
+  }
+}
+Assets {
   Id: 17317999939743247709
   Name: "Grass Basic"
   PlatformAssetType: 2
@@ -32,6 +50,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_rock_generic_006"
+  }
+}
+Assets {
+  Id: 16586297948923957567
+  Name: "Bone Human Pelvis Half 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bones_human_pelvis_01_ref"
   }
 }
 Assets {
@@ -53,12 +80,39 @@ Assets {
   }
 }
 Assets {
+  Id: 15314934813854817343
+  Name: "Bone Human Skull 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bones_human_skull_01_ref"
+  }
+}
+Assets {
+  Id: 15312805567995783140
+  Name: "Fantasy Crossbow Foregrip 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_weap_fan_foregrip_cross_001"
+  }
+}
+Assets {
   Id: 15112213264769934074
   Name: "Sci-fi Bass Drop Warp Growl 01 SFX"
   PlatformAssetType: 7
   PrimaryAsset {
     AssetType: "AudioAssetRef"
     AssetId: "sfx_scifi_bass_drop_warp_growl_01_Cue_ref"
+  }
+}
+Assets {
+  Id: 14039986165565911766
+  Name: "Bone Human Tibula 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bones_human_tib_01_ref"
   }
 }
 Assets {
@@ -80,6 +134,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13364964550033354279
+  Name: "Bone Human Ribcage 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bones_human_ribcage_01_ref"
+  }
+}
+Assets {
   Id: 13181413363666234531
   Name: "Dirt 01"
   PlatformAssetType: 2
@@ -98,12 +161,57 @@ Assets {
   }
 }
 Assets {
+  Id: 12817505034062474732
+  Name: "Cartoon Twang Spring Bounce Jump 03 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_cartoon_twang_spring_bounce_jump_03a_Cue_ref"
+  }
+}
+Assets {
   Id: 12758036443323469769
   Name: "Urban Fence Pole - Extender End"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_mil_fence_pole_03_end_001"
+  }
+}
+Assets {
+  Id: 12510064410993333055
+  Name: "Fantasy Pommel 04"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_weap_fan_pommel_004"
+  }
+}
+Assets {
+  Id: 11920821096882102515
+  Name: "Bone Human Femur 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bones_human_femur_01_ref"
+  }
+}
+Assets {
+  Id: 11297952416141497532
+  Name: "Bone Human Spine 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bones_human_spine_01_ref"
+  }
+}
+Assets {
+  Id: 11279392096978883335
+  Name: "Gun Weapon Reload Set 01 SFX"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "sfxabp_reloads_ref"
   }
 }
 Assets {
@@ -140,6 +248,15 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_basic_pbr_material_001"
+  }
+}
+Assets {
+  Id: 9805942287566312257
+  Name: "Glass 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_basic_glass_refrac_001"
   }
 }
 Assets {
@@ -188,6 +305,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7311132004042632156
+  Name: "Bone Human Jaw 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bones_human_jaw_01_ref"
+  }
+}
+Assets {
   Id: 7283825798727192743
   Name: "Metal Iron Rusted 02"
   PlatformAssetType: 2
@@ -203,6 +329,24 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_pipe_001"
+  }
+}
+Assets {
+  Id: 6977157647512673335
+  Name: "Barrier Light"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urb_barrier_light_001"
+  }
+}
+Assets {
+  Id: 6722267691116138132
+  Name: "Fantasy Staff Grip 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_weap_fan_grip_staff_001"
   }
 }
 Assets {
@@ -224,12 +368,39 @@ Assets {
   }
 }
 Assets {
+  Id: 5672864354152187880
+  Name: "Fantasy Shield Strap 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_weap_fan_shield_strap_001"
+  }
+}
+Assets {
   Id: 5668201541289739547
   Name: "Pipe - Thin"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_pipe_003"
+  }
+}
+Assets {
+  Id: 5618689590460027776
+  Name: "Fishing Rod Cast Throw Out Crank 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_fishing_rod_cast_out_throw_crank_01_Cue_ref"
+  }
+}
+Assets {
+  Id: 5544820850613172301
+  Name: "Modern Weapon - Grenade Handle 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_weapons_grenade_handle_001"
   }
 }
 Assets {
@@ -260,6 +431,15 @@ Assets {
   }
 }
 Assets {
+  Id: 3682206342183528038
+  Name: "Fantasy Sword Grip 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_weap_fan_grip_sword_001"
+  }
+}
+Assets {
   Id: 3439404920670878710
   Name: "Country & Western Music Score Set 01"
   PlatformAssetType: 10
@@ -278,6 +458,15 @@ Assets {
   }
 }
 Assets {
+  Id: 2817890560817570586
+  Name: "Modern Weapon Barrel 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_weap_modern_barrel_001"
+  }
+}
+Assets {
   Id: 2738227165559007696
   Name: "Cylinder - Bottom-Aligned"
   PlatformAssetType: 1
@@ -287,12 +476,30 @@ Assets {
   }
 }
 Assets {
+  Id: 2343773915900460648
+  Name: "Bone Human Scapula 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bones_human_scap_01_ref"
+  }
+}
+Assets {
   Id: 1936447668697306516
   Name: "Main Street Trim 02"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_ts_urb_dtn_mst_trim_002_ref"
+  }
+}
+Assets {
+  Id: 1920010878601219178
+  Name: "Fantasy Sword Guard 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_weap_fan_guard_sword_001"
   }
 }
 Assets {
@@ -311,5 +518,14 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_rock_generic_004"
+  }
+}
+Assets {
+  Id: 273448105943087596
+  Name: "Fantasy Mace Guard 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_weap_fan_guard_mace_001"
   }
 }
