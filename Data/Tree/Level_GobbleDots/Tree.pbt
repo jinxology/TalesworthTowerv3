@@ -4516,6 +4516,10 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:ResetCameraDistance"
+      Int: 0
+    }
+    Overrides {
       Name: "cs:InitializeBoard:isrep"
       Bool: true
     }
@@ -4525,6 +4529,10 @@ Objects {
     }
     Overrides {
       Name: "cs:ClearDots:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:ResetCameraDistance:isrep"
       Bool: true
     }
   }
