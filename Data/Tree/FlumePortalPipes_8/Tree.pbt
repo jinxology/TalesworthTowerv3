@@ -1,38 +1,28 @@
 Name: "FlumePortalPipes_8"
-RootId: 9188131373235374191
+RootId: 7398267376290155823
 Objects {
-  Id: 153558097489955145
+  Id: 2171866320377443666
   Name: "Pipe"
   Transform {
     Location {
-      X: -196.418457
-      Y: -17.6776657
-      Z: 53.0329895
+      X: -1254.47034
+      Y: 17.6938477
+      Z: -1020.83008
     }
     Rotation {
-      Yaw: 90
-      Roll: 90
     }
     Scale {
-      X: 4.5
-      Y: 4.49999952
-      Z: 7.26727343
+      X: 4.54961681
+      Y: 4.54961681
+      Z: 4.45676661
     }
   }
-  ParentId: 9188131373235374191
+  ParentId: 7398267376290155823
   UnregisteredParameters {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
         Id: 13668225859767539073
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        G: 0.863157392
-        B: 1
-        A: 1
       }
     }
   }
@@ -47,7 +37,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 5668201541289739547
+      Id: 15340034010401438429
     }
     Teams {
       IsTeamCollisionEnabled: true

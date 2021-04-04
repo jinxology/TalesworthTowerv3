@@ -1,3 +1,4 @@
+local propLevelControllerGobbleDots = script:GetCustomProperty("LevelControllerGobbleDots"):WaitForObject()
 local ghost = script.parent
 local mobFolder = script.parent.parent
 local ghostSpawnPoint = Vector3.New(3775, 3200, 175)
@@ -26,8 +27,6 @@ GHOST_FACE_DOWN = Rotation.New(0,0,180)
 GHOST_FACE_LEFT = Rotation.New(0,0,270)
 
 ghostAITask = nil
-
-local propLevelControllerGobbleDots = script:GetCustomProperty("LevelControllerGobbleDots"):WaitForObject()
 
 local propGhost = script:GetCustomProperty("Ghost"):WaitForObject()
 local propGhostTrigger = propGhost:FindDescendantByName("GhostTrigger")

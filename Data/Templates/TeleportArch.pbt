@@ -56,7 +56,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:ArchSide"
-            String: "LEFT"
+            String: "RIGHT"
           }
         }
         WantsNetworking: true
@@ -225,6 +225,12 @@ Assets {
             Name: "cs:TeleportArch"
             ObjectReference {
               SubObjectId: 6292285592507664290
+            }
+          }
+          Overrides {
+            Name: "cs:GobbleDotsTeleportSFX"
+            AssetReference {
+              Id: 15240959230807419296
             }
           }
         }

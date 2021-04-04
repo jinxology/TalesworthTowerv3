@@ -1,13 +1,13 @@
 Assets {
-  Id: 8275345109879027780
-  Name: "GobbleDotsEatSFX"
+  Id: 15240959230807419296
+  Name: "GobbleDotsTeleportSFX"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 1762197820740888802
+      RootId: 7965761256160389814
       Objects {
-        Id: 1762197820740888802
-        Name: "GobbleDotsEatSFX"
+        Id: 7965761256160389814
+        Name: "GobbleDotsTeleportSFX"
         Transform {
           Scale {
             X: 1
@@ -28,23 +28,25 @@ Assets {
         }
         AudioInstance {
           AudioAsset {
-            Id: 14373883699473400278
+            Id: 1676094885433619770
           }
           Transient: true
-          Pitch: 502.239
-          Volume: 0.683878243
+          Volume: 1
           Falloff: -1
           Radius: -1
+          EnableOcclusion: true
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
         }
       }
     }
     Assets {
-      Id: 14373883699473400278
-      Name: "DJ Vinyl Record Scratch Short Sequence 07"
+      Id: 1676094885433619770
+      Name: "Reverse Suction Whoosh Transition 01 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
-        AssetId: "sfx_dj_vinyl_record_scratch_short_sequence_07_Cue_ref"
+        AssetId: "sfx_reverse_suction_whoosh_transition_01_Cue_ref"
       }
     }
     PrimaryAssetId {
