@@ -2816,6 +2816,12 @@ Objects {
         SelfId: 9618469353080633819
       }
     }
+    Overrides {
+      Name: "cs:btnVictory"
+      ObjectReference {
+        SelfId: 7180215364173416988
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2873,6 +2879,7 @@ Objects {
   ChildIds: 2307637717771936492
   ChildIds: 3652971634510445742
   ChildIds: 9618469353080633819
+  ChildIds: 7180215364173416988
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2903,6 +2910,97 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:bottomright"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 7180215364173416988
+  Name: "btnVictoryRoom"
+  Transform {
+    Location {
+      X: 6.97067298e-06
+      Y: -0.000345196633
+    }
+    Rotation {
+      Yaw: -3.75660384e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1119104670142202433
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 176
+    Height: 49
+    UIX: 402.67334
+    UIY: 263.234131
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Button {
+      Label: "Victory Room"
+      FontColor {
+        A: 1
+      }
+      FontSize: 20
+      ButtonColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      HoveredColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      PressedColor {
+        R: 0.705960155
+        G: 1
+        B: 0.399999976
+        A: 1
+      }
+      DisabledColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Brush {
+        Id: 841534158063459245
+      }
+      IsButtonEnabled: true
+      ClickMode {
+        Value: "mc:ebuttonclickmode:default"
+      }
+      Font {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
         }
       }
     }

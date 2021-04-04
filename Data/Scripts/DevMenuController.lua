@@ -18,6 +18,7 @@ local propBtnGobbleDots = script:GetCustomProperty("btnGobbleDots"):WaitForObjec
 local propBtnLazyLava = script:GetCustomProperty("btnLazyLava"):WaitForObject()
 local propBtnFlumeMe = script:GetCustomProperty("btnFlumeMe"):WaitForObject()
 local propTxtFlumeMe = script:GetCustomProperty("txtFlumeMe"):WaitForObject()
+local propBtnVictory = script:GetCustomProperty("btnVictory"):WaitForObject()
 
 local devMode = true
 local showingMe = false
@@ -28,9 +29,10 @@ levelList = {
     "FarmGallery",
     "ColorDials",
     "BlockAndEscape",
-    "LazyLava",
     "GobbleDots",
-    "Puckollossal"
+    "Puckollossal",
+    "LazyLava",
+    "VictoryRoom"
 }
 currentLevelIndex = 1
 requiredNbrPlayersReady = 4
@@ -97,6 +99,9 @@ function OnClickedSetLevel(whichButton)
     elseif (whichButton.name == "btnLazyLava") then
         levelName = "LazyLava"
         newLoc = Vector3.New (5554,1654,17801)
+    elseif (whichButton.name == "btnVictoryRoom") then
+        levelName = "VictoryRoom"
+        newLoc = Vector3.New (-74,-6497,14555)
     end
 
     currentLevelIndex = LookupLevelIndex(levelName)
@@ -121,6 +126,9 @@ end
 
 propBtnCountNetworkedObjects.clickedEvent:Connect(CountNetworkObjects)
 propBtnLevelUp.clickedEvent:Connect(OnClickedLevelUp)
+propBtnResetTower.clickedEvent:Connect(OnClickedResetTower)
+propBtnFlumeMe.clickedEvent:Connect(OnClickedFlumeMe)
+
 propBtnLevelDown.clickedEvent:Connect(OnClickedLevelDown)
 propBtnBopnBop.clickedEvent:Connect(OnClickedSetLevel)
 propBtnColoredDials.clickedEvent:Connect(OnClickedSetLevel)
@@ -131,9 +139,7 @@ propBtnPoolPlatforms.clickedEvent:Connect(OnClickedSetLevel)
 propBtnPuckollossal.clickedEvent:Connect(OnClickedSetLevel)
 propBtnGobbleDots.clickedEvent:Connect(OnClickedSetLevel)
 propBtnLazyLava.clickedEvent:Connect(OnClickedSetLevel)
-propBtnResetTower.clickedEvent:Connect(OnClickedResetTower)
-propBtnFlumeMe.clickedEvent:Connect(OnClickedFlumeMe)
-
+propBtnVictory.clickedEvent:Connect(OnClickedSetLevel)
 
 
 function OnBindingPressed(player, bindingPressed)

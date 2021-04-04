@@ -7,7 +7,7 @@ Objects {
     Location {
       X: -550
       Y: -6900
-      Z: 14300
+      Z: 14215.7275
     }
     Rotation {
       Yaw: 90
@@ -476,12 +476,11 @@ Objects {
   Name: "Level.GobbleDots"
   Transform {
     Location {
-      X: 1550
-      Y: -2750
-      Z: 11287.3906
+      X: -3583.4519
+      Y: -1781.94006
+      Z: 11275
     }
     Rotation {
-      Yaw: 68.4185715
     }
     Scale {
       X: 1

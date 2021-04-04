@@ -16,12 +16,9 @@ Assets {
           }
         }
         ParentId: 1602033720224815336
-        ChildIds: 15903244150123276010
-        ChildIds: 110278230252466298
-        ChildIds: 15853267669472253913
-        ChildIds: 7766873825908073937
-        ChildIds: 10333361382027190694
-        ChildIds: 2047265080219200819
+        ChildIds: 13302855305342310383
+        ChildIds: 4436155200327564951
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -36,11 +33,47 @@ Assets {
         }
       }
       Objects {
+        Id: 13302855305342310383
+        Name: "ClientContext"
+        Transform {
+          Location {
+            Y: 600
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 14157282412498791778
+        ChildIds: 15903244150123276010
+        ChildIds: 110278230252466298
+        ChildIds: 15853267669472253913
+        ChildIds: 7766873825908073937
+        ChildIds: 10333361382027190694
+        ChildIds: 2047265080219200819
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        NetworkContext {
+        }
+      }
+      Objects {
         Id: 15903244150123276010
         Name: "floor - VR"
         Transform {
           Location {
-            Y: 590.330627
+            X: 9.53674316e-07
+            Y: -9.66943264
           }
           Rotation {
           }
@@ -50,7 +83,7 @@ Assets {
             Z: 0.416874766
           }
         }
-        ParentId: 14157282412498791778
+        ParentId: 13302855305342310383
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -90,11 +123,11 @@ Assets {
         Transform {
           Location {
             X: -11.3925781
-            Y: 1148.56152
+            Y: 548.56134
             Z: 25.2207031
           }
           Rotation {
-            Yaw: -90
+            Yaw: -89.9999847
           }
           Scale {
             X: 0.159316272
@@ -102,7 +135,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14157282412498791778
+        ParentId: 13302855305342310383
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -142,11 +175,11 @@ Assets {
         Transform {
           Location {
             X: -1133.48523
-            Y: 602.81
+            Y: 2.81005859
             Z: 25.2207031
           }
           Rotation {
-            Yaw: 180
+            Yaw: -179.999985
           }
           Scale {
             X: 0.200000033
@@ -154,7 +187,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14157282412498791778
+        ParentId: 13302855305342310383
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -193,12 +226,12 @@ Assets {
         Name: "Plane 4m - One Sided"
         Transform {
           Location {
-            X: -11.3925819
-            Y: 57.8156967
+            X: -11.3925781
+            Y: -542.184265
             Z: 25.2207031
           }
           Rotation {
-            Yaw: -90
+            Yaw: -89.9999847
           }
           Scale {
             X: 0.159316272
@@ -206,7 +239,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14157282412498791778
+        ParentId: 13302855305342310383
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -245,8 +278,8 @@ Assets {
         Name: "Plane 4m - One Sided"
         Transform {
           Location {
-            X: 70.8769531
-            Y: 602.812805
+            X: 0.597656
+            Y: 2.80566359
             Z: 25.2207031
           }
           Rotation {
@@ -258,7 +291,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14157282412498791778
+        ParentId: 13302855305342310383
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -298,7 +331,7 @@ Assets {
         Transform {
           Location {
             X: 1132.17566
-            Y: 602.813721
+            Y: 2.81359863
             Z: 25.2207031
           }
           Rotation {
@@ -310,7 +343,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14157282412498791778
+        ParentId: 13302855305342310383
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -331,6 +364,57 @@ Assets {
         CoreMesh {
           MeshAsset {
             Id: 8757068560497122517
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 4436155200327564951
+        Name: "invisfloor - VR"
+        Transform {
+          Location {
+            Y: 590.330383
+          }
+          Rotation {
+            Yaw: -6.83018789e-06
+          }
+          Scale {
+            X: 24.5000114
+            Y: 11.8194408
+            Z: 0.416874766
+          }
+        }
+        ParentId: 14157282412498791778
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 5102515673697467060
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 12095835209017042614
           }
           Teams {
             IsTeamCollisionEnabled: true

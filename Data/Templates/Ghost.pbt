@@ -235,6 +235,12 @@ Assets {
               Id: 4647461794779648776
             }
           }
+          Overrides {
+            Name: "cs:LevelControllerGobbleDots"
+            ObjectReference {
+              SelfId: 7161176820700122570
+            }
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -270,7 +276,7 @@ Assets {
         ParentId: 8743173940440615883
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceon"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"

@@ -14,6 +14,10 @@ Assets {
         Name: "animation type"
         Int: 3
       }
+      Overrides {
+        Name: "animation speed"
+        Float: -6.32032299
+      }
     }
     Assets {
       Id: 5731462899684123007

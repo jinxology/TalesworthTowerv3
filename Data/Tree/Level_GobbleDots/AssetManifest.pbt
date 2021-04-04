@@ -8,24 +8,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15115007538563226022
-  Name: "\"Retro Fast Paced Fury\" Music Construction Kit (Sections) 01"
-  PlatformAssetType: 10
-  PrimaryAsset {
-    AssetType: "AudioBlueprintAssetRef"
-    AssetId: "abp_retro_fast_paced_fury_sections_kit_ref"
-  }
-}
-Assets {
-  Id: 13735835896106546216
-  Name: "Button Click Select Core 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfxui_click_core_01_Cue_ref"
-  }
-}
-Assets {
   Id: 12095835209017042614
   Name: "Cube"
   PlatformAssetType: 1
