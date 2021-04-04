@@ -21,8 +21,6 @@ Assets {
         ChildIds: 9169255255245069283
         ChildIds: 9514343388950691764
         ChildIds: 6095569065247696458
-        ChildIds: 14861458570756854188
-        ChildIds: 13543050528750104968
         ChildIds: 13847976873302710750
         ChildIds: 17315019106475987237
         ChildIds: 5893848390096514398
@@ -83,7 +81,7 @@ Assets {
           Overrides {
             Name: "cs:reelAbility"
             ObjectReference {
-              SubObjectId: 14861458570756854188
+              SelfId: 841534158063459245
             }
           }
           Overrides {
@@ -369,6 +367,18 @@ Assets {
             Name: "cs:mountedMark"
             ObjectReference {
               SubObjectId: 7131279747611643969
+            }
+          }
+          Overrides {
+            Name: "cs:unreelUI"
+            ObjectReference {
+              SubObjectId: 15118067874887120417
+            }
+          }
+          Overrides {
+            Name: "cs:reelUI"
+            ObjectReference {
+              SubObjectId: 5160734189277775463
             }
           }
         }
@@ -1992,7 +2002,7 @@ Assets {
       }
       Objects {
         Id: 15118067874887120417
-        Name: "LMB"
+        Name: "unreelUI"
         Transform {
           Location {
           }
@@ -2119,7 +2129,7 @@ Assets {
       }
       Objects {
         Id: 5160734189277775463
-        Name: "LMB"
+        Name: "reelUI"
         Transform {
           Location {
           }
@@ -2978,163 +2988,6 @@ Assets {
           Animation: "unarmed_shout"
           KeyBinding_v2 {
             Value: "mc:egameaction:extraaction_01"
-          }
-        }
-      }
-      Objects {
-        Id: 14861458570756854188
-        Name: "Reel"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Pitch: 1.36603776e-05
-            Yaw: -1.70754925e-06
-            Roll: -2.39056571e-05
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12451032973807524472
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Ability {
-          CastPhaseSettings {
-            Duration: 0.1
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          ExecutePhaseSettings {
-            Duration: 1
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          RecoveryPhaseSettings {
-            Duration: 0.1
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:none"
-            }
-          }
-          CooldownPhaseSettings {
-            Duration: 0.5
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:none"
-            }
-          }
-          Animation: "unarmed_throw"
-          KeyBinding_v2 {
-            Value: "mc:egameaction:primaryaction"
-          }
-        }
-      }
-      Objects {
-        Id: 13543050528750104968
-        Name: "Unreel"
-        Transform {
-          Location {
-          }
-          Rotation {
-            Pitch: 1.36603776e-05
-            Roll: -3.05175727e-05
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12451032973807524472
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Ability {
-          CastPhaseSettings {
-            Duration: 0.1
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          ExecutePhaseSettings {
-            Duration: 1
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:aim"
-            }
-          }
-          RecoveryPhaseSettings {
-            Duration: 0.1
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:none"
-            }
-          }
-          CooldownPhaseSettings {
-            Duration: 0.5
-            CanMove: true
-            CanJump: true
-            CanRotate: true
-            PreventOtherAbilities: true
-            IsTargetDataUpdated: true
-            Facing_V2 {
-              Value: "mc:eabilitysetfacing:none"
-            }
-          }
-          Animation: "unarmed_throw"
-          KeyBinding_v2 {
-            Value: "mc:egameaction:secondaryaction"
           }
         }
       }
