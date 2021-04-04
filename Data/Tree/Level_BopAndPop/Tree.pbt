@@ -6371,6 +6371,69 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 1430874048252045008
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1669.15076
+            Y: -1285.14063
+            Z: 318.101318
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: -44.9998474
+            Yaw: 45.0001755
+            Roll: -6.10351563e-05
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 2410539412063248558
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1269.64819
+            Y: -1684.64355
+            Z: 318.099854
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: -44.9998474
+            Yaw: 45.0001755
+            Roll: -6.10351563e-05
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 7208425554195621169
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1269.64819
+            Y: -1684.64355
+            Z: 318.099854
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: -44.9998474
+            Yaw: 45.0001755
+            Roll: -6.10351563e-05
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 11686587074494281489
       value {
         Overrides {
@@ -6387,6 +6450,27 @@ Objects {
           Name: "Rotation"
           Rotator {
             Yaw: 180
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16397727336584905296
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1668.97656
+            Y: -1285.04993
+            Z: 318.102783
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: -44.9996033
+            Yaw: 45.0002556
+            Roll: -3.05175781e-05
           }
         }
       }
@@ -6415,6 +6499,69 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 1430874048252045008
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1669.172
+            Y: -1285.14783
+            Z: 317.525879
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: -44.9998474
+            Yaw: 45.0001755
+            Roll: -6.10351563e-05
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 2410539412063248558
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1269.65723
+            Y: -1684.66052
+            Z: 317.524414
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: -44.9998474
+            Yaw: 45.0001755
+            Roll: -6.10351563e-05
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 7208425554195621169
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1269.65723
+            Y: -1684.66052
+            Z: 317.524414
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: -44.9998474
+            Yaw: 45.0001755
+            Roll: -6.10351563e-05
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 11686587074494281489
       value {
         Overrides {
@@ -6430,6 +6577,27 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16397727336584905296
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1669.15784
+            Y: -1285.14429
+            Z: 317.527344
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Pitch: -44.9996033
+            Yaw: 45.0002556
+            Roll: -3.05175781e-05
           }
         }
       }

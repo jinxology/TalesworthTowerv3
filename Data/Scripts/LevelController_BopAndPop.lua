@@ -113,6 +113,7 @@ local	roundDuration = 120
 
 local balloonPipe = {}
 local emptySpawners = {}
+local propLiveBalloons = {}
 
 intakeToColor = Color.WHITE
 intakeFromColor = nil
@@ -229,7 +230,9 @@ function UnloadTutorial()
 		-- 		liveBalloon:Destroy()
 		-- 	end
 		-- end
-		object:Destroy()
+		if object:IsValid() then
+			object:Destroy()
+		end
 	end
 
 	intakeCycleColors = {}
@@ -289,11 +292,31 @@ function LevelPowerUp()
 	propPlayersFlumedIn = {}
 	propFlumedInTrigger.isEnabled = true
 	
+	for _, balloon in pairs(propLiveBalloons) do
+		balloon:Destroy()
+	end
+	propLiveBalloons = {}
 end
 
 function LevelPowerDown()
 	UnloadInterior()
 	script:SetNetworkedCustomProperty("levelStatus", 0)
+	-- for _, object in ipairs(propTutorialContainer:GetChildren()) do
+	-- 	-- print("unloading tutorial object " .. object.id)
+
+	-- 	-- if object.name == "bnp_balloon" then
+	-- 	-- 	local	liveBalloon = object.context.propPhysics or object.context.propEquipment
+			
+	-- 	-- 	print("balloon " .. object.id .. " has live balloon " .. liveBalloon.id)
+	-- 	-- 	if liveBalloon ~= nil and liveBalloon:IsValid() then
+	-- 	-- 		print("destroying it")
+	-- 	-- 		liveBalloon:Destroy()
+	-- 	-- 	end
+	-- 	-- end
+	-- 	if object:IsValid() then
+	-- 		object:Destroy()
+	-- 	end
+	-- end
 end
 
 function LevelBegin()
@@ -606,6 +629,7 @@ function FillBalloonPipe()
 	end
 end
 
+
 function SpawnNextBalloon()
 	FillBalloonPipe()
 
@@ -622,6 +646,8 @@ function SpawnNextBalloon()
 	if tutorialActive then
 		-- print("spawning balloon in tutorial")
 		balloon.parent = propTutorialContainer
+	else
+		table.insert(propLiveBalloons, balloon)
 	end
 
 	table.remove(balloonPipe, 1)

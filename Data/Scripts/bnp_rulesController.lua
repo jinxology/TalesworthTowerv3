@@ -45,6 +45,8 @@ function ActivateInstructions(levelStatus)
 	else
 		propRulesPanel.visibility = Visibility.FORCE_OFF
 		propScoreIndicator.visibility = Visibility.FORCE_OFF
+		propBroadcastLabel.visibility = Visibility.FORCE_OFF
+		
 		if showInstructions ~= nil then
 			showInstructions:Disconnect(OnBindingPressed)
 		end
