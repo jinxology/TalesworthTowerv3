@@ -4342,6 +4342,12 @@ Objects {
         Id: 17317999939743247709
       }
     }
+    Overrides {
+      Name: "ma:Building_Ceiling:id"
+      AssetReference {
+        Id: 3086929587923392091
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
