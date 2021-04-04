@@ -18,6 +18,10 @@ local dotsArrayList = {}
 
 local totalDots = 0
 
+local CAMERA_DISTANCE = 1000
+local activeCamera
+local propDefaultCameraDistance
+
 function InitializeBoard()
 
 	local hitResult = nil
@@ -89,8 +93,9 @@ propLevelGobbleDots.networkedPropertyChangedEvent:Connect(function(coreObject, p
 	
 	--InitializeBoard is used to setup the board at on the LevelPower_Up() call and during resets
     if propertyName == "InitializeBoard" then
-    	print("In InitializeBoard() from the networkedPropertyChangedEvent")
+    	--print("In InitializeBoard() from the networkedPropertyChangedEvent")
 		InitializeBoard()
+		SetCameraDistance()
 	elseif propertyName == "DeletedDots" then  --Otherwise this is a receipt of the list of dots that have been deleted.
 		--Split the string that is returned into an array of dot values
 		
@@ -109,8 +114,31 @@ propLevelGobbleDots.networkedPropertyChangedEvent:Connect(function(coreObject, p
 		for _, dotToDelete in ipairs(dotsArrayList) do
 			if Object.IsValid(dotToDelete) then			
 				dotToDelete:Destroy()
-			end					
+			end
 		end 
+	elseif propertyName == "ResetCameraDistance" then
+		activeCamera.currentDistance = propDefaultCameraDistance	
 	end
 end)
 
+function SetCameraDistance()
+
+	--Save the current Active Camera
+   	activeCamera = GetPlayerActiveCamera(Game.GetLocalPlayer())
+    propDefaultCameraDistance = activeCamera.currentDistance
+    
+    --Set the new Active Camera
+    activeCamera.currentDistance = CAMERA_DISTANCE 
+end
+
+function GetPlayerActiveCamera(player)
+	if not Object.IsValid(player) then
+	        return nil
+	end
+	
+	if player:GetOverrideCamera() then
+	    return player:GetOverrideCamera()
+	else
+	    return player:GetDefaultCamera()
+	end
+end

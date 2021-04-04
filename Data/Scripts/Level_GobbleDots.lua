@@ -27,6 +27,7 @@ entranceFlumeEjectionVelocity = 5
 local propInitializeBoard = script:GetCustomProperty("InitialIzeBoard")
 local propDeletedDots = script:GetCustomProperty("DeletedDots")
 local propResetLevel = script:GetCustomProperty("ResetLevel")
+local propResetCameraDistance = script:GetCustomProperty("ResetCameraDistance")
 local propGobbleDotsEatSFX = script:GetCustomProperty("GobbleDotsEatSFX")
 local propHittingGhostSVFX = script:GetCustomProperty("HittingGhostSVFX")
 
@@ -40,6 +41,7 @@ local mobFolder = levelFolder:FindDescendantByName("Mob AI")
 
 local ghostController = nil
 local clearDotsCount = 0
+local resetCameraDistanceCount = 0
 
 local inkyGhost = nil
 local blinkyGhost = nil
@@ -55,9 +57,6 @@ local GHOST_SCALE = 2.2
 
 local PLAYER_RESPAWN_POINT = Vector3.New(-1025,1325,11400)
 local SECONDS_AFTER_DEATH = 5
-
-local activeCamera
-local propDefaultCameraDistance
     
 dotsArray = {} --The Array of all of the Dots the Server is holding with current values
 dotsDeletedArray = {}  --The Array of deleted dots the server is holding (an array of indexes)
@@ -84,27 +83,6 @@ function LevelBegin()
             child:MoveTo(child:GetPosition() - Vector3.UP * 36, 2, true)
         end
     end
-    
-    --put in client context
-   	--activeCamera = GetPlayerActiveCamera(Game.GetLocalPlayer())
-    --propDefaultCameraDistance = activeCamera.currentDistance
-    --activeCamera.currentDistance = 1000 --or whatever number
-    
-    
-	--[[Goes in Client Context
-	function GetPlayerActiveCamera(player)
-		if not Object.IsValid(player) then
-		        return nil
-		end
-		
-		if player:GetOverrideCamera() then
-		    return player:GetOverrideCamera()
-		else
-		    return player:GetDefaultCamera()
-		end
-	end
-	]]--
-
 end
 
 --LevelEnd code is called when the....
@@ -141,6 +119,10 @@ function LevelVictory()
 		clydeGhost:Destroy()
 	end
 	propMainGameController.context.LevelEnd(true)
+
+	--Reset the Active Camera back to the default on the Client
+	resetCameraDistanceCount = resetCameraDistanceCount + 1
+	script:SetNetworkedCustomProperty("ResetCameraDistance", resetCameraDistanceCount)
 end
 
 --LevelFailed is called when the Loss Condition of the game is met
