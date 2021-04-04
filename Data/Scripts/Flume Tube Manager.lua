@@ -6,6 +6,8 @@ local propWindSFX = script:GetCustomProperty("WindSFX"):WaitForObject()
 local propTeleportToFlume = script:GetCustomProperty("TeleportToFlume"):WaitForObject()
 local propForcefield = script:GetCustomProperty("Forcefield"):WaitForObject()
 local propFlumeEjector = script:GetCustomProperty("FlumeEjector"):WaitForObject()
+local propNoclip1 = script:GetCustomProperty("noclip1"):WaitForObject()
+local propNoclip2 = script:GetCustomProperty("noclip2"):WaitForObject()
 
 
 --Pipe colors
@@ -27,6 +29,8 @@ function Reset()
     propWindSFX:Stop()    
     propForcefield.visibility = Visibility.FORCE_ON
     propForcefield.collision = Collision.FORCE_ON
+    propNoclip1.collision = Collision.FORCE_ON
+    propNoclip2.collision = Collision.FORCE_ON
 
     --Turn off all pipes
     -- local pipes = propStructureFolder:GetChildren()
@@ -44,6 +48,8 @@ function ExitActive(success)
     propWindSFX:Play()    
     propForcefield.visibility = Visibility.FORCE_OFF
     propForcefield.collision = Collision.FORCE_OFF
+    propNoclip1.collision = Collision.FORCE_OFF
+    propNoclip2.collision = Collision.FORCE_OFF
 
     --Turn off all pipes
     -- local pipes = propStructureFolder:GetChildren()
@@ -65,6 +71,8 @@ function EntranceActive(ejectionVelocity)
     propWindSFX:Stop()    
     propForcefield.visibility = Visibility.FORCE_ON
     propForcefield.collision = Collision.FORCE_ON
+    propNoclip1.collision = Collision.FORCE_ON
+    propNoclip2.collision = Collision.FORCE_ON
 
     if (ejectionVelocity ~= nil) then
         propFlumeEjector.context.ejectionVelocityOverride = ejectionVelocity
