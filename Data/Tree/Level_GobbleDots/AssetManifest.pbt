@@ -8,12 +8,21 @@ Assets {
   }
 }
 Assets {
-  Id: 13552945397385832481
-  Name: "Drink Liquid Gulp Swallow 01 SFX"
+  Id: 15115007538563226022
+  Name: "\"Retro Fast Paced Fury\" Music Construction Kit (Sections) 01"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "abp_retro_fast_paced_fury_sections_kit_ref"
+  }
+}
+Assets {
+  Id: 13735835896106546216
+  Name: "Button Click Select Core 01 SFX"
   PlatformAssetType: 7
   PrimaryAsset {
     AssetType: "AudioAssetRef"
-    AssetId: "sfx_drink_gulp_swallow_01a_Cue_ref"
+    AssetId: "sfxui_click_core_01_Cue_ref"
   }
 }
 Assets {
@@ -32,15 +41,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cube_001"
-  }
-}
-Assets {
-  Id: 10099212058672913078
-  Name: "Cartoon Food Eat Bite Short 02 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_cartoon_food_eat_bite_short_02_Cue_ref"
   }
 }
 Assets {

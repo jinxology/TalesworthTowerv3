@@ -27,9 +27,7 @@ entranceFlumeEjectionVelocity = 5
 local propInitializeBoard = script:GetCustomProperty("InitialIzeBoard")
 local propDeletedDots = script:GetCustomProperty("DeletedDots")
 local propResetLevel = script:GetCustomProperty("ResetLevel")
-
-local propCartoonFoodEatBiteShort02SFX = script:GetCustomProperty("CartoonFoodEatBiteShort02SFX")
-local propDrinkLiquidGulpSwallow01SFX = script:GetCustomProperty("DrinkLiquidGulpSwallow01SFX")
+local propGobbleDotsEatSFX = script:GetCustomProperty("GobbleDotsEatSFX")
 local propHittingGhostSVFX = script:GetCustomProperty("HittingGhostSVFX")
 
 local DOT_COUNT = 292
@@ -169,15 +167,11 @@ function OnDotDeleted(dotIndex, dotPosition)
 		
 		--Call all clients by updating the networked custom property to the string including the new deleted dot
 		script:SetNetworkedCustomProperty("DeletedDots", UpdateDotsDeletedString(dotIndex))
-		if(math.random(1,30) == 1) then
-			sfx = World.SpawnAsset(propDrinkLiquidGulpSwallow01SFX)
-			sfx:SetWorldPosition(dotPosition)
-			sfx:Play()
-		else 
-			sfx = World.SpawnAsset(propCartoonFoodEatBiteShort02SFX)
-			sfx:SetWorldPosition(dotPosition)
-			sfx:Play()
-		end
+
+		sfx = World.SpawnAsset(propHittingGhostSVFX)
+		sfx:SetWorldPosition(dotPosition)
+		sfx:Play()
+
 		--Check to see if the game has been won
 		CheckDotsLeft(dotIndex)
 	end
