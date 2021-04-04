@@ -5,9 +5,9 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: 2963.92041
-      Y: 595.555664
-      Z: 395.406
+      X: 2924.20068
+      Y: 594.028259
+      Z: 397.263428
     }
     Rotation {
       Pitch: -87.320282
@@ -67,9 +67,9 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: 2493.51733
-      Y: 577.606506
-      Z: 417.461426
+      X: 2466.15332
+      Y: 576.553345
+      Z: 418.740234
     }
     Rotation {
       Pitch: -87.320343
@@ -129,9 +129,9 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: 2034.14844
-      Y: 560.053223
-      Z: 438.98584
+      X: 2006.93066
+      Y: 559.001
+      Z: 440.253418
     }
     Rotation {
       Pitch: -87.321167
@@ -191,9 +191,9 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: 1570.78748
-      Y: 542.376
-      Z: 460.714233
+      X: 1541.71606
+      Y: 541.258728
+      Z: 462.071899
     }
     Rotation {
       Pitch: -87.3217468
@@ -253,9 +253,9 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: 1101.01306
-      Y: 524.392822
-      Z: 482.704712
+      X: 1082.98853
+      Y: 523.699585
+      Z: 483.544922
     }
     Rotation {
       Pitch: -87.3220215
@@ -315,9 +315,9 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: 634.512146
-      Y: 506.548859
-      Z: 504.558899
+      X: 616.788513
+      Y: 505.867554
+      Z: 505.384583
     }
     Rotation {
       Pitch: -87.3225403
@@ -377,9 +377,9 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: 643.020081
-      Y: 510.843628
-      Z: 504.46405
+      X: 627.231934
+      Y: 509.954041
+      Z: 504.868896
     }
     Rotation {
       Pitch: -56.1971741
@@ -431,14 +431,14 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: -321.917786
-      Y: -15.1276245
-      Z: -209.246765
+      X: -335.725403
+      Y: -6.25235748
+      Z: -219.350403
     }
     Rotation {
-      Pitch: 58.7414818
-      Yaw: 81.2629089
-      Roll: -100.747772
+      Pitch: 58.9380798
+      Yaw: 80.8987961
+      Roll: -101.033691
     }
     Scale {
       X: 4.8
