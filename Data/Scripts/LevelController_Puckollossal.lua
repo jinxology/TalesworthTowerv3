@@ -27,10 +27,10 @@ propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObj
 
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(-20, -20, 1535)
+exitFlumeLocation = Vector3.New(-20, -20, 1200)
 exitFlumeRotation = Rotation.New(0, -90, 0)
-entranceFlumeLocation = Vector3.New(-3545.294, 5, 638.20)
-entranceFlumeRotation = Rotation.New(0, 36.916, 0)
+entranceFlumeLocation = Vector3.New(-3604.747, 5, 732.579)
+entranceFlumeRotation = Rotation.New(0, 30, 0)
 entranceFlumeEjectionVelocity = 6.66
 startPlatformPosition = Vector3.New(900, 460, -35)
 startPlatformRotation = Rotation.New(0, 0, 90)
@@ -85,10 +85,8 @@ function ShockPlayerAwayFromTrigger(player, trigger)
         impulse = trigger:GetWorldRotation() * Vector3.FORWARD * 320
         impulse.z = math.max(impulse.z,  (Vector3.UP * 120).z)
         if trigger:GetCustomProperty("playerOnly") ~= nil then
-            print("sending player out of goal")
             player:SetVelocity(impulse)
         else
-            print("bumper hit player")
             player:AddImpulse(impulse * player.mass * 10)
         end
 
@@ -173,7 +171,6 @@ function LevelPlayerEntered(player)
 
     lookoutAbility.owner = player
     player.serverUserData.pckLookoutAbility = lookoutAbility
-    print("connected " .. player.name)
 end
 -- print("REMOVE THIS DAVE")
 -- Game.playerJoinedEvent:Connect(LevelPlayerEntered)
@@ -208,8 +205,6 @@ function LevelBegin()
 
     local   spawnConfiguration = propSpawnConfigurations[propSpawnConfigurationIndex]
     
-    script:SetNetworkedCustomProperty("levelState", 2)
-    
     position = entranceFlume:GetWorldPosition()
     rotation = entranceFlume:GetWorldRotation()
 
@@ -217,6 +212,29 @@ function LevelBegin()
     entranceFlume:SetWorldPosition(position)
     entranceFlume:SetWorldRotation(rotation)
 
+    local   texts = propTutorialCurtain:GetCustomProperty("texts"):WaitForObject():GetChildren()
+
+    for _, text in pairs(texts) do
+        text.text = "READY"
+    end
+    Task.Wait(1)
+    for _, text in pairs(texts) do
+        text.text = "STEADY"
+    end
+    Task.Wait(1)
+    
+    for _, text in pairs(texts) do
+        text.text = "GO"
+    end
+    Task.Wait(1)
+    
+    local   curtain1 = propTutorialCurtain:GetCustomProperty("fence"):WaitForObject()
+
+    curtain1:MoveTo(curtain1:GetPosition() - Vector3.UP * 1500, 1, true)
+    Task.Wait(1)
+
+    script:SetNetworkedCustomProperty("levelState", 2)
+    
     propTutorialCurtain:MoveTo(propTutorialCurtain:GetPosition() - Vector3.UP * 3000, 2, true)
     Task.Wait(2)
 
