@@ -89,6 +89,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7062845870289079377
+  Name: "Ball"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_sphere_001"
+  }
+}
+Assets {
   Id: 7033270109974381006
   Name: "Pipe"
   PlatformAssetType: 1

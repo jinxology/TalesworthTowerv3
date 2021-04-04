@@ -1,6 +1,39 @@
 Name: "Levels"
 RootId: 13991120868083209491
 Objects {
+  Id: 8293299003659691482
+  Name: "Level.VictoryRoom"
+  Transform {
+    Location {
+      X: -550
+      Y: -6900
+      Z: 14300
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13991120868083209491
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Level_VictoryRoom"
+  }
+}
+Objects {
   Id: 16404564442041701439
   Name: "lby.tipJar"
   Transform {
@@ -67,7 +100,7 @@ Objects {
     Location {
       X: 750.226318
       Y: 1820.32568
-      Z: 16240.8662
+      Z: 17240
     }
     Rotation {
     }

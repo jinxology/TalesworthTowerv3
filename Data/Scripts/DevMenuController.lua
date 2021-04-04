@@ -28,7 +28,6 @@ levelList = {
     "FarmGallery",
     "ColorDials",
     "BlockAndEscape",
-    "Maze",
     "LazyLava",
     "GobbleDots",
     "Puckollossal"
@@ -82,22 +81,22 @@ function OnClickedSetLevel(whichButton)
         newLoc = Vector3.New (-87,-354,3855)
     elseif (whichButton.name == "btnJumpman") then
         levelName = "JumpMan"
-        newLoc = Vector3.New (-172,1969,10650)
+        newLoc = Vector3.New (-798,1680,9794)
     elseif (whichButton.name == "btnFarmGallery") then
         levelName = "FarmGallery"
         newLoc = Vector3.New (137,252,6132)
     elseif (whichButton.name == "btnPoolPlatforms") then
         levelName = "BlockAndEscape"
-        newLoc = Vector3.New (4598,1292,8833)
+        newLoc = Vector3.New (4598,1430,8045)
     elseif (whichButton.name == "btnPuckollossal") then
         levelName = "Puckollossal"
-        newLoc = Vector3.New (-800,4000,13000)
+        newLoc = Vector3.New (-394,3418,14302)
     elseif (whichButton.name == "btnGobbleDots") then
         levelName = "GobbleDots"
-        newLoc = Vector3.New (3004,3204,15560)
+        newLoc = Vector3.New (-1537,1871,11517)
     elseif (whichButton.name == "btnLazyLava") then
         levelName = "LazyLava"
-        newLoc = Vector3.New (4182,-169,17660)
+        newLoc = Vector3.New (5554,1654,17801)
     end
 
     currentLevelIndex = LookupLevelIndex(levelName)

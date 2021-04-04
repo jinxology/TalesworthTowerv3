@@ -7,18 +7,15 @@ Assets {
       RootId: 366521316021619626
       Objects {
         Id: 366521316021619626
-        Name: "Group"
+        Name: "DuckObstacle-LL"
         Transform {
-          Location {
-          }
-          Rotation {
-          }
           Scale {
             X: 1
             Y: 1
             Z: 1
           }
         }
+        ParentId: 152302868000715184
         ChildIds: 15410953326512656700
         ChildIds: 290770111330250428
         ChildIds: 3895200195232113339
@@ -84,15 +81,16 @@ Assets {
         Name: "Fantasy Castle Wall Foundation 01 - Pillar 01"
         Transform {
           Location {
-            X: -367.711792
+            X: -367.711639
             Y: -18.9262695
+            Z: 33.5341797
           }
           Rotation {
           }
           Scale {
             X: 0.688184857
             Y: 0.222783163
-            Z: 0.5
+            Z: 0.428105474
           }
         }
         ParentId: 366521316021619626
@@ -134,8 +132,9 @@ Assets {
         Name: "Fantasy Castle Wall Foundation 01 - Pillar 01"
         Transform {
           Location {
-            X: 803.268188
-            Y: 19.5453491
+            X: 803.267517
+            Y: 19.5454712
+            Z: 33.5341797
           }
           Rotation {
             Yaw: -179.999985
@@ -143,7 +142,7 @@ Assets {
           Scale {
             X: 0.688184738
             Y: 0.22002317
-            Z: 0.5
+            Z: 0.428105474
           }
         }
         ParentId: 366521316021619626

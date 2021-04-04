@@ -273,10 +273,8 @@ Objects {
   }
   ParentId: 152302868000715184
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
   }
   TemplateInstance {
     ParameterOverrideMap {
@@ -285,14 +283,6 @@ Objects {
         Overrides {
           Name: "Name"
           String: "DuckObstacle-LL"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
         }
         Overrides {
           Name: "Position"

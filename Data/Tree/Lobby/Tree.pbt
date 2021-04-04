@@ -58,6 +58,7 @@ Objects {
   ChildIds: 9568502808511736993
   ChildIds: 9251191959818383071
   ChildIds: 9944525644826862650
+  ChildIds: 1332893525166653039
   ChildIds: 10709072722189710375
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -120,6 +121,49 @@ Objects {
   CoreMesh {
     MeshAsset {
       Id: 5668201541289739547
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 1332893525166653039
+  Name: "TowerEjectStartPoint"
+  Transform {
+    Location {
+      X: 37.8769684
+      Y: -629.207764
+      Z: 552.283691
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13290066349089529710
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 7062845870289079377
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -226,6 +270,12 @@ Objects {
         SelfId: 9568502808511736993
       }
     }
+    Overrides {
+      Name: "cs:TowerEjectStartPoint"
+      ObjectReference {
+        SelfId: 1332893525166653039
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -299,8 +349,8 @@ Objects {
   Transform {
     Location {
       X: 12.9821777
-      Y: -427.599976
-      Z: 316.65625
+      Y: -593.728149
+      Z: 488.597656
     }
     Rotation {
     }
@@ -1419,11 +1469,12 @@ Objects {
   Name: "Kiosk"
   Transform {
     Location {
-      X: -351.167236
-      Y: 522.158691
+      X: -726.28064
+      Y: 829.306641
+      Z: 21.7077942
     }
     Rotation {
-      Yaw: 43.8784599
+      Yaw: 19.3260765
     }
     Scale {
       X: 1

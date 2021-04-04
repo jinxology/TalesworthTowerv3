@@ -5123,6 +5123,12 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:TowerEjectStartPoint"
+      ObjectReference {
+        SelfId: 1332893525166653039
+      }
+    }
+    Overrides {
       Name: "cs:UIMessage:isrep"
       Bool: true
     }
