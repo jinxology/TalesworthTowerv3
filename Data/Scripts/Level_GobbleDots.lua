@@ -41,6 +41,7 @@ local propGhost = script:GetCustomProperty("Ghost")
 local mobFolder = levelFolder:FindDescendantByName("Mob AI")
 
 local ghostController = nil
+local clearDotsCount = 0
 
 local inkyGhost = nil
 local blinkyGhost = nil
@@ -91,15 +92,32 @@ end
 
 --LevelPowerDown is called from the next level back to this one to clean it up and remove it from memory
 function LevelPowerDown() 
+	clearDotsCount = clearDotsCount + 1
+	script:SetNetworkedCustomProperty("ClearDots", clearDotsCount)
 end
 
 --LevelVictory is called when the Win Condition of the game is met
 --This function will call LevelEnd(true) on the MainGameController 
 function LevelVictory()
-	inkyGhost:Destroy()
-	blinkyGhost:Destroy()
-	pinkyGhost:Destroy()
-	clydeGhost:Destroy()
+	if Object.IsValid(inkyGhost) then
+		inkyGhost.KillGhost()
+		inkyGhost:Destroy()
+	end
+	
+	if Object.IsValid(blinkyGhost) then
+		blinkyGhost.KillGhost()
+		blinkyGhost:Destroy()
+	end
+
+	if Object.IsValid(pinkyGhost) then
+		pinkyGhost.KillGhost()
+		pinkyGhost:Destroy()
+	end
+
+	if Object.IsValid(clydeGhost) then
+		clydeGhost.KillGhost()
+		clydeGhost:Destroy()
+	end
 	propMainGameController.context.LevelEnd(true)
 end
 

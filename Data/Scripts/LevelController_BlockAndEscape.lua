@@ -9,7 +9,7 @@ local propBaeRockRumble = script:GetCustomProperty("baeRockRumble")
 --Place StartPlatformGroup(networked) template and record the Position and Rotation values here
 --After adding the inital values, delete the StartingPlatormGroup template out of the project
 startingPlatforms = nil
-startPlatformPosition = Vector3.New(2750,1075,1700)
+startPlatformPosition = Vector3.New(3000,1075,1700)
 startPlatformRotation = Rotation.New(0,0,-90)  
 
 --To be finalized when Flumes objects and code are completed
@@ -80,7 +80,9 @@ end
 --LevelPowerDown is called from the next level back to this one to clean it up and remove it from memory
 function LevelPowerDown() 
 	for ballIndex, ball in ipairs(ballArray) do
-		ballArray[ballIndex]:Destroy()
+		if Object.IsValid(ballArray[ballIndex]) then
+			ballArray[ballIndex]:Destroy()
+		end
 	end
 end
 

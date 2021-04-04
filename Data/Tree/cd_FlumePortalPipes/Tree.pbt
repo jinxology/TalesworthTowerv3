@@ -10,12 +10,12 @@ Objects {
       Z: 750
     }
     Rotation {
-      Pitch: -157.5
+      Pitch: -155.936615
     }
     Scale {
-      X: 4.5
-      Y: 4.5
-      Z: 87.5000381
+      X: 4.49999762
+      Y: 4.49999714
+      Z: 56.3834038
     }
   }
   ParentId: 3130038707074644688
@@ -118,9 +118,9 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: -1159.13159
+      X: -1175
       Y: 180.177734
-      Z: -3204.59375
+      Z: -2421.41846
     }
     Rotation {
       Pitch: -90
@@ -179,9 +179,9 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: -1150
+      X: -1175
       Y: 175
-      Z: -3200
+      Z: -2416.82471
     }
     Rotation {
       Pitch: 90
@@ -241,7 +241,7 @@ Objects {
     Scale {
       X: 4.5
       Y: 4.5
-      Z: 23.7
+      Z: 16.3999977
     }
   }
   ParentId: 3130038707074644688

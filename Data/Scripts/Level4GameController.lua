@@ -218,17 +218,25 @@ function LevelEnd()
 end
 
 function LevelPowerDown() 
-	redWallText:Destroy()
-	blueWallText:Destroy()
-	greenWallText:Destroy()
-	yellowWallText:Destroy()
+	if Object.IsValid(redWallText) then
+		redWallText:Destroy()
+	end
 
+	if Object.IsValid(blueWallText) then
+		blueWallText:Destroy()
+	end
+	
+	if Object.IsValid(greenWallText) then
+		greenWallText:Destroy()
+	end
+	
+	if Object.IsValid(yellowWallText) then
+		yellowWallText:Destroy()
+	end
 end
 
 function LevelVictory()
 	--Spin Dials and light up room
 	propMainGameController.context.LevelEnd(true)
 end
-
-LevelPowerUp()
 	
