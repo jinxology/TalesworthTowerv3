@@ -1,23 +1,23 @@
 Name: "FlumePortalPipes_10"
 RootId: 7920601888696475708
 Objects {
-  Id: 16903948956824780429
+  Id: 17172018062679201456
   Name: "Pipe"
   Transform {
     Location {
-      X: -1272.10913
-      Y: -149.223938
-      Z: -2062.79175
+      X: -1544.21021
+      Y: 3.70727539
+      Z: -1376.30933
     }
     Rotation {
-      Pitch: 46.8308945
-      Yaw: 64.5134125
-      Roll: -86.0938416
+      Pitch: -0.704071045
+      Yaw: 44.1772766
+      Roll: -171.042755
     }
     Scale {
-      X: 4.54963636
-      Y: 4.5496397
-      Z: 7.08488941
+      X: 4.38129139
+      Y: 4.54962
+      Z: 4.45674801
     }
   }
   ParentId: 7920601888696475708
@@ -26,14 +26,6 @@ Objects {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
         Id: 13668225859767539073
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        G: 0.863157392
-        B: 1
-        A: 1
       }
     }
   }
@@ -48,7 +40,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 5668201541289739547
+      Id: 15340034010401438429
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -67,19 +59,19 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: -1554.42285
-      Y: 13.3922119
-      Z: -1656.43481
+      X: -1223.82642
+      Y: 215.806885
+      Z: -1819.42859
     }
     Rotation {
-      Pitch: 3.74637222
-      Yaw: -24.8864441
-      Roll: -173.871506
+      Pitch: 59.5713348
+      Yaw: 146.098709
+      Roll: -70.3895874
     }
     Scale {
-      X: 4.54961681
-      Y: 4.54961681
-      Z: 4.45676661
+      X: 4.5496254
+      Y: 4.54962063
+      Z: 1.6805923
     }
   }
   ParentId: 7920601888696475708
@@ -129,9 +121,9 @@ Objects {
   Name: "Pipe"
   Transform {
     Location {
-      X: -1545.38354
-      Y: 13.8577881
-      Z: -382.329834
+      X: -1545.38306
+      Y: 13.857666
+      Z: -382.32959
     }
     Rotation {
       Pitch: 0.174606949
@@ -139,9 +131,9 @@ Objects {
       Roll: 179.56813
     }
     Scale {
-      X: 4.54961681
-      Y: 4.54961681
-      Z: 12.9595232
+      X: 4.5
+      Y: 4.5
+      Z: 10.1999989
     }
   }
   ParentId: 7920601888696475708

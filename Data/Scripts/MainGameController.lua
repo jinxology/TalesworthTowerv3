@@ -492,6 +492,10 @@ function LevelEnd(success)
     
     ClearTimer()
 
+    Task.Spawn(function() LightingAndBeacons(success) end)
+end
+
+function LightingAndBeacons(success)
     local lightsDimTime = 5
     if (not success) then
         for _, player in pairs(Game.GetPlayers()) do
@@ -499,7 +503,7 @@ function LevelEnd(success)
             SetLightLevel(player, 2)
         end
     end
-    SpawnLevelBeacons(success,lightsDimTime)
+    SpawnLevelBeacons(success,lightsDimTime)    
 
     Task.Wait(lightsDimTime)
 
@@ -511,7 +515,6 @@ function LevelEnd(success)
             SetLightLevel(player, 4)
         end
     end
-
 end
 
 local countedAlready = false

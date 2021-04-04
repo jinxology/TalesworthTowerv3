@@ -155,12 +155,42 @@ Objects {
   }
 }
 Objects {
+  Id: 18053618853963130164
+  Name: "FlumeSounds (Client)"
+  Transform {
+    Location {
+      X: 900
+      Z: -4000
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4159855513164329778
+  ChildIds: 5348352237610504185
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
   Id: 5348352237610504185
   Name: "Nature Wind Steady 01 SFX"
   Transform {
     Location {
-      X: 900.000488
-      Z: -3975
+      X: 0.00048828125
+      Z: 25
     }
     Rotation {
     }
@@ -170,7 +200,7 @@ Objects {
       Z: 0.520408034
     }
   }
-  ParentId: 4159855513164329778
+  ParentId: 18053618853963130164
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -188,8 +218,6 @@ Objects {
     Volume: 0.623069286
     Falloff: 603.709839
     Radius: 1294.27942
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
     IsAttenuationEnabled: true
   }
 }

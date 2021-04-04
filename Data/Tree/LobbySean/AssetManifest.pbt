@@ -161,6 +161,15 @@ Assets {
   }
 }
 Assets {
+  Id: 10565668779465810778
+  Name: "Waterfall Large SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_waterfall_big_Cue"
+  }
+}
+Assets {
   Id: 9627380735913518424
   Name: "Tree Redwood Big"
   PlatformAssetType: 1

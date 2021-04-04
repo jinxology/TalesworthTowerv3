@@ -1,13 +1,104 @@
 Name: "Level_VictoryRoom"
 RootId: 8293299003659691482
 Objects {
-  Id: 4696860244307218387
-  Name: "Trigger"
+  Id: 1334729668364250636
+  Name: "txtshortcut"
   Transform {
     Location {
-      X: 499.999969
-      Y: -449.99826
-      Z: -665.727539
+      X: -758.920837
+      Y: -450.254761
+      Z: 191.831055
+    }
+    Rotation {
+    }
+    Scale {
+      X: 3.83793783
+      Y: 3.83793783
+      Z: 3.83793783
+    }
+  }
+  ParentId: 8293299003659691482
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "PRESS J FOR LOBBY SHORTCUT"
+    FontAsset {
+    }
+    Color {
+      R: 0.160000011
+      G: 0.110534869
+      B: 0.0303359814
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
+  Id: 14142069618680271466
+  Name: "telelportInLoc"
+  Transform {
+    Location {
+      X: 416.660614
+      Y: 106.506165
+      Z: 249.615234
+    }
+    Rotation {
+      Yaw: -89.9999924
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8293299003659691482
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 7062845870289079377
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 4696860244307218387
+  Name: "MoveDisableTrigger"
+  Transform {
+    Location {
+      X: 500
+      Y: -449.991516
+      Z: -1222.23633
     }
     Rotation {
     }
@@ -69,22 +160,59 @@ Objects {
   }
 }
 Objects {
-  Id: 8295516094085466465
-  Name: "Cube"
+  Id: 3775917952866220665
+  Name: "EnteredVRTrigger"
   Transform {
     Location {
-      X: 1499.995
-      Y: -349.997681
-      Z: -1279.7998
+      X: 499.999969
+      Y: -501.935974
+      Z: -15.7275391
+    }
+    Rotation {
+    }
+    Scale {
+      X: 27.5
+      Y: 24.4
+      Z: 29.5000038
+    }
+  }
+  ParentId: 8293299003659691482
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
+  Id: 8295516094085466465
+  Name: "guide4"
+  Transform {
+    Location {
+      X: 1831.54932
+      Y: -465.954102
+      Z: -4433.56836
     }
     Rotation {
       Yaw: 90
-      Roll: -22.1364441
+      Roll: -0.106994629
     }
     Scale {
-      X: 23.8601799
-      Y: 1.00000036
-      Z: 28.4265156
+      X: 27.966074
+      Y: 0.999998033
+      Z: 97.9000168
     }
   }
   ParentId: 8293299003659691482
@@ -115,21 +243,21 @@ Objects {
 }
 Objects {
   Id: 15663830305715164873
-  Name: "Cube"
+  Name: "guide3"
   Transform {
     Location {
-      X: -599.999878
-      Y: -349.999634
-      Z: -1279.7998
+      X: -285.192841
+      Y: -417.126
+      Z: -4740.38574
     }
     Rotation {
       Yaw: -90
-      Roll: -17.136322
+      Roll: -7.96182251
     }
     Scale {
-      X: 23.8601799
-      Y: 1.00000036
-      Z: 28.4265156
+      X: 28.4146557
+      Y: 1
+      Z: 97.9000168
     }
   }
   ParentId: 8293299003659691482
@@ -160,22 +288,22 @@ Objects {
 }
 Objects {
   Id: 647380301077297836
-  Name: "Cube"
+  Name: "guide2"
   Transform {
     Location {
-      X: 401.643463
-      Y: 599.99884
-      Z: -1279.7998
+      X: 476.179138
+      Y: 574.672852
+      Z: -4687.83398
     }
     Rotation {
-      Pitch: 1.29255855
-      Yaw: -175.16954
-      Roll: -22.0817871
+      Pitch: -0.378570557
+      Yaw: 180
+      Roll: -2.80548096
     }
     Scale {
-      X: 23.8601799
-      Y: 1.00000036
-      Z: 28.4265156
+      X: 29.0042744
+      Y: 1.0000006
+      Z: 97.9000473
     }
   }
   ParentId: 8293299003659691482
@@ -206,20 +334,20 @@ Objects {
 }
 Objects {
   Id: 13869995928299250887
-  Name: "Cube"
+  Name: "guide1"
   Transform {
     Location {
-      X: 401.643677
-      Y: -1500.30725
-      Z: -1279.7998
+      X: 428.023438
+      Y: -1434.9071
+      Z: -4069.69043
     }
     Rotation {
-      Roll: -22.1362915
+      Roll: -4.50140381
     }
     Scale {
-      X: 23.8601799
-      Y: 1.00000036
-      Z: 28.4265156
+      X: 29.7846794
+      Y: 1.0000006
+      Z: 84.2988129
     }
   }
   ParentId: 8293299003659691482
@@ -1522,7 +1650,7 @@ Objects {
 }
 Objects {
   Id: 6412582831131794029
-  Name: "OpeningFloor - VR"
+  Name: "OpeningFloor1 - VR"
   Transform {
     Scale {
       X: 1
@@ -1557,14 +1685,6 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
           }
         }
       }
@@ -2721,6 +2841,24 @@ Objects {
       Name: "cs:txtFinalTime"
       ObjectReference {
         SelfId: 17696296225754430817
+      }
+    }
+    Overrides {
+      Name: "cs:EnteredVRTrigger"
+      ObjectReference {
+        SelfId: 3775917952866220665
+      }
+    }
+    Overrides {
+      Name: "cs:VictoryRoomEntranceVFX"
+      AssetReference {
+        Id: 11432659898326020445
+      }
+    }
+    Overrides {
+      Name: "cs:telelportInLoc"
+      ObjectReference {
+        SelfId: 14142069618680271466
       }
     }
   }

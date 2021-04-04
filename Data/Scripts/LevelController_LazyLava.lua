@@ -226,7 +226,6 @@ function OnLandInLava(whichTrigger, other)
 
         local vfxpos = player:GetWorldPosition() + Vector3.New(0,0,50)
         World.SpawnAsset(propLavaHitSVFX,{position=vfxpos})
-        print (spawnWorldLocations[spawnPointIndex])
         player:SetWorldPosition(spawnWorldLocations[spawnPointIndex])
 	end
 end

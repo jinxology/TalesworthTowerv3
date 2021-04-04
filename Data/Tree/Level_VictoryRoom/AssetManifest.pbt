@@ -62,6 +62,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7062845870289079377
+  Name: "Ball"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_sphere_001"
+  }
+}
+Assets {
   Id: 4282920344287573610
   Name: "Craftsman Wall 01"
   PlatformAssetType: 1

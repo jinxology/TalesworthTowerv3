@@ -27,6 +27,7 @@ entranceFlumeEjectionVelocity = 5
 local propInitializeBoard = script:GetCustomProperty("InitialIzeBoard")
 local propDeletedDots = script:GetCustomProperty("DeletedDots")
 local propResetLevel = script:GetCustomProperty("ResetLevel")
+local propResetCameraDistance = script:GetCustomProperty("ResetCameraDistance")
 local propGobbleDotsEatSFX = script:GetCustomProperty("GobbleDotsEatSFX")
 local propHittingGhostSVFX = script:GetCustomProperty("HittingGhostSVFX")
 
@@ -40,6 +41,7 @@ local mobFolder = levelFolder:FindDescendantByName("Mob AI")
 
 local ghostController = nil
 local clearDotsCount = 0
+local resetCameraDistanceCount = 0
 
 local inkyGhost = nil
 local blinkyGhost = nil
@@ -55,7 +57,7 @@ local GHOST_SCALE = 2.2
 
 local PLAYER_RESPAWN_POINT = Vector3.New(-1025,1325,11400)
 local SECONDS_AFTER_DEATH = 5
-
+    
 dotsArray = {} --The Array of all of the Dots the Server is holding with current values
 dotsDeletedArray = {}  --The Array of deleted dots the server is holding (an array of indexes)
 
@@ -98,25 +100,29 @@ end
 --This function will call LevelEnd(true) on the MainGameController 
 function LevelVictory()
 	if Object.IsValid(inkyGhost) then
-		inkyGhost.KillGhost()
+		inkyGhostController.context.KillGhost()
 		inkyGhost:Destroy()
 	end
 	
 	if Object.IsValid(blinkyGhost) then
-		blinkyGhost.KillGhost()
+		blinkyGhostController.context.KillGhost()
 		blinkyGhost:Destroy()
 	end
 
 	if Object.IsValid(pinkyGhost) then
-		pinkyGhost.KillGhost()
+		pinkyGhostController.context.KillGhost()
 		pinkyGhost:Destroy()
 	end
 
 	if Object.IsValid(clydeGhost) then
-		clydeGhost.KillGhost()
+		clydeGhostController.context.KillGhost()
 		clydeGhost:Destroy()
 	end
 	propMainGameController.context.LevelEnd(true)
+
+	--Reset the Active Camera back to the default on the Client
+	resetCameraDistanceCount = resetCameraDistanceCount + 1
+	script:SetNetworkedCustomProperty("ResetCameraDistance", resetCameraDistanceCount)
 end
 
 --LevelFailed is called when the Loss Condition of the game is met
@@ -146,6 +152,7 @@ function CheckDotsLeft(dotDeletedIndex)
 		LevelVictory()
 	end
 end
+
 
 function UpdateDotsDeletedString(deletedDot)
 	

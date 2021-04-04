@@ -7,7 +7,7 @@ Assets {
       RootId: 14157282412498791778
       Objects {
         Id: 14157282412498791778
-        Name: "OpeningFloor - VR"
+        Name: "OpeningFloor1 - VR"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1602033720224815336
+        ParentId: 8293299003659691482
         ChildIds: 13302855305342310383
         ChildIds: 4436155200327564951
         WantsNetworking: true
@@ -54,6 +54,7 @@ Assets {
         ChildIds: 7766873825908073937
         ChildIds: 10333361382027190694
         ChildIds: 2047265080219200819
+        ChildIds: 5126917259268379876
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -378,6 +379,58 @@ Assets {
         }
       }
       Objects {
+        Id: 5126917259268379876
+        Name: "Plane 1m - One Sided"
+        Transform {
+          Location {
+            X: -5.31054688
+            Y: 2.18225074
+            Z: -37.2324219
+          }
+          Rotation {
+            Roll: 180
+          }
+          Scale {
+            X: 24.5000114
+            Y: 11.8194408
+            Z: 0.416874766
+          }
+        }
+        ParentId: 13302855305342310383
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 16871821605836477413
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 15355692762836007663
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
         Id: 4436155200327564951
         Name: "invisfloor - VR"
         Transform {
@@ -463,6 +516,24 @@ Assets {
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "mi_metal_rust_diamond-plate_001"
+      }
+    }
+    Assets {
+      Id: 15355692762836007663
+      Name: "Plane 1m - One Sided"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_plane_1m_001"
+      }
+    }
+    Assets {
+      Id: 16871821605836477413
+      Name: "Ceramic Tiles Octagon Dot 01"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_ceramic_tile_square_002"
       }
     }
     PrimaryAssetId {

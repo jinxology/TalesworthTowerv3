@@ -1,47 +1,6 @@
 Name: "Level_GobbleDots"
 RootId: 13310647076426687416
 Objects {
-  Id: 18069427443098873980
-  Name: "Ghost"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13310647076426687416
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 8743173940440615883
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Ghost"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 2
-            Y: 2
-            Z: 2
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 11153608437705457168
-    }
-  }
-}
-Objects {
   Id: 11344910419484066011
   Name: "GobbleDots.Beacons"
   Transform {
@@ -3681,7 +3640,7 @@ Objects {
       Name: "ma:Shared_BaseMaterial:color"
       Color {
         R: 0.160000026
-        G: 0.24900651
+        G: 0.249006331
         B: 1
         A: 1
       }
@@ -4360,7 +4319,7 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:color"
       Color {
-        G: 0.042185314
+        G: 0.0421851948
         B: 0.49
         A: 1
       }
@@ -4557,6 +4516,10 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:ResetCameraDistance"
+      Int: 0
+    }
+    Overrides {
       Name: "cs:InitializeBoard:isrep"
       Bool: true
     }
@@ -4566,6 +4529,10 @@ Objects {
     }
     Overrides {
       Name: "cs:ClearDots:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:ResetCameraDistance:isrep"
       Bool: true
     }
   }

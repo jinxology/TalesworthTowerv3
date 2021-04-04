@@ -10566,6 +10566,17 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 5012526056725407075
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1.15148926
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 14633673777962383534
       value {
         Overrides {
@@ -10596,13 +10607,97 @@ Objects {
   }
 }
 Objects {
+  Id: 2470449509531210804
+  Name: "lake"
+  Transform {
+    Location {
+      X: -4912.01514
+      Y: 971.118652
+      Z: -983.692871
+    }
+    Rotation {
+    }
+    Scale {
+      X: 31.9868393
+      Y: 20.5481415
+      Z: 10.5310898
+    }
+  }
+  ParentId: 16614468857374372845
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 15336837002190568185
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 5020765703820119551
+  Name: "Waterfall (client)"
+  Transform {
+    Location {
+      X: 359.787628
+      Y: 197.836182
+      Z: -6.04151917
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16614468857374372845
+  ChildIds: 13249651671532165521
+  ChildIds: 2914996119692747482
+  ChildIds: 2165718692555384750
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  NetworkContext {
+  }
+}
+Objects {
   Id: 2165718692555384750
   Name: "Basic Water Splash VFX"
   Transform {
     Location {
-      X: -4229.66797
-      Y: 989.694336
-      Z: -522.314514
+      X: -4589.45557
+      Y: 791.858154
+      Z: -516.273
     }
     Rotation {
     }
@@ -10612,7 +10707,7 @@ Objects {
       Z: 7.44000101
     }
   }
-  ParentId: 16614468857374372845
+  ParentId: 5020765703820119551
   UnregisteredParameters {
     Overrides {
       Name: "bp:Local Space"
@@ -10655,13 +10750,52 @@ Objects {
   }
 }
 Objects {
+  Id: 2914996119692747482
+  Name: "Waterfall Large SFX"
+  Transform {
+    Location {
+      X: -2409.7876
+      Y: 25.385498
+      Z: -0.000244140625
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5020765703820119551
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 10565668779465810778
+    }
+    AutoPlay: true
+    Volume: 1
+    Falloff: 887.849609
+    Radius: 821.250122
+    IsSpatializationEnabled: true
+    IsAttenuationEnabled: true
+  }
+}
+Objects {
   Id: 13249651671532165521
   Name: "Waterfall Straight"
   Transform {
     Location {
-      X: -6332.29736
-      Y: 123.22168
-      Z: -461.585114
+      X: -6692.08496
+      Y: -74.6145
+      Z: -455.543579
     }
     Rotation {
       Yaw: -178.337357
@@ -10672,7 +10806,7 @@ Objects {
       Z: 3.50846362
     }
   }
-  ParentId: 16614468857374372845
+  ParentId: 5020765703820119551
   UnregisteredParameters {
     Overrides {
       Name: "ma:waterfall:color"
@@ -10695,57 +10829,6 @@ Objects {
   CoreMesh {
     MeshAsset {
       Id: 17064621874275756231
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 2470449509531210804
-  Name: "lake"
-  Transform {
-    Location {
-      X: -4912.01514
-      Y: 971.118652
-      Z: -983.692871
-    }
-    Rotation {
-    }
-    Scale {
-      X: 31.9868393
-      Y: 20.5481415
-      Z: 10.5310898
-    }
-  }
-  ParentId: 16614468857374372845
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 15336837002190568185
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12095835209017042614
     }
     Teams {
       IsTeamCollisionEnabled: true
