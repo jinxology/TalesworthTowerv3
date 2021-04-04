@@ -1951,7 +1951,6 @@ Objects {
       }
     }
     Text {
-      Label: "Message Banner"
       Color {
         R: 1
         G: 1

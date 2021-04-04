@@ -6,8 +6,8 @@ Objects {
   Transform {
     Location {
       X: 668.039429
-      Y: 5300.46191
-      Z: 8210.63477
+      Y: 5290.76318
+      Z: 7414.34
     }
     Rotation {
     }
@@ -1005,8 +1005,9 @@ Objects {
   Name: "Giant Pipe"
   Transform {
     Location {
-      X: 3758.25684
-      Y: -172.493164
+      X: 4380.85059
+      Y: 300.317383
+      Z: -0.000122070313
     }
     Rotation {
     }
@@ -1024,8 +1025,6 @@ Objects {
   ChildIds: 17004240488807627417
   ChildIds: 7721716569135751245
   ChildIds: 5424702505842762710
-  ChildIds: 2122171249291043619
-  ChildIds: 3034763806884887041
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1040,140 +1039,12 @@ Objects {
   }
 }
 Objects {
-  Id: 3034763806884887041
-  Name: "Pipe - 45-Degree Long Thin"
-  Transform {
-    Location {
-      X: 937.226318
-      Y: -56.5209961
-      Z: 867.817627
-    }
-    Rotation {
-      Pitch: 2.81948829
-      Yaw: 112.097252
-      Roll: -6.90808105
-    }
-    Scale {
-      X: 11.5713406
-      Y: 11.5713444
-      Z: 8.67228317
-    }
-  }
-  ParentId: 6843243586446375208
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 13668225859767539073
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:smart"
-      Bool: true
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        G: 0.863157392
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 8519466595790172843
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 2122171249291043619
-  Name: "Pipe"
-  Transform {
-    Location {
-      X: 628.584229
-      Y: -56.5209961
-      Z: -1489.67212
-    }
-    Rotation {
-      Pitch: -7.22921753
-      Yaw: -14.3276978
-      Roll: 1.84089088
-    }
-    Scale {
-      X: 11.5713406
-      Y: 11.5713444
-      Z: 24.4884472
-    }
-  }
-  ParentId: 6843243586446375208
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 13668225859767539073
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:color"
-      Color {
-        G: 0.863157392
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 5668201541289739547
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
   Id: 5424702505842762710
   Name: "Tornado VFX"
   Transform {
     Location {
-      X: 241.140381
-      Y: 493.243164
+      X: -243.2229
+      Y: 136.755371
       Z: 1955.07446
     }
     Rotation {
@@ -1327,8 +1198,8 @@ Objects {
   Name: "whooshVectorTarget"
   Transform {
     Location {
-      X: 244.4646
-      Y: 548.048828
+      X: -302.925049
+      Y: 197.564453
       Z: 2272.80127
     }
     Rotation {
@@ -1370,8 +1241,8 @@ Objects {
   Name: "Pipe Ring"
   Transform {
     Location {
-      X: 194.143799
-      Y: 718.90918
+      X: -353.24585
+      Y: 368.424805
       Z: 2322.28
     }
     Rotation {
@@ -1899,24 +1770,55 @@ Objects {
   }
 }
 Objects {
+  Id: 12093069198956105349
+  Name: "Leaderboards"
+  Transform {
+    Location {
+      X: -724.949219
+      Y: -864.07666
+      Z: 422.415253
+    }
+    Rotation {
+      Yaw: 35.0000038
+    }
+    Scale {
+      X: 1.00000167
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11126704810718473895
+  ChildIds: 9372750393515854439
+  ChildIds: 17586211069039732680
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
   Id: 17586211069039732680
   Name: "Cube"
   Transform {
     Location {
-      X: -1287.87231
-      Y: 1488.56836
-      Z: 422.415253
     }
     Rotation {
-      Yaw: -45
+      Yaw: -3.4150944e-06
     }
     Scale {
-      X: 1.00000167
+      X: 1
       Y: 5.45302105
       Z: 8.11892891
     }
   }
-  ParentId: 11126704810718473895
+  ParentId: 12093069198956105349
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1947,20 +1849,20 @@ Objects {
   Name: "World Text"
   Transform {
     Location {
-      X: -1155
-      Y: 1545
-      Z: 750
+      X: 54.0519066
+      Y: 133.858383
+      Z: 327.584747
     }
     Rotation {
-      Yaw: -45
+      Yaw: -3.4150944e-06
     }
     Scale {
-      X: 3.10309911
+      X: 3.10309386
       Y: 3.10309911
       Z: 3.10309911
     }
   }
-  ParentId: 11126704810718473895
+  ParentId: 12093069198956105349
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

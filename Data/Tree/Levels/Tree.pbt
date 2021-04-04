@@ -35,8 +35,8 @@ Objects {
           Name: "Position"
           Vector {
             X: 1200
-            Y: -4475
-            Z: 25.000061
+            Y: -4750
+            Z: 25.0001831
           }
         }
         Overrides {
@@ -65,8 +65,9 @@ Objects {
   Name: "Level.LazyLava"
   Transform {
     Location {
-      X: -764.058472
-      Z: 17148.459
+      X: 750.226318
+      Y: 1820.32568
+      Z: 16240.8662
     }
     Rotation {
     }
@@ -96,12 +97,12 @@ Objects {
   Name: "Level.JumpMan"
   Transform {
     Location {
-      X: 1225
-      Y: 4000
-      Z: 11275
+      X: 1690.70386
+      Y: 3704.24658
+      Z: 10197.54
     }
     Rotation {
-      Yaw: -135
+      Yaw: -142.420441
     }
     Scale {
       X: 1
@@ -131,7 +132,7 @@ Objects {
     Location {
       X: -800
       Y: 4000
-      Z: 12800
+      Z: 14234.6514
     }
     Rotation {
     }
@@ -161,11 +162,12 @@ Objects {
   Name: "Level.Maze"
   Transform {
     Location {
-      X: -125
-      Y: 225
-      Z: 550
+      X: 4400
+      Y: 45850
+      Z: 4070.24707
     }
     Rotation {
+      Yaw: 180
     }
     Scale {
       X: 1
@@ -227,7 +229,7 @@ Objects {
     Location {
       X: 750
       Y: 550
-      Z: 2975
+      Z: 2221.41846
     }
     Rotation {
     }
@@ -258,7 +260,7 @@ Objects {
   Transform {
     Location {
       X: 1600
-      Z: 6900
+      Z: 6146.41846
     }
     Rotation {
     }
@@ -288,7 +290,7 @@ Objects {
   Name: "Level.FarmGallery"
   Transform {
     Location {
-      Z: 6265.69092
+      Z: 5512.10938
     }
     Rotation {
     }
@@ -441,11 +443,12 @@ Objects {
   Name: "Level.GobbleDots"
   Transform {
     Location {
-      X: -75
-      Y: 1200
-      Z: 15425
+      X: 1550
+      Y: -2750
+      Z: 11287.3906
     }
     Rotation {
+      Yaw: 68.4185715
     }
     Scale {
       X: 1
