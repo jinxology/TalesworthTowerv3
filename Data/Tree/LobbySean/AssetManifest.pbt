@@ -152,15 +152,6 @@ Assets {
   }
 }
 Assets {
-  Id: 11671992401622297254
-  Name: "Waterfall Large SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_waterfall_big_Cue"
-  }
-}
-Assets {
   Id: 10789546840193366307
   Name: "Cube - Bottom-Aligned"
   PlatformAssetType: 1
