@@ -113,6 +113,7 @@ local	roundDuration = 120
 
 local balloonPipe = {}
 local emptySpawners = {}
+local propLiveBalloons = {}
 
 intakeToColor = Color.WHITE
 intakeFromColor = nil
@@ -291,6 +292,10 @@ function LevelPowerUp()
 	propPlayersFlumedIn = {}
 	propFlumedInTrigger.isEnabled = true
 	
+	for _, balloon in pairs(propLiveBalloons) do
+		balloon:Destroy()
+	end
+	propLiveBalloons = {}
 end
 
 function LevelPowerDown()
@@ -624,6 +629,7 @@ function FillBalloonPipe()
 	end
 end
 
+
 function SpawnNextBalloon()
 	FillBalloonPipe()
 
@@ -640,6 +646,8 @@ function SpawnNextBalloon()
 	if tutorialActive then
 		-- print("spawning balloon in tutorial")
 		balloon.parent = propTutorialContainer
+	else
+		table.insert(propLiveBalloons, balloon)
 	end
 
 	table.remove(balloonPipe, 1)

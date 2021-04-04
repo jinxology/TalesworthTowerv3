@@ -297,6 +297,7 @@ Assets {
         ChildIds: 8634895287104402232
         ChildIds: 5127595491836178088
         ChildIds: 18244911144157058679
+        ChildIds: 5336787190471317102
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -424,18 +425,19 @@ Assets {
         Name: "Fantasy Sack Tied"
         Transform {
           Location {
-            X: -265.146942
-            Y: -225.542282
+            X: -233.919647
+            Y: -247.549637
+            Z: 48.0302734
           }
           Rotation {
-            Pitch: -1.92803955
-            Yaw: 38.3458977
-            Roll: -3.21554565
+            Pitch: 33.6510506
+            Yaw: -44.9701843
+            Roll: -87.8709717
           }
           Scale {
-            X: 1.04979753
-            Y: 2.26515555
-            Z: 1.59365749
+            X: 0.618587315
+            Y: 0.633754671
+            Z: 0.513749182
           }
         }
         ParentId: 13115255846834986777
@@ -443,7 +445,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 1342935755952129588
+              Id: 1109929485648385900
             }
           }
           Overrides {
@@ -463,6 +465,10 @@ Assets {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 5
           }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: true
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -475,7 +481,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 1860525514493543587
+            Id: 2217731831379675323
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -494,19 +500,19 @@ Assets {
         Name: "Fantasy Sack Laying"
         Transform {
           Location {
-            X: -199.380173
-            Y: 215.239929
-            Z: 47.5126953
+            X: -244.993332
+            Y: 260.853149
+            Z: 13.3798828
           }
           Rotation {
-            Pitch: 53.8331337
-            Yaw: 46.7791901
-            Roll: 89.9999619
+            Pitch: 138.339478
+            Yaw: -131.363678
+            Roll: -90.5014
           }
           Scale {
-            X: 2.56247759
-            Y: 1.99998868
-            Z: 2.18644595
+            X: 0.499999911
+            Y: 0.499999702
+            Z: 0.36333254
           }
         }
         ParentId: 13115255846834986777
@@ -523,7 +529,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 1342935755952129588
+              Id: 1109929485648385900
             }
           }
           Overrides {
@@ -533,6 +539,10 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 5
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: true
           }
         }
         Collidable_v2 {
@@ -546,7 +556,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 5660774408795298116
+            Id: 2029515409028393758
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -565,16 +575,16 @@ Assets {
         Name: "Fantasy Sack Laying"
         Transform {
           Location {
-            X: -212.34935
-            Y: -20.1699066
+            X: -145.969513
+            Y: 34.5486
             Z: 239.226563
           }
           Rotation {
           }
           Scale {
-            X: 2.56247759
-            Y: 1.99998868
-            Z: 0.2
+            X: 1
+            Y: 1
+            Z: 0.4
           }
         }
         ParentId: 13115255846834986777
@@ -591,7 +601,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 1342935755952129588
+              Id: 1109929485648385900
             }
           }
           Overrides {
@@ -601,6 +611,10 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 5
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: true
           }
         }
         Collidable_v2 {
@@ -614,7 +628,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 5660774408795298116
+            Id: 16118682211110550421
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -633,15 +647,15 @@ Assets {
         Name: "Fantasy Sack Laying"
         Transform {
           Location {
-            X: 127.507881
-            Y: 157.052185
+            X: 169.583221
+            Y: 50.264267
             Z: 236.730469
           }
           Rotation {
           }
           Scale {
-            X: 2.56247759
-            Y: 1.99998868
+            X: 0.708233178
+            Y: 1
             Z: 0.2
           }
         }
@@ -659,7 +673,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 1342935755952129588
+              Id: 1109929485648385900
             }
           }
           Overrides {
@@ -669,6 +683,10 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 5
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: true
           }
         }
         Collidable_v2 {
@@ -682,7 +700,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 5660774408795298116
+            Id: 2217731831379675323
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -701,16 +719,17 @@ Assets {
         Name: "Fantasy Sack Laying"
         Transform {
           Location {
-            X: 35.5833855
-            Y: -210.642944
-            Z: 240.058594
+            X: 35.5833435
+            Y: -210.642914
+            Z: 243.106445
           }
           Rotation {
+            Yaw: 82.7080231
           }
           Scale {
-            X: 2.56247759
-            Y: 1.99998868
-            Z: 0.15
+            X: 1
+            Y: 1
+            Z: 0.1
           }
         }
         ParentId: 13115255846834986777
@@ -727,7 +746,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 1342935755952129588
+              Id: 1109929485648385900
             }
           }
           Overrides {
@@ -737,6 +756,10 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 5
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: true
           }
         }
         Collidable_v2 {
@@ -750,7 +773,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 5660774408795298116
+            Id: 3704876582486151245
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -769,19 +792,19 @@ Assets {
         Name: "Fantasy Sack Laying"
         Transform {
           Location {
-            X: 244.638977
-            Y: -221.032806
+            X: 298.385834
+            Y: -274.779816
             Z: 55
           }
           Rotation {
-            Pitch: -12.6520023
-            Yaw: -133.923019
-            Roll: 88.3270798
+            Pitch: 5.91050386
+            Yaw: -133.943176
+            Roll: 88.6718216
           }
           Scale {
-            X: 2.56247759
-            Y: 1.99998868
-            Z: 2.18644595
+            X: 0.364157438
+            Y: 0.200012401
+            Z: 0.132590637
           }
         }
         ParentId: 13115255846834986777
@@ -798,7 +821,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 1342935755952129588
+              Id: 1109929485648385900
             }
           }
           Overrides {
@@ -808,6 +831,10 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 5
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: true
           }
         }
         Collidable_v2 {
@@ -821,7 +848,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 5660774408795298116
+            Id: 2029515409028393758
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -840,19 +867,19 @@ Assets {
         Name: "Fantasy Sack Tied"
         Transform {
           Location {
-            X: 260.408691
-            Y: 292.851959
-            Z: 155.438477
+            X: 271.071289
+            Y: 303.514404
+            Z: 97.3193359
           }
           Rotation {
-            Pitch: 1.35701513
-            Yaw: -128.206436
-            Roll: -178.373093
+            Pitch: 134.151428
+            Yaw: -45
+            Roll: 86.8061829
           }
           Scale {
-            X: 1.04979753
-            Y: 2.26515555
-            Z: 1.59365749
+            X: 0.500002384
+            Y: 0.72301966
+            Z: 0.435002267
           }
         }
         ParentId: 13115255846834986777
@@ -860,7 +887,7 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 1342935755952129588
+              Id: 1109929485648385900
             }
           }
           Overrides {
@@ -880,6 +907,10 @@ Assets {
             Name: "ma:Shared_BaseMaterial:vtile"
             Float: 5
           }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: true
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -892,7 +923,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 1860525514493543587
+            Id: 16118682211110550421
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2887,6 +2918,121 @@ Assets {
         }
       }
       Objects {
+        Id: 5336787190471317102
+        Name: "Donut"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: -90
+            Yaw: -35.2643509
+            Roll: -144.735718
+          }
+          Scale {
+            X: 0.5
+            Y: 0.5
+            Z: 0.5
+          }
+        }
+        ParentId: 9153616377476526950
+        ChildIds: 4281307776697494649
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 16752997548390058292
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 9162454813016211233
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 4281307776697494649
+        Name: "Street Post Round 01"
+        Transform {
+          Location {
+            X: 49.9999924
+            Y: 3.16101068e-06
+            Z: -1.14440918e-05
+          }
+          Rotation {
+            Pitch: -90
+            Yaw: -82.5624924
+            Roll: 82.5625916
+          }
+          Scale {
+            X: 2
+            Y: 2
+            Z: 2
+          }
+        }
+        ParentId: 5336787190471317102
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_Detail1:id"
+            AssetReference {
+              Id: 6777447344140592468
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_Detail1:color"
+            Color {
+              R: 0.0570000038
+              G: 0.0570000038
+              B: 0.0570000038
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 16131503078867448818
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+          }
+        }
+      }
+      Objects {
         Id: 1654339899892608224
         Name: "pck.Puck.client"
         Transform {
@@ -3155,30 +3301,39 @@ Assets {
       }
     }
     Assets {
-      Id: 1860525514493543587
-      Name: "Fantasy Sack Tied"
+      Id: 2217731831379675323
+      Name: "Hill 02"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_prop_fantasy_sack_002_ref"
+        AssetId: "sm_hill_002"
       }
     }
     Assets {
-      Id: 1342935755952129588
-      Name: "Office Carpet Basic 01"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_urb_office_carpet_004_uv_ref"
-      }
-    }
-    Assets {
-      Id: 5660774408795298116
-      Name: "Fantasy Sack Laying"
+      Id: 2029515409028393758
+      Name: "Hill 05"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_prop_fantasy_sack_003_ref"
+        AssetId: "sm_hill_005"
+      }
+    }
+    Assets {
+      Id: 16118682211110550421
+      Name: "Hill 03"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_hill_003"
+      }
+    }
+    Assets {
+      Id: 3704876582486151245
+      Name: "Hill 04"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_hill_004"
       }
     }
     Assets {
@@ -3260,6 +3415,33 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_pipe_001"
+      }
+    }
+    Assets {
+      Id: 9162454813016211233
+      Name: "Donut"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_torus_001"
+      }
+    }
+    Assets {
+      Id: 16131503078867448818
+      Name: "Street Post Round 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_urb_st_post_lights_post_round_001"
+      }
+    }
+    Assets {
+      Id: 6777447344140592468
+      Name: "Metal Steel Brushed"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_stainless-steel_001_uv"
       }
     }
     Assets {
