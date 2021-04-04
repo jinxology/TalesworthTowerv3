@@ -27,9 +27,7 @@ entranceFlumeEjectionVelocity = 5
 local propInitializeBoard = script:GetCustomProperty("InitialIzeBoard")
 local propDeletedDots = script:GetCustomProperty("DeletedDots")
 local propResetLevel = script:GetCustomProperty("ResetLevel")
-
-local propCartoonFoodEatBiteShort02SFX = script:GetCustomProperty("CartoonFoodEatBiteShort02SFX")
-local propDrinkLiquidGulpSwallow01SFX = script:GetCustomProperty("DrinkLiquidGulpSwallow01SFX")
+local propGobbleDotsEatSFX = script:GetCustomProperty("GobbleDotsEatSFX")
 local propHittingGhostSVFX = script:GetCustomProperty("HittingGhostSVFX")
 
 local DOT_COUNT = 292
@@ -55,7 +53,7 @@ local CLYDE_COLOR = Color.FromLinearHex("F57A00FF")
 
 local GHOST_SCALE = 2.2
 
-local PLAYER_RESPAWN_POINT = Vector3.New(2500,4300,15550)
+local PLAYER_RESPAWN_POINT = Vector3.New(-1025,1325,11400)
 local SECONDS_AFTER_DEATH = 5
 
 dotsArray = {} --The Array of all of the Dots the Server is holding with current values
@@ -169,15 +167,11 @@ function OnDotDeleted(dotIndex, dotPosition)
 		
 		--Call all clients by updating the networked custom property to the string including the new deleted dot
 		script:SetNetworkedCustomProperty("DeletedDots", UpdateDotsDeletedString(dotIndex))
-		if(math.random(1,30) == 1) then
-			sfx = World.SpawnAsset(propDrinkLiquidGulpSwallow01SFX)
-			sfx:SetWorldPosition(dotPosition)
-			sfx:Play()
-		else 
-			sfx = World.SpawnAsset(propCartoonFoodEatBiteShort02SFX)
-			sfx:SetWorldPosition(dotPosition)
-			sfx:Play()
-		end
+
+		sfx = World.SpawnAsset(propGobbleDotsEatSFX)
+		sfx:SetWorldPosition(dotPosition)
+		sfx:Play()
+
 		--Check to see if the game has been won
 		CheckDotsLeft(dotIndex)
 	end
@@ -234,3 +228,4 @@ end
 for _, p in pairs(Game.GetPlayers()) do
     p.diedEvent:Connect(OnPlayerDied)
 end
+

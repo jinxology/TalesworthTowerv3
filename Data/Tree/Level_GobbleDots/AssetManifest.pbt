@@ -8,15 +8,6 @@ Assets {
   }
 }
 Assets {
-  Id: 13552945397385832481
-  Name: "Drink Liquid Gulp Swallow 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_drink_gulp_swallow_01a_Cue_ref"
-  }
-}
-Assets {
   Id: 12095835209017042614
   Name: "Cube"
   PlatformAssetType: 1
@@ -32,15 +23,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_cube_001"
-  }
-}
-Assets {
-  Id: 10099212058672913078
-  Name: "Cartoon Food Eat Bite Short 02 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_cartoon_food_eat_bite_short_02_Cue_ref"
   }
 }
 Assets {

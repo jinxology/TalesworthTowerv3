@@ -48,6 +48,15 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 2799580777828353879
+      value {
+        Overrides {
+          Name: "cs:ArchSide"
+          String: "LEFT"
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 6292285592507664290
       value {
         Overrides {
@@ -117,28 +126,6 @@ Objects {
           Name: "Rotation"
           Rotator {
             Yaw: -179.999985
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 17230334546939582652
-      value {
-        Overrides {
-          Name: "cs:TeleportArch"
-          ObjectReference {
-            SelfId: 2865148869563167308
-            SubObjectId: 6292285592507664290
-            InstanceId: 17894760573842865631
-            TemplateId: 105376969988289370
           }
         }
       }
@@ -4507,18 +4494,6 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:CartoonFoodEatBiteShort02SFX"
-      AssetReference {
-        Id: 10099212058672913078
-      }
-    }
-    Overrides {
-      Name: "cs:DrinkLiquidGulpSwallow01SFX"
-      AssetReference {
-        Id: 13552945397385832481
-      }
-    }
-    Overrides {
       Name: "cs:HittingGhostSVFX"
       AssetReference {
         Id: 17121013347983082254
@@ -4533,6 +4508,12 @@ Objects {
     Overrides {
       Name: "cs:ClearDots"
       Int: 0
+    }
+    Overrides {
+      Name: "cs:GobbleDotsEatSFX"
+      AssetReference {
+        Id: 8275345109879027780
+      }
     }
     Overrides {
       Name: "cs:InitializeBoard:isrep"
