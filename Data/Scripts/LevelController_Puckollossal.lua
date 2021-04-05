@@ -83,6 +83,7 @@ function ShockPlayerAwayFromTrigger(player, trigger)
         player:EnableRagdoll("left_hip", .6)		
         
         impulse = trigger:GetWorldRotation() * Vector3.FORWARD * 320
+        print(tostring(impulse) .. " added to player")
         impulse.z = math.max(impulse.z,  (Vector3.UP * 120).z)
         if trigger:GetCustomProperty("playerOnly") ~= nil then
             player:SetVelocity(impulse)
@@ -118,15 +119,14 @@ function ConnectBumpers(container)
 
                     surfaceNormal = trigger:GetRotation() * Vector3.FORWARD
 
-                    reflected = puckVelocity - (2 * puckVelocity * surfaceNormal) * surfaceNormal
-                    if reflected.size < 1000 then
-                        reflected = reflected:GetNormalized() * 1000
-                    end
-
-                    other:SetVelocity(reflected)
+                    reboundedV = puckVelocity - (2 * puckVelocity .. surfaceNormal) * surfaceNormal
+                    surfaceNormal = Rotation.New(0, 0, 90) * surfaceNormal
+                    reboundedA = puckAngularVelocity - (2 * puckAngularVelocity .. surfaceNormal) * surfaceNormal
                     
-                    reflected = puckAngularVelocity - (2 * puckAngularVelocity * surfaceNormal) * surfaceNormal
-                    other:SetAngularVelocity(reflected)
+                    print("changing puck velocity from " .. tostring(puckVelocity) .. " to " .. tostring(reboundedV))
+                    print("changing angl velocity from " .. tostring(puckAngularVelocity) .. " to " .. tostring(reboundedA))
+                    other:SetVelocity(reboundedV)
+                    other:SetAngularVelocity(reboundedA)
 
                     radius = other:GetCustomProperty("controller"):WaitForObject().context.propRadius
                     impactLocation = other:GetPosition() - surfaceNormal * radius - Vector3.UP * radius

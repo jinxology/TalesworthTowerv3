@@ -53,6 +53,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16371361675613168876
+  Name: "Ellipsoid - Truncated Hollow Wedge"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ellipsoid_hollow_wedge_001"
+  }
+}
+Assets {
   Id: 16122416315602602797
   Name: "Plane 4m - Two Sided"
   PlatformAssetType: 1
@@ -86,6 +95,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weap_fan_foregrip_cross_001"
+  }
+}
+Assets {
+  Id: 15311550138640852139
+  Name: "Cone - Truncated Hollow Concave"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cone_truncated_hollow_convex_001"
   }
 }
 Assets {

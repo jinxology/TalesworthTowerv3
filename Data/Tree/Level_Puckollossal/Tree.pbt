@@ -1113,6 +1113,372 @@ Objects {
   }
 }
 Objects {
+  Id: 1927312495006885118
+  Name: "Ellipsoid - Truncated Hollow Wedge"
+  Transform {
+    Location {
+      Z: 1338.55603
+    }
+    Rotation {
+      Yaw: -90
+    }
+    Scale {
+      X: 4.5
+      Y: 4.5
+      Z: 3
+    }
+  }
+  ParentId: 1232579912354001357
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13668225859767539073
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: true
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        G: 0.863157392
+        B: 1
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16371361675613168876
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 7009549163098468429
+  Name: "Ellipsoid - Truncated Hollow Wedge"
+  Transform {
+    Location {
+      Z: 1338.55603
+    }
+    Rotation {
+      Yaw: 180
+    }
+    Scale {
+      X: 4.5
+      Y: 4.5
+      Z: 3
+    }
+  }
+  ParentId: 1232579912354001357
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13668225859767539073
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: true
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        G: 0.863157392
+        B: 1
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16371361675613168876
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 16396087159375222904
+  Name: "Ellipsoid - Truncated Hollow Wedge"
+  Transform {
+    Location {
+      Z: 1338.55603
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 4.5
+      Y: 4.5
+      Z: 3
+    }
+  }
+  ParentId: 1232579912354001357
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13668225859767539073
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: true
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        G: 0.863157392
+        B: 1
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16371361675613168876
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 1735706234093906603
+  Name: "Ellipsoid - Truncated Hollow Wedge"
+  Transform {
+    Location {
+      Z: 1338.55603
+    }
+    Rotation {
+    }
+    Scale {
+      X: 4.5
+      Y: 4.5
+      Z: 3
+    }
+  }
+  ParentId: 1232579912354001357
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13668225859767539073
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: true
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        G: 0.863157392
+        B: 1
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16371361675613168876
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 892478679930805280
+  Name: "Cone - Truncated Hollow Concave"
+  Transform {
+    Location {
+      Z: 1608.45898
+    }
+    Rotation {
+    }
+    Scale {
+      X: 2.25
+      Y: 2.25
+      Z: 5.19451141
+    }
+  }
+  ParentId: 1232579912354001357
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13668225859767539073
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: true
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        G: 0.863157392
+        B: 1
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 15311550138640852139
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 14253396229694370443
+  Name: "Pipe"
+  Transform {
+    Location {
+      Z: 1975
+    }
+    Rotation {
+      Roll: -179.999985
+    }
+    Scale {
+      X: 1.125
+      Y: 1.125
+      Z: 1.09572101
+    }
+  }
+  ParentId: 1232579912354001357
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 13668225859767539073
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        G: 0.863157392
+        B: 1
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 5668201541289739547
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 3563811700256805507
   Name: "ClientContext"
   Transform {
@@ -5293,7 +5659,7 @@ Objects {
     Location {
       X: -6399.99707
       Y: -3199.95166
-      Z: -800
+      Z: -799.5
     }
     Rotation {
     }
@@ -5346,7 +5712,7 @@ Objects {
     Location {
       X: -6399.99
       Y: 6400
-      Z: -800
+      Z: -799.5
     }
     Rotation {
     }
@@ -5399,7 +5765,7 @@ Objects {
     Location {
       X: 6399.92676
       Y: 3200.01514
-      Z: -800
+      Z: -799.5
     }
     Rotation {
     }
@@ -5462,7 +5828,7 @@ Objects {
     Location {
       X: -9599.95313
       Y: 3200.01855
-      Z: -800
+      Z: -799.5
     }
     Rotation {
     }
@@ -5515,7 +5881,7 @@ Objects {
     Location {
       X: -8000
       Y: 3200.01611
-      Z: -800
+      Z: -799.5
     }
     Rotation {
       Pitch: 90
@@ -5573,7 +5939,7 @@ Objects {
     Location {
       X: -6399.99512
       Y: -4799.97607
-      Z: -800
+      Z: -799.5
     }
     Rotation {
       Pitch: 90
@@ -5631,7 +5997,7 @@ Objects {
     Location {
       X: 6399.98926
       Y: 4800.01563
-      Z: -800
+      Z: -799.5
     }
     Rotation {
       Pitch: 90
@@ -5690,7 +6056,7 @@ Objects {
     Location {
       X: 7999.9834
       Y: -3199.99902
-      Z: -800
+      Z: -799.5
     }
     Rotation {
       Pitch: 90
@@ -5748,7 +6114,7 @@ Objects {
     Location {
       X: -6400
       Y: 3200.00098
-      Z: -800
+      Z: -799.5
     }
     Rotation {
     }

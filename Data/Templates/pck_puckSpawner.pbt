@@ -151,7 +151,6 @@ Assets {
         Name: "geometry"
         Transform {
           Location {
-            Z: -24
           }
           Rotation {
           }

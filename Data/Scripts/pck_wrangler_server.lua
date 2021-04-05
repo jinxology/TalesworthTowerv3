@@ -103,17 +103,34 @@ function SmackEm(trigger, other)
         Events.BroadcastToAllPlayers("pck.triggerWrangler", script:GetReference(), other:GetWorldPosition())
 
         local   puck = other
-        local   velocity = other:GetVelocity()
-        local   surfaceNormal = (puck:GetWorldPosition() - trigger:GetWorldPosition()):GetNormalized()
+        local   velocity = puck:GetVelocity()
+        local   angular = puck:GetAngularVelocity()
+        local   puckXY = puck:GetWorldPosition()
+        local   triggerXY = trigger:GetWorldPosition()
+        
+        puckXY.z = 0
+        triggerXY.z = 0
 
-        surfaceNormal.z = 0
+        print("calculating normal from " .. tostring(triggerXY) .. " to " .. tostring(puckXY))
+        local   surfaceNormal = (puckXY - triggerXY)
+
+        print("bouncing from v = " .. tostring(velocity) .. " a = " .. tostring(angular))
+        surfaceNormal = surfaceNormal:GetNormalized()
+        print("surface normal = " .. tostring(surfaceNormal))
+
         if propWranglerKind == PUNCHER_KIND then
-            rebounded = velocity - (2 * velocity * surfaceNormal) * surfaceNormal + surfaceNormal * 1600
+            -- v = v - 2 * (v · n / n · n) n)
+            reboundedV = velocity - (2 * velocity .. surfaceNormal) * surfaceNormal + 400 * surfaceNormal
+            surfaceNormal = Rotation.New(0, 0, 90) * surfaceNormal
+            reboundedA = angular - (2 * angular .. surfaceNormal) * surfaceNormal
         elseif propWranglerKind == KICKER_KIND then
-            rebounded = velocity - surfaceNormal * 1600
+            reboundedV = velocity - surfaceNormal * 2000
+            reboundedA = angular - surfaceNormal * 60
         end
+        print("    to v = " .. tostring(reboundedV) .. " a = " .. tostring(reboundedA))
 
-        puck:SetVelocity(rebounded)
+        puck:SetVelocity(reboundedV)
+        puck:SetAngularVelocity(reboundedA)
 
         -- radius = puck:GetCustomProperty("controller"):WaitForObject().context.propRadius
         -- impactLocation = other:GetPosition() - surfaceNormal * radius - Vector3.UP * radius
@@ -136,4 +153,5 @@ elseif propWranglerKind == KICKER_KIND then
     propTrigger.beginOverlapEvent:Connect(CockFoot)
     propTrigger.endOverlapEvent:Connect(UncockFoot)
 end
+
 
