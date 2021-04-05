@@ -38,13 +38,17 @@ function Reset()
     -- end
 end
 
-function ExitActive(success)
+function ExitActive(success, playSound)
     propEntranceShooter.collision = Collision.FORCE_OFF
     propSucker1.collision = Collision.FORCE_ON
     propSucker2.collision = Collision.FORCE_ON
     propTeleportToFlume.collision = Collision.FORCE_ON
     propTornado.visibility = Visibility.FORCE_ON
-    World.SpawnAsset(propFlumeExitTornadoSound,{parent=script.parent,position=Vector3.New(200,0,0)})
+
+    if (playSound) then
+        World.SpawnAsset(propFlumeExitTornadoSound,{parent=script.parent,position=Vector3.New(200,0,0)})
+    end
+    
     propForcefield.visibility = Visibility.FORCE_OFF
     propForcefield.collision = Collision.FORCE_OFF
     propNoclip1.collision = Collision.FORCE_OFF

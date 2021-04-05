@@ -64,6 +64,16 @@ local roomDials = {	propRedRoom:FindDescendantByName("Color Dials Room Dial"),  
 					propYellowRoom:FindDescendantByName("Color Dials Room Dial")	
 }
 
+local hintTask = nil
+local hintDelay = 60 --Every x seconds give a hint
+local hintIndex = 1
+local hintData = {
+	"Seems like there is one more color on the dials than you have rooms...",
+	"Fine it's orange.  Now why would Orange be written in text and what could the color of that word mean?",
+	"*Sigh* You simpletons! The color of the word is the color of the room. The word is the dial setting.",
+	"You're not good at puzzles are you? Just get out of here."
+}
+
 --Randomize solutions for each room
 local function PickRandomDialSolutions()
 	--Rules for solutions
@@ -202,6 +212,16 @@ function GetHexColorValues(colorIn)
 	end
 end
 
+function SayHint()
+	Chat.BroadcastMessage("You hear a soft voice whisper..." .. hintData[hintIndex])
+	hintIndex = hintIndex + 1
+	if (hintIndex >= 5) then
+		hintTask:Cancel()
+		hintTask = nil
+		LevelVictory()
+	end
+end
+
 function LevelPowerUp() 
 	--Code that acutally executes
 	PickRandomDialSolutions()
@@ -211,13 +231,19 @@ end
 
 function LevelBegin()
 	SetSolutionsOnWalls()
+	hintTask = Task.Spawn(SayHint,hintDelay)
+	hintTask.repeatCount = -1
+	hintTask.repeatInterval = hintDelay
+	
 end
 
-function LevelEnd()
-
-end
 
 function LevelPowerDown() 
+	if (hintTask ~= nil) then
+		hintTask:Cancel()
+		hintTask = nil
+	end
+
 	if Object.IsValid(redWallText) then
 		redWallText:Destroy()
 	end
@@ -237,6 +263,10 @@ end
 
 function LevelVictory()
 	--Spin Dials and light up room
+	if (hintTask ~= nil) then
+		hintTask:Cancel()
+		hintTask = nil
+	end
 	propMainGameController.context.LevelEnd(true)
 end
 	

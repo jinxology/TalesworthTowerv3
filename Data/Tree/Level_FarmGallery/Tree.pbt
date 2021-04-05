@@ -14666,6 +14666,12 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:FarmGalleryMusic"
+      AssetReference {
+        Id: 6529832542402310151
+      }
+    }
+    Overrides {
       Name: "cs:HitCounts:isrep"
       Bool: true
     }

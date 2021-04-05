@@ -430,7 +430,7 @@ function SetTowerRunning(newVal)
         propTowerProgressBeacon2.visibility = Visibility.FORCE_ON
         --propTowerProgressSign.visibility = Visibility.FORCE_ON
 
-        lateComerScript.context.ExitActive(success)
+        lateComerScript.context.ExitActive(success, false)
     else
         propTxtTowerInProgress.text = "TOWER READY"
         propTxtTowerInProgressLine2.text = "EVERYTHING WILL BE FINE"
@@ -501,7 +501,7 @@ function LevelEnd(success)
         local levelControllerScript = GetCurrentLevelController()
         if levelControllerScript.context.exitFlume then
             local exitFlume = levelControllerScript.context.exitFlume:FindChildByName("Flume Tube Manager")
-            exitFlume.context.ExitActive(success)
+            exitFlume.context.ExitActive(success, true)
             
             --Setup entrance flume on next level
             if (nextLevelIndex ~= currentLevelIndex) then
@@ -656,7 +656,6 @@ function VictoryRoomEject()
     resetingTower = false
     SetTowerRunning(false)
     SpawnLevel1()
-
 end
 
 function EjectForTowerReset()    
@@ -667,7 +666,7 @@ function EjectForTowerReset()
 
     --loop through all levels and destroy them
     for i=1,#levelList do
-        Task.Spawn(function() DestroyLevel(currentLevelIndex) end)
+        DestroyLevel(currentLevelIndex)
     end
 
     levelRunning = false
