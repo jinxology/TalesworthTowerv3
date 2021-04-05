@@ -877,9 +877,9 @@ Objects {
   Name: "Pipe Ring"
   Transform {
     Location {
-      X: 183.800293
-      Y: 665.436523
-      Z: 2323.71094
+      X: 234.855042
+      Y: 690.147461
+      Z: 2324.71875
     }
     Rotation {
       Pitch: -30.7822266
@@ -1469,9 +1469,9 @@ Objects {
   Name: "Kiosk"
   Transform {
     Location {
-      X: -726.28064
-      Y: 829.306641
-      Z: 21.7077942
+      X: -588.214844
+      Y: 385.725098
+      Z: 21.7078552
     }
     Rotation {
       Yaw: 19.3260765

@@ -17,6 +17,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17234418054808417052
+  Name: "Bush 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bush_generic_001"
+  }
+}
+Assets {
   Id: 17064621874275756231
   Name: "Waterfall Straight"
   PlatformAssetType: 1
@@ -143,6 +152,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13181413363666234531
+  Name: "Dirt 01"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "dirt_001"
+  }
+}
+Assets {
   Id: 12946598305854582651
   Name: "Cube - Chamfered Large"
   PlatformAssetType: 1
@@ -188,12 +206,39 @@ Assets {
   }
 }
 Assets {
+  Id: 10119548269227204728
+  Name: "Sci-fi Trim 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_scifi_trim_001_4m"
+  }
+}
+Assets {
+  Id: 9710254850533348410
+  Name: "Bench Full"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_bench_001"
+  }
+}
+Assets {
   Id: 9627380735913518424
   Name: "Tree Redwood Big"
   PlatformAssetType: 1
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_tree_redwood_001"
+  }
+}
+Assets {
+  Id: 9268326332692138019
+  Name: "Sci-fi Trim 01 bend 90"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_scifi_trim_001_bend90"
   }
 }
 Assets {
@@ -287,6 +332,15 @@ Assets {
   }
 }
 Assets {
+  Id: 4835746281477147029
+  Name: "Wooden Barrel"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_barrel_001"
+  }
+}
+Assets {
   Id: 4640070354326659050
   Name: "Roboto Slab Black"
   PlatformAssetType: 28
@@ -314,6 +368,15 @@ Assets {
   }
 }
 Assets {
+  Id: 3822083789986655741
+  Name: "Flower Wild Lily 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_foliage_gen_flower_wild_lily_001_ref"
+  }
+}
+Assets {
   Id: 2261151074761971500
   Name: "Tree Redwood Medium"
   PlatformAssetType: 1
@@ -329,6 +392,24 @@ Assets {
   PrimaryAsset {
     AssetType: "VfxBlueprintAssetRef"
     AssetId: "fxbp_watersplash"
+  }
+}
+Assets {
+  Id: 2013026751667932281
+  Name: "Flower Bellflower Patch 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_foliage_gen_flower_bell_patch_001_ref"
+  }
+}
+Assets {
+  Id: 1498795800571910036
+  Name: "Cube - Polished"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_hq_test_001"
   }
 }
 Assets {
