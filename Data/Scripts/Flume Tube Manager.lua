@@ -2,12 +2,12 @@ local propEntranceShooter = script:GetCustomProperty("entranceShooter"):WaitForO
 local propSucker1 = script:GetCustomProperty("Sucker1"):WaitForObject()
 local propSucker2 = script:GetCustomProperty("Sucker2"):WaitForObject()
 local propTornado = script:GetCustomProperty("Tornado"):WaitForObject()
-local propWindSFX = script:GetCustomProperty("WindSFX"):WaitForObject()
 local propTeleportToFlume = script:GetCustomProperty("TeleportToFlume"):WaitForObject()
 local propForcefield = script:GetCustomProperty("Forcefield"):WaitForObject()
 local propFlumeEjector = script:GetCustomProperty("FlumeEjector"):WaitForObject()
 local propNoclip1 = script:GetCustomProperty("noclip1"):WaitForObject()
 local propNoclip2 = script:GetCustomProperty("noclip2"):WaitForObject()
+local propFlumeExitTornadoSound = script:GetCustomProperty("FlumeExitTornadoSound")
 
 
 --Pipe colors
@@ -26,7 +26,6 @@ function Reset()
     propSucker2.collision = Collision.FORCE_OFF
     propTeleportToFlume.collision = Collision.FORCE_OFF
     propTornado.visibility = Visibility.FORCE_OFF
-    propWindSFX:Stop()    
     propForcefield.visibility = Visibility.FORCE_ON
     propForcefield.collision = Collision.FORCE_ON
     propNoclip1.collision = Collision.FORCE_ON
@@ -45,7 +44,7 @@ function ExitActive(success)
     propSucker2.collision = Collision.FORCE_ON
     propTeleportToFlume.collision = Collision.FORCE_ON
     propTornado.visibility = Visibility.FORCE_ON
-    propWindSFX:Play()    
+    World.SpawnAsset(propFlumeExitTornadoSound,{parent=script.parent,position=Vector3.New(200,0,0)})
     propForcefield.visibility = Visibility.FORCE_OFF
     propForcefield.collision = Collision.FORCE_OFF
     propNoclip1.collision = Collision.FORCE_OFF
@@ -68,7 +67,6 @@ function EntranceActive(ejectionVelocity)
     propSucker2.collision = Collision.FORCE_OFF
     propTeleportToFlume.collision = Collision.FORCE_OFF
     propTornado.visibility = Visibility.FORCE_OFF
-    propWindSFX:Stop()    
     propForcefield.visibility = Visibility.FORCE_ON
     propForcefield.collision = Collision.FORCE_ON
     propNoclip1.collision = Collision.FORCE_ON

@@ -1,6 +1,77 @@
 Name: "Level_JumpMan"
 RootId: 9132562513265036101
 Objects {
+  Id: 8022174997637216370
+  Name: "ArchitectSign"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9132562513265036101
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 622252525570655390
+      value {
+        Overrides {
+          Name: "Text"
+          String: "Swampy"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.702636719
+            Y: 8.78527832
+            Z: 128.205078
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 13846951818635812732
+      value {
+        Overrides {
+          Name: "Name"
+          String: "ArchitectSign-jmp"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 6208.57227
+            Y: -827.367188
+            Z: -689.320313
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 90.8656387
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16102386394497442094
+    }
+  }
+}
+Objects {
   Id: 10429917104283011764
   Name: "OverlordTemplate"
   Transform {

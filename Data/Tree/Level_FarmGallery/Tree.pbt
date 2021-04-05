@@ -53,6 +53,59 @@ Objects {
   }
 }
 Objects {
+  Id: 16842592450274836851
+  Name: "ArcthitectSign"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9559405966006854558
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 13846951818635812732
+      value {
+        Overrides {
+          Name: "Name"
+          String: "ArchitectSign"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 2018.64746
+            Y: -1832.85681
+            Z: 89.7084961
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16102386394497442094
+    }
+  }
+}
+Objects {
   Id: 17599611845930976058
   Name: "Pig"
   Transform {

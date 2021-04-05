@@ -143,7 +143,7 @@ end
 
 function LevelBegin()
     --propMainGameController.context.StartTimer(propTimerSeconds, TimerEnded)
-    print ("lava begin")
+
     if (skipTo > 0) then
         propMainGameController.context.StartTimer(1, StartRaft)
     else 
