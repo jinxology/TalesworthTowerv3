@@ -34,6 +34,10 @@ propStabilizeTask = Task.Spawn(function()
     -- end
 
     -- propGeometry:SetWorldRotation(topUpAlways)
-    propGeometry:SetWorldRotation(Rotation.ZERO)
+    if propGeometry:IsValid() then
+        propGeometry:SetWorldRotation(Rotation.ZERO)
+    else
+        Task.GetCurrent():Cancel()
+    end
 end)
 propStabilizeTask.repeatCount = -1

@@ -23,6 +23,9 @@ local   propCrouchingMark = script:GetCustomProperty("crouchingMark"):WaitForObj
 local   propMountedMark = script:GetCustomProperty("mountedMark"):WaitForObject()
 local   propReelUI = script:GetCustomProperty("reelUI"):WaitForObject()
 local   propUnreelUI = script:GetCustomProperty("unreelUI"):WaitForObject()
+local   propBroadcastLabel = script:GetCustomProperty("broadcastLabel"):WaitForObject()
+local   propCurrentScoreLabel = script:GetCustomProperty("currentScoreLabel"):WaitForObject()
+local   propWinConditionLabel = script:GetCustomProperty("winConditionLabel"):WaitForObject()
 
 local   propT1Position = (propTensionUI.width / 2.0 + propT1Mark.x) / propTensionUI.width
 local   propStandingPosition = (propTensionUI.width / 2.0 + propStandingMark.x) / propTensionUI.width
@@ -324,6 +327,14 @@ function UpdateTension(tension)
     end
 end
 
+function SetWinCondition(winCondition)
+    propWinConditionLabel.text = "/" .. tostring(winCondition)
+end
+
+function SetCurrentScore(currentScore)
+    propCurrentScoreLabel.text = tostring(currentScore)
+end
+
 -- Initialize
 propEquipment.equippedEvent:Connect(OnEquipped)
 propEquipment.unequippedEvent:Connect(OnUnequipped)
@@ -337,8 +348,22 @@ propServer.networkedPropertyChangedEvent:Connect(function(coreObject, propertyNa
         AimAtPosition(coreObject:GetCustomProperty(propertyName))
     elseif propertyName == "tetheredState" then
         SetTetheredState(coreObject:GetCustomProperty(propertyName))
+    elseif propertyName == "winCondition" then
+        SetWinCondition(coreObject:GetCustomProperty(propertyName))
+    elseif propertyName == "currentScore" then
+        SetCurrentScore(coreObject:GetCustomProperty(propertyName))
     end
 end)
+
+SetWinCondition(propServer:GetCustomProperty("winCondition"))
+SetCurrentScore(propServer:GetCustomProperty("currentScore"))
+
+function OnBroadcast(text)
+    propBroadcastLabel.text = text
+end
+
+Events.Connect("pck.broadcast", OnBroadcast)
+
 
 -- place marks on tension bar
 
