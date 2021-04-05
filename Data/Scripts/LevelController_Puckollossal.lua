@@ -165,6 +165,7 @@ function LevelPowerUp()
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, -375, 50), rotation = Rotation.New(135, 90, 0), parent = script.parent }))
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, 375, 50), rotation = Rotation.New(-135, 90, 0), parent = script.parent }))
     for _, mugshot in pairs(propLiveMugshots) do
+        print("mugshot " .. mugshot.id)
         mugshot:GetCustomProperty("controller"):WaitForObject():SetNetworkedCustomProperty("currentScore", propCurrentScore)
         mugshot:GetCustomProperty("controller"):WaitForObject():SetNetworkedCustomProperty("winCondition", propWinCondition)
     end

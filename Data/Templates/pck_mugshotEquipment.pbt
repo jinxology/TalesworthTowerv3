@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1232579912354001357
+        ParentId: 4781671109827199097
         ChildIds: 16499993128992971694
         ChildIds: 8282285858322498775
         ChildIds: 9169255255245069283
@@ -1747,7 +1747,6 @@ Assets {
               B: 1
               A: 0.8
             }
-            Percent: 0.498435199
           }
           AnchorLayout {
             SelfAnchor {
@@ -1839,7 +1838,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1896,7 +1895,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1953,7 +1952,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2010,7 +2009,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"

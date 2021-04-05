@@ -39,7 +39,7 @@ function OnBeginOverlap(whichTrigger, other)
 		local physics = other
 		local balloon = physics.serverUserData.balloon
 		
-		if balloon ~= nil then
+		if balloon ~= nil and balloon:IsValid() then
 			local boppedBy = balloon.context.lastBoppedBy
 			local bnpColor = balloon.context.bnpColor
 			local spawner = balloon.context.spawnedBy

@@ -47,7 +47,9 @@ function PopAtPosition(position)
 	script:SetNetworkedCustomProperty("popPosition", position)
 print("Pop vfx at " .. tostring(position))
 	Task.Spawn(function()
-		script:Destroy()
+		if script:IsValid() then
+			script:Destroy()
+		end
 	end, 5)
 end
 
