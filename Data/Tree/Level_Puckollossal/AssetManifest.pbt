@@ -1,4 +1,13 @@
 Assets {
+  Id: 18267532276652392629
+  Name: "Urban Cinderblock Debris 04"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urban_destruction_debris_cinderblock_04_ref"
+  }
+}
+Assets {
   Id: 18090923064748491298
   Name: "Rock Pile 002"
   PlatformAssetType: 1
@@ -17,6 +26,15 @@ Assets {
   }
 }
 Assets {
+  Id: 17852403719818990289
+  Name: "Helix - 0.25"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_helix_002"
+  }
+}
+Assets {
   Id: 17788889273874535271
   Name: "Bone Human Humerus 01"
   PlatformAssetType: 1
@@ -32,6 +50,24 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_grass_001_uv"
+  }
+}
+Assets {
+  Id: 17163811851424513082
+  Name: "Urban Cinderblock Debris 03"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urban_destruction_debris_cinderblock_03_ref"
+  }
+}
+Assets {
+  Id: 17142452104482325448
+  Name: "Girder Medium Angled"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_urb_dtn_angle_girder_001_ref"
   }
 }
 Assets {
@@ -59,6 +95,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_plane_4m_002"
+  }
+}
+Assets {
+  Id: 15472646885137813607
+  Name: "Girder Small 4m"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_girder_19th_century_4m_001"
   }
 }
 Assets {
@@ -107,6 +152,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13932786966417276908
+  Name: "Skull and  Bones 02"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_fan_ground_skulls_001_uv"
+  }
+}
+Assets {
   Id: 13710161915374590549
   Name: "Rock 03"
   PlatformAssetType: 1
@@ -134,12 +188,30 @@ Assets {
   }
 }
 Assets {
+  Id: 13186559371766649562
+  Name: "Large Girder 8m x 6m"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_wall_girder_large_8m_001"
+  }
+}
+Assets {
   Id: 13181413363666234531
   Name: "Dirt 01"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "dirt_001"
+  }
+}
+Assets {
+  Id: 12960018152193391261
+  Name: "Urban Damaged Rebar Twisted Ends 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_urb_dest_rebar_004_ref"
   }
 }
 Assets {
@@ -176,6 +248,24 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_bones_human_femur_01_ref"
+  }
+}
+Assets {
+  Id: 11802756401346630999
+  Name: "Urban Cinderblock Debris 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urban_destruction_debris_cinderblock_02_ref"
+  }
+}
+Assets {
+  Id: 11618139354486459418
+  Name: "Stone Block Big Broken"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_fantasy_block_broken_04"
   }
 }
 Assets {
@@ -269,6 +359,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7538326655654489063
+  Name: "Stone Block Small"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_fantasy_block_02"
+  }
+}
+Assets {
   Id: 7364480474576366061
   Name: "Main Street Trim 04 Corner"
   PlatformAssetType: 1
@@ -332,6 +431,15 @@ Assets {
   }
 }
 Assets {
+  Id: 5770722494384530191
+  Name: "Urban Damaged Rebar Lattice 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_urb_dtn_mlt_rebar_001_ref"
+  }
+}
+Assets {
   Id: 5711247199587316769
   Name: "Urban Fence Pole - Extender Connecting"
   PlatformAssetType: 1
@@ -365,6 +473,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_weapons_grenade_handle_001"
+  }
+}
+Assets {
+  Id: 5413886523775614888
+  Name: "Helix - 1.0"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_helix_005"
   }
 }
 Assets {
@@ -413,12 +530,30 @@ Assets {
   }
 }
 Assets {
+  Id: 3090596827184957478
+  Name: "Rope"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_rope_001"
+  }
+}
+Assets {
   Id: 3086929587923392091
   Name: "Terrain - Grass Cliffs"
   PlatformAssetType: 2
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_terrain_cliff-grass-001_wa"
+  }
+}
+Assets {
+  Id: 2841779215979196626
+  Name: "Urban Cinderblock Debris 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_prop_urban_destruction_debris_cinderblock_01_ref"
   }
 }
 Assets {
@@ -482,6 +617,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_rock_generic_004"
+  }
+}
+Assets {
+  Id: 369956926152119053
+  Name: "Urban Damaged Rebar - Single 4m"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_urb_dest_rebar_005_ref"
   }
 }
 Assets {
