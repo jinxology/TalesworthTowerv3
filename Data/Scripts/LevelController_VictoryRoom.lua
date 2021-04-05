@@ -62,7 +62,7 @@ end
 function OnEnterVictoryRoom(whichTrigger, other)
 	if other:IsA("Player") then
         local player = other
-        Task.Spawn(function() ConfettiAndVictory(other) end,.6)
+        Task.Spawn(function() ConfettiAndVictory(other) end,1)
 
         if (ejectTimerRunning == false) then
             ejectTimerRunning = true
@@ -72,6 +72,7 @@ function OnEnterVictoryRoom(whichTrigger, other)
         playersEntered = playersEntered + 1
 
         if (playersEntered == totalPlayers) then
+            propMainGameController.context.StartingPlatformsActivated()
             autoOpenFloorTask:Cancel()
             autoOpenFloorTask = Task.Spawn(AutoOpenFloor, pauseWhenEveryoneIn)
         end

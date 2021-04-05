@@ -1,13 +1,120 @@
 Name: "Leaderboards"
 RootId: 4730072165687955230
 Objects {
-  Id: 591768873793411686
-  Name: "Monthly"
+  Id: 5238114729012109560
+  Name: "LeadboardTemplate"
   Transform {
     Location {
-      X: -692.724304
-      Y: 61.7008476
-      Z: -70.0984955
+      X: -776.568115
+      Y: -7982.81641
+      Z: -70.0986481
+    }
+    Rotation {
+      Yaw: 71.8733902
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4730072165687955230
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 2263002480838854525
+      value {
+        Overrides {
+          Name: "Name"
+          String: "txtScoresDaily2"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 2882658670916355020
+      value {
+        Overrides {
+          Name: "Name"
+          String: "txtNamesDaily2"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 2883786880719529838
+      value {
+        Overrides {
+          Name: "Text"
+          String: "FASTEST TIMES - DAILY"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 3403326017192316368
+      value {
+        Overrides {
+          Name: "Name"
+          String: "txtNamesDaily"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 16875040930934377915
+      value {
+        Overrides {
+          Name: "Name"
+          String: "DailyLeaderboard"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 1028.02307
+            Y: -2.87597656
+            Z: -41.8575287
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 133.045319
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 17199164719493250228
+      value {
+        Overrides {
+          Name: "Name"
+          String: "txtScoresDaily"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4398772671886770510
+    }
+  }
+}
+Objects {
+  Id: 14129326561960366692
+  Name: "LeadboardTemplate"
+  Transform {
+    Location {
+      X: -1539.42456
+      Y: -7677.6084
+      Z: -70.0986481
     }
     Rotation {
     }
@@ -18,365 +125,136 @@ Objects {
     }
   }
   ParentId: 4730072165687955230
-  ChildIds: 17950649158144939024
-  ChildIds: 3226910699214164163
-  ChildIds: 8982882466231448242
-  ChildIds: 17477911635149268596
-  ChildIds: 8469954441076943273
-  ChildIds: 14451115115392246272
-  ChildIds: 2854468165096738725
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-}
-Objects {
-  Id: 2854468165096738725
-  Name: "World Text"
-  Transform {
-    Location {
-      X: 83.5405273
-      Y: 204.485352
-      Z: 533.295898
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 2263002480838854525
+      value {
+        Overrides {
+          Name: "Name"
+          String: "txtScoresWeekly2"
+        }
+      }
     }
-    Rotation {
+    ParameterOverrideMap {
+      key: 2882658670916355020
+      value {
+        Overrides {
+          Name: "Name"
+          String: "txtNamesWeekly2"
+        }
+      }
     }
-    Scale {
-      X: 1.26507103
-      Y: 1.26507103
-      Z: 1.26507103
+    ParameterOverrideMap {
+      key: 2883786880719529838
+      value {
+        Overrides {
+          Name: "Text"
+          String: "FASTEST TIMES - WEEKLY"
+        }
+      }
     }
-  }
-  ParentId: 591768873793411686
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Text {
-    Text: "names list here"
-    FontAsset {
+    ParameterOverrideMap {
+      key: 3403326017192316368
+      value {
+        Overrides {
+          Name: "Name"
+          String: "txtNamesWeekly"
+        }
+      }
     }
-    Color {
-      R: 1
-      G: 1
-      B: 1
-      A: 1
+    ParameterOverrideMap {
+      key: 16875040930934377915
+      value {
+        Overrides {
+          Name: "Name"
+          String: "WeeklyLeadboard"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -98.1281738
+            Y: -354.674805
+            Z: -46.5131073
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 72.4679184
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
     }
-    HorizontalSize: 1
-    VerticalSize: 1
-    HorizontalAlignment {
-      Value: "mc:ecoretexthorizontalalign:left"
+    ParameterOverrideMap {
+      key: 17199164719493250228
+      value {
+        Overrides {
+          Name: "Name"
+          String: "txtScoresWeekly"
+        }
+      }
     }
-    VerticalAlignment {
-      Value: "mc:ecoretextverticalalign:center"
-    }
-  }
-}
-Objects {
-  Id: 14451115115392246272
-  Name: "World Text"
-  Transform {
-    Location {
-      X: 83.5405273
-      Y: -3.11962891
-      Z: 594.225342
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.26507103
-      Y: 1.26507103
-      Z: 1.26507103
-    }
-  }
-  ParentId: 591768873793411686
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Text {
-    Text: "FASTEST TIMES - MONTHLY"
-    FontAsset {
-    }
-    Color {
-      G: 0.369933665
-      B: 0.419999957
-      A: 1
-    }
-    HorizontalSize: 1
-    VerticalSize: 1
-    HorizontalAlignment {
-      Value: "mc:ecoretexthorizontalalign:center"
-    }
-    VerticalAlignment {
-      Value: "mc:ecoretextverticalalign:center"
+    TemplateAsset {
+      Id: 4398772671886770510
     }
   }
 }
 Objects {
-  Id: 8469954441076943273
-  Name: "Grass Tall"
+  Id: 6798987040889402598
+  Name: "GlobalLeaderboard"
   Transform {
-    Location {
-      X: -18.6312256
-      Y: -370.679688
-      Z: -25.0351715
-    }
-    Rotation {
-      Pitch: -1.40630174
-      Yaw: 35.731945
-      Roll: -4.6106596
-    }
     Scale {
       X: 1
       Y: 1
       Z: 1
     }
   }
-  ParentId: 591768873793411686
+  ParentId: 4730072165687955230
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 16093879588982263747
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16875040930934377915
+      value {
+        Overrides {
+          Name: "Name"
+          String: "GlobalLeaderboard"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -625.841309
+            Y: 627.732422
+            Z: -31.457962
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
       }
     }
-  }
-}
-Objects {
-  Id: 17477911635149268596
-  Name: "Grass Tall"
-  Transform {
-    Location {
-      X: -72.439209
-      Y: 135.677734
-      Z: 17.6885529
-    }
-    Rotation {
-      Pitch: -1.40630174
-      Yaw: 35.731945
-      Roll: -4.6106596
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 591768873793411686
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 16093879588982263747
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 8982882466231448242
-  Name: "Post"
-  Transform {
-    Location {
-      X: 68.7791748
-      Y: -251.010254
-      Z: 39.710434
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.283239782
-      Y: 0.36829102
-      Z: 6.21503115
-    }
-  }
-  ParentId: 591768873793411686
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 15223136418523129893
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 10789546840193366307
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 3226910699214164163
-  Name: "Post"
-  Transform {
-    Location {
-      X: 68.7791748
-      Y: 244.848145
-      Z: 39.710434
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.283239782
-      Y: 0.36829102
-      Z: 6.21503115
-    }
-  }
-  ParentId: 591768873793411686
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 15223136418523129893
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 10789546840193366307
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
-  Id: 17950649158144939024
-  Name: "LeaderboardBack"
-  Transform {
-    Location {
-      X: 69.1334229
-      Y: -5.42285156
-      Z: 395.37439
-    }
-    Rotation {
-    }
-    Scale {
-      X: 0.172790542
-      Y: 4.91035366
-      Z: 4.86605883
-    }
-  }
-  ParentId: 591768873793411686
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:id"
-      AssetReference {
-        Id: 3875604437344827243
-      }
-    }
-    Overrides {
-      Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 1498795800571910036
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
+    TemplateAsset {
+      Id: 4398772671886770510
     }
   }
 }
@@ -403,6 +281,114 @@ Objects {
         Type {
           Value: "mc:enetreferencetype:leaderboard"
         }
+      }
+    }
+    Overrides {
+      Name: "cs:txtNamesGlobal"
+      ObjectReference {
+        SelfId: 14089931574301497184
+        SubObjectId: 3403326017192316368
+        InstanceId: 6798987040889402598
+        TemplateId: 4398772671886770510
+      }
+    }
+    Overrides {
+      Name: "cs:txtScoresGlobal"
+      ObjectReference {
+        SelfId: 152491034327754244
+        SubObjectId: 17199164719493250228
+        InstanceId: 6798987040889402598
+        TemplateId: 4398772671886770510
+      }
+    }
+    Overrides {
+      Name: "cs:txtNamesWeekly"
+      ObjectReference {
+        SelfId: 18309552097525415541
+        SubObjectId: 3403326017192316368
+        InstanceId: 14129326561960366692
+        TemplateId: 4398772671886770510
+      }
+    }
+    Overrides {
+      Name: "cs:txtScoresWeekly"
+      ObjectReference {
+        SelfId: 4579078125123931921
+        SubObjectId: 17199164719493250228
+        InstanceId: 14129326561960366692
+        TemplateId: 4398772671886770510
+      }
+    }
+    Overrides {
+      Name: "cs:txtNamesDaily"
+      ObjectReference {
+        SelfId: 14751868248633264199
+        SubObjectId: 3403326017192316368
+        InstanceId: 5238114729012109560
+        TemplateId: 4398772671886770510
+      }
+    }
+    Overrides {
+      Name: "cs:txtScoresDaily"
+      ObjectReference {
+        SelfId: 949579850222598435
+        SubObjectId: 17199164719493250228
+        InstanceId: 5238114729012109560
+        TemplateId: 4398772671886770510
+      }
+    }
+    Overrides {
+      Name: "cs:txtNamesGlobal2"
+      ObjectReference {
+        SelfId: 14173732030288861564
+        SubObjectId: 2882658670916355020
+        InstanceId: 6798987040889402598
+        TemplateId: 4398772671886770510
+      }
+    }
+    Overrides {
+      Name: "cs:txtScoresGlobal2"
+      ObjectReference {
+        SelfId: 17570151979208973773
+        SubObjectId: 2263002480838854525
+        InstanceId: 6798987040889402598
+        TemplateId: 4398772671886770510
+      }
+    }
+    Overrides {
+      Name: "cs:txtNamesWeekly2"
+      ObjectReference {
+        SelfId: 17952140506313928809
+        SubObjectId: 2882658670916355020
+        InstanceId: 14129326561960366692
+        TemplateId: 4398772671886770510
+      }
+    }
+    Overrides {
+      Name: "cs:txtScoresWeekly2"
+      ObjectReference {
+        SelfId: 14863108715546883288
+        SubObjectId: 2263002480838854525
+        InstanceId: 14129326561960366692
+        TemplateId: 4398772671886770510
+      }
+    }
+    Overrides {
+      Name: "cs:txtNamesDaily2"
+      ObjectReference {
+        SelfId: 14664672776390624859
+        SubObjectId: 2882658670916355020
+        InstanceId: 5238114729012109560
+        TemplateId: 4398772671886770510
+      }
+    }
+    Overrides {
+      Name: "cs:txtScoresDaily2"
+      ObjectReference {
+        SelfId: 18223231211756307178
+        SubObjectId: 2263002480838854525
+        InstanceId: 5238114729012109560
+        TemplateId: 4398772671886770510
       }
     }
   }

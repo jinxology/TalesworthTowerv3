@@ -4,6 +4,7 @@ local propSpeed = script:GetCustomProperty("speed"):WaitForObject()
 local propMaxSpeed = script:GetCustomProperty("maxSpeed"):WaitForObject()
 local propLevelControllerLazyLava = script:GetCustomProperty("LevelControllerLazyLava"):WaitForObject()
 local propTxtGetToRaft = script:GetCustomProperty("txtGetToRaft"):WaitForObject()
+local propTxtGetToRaftTime = script:GetCustomProperty("txtGetToRaftTime"):WaitForObject()
 
 
 local showingMe = false
@@ -39,19 +40,33 @@ function SetUIData(pts,ptsMax,speed,speedMax)
     SetMaxSpeed(speedMax)
 end
 
+raftHandlerTask = nil
 function GetToRaftHandler(timeLeft)
-    if (timeLeft == -1) then
+    --if (raftHandlerTask ~= nil) then raftHandlerTask:Cancel() end
+    
+    if (timeLeft <= 0) then
         --hide UI
         propTxtGetToRaft.visibility = Visibility.FORCE_OFF
+        propTxtGetToRaftTime.visibility = Visibility.FORCE_OFF
+
+        --if (raftHandlerTask ~= nil) then raftHandlerTask:Cancel() end
     else
         --show UI
-        propTxtGetToRaft.visibility = Visibility.FORCE_ON
+        propTxtGetToRaft.visibility = Visibility.FORCE_ON   
+        propTxtGetToRaftTime.visibility = Visibility.FORCE_ON
+
+        UpdateGetToRaftTime(timeLeft)
+        raftHandlerTask = Task.Spawn(function() GetToRaftHandler(timeLeft-1) end,1)
     end
 end
 
+function UpdateGetToRaftTime(t)
+    propTxtGetToRaftTime.text = "DISEMBARK IN " .. string.format("%02d",t) .. " SECONDS"
+end
+
 function IncomingUIMessage(coreObject, propertyName)
-    
     local msg = propLevelControllerLazyLava:GetCustomProperty(propertyName)
+
     --print ("LazyLava UI Msg: "..msg)
     local msgParams = {CoreString.Split(msg,",")}
 
@@ -60,8 +75,14 @@ function IncomingUIMessage(coreObject, propertyName)
     end
 end
 
+function HideAllUI()
+    showingMe = false
+    ToggleLazyLavaUIVisibility()
+end
+
 propLevelControllerLazyLava.networkedPropertyChangedEvent:Connect(IncomingUIMessage)
 Events.Connect("GetToRaft", GetToRaftHandler)
+Events.Connect("HideAllUI", HideAllUI)
 
 ToggleLazyLavaUIVisibility()
 

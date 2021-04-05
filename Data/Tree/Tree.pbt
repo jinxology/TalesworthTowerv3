@@ -2256,7 +2256,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Control {
-    Width: 169
+    Width: 292
     Height: 34
     UIX: 4.02344751
     UIY: 33.1859131
@@ -5364,6 +5364,12 @@ Objects {
         Type {
           Value: "mc:enetreferencetype:leaderboard"
         }
+      }
+    }
+    Overrides {
+      Name: "cs:LeaderboardController"
+      ObjectReference {
+        SelfId: 16711662439628477346
       }
     }
     Overrides {

@@ -1,53 +1,6 @@
 Name: "Level_VictoryRoom"
 RootId: 8293299003659691482
 Objects {
-  Id: 1334729668364250636
-  Name: "txtshortcut"
-  Transform {
-    Location {
-      X: -758.920837
-      Y: -450.254761
-      Z: 191.831055
-    }
-    Rotation {
-    }
-    Scale {
-      X: 3.83793783
-      Y: 3.83793783
-      Z: 3.83793783
-    }
-  }
-  ParentId: 8293299003659691482
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Text {
-    Text: "PRESS J FOR LOBBY SHORTCUT"
-    FontAsset {
-    }
-    Color {
-      R: 0.160000011
-      G: 0.110534869
-      B: 0.0303359814
-      A: 1
-    }
-    HorizontalSize: 1
-    VerticalSize: 1
-    HorizontalAlignment {
-      Value: "mc:ecoretexthorizontalalign:center"
-    }
-    VerticalAlignment {
-      Value: "mc:ecoretextverticalalign:center"
-    }
-  }
-}
-Objects {
   Id: 14142069618680271466
   Name: "telelportInLoc"
   Transform {

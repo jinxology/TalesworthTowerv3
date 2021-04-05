@@ -27,13 +27,13 @@ levelList = {
     "ShapesAndButtons",
     "FarmGallery",
     "BopAndPop",
-    "JumpMan",     
+    "JumpMan",      
     "ColorDials",
     "BlockAndEscape",
     "GobbleDots",
     "Puckollossal",
     "LazyLava",
-    "VictoryRoom"
+    "VictoryRoom"    
 }
 currentLevelIndex = 1
 requiredNbrPlayersReady = 4
