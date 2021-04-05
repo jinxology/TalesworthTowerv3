@@ -190,14 +190,15 @@ Objects {
   Transform {
     Location {
       X: 0.00048828125
+      Y: 388.722656
       Z: 25
     }
     Rotation {
     }
     Scale {
-      X: 0.520408034
-      Y: 0.520408034
-      Z: 0.520408034
+      X: 0.63156724
+      Y: 0.63156724
+      Z: 0.63156724
     }
   }
   ParentId: 18053618853963130164
@@ -216,8 +217,9 @@ Objects {
     }
     AutoPlay: true
     Volume: 0.623069286
-    Falloff: 603.709839
-    Radius: 1294.27942
+    Falloff: 100
+    Radius: 4768.03418
+    EnableOcclusion: true
     IsAttenuationEnabled: true
   }
 }

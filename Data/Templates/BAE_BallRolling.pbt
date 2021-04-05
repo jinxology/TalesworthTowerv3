@@ -1,13 +1,13 @@
 Assets {
-  Id: 5573949800779384139
-  Name: "ColorDials Metal Scraping"
+  Id: 8112246739623668801
+  Name: "BAE_BallRolling"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 15697950876668757961
+      RootId: 4693486320397227927
       Objects {
-        Id: 15697950876668757961
-        Name: "ColorDials Metal Scraping"
+        Id: 4693486320397227927
+        Name: "BAE_BallRolling"
         Transform {
           Scale {
             X: 1
@@ -15,8 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5669723044310532949
-        Lifespan: 0.5
+        ParentId: 13310647076426687416
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -29,25 +28,24 @@ Assets {
         }
         AudioInstance {
           AudioAsset {
-            Id: 6948323657275883420
+            Id: 16310560662670429791
           }
-          Transient: true
-          Volume: 1
+          AutoPlay: true
+          Pitch: -250
+          Volume: 0.158063039
           Falloff: -1
           Radius: -1
-          EnableOcclusion: true
           IsSpatializationEnabled: true
-          IsAttenuationEnabled: true
         }
       }
     }
     Assets {
-      Id: 6948323657275883420
-      Name: "Metal Scraping on Concrete Surface Floor Loop 01 SFX"
+      Id: 16310560662670429791
+      Name: "Material Rolling Movement Glass Jar Loop 01 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
-        AssetId: "sfx_metal_scraping_on_concrete_surface_loop_01_Cue_ref"
+        AssetId: "sfx_material_rolling_movement_glass_jar_loop_01_Cue_ref"
       }
     }
     PrimaryAssetId {

@@ -6,6 +6,10 @@ local propLevel1autostartTrigger = script:GetCustomProperty("level1autostartTrig
 local propTxtTowerInProgress = script:GetCustomProperty("txtTowerInProgress"):WaitForObject()
 local propTowerProgressSign = script:GetCustomProperty("TowerProgressSign"):WaitForObject()
 local propTowerEjectStartPoint = script:GetCustomProperty("TowerEjectStartPoint"):WaitForObject()
+local propLatecomerFlume = script:GetCustomProperty("LatecomerFlume"):WaitForObject()
+local propTxtTowerInProgressLine2 = script:GetCustomProperty("txtTowerInProgressLine2"):WaitForObject()
+local propTowerProgressBeacon1 = script:GetCustomProperty("TowerProgressBeacon1"):WaitForObject()
+local propTowerProgressBeacon2 = script:GetCustomProperty("TowerProgressBeacon2"):WaitForObject()
 
 
 --Generic top-center timer
@@ -69,6 +73,9 @@ function OnBindingPressed(player, bindingPressed)
         --I
         local ctrl = GetCurrentLevelController()
         ctrl.context.LevelFailed()
+    elseif (bindingPressed == "ability_extra_28" and devMode) then
+        --O
+        Game.GetPlayers()[1]:SetWorldPosition(Vector3.New(-74,-4563,107))
     end
 end    
 
@@ -83,7 +90,7 @@ function RemoveAllWeapons()
         for _, myEquipmentObject in pairs(player:GetEquipment()) do
             myEquipmentObject:Unequip()
             if (Object.IsValid(myEquipmentObject)) then myEquipmentObject:Destroy() end
-            other.animationStance = "unarmed_stance"
+            player.animationStance = "unarmed_stance"
         end
     end
 end
@@ -91,15 +98,18 @@ end
 
 function TeleportAllPlayers(currentLev, newLoc, useFlume)
     DestroyLevel(currentLevelIndex)
+
     if (nextLevelIndex ~= nil) then
-        Task.Spawn(function() DestroyLevel(nextLevelIndex) end)
+        --Task.Spawn(function() DestroyLevel(nextLevelIndex) end)
+        DestroyLevel(nextLevelIndex)
     end
+
     levelRunning = false
     ClearTimer()
 
     currentLevelIndex = currentLev
-    nextLevelindex = nil
-    
+    nextLevelIndex = nil
+
     RemoveAllWeapons()
 
     levelControllerScript = GetCurrentLevelController()
@@ -122,6 +132,12 @@ function TeleportAllPlayers(currentLev, newLoc, useFlume)
     end
 end
     
+function OnResetPlayerLocations(loc)
+    local players = Game.GetPlayers()
+    for _, player in pairs(players) do
+        player:SetWorldPosition(loc)
+    end    
+end
 
 function SpawnLevelBeacons(success, lifespan)
     local ctrl = GetCurrentLevelController()
@@ -203,11 +219,12 @@ function PlaceFlume(levelIndex, isEntrance, in_position, in_rotation)
     flume:SetRotation(in_rotation)
     
     local mgrScript = flume:FindChildByName("Flume Tube Manager")    
-    --if (isEntrance == true) then
-      --  mgrScript.context.EntranceActive(mgrScript.context.entranceFlumeEjectionVelocity)
-    --else
+
+    if (isEntrance == true) then        
+        mgrScript.context.EntranceActive(GetLevelControllerByLevelIndex(levelIndex).context.entranceFlumeEjectionVelocity)
+    else
         mgrScript.context.Reset()
-    --end
+    end
     
     return flume
 end
@@ -350,6 +367,7 @@ end
 function StartingPlatformsActivated()
     if (not levelRunning and not resetingTower) then
         if (nextLevelIndex ~= nil) then        
+            print ("368")
             --Coming from a different level
             Task.Spawn(function() DestroyLevel(currentLevelIndex) end)
             currentLevelIndex = nextLevelIndex
@@ -363,15 +381,17 @@ function StartingPlatformsActivated()
 end
 
 function StartingPlatformsOccupied(nbrReady)
-    if (nbrReady > 0) then
-        if (not autostartTimerActive) then
-            totalAutostartTime = autostartSeconds
-            autostartTimerActive = true
-            script:SetNetworkedCustomProperty("autostartTimerState","true,"..totalAutostartTime..","..autostartSeconds)
+    if (currentLevelIndex == 1 and nextLevelIndex == nil) then
+        if (nbrReady > 0) then
+            if (not autostartTimerActive) then
+                totalAutostartTime = autostartSeconds
+                autostartTimerActive = true
+                script:SetNetworkedCustomProperty("autostartTimerState","true,"..totalAutostartTime..","..autostartSeconds)
+            end
+        else
+            autostartTimerActive = false
+            script:SetNetworkedCustomProperty("autostartTimerState","false,")
         end
-    else
-        autostartTimerActive = false
-        script:SetNetworkedCustomProperty("autostartTimerState","false,")
     end
 end
 
@@ -395,12 +415,35 @@ end
 function SetTowerRunning(newVal)
     towerRunning = newVal
 
+    local lateComerScript = propLatecomerFlume:FindChildByName("Flume Tube Manager")
+    -- local propTxtTowerInProgressLine2 = script:GetCustomProperty("txtTowerInProgressLine2"):WaitForObject()
+    -- local propTowerProgressBeacon1 = script:GetCustomProperty("TowerProgressBeacon1"):WaitForObject()
+    -- local propTowerProgressBeacon2 = script:GetCustomProperty("TowerProgressBeacon2"):WaitForObject()
+    
     if (towerRunning) then
-        propTxtTowerInProgress.text = "Tower In Progress"
-        propTowerProgressSign.visibility = Visibility.FORCE_ON
+        propTxtTowerInProgress.text = "TOWER IN PROGRESS"
+        propTxtTowerInProgressLine2.text = "ENTER TOWER TO JOIN TEAM"
+        propTowerProgressBeacon1.visibility = Visibility.FORCE_ON
+        propTowerProgressBeacon2.visibility = Visibility.FORCE_ON
+        --propTowerProgressSign.visibility = Visibility.FORCE_ON
+
+        lateComerScript.context.ExitActive(success)
     else
-        propTxtTowerInProgress.text = ""
-        propTowerProgressSign.visibility = Visibility.FORCE_OFF
+        propTxtTowerInProgress.text = "TOWER READY"
+        propTxtTowerInProgressLine2.text = "EVERYTHING WILL BE FINE"
+        propTowerProgressBeacon1.visibility = Visibility.FORCE_OFF
+        propTowerProgressBeacon2.visibility = Visibility.FORCE_OFF
+        --propTowerProgressSign.visibility = Visibility.FORCE_OFF
+
+        lateComerScript.context.Reset()
+    end
+end
+
+function GetRequiredNbrPlayersReady()
+    if (currentLevelIndex == 1 and nextLevelIndex == nil) then
+        return 4
+    else
+        return #Game.GetPlayers()
     end
 end
 
@@ -408,7 +451,7 @@ function LevelBegin()
     if (not towerRunning) then
         SetTowerRunning(true)
         
-        if (currentLevelIndex == 1) then
+        if (currentLevelIndex == 1 and nextLevelindex == nil) then
             for _, player in pairs(Game.GetPlayers()) do
                 if (not propLevel1autostartTrigger:IsOverlapping(player)) then
                     player:SetWorldPosition(Vector3.New(124,-1451,135))
@@ -600,7 +643,7 @@ function VictoryRoomEject()
     ClearTimer()
 
     currentLevelIndex = 1
-    nextLevelindex = nil    
+    nextLevelIndex = nil    
 
     --loop through all levels and destroy them
     for i=1,#levelList do
@@ -628,7 +671,7 @@ function EjectForTowerReset()
     ClearTimer()
 
     currentLevelIndex = 1
-    nextLevelindex = nil    
+    nextLevelIndex = nil    
 
     local startLoc = propTowerEjectStartPoint:GetWorldPosition()
     for _, player in pairs(Game.GetPlayers()) do
@@ -693,6 +736,7 @@ Events.Connect("TeleportAllPlayers", TeleportAllPlayers)
 Events.Connect("SetRequiredStartPlatforms", SetRequiredStartPlatforms)
 Events.Connect("GeneralClientToServerMessage", GeneralClientToServerMessageHandler)
 Events.Connect("VoteForReset", ResetVoteHandler)
+Events.Connect("ResetPlayerLocations", OnResetPlayerLocations)
 
 function SpawnLevel1()
     --fire up first level

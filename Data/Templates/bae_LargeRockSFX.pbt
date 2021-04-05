@@ -1,13 +1,13 @@
 Assets {
-  Id: 5573949800779384139
-  Name: "ColorDials Metal Scraping"
+  Id: 1210763962029564555
+  Name: "bae_LargeRockSFX"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 15697950876668757961
+      RootId: 2424424488814444930
       Objects {
-        Id: 15697950876668757961
-        Name: "ColorDials Metal Scraping"
+        Id: 2424424488814444930
+        Name: "bae_LargeRockSFX"
         Transform {
           Scale {
             X: 1
@@ -15,8 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5669723044310532949
-        Lifespan: 0.5
+        ParentId: 7175841995601495478
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -29,11 +28,11 @@ Assets {
         }
         AudioInstance {
           AudioAsset {
-            Id: 6948323657275883420
+            Id: 5322903040583623782
           }
           Transient: true
-          Volume: 1
-          Falloff: -1
+          Volume: 0.567785501
+          Falloff: 5000
           Radius: -1
           EnableOcclusion: true
           IsSpatializationEnabled: true
@@ -42,12 +41,12 @@ Assets {
       }
     }
     Assets {
-      Id: 6948323657275883420
-      Name: "Metal Scraping on Concrete Surface Floor Loop 01 SFX"
+      Id: 5322903040583623782
+      Name: "Material Rolling Movement Rock Large Slow 01 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
-        AssetId: "sfx_metal_scraping_on_concrete_surface_loop_01_Cue_ref"
+        AssetId: "sfx_material_rolling_movement_rock_large_slow_01_Cue_ref"
       }
     }
     PrimaryAssetId {

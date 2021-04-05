@@ -19,6 +19,7 @@ local propBtnLazyLava = script:GetCustomProperty("btnLazyLava"):WaitForObject()
 local propBtnFlumeMe = script:GetCustomProperty("btnFlumeMe"):WaitForObject()
 local propTxtFlumeMe = script:GetCustomProperty("txtFlumeMe"):WaitForObject()
 local propBtnVictory = script:GetCustomProperty("btnVictory"):WaitForObject()
+local propBtnShapesAndButtons = script:GetCustomProperty("btnShapesAndButtons"):WaitForObject()
 
 local devMode = true
 local showingMe = false
@@ -102,6 +103,9 @@ function OnClickedSetLevel(whichButton)
     elseif (whichButton.name == "btnVictoryRoom") then
         levelName = "VictoryRoom"
         newLoc = Vector3.New (-74,-6497,14555)
+    elseif (whichButton.name == "btnShapesAndButtons") then
+        levelName = "ShapesAndButtons"
+        newLoc = Vector3.New (57,-262,131)
     end
 
     currentLevelIndex = LookupLevelIndex(levelName)
@@ -140,7 +144,7 @@ propBtnPuckollossal.clickedEvent:Connect(OnClickedSetLevel)
 propBtnGobbleDots.clickedEvent:Connect(OnClickedSetLevel)
 propBtnLazyLava.clickedEvent:Connect(OnClickedSetLevel)
 propBtnVictory.clickedEvent:Connect(OnClickedSetLevel)
-
+propBtnShapesAndButtons.clickedEvent:Connect(OnClickedSetLevel)
 
 function OnBindingPressed(player, bindingPressed)
     --print ("Dev Menu Controller: pressed " .. bindingPressed)

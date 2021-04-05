@@ -774,61 +774,6 @@ Objects {
   }
 }
 Objects {
-  Id: 2954956499086531032
-  Name: "Sci-fi Base Wall 01"
-  Transform {
-    Location {
-      X: -2849.94434
-      Y: -950.000427
-      Z: -1156.38232
-    }
-    Rotation {
-      Yaw: 89.9999924
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13326382528176724228
-  UnregisteredParameters {
-    Overrides {
-      Name: "ma:Building_UpperTrimOuter:color"
-      Color {
-        R: 0.580000043
-        G: 0.666225076
-        B: 1
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 5770631945866545278
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-    }
-  }
-}
-Objects {
   Id: 13493167007917261112
   Name: "Sci-fi Base Wall 01"
   Transform {
