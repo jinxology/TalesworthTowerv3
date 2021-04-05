@@ -4,6 +4,7 @@ local propTurkeyLauncher = script:GetCustomProperty("TurkeyLauncher")
 local propPigLauncher = script:GetCustomProperty("PigLauncher")
 local propChickenLauncher = script:GetCustomProperty("ChickenLauncher")
 local propCowLauncher = script:GetCustomProperty("CowLauncher")
+local propFarmGalleryMusic = script:GetCustomProperty("FarmGalleryMusic")
 
 
 ------------------------------------------------------------
@@ -27,6 +28,7 @@ startPlatformRotation = Rotation.New(0,0,0)
 --each time they hit one, it updates their UI with Hit/Required and tells server
 --Once completed, broadcast to server completed
 --
+levelMusic = nil
 hitsPerPlayer = {0,0,0,0}
 requiredHitsPerPlayer = {10,10,10,10}
 playersAtZone = {"","","",""}
@@ -97,7 +99,9 @@ function LevelBegin()
     for _, obj in ipairs(ffs) do
         obj.visibility = Visibility.FORCE_OFF
         obj.collision = Collision.FORCE_OFF
-    end        
+    end
+
+    levelMusic = World.SpawnAsset(propFarmGalleryMusic, {parent=script.parent})
 end
 
 function DropWeapon(player)
@@ -143,6 +147,10 @@ end
 
 function LevelEnd()
     LevelCleanup()
+
+    if (Object.IsValid(levelMusic)) then
+        levelMusic:Destroy()
+    end
 
     --Unequip weapons
     for _, player in pairs(Game.GetPlayers()) do
@@ -197,6 +205,10 @@ function LevelPowerUp()
 end
 
 function LevelPowerDown()
+    if (Object.IsValid(levelMusic)) then
+        levelMusic:Destroy()
+    end
+        
     --Delete Weapons
     LevelCleanup()
 

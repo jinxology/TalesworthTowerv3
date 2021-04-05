@@ -9,6 +9,6 @@ Tags: "ObstacleCourse"
 Tags: "Cooperative"
 Tags: "Funny"
 ScreenshotPaths: "D:/Data/Dev/CORE/Maps/TalesworthTowerv3/Screenshots/Screenshot0003.png"
+ScreenshotPaths: "D:/Data/Dev/CORE/Maps/TalesworthTowerv3/Screenshots/Screenshot0004.png"
 OwnerId: "172f6edc8820487da19f26db2dd11870"
 SerializationVersion: 1
-CubemapPath: "D:/Data/Dev/CORE/Maps/TalesworthTowerv3/Screenshots/Cubemaps/Cubemap0006.png"

@@ -366,12 +366,14 @@ function LevelPowerDown()
         end
     end    
 
-    lavalListener:Disconnect()
-    weap1Listener:Disconnect()
-    weap2Listener:Disconnect()
-    weap3Listener:Disconnect()
-    weap4Listener:Disconnect()
-
+    if (lavalListener ~= nil) then
+        lavalListener:Disconnect()
+        weap1Listener:Disconnect()
+        weap2Listener:Disconnect()
+        weap3Listener:Disconnect()
+        weap4Listener:Disconnect()
+    end
+    
     lavalListener = nil
     weap1Listener = nil
     weap2Listener = nil
