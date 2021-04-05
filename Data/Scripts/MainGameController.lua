@@ -704,11 +704,48 @@ function EjectForTowerReset()
 
     local startLoc = propTowerEjectStartPoint:GetWorldPosition()
     for _, player in pairs(Game.GetPlayers()) do
+        player:ResetVelocity()
         player:SetWorldPosition(startLoc)
     end   
     resetingTower = false
     SetTowerRunning(false)
     SpawnLevel1()
+end
+
+function EmergencyEnflume()
+--    TODO: this is copy/pasted from elsewhere that knows more
+        --    about the flume system than this object... move this code
+        --    somewhere more central, like: 
+        --        propFlumeSystem:EmergencyEject(player)
+        local nextLevelController = nil
+        if (levelRunning) then
+            nextLevelController = GetCurrentLevelController()
+        else
+            nextLevelController = GetNextLevelController()
+        end
+        local teleportDestObj = nextLevelController.context.entranceFlume:FindChildByName("Entrance segment")
+
+        player:ResetVelocity()
+        player:SetWorldPosition(teleportDestObj:GetWorldPosition())
+        --    END TODO
+end
+
+function EmergencyDeflume()
+--    TODO: this is copy/pasted from elsewhere that knows more
+        --    about the flume system than this object... move this code
+        --    somewhere more central, like: 
+        --        propFlumeSystem:EmergencyEject(player)
+        local nextLevelController = nil
+        if (levelRunning) then
+            nextLevelController = GetCurrentLevelController()
+        else
+            nextLevelController = GetNextLevelController()
+        end
+        local teleportDestObj = nextLevelController.context.entranceFlume:FindChildByName("Entrance teleport point")
+
+        player:ResetVelocity()
+        player:SetWorldPosition(teleportDestObj:GetWorldPosition())
+        --    END TODO
 end
 
 function ResetVoteHandler(player)

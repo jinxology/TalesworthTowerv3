@@ -8,6 +8,14 @@ function OnBeginOverlap(whichTrigger, other)
 	if other:IsA("Player") then
 		local player = other		
 
+        if (player.serverUserData.flumingTask ~= nil) then
+            player.serverUserData.flumingTask:Cancel()
+            player.serverUserData.flumingTask = nil
+            player.serverUserData.currentFlumeSegment = nil
+            player.serverUserData.triggeredSegments = nil
+            player.serverUserData.enteredFlumeSegmentAt = nil
+        end
+
         local originPt = player:GetWorldPosition()
         local destPt = propTowerResetVectorTarget:GetWorldPosition()
         destPt.x = destPt.x + math.random(-5,5)

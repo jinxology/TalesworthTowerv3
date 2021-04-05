@@ -490,6 +490,7 @@ Assets {
         Text {
           Text: "Name"
           FontAsset {
+            Id: 1854457264003910494
           }
           Color {
             R: 1
@@ -538,6 +539,7 @@ Assets {
         Text {
           Text: "00:00"
           FontAsset {
+            Id: 1854457264003910494
           }
           Color {
             R: 1
@@ -586,6 +588,7 @@ Assets {
         Text {
           Text: "Name"
           FontAsset {
+            Id: 1854457264003910494
           }
           Color {
             R: 1
@@ -634,6 +637,7 @@ Assets {
         Text {
           Text: "00:00"
           FontAsset {
+            Id: 1854457264003910494
           }
           Color {
             R: 1
@@ -686,6 +690,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_grass_generic_001"
+      }
+    }
+    Assets {
+      Id: 1854457264003910494
+      Name: "Teko Bold"
+      PlatformAssetType: 28
+      PrimaryAsset {
+        AssetType: "FontAssetRef"
+        AssetId: "TekoBold_ref"
       }
     }
     PrimaryAssetId {
