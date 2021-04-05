@@ -381,15 +381,17 @@ function StartingPlatformsActivated()
 end
 
 function StartingPlatformsOccupied(nbrReady)
-    if (nbrReady > 0) then
-        if (not autostartTimerActive) then
-            totalAutostartTime = autostartSeconds
-            autostartTimerActive = true
-            script:SetNetworkedCustomProperty("autostartTimerState","true,"..totalAutostartTime..","..autostartSeconds)
+    if (currentLevelIndex == 1 and nextLevelIndex == nil) then
+        if (nbrReady > 0) then
+            if (not autostartTimerActive) then
+                totalAutostartTime = autostartSeconds
+                autostartTimerActive = true
+                script:SetNetworkedCustomProperty("autostartTimerState","true,"..totalAutostartTime..","..autostartSeconds)
+            end
+        else
+            autostartTimerActive = false
+            script:SetNetworkedCustomProperty("autostartTimerState","false,")
         end
-    else
-        autostartTimerActive = false
-        script:SetNetworkedCustomProperty("autostartTimerState","false,")
     end
 end
 
@@ -437,11 +439,19 @@ function SetTowerRunning(newVal)
     end
 end
 
+function GetRequiredNbrPlayersReady()
+    if (currentLevelIndex == 1 and nextLevelIndex == nil) then
+        return 4
+    else
+        return #Game.GetPlayers()
+    end
+end
+
 function LevelBegin()
     if (not towerRunning) then
         SetTowerRunning(true)
         
-        if (currentLevelIndex == 1) then
+        if (currentLevelIndex == 1 and nextLevelindex == nil) then
             for _, player in pairs(Game.GetPlayers()) do
                 if (not propLevel1autostartTrigger:IsOverlapping(player)) then
                     player:SetWorldPosition(Vector3.New(124,-1451,135))
@@ -633,7 +643,7 @@ function VictoryRoomEject()
     ClearTimer()
 
     currentLevelIndex = 1
-    nextLevelindex = nil    
+    nextLevelIndex = nil    
 
     --loop through all levels and destroy them
     for i=1,#levelList do
@@ -661,7 +671,7 @@ function EjectForTowerReset()
     ClearTimer()
 
     currentLevelIndex = 1
-    nextLevelindex = nil    
+    nextLevelIndex = nil    
 
     local startLoc = propTowerEjectStartPoint:GetWorldPosition()
     for _, player in pairs(Game.GetPlayers()) do

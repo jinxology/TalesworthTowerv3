@@ -5,6 +5,7 @@
 --Drag a copy of "MainGameController" to this custom property
 propMainGameController = script:GetCustomProperty("MainGameController"):WaitForObject()
 local propBaeRockRumble = script:GetCustomProperty("baeRockRumble")
+local propBAE_BallRolling = script:GetCustomProperty("BAE_BallRolling")
 
 --Place StartPlatformGroup(networked) template and record the Position and Rotation values here
 --After adding the inital values, delete the StartingPlatormGroup template out of the project
@@ -70,6 +71,10 @@ function LevelBegin()
 	local forceField = folderRoot:FindDescendantByName("ForceField")
 	forceField.visibility = Visibility.FORCE_OFF
 	forceField.collision = Collision.FORCE_OFF
+
+	for _, ball in ipairs(ballArray) do
+		ball:SetNetworkedCustomProperty("StartGame", true)
+	end	
 end
 
 --LevelEnd code is called when the....
@@ -101,3 +106,4 @@ end
 --ResetLevel is called when the level needs to get reset to its original state
 function ResetLevel() 
 end	
+

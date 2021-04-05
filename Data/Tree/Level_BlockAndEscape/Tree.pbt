@@ -3441,6 +3441,12 @@ Objects {
         Id: 15876711595831864388
       }
     }
+    Overrides {
+      Name: "cs:BAE_BallRolling"
+      AssetReference {
+        Id: 8112246739623668801
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -3454,6 +3460,69 @@ Objects {
   Script {
     ScriptAsset {
       Id: 3040471467604319917
+    }
+  }
+}
+Objects {
+  Id: 2056339750911832128
+  Name: "ArchitectSign"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3535859253216386145
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 622252525570655390
+      value {
+        Overrides {
+          Name: "Text"
+          String: "Hightide"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 13846951818635812732
+      value {
+        Overrides {
+          Name: "Name"
+          String: "ArchitectSign"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 2850
+            Y: 2975
+            Z: 1753.58154
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -179.999985
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16102386394497442094
     }
   }
 }

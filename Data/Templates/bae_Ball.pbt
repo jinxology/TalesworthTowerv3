@@ -15,7 +15,7 @@ Assets {
             Z: 5.5
           }
         }
-        ParentId: 5727767727766945175
+        ParentId: 3535859253216386145
         ChildIds: 8532988851465859103
         UnregisteredParameters {
           Overrides {
@@ -25,7 +25,15 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:StartGame"
+            Bool: false
+          }
+          Overrides {
             Name: "cs:Color:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:StartGame:isrep"
             Bool: true
           }
         }
@@ -112,6 +120,24 @@ Assets {
             Name: "cs:bae_PhysicsSphere5_5Scale"
             ObjectReference {
               SubObjectId: 4615058727204951439
+            }
+          }
+          Overrides {
+            Name: "cs:BAE_BallRolling"
+            AssetReference {
+              Id: 8112246739623668801
+            }
+          }
+          Overrides {
+            Name: "cs:baeRockRumble"
+            AssetReference {
+              Id: 15876711595831864388
+            }
+          }
+          Overrides {
+            Name: "cs:bae_LargeRockSFX"
+            AssetReference {
+              Id: 1210763962029564555
             }
           }
         }
