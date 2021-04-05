@@ -73,7 +73,9 @@ function LevelBegin()
 	forceField.collision = Collision.FORCE_OFF
 
 	for _, ball in ipairs(ballArray) do
-		ball:SetNetworkedCustomProperty("StartGame", true)
+		if Object.IsValid(ball) then
+			ball:SetNetworkedCustomProperty("StartGame", true)
+		end
 	end	
 end
 
