@@ -15,21 +15,20 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4159855513164329778
+        ParentId: 1232579912354001357
+        ChildIds: 11631354051634414129
+        ChildIds: 12145920453933706127
         ChildIds: 554077358086761655
-        ChildIds: 18294187017712486466
         ChildIds: 4928125827909756685
         ChildIds: 11499057527066145812
         ChildIds: 3044120525320889385
         ChildIds: 4716715558747682916
         ChildIds: 6195723043482851921
         ChildIds: 6376833988982904340
-        ChildIds: 12145920453933706127
         ChildIds: 10671111645508465895
         ChildIds: 17487399639570569082
         ChildIds: 9160698222049057169
         ChildIds: 13574779230595404198
-        ChildIds: 11631354051634414129
         UnregisteredParameters {
         }
         WantsNetworking: true
@@ -44,6 +43,156 @@ Assets {
         }
         Folder {
           IsGroup: true
+        }
+      }
+      Objects {
+        Id: 11631354051634414129
+        Name: "Trigger"
+        Transform {
+          Location {
+            X: 740
+            Z: 20
+          }
+          Rotation {
+            Pitch: 90
+          }
+          Scale {
+            X: 4
+            Y: 4
+            Z: 6
+          }
+        }
+        ParentId: 17649526533898173544
+        ChildIds: 15865983208931652104
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:capsule"
+          }
+        }
+      }
+      Objects {
+        Id: 15865983208931652104
+        Name: "FlumeVelocityChanger"
+        Transform {
+          Location {
+            X: -1.11366688e-12
+            Y: -6.62796727e-12
+            Z: 6.22807511e-06
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.204081625
+            Y: 0.204081625
+            Z: 0.204081625
+          }
+        }
+        ParentId: 11631354051634414129
+        UnregisteredParameters {
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 14572887706246282901
+          }
+        }
+      }
+      Objects {
+        Id: 12145920453933706127
+        Name: "Trigger"
+        Transform {
+          Location {
+            X: 145.203247
+            Z: 20
+          }
+          Rotation {
+            Pitch: 90
+          }
+          Scale {
+            X: 2.00000024
+            Y: 2
+            Z: 8.79545879
+          }
+        }
+        ParentId: 17649526533898173544
+        ChildIds: 12580777701211475430
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:capsule"
+          }
+        }
+      }
+      Objects {
+        Id: 12580777701211475430
+        Name: "FlumeVelocityChanger"
+        Transform {
+          Location {
+            X: -1.11366688e-12
+            Y: -6.62796727e-12
+            Z: 6.22807511e-06
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.204081625
+            Y: 0.204081625
+            Z: 0.204081625
+          }
+        }
+        ParentId: 12145920453933706127
+        UnregisteredParameters {
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 14572887706246282901
+          }
         }
       }
       Objects {
@@ -137,86 +286,6 @@ Assets {
         Script {
           ScriptAsset {
             Id: 1515974712462261320
-          }
-        }
-      }
-      Objects {
-        Id: 18294187017712486466
-        Name: "Trigger"
-        Transform {
-          Location {
-            X: -164.059326
-            Y: -0.000244140625
-            Z: 64.7431641
-          }
-          Rotation {
-            Pitch: 12.6951828
-            Yaw: -179.999985
-          }
-          Scale {
-            X: 3.2
-            Y: 3.2
-            Z: 3.2
-          }
-        }
-        ParentId: 17649526533898173544
-        ChildIds: 12648978453303278183
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceon"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:sphere"
-          }
-        }
-      }
-      Objects {
-        Id: 12648978453303278183
-        Name: "RagdollPlayer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.285327762
-            Y: 0.285327762
-            Z: 0.285327762
-          }
-        }
-        ParentId: 18294187017712486466
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:nextTarget"
-            ObjectReference {
-              SelfId: 841534158063459245
-            }
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 16741261518964209400
           }
         }
       }
@@ -495,81 +564,6 @@ Assets {
         }
       }
       Objects {
-        Id: 12145920453933706127
-        Name: "Trigger"
-        Transform {
-          Location {
-            X: 175
-            Z: 20
-          }
-          Rotation {
-            Pitch: 90
-          }
-          Scale {
-            X: 2
-            Y: 2
-            Z: 7.49999952
-          }
-        }
-        ParentId: 17649526533898173544
-        ChildIds: 12580777701211475430
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:capsule"
-          }
-        }
-      }
-      Objects {
-        Id: 12580777701211475430
-        Name: "FlumeVelocityChanger"
-        Transform {
-          Location {
-            X: -1.11366688e-12
-            Y: -6.62796727e-12
-            Z: 6.22807511e-06
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.204081625
-            Y: 0.204081625
-            Z: 0.204081625
-          }
-        }
-        ParentId: 12145920453933706127
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 14572887706246282901
-          }
-        }
-      }
-      Objects {
         Id: 10671111645508465895
         Name: "FlumeEjector"
         Transform {
@@ -801,81 +795,6 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
-          }
-        }
-      }
-      Objects {
-        Id: 11631354051634414129
-        Name: "Trigger"
-        Transform {
-          Location {
-            X: 740
-            Z: 20
-          }
-          Rotation {
-            Pitch: 90
-          }
-          Scale {
-            X: 4
-            Y: 4
-            Z: 6
-          }
-        }
-        ParentId: 17649526533898173544
-        ChildIds: 15865983208931652104
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Trigger {
-          TeamSettings {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          TriggerShape_v2 {
-            Value: "mc:etriggershape:capsule"
-          }
-        }
-      }
-      Objects {
-        Id: 15865983208931652104
-        Name: "FlumeVelocityChanger"
-        Transform {
-          Location {
-            X: -1.11366688e-12
-            Y: -6.62796727e-12
-            Z: 6.22807511e-06
-          }
-          Rotation {
-          }
-          Scale {
-            X: 0.204081625
-            Y: 0.204081625
-            Z: 0.204081625
-          }
-        }
-        ParentId: 11631354051634414129
-        UnregisteredParameters {
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Script {
-          ScriptAsset {
-            Id: 14572887706246282901
           }
         }
       }

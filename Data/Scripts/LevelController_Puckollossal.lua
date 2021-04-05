@@ -23,7 +23,7 @@ local propLivePucks = {}
 local propLiveMugshots = {}
 local propLiveWranglers = {}
 
-local propWinCondition = 1
+local propWinCondition = 8
 local propCurrentScore = 0
 
 propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
@@ -86,7 +86,7 @@ function ShockPlayerAwayFromTrigger(player, trigger)
         player:EnableRagdoll("left_hip", .6)		
         
         impulse = trigger:GetWorldRotation() * Vector3.FORWARD * 320
-        print(tostring(impulse) .. " added to player")
+        -- print(tostring(impulse) .. " added to player")
         impulse.z = math.max(impulse.z,  (Vector3.UP * 120).z)
         if trigger:GetCustomProperty("playerOnly") ~= nil then
             player:SetVelocity(impulse)
@@ -126,8 +126,8 @@ function ConnectBumpers(container)
                     surfaceNormal = Rotation.New(0, 0, 90) * surfaceNormal
                     reboundedA = puckAngularVelocity - (2 * puckAngularVelocity .. surfaceNormal) * surfaceNormal
                     
-                    print("changing puck velocity from " .. tostring(puckVelocity) .. " to " .. tostring(reboundedV))
-                    print("changing angl velocity from " .. tostring(puckAngularVelocity) .. " to " .. tostring(reboundedA))
+                    -- print("changing puck velocity from " .. tostring(puckVelocity) .. " to " .. tostring(reboundedV))
+                    -- print("changing angl velocity from " .. tostring(puckAngularVelocity) .. " to " .. tostring(reboundedA))
                     other:SetVelocity(reboundedV)
                     other:SetAngularVelocity(reboundedA)
 
@@ -165,7 +165,6 @@ function LevelPowerUp()
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, -375, 50), rotation = Rotation.New(135, 90, 0), parent = script.parent }))
     table.insert(propLiveMugshots, World.SpawnAsset(propMugshotTemplate, { position = Vector3.New(300, 375, 50), rotation = Rotation.New(-135, 90, 0), parent = script.parent }))
     for _, mugshot in pairs(propLiveMugshots) do
-        print("mugshot " .. mugshot.id)
         mugshot:GetCustomProperty("controller"):WaitForObject():SetNetworkedCustomProperty("currentScore", propCurrentScore)
         mugshot:GetCustomProperty("controller"):WaitForObject():SetNetworkedCustomProperty("winCondition", propWinCondition)
     end
@@ -180,8 +179,6 @@ function LevelPlayerEntered(player)
     lookoutAbility.owner = player
     player.serverUserData.pckLookoutAbility = lookoutAbility
 end
--- print("REMOVE THIS DAVE")
--- Game.playerJoinedEvent:Connect(LevelPlayerEntered)
 
 
 function LevelPlayerExited(player)
@@ -282,7 +279,7 @@ function LevelBegin()
 end
 
 function LevelEnd()
-    print("level end")
+    -- print("level end")
     script:SetNetworkedCustomProperty("levelState", 3)
     for _, player in ipairs(Game.GetPlayers()) do
         LevelPlayerExited(player)
@@ -297,6 +294,21 @@ function LevelEnd()
         propOutOfBoundsTask:Cancel()
         propOutOfBoundsTask = nil
     end
+
+    for puck, isLive in pairs(propLivePucks) do
+        if puck:IsValid() then
+            puck:Destroy()
+        end
+    end
+    propLivePucks = {}
+
+    for _, mugshot in pairs(propLiveMugshots) do
+        if mugshot:IsValid() then
+            mugshot:Unequip()
+            mugshot:Destroy()
+        end
+    end
+    propLiveMugshots = {}
 
     for _, wrangler in pairs(propLiveWranglers) do
         wrangler:GetCustomProperty("controller"):WaitForObject().context.DismissWrangler()
@@ -350,22 +362,6 @@ function LevelPowerDown()
         end
     end
     propLiveWranglers = {}
-
-    for puck, isLive in pairs(propLivePucks) do
-        if puck:IsValid() then
-            puck:Destroy()
-        end
-    end
-    propLivePucks = {}
-
-    for _, mugshot in pairs(propLiveMugshots) do
-        print("live mugshot " .. mugshot.id)
-        if mugshot:IsValid() then
-            mugshot:Unequip()
-            mugshot:Destroy()
-        end
-    end
-    propLiveMugshots = {}
 
     if propDefenderTask then
         propDefenderTask:Cancel()
@@ -428,16 +424,16 @@ function ScorePuck(puck, point)
         puck:GetCustomProperty("controller"):WaitForObject().context.ScorePuck()
         
         if point then
-            propCurrentScore = propCurrentScore + 1
+            propCurrentScore = propCurrentScore + 2
             propScoreSFX:Play()
             if propCurrentScore < propWinCondition then
-                Events.BroadcastToAllPlayers("TEAM SCORES")
+                Events.BroadcastToAllPlayers("TEAM SCORES +2")
             end
 
         else
             propFailSFX:Play()
             currentScore = math.max(0, currentScore - 1)
-            Events.BroadcastToAllPlayers("WRONG GOAL")
+            Events.BroadcastToAllPlayers("WRONG GOAL - 1")
         end
     end
     

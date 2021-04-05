@@ -14,8 +14,9 @@ function OnBeginOverlap(whichTrigger, other)
 		if (player.serverUserData.flumingTask ~= nil) then
 			player.serverUserData.flumingTask:Cancel()
 			player.serverUserData.flumingTask = nil
-			player.serverUserData.currentFlume = nil
-			player.serverUserData.alreadyFlumedIn = nil
+			player.serverUserData.currentFlumeSegment = nil
+			player.serverUserData.triggeredSegments = nil
+			player.serverUserData.enteredFlumeSegmentAt = nil
 		end
 		
 		--local velocityVector = Vector3.New(1,0,0)
@@ -33,11 +34,13 @@ function OnBeginOverlap(whichTrigger, other)
 		end
 
 		--	this magic number is the distance between the teleport target and force field in heavy's original design
+		--	i suspect every digit is significant
 		local whooshVector = (destPt - originPt):GetNormalized() * 397.24844360352
 		player:SetVelocity(whooshVector * propVelocityMultiplier)
 
 
 		-- Task.Wait(1)
+		player:ActivateWalking()
 		player.animationStance = "unarmed_death"
 		Task.Wait(3)
 		player.animationStance = "unarmed_stance"

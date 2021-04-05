@@ -50,17 +50,17 @@ function OnBeginOverlap(whichTrigger, other)
 			propSuctionSFX:Play()
 			Task.Wait(propSuctionSFX.length)
 			
-			print("Pop now, ", propDisc:GetWorldPosition() + Vector3.UP * 100)
+			-- print("Pop now, ", propDisc:GetWorldPosition() + Vector3.UP * 100)
 			balloon.context.PopAtPosition(propDisc:GetWorldPosition() + Vector3.UP * 100)
 			propLevelController.context.PlayerBoppedBalloon(boppedBy, bnpColor, spawner, propDisc:GetWorldPosition())
 		end
 	end
 end
 
-function OnEndOverlap(whichTrigger, other)
-	if other:IsA("Player") then
-	end
-end
+-- function OnEndOverlap(whichTrigger, other)
+-- 	if other:IsA("Player") then
+-- 	end
+-- end
 
 propTrigger.beginOverlapEvent:Connect(OnBeginOverlap)
-propTrigger.endOverlapEvent:Connect(OnEndOverlap)
+-- propTrigger.endOverlapEvent:Connect(OnEndOverlap)

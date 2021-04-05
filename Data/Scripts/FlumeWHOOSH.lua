@@ -20,8 +20,6 @@ function OnBeginOverlap(whichTrigger, other)
         -- local whooshVector = Vector3.New(destPt.x - originPt.x, destPt.y - originPt.y, destPt.z - originPt.z)
 		-- print(tostring(whooshVector))
 		player:SetVelocity(direction * 4)
-        
-
 	end
 end
 
