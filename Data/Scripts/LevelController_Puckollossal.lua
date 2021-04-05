@@ -345,12 +345,16 @@ function LevelPowerDown()
     end
 
     for _, wrangler in pairs(propLiveWranglers) do
-        wrangler:Destroy()
+        if puck:IsValid() then
+            wrangler:Destroy()
+        end
     end
     propLiveWranglers = {}
 
     for puck, isLive in pairs(propLivePucks) do
-        puck:Destroy()
+        if puck:IsValid() then
+            puck:Destroy()
+        end
     end
     propLivePucks = {}
 
@@ -362,19 +366,16 @@ function LevelPowerDown()
         end
     end
     propLiveMugshots = {}
-    print(5)
 
-    if propDefenderTask ~= nil then
+    if propDefenderTask then
         propDefenderTask:Cancel()
         propDefenderTask = nil
     end
-    print(6)
 
-    if propTutorialCurtain ~= nil then
+    if propTutorialCurtain then
         propTutorialCurtain:Destroy()
         propTutorialCurtain = nil
     end
-    print(7)
 
     -- World.FindObjectByName("Level.GobbleDots").visibility = Visibility.FORCE_OFF
     -- World.FindObjectByName("Level.LazyLava").visibility = Visibility.FORCE_OFF
