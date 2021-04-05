@@ -15,8 +15,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 4159855513164329778
         ChildIds: 554077358086761655
+        ChildIds: 18294187017712486466
         ChildIds: 4928125827909756685
         ChildIds: 11499057527066145812
         ChildIds: 3044120525320889385
@@ -136,6 +137,86 @@ Assets {
         Script {
           ScriptAsset {
             Id: 1515974712462261320
+          }
+        }
+      }
+      Objects {
+        Id: 18294187017712486466
+        Name: "Trigger"
+        Transform {
+          Location {
+            X: -164.059326
+            Y: -0.000244140625
+            Z: 64.7431641
+          }
+          Rotation {
+            Pitch: 12.6951828
+            Yaw: -179.999985
+          }
+          Scale {
+            X: 3.2
+            Y: 3.2
+            Z: 3.2
+          }
+        }
+        ParentId: 17649526533898173544
+        ChildIds: 12648978453303278183
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceon"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:sphere"
+          }
+        }
+      }
+      Objects {
+        Id: 12648978453303278183
+        Name: "RagdollPlayer"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.285327762
+            Y: 0.285327762
+            Z: 0.285327762
+          }
+        }
+        ParentId: 18294187017712486466
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:nextTarget"
+            ObjectReference {
+              SelfId: 841534158063459245
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 16741261518964209400
           }
         }
       }

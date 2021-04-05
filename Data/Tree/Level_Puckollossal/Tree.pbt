@@ -1113,543 +1113,6 @@ Objects {
   }
 }
 Objects {
-  Id: 17061535703152179740
-  Name: "pck.mugshotEquipment"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1232579912354001357
-  ChildIds: 11887238583024466890
-  ChildIds: 4554135127012850567
-  ChildIds: 14124845551392612304
-  ChildIds: 1485056560811755054
-  ChildIds: 9232890847118686650
-  ChildIds: 12702256468853059905
-  ChildIds: 1281013734357814586
-  ChildIds: 1439639335697070684
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:controller"
-      ObjectReference {
-        SelfId: 11887238583024466890
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Equipment {
-    SocketName: "head"
-    PickupTrigger {
-      SelfId: 4554135127012850567
-    }
-  }
-}
-Objects {
-  Id: 1439639335697070684
-  Name: "Gun Weapon Reload Set 01 SFX"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17061535703152179740
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Type"
-      Enum {
-        Value: "mc:esfx_gunreloads:48"
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 11279392096978883335
-    }
-    TeamSettings {
-    }
-    AudioBP {
-      Pitch: -546.523926
-      Volume: 1
-      Falloff: 3600
-      Radius: 400
-      EnableOcclusion: true
-      IsSpatializationEnabled: true
-      IsAttenuationEnabled: true
-    }
-  }
-}
-Objects {
-  Id: 1281013734357814586
-  Name: "Sports Fishing Rod Reel Cranking Set 01 SFX"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17061535703152179740
-  UnregisteredParameters {
-    Overrides {
-      Name: "bp:Type"
-      Enum {
-        Value: "mc:esfx_sports_fishingrod:15"
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Blueprint {
-    BlueprintAsset {
-      Id: 17895563106547683038
-    }
-    TeamSettings {
-    }
-    AudioBP {
-      Pitch: -318.650391
-      Volume: 1
-      Falloff: 3600
-      Radius: 400
-      EnableOcclusion: true
-      IsSpatializationEnabled: true
-      IsAttenuationEnabled: true
-      StopTime: 2
-    }
-  }
-}
-Objects {
-  Id: 12702256468853059905
-  Name: "Fishing Rod Cast Throw Out Crank 01 SFX"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17061535703152179740
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 5618689590460027776
-    }
-    Pitch: -800.594482
-    Volume: 1
-    Falloff: -1
-    Radius: -1
-    FadeInTime: 0.05
-    StartTime: 0.2
-  }
-}
-Objects {
-  Id: 9232890847118686650
-  Name: "Cartoon Twang Spring Bounce Jump 03 SFX"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17061535703152179740
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  AudioInstance {
-    AudioAsset {
-      Id: 12817505034062474732
-    }
-    Volume: 1
-    Falloff: -1
-    Radius: -1
-    EnableOcclusion: true
-    IsSpatializationEnabled: true
-    IsAttenuationEnabled: true
-  }
-}
-Objects {
-  Id: 1485056560811755054
-  Name: "Untether"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17061535703152179740
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Ability {
-    IsEnabled: true
-    CastPhaseSettings {
-      Duration: 0.15
-      CanMove: true
-      CanJump: true
-      CanRotate: true
-      PreventOtherAbilities: true
-      IsTargetDataUpdated: true
-      Facing_V2 {
-        Value: "mc:eabilitysetfacing:aim"
-      }
-    }
-    ExecutePhaseSettings {
-      Duration: 0.75
-      CanMove: true
-      CanJump: true
-      CanRotate: true
-      PreventOtherAbilities: true
-      IsTargetDataUpdated: true
-      Facing_V2 {
-        Value: "mc:eabilitysetfacing:aim"
-      }
-    }
-    RecoveryPhaseSettings {
-      Duration: 0.1
-      CanMove: true
-      CanJump: true
-      CanRotate: true
-      PreventOtherAbilities: true
-      IsTargetDataUpdated: true
-      Facing_V2 {
-        Value: "mc:eabilitysetfacing:none"
-      }
-    }
-    CooldownPhaseSettings {
-      Duration: 0.1
-      CanMove: true
-      CanJump: true
-      CanRotate: true
-      PreventOtherAbilities: true
-      IsTargetDataUpdated: true
-      Facing_V2 {
-        Value: "mc:eabilitysetfacing:none"
-      }
-    }
-    Animation: "unarmed_shout"
-    KeyBinding_v2 {
-      Value: "mc:egameaction:extraaction_01"
-    }
-  }
-}
-Objects {
-  Id: 14124845551392612304
-  Name: "Tether"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17061535703152179740
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Ability {
-    IsEnabled: true
-    CastPhaseSettings {
-      Duration: 10
-      CanMove: true
-      CanJump: true
-      CanRotate: true
-      PreventOtherAbilities: true
-      IsTargetDataUpdated: true
-      Facing_V2 {
-        Value: "mc:eabilitysetfacing:aim"
-      }
-    }
-    ExecutePhaseSettings {
-      Duration: 0.2
-      CanMove: true
-      CanJump: true
-      CanRotate: true
-      PreventOtherAbilities: true
-      IsTargetDataUpdated: true
-      Facing_V2 {
-        Value: "mc:eabilitysetfacing:aim"
-      }
-    }
-    RecoveryPhaseSettings {
-      Duration: 0.5
-      CanMove: true
-      CanJump: true
-      CanRotate: true
-      PreventOtherAbilities: true
-      IsTargetDataUpdated: true
-      Facing_V2 {
-        Value: "mc:eabilitysetfacing:none"
-      }
-    }
-    CooldownPhaseSettings {
-      Duration: 0.2
-      CanMove: true
-      CanJump: true
-      CanRotate: true
-      PreventOtherAbilities: true
-      IsTargetDataUpdated: true
-      Facing_V2 {
-        Value: "mc:eabilitysetfacing:none"
-      }
-    }
-    Animation: "unarmed_shout"
-    KeyBinding_v2 {
-      Value: "mc:egameaction:primaryaction"
-    }
-  }
-}
-Objects {
-  Id: 4554135127012850567
-  Name: "PickupTrigger"
-  Transform {
-    Location {
-      X: 25.0000019
-      Z: 7.07106781
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1.5
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17061535703152179740
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Trigger {
-    Interactable: true
-    InteractionLabel: "Equip Mugshot"
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-}
-Objects {
-  Id: 11887238583024466890
-  Name: "pck.mugshot"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17061535703152179740
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:tetherAbility"
-      ObjectReference {
-        SelfId: 14124845551392612304
-      }
-    }
-    Overrides {
-      Name: "cs:untetherAbility"
-      ObjectReference {
-        SelfId: 1485056560811755054
-      }
-    }
-    Overrides {
-      Name: "cs:reelAbility"
-      ObjectReference {
-        SelfId: 841534158063459245
-      }
-    }
-    Overrides {
-      Name: "cs:unreelAbility"
-      ObjectReference {
-      }
-    }
-    Overrides {
-      Name: "cs:levelController"
-      ObjectReference {
-        SelfId: 587526667886082979
-      }
-    }
-    Overrides {
-      Name: "cs:twangSFX"
-      ObjectReference {
-        SelfId: 9232890847118686650
-      }
-    }
-    Overrides {
-      Name: "cs:cast1SFX"
-      ObjectReference {
-        SelfId: 12702256468853059905
-      }
-    }
-    Overrides {
-      Name: "cs:cast2SFX"
-      ObjectReference {
-        SelfId: 1439639335697070684
-      }
-    }
-    Overrides {
-      Name: "cs:reelSFX"
-      ObjectReference {
-        SelfId: 1281013734357814586
-      }
-    }
-    Overrides {
-      Name: "cs:equipment"
-      ObjectReference {
-        SelfId: 17061535703152179740
-      }
-    }
-    Overrides {
-      Name: "cs:tension"
-      Float: 0
-    }
-    Overrides {
-      Name: "cs:tetherTravel"
-      Float: 0
-    }
-    Overrides {
-      Name: "cs:targetPosition"
-      Vector {
-      }
-    }
-    Overrides {
-      Name: "cs:tetheredState"
-      Int: 0
-    }
-    Overrides {
-      Name: "cs:tension:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:tetherTravel:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:targetPosition:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:tetheredState:isrep"
-      Bool: true
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 17192499311318698238
-    }
-  }
-}
-Objects {
   Id: 3563811700256805507
   Name: "ClientContext"
   Transform {
@@ -1733,7 +1196,7 @@ Objects {
   ChildIds: 7091680398334724599
   ChildIds: 8964283176779562074
   ChildIds: 1294385887504596266
-  ChildIds: 9321174221656531523
+  ChildIds: 13446817876099848682
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1748,17 +1211,15 @@ Objects {
   }
 }
 Objects {
-  Id: 9321174221656531523
-  Name: "victim1"
+  Id: 13446817876099848682
+  Name: "architect"
   Transform {
     Location {
-      X: -107.216614
-      Y: -6352.8623
-      Z: -7.20019531
+      X: -590
+      Y: 6985
     }
     Rotation {
-      Yaw: -108.210693
-      Roll: 48.7867851
+      Yaw: 180
     }
     Scale {
       X: 1
@@ -1767,6 +1228,283 @@ Objects {
     }
   }
   ParentId: 2329610297248220321
+  ChildIds: 9321174221656531523
+  ChildIds: 8307682342545794791
+  ChildIds: 8199109814530236471
+  ChildIds: 13182706208334085729
+  ChildIds: 1321534491155913820
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
+  Id: 1321534491155913820
+  Name: "ArchitectSign"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13446817876099848682
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 622252525570655390
+      value {
+        Overrides {
+          Name: "Text"
+          String: "Paegrid"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 4709569307287743065
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2.42138672
+            Y: 10.7246094
+            Z: 147.828125
+          }
+        }
+        Overrides {
+          Name: "ma:Shared_BaseMaterial:color"
+          Color {
+            A: 0.55
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 2.42927051
+            Y: 1.64169252
+            Z: 0.999999464
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 13178690747755072352
+      value {
+        Overrides {
+          Name: "ma:Shared_Detail2:color"
+          Color {
+            A: 1
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 13846951818635812732
+      value {
+        Overrides {
+          Name: "Name"
+          String: "ArchitectSign"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -299.999817
+            Y: 284.999939
+            Z: 25
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: 6.83018516e-06
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16102386394497442094
+    }
+  }
+}
+Objects {
+  Id: 13182706208334085729
+  Name: "txtArchitectName"
+  Transform {
+    Location {
+      X: -299.999817
+      Y: 291.496033
+      Z: 153.205078
+    }
+    Rotation {
+      Yaw: 89.9999542
+    }
+    Scale {
+      X: 2.8335917
+      Y: 2.8335917
+      Z: 2.8335917
+    }
+  }
+  ParentId: 13446817876099848682
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "Paegrid"
+    FontAsset {
+    }
+    Color {
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
+  Id: 8199109814530236471
+  Name: "txtArchitectName"
+  Transform {
+    Location {
+      X: -225.005432
+      Y: 291.496094
+      Z: 108.134766
+    }
+    Rotation {
+      Yaw: 89.9999542
+    }
+    Scale {
+      X: 1.2
+      Y: 1.2
+      Z: 1.2
+    }
+  }
+  ParentId: 13446817876099848682
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "himself"
+    FontAsset {
+    }
+    Color {
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
+  Id: 8307682342545794791
+  Name: "txtArchitectName"
+  Transform {
+    Location {
+      X: -225.005432
+      Y: 293.785156
+      Z: 108.134766
+    }
+    Rotation {
+      Yaw: 89.9999542
+    }
+    Scale {
+      X: 1.2
+      Y: 1.2
+      Z: 1.2
+    }
+  }
+  ParentId: 13446817876099848682
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "himself"
+    FontAsset {
+    }
+    Color {
+      R: 0.383443594
+      G: 1
+      B: 0.0199999809
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
+  Id: 9321174221656531523
+  Name: "victim1"
+  Transform {
+    Location {
+      X: -49.4054298
+      Y: 235.420792
+      Z: -0.435546875
+    }
+    Rotation {
+      Yaw: -86.8872375
+      Roll: 48.7865295
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13446817876099848682
   ChildIds: 6523418888734596005
   ChildIds: 10690261129880823031
   Collidable_v2 {
@@ -5830,7 +5568,7 @@ Objects {
     Location {
       X: -6399.99707
       Y: -3199.95166
-      Z: -800
+      Z: -799.5
     }
     Rotation {
     }
@@ -5883,7 +5621,7 @@ Objects {
     Location {
       X: -6399.99
       Y: 6400
-      Z: -800
+      Z: -799.5
     }
     Rotation {
     }
@@ -5936,7 +5674,7 @@ Objects {
     Location {
       X: 6399.92676
       Y: 3200.01514
-      Z: -800
+      Z: -799.5
     }
     Rotation {
     }
@@ -5999,7 +5737,7 @@ Objects {
     Location {
       X: -9599.95313
       Y: 3200.01855
-      Z: -800
+      Z: -799.5
     }
     Rotation {
     }
@@ -6052,7 +5790,7 @@ Objects {
     Location {
       X: -8000
       Y: 3200.01611
-      Z: -800
+      Z: -799.5
     }
     Rotation {
       Pitch: 90
@@ -6110,7 +5848,7 @@ Objects {
     Location {
       X: -6399.99512
       Y: -4799.97607
-      Z: -800
+      Z: -799.5
     }
     Rotation {
       Pitch: 90
@@ -6168,7 +5906,7 @@ Objects {
     Location {
       X: 6399.98926
       Y: 4800.01563
-      Z: -800
+      Z: -799.5
     }
     Rotation {
       Pitch: 90
@@ -6227,7 +5965,7 @@ Objects {
     Location {
       X: 7999.9834
       Y: -3199.99902
-      Z: -800
+      Z: -799.5
     }
     Rotation {
       Pitch: 90
@@ -6285,7 +6023,7 @@ Objects {
     Location {
       X: -6400
       Y: 3200.00098
-      Z: -800
+      Z: -799.5
     }
     Rotation {
     }
@@ -6606,7 +6344,7 @@ Objects {
       Z: -801
     }
     Rotation {
-      Yaw: -89.9999847
+      Yaw: -90
     }
     Scale {
       X: 5.6
@@ -19347,6 +19085,12 @@ Objects {
       Name: "cs:boundary"
       ObjectReference {
         SelfId: 6281652873977458052
+      }
+    }
+    Overrides {
+      Name: "cs:outPipesTemplate"
+      AssetReference {
+        Id: 9456816264992181726
       }
     }
     Overrides {

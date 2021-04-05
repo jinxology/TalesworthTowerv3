@@ -46,9 +46,6 @@ Objects {
     }
   }
   ParentId: 6466700705943890717
-  ChildIds: 18393403345350274493
-  ChildIds: 3819289168434531660
-  ChildIds: 2921113175832727287
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -70,12 +67,12 @@ Objects {
     Location {
       X: -200
       Y: -225
-      Z: 150
+      Z: 125
     }
     Rotation {
-      Pitch: 33.5986328
-      Yaw: -2.07254028
-      Roll: -15.1170349
+      Pitch: 33.598629
+      Yaw: -2.072541
+      Roll: -15.117054
     }
     Scale {
       X: 0.75
@@ -83,7 +80,7 @@ Objects {
       Z: 0.75
     }
   }
-  ParentId: 15504030429973110399
+  ParentId: 6466700705943890717
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -113,12 +110,12 @@ Objects {
     Location {
       X: -900
       Y: -250
-      Z: 1025
+      Z: 1000
     }
     Rotation {
       Pitch: 33.749958
-      Yaw: 45
-      Roll: 11.2501745
+      Yaw: 44.9999924
+      Roll: 11.2501945
     }
     Scale {
       X: 0.75
@@ -126,7 +123,7 @@ Objects {
       Z: 0.75
     }
   }
-  ParentId: 15504030429973110399
+  ParentId: 6466700705943890717
   ChildIds: 9792749202243429492
   WantsNetworking: true
   Collidable_v2 {
@@ -736,12 +733,12 @@ Objects {
     Location {
       X: -425
       Y: -325
-      Z: 625
+      Z: 600
     }
     Rotation {
       Pitch: 16.1496334
-      Yaw: -1.22070313
-      Roll: -31.897522
+      Yaw: -1.22070289
+      Roll: -31.8975391
     }
     Scale {
       X: 0.75
@@ -749,7 +746,7 @@ Objects {
       Z: 0.75
     }
   }
-  ParentId: 15504030429973110399
+  ParentId: 6466700705943890717
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -8490,9 +8487,9 @@ Objects {
   Name: "Trigger"
   Transform {
     Location {
-      X: 1.6184058e-05
+      X: 1.61789358e-05
       Y: 0.00395438634
-      Z: 1025
+      Z: 899.999512
     }
     Rotation {
       Yaw: 3.4150944e-06
@@ -8500,7 +8497,7 @@ Objects {
     Scale {
       X: 4
       Y: 1
-      Z: 18.3999882
+      Z: 16.4
     }
   }
   ParentId: 14389415435839121419
@@ -9481,5 +9478,213 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "bnp_tutorial"
+  }
+}
+Objects {
+  Id: 4745999497449572261
+  Name: "ArchitectSign"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6466700705943890717
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 622252525570655390
+      value {
+        Overrides {
+          Name: "Text"
+          String: "Paegrid"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 4709569307287743065
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -5.63049316
+            Y: 12.2268066
+            Z: 126.236328
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 13846951818635812732
+      value {
+        Overrides {
+          Name: "Name"
+          String: "ArchitectSign"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -800
+            Y: -2375
+            Z: 300
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16102386394497442094
+    }
+  }
+}
+Objects {
+  Id: 10258108193205944452
+  Name: "txtArchitectName"
+  Transform {
+    Location {
+      X: -736.208557
+      Y: -2368.14722
+      Z: 378.511
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 1.2
+      Y: 1.2
+      Z: 1.2
+    }
+  }
+  ParentId: 6466700705943890717
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "himself"
+    FontAsset {
+    }
+    Color {
+      R: 0.383443594
+      G: 1
+      B: 0.0199999809
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
+  Id: 17752110806815159002
+  Name: "txtArchitectName"
+  Transform {
+    Location {
+      X: -736.208557
+      Y: -2370.36401
+      Z: 378.511
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 1.2
+      Y: 1.2
+      Z: 1.2
+    }
+  }
+  ParentId: 6466700705943890717
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "himself"
+    FontAsset {
+    }
+    Color {
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
+  Id: 5983572991199567197
+  Name: "txtArchitectName"
+  Transform {
+    Location {
+      X: -801.712097
+      Y: -2368.14722
+      Z: 426.719238
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 2.8335917
+      Y: 2.8335917
+      Z: 2.8335917
+    }
+  }
+  ParentId: 6466700705943890717
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Text {
+    Text: "Paegrid"
+    FontAsset {
+    }
+    Color {
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
   }
 }

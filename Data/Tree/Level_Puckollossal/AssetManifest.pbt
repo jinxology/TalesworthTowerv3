@@ -17,15 +17,6 @@ Assets {
   }
 }
 Assets {
-  Id: 17895563106547683038
-  Name: "Sports Fishing Rod Reel Cranking Set 01 SFX"
-  PlatformAssetType: 10
-  PrimaryAsset {
-    AssetType: "AudioBlueprintAssetRef"
-    AssetId: "sfxabp_sports_fishingrod_crank_set_ref"
-  }
-}
-Assets {
   Id: 17788889273874535271
   Name: "Bone Human Humerus 01"
   PlatformAssetType: 1
@@ -161,15 +152,6 @@ Assets {
   }
 }
 Assets {
-  Id: 12817505034062474732
-  Name: "Cartoon Twang Spring Bounce Jump 03 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_cartoon_twang_spring_bounce_jump_03a_Cue_ref"
-  }
-}
-Assets {
   Id: 12758036443323469769
   Name: "Urban Fence Pole - Extender End"
   PlatformAssetType: 1
@@ -203,15 +185,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_bones_human_spine_01_ref"
-  }
-}
-Assets {
-  Id: 11279392096978883335
-  Name: "Gun Weapon Reload Set 01 SFX"
-  PlatformAssetType: 10
-  PrimaryAsset {
-    AssetType: "AudioBlueprintAssetRef"
-    AssetId: "sfxabp_reloads_ref"
   }
 }
 Assets {
@@ -383,15 +356,6 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_pipe_003"
-  }
-}
-Assets {
-  Id: 5618689590460027776
-  Name: "Fishing Rod Cast Throw Out Crank 01 SFX"
-  PlatformAssetType: 7
-  PrimaryAsset {
-    AssetType: "AudioAssetRef"
-    AssetId: "sfx_fishing_rod_cast_out_throw_crank_01_Cue_ref"
   }
 }
 Assets {

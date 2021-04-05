@@ -41,8 +41,8 @@ function OnBeginOverlap(whichTrigger, other)
 
 			if player.serverUserData.currentFlume == nil then
 				print("spawning fluming task")
-				player.serverUserData.flumingTask = Task.Spawn(function()
-					FlumePlayer(player)
+				player.serverUserData.flumingTask = Task.Spawn(function(dt)
+					FlumePlayer(player, dt)
 				end)
 				player.serverUserData.flumingTask.repeatCount = -1
 			end

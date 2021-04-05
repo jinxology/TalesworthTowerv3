@@ -100,7 +100,7 @@ Objects {
     Location {
       X: 750.226318
       Y: 1820.32568
-      Z: 17240
+      Z: 17000
     }
     Rotation {
     }
@@ -165,7 +165,7 @@ Objects {
     Location {
       X: -800
       Y: 4000
-      Z: 14234.6514
+      Z: 14200
     }
     Rotation {
     }

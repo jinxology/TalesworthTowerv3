@@ -36,6 +36,19 @@ Objects {
       }
     }
     ParameterOverrideMap {
+      key: 4709569307287743065
+      value {
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2.42138672
+            Y: 12.2268066
+            Z: 156.111816
+          }
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 13846951818635812732
       value {
         Overrides {
@@ -45,15 +58,17 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: 6208.57227
-            Y: -827.367188
-            Z: -689.320313
+            X: 6233.98242
+            Y: -432.716309
+            Z: -490.155273
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-            Yaw: 90.8656387
+            Pitch: -0.206573486
+            Yaw: 90.8657684
+            Roll: -0.163970947
           }
         }
         Overrides {
