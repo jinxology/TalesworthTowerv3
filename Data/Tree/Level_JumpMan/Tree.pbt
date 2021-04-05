@@ -5375,7 +5375,7 @@ Objects {
     Overrides {
       Name: "cs:RedPlatform1Template"
       AssetReference {
-        Id: 14472004475060050851
+        Id: 6929540548816851152
       }
     }
     Overrides {
