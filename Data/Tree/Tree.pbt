@@ -5358,6 +5358,15 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:leaderboardRef"
+      NetReference {
+        Key: "1F9763CF35CA8DA0"
+        Type {
+          Value: "mc:enetreferencetype:leaderboard"
+        }
+      }
+    }
+    Overrides {
       Name: "cs:UIMessage:isrep"
       Bool: true
     }

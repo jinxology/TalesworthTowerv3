@@ -1825,8 +1825,8 @@ Objects {
   Name: "Leaderboards"
   Transform {
     Location {
-      X: -724.949219
-      Y: -864.07666
+      X: -4687.49414
+      Y: -1854.23584
       Z: 422.415253
     }
     Rotation {
@@ -1842,10 +1842,10 @@ Objects {
   ChildIds: 9372750393515854439
   ChildIds: 17586211069039732680
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"

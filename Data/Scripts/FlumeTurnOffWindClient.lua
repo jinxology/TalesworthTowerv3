@@ -5,7 +5,7 @@ function OnBeginOverlap(whichTrigger, other)
 	if other:IsA("Player") then
         Task.Wait(1)
 		propNatureWindSteady01SFX:Stop()
-        script.parent:Destroy()
+        if (Object.IsValid(script.parent)) then script.parent:Destroy() end
 	end
 end
 

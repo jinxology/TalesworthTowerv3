@@ -10,6 +10,7 @@ local propLatecomerFlume = script:GetCustomProperty("LatecomerFlume"):WaitForObj
 local propTxtTowerInProgressLine2 = script:GetCustomProperty("txtTowerInProgressLine2"):WaitForObject()
 local propTowerProgressBeacon1 = script:GetCustomProperty("TowerProgressBeacon1"):WaitForObject()
 local propTowerProgressBeacon2 = script:GetCustomProperty("TowerProgressBeacon2"):WaitForObject()
+local propLeaderboardRef = script:GetCustomProperty("leaderboardRef")
 
 
 --Generic top-center timer
@@ -76,6 +77,7 @@ function OnBindingPressed(player, bindingPressed)
     elseif (bindingPressed == "ability_extra_28" and devMode) then
         --O
         Game.GetPlayers()[1]:SetWorldPosition(Vector3.New(-74,-4563,107))
+        Leaderboards.SubmitPlayerScore(propLeaderboardRef, Game.GetPlayers()[1], math.random(0, 1000))
     end
 end    
 
@@ -367,9 +369,10 @@ end
 function StartingPlatformsActivated()
     if (not levelRunning and not resetingTower) then
         if (nextLevelIndex ~= nil) then        
-            print ("368")
             --Coming from a different level
-            Task.Spawn(function() DestroyLevel(currentLevelIndex) end)
+            --print ("cur:"..currentLevelIndex)
+            --print ("next:"..nextLevelIndex)
+            DestroyLevel(currentLevelIndex)
             currentLevelIndex = nextLevelIndex
             nextLevelIndex = nil
         else   
