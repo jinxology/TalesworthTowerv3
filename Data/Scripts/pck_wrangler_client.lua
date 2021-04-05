@@ -229,7 +229,7 @@ function CockAt(object)
             local   COCK_DURATION = 0.5
             local   cockStartTime = time()
             
-            print("starting to cock")
+            -- print("starting to cock")
             
             if propCurrentAnimationTask then
                 propCurrentAnimationTask:Cancel()
@@ -298,7 +298,7 @@ function CockAt(object)
                     propKickerSpring.g = 0
                     propHeadSpring.g = 0
 
-                    print("starting to reset after losing target")
+                    -- print("starting to reset after losing target")
 
                     if propCurrentAnimationTask then
                         propCurrentAnimationTask:Cancel()
@@ -385,7 +385,7 @@ function TriggerKicker(worldPosition)
             propHeadSpring.v1 = pv.velocity
             propHead:SetRotation(Rotation.New(0, pv.position, 0))
         else
-            print("resetting after kick")
+            -- print("resetting after kick")
             propKickerSpring.g = 0
             propKickerSpring.p1 = propKickerSpring.p1 + 360
             propKickerSpring.p0 = propKickerSpring.p1

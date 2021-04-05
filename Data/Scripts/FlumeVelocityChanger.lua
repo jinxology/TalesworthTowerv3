@@ -12,19 +12,17 @@ function FlumePlayer(player, dt)
 	
 	--	this is the vector in the flume's +z direction
 	local	v = (a - p) - ((a - p) * n) * n
-
-	print("flume direction: " .. tostring(v))
+	-- print("flume direction: " .. tostring(v))
 	
 	--	this is the component of the player's velocity along the flume path
 	local	vFlume = n * ((pv * n) / (pv.size ^ 2))
-
-	print("player flume component: " .. tostring(vFlume))
+	-- print("player flume component: " .. tostring(vFlume))
 
 	--	if the player isn't moving fast enough along the flume path, give them
 	--	an extra kick in that direction
 	if vFlume.size < MIN_VELOCITY then
 		v = v + n * (MIN_VELOCITY - vFlume.size)
-		print("booped flume direction: " .. tostring(v))
+		-- print("booped flume direction: " .. tostring(v))
 	end
 
 	local	FLUME_STUCK_TIME = 5
@@ -53,9 +51,9 @@ function FlumePlayer(player, dt)
 	else
 		local	BOOPS_PER_SECOND = 10.0
 
-		print("player velocity before impulse: " .. tostring(player:GetVelocity()))
+		-- print("player velocity before impulse: " .. tostring(player:GetVelocity()))
 		player:AddImpulse((v) * player.mass * BOOPS_PER_SECOND)
-		print("player velocity before impulse: " .. tostring(player:GetVelocity()))
+		-- print("player velocity before impulse: " .. tostring(player:GetVelocity()))
 
 		Task.Wait(1.0 / BOOPS_PER_SECOND)
 		--	TODO: set the player's position/velocity/rotation/whatever precisely
@@ -98,7 +96,7 @@ function OnBeginOverlap(whichTrigger, other)
 				PlayerEntersFlumeSystem(player)
 			end
 			
-			print("player entered segment at " .. time())
+			-- print("player entered segment at " .. time())
 			player.serverUserData.enteredFlumeSegmentAt = time()
 			player.serverUserData.currentFlumeSegment = whichTrigger
 		end

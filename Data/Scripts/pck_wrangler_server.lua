@@ -111,12 +111,12 @@ function SmackEm(trigger, other)
         puckXY.z = 0
         triggerXY.z = 0
 
-        print("calculating normal from " .. tostring(triggerXY) .. " to " .. tostring(puckXY))
+        -- print("calculating normal from " .. tostring(triggerXY) .. " to " .. tostring(puckXY))
         local   surfaceNormal = (puckXY - triggerXY)
 
-        print("bouncing from v = " .. tostring(velocity) .. " a = " .. tostring(angular))
+        -- print("bouncing from v = " .. tostring(velocity) .. " a = " .. tostring(angular))
         surfaceNormal = surfaceNormal:GetNormalized()
-        print("surface normal = " .. tostring(surfaceNormal))
+        -- print("surface normal = " .. tostring(surfaceNormal))
 
         if propWranglerKind == PUNCHER_KIND then
             -- v = v - 2 * (v · n / n · n) n)
@@ -127,7 +127,7 @@ function SmackEm(trigger, other)
             reboundedV = velocity - surfaceNormal * 2000
             reboundedA = angular - surfaceNormal * 60
         end
-        print("    to v = " .. tostring(reboundedV) .. " a = " .. tostring(reboundedA))
+        -- print("    to v = " .. tostring(reboundedV) .. " a = " .. tostring(reboundedA))
 
         puck:SetVelocity(reboundedV)
         puck:SetAngularVelocity(reboundedA)
