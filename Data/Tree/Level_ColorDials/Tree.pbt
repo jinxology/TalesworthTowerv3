@@ -2593,3 +2593,66 @@ Objects {
     }
   }
 }
+Objects {
+  Id: 12002435403893251013
+  Name: "ArchitectSign"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 5669723044310532949
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 622252525570655390
+      value {
+        Overrides {
+          Name: "Text"
+          String: "Hightide"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 13846951818635812732
+      value {
+        Overrides {
+          Name: "Name"
+          String: "ArchitectSign"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -2800
+            Y: -550
+            Z: 2478.58154
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -89.9999695
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16102386394497442094
+    }
+  }
+}
