@@ -37,7 +37,9 @@ function ActivateInstructions(levelStatus)
 		if fadeoutIntroMusicTask then
 			fadeoutIntroMusicTask:Cancel()
 			fadeoutIntroMusicTask = nil
-			propLevelMusic:Stop()
+			if propLevelMusic and propLevelMusic:IsValid() then
+				propLevelMusic:Stop()
+			end
 		end
 
 		propLevelMusic = World.SpawnAsset(propLevelPlayingMusicTemplate)
@@ -53,7 +55,13 @@ function ActivateInstructions(levelStatus)
 		if hideInstructions ~= nil then
 			hideInstructions:Disconnect(OnBindingReleased)
 		end
-		if propLevelMusic then
+
+		if fadeoutIntroMusicTask then
+			fadeoutIntroMusicTask:Cancel()
+			fadeoutIntroMusicTask = nil
+		end
+
+		if propLevelMusic and propLevelMusic:IsValid() then
 			propLevelMusic:Stop()
 			propLevelMusic:Destroy()
 			propLevelMusic = nil

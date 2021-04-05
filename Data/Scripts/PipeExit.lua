@@ -6,12 +6,6 @@ function OnBeginOverlap(whichTrigger, other)
 		local player = other
 		local teleportDest = World.FindObjectByName("Flume"):FindChildByName("Teleport In")
 
-		print("cancelling fluming task")
-		player.serverUserData.flumingTask:Cancel()
-		player.serverUserData.flumingTask = nil
-		player.serverUserData.currentFlume = nil
-		player.serverUserData.alreadyFlumedIn = nil
-		
 		v = player:GetVelocity()
 		v = whichTrigger:GetWorldTransform():GetInverse():TransformDirection(v)
 		v = teleportDest:GetWorldTransform():TransformDirection(v)

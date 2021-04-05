@@ -7,9 +7,10 @@ function OnBeginOverlap(whichTrigger, other)
         --print ("ragdoll triggered")
         player:EnableRagdoll("lower_spine", .4)
         player:EnableRagdoll("right_shoulder", .2)
-        player:EnableRagdoll("left_shoulder", .6)
-        player:EnableRagdoll("right_hip", .6)
-        player:EnableRagdoll("left_hip", .6)		
+        player:EnableRagdoll("left_shoulder", .2)
+        player:EnableRagdoll("right_hip", .2)
+        player:EnableRagdoll("left_hip", .2)
+        player:ActivateFlying()
         player.movementControlMode = MovementControlMode.NONE
 
     end

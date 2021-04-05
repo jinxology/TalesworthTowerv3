@@ -13,7 +13,9 @@ function OnBeginOverlap(whichTrigger, other)
             nextLevelController = propMainGameController.context.GetNextLevelController()    
         end
         local teleportDestObj = nextLevelController.context.entranceFlume:FindChildByName("Entrance teleport point")
-        player:ResetVelocity()
+        
+        -- player:ResetVelocity()
+        --  transform player's velocity into exit coords
         player:SetWorldPosition(teleportDestObj:GetWorldPosition())
     end
 end

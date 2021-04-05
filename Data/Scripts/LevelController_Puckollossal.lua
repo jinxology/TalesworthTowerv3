@@ -23,7 +23,7 @@ local propLivePucks = {}
 local propLiveMugshots = {}
 local propLiveWranglers = {}
 
-local propWinCondition = 1
+local propWinCondition = 8
 local propCurrentScore = 0
 
 propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
@@ -298,6 +298,22 @@ function LevelEnd()
         propOutOfBoundsTask = nil
     end
 
+    for puck, isLive in pairs(propLivePucks) do
+        if puck:IsValid() then
+            puck:Destroy()
+        end
+    end
+    propLivePucks = {}
+
+    for _, mugshot in pairs(propLiveMugshots) do
+        if mugshot:IsValid() then
+            print("live mugshot " .. mugshot.id)
+            mugshot:Unequip()
+            mugshot:Destroy()
+        end
+    end
+    propLiveMugshots = {}
+
     for _, wrangler in pairs(propLiveWranglers) do
         wrangler:GetCustomProperty("controller"):WaitForObject().context.DismissWrangler()
     end
@@ -350,22 +366,6 @@ function LevelPowerDown()
         end
     end
     propLiveWranglers = {}
-
-    for puck, isLive in pairs(propLivePucks) do
-        if puck:IsValid() then
-            puck:Destroy()
-        end
-    end
-    propLivePucks = {}
-
-    for _, mugshot in pairs(propLiveMugshots) do
-        print("live mugshot " .. mugshot.id)
-        if mugshot:IsValid() then
-            mugshot:Unequip()
-            mugshot:Destroy()
-        end
-    end
-    propLiveMugshots = {}
 
     if propDefenderTask then
         propDefenderTask:Cancel()
@@ -428,16 +428,16 @@ function ScorePuck(puck, point)
         puck:GetCustomProperty("controller"):WaitForObject().context.ScorePuck()
         
         if point then
-            propCurrentScore = propCurrentScore + 1
+            propCurrentScore = propCurrentScore + 2
             propScoreSFX:Play()
             if propCurrentScore < propWinCondition then
-                Events.BroadcastToAllPlayers("TEAM SCORES")
+                Events.BroadcastToAllPlayers("TEAM SCORES +2")
             end
 
         else
             propFailSFX:Play()
             currentScore = math.max(0, currentScore - 1)
-            Events.BroadcastToAllPlayers("WRONG GOAL")
+            Events.BroadcastToAllPlayers("WRONG GOAL - 1")
         end
     end
     
