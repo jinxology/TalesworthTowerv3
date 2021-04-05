@@ -316,7 +316,7 @@ function LevelEnd()
 end
 
 function LevelVictory()
-    Events.BroadcastToAllPlayers("TEAM WINS")
+    Events.BroadcastToAllPlayers("pck.broadcast", "TEAM WINS")
 
 	propMainGameController.context.LevelEnd(true)
     LevelEnd()
@@ -418,7 +418,7 @@ function FailTriggerDidOverlap(trigger, other)
 end
 
 function ScorePuck(puck, point)
-    if propLivePucks[puck] == true then
+    if propLivePucks[puck] then
         propLivePucks[puck] = nil
         propLivePuckCount = propLivePuckCount - 1
         puck:GetCustomProperty("controller"):WaitForObject().context.ScorePuck()
@@ -427,13 +427,12 @@ function ScorePuck(puck, point)
             propCurrentScore = propCurrentScore + 2
             propScoreSFX:Play()
             if propCurrentScore < propWinCondition then
-                Events.BroadcastToAllPlayers("TEAM SCORES +2")
+                Events.BroadcastToAllPlayers("pck.broadcast", "TEAM SCORES +2")
             end
-
         else
             propFailSFX:Play()
             currentScore = math.max(0, currentScore - 1)
-            Events.BroadcastToAllPlayers("WRONG GOAL - 1")
+            Events.BroadcastToAllPlayers("pck.broadcast", "WRONG GOAL - 1")
         end
     end
     

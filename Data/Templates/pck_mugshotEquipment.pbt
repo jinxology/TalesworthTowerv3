@@ -46,7 +46,6 @@ Assets {
         Equipment {
           SocketName: "head"
           PickupTrigger {
-            SubObjectId: 9169255255245069283
           }
         }
       }
@@ -122,6 +121,12 @@ Assets {
             Name: "cs:equipment"
             ObjectReference {
               SubObjectId: 12451032973807524472
+            }
+          }
+          Overrides {
+            Name: "cs:trigger"
+            ObjectReference {
+              SubObjectId: 9169255255245069283
             }
           }
           Overrides {

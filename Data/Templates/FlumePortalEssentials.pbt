@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1232579912354001357
+        ParentId: 4781671109827199097
         ChildIds: 11631354051634414129
         ChildIds: 12145920453933706127
         ChildIds: 554077358086761655
@@ -122,7 +122,7 @@ Assets {
       }
       Objects {
         Id: 12145920453933706127
-        Name: "Trigger"
+        Name: "Entrance Segment"
         Transform {
           Location {
             X: 145.203247
