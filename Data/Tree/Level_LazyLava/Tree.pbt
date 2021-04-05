@@ -17012,6 +17012,7 @@ Objects {
   ParentId: 14628935128848554222
   ChildIds: 2417540460355739907
   ChildIds: 1140651549348487123
+  ChildIds: 11984417751779904478
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -17041,6 +17042,72 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 11984417751779904478
+  Name: "txtGetToRaft"
+  Transform {
+    Location {
+      X: -1514.28491
+      Y: -1820.32556
+      Z: 148.460938
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1.00000012
+    }
+  }
+  ParentId: 14588194341887334465
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 715
+    Height: 130
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "GET TO THE RAFT"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 80
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 10953097053886714955
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topcenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topcenter"
         }
       }
     }
@@ -17809,6 +17876,12 @@ Objects {
       Name: "cs:LevelControllerLazyLava"
       ObjectReference {
         SelfId: 1573043275725250760
+      }
+    }
+    Overrides {
+      Name: "cs:txtGetToRaft"
+      ObjectReference {
+        SelfId: 11984417751779904478
       }
     }
   }

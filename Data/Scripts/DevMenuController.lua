@@ -25,9 +25,9 @@ local devMode = true
 local showingMe = false
 levelList = {
     "ShapesAndButtons",
+    "FarmGallery",
     "BopAndPop",
     "JumpMan",     
-    "FarmGallery",
     "ColorDials",
     "BlockAndEscape",
     "GobbleDots",

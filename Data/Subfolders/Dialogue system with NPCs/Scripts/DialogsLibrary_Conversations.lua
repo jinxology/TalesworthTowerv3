@@ -22,7 +22,7 @@ function Dialogs.RegisterDialogue()
     id = "GenericConversation1"
     API.RegisterDialogueId(id)
     API.AddText(id, "Welcome to Talesworth Tower...", EXCITEMENT_ANIMATION)
-    API.AddText(id, "A totally safe and reasonable challenge in which you will surely endemnify all tower contributors from bodily harm.")
+    API.AddText(id, "A totally safe and reasonable challenge in which you will surely indemnify all tower contributors from bodily harm.")
 
     API.AddOption(id, "What is it?", "GenericConversation2")
 

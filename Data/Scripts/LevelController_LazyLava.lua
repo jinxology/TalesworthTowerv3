@@ -37,6 +37,7 @@ minSpeed = startingSpeed
 currentSpeed = minSpeed
 maxSpeed = 0
 skipTo = 0
+startRaftTask = nil
 local spinners = {}
 
 local lavalListener = nil
@@ -147,7 +148,8 @@ function LevelBegin()
     if (skipTo > 0) then
         propMainGameController.context.StartTimer(1, StartRaft)
     else 
-        propMainGameController.context.StartTimer(5, StartRaft)
+        --propMainGameController.context.StartTimer(5, StartRaft)
+        Events.BroadcastToAllPlayers("GetToRaft", 10)
     end
 
     if (playerCount == 4) then
@@ -161,10 +163,14 @@ function LevelBegin()
     end
 
     script:SetNetworkedCustomProperty("UIControllerProperty","01,"..currentPoints..","..maxPoints..",0,0")    
-    propMainGameController.context.LevelBegin()    
+    propMainGameController.context.LevelBegin()
+    
+    startRaftTask = Task.Spawn(StartRaft,10)
 end
 
 function StartRaft()  
+    startRaftTask = nil
+    Events.BroadcastToAllPlayers("GetToRaft", -1)
     maxSpeed = currentSpeed
     script:SetNetworkedCustomProperty("UIControllerProperty","01,"..currentPoints..","..maxPoints..","..currentSpeed..","..maxSpeed)    
 
@@ -317,6 +323,7 @@ function AddPoint()
 end
 
 function LevelPowerUp() 
+    Events.BroadcastToAllPlayers("GetToRaft", -1)
     raft = World.SpawnAsset(propRaft, { parent=script.parent} )
     raftController = raft:FindChildByName("RaftController")
 
@@ -356,6 +363,8 @@ function LevelPowerUp()
 end
 
 function LevelPowerDown()
+    if (startRaftTask ~= nil) then startRaftTask:Cancel() end
+
     if (Object.IsValid(raft)) then raft:Destroy() end
     ResetLava()
 

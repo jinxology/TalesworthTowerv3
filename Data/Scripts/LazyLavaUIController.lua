@@ -3,6 +3,7 @@ local propPoints = script:GetCustomProperty("points"):WaitForObject()
 local propSpeed = script:GetCustomProperty("speed"):WaitForObject()
 local propMaxSpeed = script:GetCustomProperty("maxSpeed"):WaitForObject()
 local propLevelControllerLazyLava = script:GetCustomProperty("LevelControllerLazyLava"):WaitForObject()
+local propTxtGetToRaft = script:GetCustomProperty("txtGetToRaft"):WaitForObject()
 
 
 local showingMe = false
@@ -38,6 +39,16 @@ function SetUIData(pts,ptsMax,speed,speedMax)
     SetMaxSpeed(speedMax)
 end
 
+function GetToRaftHandler(timeLeft)
+    if (timeLeft == -1) then
+        --hide UI
+        propTxtGetToRaft.visibility = Visibility.FORCE_OFF
+    else
+        --show UI
+        propTxtGetToRaft.visibility = Visibility.FORCE_ON
+    end
+end
+
 function IncomingUIMessage(coreObject, propertyName)
     
     local msg = propLevelControllerLazyLava:GetCustomProperty(propertyName)
@@ -50,6 +61,7 @@ function IncomingUIMessage(coreObject, propertyName)
 end
 
 propLevelControllerLazyLava.networkedPropertyChangedEvent:Connect(IncomingUIMessage)
+Events.Connect("GetToRaft", GetToRaftHandler)
 
 ToggleLazyLavaUIVisibility()
 
