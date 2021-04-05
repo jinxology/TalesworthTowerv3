@@ -7,6 +7,7 @@ local propTwangSFX = script:GetCustomProperty("twangSFX"):WaitForObject()
 local propCast1SFX = script:GetCustomProperty("cast1SFX"):WaitForObject()
 local propCast2SFX = script:GetCustomProperty("cast2SFX"):WaitForObject()
 local propEquipment = script:GetCustomProperty("equipment"):WaitForObject()
+local propTrigger = script:GetCustomProperty("trigger"):WaitForObject()
 local propReelSFX = script:GetCustomProperty("reelSFX"):WaitForObject()
 
 local UNTETHERED_STATE = 0
@@ -478,6 +479,22 @@ function OnBindingReleased(player, bindingReleased)
 	end
 end
 
+function TryToEquip(trigger, player)
+	local	propHasMugshot = false
+
+	for _, equipment in pairs(player:GetEquipment()) do
+		if equipment.name == propEquipment.name then
+			propHasMugshot = true
+			break
+		end
+	end
+
+	if not propHasMugshot then
+		trigger.isEnabled = false
+		propEquipment:Equip(player)
+	end
+end
+
 function OnEquipped(equipment)
 	propBindingPressedListener = equipment.owner.bindingPressedEvent:Connect(OnBindingPressed)
 	propBindingReleasedListener = equipment.owner.bindingReleasedEvent:Connect(OnBindingReleased)
@@ -494,3 +511,5 @@ ConnectAbilityEvents_Untether(propUntetherAbility)
 -- ConnectAbilityEvents_Unreel(propUnreelAbility)
 propEquipment.equippedEvent:Connect(OnEquipped)
 propEquipment.unequippedEvent:Connect(OnUnequipped)
+
+propTrigger.interactedEvent:Connect(TryToEquip)
