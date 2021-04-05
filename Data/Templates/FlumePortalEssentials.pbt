@@ -145,17 +145,18 @@ Assets {
         Name: "Trigger"
         Transform {
           Location {
-            X: -25
-            Z: 35.1084
+            X: -164.059326
+            Y: -0.000244140625
+            Z: 64.7431641
           }
           Rotation {
             Pitch: 12.6951828
             Yaw: -179.999985
           }
           Scale {
-            X: 0.874186039
-            Y: 6.00000954
-            Z: 6
+            X: 3.2
+            Y: 3.2
+            Z: 3.2
           }
         }
         ParentId: 17649526533898173544
@@ -176,7 +177,7 @@ Assets {
             IsEnemyCollisionEnabled: true
           }
           TriggerShape_v2 {
-            Value: "mc:etriggershape:box"
+            Value: "mc:etriggershape:sphere"
           }
         }
       }

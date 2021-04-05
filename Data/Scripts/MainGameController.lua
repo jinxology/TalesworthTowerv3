@@ -114,9 +114,9 @@ function TeleportAllPlayers(currentLev, newLoc, useFlume)
 
     levelControllerScript = GetCurrentLevelController()
 
-    levelControllerScript.context.LevelPowerUp()
     SpawnStartingPlatforms(currentLevelIndex)
     SpawnFlumePortals(currentLevelIndex)
+    levelControllerScript.context.LevelPowerUp()
 
     local players = Game.GetPlayers()    
     if (useFlume) then

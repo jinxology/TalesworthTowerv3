@@ -2874,7 +2874,7 @@ Objects {
       Y: 5935.37842
     }
     Rotation {
-      Roll: -89.9999924
+      Roll: -90
     }
     Scale {
       X: 140
@@ -5415,7 +5415,7 @@ Objects {
       Z: 700
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -90
     }
     Scale {
       X: 1

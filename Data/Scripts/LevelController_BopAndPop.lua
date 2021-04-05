@@ -113,7 +113,9 @@ local	roundDuration = 120
 
 local balloonPipe = {}
 local emptySpawners = {}
+
 local propLiveBalloons = {}
+local propLiveSpawners = {}
 
 intakeToColor = Color.WHITE
 intakeFromColor = nil
@@ -219,17 +221,6 @@ end
 
 function UnloadTutorial()
 	for _, object in ipairs(propTutorialContainer:GetChildren()) do
-		-- print("unloading tutorial object " .. object.id)
-
-		-- if object.name == "bnp_balloon" then
-		-- 	local	liveBalloon = object.context.propPhysics or object.context.propEquipment
-			
-		-- 	print("balloon " .. object.id .. " has live balloon " .. liveBalloon.id)
-		-- 	if liveBalloon ~= nil and liveBalloon:IsValid() then
-		-- 		print("destroying it")
-		-- 		liveBalloon:Destroy()
-		-- 	end
-		-- end
 		if object:IsValid() then
 			object:Destroy()
 		end
@@ -643,12 +634,7 @@ function SpawnNextBalloon()
 	balloon.context.SetBNPColor(bnpColor, ColorForBNPColor(bnpColor))
 	balloon.context.spawnedBy = spawner
 
-	if tutorialActive then
-		-- print("spawning balloon in tutorial")
-		balloon.parent = propTutorialContainer
-	else
-		table.insert(propLiveBalloons, balloon)
-	end
+	table.insert(propLiveBalloons, balloon)
 
 	table.remove(balloonPipe, 1)
 	table.remove(emptySpawners, spawnerIndex)

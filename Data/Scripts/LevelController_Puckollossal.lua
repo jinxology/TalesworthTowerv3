@@ -21,14 +21,14 @@ local propKickerTemplate = script:GetCustomProperty("kickerTemplate")
 local propLivePuckCount = 0
 local propLivePucks = {}
 local propLiveMugshots = {}
-local propLiveSmackers = {}
+local propLiveWranglers = {}
 
 propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
 
 exitFlume = nil
 entranceFlume = nil
-exitFlumeLocation = Vector3.New(-20, -20, 1200)
-exitFlumeRotation = Rotation.New(0, -90, 0)
+exitFlumeLocation = Vector3.New(-335, -25, 2202.306)
+exitFlumeRotation = Rotation.New(0, 0, 0)
 entranceFlumeLocation = Vector3.New(-3604.747, 5, 732.579)
 entranceFlumeRotation = Rotation.New(0, 30, 0)
 entranceFlumeEjectionVelocity = 6.66
@@ -177,7 +177,7 @@ end
 
 
 function LevelPlayerExited(player)
-    player:RemoveAbility(player.serverUserData.pckLookoutAbility)
+    player.serverUserData.pckLookoutAbility.owner = nil
 end
 
 local propOutOfBoundsTask = nil
@@ -267,40 +267,49 @@ function LevelBegin()
         Events.BroadcastToAllPlayers("pck.RetractSpawner", index)
     end
 
-    SpawnSmackers()
+    SpawnWranglers()
     
     
     --  lol tumbleweed
 end
 
 function LevelEnd()
+    print("level end")
     script:SetNetworkedCustomProperty("levelState", 3)
     for _, player in ipairs(Game.GetPlayers()) do
         LevelPlayerExited(player)
     end
 
-    propSmackerTask:Cancel()
-    propOutOfBoundsTask:Cancel()
+    if propWranglersTask then
+        propWranglersTask:Cancel()
+        propWranglersTask = nil
+    end
 
-    for _, smacker in propLiveSmackers do
-        smacker.context.DismissWrangler()
+    if propOutOfBoundsTask then
+        propOutOfBoundsTask:Cancel()
+        propOutOfBoundsTask = nil
+    end
+
+    for _, wrangler in pairs(propLiveWranglers) do
+        wrangler:GetCustomProperty("controller"):WaitForObject().context.DismissWrangler()
     end
 end
 
 function LevelVictory()
-	for _, player in ipairs(Game:GetPlayers()) do
-		-- LevelPlayerExited(player)
-	end
-
 	propMainGameController.context.LevelEnd(true)
+    LevelEnd()
+
+    outPipes = World.SpawnAsset(script:GetCustomProperty("outPipesTemplate"), { parent = script.parent, position = Vector3.New(0, 0, 2000) })
+    outPipes:MoveTo(Vector3.ZERO, 0.5, true)
+    exitFlume:MoveTo(exitFlume:GetPosition() - Vector3.UP * 2000, 0.5, true)
 end
 
 function LevelFailed()
-	for _, player in ipairs(Game:GetPlayers()) do
-		-- LevelPlayerExited(player)
-	end
-
 	propMainGameController.context.LevelEnd(false)
+    LevelEnd()
+    
+    outPipes = World.Spawn(script:GetCustomProperty("outPipesTemplate"), { parent = script.parent })
+    exitFlume.parent = outPipes
 end
 
 function SpawnPuckAt(position, makePlayersWatch)
@@ -315,38 +324,47 @@ function SpawnPuckAt(position, makePlayersWatch)
 end
 
 function LevelPowerDown()
-    if propSmackerTask then
-        propSmackerTask:Cancel()
-        propSmackerTask = nil
+    print(1)
+    if propWranglersTask then
+        propWranglersTask:Cancel()
+        propWranglersTask = nil
     end
+    print(2)
 
-    for _, smacker in ipairs(propLiveSmackers) do
-        smacker:Destroy()
+    for _, wrangler in pairs(propLiveWranglers) do
+        wrangler:Destroy()
     end
-    propLiveSmackers = {}
+    propLiveWranglers = {}
+    print(3)
 
-    for puck, isLive in ipairs(propLivePucks) do
+    for puck, isLive in pairs(propLivePucks) do
         puck:Destroy()
     end
     propLivePucks = {}
+    print(4)
 
-    for _, mugshot in ipairs(propLiveMugshots) do
-        if propLiveMugshots:IsValid() then
+    for _, mugshot in pairs(propLiveMugshots) do
+        print("live mugshot " .. mugshot.id)
+        if mugshot:IsValid() then
             mugshot:Unequip()
             mugshot:Destroy()
         end
     end
     propLiveMugshots = {}
+    print(5)
 
     if propDefenderTask ~= nil then
         propDefenderTask:Cancel()
         propDefenderTask = nil
     end
+    print(6)
 
     if propTutorialCurtain ~= nil then
         propTutorialCurtain:Destroy()
         propTutorialCurtain = nil
     end
+    print(7)
+
     -- World.FindObjectByName("Level.GobbleDots").visibility = Visibility.FORCE_OFF
     -- World.FindObjectByName("Level.LazyLava").visibility = Visibility.FORCE_OFF
 end
@@ -416,7 +434,7 @@ propFailTrigger.beginOverlapEvent:Connect(FailTriggerDidOverlap)
 
 
 
-function SpawnSmackers()
+function SpawnWranglers()
     puncher1 = World.SpawnAsset(propPuncherTemplate, { parent = script.parent, position = Vector3.New(-5200, -3200, 0) })
     puncher2 = World.SpawnAsset(propPuncherTemplate, { parent = script.parent, position = Vector3.New(-5200, 0, 0) })
     kicker1 = World.SpawnAsset(propKickerTemplate, { parent = script.parent, rotation = Rotation.New(0, 0, 180), position = Vector3.New(2400, 3200, 0) })
@@ -427,7 +445,9 @@ function SpawnSmackers()
     kicker1:GetCustomProperty("controller"):WaitForObject().context.PresentWrangler()
     kicker2:GetCustomProperty("controller"):WaitForObject().context.PresentWrangler()
 
-    propSmackerTask = Task.Spawn(function()
+    propLiveWranglers = { puncher1, puncher2, kicker1, kicker2 }
+
+    propWranglersTask = Task.Spawn(function()
         puncher1:MoveTo(puncher1:GetWorldPosition() + Vector3.New(0, 3200, 0), 3)
         puncher2:MoveTo(puncher2:GetWorldPosition() + Vector3.New(0, 3200, 0), 3)
         kicker1:MoveTo(kicker1:GetWorldPosition() + Vector3.New(0, -3200, 0), 3)
@@ -439,7 +459,7 @@ function SpawnSmackers()
         kicker2:MoveTo(kicker2:GetWorldPosition() + Vector3.New(0, 3200, 0), 3)
         Task.Wait(6)
     end, 6)
-    propSmackerTask.repeatCount = -1
+    propWranglersTask.repeatCount = -1
 end
 
 ConnectBumpers(propBumpers)
