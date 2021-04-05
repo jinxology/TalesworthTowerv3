@@ -178,9 +178,9 @@ Objects {
   Name: "Point Light"
   Transform {
     Location {
-      X: -694.82135
-      Y: -3517.07227
-      Z: 422.692261
+      X: -706.133728
+      Y: -3197.41846
+      Z: 422.69223
     }
     Rotation {
     }
@@ -224,38 +224,6 @@ Objects {
       MaxDrawDistance: 5000
       MaxDistanceFadeRange: 1000
     }
-  }
-}
-Objects {
-  Id: 4730072165687955230
-  Name: "Leaderboards"
-  Transform {
-    Location {
-      X: -846.700195
-      Y: -3566.0874
-      Z: -0.000152587891
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 16614468857374372845
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Leaderboards"
   }
 }
 Objects {
@@ -2667,6 +2635,38 @@ Objects {
         LinearDamping: 0.01
       }
     }
+  }
+}
+Objects {
+  Id: 4730072165687955230
+  Name: "Leaderboards"
+  Transform {
+    Location {
+      X: -846.700195
+      Y: -3566.0874
+      Z: -0.000152587891
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Leaderboards"
   }
 }
 Objects {
@@ -16823,9 +16823,9 @@ Objects {
   Name: "Tower Greeter"
   Transform {
     Location {
-      X: -12.3707123
-      Y: -14.0458984
-      Z: 121.749466
+      X: -12.3706131
+      Y: -14.0458832
+      Z: 146.816147
     }
     Rotation {
       Yaw: -151.329575

@@ -11,6 +11,7 @@ local propTxtTowerInProgressLine2 = script:GetCustomProperty("txtTowerInProgress
 local propTowerProgressBeacon1 = script:GetCustomProperty("TowerProgressBeacon1"):WaitForObject()
 local propTowerProgressBeacon2 = script:GetCustomProperty("TowerProgressBeacon2"):WaitForObject()
 local propLeaderboardRef = script:GetCustomProperty("leaderboardRef")
+local propLeaderboardController = script:GetCustomProperty("LeaderboardController"):WaitForObject()
 
 
 --Generic top-center timer
@@ -49,7 +50,7 @@ levelList = {
     "GobbleDots",
     "Puckollossal",
     "LazyLava",
-    "VictoryRoom"    --Must keep victory room last in the list
+    "VictoryRoom"    
 }
 
 --Tower Reset 
@@ -77,7 +78,6 @@ function OnBindingPressed(player, bindingPressed)
     elseif (bindingPressed == "ability_extra_28" and devMode) then
         --O
         Game.GetPlayers()[1]:SetWorldPosition(Vector3.New(-74,-4563,107))
-        Leaderboards.SubmitPlayerScore(propLeaderboardRef, Game.GetPlayers()[1], math.random(0, 1000))
     end
 end    
 
@@ -99,6 +99,8 @@ end
 
 
 function TeleportAllPlayers(currentLev, newLoc, useFlume)
+    --print ("passed in current"..currentLev)
+    --print ("currentLevelindex"..currentLevelIndex)
     DestroyLevel(currentLevelIndex)
 
     if (nextLevelIndex ~= nil) then
@@ -279,15 +281,15 @@ function GetLevelControllerByLevelIndex(levelIndex)
 end
 
 function SetNextLevelIndex(success) 
-    if (not success and currentLevelIndex == 1) then
+    if (not success and currentLevelIndex == 1 and nextLevelIndex == nil) then
         --on first level fail, just lets them retry
         return
     else
         if (success) then
             nextLevelIndex = currentLevelIndex + 1
         else    
-            if (currentLevelIndex == 6) then
-                nextLevelIndex = currentLevelIndex - 5
+            if (currentLevelIndex == #levelList) then
+                nextLevelIndex = 1
             else
                 nextLevelIndex = currentLevelIndex - 1
             end
@@ -355,6 +357,7 @@ function DestroyStartingPlatforms(levelIndex)
 end
 
 function DestroyLevel(levelIndex)
+    --print ("Destroying level ".. levelList[levelIndex])
     levelControllerScript = GetLevelControllerByLevelIndex(levelIndex)
     levelControllerScript.context.LevelPowerDown()    
     DestroyFlumePortals(levelIndex)
@@ -455,13 +458,16 @@ function LevelBegin()
     if (not towerRunning) then
         SetTowerRunning(true)
         
+        --If first level
         if (currentLevelIndex == 1 and nextLevelindex == nil) then
             for _, player in pairs(Game.GetPlayers()) do
                 if (not propLevel1autostartTrigger:IsOverlapping(player)) then
                     player:SetWorldPosition(Vector3.New(124,-1451,135))
-                end                
+                end
+                
+                player.serverUserData.startedAtTheBottom = true
             end
-    
+
         end
     end
 
@@ -489,11 +495,27 @@ function LevelBegin()
     end
 end
 
-function LevelEnd(success)    
+function LevelEnd(success)
+    --Should never be called if the level is not running
+    if (not levelRunning) then return end
+
     levelRunning = false 
     SetNextLevelIndex(success)    
     towerTimerActive = false
     script:SetNetworkedCustomProperty("towerTimerState","false,"..totalTowerTime)
+
+    --Record high scores
+    if (levelList[nextLevelIndex] == "VictoryRoom") then
+        for _,player in ipairs(Game.GetPlayers()) do
+            if (player.serverUserData.startedAtTheBottom == true) then
+                Leaderboards.SubmitPlayerScore(propLeaderboardRef, player, totalTowerTime)
+                print ("Recording high score for ".. player.name.. ": "..totalTowerTime)
+            else
+                print (player.name .. " was not present at game start, no high score recorded")
+            end
+        end
+        Task.Spawn(propLeaderboardController.context.RefreshLeaderboard)
+    end
 
     if (not success and currentLevelIndex == 1) then
         ResetStartingPlatforms()
@@ -615,6 +637,8 @@ function ResetTower()
     if (not resetingTower) then
         resetingTower = true
         
+        RemoveAllWeapons()
+
         towerTimerActive = false
         totalTowerTime = 0
         script:SetNetworkedCustomProperty("towerTimerState","false,"..totalTowerTime)    
@@ -625,7 +649,7 @@ function ResetTower()
         end
         SpawnLevelBeacons(false, 3)
         
-        if (currentLevelIndex == #levelList) then
+        if (levelList[currentLevelIndex] == "VictoryRoom") then
             script:SetNetworkedCustomProperty("UIMessage","10, ")
             Task.Spawn(VictoryRoomEject)
         else            
@@ -650,9 +674,11 @@ function VictoryRoomEject()
     nextLevelIndex = nil    
 
     --loop through all levels and destroy them
-    for i=1,#levelList do
-        DestroyLevel(i)
+    DestroyLevel(currentLevelIndex)
+    if (nextLevelIndex ~= nil) then
+        DestroyLevel(nextLevelIndex)
     end
+
 
     resetingTower = false
     SetTowerRunning(false)
@@ -665,9 +691,9 @@ function EjectForTowerReset()
         SetLightLevel(player, 4)
     end
 
-    --loop through all levels and destroy them
-    for i=1,#levelList do
-        DestroyLevel(i)
+    DestroyLevel(currentLevelIndex)
+    if (nextLevelIndex ~= nil) then
+        DestroyLevel(nextLevelIndex)
     end
 
     levelRunning = false
@@ -744,6 +770,7 @@ Events.Connect("ResetPlayerLocations", OnResetPlayerLocations)
 function SpawnLevel1()
     --fire up first level
     currentLevelIndex = 1
+    nextLevelIndex = nil
     local levelControllerScript = GetCurrentLevelController()
     SpawnFlumePortals(1)
     SpawnStartingPlatforms(1)

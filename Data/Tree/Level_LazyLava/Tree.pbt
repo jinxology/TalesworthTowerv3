@@ -17012,7 +17012,6 @@ Objects {
   ParentId: 14628935128848554222
   ChildIds: 2417540460355739907
   ChildIds: 1140651549348487123
-  ChildIds: 11984417751779904478
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -17048,72 +17047,6 @@ Objects {
   }
 }
 Objects {
-  Id: 11984417751779904478
-  Name: "txtGetToRaft"
-  Transform {
-    Location {
-      X: -1514.28491
-      Y: -1820.32556
-      Z: 148.460938
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1.00000012
-    }
-  }
-  ParentId: 14588194341887334465
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Control {
-    Width: 715
-    Height: 130
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    Text {
-      Label: "GET TO THE RAFT"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      Size: 80
-      Justification {
-        Value: "mc:etextjustify:center"
-      }
-      AutoWrapText: true
-      Font {
-        Id: 10953097053886714955
-      }
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:topcenter"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:topcenter"
-        }
-      }
-    }
-  }
-}
-Objects {
   Id: 1140651549348487123
   Name: "LazyLavaUIPanel"
   Transform {
@@ -17141,6 +17074,8 @@ Objects {
   ChildIds: 1013596429238015151
   ChildIds: 10437134369201318743
   ChildIds: 11136809678640441029
+  ChildIds: 11984417751779904478
+  ChildIds: 17288232809106928731
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -17171,6 +17106,142 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:topright"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 17288232809106928731
+  Name: "txtGetToRaftTime"
+  Transform {
+    Location {
+      X: -1514.28491
+      Y: -1820.32556
+      Z: 148.460907
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1140651549348487123
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 715
+    Height: 66
+    UIX: -858.24353
+    UIY: 97.048439
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "DISEMBARK IN 8 SECONDS"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 40
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 10953097053886714955
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topcenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topcenter"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 11984417751779904478
+  Name: "txtGetToRaft"
+  Transform {
+    Location {
+      X: -1514.28491
+      Y: -1820.32556
+      Z: 148.460938
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1.00000012
+    }
+  }
+  ParentId: 1140651549348487123
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 715
+    Height: 130
+    UIX: -858.24353
+    UIY: -16.7320251
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "HOP ON THE RAFT"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 80
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 10953097053886714955
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topcenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topcenter"
         }
       }
     }
@@ -17882,6 +17953,12 @@ Objects {
       Name: "cs:txtGetToRaft"
       ObjectReference {
         SelfId: 11984417751779904478
+      }
+    }
+    Overrides {
+      Name: "cs:txtGetToRaftTime"
+      ObjectReference {
+        SelfId: 17288232809106928731
       }
     }
   }

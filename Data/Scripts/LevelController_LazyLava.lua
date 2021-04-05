@@ -163,14 +163,17 @@ function LevelBegin()
     end
 
     script:SetNetworkedCustomProperty("UIControllerProperty","01,"..currentPoints..","..maxPoints..",0,0")    
-    propMainGameController.context.LevelBegin()
+    --propMainGameController.context.LevelBegin()
     
     startRaftTask = Task.Spawn(StartRaft,10)
 end
 
 function StartRaft()  
+    if (not propMainGameController.context.levelRunning) then
+        return
+    end
+
     startRaftTask = nil
-    Events.BroadcastToAllPlayers("GetToRaft", -1)
     maxSpeed = currentSpeed
     script:SetNetworkedCustomProperty("UIControllerProperty","01,"..currentPoints..","..maxPoints..","..currentSpeed..","..maxSpeed)    
 
@@ -195,6 +198,7 @@ function LevelFailed()
 end
 
 function LevelVictory()
+    Events.BroadcastToAllPlayers("HideAllUI")
     DrainLava()
     propMainGameController.context.LevelEnd(true)
 
@@ -363,6 +367,9 @@ function LevelPowerUp()
 end
 
 function LevelPowerDown()
+    Events.BroadcastToAllPlayers("HideAllUI")
+    --Events.BroadcastToAllPlayers("GetToRaft", -1)
+
     if (startRaftTask ~= nil) then startRaftTask:Cancel() end
 
     if (Object.IsValid(raft)) then raft:Destroy() end
