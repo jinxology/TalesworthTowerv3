@@ -3,9 +3,12 @@ local propNatureWindSteady01SFX = script:GetCustomProperty("NatureWindSteady01SF
 
 function OnBeginOverlap(whichTrigger, other)
 	if other:IsA("Player") then
+		trigger.collision = Collision.FORCE_OFF
         Task.Wait(1)
 		propNatureWindSteady01SFX:Stop()
-		if script:IsValid() and script.parent:IsValid() then script.parent:Destroy() end
+        if (Object.IsValid(script.parent)) then 
+			script.parent:Destroy() 
+		end
 	end
 end
 

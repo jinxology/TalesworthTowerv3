@@ -5404,9 +5404,9 @@ Objects {
   Name: "Spawn Point"
   Transform {
     Location {
-      X: -1050
-      Y: -650
-      Z: 150
+      X: 56.0229492
+      Y: -6069.48877
+      Z: 55.6877136
     }
     Rotation {
       Yaw: 90

@@ -83,7 +83,7 @@ function SpawnShape()
         myShapeObj:SetColor(Color.FromStandardHex("#78009BFF"))
     else
         --Green
-        myShapeObj:SetColor(Color.FromStandardHex("#9CCC00FF"))
+        myShapeObj:SetColor(Color.FromStandardHex("#00FF13FF"))
     end 
     
     myShapeObj.visibility = Visibility.FORCE_ON
