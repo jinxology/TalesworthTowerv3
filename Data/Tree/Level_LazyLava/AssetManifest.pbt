@@ -71,6 +71,15 @@ Assets {
   }
 }
 Assets {
+  Id: 10953097053886714955
+  Name: "Teko"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "TekoRegular_ref"
+  }
+}
+Assets {
   Id: 10789546840193366307
   Name: "Cube - Bottom-Aligned"
   PlatformAssetType: 1

@@ -41,9 +41,9 @@ nextLevelIndex = nil
 requiredNbrPlayersReady = 4
 levelList = {
     "ShapesAndButtons",
+    "FarmGallery",
     "BopAndPop",
     "JumpMan",      
-    "FarmGallery",
     "ColorDials",
     "BlockAndEscape",
     "GobbleDots",
@@ -378,7 +378,8 @@ function StartingPlatformsActivated()
         else   
             --currentLevelIndex is correct, no need to increment and delete last level
         end
-
+        
+        script:SetNetworkedCustomProperty("autostartTimerState","false,")
         LevelBegin()
     end
 end

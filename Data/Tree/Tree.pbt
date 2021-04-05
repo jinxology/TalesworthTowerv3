@@ -2266,7 +2266,7 @@ Objects {
       }
     }
     Text {
-      Label: "Vote for Tower Reset"
+      Label: "Vote for Tower Reset (Start Over)"
       Color {
         R: 1
         G: 1

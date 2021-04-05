@@ -140,6 +140,7 @@ function AutostartTimerTask(deltaTime)
     if (autostartTimerActive) then
         totalAutostartTime = totalAutostartTime - deltaTime
         if (totalAutostartTime < (maxAutostartTime-autoStartTextDelay)) then
+            if (totalAutostartTime < 0) then totalAutostartTime = 0 end
             propTxtAutoStart.text = AutoStartText(totalAutostartTime)
         end
     end
@@ -231,6 +232,8 @@ function ToggleBottomMessage(showMe, msg)
         propTxtGoToExit.visibility = Visibility.FORCE_OFF
     end
 end
+
+
 
 propMainGameController.networkedPropertyChangedEvent:Connect(IncomingUIMessage)
 
