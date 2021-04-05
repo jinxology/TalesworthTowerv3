@@ -3441,6 +3441,12 @@ Objects {
         Id: 15876711595831864388
       }
     }
+    Overrides {
+      Name: "cs:BAE_BallRolling"
+      AssetReference {
+        Id: 8112246739623668801
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
