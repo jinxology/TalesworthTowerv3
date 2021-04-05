@@ -36,11 +36,11 @@ function OnBeginOverlap(whichTrigger, other)
 		end
 
 		if player.serverUserData.alreadyFlumedIn[whichTrigger] ~= true then
-			print("new flume " .. whichTrigger.id)
+			--print("new flume " .. whichTrigger.id)
 			player.serverUserData.alreadyFlumedIn[whichTrigger] = true
 
 			if player.serverUserData.currentFlume == nil then
-				print("spawning fluming task")
+				--print("spawning fluming task")
 				player.serverUserData.flumingTask = Task.Spawn(function(dt)
 					FlumePlayer(player, dt)
 				end)

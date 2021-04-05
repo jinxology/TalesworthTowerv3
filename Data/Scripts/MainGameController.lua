@@ -650,7 +650,7 @@ function VictoryRoomEject()
 
     --loop through all levels and destroy them
     for i=1,#levelList do
-        DestroyLevel(currentLevelIndex)
+        DestroyLevel(i)
     end
 
     resetingTower = false
@@ -666,7 +666,7 @@ function EjectForTowerReset()
 
     --loop through all levels and destroy them
     for i=1,#levelList do
-        DestroyLevel(currentLevelIndex)
+        DestroyLevel(i)
     end
 
     levelRunning = false

@@ -70,8 +70,6 @@ function LevelPowerUp()
 	local propJumpmanScoreTemplate = script:GetCustomProperty("JumpmanScoreTemplate")
 	JumpmanScore = World.SpawnAsset(propJumpmanScoreTemplate)
 
-	--Play JumpMan Score
-	JumpmanScore:Play()
 
 	--Create Main Bases
 	--Green Base
@@ -239,6 +237,8 @@ end
 
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds
 function LevelBegin()
+	--Play JumpMan Score
+	JumpmanScore:Play()
 
 	JumpManSuccess = false
 	BlueBaseSuccess = false
