@@ -14,7 +14,7 @@ exitFlumeLocation = Vector3.New(6221.739,186.517,-425.271)
 exitFlumeRotation = Rotation.New(0,0,176.83)
 entranceFlumeLocation = Vector3.New(6251.078,-2926.557,-400.323)
 entranceFlumeRotation = Rotation.New(0,0,176.83)
-entranceFlumeEjectionVelocity = 20
+entranceFlumeEjectionVelocity = 10
 
 -- propMainGameController.context.SendGeneralMessageToClients("05,"..whoDidIt.." pressed a "..GetColorName(whichColor).." button near "..GetShapeName(whichShape))
 ------------------------------------------------------------

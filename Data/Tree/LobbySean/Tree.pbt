@@ -13300,7 +13300,6 @@ Objects {
     Volume: 1
     Falloff: 887.849609
     Radius: 821.250122
-    IsSpatializationEnabled: true
     IsAttenuationEnabled: true
   }
 }
