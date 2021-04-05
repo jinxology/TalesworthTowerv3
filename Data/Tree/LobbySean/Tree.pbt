@@ -1,6 +1,264 @@
 Name: "LobbySean"
 RootId: 16614468857374372845
 Objects {
+  Id: 10513309859249229475
+  Name: "Bush 01"
+  Transform {
+    Location {
+      X: 343.82605
+      Y: -2349.60107
+      Z: 41.7241211
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.305002779
+      Y: 0.305002779
+      Z: 0.305002779
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17234418054808417052
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 9364846777147310366
+  Name: "Bush 01"
+  Transform {
+    Location {
+      X: 1186.01953
+      Y: -1908.69775
+      Z: 41.7239685
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.642523825
+      Y: 0.642523825
+      Z: 0.642523825
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17234418054808417052
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 8596507451469526369
+  Name: "Bush 01"
+  Transform {
+    Location {
+      X: 1011.96362
+      Y: -1911.2915
+      Z: 41.7240601
+    }
+    Rotation {
+      Yaw: -51.3097839
+    }
+    Scale {
+      X: 0.465719849
+      Y: 0.465719849
+      Z: 0.465719849
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17234418054808417052
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 14632454847474344264
+  Name: "Bush 01"
+  Transform {
+    Location {
+      X: 1140.53796
+      Y: -2024.19092
+      Z: 41.7240601
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.540236175
+      Y: 0.540236175
+      Z: 0.540236175
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 17234418054808417052
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 6294910953762334333
+  Name: "Point Light"
+  Transform {
+    Location {
+      X: -694.82135
+      Y: -3517.07227
+      Z: 422.692261
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Light {
+    Intensity: 67.069519
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    VolumetricIntensity: 5
+    TeamSettings {
+    }
+    Light {
+      Temperature: 6500
+      LocalLight {
+        AttenuationRadius: 3369.75635
+        PointLight {
+          SourceRadius: 20
+          SoftSourceRadius: 20
+          FallOffExponent: 8
+        }
+      }
+      MaxDrawDistance: 5000
+      MaxDistanceFadeRange: 1000
+    }
+  }
+}
+Objects {
+  Id: 4730072165687955230
+  Name: "Leaderboards"
+  Transform {
+    Location {
+      X: -846.700195
+      Y: -3566.0874
+      Z: -0.000152587891
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Leaderboards"
+  }
+}
+Objects {
   Id: 5433708900552245521
   Name: "Flower Wild Lily 01"
   Transform {

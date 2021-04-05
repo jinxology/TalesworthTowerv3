@@ -26,7 +26,7 @@ local showingMe = false
 levelList = {
     "ShapesAndButtons",
     "BopAndPop",
-    "JumpMan",      -- hitting wall on entrance; misplaced or needs hole in wall
+    "JumpMan",     
     "FarmGallery",
     "ColorDials",
     "BlockAndEscape",

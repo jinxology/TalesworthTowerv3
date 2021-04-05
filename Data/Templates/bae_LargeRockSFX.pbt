@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 7175841995601495478
+        ParentId: 13991120868083209491
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -31,10 +31,9 @@ Assets {
             Id: 5322903040583623782
           }
           Transient: true
-          Volume: 0.567785501
+          Volume: 0.585497797
           Falloff: 5000
           Radius: -1
-          EnableOcclusion: true
           IsSpatializationEnabled: true
           IsAttenuationEnabled: true
         }

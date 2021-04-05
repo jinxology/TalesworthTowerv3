@@ -8,7 +8,7 @@ LeaderboardConfigs {
     FormatType {
       Value: "mc:ecoresdkleaderboardformat:numeric"
     }
-    Name: "TTLeaderboard"
+    Name: "TT Leaderboard"
     Id: "1F9763CF35CA8DA0"
     EntryLimit: 200
   }

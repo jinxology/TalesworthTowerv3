@@ -251,7 +251,6 @@ function LevelBegin()
 			JumpManSuccess = true
 		end	
 		if JumpManSuccess == true then
-			JumpmanScore:Stop()
 			LevelVictory()
 		end
 	end
@@ -450,6 +449,10 @@ end
 --LevelVictory is called when the Win Condition of the game is met
 --This function will call LevelEnd(true) on the MainGameController 
 function LevelVictory()
+	if (Object.IsValid(JumpmanScore)) then
+		JumpmanScore:Stop()
+	end
+
 	propMainGameController.context.LevelEnd(true)
 end
 
