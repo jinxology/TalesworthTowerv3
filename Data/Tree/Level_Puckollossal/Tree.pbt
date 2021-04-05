@@ -20328,9 +20328,9 @@ Objects {
   Name: "Girder Medium Angled"
   Transform {
     Location {
-      X: 0.000130176544
+      X: -0.00198960304
       Y: 1200
-      Z: -3491.73389
+      Z: -3528.09277
     }
     Rotation {
       Pitch: -8.26489258

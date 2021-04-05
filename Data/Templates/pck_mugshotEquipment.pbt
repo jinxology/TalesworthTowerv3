@@ -81,7 +81,6 @@ Assets {
           Overrides {
             Name: "cs:reelAbility"
             ObjectReference {
-              SelfId: 841534158063459245
             }
           }
           Overrides {
@@ -143,6 +142,14 @@ Assets {
             Int: 0
           }
           Overrides {
+            Name: "cs:currentScore"
+            Int: 0
+          }
+          Overrides {
+            Name: "cs:winCondition"
+            Int: 0
+          }
+          Overrides {
             Name: "cs:tension:isrep"
             Bool: true
           }
@@ -156,6 +163,14 @@ Assets {
           }
           Overrides {
             Name: "cs:tetheredState:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:currentScore:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:winCondition:isrep"
             Bool: true
           }
         }
@@ -380,6 +395,36 @@ Assets {
             ObjectReference {
               SubObjectId: 5160734189277775463
             }
+          }
+          Overrides {
+            Name: "cs:broadcastLabel"
+            ObjectReference {
+              SubObjectId: 3412492744142072457
+            }
+          }
+          Overrides {
+            Name: "cs:currentScoreLabel"
+            ObjectReference {
+              SubObjectId: 6149176165849373739
+            }
+          }
+          Overrides {
+            Name: "cs:winConditionLabel"
+            ObjectReference {
+              SubObjectId: 9713136443476397433
+            }
+          }
+          Overrides {
+            Name: "cs:broadcastLabel:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:currentScoreLabel:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:winConditionLabel:isrep"
+            Bool: true
           }
         }
         Collidable_v2 {
@@ -1330,11 +1375,13 @@ Assets {
         ParentId: 8282285858322498775
         ChildIds: 12380383602373857846
         ChildIds: 17669923102772535699
+        ChildIds: 13812485910615230377
+        ChildIds: 3412492744142072457
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
+          Value: "mc:evisibilitysetting:forceon"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -3041,6 +3088,325 @@ Assets {
         }
       }
       Objects {
+        Id: 13812485910615230377
+        Name: "UI Image"
+        Transform {
+          Location {
+            X: 735
+            Y: -4025
+            Z: -14195
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5824034209980346097
+        ChildIds: 695175975245615303
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceon"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 200
+          Height: 200
+          UIX: -40
+          UIY: 40
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Image {
+            Brush {
+              Id: 3442190493143268016
+            }
+            Color {
+              A: 0.756000042
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topright"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topright"
+              }
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 695175975245615303
+        Name: "UI Image"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13812485910615230377
+        ChildIds: 6149176165849373739
+        ChildIds: 9713136443476397433
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 200
+          Height: 200
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          UseParentWidth: true
+          UseParentHeight: true
+          Image {
+            Brush {
+              Id: 2505953933055737055
+            }
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            TeamSettings {
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 6149176165849373739
+        Name: "currentScoreLabel"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 695175975245615303
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 100
+          Height: 160
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Text {
+            Label: "0"
+            Color {
+              G: 0.856939
+              B: 1
+              A: 1
+            }
+            Size: 80
+            Justification {
+              Value: "mc:etextjustify:right"
+            }
+            AutoWrapText: true
+            ClipTextToSize: true
+            Font {
+              Id: 841534158063459245
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middleright"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 9713136443476397433
+        Name: "winConditionLabel"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 695175975245615303
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 80
+          Height: 64
+          UIX: 10
+          UIY: -16
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Text {
+            Label: "/10"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 0.8
+            }
+            Size: 32
+            Justification {
+              Value: "mc:etextjustify:left"
+            }
+            AutoWrapText: true
+            Font {
+              Id: 841534158063459245
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middleleft"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 3412492744142072457
+        Name: "broadcastLabel"
+        Transform {
+          Location {
+            X: 735
+            Y: -4025
+            Z: -15445
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5824034209980346097
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Control {
+          Width: 1000
+          Height: 100
+          UIY: 90
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Text {
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            Size: 50
+            Justification {
+              Value: "mc:etextjustify:center"
+            }
+            AutoWrapText: true
+            Font {
+              Id: 841534158063459245
+            }
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topcenter"
+              }
+            }
+          }
+        }
+      }
+      Objects {
         Id: 9169255255245069283
         Name: "PickupTrigger"
         Transform {
@@ -3623,6 +3989,24 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "FrameRect_009"
+      }
+    }
+    Assets {
+      Id: 3442190493143268016
+      Name: "BG Flat 004"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "BackgroundNoOutline_22"
+      }
+    }
+    Assets {
+      Id: 2505953933055737055
+      Name: "Frame Outlined 004"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "FrameSolid4px_022"
       }
     }
     Assets {
