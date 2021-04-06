@@ -370,7 +370,8 @@ function SaySomething()
             
                 playingVocal = propSyllableVocalSFX[math.random(#propSyllableVocalSFX)]
                 playingPercussive = propSyllablePercussiveSFX[math.random(#propSyllablePercussiveSFX)]
-
+                playingVocal.volume = .1
+                playingPercussive.volume = .1
                 -- print("vocal = " .. playingVocal.length .. ", perc = " .. playingPercussive.length)
                 playingVocal.pitch = playingVocal:GetCustomProperty("basePitch") + math.random(1, 750)
                 playingPercussive.pitch = playingPercussive:GetCustomProperty("basePitch") + math.random(1, 500)

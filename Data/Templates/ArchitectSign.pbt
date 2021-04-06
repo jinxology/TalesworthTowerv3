@@ -7,7 +7,7 @@ Assets {
       RootId: 13846951818635812732
       Objects {
         Id: 13846951818635812732
-        Name: "ArcthitectSign"
+        Name: "ArchitectSign"
         Transform {
           Scale {
             X: 1
@@ -15,11 +15,13 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 9559405966006854558
         ChildIds: 13178690747755072352
         ChildIds: 6378873989301835999
         ChildIds: 622252525570655390
+        ChildIds: 8040581669300652256
         ChildIds: 4709569307287743065
+        ChildIds: 484193721936292133
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -138,7 +140,7 @@ Assets {
       }
       Objects {
         Id: 622252525570655390
-        Name: "txtArchitectName"
+        Name: "txtArchitectName - EDIT ME"
         Transform {
           Location {
             X: 0.702636719
@@ -185,22 +187,67 @@ Assets {
         }
       }
       Objects {
+        Id: 8040581669300652256
+        Name: "txtArchitectName - EDIT ME TOO!"
+        Transform {
+          Location {
+            X: 0.702636719
+            Y: 7.33557129
+            Z: 124.413574
+          }
+          Rotation {
+            Yaw: 89.9999619
+          }
+          Scale {
+            X: 2.8335917
+            Y: 2.8335917
+            Z: 2.8335917
+          }
+        }
+        ParentId: 13846951818635812732
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Text {
+          Text: "Heavy"
+          FontAsset {
+          }
+          Color {
+            A: 1
+          }
+          HorizontalSize: 1
+          VerticalSize: 1
+          HorizontalAlignment {
+            Value: "mc:ecoretexthorizontalalign:center"
+          }
+          VerticalAlignment {
+            Value: "mc:ecoretextverticalalign:center"
+          }
+        }
+      }
+      Objects {
         Id: 4709569307287743065
         Name: "towerprogresscreenoverlay"
         Transform {
           Location {
-            X: -2.42138672
-            Y: 12.2268066
-            Z: 156.111816
+            X: -2.3196466
+            Y: 12.1459732
+            Z: 129.573486
           }
           Rotation {
             Yaw: 180
             Roll: -90
           }
           Scale {
-            X: 2.24334288
-            Y: 1.28979814
-            Z: 0.999998868
+            X: 2.46703982
+            Y: 1.32464457
+            Z: 0.999999642
           }
         }
         ParentId: 13846951818635812732
@@ -209,6 +256,12 @@ Assets {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
               Id: 6498147152032758814
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              A: 0.679
             }
           }
         }
@@ -234,6 +287,51 @@ Assets {
               Mass: 100
               LinearDamping: 0.01
             }
+          }
+        }
+      }
+      Objects {
+        Id: 484193721936292133
+        Name: "lblarchitect"
+        Transform {
+          Location {
+            X: -119.503662
+            Y: 7.45849609
+            Z: 181.848145
+          }
+          Rotation {
+            Yaw: 89.9999847
+          }
+          Scale {
+            X: 0.880932868
+            Y: 0.880932868
+            Z: 0.880932868
+          }
+        }
+        ParentId: 13846951818635812732
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Text {
+          Text: "Level Architect"
+          FontAsset {
+          }
+          Color {
+            A: 1
+          }
+          HorizontalSize: 1
+          VerticalSize: 1
+          HorizontalAlignment {
+            Value: "mc:ecoretexthorizontalalign:left"
+          }
+          VerticalAlignment {
+            Value: "mc:ecoretextverticalalign:center"
           }
         }
       }

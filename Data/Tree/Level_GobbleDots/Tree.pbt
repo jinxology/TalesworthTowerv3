@@ -4580,6 +4580,15 @@ Objects {
       }
     }
     ParameterOverrideMap {
+      key: 8040581669300652256
+      value {
+        Overrides {
+          Name: "Text"
+          String: "Hightide"
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 13846951818635812732
       value {
         Overrides {

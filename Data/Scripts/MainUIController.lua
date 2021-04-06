@@ -44,7 +44,6 @@ end
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 
 function IncomingUIMessage(coreObject, propertyName)
-    
     local msg = propMainGameController:GetCustomProperty(propertyName)
     --print ("UIMESSAGE: "..msg)
 

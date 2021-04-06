@@ -22,15 +22,15 @@ startPlatformPosition = Vector3.New(0,0,0)
 startPlatformRotation = Rotation.New(0,0,0)
 ------------------------------------------------------------
 
-local ejectTimerRunning = false
-local playersEntered = 0
-local totalPlayers = 0
-local forceOpeninSeconds = 30
+--local ejectTimerRunning = false
+local flumeEveryoneInTimerRunning = false
+local taskFlumeEveryoneIn = nil
+local flumeEveryoneInDelay = 10
 local pauseWhenEveryoneIn = 10
 autoOpenFloorTask = nil
+local playersEntered = 0
+local totalPlayers = 0
 
---Start 30s timer when first person enters
---Once everyone comes in, it cancels timer, then opens doors after 5 second delay
 
 function OpenFloor()
     if (autoOpenFloorTask ~= nil) then autoOpenFloorTask:Cancel() end
@@ -64,19 +64,58 @@ function OnEnterVictoryRoom(whichTrigger, other)
         local player = other
         Task.Spawn(function() ConfettiAndVictory(other) end,1)
 
-        if (ejectTimerRunning == false) then
-            ejectTimerRunning = true
-            autoOpenFloorTask = Task.Spawn(AutoOpenFloor, forceOpeninSeconds)
-        end
-
+        --+1 players here
+        --If everyone here, pauseWhenEveryoneIn then eject
+        --If not everyone here, start (or continue) the autoflumeintimer
         playersEntered = playersEntered + 1
 
-        if (playersEntered == totalPlayers) then
+        if (playersEntered >= totalPlayers) then
+            --Everyone is here! Party.
+            print ("everyone in victory")
             propMainGameController.context.StartingPlatformsActivated()
-            autoOpenFloorTask:Cancel()
+            if (taskFlumeEveryoneIn ~= nil) then taskFlumeEveryoneIn:Cancel() end
             autoOpenFloorTask = Task.Spawn(AutoOpenFloor, pauseWhenEveryoneIn)
+        else
+            if (flumeEveryoneInTimerRunning == false) then
+                flumeEveryoneInTimerRunning = true
+                print ("started flume in ppl timer")
+                taskFlumeEveryoneIn = Task.Spawn(FlumeEveryoneIn, flumeEveryoneInDelay)
+            end    
         end
+
 	end
+end
+
+function FlumeEveryoneIn()
+    --Loops through all players
+    for _, player in pairs(Game.GetPlayers()) do
+        --If they are not in the victory room
+        if (not propEnteredVRTrigger:IsOverlapping(player)) then
+            if player.serverUserData.currentFlumeSegment then
+                if (player.serverUserData.flumingTask ~= nil) then
+                    player.serverUserData.flumingTask:Cancel()
+                end
+                player.serverUserData.flumingTask = nil
+                player.serverUserData.currentFlumeSegment = nil
+                player.serverUserData.triggeredSegments = nil
+                player.serverUserData.enteredFlumeSegmentAt = nil
+
+            end 
+
+            levelControllerScript = propMainGameController.context.GetNextLevelController()
+            levelControllerScript.context.entranceFlume:FindChildByName("Flume Tube Manager").context.EntranceActive(levelControllerScript.context.entranceFlumeEjectionVelocity)
+            local teleportDest = levelControllerScript.context.entranceFlume:FindChildByName("Entrance teleport point"):GetWorldPosition()        
+            player:SetWorldPosition(teleportDest)
+
+            -- if player.serverUserData.currentFlumeSegment then
+            --     -- player is in a flume
+            --     propMainGameController.context.EmergencyDeflume(player)
+            -- else
+            --     -- player is not
+            --     propMainGameController.context.EmergencyEnflume(player)
+            -- end        
+        end                
+    end       
 end
 
 function AutoOpenFloor()
@@ -109,15 +148,18 @@ end
 
 
 function LevelPowerUp() 
-    ejectTimerRunning = false
+    flumeEveryoneInTimerRunning = false
     CloseFloor()
     propTxtFinalTime.text = FormatTime(propMainGameController.context.totalTowerTime)
     totalPlayers = #Game.GetPlayers()
 end
 
 function LevelPowerDown()
+    if (taskFlumeEveryoneIn ~= nil) then taskFlumeEveryoneIn:Cancel() end
+    if (autoOpenFloorTask ~= nil) then autoOpenFloorTask:Cancel() end    
+
     if (autoOpenFloorTask ~= nil) then autoOpenFloorTask:Cancel() end
-    ejectTimerRunning = false
+    flumeEveryoneInTimerRunning = false
     CloseFloor()
 end
 

@@ -5,6 +5,18 @@ GlobalEntries {
   DateTime: "2021-04-05T16:31:50.601Z"
 }
 GlobalEntries {
+  Id: "BOT_Bot2"
+  Name: "Bot2"
+  ScoreFormatted: "2.025391"
+  DateTime: "2021-04-05T23:19:14.702Z"
+}
+GlobalEntries {
+  Id: "BOT_Bot1"
+  Name: "Bot1"
+  ScoreFormatted: "2.025391"
+  DateTime: "2021-04-05T23:19:14.702Z"
+}
+GlobalEntries {
   Id: "ecb802b206d44bbd997e92fd076ac4ce"
   Name: "hightide"
   ScoreFormatted: "799.0"
@@ -16,6 +28,18 @@ DailyEntries {
   Name: "Heavy"
   ScoreFormatted: "0.0"
   DateTime: "2021-04-05T16:31:50.601Z"
+}
+DailyEntries {
+  Id: "BOT_Bot2"
+  Name: "Bot2"
+  ScoreFormatted: "2.025391"
+  DateTime: "2021-04-05T23:19:14.702Z"
+}
+DailyEntries {
+  Id: "BOT_Bot1"
+  Name: "Bot1"
+  ScoreFormatted: "2.025391"
+  DateTime: "2021-04-05T23:19:14.702Z"
 }
 DailyEntries {
   Id: "ecb802b206d44bbd997e92fd076ac4ce"
@@ -29,6 +53,18 @@ WeeklyEntries {
   Name: "Heavy"
   ScoreFormatted: "0.0"
   DateTime: "2021-04-05T16:31:50.601Z"
+}
+WeeklyEntries {
+  Id: "BOT_Bot2"
+  Name: "Bot2"
+  ScoreFormatted: "2.025391"
+  DateTime: "2021-04-05T23:19:14.702Z"
+}
+WeeklyEntries {
+  Id: "BOT_Bot1"
+  Name: "Bot1"
+  ScoreFormatted: "2.025391"
+  DateTime: "2021-04-05T23:19:14.702Z"
 }
 WeeklyEntries {
   Id: "ecb802b206d44bbd997e92fd076ac4ce"

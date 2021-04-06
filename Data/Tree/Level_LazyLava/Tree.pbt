@@ -17996,6 +17996,24 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 622252525570655390
+      value {
+        Overrides {
+          Name: "Text"
+          String: "Heavy"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8040581669300652256
+      value {
+        Overrides {
+          Name: "Text"
+          String: "Heavy"
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 13846951818635812732
       value {
         Overrides {

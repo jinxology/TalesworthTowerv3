@@ -54,7 +54,7 @@ Objects {
 }
 Objects {
   Id: 16842592450274836851
-  Name: "ArcthitectSign"
+  Name: "ArchitectSign"
   Transform {
     Scale {
       X: 1
@@ -88,14 +88,6 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
           }
         }
       }
@@ -13607,6 +13599,7 @@ Objects {
   ChildIds: 1655699574212639757
   ChildIds: 15522336711778394647
   ChildIds: 10285560010749730139
+  ChildIds: 10671547551731050821
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -13636,6 +13629,75 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 10671547551731050821
+  Name: "lblRMB"
+  Transform {
+    Location {
+      X: -123465.75
+      Y: -1405.8457
+      Z: -29914.3398
+    }
+    Rotation {
+      Yaw: 41.3110847
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3125212931904567890
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Control {
+    Width: 308
+    Height: 39
+    UIX: -174.718384
+    UIY: -20.8527527
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "Right Mouse to Zoom"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 22
+      Justification {
+        Value: "mc:etextjustify:right"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 10953097053886714955
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomcenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:bottomright"
         }
       }
     }
@@ -13672,8 +13734,8 @@ Objects {
   Control {
     Width: 156
     Height: 65
-    UIX: -88.8147
-    UIY: -684.660156
+    UIX: -91.3944092
+    UIY: -678.209351
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -13741,8 +13803,8 @@ Objects {
   Control {
     Width: 235
     Height: 114
-    UIX: -90
-    UIY: -599.550415
+    UIX: -92.5797119
+    UIY: -593.099609
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -13810,8 +13872,8 @@ Objects {
   Control {
     Width: 100
     Height: 100
-    UIX: -223
-    UIY: -627.920227
+    UIX: -225.579712
+    UIY: -621.469482
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -13875,8 +13937,8 @@ Objects {
   Control {
     Width: 156
     Height: 65
-    UIX: -96.3740234
-    UIY: -486.070862
+    UIX: -98.9537354
+    UIY: -500.262451
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -13944,8 +14006,8 @@ Objects {
   Control {
     Width: 235
     Height: 114
-    UIX: -90
-    UIY: -399.069885
+    UIX: -92.5797119
+    UIY: -413.261444
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -14013,8 +14075,8 @@ Objects {
   Control {
     Width: 100
     Height: 100
-    UIX: -223
-    UIY: -423.657043
+    UIX: -225.579712
+    UIY: -437.848602
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -14078,8 +14140,8 @@ Objects {
   Control {
     Width: 156
     Height: 65
-    UIX: -90.704834
-    UIY: -281.807678
+    UIX: -91.994751
+    UIY: -317.931732
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -14147,8 +14209,8 @@ Objects {
   Control {
     Width: 235
     Height: 114
-    UIX: -90
-    UIY: -198.589294
+    UIX: -91.289917
+    UIY: -234.713348
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -14216,8 +14278,8 @@ Objects {
   Control {
     Width: 100
     Height: 100
-    UIX: -223
-    UIY: -225.06781
+    UIX: -224.289917
+    UIY: -261.191864
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -14281,8 +14343,8 @@ Objects {
   Control {
     Width: 156
     Height: 65
-    UIX: -83.1462402
-    UIY: -102.131653
+    UIX: -84.4361572
+    UIY: -138.255707
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -14350,8 +14412,8 @@ Objects {
   Control {
     Width: 165
     Height: 114
-    UIX: -90.7055664
-    UIY: -17.0218506
+    UIX: -91.9954834
+    UIY: -53.1459045
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -14419,8 +14481,8 @@ Objects {
   Control {
     Width: 100
     Height: 100
-    UIX: -223
-    UIY: -49.1745605
+    UIX: -224.289917
+    UIY: -85.2986145
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"

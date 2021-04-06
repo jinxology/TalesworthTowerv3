@@ -712,25 +712,25 @@ function EjectForTowerReset()
     SpawnLevel1()
 end
 
-function EmergencyEnflume()
+function EmergencyEnflume(player)
 --    TODO: this is copy/pasted from elsewhere that knows more
         --    about the flume system than this object... move this code
         --    somewhere more central, like: 
         --        propFlumeSystem:EmergencyEject(player)
-        local nextLevelController = nil
-        if (levelRunning) then
-            nextLevelController = GetCurrentLevelController()
-        else
-            nextLevelController = GetNextLevelController()
-        end
-        local teleportDestObj = nextLevelController.context.entranceFlume:FindChildByName("Entrance segment")
+        local levelController = nil
+        --if (not levelRunning) then
+            levelController = GetCurrentLevelController()
+        --else
+          --  levelController = GetNextLevelController()
+        --end
+        local teleportDestObj = levelController.context.exitFlume:FindChildByName("Entrance Segment")
 
         player:ResetVelocity()
         player:SetWorldPosition(teleportDestObj:GetWorldPosition())
         --    END TODO
 end
 
-function EmergencyDeflume()
+function EmergencyDeflume(player)
 --    TODO: this is copy/pasted from elsewhere that knows more
         --    about the flume system than this object... move this code
         --    somewhere more central, like: 

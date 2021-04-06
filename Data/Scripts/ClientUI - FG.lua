@@ -36,6 +36,7 @@ function HitCountUpdate(coreObject, propertyName)
             if (hitData[i+3] == Game.GetLocalPlayer().name) then
                 if (playerHits >= playerRequiredHits) then
                     propHitCount.text = "ZONE COMPLETED"
+                    Task.Spawn(HideZoneCompleted,3)
                 else
                     --propHitCount.text = "" .. playerHits .. "/" .. playerRequiredHits
                     propHitCount.text = ""
@@ -43,6 +44,10 @@ function HitCountUpdate(coreObject, propertyName)
             end
         end
     end
+end
+
+function HideZoneCompleted()
+    propHitCount.text = ""
 end
 
 -- function SetPlayerNumber(nbr) 

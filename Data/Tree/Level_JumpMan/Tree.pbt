@@ -2,7 +2,7 @@ Name: "Level_JumpMan"
 RootId: 9132562513265036101
 Objects {
   Id: 8022174997637216370
-  Name: "ArchitectSign"
+  Name: "ArchitectSign-jmp"
   Transform {
     Scale {
       X: 1
@@ -25,26 +25,14 @@ Objects {
           Name: "Text"
           String: "Swampy"
         }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 0.702636719
-            Y: 8.78527832
-            Z: 128.205078
-          }
-        }
       }
     }
     ParameterOverrideMap {
-      key: 4709569307287743065
+      key: 8040581669300652256
       value {
         Overrides {
-          Name: "Position"
-          Vector {
-            X: -2.42138672
-            Y: 12.2268066
-            Z: 156.111816
-          }
+          Name: "Text"
+          String: "Swampy"
         }
       }
     }
@@ -69,14 +57,6 @@ Objects {
             Pitch: -0.206573486
             Yaw: 90.8657684
             Roll: -0.163970947
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
           }
         }
       }

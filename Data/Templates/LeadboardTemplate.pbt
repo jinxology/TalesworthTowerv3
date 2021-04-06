@@ -18,10 +18,8 @@ Assets {
         ParentId: 4730072165687955230
         ChildIds: 15834417622459136582
         ChildIds: 18332582370764629497
-        ChildIds: 3403326017192316368
-        ChildIds: 17199164719493250228
-        ChildIds: 2882658670916355020
-        ChildIds: 2263002480838854525
+        UnregisteredParameters {
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -102,6 +100,7 @@ Assets {
           }
         }
         ParentId: 16875040930934377915
+        ChildIds: 10446038983662538399
         ChildIds: 11294042303590013065
         ChildIds: 4400228378143192887
         ChildIds: 15225150472473457152
@@ -109,6 +108,10 @@ Assets {
         ChildIds: 4121857712445825122
         ChildIds: 17674637923421898230
         ChildIds: 2883786880719529838
+        ChildIds: 3403326017192316368
+        ChildIds: 17199164719493250228
+        ChildIds: 2882658670916355020
+        ChildIds: 2263002480838854525
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -119,6 +122,78 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         NetworkContext {
+        }
+      }
+      Objects {
+        Id: 10446038983662538399
+        Name: "LeaderboardUpdaterClientSide"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 18332582370764629497
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:txtNamesGlobal"
+            ObjectReference {
+              SubObjectId: 3403326017192316368
+            }
+          }
+          Overrides {
+            Name: "cs:txtNamesGlobal2"
+            ObjectReference {
+              SubObjectId: 2882658670916355020
+            }
+          }
+          Overrides {
+            Name: "cs:txtScoresGlobal2"
+            ObjectReference {
+              SubObjectId: 2263002480838854525
+            }
+          }
+          Overrides {
+            Name: "cs:txtScoresGlobal"
+            ObjectReference {
+              SubObjectId: 17199164719493250228
+            }
+          }
+          Overrides {
+            Name: "cs:MainGameController"
+            ObjectReference {
+              SelfId: 6965558101138960242
+            }
+          }
+          Overrides {
+            Name: "cs:LeaderboardController"
+            ObjectReference {
+              SelfId: 16711662439628477346
+            }
+          }
+          Overrides {
+            Name: "cs:timeFrameName"
+            String: "globalData"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Script {
+          ScriptAsset {
+            Id: 12183184676695015041
+          }
         }
       }
       Objects {
@@ -464,9 +539,9 @@ Assets {
         Name: "txtNamesGlobal"
         Transform {
           Location {
-            X: 83.5405273
-            Y: 323.432129
-            Z: 509.339111
+            X: 50.3469238
+            Y: 365.049805
+            Z: 584.827393
           }
           Rotation {
           }
@@ -476,8 +551,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16875040930934377915
-        WantsNetworking: true
+        ParentId: 18332582370764629497
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -488,7 +562,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Text {
-          Text: "Name"
+          Text: "Loading High Scores..."
           FontAsset {
             Id: 1854457264003910494
           }
@@ -513,9 +587,9 @@ Assets {
         Name: "txtScoresGlobal"
         Transform {
           Location {
-            X: 83.5405273
-            Y: 79.4731445
-            Z: 509.339111
+            X: 50.3469238
+            Y: 121.09082
+            Z: 584.827393
           }
           Rotation {
           }
@@ -525,8 +599,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16875040930934377915
-        WantsNetworking: true
+        ParentId: 18332582370764629497
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -537,7 +610,6 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Text {
-          Text: "00:00"
           FontAsset {
             Id: 1854457264003910494
           }
@@ -562,9 +634,9 @@ Assets {
         Name: "txtNamesGlobal2"
         Transform {
           Location {
-            X: 83.5405273
-            Y: 32.4995117
-            Z: 509.339111
+            X: 50.3469238
+            Y: 74.1171875
+            Z: 584.827393
           }
           Rotation {
           }
@@ -574,8 +646,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16875040930934377915
-        WantsNetworking: true
+        ParentId: 18332582370764629497
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -586,7 +657,6 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Text {
-          Text: "Name"
           FontAsset {
             Id: 1854457264003910494
           }
@@ -611,9 +681,9 @@ Assets {
         Name: "txtScoresGlobal2"
         Transform {
           Location {
-            X: 83.5405273
-            Y: -222.736328
-            Z: 509.339111
+            X: 50.3469238
+            Y: -181.118652
+            Z: 584.827393
           }
           Rotation {
           }
@@ -623,8 +693,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16875040930934377915
-        WantsNetworking: true
+        ParentId: 18332582370764629497
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -635,7 +704,6 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Text {
-          Text: "00:00"
           FontAsset {
             Id: 1854457264003910494
           }

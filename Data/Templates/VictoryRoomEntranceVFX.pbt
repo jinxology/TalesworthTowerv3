@@ -117,7 +117,7 @@ Assets {
           }
           AudioBP {
             AutoPlay: true
-            Volume: 1
+            Volume: 0.637878358
             Falloff: 3600
             Radius: 400
           }

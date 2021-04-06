@@ -1,4 +1,17 @@
 Assets {
+  Id: 16420995561057220568
+  Name: "Talesworth VIP"
+  PlatformAssetType: 24
+  NetReferenceAsset {
+    NetReference {
+      Key: "b2c7b36fc6164975a9b469af4fbd10bf"
+      Type {
+        Value: "mc:enetreferencetype:creatorperk"
+      }
+    }
+  }
+}
+Assets {
   Id: 16122861514950347918
   Name: "Planetary Ring"
   PlatformAssetType: 6
@@ -95,6 +108,32 @@ Assets {
   NetReferenceAsset {
     NetReference {
       Key: "7cc6aaecc08d44dbaf32c318d70bbc20"
+      Type {
+        Value: "mc:enetreferencetype:creatorperk"
+      }
+    }
+  }
+}
+Assets {
+  Id: 6133375688697293028
+  Name: "Old School Arcade Tip"
+  PlatformAssetType: 24
+  NetReferenceAsset {
+    NetReference {
+      Key: "724a1d9938234201a087d75b7426b882"
+      Type {
+        Value: "mc:enetreferencetype:creatorperk"
+      }
+    }
+  }
+}
+Assets {
+  Id: 5305529152011749281
+  Name: "Hundy Coin Tower Tip"
+  PlatformAssetType: 24
+  NetReferenceAsset {
+    NetReference {
+      Key: "d3deacbc4d87466ebe1e83529d886590"
       Type {
         Value: "mc:enetreferencetype:creatorperk"
       }

@@ -63,6 +63,15 @@ Objects {
       }
     }
     ParameterOverrideMap {
+      key: 10446038983662538399
+      value {
+        Overrides {
+          Name: "cs:timeFrameName"
+          String: "dailyData"
+        }
+      }
+    }
+    ParameterOverrideMap {
       key: 16875040930934377915
       value {
         Overrides {
@@ -165,6 +174,15 @@ Objects {
         Overrides {
           Name: "Name"
           String: "txtNamesWeekly"
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 10446038983662538399
+      value {
+        Overrides {
+          Name: "cs:timeFrameName"
+          String: "weeklyData"
         }
       }
     }
@@ -284,114 +302,31 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:txtNamesGlobal"
-      ObjectReference {
-        SelfId: 14089931574301497184
-        SubObjectId: 3403326017192316368
-        InstanceId: 6798987040889402598
-        TemplateId: 4398772671886770510
-      }
+      Name: "cs:globalData"
+      String: ""
     }
     Overrides {
-      Name: "cs:txtScoresGlobal"
-      ObjectReference {
-        SelfId: 152491034327754244
-        SubObjectId: 17199164719493250228
-        InstanceId: 6798987040889402598
-        TemplateId: 4398772671886770510
-      }
+      Name: "cs:weeklyData"
+      String: ""
     }
     Overrides {
-      Name: "cs:txtNamesWeekly"
-      ObjectReference {
-        SelfId: 18309552097525415541
-        SubObjectId: 3403326017192316368
-        InstanceId: 14129326561960366692
-        TemplateId: 4398772671886770510
-      }
+      Name: "cs:dailyData"
+      String: ""
     }
     Overrides {
-      Name: "cs:txtScoresWeekly"
-      ObjectReference {
-        SelfId: 4579078125123931921
-        SubObjectId: 17199164719493250228
-        InstanceId: 14129326561960366692
-        TemplateId: 4398772671886770510
-      }
+      Name: "cs:globalData:isrep"
+      Bool: true
     }
     Overrides {
-      Name: "cs:txtNamesDaily"
-      ObjectReference {
-        SelfId: 14751868248633264199
-        SubObjectId: 3403326017192316368
-        InstanceId: 5238114729012109560
-        TemplateId: 4398772671886770510
-      }
+      Name: "cs:weeklyData:isrep"
+      Bool: true
     }
     Overrides {
-      Name: "cs:txtScoresDaily"
-      ObjectReference {
-        SelfId: 949579850222598435
-        SubObjectId: 17199164719493250228
-        InstanceId: 5238114729012109560
-        TemplateId: 4398772671886770510
-      }
-    }
-    Overrides {
-      Name: "cs:txtNamesGlobal2"
-      ObjectReference {
-        SelfId: 14173732030288861564
-        SubObjectId: 2882658670916355020
-        InstanceId: 6798987040889402598
-        TemplateId: 4398772671886770510
-      }
-    }
-    Overrides {
-      Name: "cs:txtScoresGlobal2"
-      ObjectReference {
-        SelfId: 17570151979208973773
-        SubObjectId: 2263002480838854525
-        InstanceId: 6798987040889402598
-        TemplateId: 4398772671886770510
-      }
-    }
-    Overrides {
-      Name: "cs:txtNamesWeekly2"
-      ObjectReference {
-        SelfId: 17952140506313928809
-        SubObjectId: 2882658670916355020
-        InstanceId: 14129326561960366692
-        TemplateId: 4398772671886770510
-      }
-    }
-    Overrides {
-      Name: "cs:txtScoresWeekly2"
-      ObjectReference {
-        SelfId: 14863108715546883288
-        SubObjectId: 2263002480838854525
-        InstanceId: 14129326561960366692
-        TemplateId: 4398772671886770510
-      }
-    }
-    Overrides {
-      Name: "cs:txtNamesDaily2"
-      ObjectReference {
-        SelfId: 14664672776390624859
-        SubObjectId: 2882658670916355020
-        InstanceId: 5238114729012109560
-        TemplateId: 4398772671886770510
-      }
-    }
-    Overrides {
-      Name: "cs:txtScoresDaily2"
-      ObjectReference {
-        SelfId: 18223231211756307178
-        SubObjectId: 2263002480838854525
-        InstanceId: 5238114729012109560
-        TemplateId: 4398772671886770510
-      }
+      Name: "cs:dailyData:isrep"
+      Bool: true
     }
   }
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

@@ -10,11 +10,11 @@ function OnBeginOverlap(whichTrigger, other)
 
         if (player.serverUserData.flumingTask ~= nil) then
             player.serverUserData.flumingTask:Cancel()
-            player.serverUserData.flumingTask = nil
-            player.serverUserData.currentFlumeSegment = nil
-            player.serverUserData.triggeredSegments = nil
-            player.serverUserData.enteredFlumeSegmentAt = nil
         end
+        player.serverUserData.flumingTask = nil
+        player.serverUserData.currentFlumeSegment = nil
+        player.serverUserData.triggeredSegments = nil
+        player.serverUserData.enteredFlumeSegmentAt = nil
 
         local originPt = player:GetWorldPosition()
         local destPt = propTowerResetVectorTarget:GetWorldPosition()
