@@ -125,6 +125,7 @@ end
 
 function EndTargetPractice()    
     currentTarget:Destroy()
+    currentTarget = nil
 end
 
 

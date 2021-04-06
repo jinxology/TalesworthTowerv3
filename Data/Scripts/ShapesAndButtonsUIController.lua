@@ -27,14 +27,13 @@ function SetUIData(pts,ptsMax)
 end
 
 function IncomingUIMessage(coreObject, propertyName)
-    print (msg)
     local msg = propLevelControllerShapesAndButtons:GetCustomProperty(propertyName)
-    local msgParams = {CoreString.Split(msg,",")}
-    print (msg)
+    --print (msg)
     if (propertyName == "UIVisibility") then
-        showingMe = false
+        showingMe = msg
         ToggleUIVisibility()
     else        
+        local msgParams = {CoreString.Split(msg,",")}
         if (msgParams[1] == "01") then
             SetUIData(msgParams[2],msgParams[3])
             

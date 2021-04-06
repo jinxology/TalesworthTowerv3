@@ -4726,14 +4726,14 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:UIVisibility"
-      String: ""
-    }
-    Overrides {
       Name: "cs:SpawnShapeVFXNew"
       AssetReference {
         Id: 16766320456518409069
       }
+    }
+    Overrides {
+      Name: "cs:UIVisibility"
+      Bool: false
     }
     Overrides {
       Name: "cs:UIControllerProperty:isrep"
