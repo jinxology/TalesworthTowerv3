@@ -6,7 +6,7 @@ roomDialInitialLocations = {0,0,0,0 }  --Array of Initial starting locations for
 roomCurrentDials = {0,0,0,0} --Array of the current dials each room is set to
 
 startingPlatforms = nil
-startPlatformPosition = Vector3.New(-450,-550,1475)  --Set to values of Start Platform Group
+startPlatformPosition = Vector3.New(-450,-75,1500)  --Set to values of Start Platform Group
 startPlatformRotation = Rotation.New(0,0,0)  --Set to values of Start Platform Group
 
 exitFlume = nil

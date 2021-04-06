@@ -188,7 +188,11 @@ end
 local propTalkingTask = nil
 
 function PlayMimiAnimation(animation)
-    SaySomething()
+    if animation == "mimi.short" then
+        SaySomething(1)
+    else
+        SaySomething(2)
+    end
 end
 
 function clearLeaderboard () -- empties out all the text from the WorldTexts
@@ -340,7 +344,7 @@ function SpeakSyllable(states, totalDuration)
     Task.Wait(totalDuration)
 end
 
-function SaySomething()
+function SaySomething(howMuch)
     if propIdleTask then
         propIdleTask:Cancel()
         propIdleTask = nil
@@ -350,7 +354,14 @@ function SaySomething()
         propTalkingTask = nil
     end
     propTalkingTask = Task.Spawn(function()
-        local   words = math.random(3, 6)
+        local   words
+
+        if howMuch == 1 then
+            words = 3
+        else
+            words = 6
+        end
+
         local   MAX_OPEN_SYLLABLES = 3
         local   playingVocal = propSyllableVocalSFX[1]
         local   playingPercussive = propSyllablePercussiveSFX[1]
@@ -361,7 +372,7 @@ function SaySomething()
             SetProperties(MinPropertiesFrom(propMouthClosedState))
             Task.Wait(0.15)
 
-            local   syllables = math.random(3, 5)
+            local   syllables = math.random(1, 3)
 
             for syllable = 1, syllables, 1 do
                 local   duration

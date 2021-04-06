@@ -454,7 +454,7 @@ function ScorePuck(puck, point)
             end
         else
             propFailSFX:Play()
-            currentScore = math.max(0, currentScore - 1)
+            propCurrentScore = math.max(0, propCurrentScore - 1)
             Events.BroadcastToAllPlayers("pck.broadcast", "WRONG GOAL - 1")
         end
     end
