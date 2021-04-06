@@ -148,6 +148,7 @@ end
 
 
 function LevelPowerUp() 
+    playersEntered = 0
     flumeEveryoneInTimerRunning = false
     CloseFloor()
     propTxtFinalTime.text = FormatTime(propMainGameController.context.totalTowerTime)

@@ -22,6 +22,7 @@ function HitCountUpdate(coreObject, propertyName)
         local hitData = {CoreString.Split(hitCountString,",")}
         propHitCount.text = ""
         --print (hitData[1]..":"..hitData[2]..":"..hitData[3])
+        
         for i=1,#hitData,4 do
             local playerHits = tonumber(hitData[i+1])
             local playerRequiredHits = tonumber(hitData[i+2])
@@ -34,8 +35,15 @@ function HitCountUpdate(coreObject, propertyName)
             script:GetCustomProperty(propName):WaitForObject().text = "" .. playerHits .. "/" .. playerRequiredHits
             
             if (hitData[i+3] == Game.GetLocalPlayer().name) then
-                if (playerHits >= playerRequiredHits) then
-                    propHitCount.text = "ZONE COMPLETED"
+                if (playerHits == playerRequiredHits) then
+                    local animal = ""
+                    if (i == 1) then animal = "CHICKENS"
+                    elseif (i == 5) then animal = "COWS"
+                    elseif (i == 9) then animal = "PIGS"
+                    elseif (i == 13) then animal = "TURKEY"
+                    end
+
+                    propHitCount.text = animal .." COMPLETED"
                     Task.Spawn(HideZoneCompleted,3)
                 else
                     --propHitCount.text = "" .. playerHits .. "/" .. playerRequiredHits

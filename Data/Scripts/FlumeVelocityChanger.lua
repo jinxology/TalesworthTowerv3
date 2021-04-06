@@ -63,6 +63,7 @@ function FlumePlayer(player, dt)
 end
 
 function PlayerEntersFlumeSystem(player)
+	player:ResetVelocity()
 	--TODO: follow with camera
 	player:EnableRagdoll("lower_spine", .4)
 	player:EnableRagdoll("right_shoulder", .2)
