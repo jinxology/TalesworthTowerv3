@@ -3497,6 +3497,14 @@ Objects {
           Name: "Text"
           String: "Hightide"
         }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 0.702636719
+            Y: 1
+            Z: 124.413574
+          }
+        }
       }
     }
     ParameterOverrideMap {

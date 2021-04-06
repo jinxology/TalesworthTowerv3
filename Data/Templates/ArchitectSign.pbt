@@ -96,7 +96,7 @@ Assets {
         Transform {
           Location {
             X: -119.503662
-            Y: 8.78527832
+            Y: 2
             Z: 183.70752
           }
           Rotation {
@@ -144,7 +144,7 @@ Assets {
         Transform {
           Location {
             X: 0.702636719
-            Y: 8.78527832
+            Y: 2
             Z: 128.205078
           }
           Rotation {
@@ -167,7 +167,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Text {
-          Text: "Heavy"
+          Text: "Paegrid"
           FontAsset {
           }
           Color {
@@ -192,7 +192,7 @@ Assets {
         Transform {
           Location {
             X: 0.702636719
-            Y: 7.33557129
+            Y: 1
             Z: 124.413574
           }
           Rotation {
@@ -215,7 +215,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Text {
-          Text: "Heavy"
+          Text: "Paegrid"
           FontAsset {
           }
           Color {
@@ -236,9 +236,8 @@ Assets {
         Name: "towerprogresscreenoverlay"
         Transform {
           Location {
-            X: -2.3196466
-            Y: 12.1459732
-            Z: 129.573486
+            Y: 3
+            Z: 126.236328
           }
           Rotation {
             Yaw: 180
@@ -296,7 +295,7 @@ Assets {
         Transform {
           Location {
             X: -119.503662
-            Y: 7.45849609
+            Y: 1
             Z: 181.848145
           }
           Rotation {

@@ -345,14 +345,6 @@ function LevelVictory()
     exitFlume:MoveTo(exitFlume:GetPosition() - Vector3.UP * 2000, 0.5, true)
 end
 
-function LevelFailed()
-	propMainGameController.context.LevelEnd(false)
-    LevelEnd()
-    
-    outPipes = World.Spawn(script:GetCustomProperty("outPipesTemplate"), { parent = script.parent })
-    exitFlume.parent = outPipes
-end
-
 function SpawnPuckAt(position, makePlayersWatch)
     --  make all players look at this spawner if it's closer than the one they're looking at
 
