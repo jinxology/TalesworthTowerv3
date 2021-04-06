@@ -1476,7 +1476,6 @@ Objects {
   ChildIds: 9321174221656531523
   ChildIds: 8307682342545794791
   ChildIds: 8199109814530236471
-  ChildIds: 13182706208334085729
   ChildIds: 1321534491155913820
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1598,51 +1597,6 @@ Objects {
     }
     TemplateAsset {
       Id: 16102386394497442094
-    }
-  }
-}
-Objects {
-  Id: 13182706208334085729
-  Name: "txtArchitectName"
-  Transform {
-    Location {
-      X: -299.999817
-      Y: 291.496033
-      Z: 153.205078
-    }
-    Rotation {
-      Yaw: 89.9999542
-    }
-    Scale {
-      X: 2.8335917
-      Y: 2.8335917
-      Z: 2.8335917
-    }
-  }
-  ParentId: 13446817876099848682
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Text {
-    Text: "Paegrid"
-    FontAsset {
-    }
-    Color {
-      A: 1
-    }
-    HorizontalSize: 1
-    VerticalSize: 1
-    HorizontalAlignment {
-      Value: "mc:ecoretexthorizontalalign:center"
-    }
-    VerticalAlignment {
-      Value: "mc:ecoretextverticalalign:center"
     }
   }
 }

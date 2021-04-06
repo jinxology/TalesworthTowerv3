@@ -9499,37 +9499,6 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 622252525570655390
-      value {
-        Overrides {
-          Name: "Text"
-          String: "Paegrid"
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 4709569307287743065
-      value {
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -5.63049316
-            Y: 12.2268066
-            Z: 126.236328
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8040581669300652256
-      value {
-        Overrides {
-          Name: "Text"
-          String: "Paegrid"
-        }
-      }
-    }
-    ParameterOverrideMap {
       key: 13846951818635812732
       value {
         Overrides {
@@ -9537,19 +9506,16 @@ Objects {
           String: "ArchitectSign"
         }
         Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
           Name: "Position"
           Vector {
             X: -800
             Y: -2375
             Z: 300
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
           }
         }
       }
@@ -9565,7 +9531,7 @@ Objects {
   Transform {
     Location {
       X: -736.208557
-      Y: -2368.14722
+      Y: -2370
       Z: 378.511
     }
     Rotation {
@@ -9613,8 +9579,8 @@ Objects {
   Transform {
     Location {
       X: -736.208557
-      Y: -2370.36401
-      Z: 378.511
+      Y: -2372
+      Z: 376.297119
     }
     Rotation {
       Yaw: 90
@@ -9637,51 +9603,6 @@ Objects {
   }
   Text {
     Text: "himself"
-    FontAsset {
-    }
-    Color {
-      A: 1
-    }
-    HorizontalSize: 1
-    VerticalSize: 1
-    HorizontalAlignment {
-      Value: "mc:ecoretexthorizontalalign:center"
-    }
-    VerticalAlignment {
-      Value: "mc:ecoretextverticalalign:center"
-    }
-  }
-}
-Objects {
-  Id: 5983572991199567197
-  Name: "txtArchitectName"
-  Transform {
-    Location {
-      X: -801.712097
-      Y: -2368.14722
-      Z: 426.719238
-    }
-    Rotation {
-      Yaw: 90
-    }
-    Scale {
-      X: 2.8335917
-      Y: 2.8335917
-      Z: 2.8335917
-    }
-  }
-  ParentId: 6466700705943890717
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Text {
-    Text: "Paegrid"
     FontAsset {
     }
     Color {

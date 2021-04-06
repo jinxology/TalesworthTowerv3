@@ -285,6 +285,8 @@ function LevelPowerUp()
 	LoadInterior()
 	LoadTutorial()
 
+	teamScore = 0
+	teamFailures = 0
 	script:SetNetworkedCustomProperty("currentScore", teamScore)
 	script:SetNetworkedCustomProperty("strikeCount", teamFailures)
 	script:SetNetworkedCustomProperty("levelStatus", 1)
@@ -293,25 +295,16 @@ function LevelPowerUp()
 	propFlumedInTrigger.isEnabled = true
 end
 
+local propStartRoundTask = nil
+
 function LevelPowerDown()
+	if propStartRoundTask then
+		propStartRoundTask:Cancel()
+		propStartRoundTask = nil
+	end
+
 	UnloadInterior()
 	script:SetNetworkedCustomProperty("levelStatus", 0)
-	-- for _, object in ipairs(propTutorialContainer:GetChildren()) do
-	-- 	-- print("unloading tutorial object " .. object.id)
-
-	-- 	-- if object.name == "bnp_balloon" then
-	-- 	-- 	local	liveBalloon = object.context.propPhysics or object.context.propEquipment
-			
-	-- 	-- 	print("balloon " .. object.id .. " has live balloon " .. liveBalloon.id)
-	-- 	-- 	if liveBalloon ~= nil and liveBalloon:IsValid() then
-	-- 	-- 		print("destroying it")
-	-- 	-- 		liveBalloon:Destroy()
-	-- 	-- 	end
-	-- 	-- end
-	-- 	if object:IsValid() then
-	-- 		object:Destroy()
-	-- 	end
-	-- end
 	
 	for _, balloon in pairs(propLiveBalloons) do
 		if balloon:IsValid() then
@@ -326,7 +319,7 @@ function LevelBegin()
 	propFlumedInTrigger.isEnabled = false
 	Task.Spawn(FlickerStartSign, 1.2)
 	Task.Spawn(ReadySteadyGo)
-	Task.Spawn(BeginFirstRound, 3)
+	propStartRoundTask = Task.Spawn(BeginFirstRound, 3)
 	Task.Wait(3)
 	-- propBopZoneTrigger.isEnabled = true
 end
