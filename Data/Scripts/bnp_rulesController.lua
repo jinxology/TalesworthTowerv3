@@ -29,6 +29,11 @@ hideInstructions = nil
 function ActivateInstructions(levelStatus)
 	if levelStatus == 1 then
 		entranceListener = propEntranceTrigger.beginOverlapEvent:Connect(OnPlayerEntered)
+		if propLevelMusic and propLevelMusic:IsValid() then
+			propLevelMusic:Stop()
+			propLevelMusic:Destroy()
+			propLevelMusic = nil
+		end
 	elseif levelStatus == 2 then
 		propRulesPanel.visibility = Visibility.FORCE_OFF
 		showInstructions = Game.GetLocalPlayer().bindingPressedEvent:Connect(OnBindingPressed)

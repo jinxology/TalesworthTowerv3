@@ -293,7 +293,14 @@ function LevelPowerUp()
 	propFlumedInTrigger.isEnabled = true
 end
 
+local propStartRoundTask = nil
+
 function LevelPowerDown()
+	if propStartRoundTask then
+		propStartRoundTask:Cancel()
+		propStartRoundTask = nil
+	end
+
 	UnloadInterior()
 	script:SetNetworkedCustomProperty("levelStatus", 0)
 	-- for _, object in ipairs(propTutorialContainer:GetChildren()) do
@@ -326,7 +333,7 @@ function LevelBegin()
 	propFlumedInTrigger.isEnabled = false
 	Task.Spawn(FlickerStartSign, 1.2)
 	Task.Spawn(ReadySteadyGo)
-	Task.Spawn(BeginFirstRound, 3)
+	propStartRoundTask = Task.Spawn(BeginFirstRound, 3)
 	Task.Wait(3)
 	-- propBopZoneTrigger.isEnabled = true
 end
