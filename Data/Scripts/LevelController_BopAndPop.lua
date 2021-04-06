@@ -271,6 +271,7 @@ function UnloadInterior()
 	for _, sign in ipairs(propSignContainer:GetChildren()) do
 		sign:Destroy()
 	end
+	signs = {}
 end
 
 propFlumedInTrigger.beginOverlapEvent:Connect(function(trigger, player)
@@ -287,6 +288,7 @@ function LevelPowerUp()
 
 	teamScore = 0
 	teamFailures = 0
+
 	script:SetNetworkedCustomProperty("currentScore", teamScore)
 	script:SetNetworkedCustomProperty("strikeCount", teamFailures)
 	script:SetNetworkedCustomProperty("levelStatus", 1)
