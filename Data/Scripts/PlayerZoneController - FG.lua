@@ -23,6 +23,10 @@ function Reset()
     playerInThisZone = nil
     completed = false
     zoneActive = false
+    if (currentTarget and Object.IsValid(currentTarget)) then
+        currentTarget:Destroy()
+        currentTarget = nil
+    end
 end
 
 function Split(pString, pPattern)
@@ -128,6 +132,6 @@ function EndTargetPractice()
     currentTarget = nil
 end
 
-
+Events.Connect("FG_ResetPlayerZone", Reset)
 
 

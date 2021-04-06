@@ -208,7 +208,9 @@ function LevelPowerDown()
     if (Object.IsValid(levelMusic)) then
         levelMusic:Destroy()
     end
-        
+    
+    Events.Broadcast("FG_ResetPlayerZone")
+
     --Delete Weapons
     LevelCleanup()
 
