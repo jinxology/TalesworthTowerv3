@@ -155,6 +155,9 @@ function DismissPuncher()
 
     propGeometry:MoveTo(propGeometryRetracted, 0.25, true)
     Task.Wait(0.25)
+
+    -- propGeometry:Destroy()
+    -- propGeometry = nil
 end
 
 function TriggerPuncher()
@@ -190,6 +193,9 @@ function DismissKicker()
     Task.Wait(0.25)
     propGeometry:MoveTo(propGeometryRetracted, 0.25, true)
     Task.Wait(0.25)
+    
+    propGeometry:Destroy()
+    propGeometry = nil
 end
 
 local   propCockedAt = nil
@@ -461,8 +467,6 @@ if propWranglerKind == PUNCHER_KIND then
 
     if propServerRef:GetCustomProperty("presented") == true then
         PresentPuncher()
-    else
-        DismissPuncher()
     end
     propServerRef.networkedPropertyChangedEvent:Connect(function(object, propertyName)
         if propertyName == "presented" then
@@ -485,8 +489,6 @@ if propWranglerKind == PUNCHER_KIND then
 
     if propServerRef:GetCustomProperty("presented") == true then
         PresentPuncher()
-    else
-        DismissPuncher()
     end
 elseif propWranglerKind == KICKER_KIND then
     propKicker = propGeometry:GetCustomProperty("kicker"):WaitForObject()
