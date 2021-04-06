@@ -16,13 +16,14 @@ propPhysics.networkedPropertyChangedEvent:Connect(function (coreObject, property
     if propertyName == "Color" then
         propGeometry:SetColor(coreObject:GetCustomProperty("Color"))
     elseif propertyName == "StartGame" then
-    	print("In StartGame networked property")
+    	--print("In StartGame networked property")
     	whilePlaying = true
     end
 end)
 
 propGeometry:SetColor(propPhysics:GetCustomProperty("Color"))
 
+--[[
 function Tick()
 	local ballSpeed
 	local ballPosition
@@ -33,7 +34,7 @@ function Tick()
 			if previousBallSpeed.x <= 5 and previousBallSpeed.y <= 5 then
 				sfx:Stop()
 				ballInMotion = false
-				print("Setting Ball in motion to false")
+				--print("Setting Ball in motion to false")
 			end
 			previousBallSpeed = ballSpeed
 		else 
@@ -45,9 +46,9 @@ function Tick()
 				sfx:SetWorldPosition(ballPosition)
 				sfx:Play()
 				ballInMotion = true
-				print("Setting Ball in motion to true")				
+				--print("Setting Ball in motion to true")				
 			end
 			previousBallSpeed = ballSpeed
 		end
 	end
-end
+end ]]--

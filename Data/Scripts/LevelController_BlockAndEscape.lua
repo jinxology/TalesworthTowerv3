@@ -91,6 +91,10 @@ function LevelPowerDown()
 			ballArray[ballIndex]:Destroy()
 		end
 	end
+	
+	local forceField = folderRoot:FindDescendantByName("ForceField")
+	forceField.visibility = Visibility.FORCE_ON
+	forceField.collision = Collision.FORCE_ON
 end
 
 --LevelVictory is called when the Win Condition of the game is met
