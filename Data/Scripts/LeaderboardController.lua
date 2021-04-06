@@ -104,6 +104,6 @@ leaderboardTask = Task.Spawn(LoadLeaderboards)
 
 
 function RefreshLeaderboard()
-    --Task.Wait(5)
+    Task.Wait(10)
     LoadLeaderboards()
 end

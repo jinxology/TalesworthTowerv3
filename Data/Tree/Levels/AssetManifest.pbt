@@ -458,6 +458,15 @@ Assets {
   }
 }
 Assets {
+  Id: 7403807969750016879
+  Name: "Flower Wild Lily 02"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_foliage_gen_flower_wild_lily_002_ref"
+  }
+}
+Assets {
   Id: 7033388215135810562
   Name: "Sphere - Half Thin"
   PlatformAssetType: 1
@@ -608,6 +617,24 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_gen_gear_001"
+  }
+}
+Assets {
+  Id: 2546885919780839121
+  Name: "Fantasy Castle Bannister 01 - Curve Small"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_ts_fan_cas_bannister_001_curve_sm"
+  }
+}
+Assets {
+  Id: 2261151074761971500
+  Name: "Tree Redwood Medium"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_tree_redwood_002"
   }
 }
 Assets {

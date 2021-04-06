@@ -8,6 +8,7 @@ local propP3HitCount = script:GetCustomProperty("p3HitCount"):WaitForObject()
 local propP4HitCount = script:GetCustomProperty("p4HitCount"):WaitForObject()
 
 --playerNbr = nil
+local sawNotice = {["CHICKENS"] = false,["COWS"] = false,["PIGS"] = false, ["TURKEY"] = false}
 
 function HitCountUpdate(coreObject, propertyName)
     local hitCountString = propLevelControllerFarmGallery:GetCustomProperty(propertyName)
@@ -17,6 +18,7 @@ function HitCountUpdate(coreObject, propertyName)
     else
         if (propUIContainer.visibility == Visibility.FORCE_OFF) then
             propUIContainer.visibility = Visibility.FORCE_ON
+            sawNotice = {["CHICKENS"] = false,["COWS"] = false,["PIGS"] = false, ["TURKEY"] = false}
         end
 
         local hitData = {CoreString.Split(hitCountString,",")}
@@ -43,8 +45,12 @@ function HitCountUpdate(coreObject, propertyName)
                     elseif (i == 13) then animal = "TURKEY"
                     end
 
-                    propHitCount.text = animal .." COMPLETED"
-                    Task.Spawn(HideZoneCompleted,3)
+                    print (sawNotice[animal])
+                    if (sawNotice[animal] == false) then
+                        sawNotice[animal] = true
+                        propHitCount.text = animal .." COMPLETED"
+                        Task.Spawn(HideZoneCompleted,3)
+                    end
                 else
                     --propHitCount.text = "" .. playerHits .. "/" .. playerRequiredHits
                     propHitCount.text = ""

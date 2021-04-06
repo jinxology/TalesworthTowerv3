@@ -1,6 +1,96 @@
 Name: "LobbySean"
 RootId: 16614468857374372845
 Objects {
+  Id: 17508148127345520216
+  Name: "Flower Wild Lily 01"
+  Transform {
+    Location {
+      X: 738.918518
+      Y: -2309.26123
+      Z: 58.4565048
+    }
+    Rotation {
+      Roll: 5.01545906
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3822083789986655741
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
+  Id: 1085785509952240456
+  Name: "Flower Wild Lily 01"
+  Transform {
+    Location {
+      X: 716.225159
+      Y: -2148.8208
+      Z: 58.4565048
+    }
+    Rotation {
+      Pitch: 0.495345771
+      Yaw: -88.5761719
+      Roll: -13.3147583
+    }
+    Scale {
+      X: 1.25422323
+      Y: 1.25422323
+      Z: 1.25422323
+    }
+  }
+  ParentId: 16614468857374372845
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 3822083789986655741
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+    }
+  }
+}
+Objects {
   Id: 10513309859249229475
   Name: "Bush 01"
   Transform {
@@ -236,7 +326,9 @@ Objects {
       Z: 58.4565048
     }
     Rotation {
-      Yaw: -33.2445679
+      Pitch: -9.16674805
+      Yaw: -33.7319946
+      Roll: 6.07196665
     }
     Scale {
       X: 1
@@ -280,7 +372,9 @@ Objects {
       Z: 58.4565048
     }
     Rotation {
-      Yaw: -33.2445679
+      Pitch: 7.96139097
+      Yaw: -33.6109619
+      Roll: -5.25991821
     }
     Scale {
       X: 0.924278259
@@ -324,7 +418,9 @@ Objects {
       Z: 58.4565048
     }
     Rotation {
-      Yaw: -88.5004578
+      Pitch: 0.495345771
+      Yaw: -88.5761719
+      Roll: -13.3147278
     }
     Scale {
       X: 1.25422323
@@ -368,7 +464,9 @@ Objects {
       Z: 58.4565048
     }
     Rotation {
-      Yaw: -55.2558899
+      Pitch: -12.3508301
+      Yaw: -54.3087769
+      Roll: -8.73529053
     }
     Scale {
       X: 1.25422323
@@ -455,6 +553,7 @@ Objects {
       Z: 58.4565048
     }
     Rotation {
+      Roll: 5.01545477
     }
     Scale {
       X: 1
@@ -986,6 +1085,7 @@ Objects {
       Z: 58.4565048
     }
     Rotation {
+      Roll: 5.30164766
     }
     Scale {
       X: 1.17580664
@@ -1029,6 +1129,7 @@ Objects {
       Z: 50.2696
     }
     Rotation {
+      Roll: -2.69232178
     }
     Scale {
       X: 1

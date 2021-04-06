@@ -68,7 +68,7 @@ local hintTask = nil
 local hintDelay = 60 --Every x seconds give a hint
 local hintIndex = 1
 local hintData = {
-	"Seems like there is one more color on the dials than you have rooms...",
+	"Seems like there is one more color on the dials than you have color areas...",
 	"Fine it's orange.  Now why would Orange be written in text and what could the color of that word mean?",
 	"*Sigh* You simpletons! The color of the word is the color of the room. The word is the dial setting.",
 	"You're not good at puzzles are you? Just get out of here."

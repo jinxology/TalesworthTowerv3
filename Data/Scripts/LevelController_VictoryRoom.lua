@@ -135,7 +135,7 @@ propEnteredVRTrigger.beginOverlapEvent:Connect(OnEnterVictoryRoom)
 -----------------------------------------------------------------------
 
 function LevelBegin()
-    --propMainGameController.context.LevelBegin()    
+    
 end
 
 function LevelFailed() 

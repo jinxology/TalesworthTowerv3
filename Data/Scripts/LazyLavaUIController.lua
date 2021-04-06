@@ -22,11 +22,15 @@ function SetPoints(pts, max)
 end
 
 function SetSpeed(speed)
-    propSpeed.text = tostring(speed)
+    speed = speed - 300
+    if speed < 0 then speed = 0 end
+    propSpeed.text = tostring(CoreMath.Round(speed),0)
 end
 
 function SetMaxSpeed(max)
-    propMaxSpeed.text = tostring(max)
+    max = max - 300
+    if max < 0 then max = 0 end
+    propMaxSpeed.text = tostring(CoreMath.Round(max),0)
 end
 
 function SetUIData(pts,ptsMax,speed,speedMax)
