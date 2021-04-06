@@ -43,9 +43,9 @@ function Dialogs.RegisterDialogue()
     id = "lby.Mimi1"
     API.RegisterDialogueId(id)
     API.AddText(id, "BOO! Ha ha! Oh wait, did I really scare you? Wow, okay. I didn't think anyone fell for mimics anymore.", "mimi.boo")
-    API.AddText(id, "Great to meet you, and welcome. I'm in charge of the 'tip jar' here at Talesworth Tower.", "mimi.awkward")
+    API.AddText(id, "Great to meet you, and welcome. I'm in charge of the 'tip jar' here at Talesworth Tower.", "mimi.talk")
     API.AddText(id, "If you're having fun, and you want to toss some coins at the Tower Staff, use those buttons in the upper right.", "mimi.talk")
-    API.AddText(id, "Thanks, and good luck in there!", "mimi.talk")
+    API.AddText(id, "Thanks, and good luck in there!", "mimi.short")
     
     
 end
