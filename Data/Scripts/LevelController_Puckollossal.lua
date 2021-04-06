@@ -23,7 +23,7 @@ local propLivePucks = {}
 local propLiveMugshots = {}
 local propLiveWranglers = {}
 
-local propWinCondition = 8
+local propWinCondition = 4
 local propCurrentScore = 0
 
 propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
@@ -148,6 +148,21 @@ local propBoundaryListener = nil
 function LevelPowerUp()
     -- ConnectBoundary(propBoundary)
 
+    propBoundaryListener = propBoundary.endOverlapEvent:Connect(function(trigger, player)
+        if propPlayersFlumedIn[player] then
+            Events.BroadcastToPlayer(player, "OUT OF BOUNDS")
+            player:ResetVelocity()
+            player:SetWorldPosition(trigger:GetWorldPosition())
+            player:EnableRagdoll()
+
+            player.movementControlMode = MovementControlMode.NONE
+            Task.Spawn(function()
+                player:DisableRagdoll()
+                player.movementControlMode = MovementControlMode.LOOK_RELATIVE
+            end)
+        end
+    end)
+
     propTutorialCurtain = World.SpawnAsset(propTutorialCurtainTemplate, { parent = script.parent })
     propTutorialCurtain:GetCustomProperty("levelEnteredTrigger"):WaitForObject().beginOverlapEvent:Connect(function(trigger, other)
         if other:IsA("Player") then
@@ -174,8 +189,6 @@ end
 function LevelPlayerEntered(player)
     local lookoutAbility = World.SpawnAsset(propLookoutAbilityTemplate)
 
-    player.serverUserData.safeZoneCount = 0
-
     lookoutAbility.owner = player
     player.serverUserData.pckLookoutAbility = lookoutAbility
 end
@@ -185,28 +198,29 @@ function LevelPlayerExited(player)
     player.serverUserData.pckLookoutAbility.owner = nil
 end
 
-local propOutOfBoundsTask = nil
+-- local propOutOfBoundsTask = nil
 
 function LevelBegin()
     for _, player in ipairs(Game.GetPlayers()) do
         LevelPlayerEntered(player)
     end
 
-    propOutOfBoundsTask = Task.Spawn(function()
-        for _, player in pairs(Game:GetPlayers()) do
-            if not propBoundary:IsOverlapping(player) then
-                other:ResetVelocity()
-                other:SetWorldPosition(trigger:GetWorldPosition())
-                other:EnableRagdoll()
+    -- propOutOfBoundsTask = Task.Spawn(function()
+    --     for _, player in pairs(Game:GetPlayers()) do
+    --         if not propBoundary:IsOverlapping(player) then
+    --             Events.BroadcastToPlayer(player, "OUT OF BOUNDS")
+    --             other:ResetVelocity()
+    --             other:SetWorldPosition(trigger:GetWorldPosition())
+    --             other:EnableRagdoll()
 
-                other.movementControlMode = MovementControlMode.NONE
-                Task.Spawn(function()
-                    other:DisableRagdoll()
-                    other.movementControlMode = MovementControlMode.LOOK_RELATIVE
-                end, 2)
-            end
-        end
-    end)
+    --             other.movementControlMode = MovementControlMode.NONE
+    --             Task.Spawn(function()
+    --                 other:DisableRagdoll()
+    --                 other.movementControlMode = MovementControlMode.LOOK_RELATIVE
+    --             end, 2)
+    --         end
+    --     end
+    -- end)
 
     local   spawnConfiguration = propSpawnConfigurations[propSpawnConfigurationIndex]
     
@@ -285,15 +299,17 @@ function LevelEnd()
         LevelPlayerExited(player)
     end
 
+    propPlayersFlumedIn = {}
+    
     if propWranglersTask then
         propWranglersTask:Cancel()
         propWranglersTask = nil
     end
 
-    if propOutOfBoundsTask then
-        propOutOfBoundsTask:Cancel()
-        propOutOfBoundsTask = nil
-    end
+    -- if propOutOfBoundsTask then
+    --     propOutOfBoundsTask:Cancel()
+    --     propOutOfBoundsTask = nil
+    -- end
 
     for puck, isLive in pairs(propLivePucks) do
         if puck:IsValid() then
@@ -302,13 +318,15 @@ function LevelEnd()
     end
     propLivePucks = {}
 
-    for _, mugshot in pairs(propLiveMugshots) do
-        if mugshot:IsValid() then
-            mugshot:Unequip()
-            mugshot:Destroy()
+    Task.Spawn(function()
+        for _, mugshot in pairs(propLiveMugshots) do
+            if mugshot:IsValid() then
+                mugshot:Unequip()
+                mugshot:Destroy()
+            end
         end
-    end
-    propLiveMugshots = {}
+        propLiveMugshots = {}
+    end, 3)
 
     for _, wrangler in pairs(propLiveWranglers) do
         wrangler:GetCustomProperty("controller"):WaitForObject().context.DismissWrangler()
@@ -373,6 +391,10 @@ function LevelPowerDown()
         propTutorialCurtain = nil
     end
 
+    if propBoundaryListener then
+        propBoundaryListener:Disconnect()
+        propBoundaryListener = nil
+    end
     -- World.FindObjectByName("Level.GobbleDots").visibility = Visibility.FORCE_OFF
     -- World.FindObjectByName("Level.LazyLava").visibility = Visibility.FORCE_OFF
 end
