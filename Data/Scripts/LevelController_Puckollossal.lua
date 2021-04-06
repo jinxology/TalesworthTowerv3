@@ -23,7 +23,7 @@ local propLivePucks = {}
 local propLiveMugshots = {}
 local propLiveWranglers = {}
 
-local propWinCondition = 4
+local propWinCondition = 8
 local propCurrentScore = 0
 
 propLevelBeaconFolder = script:GetCustomProperty("levelBeaconFolder"):WaitForObject()
@@ -331,6 +331,7 @@ function LevelEnd()
     for _, wrangler in pairs(propLiveWranglers) do
         wrangler:GetCustomProperty("controller"):WaitForObject().context.DismissWrangler()
     end
+    propLiveWranglers = {}
 end
 
 function LevelVictory()

@@ -145,6 +145,11 @@ end
 
 function DismissWrangler()
     script:SetNetworkedCustomProperty("presented", false)
+    propTrigger:Destroy()
+    propTrigger = nil
+    Task.Spawn(function()
+        script:Destroy()
+    end, 8)
 end
 
 if propWranglerKind == PUNCHER_KIND then
