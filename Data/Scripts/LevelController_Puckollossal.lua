@@ -342,6 +342,8 @@ function LevelVictory()
 
     outPipes = World.SpawnAsset(script:GetCustomProperty("outPipesTemplate"), { parent = script.parent, position = Vector3.New(0, 0, 2000) })
     outPipes:MoveTo(Vector3.ZERO, 0.5, true)
+    exitFlume:SetPosition(exitFlumeLocation)
+    exitFlume:SetRotation(exitFlumeRotation)
     exitFlume:MoveTo(exitFlume:GetPosition() - Vector3.UP * 2000, 0.5, true)
 end
 
