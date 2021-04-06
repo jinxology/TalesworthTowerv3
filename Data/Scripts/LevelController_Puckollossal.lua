@@ -334,14 +334,16 @@ function LevelEnd()
     propLiveWranglers = {}
 end
 
+local propOutPipes = nil
+
 function LevelVictory()
     Events.BroadcastToAllPlayers("pck.broadcast", "TEAM WINS")
 
 	propMainGameController.context.LevelEnd(true)
     LevelEnd()
 
-    outPipes = World.SpawnAsset(script:GetCustomProperty("outPipesTemplate"), { parent = script.parent, position = Vector3.New(0, 0, 2000) })
-    outPipes:MoveTo(Vector3.ZERO, 0.5, true)
+    propOutPipes = World.SpawnAsset(script:GetCustomProperty("outPipesTemplate"), { parent = script.parent, position = Vector3.New(0, 0, 2000) })
+    propOutPipes:MoveTo(Vector3.ZERO, 0.5, true)
     exitFlume:SetPosition(exitFlumeLocation)
     exitFlume:SetRotation(exitFlumeRotation)
     exitFlume:MoveTo(exitFlume:GetPosition() - Vector3.UP * 2000, 0.5, true)
@@ -359,6 +361,11 @@ function SpawnPuckAt(position, makePlayersWatch)
 end
 
 function LevelPowerDown()
+    if propOutPipes and propOutPipes:IsValid() then
+        propOutPipes:Destroy()
+        propOutPipes = nil
+    end
+    
     if propCheckPuckCountTask then
         propCheckPuckCountTask:Cancel()
         propCheckPuckCountTask = nil
