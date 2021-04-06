@@ -1,4 +1,10 @@
 GlobalEntries {
+  Id: "BOT_Bot1"
+  Name: "Bot1"
+  ScoreFormatted: "0.0"
+  DateTime: "2021-04-06T04:10:19.299Z"
+}
+GlobalEntries {
   Id: "172f6edc8820487da19f26db2dd11870"
   Name: "Heavy"
   ScoreFormatted: "0.0"
@@ -7,12 +13,6 @@ GlobalEntries {
 GlobalEntries {
   Id: "BOT_Bot2"
   Name: "Bot2"
-  ScoreFormatted: "2.025391"
-  DateTime: "2021-04-05T23:19:14.702Z"
-}
-GlobalEntries {
-  Id: "BOT_Bot1"
-  Name: "Bot1"
   ScoreFormatted: "2.025391"
   DateTime: "2021-04-05T23:19:14.702Z"
 }
@@ -24,6 +24,12 @@ GlobalEntries {
   DateTime: "2021-03-30T06:20:05.293Z"
 }
 DailyEntries {
+  Id: "BOT_Bot1"
+  Name: "Bot1"
+  ScoreFormatted: "0.0"
+  DateTime: "2021-04-06T04:10:19.299Z"
+}
+DailyEntries {
   Id: "172f6edc8820487da19f26db2dd11870"
   Name: "Heavy"
   ScoreFormatted: "0.0"
@@ -32,12 +38,6 @@ DailyEntries {
 DailyEntries {
   Id: "BOT_Bot2"
   Name: "Bot2"
-  ScoreFormatted: "2.025391"
-  DateTime: "2021-04-05T23:19:14.702Z"
-}
-DailyEntries {
-  Id: "BOT_Bot1"
-  Name: "Bot1"
   ScoreFormatted: "2.025391"
   DateTime: "2021-04-05T23:19:14.702Z"
 }
@@ -49,6 +49,12 @@ DailyEntries {
   DateTime: "2021-03-30T06:20:05.293Z"
 }
 WeeklyEntries {
+  Id: "BOT_Bot1"
+  Name: "Bot1"
+  ScoreFormatted: "0.0"
+  DateTime: "2021-04-06T04:10:19.299Z"
+}
+WeeklyEntries {
   Id: "172f6edc8820487da19f26db2dd11870"
   Name: "Heavy"
   ScoreFormatted: "0.0"
@@ -57,12 +63,6 @@ WeeklyEntries {
 WeeklyEntries {
   Id: "BOT_Bot2"
   Name: "Bot2"
-  ScoreFormatted: "2.025391"
-  DateTime: "2021-04-05T23:19:14.702Z"
-}
-WeeklyEntries {
-  Id: "BOT_Bot1"
-  Name: "Bot1"
   ScoreFormatted: "2.025391"
   DateTime: "2021-04-05T23:19:14.702Z"
 }
