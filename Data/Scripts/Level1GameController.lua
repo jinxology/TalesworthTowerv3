@@ -168,6 +168,7 @@ end
 
 function LevelBegin()
     propInstructions.visibility = Visibility.FORCE_OFF
+    script:SetNetworkedCustomProperty("UIVisibility",true)    
     script:SetNetworkedCustomProperty("UIControllerProperty","01,"..successes..","..successesForVictory..",,")    
     SpawnShape()
 end
@@ -182,7 +183,7 @@ end
 function LevelVictory()
     HideShapes()
     ResetLevel()
-    script:SetNetworkedCustomProperty("UIVisibility","false")    
+    script:SetNetworkedCustomProperty("UIVisibility",false)    
     propMainGameController.context.LevelEnd(true)
 end
 
@@ -206,6 +207,7 @@ function LevelPowerUp()
 end
 
 function LevelPowerDown()
+    successes = 0
     for _,obj in ipairs(objTable) do
         if (Object.IsValid(obj)) then 
             obj:Destroy() 

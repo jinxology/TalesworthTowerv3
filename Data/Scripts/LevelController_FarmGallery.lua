@@ -91,7 +91,6 @@ end
 -- REQUIRED FUNCTIONS
 -----------------------------------------------------------------------
 
-
 function LevelBegin()
     --propMainGameController.context.StartTimer(timerSeconds, TimerEnded)
 
