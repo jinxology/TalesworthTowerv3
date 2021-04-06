@@ -30,8 +30,8 @@ startPlatformRotation = Rotation.New(0,0,0)
 --
 levelMusic = nil
 hitsPerPlayer = {0,0,0,0}
---requiredHitsPerPlayer = {10,10,10,10}
-requiredHitsPerPlayer = {3,3,3,3}
+requiredHitsPerPlayer = {9,9,9,9}
+--requiredHitsPerPlayer = {3,3,3,3}
 playersAtZone = {"","","",""}
 timerSeconds = 200
 gunChicken = nil

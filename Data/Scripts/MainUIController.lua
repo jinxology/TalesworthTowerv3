@@ -8,10 +8,10 @@ local propMainTimerPanel = script:GetCustomProperty("MainTimerPanel"):WaitForObj
 local propTotalTime = script:GetCustomProperty("totalTime"):WaitForObject()
 local propTxtAutoStart = script:GetCustomProperty("TxtAutoStart"):WaitForObject()
 
+local devMode = false
 
 local timerStarted = false
 local timeLeft = 0
-local devMode = true
 
 --Main tower timer
 local totalTowerTime = 0

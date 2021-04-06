@@ -21,7 +21,8 @@ local propTxtFlumeMe = script:GetCustomProperty("txtFlumeMe"):WaitForObject()
 local propBtnVictory = script:GetCustomProperty("btnVictory"):WaitForObject()
 local propBtnShapesAndButtons = script:GetCustomProperty("btnShapesAndButtons"):WaitForObject()
 
-local devMode = true
+local devMode = false
+
 local showingMe = false
 levelList = {
     "ShapesAndButtons",

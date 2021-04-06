@@ -424,6 +424,7 @@ propRedMove1Task:Cancel()
 propBlueMove1Task:Cancel()
 Wallmover:Cancel()
 --Destroy Network Objects
+if (CenterFloor and Object.IsValid(CenterFloor)) then CenterFloor:Destroy() end
 propGreenCapsule:Destroy()
 propBlueCapsule:Destroy()
 propYellowCapsule:Destroy()

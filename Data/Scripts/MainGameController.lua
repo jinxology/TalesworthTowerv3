@@ -13,6 +13,7 @@ local propTowerProgressBeacon2 = script:GetCustomProperty("TowerProgressBeacon2"
 local propLeaderboardRef = script:GetCustomProperty("leaderboardRef")
 local propLeaderboardController = script:GetCustomProperty("LeaderboardController"):WaitForObject()
 
+local devMode = false
 
 --Generic top-center timer
 local timerStarted = false
@@ -34,7 +35,6 @@ totalAutostartTime = 0
 startingPlayerCount = 4
 
 --Game State
-local devMode = true
 towerRunning = false
 levelRunning = false
 currentLevelIndex = 1
