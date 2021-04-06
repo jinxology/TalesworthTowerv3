@@ -41,6 +41,7 @@ local mobFolder = levelFolder:FindDescendantByName("Mob AI")
 
 local ghostController = nil
 local clearDotsCount = 0
+local initializeBoardCount = 0
 local resetCameraDistanceCount = 0
 
 local inkyGhost = nil
@@ -68,14 +69,24 @@ dotsDeletedNetworkedString = ""
 --LevelPowerUp code is called from the previous level to do setup on it before the players arrive
 function LevelPowerUp() 
 
+	ghostController = nil
+	inkyGhost = nil
+	blinkyGhost = nil
+	pinkyGhost = nil
+	clydeGhost = nil
+	dotsArray = {}
+	dotsDeletedArray = {}
+	dotsDeletedNetworkedString = ""
+
 	--Setup the initial array of dots
 	InitializeDotArray()	
 end
 
 --LevelBegin code is called when all of the players are on the starting positions for 3 seconds
 function LevelBegin()
+	initializeBoardCount = initializeBoardCount+1
 	--Calling the NetworkedCustomProperty to initialize the board
-	script:SetNetworkedCustomProperty("InitializeBoard", 1)
+	script:SetNetworkedCustomProperty("InitializeBoard", initializeBoardCount)
 	
 	--  get rid of starting platform
     for _, child in ipairs(script.parent:GetChildren()) do
