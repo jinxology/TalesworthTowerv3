@@ -23,7 +23,11 @@ local activeCamera
 local propDefaultCameraDistance
 
 function InitializeBoard()
-
+	dotCount = 0
+	deletedDots = {}  --An array of deleted dots
+	countOfDeletedDots = 0
+	dotsArrayList = {}
+	totalDots = 0
 	local hitResult = nil
 	local vectorRight = Vector3.New(150,0,0)
 	local vectorLeft = Vector3.New(-150,0,0)
@@ -116,6 +120,7 @@ propLevelGobbleDots.networkedPropertyChangedEvent:Connect(function(coreObject, p
 				dotToDelete:Destroy()
 			end
 		end 
+		dotsArrayList = {}
 	elseif propertyName == "ResetCameraDistance" then
 		activeCamera.currentDistance = propDefaultCameraDistance	
 	end
